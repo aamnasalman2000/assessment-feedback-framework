@@ -1,0 +1,654 @@
+{
+  "assessment_id": "assessment_1",
+  "module": {
+    "code": "OCOM5201M",
+    "title": "Knowledge Representation and Reasoning"
+  },
+  "assessment": {
+    "title": "Assessment 1: Representation in First Order Logic",
+    "submission_format": {
+      "required_file_count": 1,
+      "required_file_type": "lean",
+      "required_extension": ".lean",
+      "description": "One Lean 4 file containing Part 1 and Part 2, with explanations provided as comments."
+    }
+  },
+  "purpose": {
+    "summary": "Assess understanding of propositional and first-order logical reasoning implemented in Lean 4.",
+    "skills_assessed": [
+      "Logical formalisation",
+      "Selection of proof strategies",
+      "Application of elimination and introduction rules",
+      "Construction of Lean 4 proofs",
+      "Explanation of logical reasoning",
+      "Identification and use of assumptions"
+    ]
+  },
+  "global_requirements": [
+    {
+      "id": "GR1",
+      "requirement": "The submission must compile in Lean 4.",
+      "applies_to": "entire_submission",
+      "evaluation_dimension": "compilation"
+    },
+    {
+      "id": "GR2",
+      "requirement": "The goal of each proof must follow from its stated assumptions.",
+      "applies_to": "all_components",
+      "evaluation_dimension": "proof_correctness"
+    },
+    {
+      "id": "GR3",
+      "requirement": "Each scenario and theorem must include a brief explanation of the reasoning.",
+      "applies_to": "all_components",
+      "evaluation_dimension": "explanation"
+    },
+    {
+      "id": "GR4",
+      "requirement": "Explanations must be included as comments within the Lean file.",
+      "applies_to": "all_components",
+      "evaluation_dimension": "requirements_compliance"
+    },
+    {
+      "id": "GR5",
+      "requirement": "Part 1 and Part 2 must be submitted together in one Lean file.",
+      "applies_to": "entire_submission",
+      "evaluation_dimension": "submission_format"
+    },
+    {
+      "id": "GR6",
+      "requirement": "The student must replace every occurrence of 'sorry' in Part 2 with an actual proof.",
+      "applies_to": "part_2",
+      "evaluation_dimension": "completeness"
+    }
+  ],
+  "marking": {
+    "total_marks": 100,
+    "parts": {
+      "part_1": {
+        "weight_percent": 60,
+        "component_count": 4,
+        "marks_per_component": 15,
+        "criteria": {
+          "formalisation_and_proof_correctness": {
+            "marks": 12,
+            "description": "Correctly formalises the scenario and provides a valid Lean proof."
+          },
+          "explanation": {
+            "marks": 3,
+            "description": "Provides a concise and accurate explanation of the reasoning and assumptions."
+          }
+        }
+      },
+      "part_2": {
+        "weight_percent": 40,
+        "component_count": 4,
+        "marks_per_component": 10,
+        "criteria": {
+          "proof_correctness": {
+            "marks": 8,
+            "description": "Provides a logically valid Lean proof using the supplied declarations and axioms."
+          },
+          "explanation": {
+            "marks": 2,
+            "description": "Explains the proof strategy and use of the supplied axioms."
+          }
+        }
+      }
+    }
+  },
+  "parts": [
+    {
+      "part_id": "part_1",
+      "title": "AI-Based Logical Problems",
+      "description": "Four scenarios requiring students to independently select suitable proof strategies, formalise the stated requirements and provide Lean proofs.",
+      "components": [
+        {
+            "component_id": "scenario_1",
+            "title": "Advanced Course Eligibility Decision",
+            "artifact_type": "lean_proof_with_comments",
+            "maximum_marks": 15,
+            "task": {
+                "summary": "Formalise the eligibility requirements and prove that the student is eligible for the advanced module.",
+                "propositions": {
+                "x1": "The student satisfies prerequisite option 1.",
+                "x2": "The student satisfies prerequisite option 2.",
+                "y1": "The student receives explicit approval from the primary department.",
+                "y2": "The student receives conditional approval from the secondary committee.",
+                "z": "The student is eligible for the advanced module."
+                },
+                "stated_conditions": [
+                {
+                    "id": "S1-C1",
+                    "description": "The student must satisfy at least one prerequisite.",
+                    "logical_form": "x1 ∨ x2"
+                },
+                {
+                    "id": "S1-C2",
+                    "description": "The student must receive either explicit approval from the primary department or conditional approval from the secondary committee.",
+                    "logical_form": "y1 ∨ y2"
+                },
+                {
+                    "id": "S1-C3",
+                    "description": "A student is eligible only when both the prerequisite requirement and the approval requirement are satisfied.",
+                    "logical_form": "((x1 ∨ x2) ∧ (y1 ∨ y2)) → z"
+                }
+                ],
+                "required_cases": [
+                "x1 ∧ y1",
+                "x1 ∧ y2",
+                "x2 ∧ y1",
+                "x2 ∧ y2"
+                ],
+                "target": {
+                "proposition": "z",
+                "description": "Prove that the student is eligible for the advanced module."
+                }
+            },
+            "evaluation_requirements": [
+                {
+                "id": "S1-R1",
+                "criterion": "formalisation",
+                "requirement": "Correctly represent the prerequisite requirement as the disjunction x1 ∨ x2."
+                },
+                {
+                "id": "S1-R2",
+                "criterion": "formalisation",
+                "requirement": "Correctly represent the approval requirement as the disjunction y1 ∨ y2."
+                },
+                {
+                "id": "S1-R3",
+                "criterion": "proof_correctness",
+                "requirement": "Demonstrate that eligibility depends on satisfying both the prerequisite requirement and the approval requirement."
+                },
+                {
+                "id": "S1-R4",
+                "criterion": "proof_correctness",
+                "requirement": "Correctly reason through the four possible prerequisite–approval combinations when deriving the target proposition."
+                },
+                {
+                "id": "S1-R5",
+                "criterion": "proof_relevance",
+                "requirement": "Use the evidence introduced during case analysis to derive the conclusion rather than relying on unrelated assumptions."
+                },
+                {
+                "id": "S1-R6",
+                "criterion": "explanation",
+                "requirement": "Explain how the prerequisite and approval conditions together establish eligibility."
+                },
+                {
+                "id": "S1-R7",
+                "criterion": "compilation",
+                "requirement": "The submitted Lean code must compile successfully."
+                }
+            ],
+            "marks": {
+                "formalisation_and_proof_correctness": 12,
+                "explanation": 3
+            }
+        },
+        {
+          "component_id": "scenario_2",
+          "title": "Complex Transaction Verification System",
+          "artifact_type": "lean_proof_with_comments",
+          "maximum_marks": 15,
+          "task": {
+            "summary": "Prove that the supplied transaction-security conditions imply that both a registered device and biometric verification hold.",
+            "propositions": {
+              "a": "The transaction originates from a registered device.",
+              "b": "The transaction amount exceeds the user's typical spending pattern.",
+              "c": "The user's recent location history is consistent with the transaction location.",
+              "d": "The transaction passed secondary biometric verification."
+            },
+            "target_statement": "((b -> d) ∧ (¬a -> (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) -> (a ∧ d)"
+          },
+          "evaluation_requirements": [
+            {
+              "id": "S2-R1",
+              "criterion": "formalisation",
+              "requirement": "Use the exact logical implication required by the brief."
+            },
+            {
+              "id": "S2-R2",
+              "criterion": "proof_correctness",
+              "requirement": "Derive d from b and b -> d."
+            },
+            {
+              "id": "S2-R3",
+              "criterion": "proof_correctness",
+              "requirement": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c."
+            },
+            {
+              "id": "S2-R4",
+              "criterion": "proof_correctness",
+              "requirement": "Construct the final conjunction a ∧ d."
+            },
+            {
+              "id": "S2-R5",
+              "criterion": "proof_strategy",
+              "requirement": "Any use of classical reasoning must be valid and supported by the Lean environment."
+            },
+            {
+              "id": "S2-R6",
+              "criterion": "explanation",
+              "requirement": "Explain how the assumptions lead to a and d."
+            },
+            {
+              "id": "S2-R7",
+              "criterion": "compilation",
+              "requirement": "The submitted Lean code must compile."
+            }
+          ],
+          "marks": {
+            "formalisation_and_proof_correctness": 12,
+            "explanation": 3
+          }
+        },
+        {
+        "component_id": "scenario_3",
+        "title": "Advanced Autonomous Vehicle Decision System",
+        "artifact_type": "lean_proof_with_comments",
+        "maximum_marks": 15,
+        "task": {
+            "summary": "Formalise the autonomous vehicle route conditions and prove that the car reaches the destination.",
+            "concepts": [
+            {
+                "id": "heavy_congestion",
+                "description": "Heavy congestion is detected on the usual route."
+            },
+            {
+                "id": "unsafe_weather",
+                "description": "Weather conditions on the alternate route are unsafe."
+            },
+            {
+                "id": "sufficient_fuel",
+                "description": "The car has enough fuel for the alternate route."
+            },
+            {
+                "id": "destination_reached",
+                "description": "The car successfully arrives at the destination."
+            }
+            ],
+            "student_identifier_policy": {
+            "description": "Students may use any valid Lean proposition identifiers.",
+            "requirement": "Evaluation must map student-defined proposition variables to the semantic concepts in this specification rather than requiring specific variable names."
+            },
+            "stated_conditions": [
+            {
+                "id": "S3-C1",
+                "description": "If heavy congestion is detected, reaching the destination requires safe weather on the alternate route and sufficient fuel.",
+                "semantic_structure": {
+                "condition": "heavy_congestion",
+                "required_conditions_for_destination": [
+                    {
+                    "concept": "unsafe_weather",
+                    "negated": true
+                    },
+                    {
+                    "concept": "sufficient_fuel",
+                    "negated": false
+                    }
+                ]
+                },
+                "formalisation_note": "Safe weather must be represented as the negation of unsafe_weather. The phrase 'only if' must be interpreted in the correct implication direction."
+            },
+            {
+                "id": "S3-C2",
+                "description": "If weather on the alternate route is unsafe, the usual route must be used, which requires that there is no congestion.",
+                "semantic_structure": {
+                "antecedent": {
+                    "concept": "unsafe_weather",
+                    "negated": false
+                },
+                "consequent": {
+                    "concept": "heavy_congestion",
+                    "negated": true
+                }
+                }
+            }
+            ],
+            "target": {
+            "concept": "destination_reached",
+            "description": "The proof must derive that the car successfully reaches the destination.",
+            "exact_student_identifier_required": false
+            },
+            "target_statement": null,
+            "target_statement_status": "semantic_target_defined_exact_formula_not_prescribed"
+        },
+        "evaluation_requirements": [
+            {
+            "id": "S3-R1",
+            "criterion": "concept_mapping",
+            "requirement": "Identify which student-defined propositions represent heavy congestion, unsafe weather, sufficient fuel and destination reached."
+            },
+            {
+            "id": "S3-R2",
+            "criterion": "formalisation",
+            "requirement": "Represent safe weather as the negation of the proposition representing unsafe weather."
+            },
+            {
+            "id": "S3-R3",
+            "criterion": "formalisation",
+            "requirement": "Interpret 'reaching the destination only if safe weather and sufficient fuel hold' using the correct implication direction."
+            },
+            {
+            "id": "S3-R4",
+            "criterion": "formalisation",
+            "requirement": "Represent unsafe alternate-route weather as implying the absence of congestion on the usual route."
+            },
+            {
+            "id": "S3-R5",
+            "criterion": "proof_correctness",
+            "requirement": "Derive the proposition mapped to destination_reached from the student's formalised assumptions."
+            },
+            {
+            "id": "S3-R6",
+            "criterion": "requirements_compliance",
+            "requirement": "The proof must preserve the intended meaning of the scenario even if the student uses different proposition names or theorem structure."
+            },
+            {
+            "id": "S3-R7",
+            "criterion": "explanation",
+            "requirement": "Explain the proposition mapping, the interpretation of 'only if' and how the assumptions lead to the destination conclusion."
+            },
+            {
+            "id": "S3-R8",
+            "criterion": "compilation",
+            "requirement": "The submitted Lean code must compile."
+            }
+        ],
+        "marks": {
+            "formalisation_and_proof_correctness": 12,
+            "explanation": 3
+        }
+        },
+        {
+          "component_id": "scenario_4",
+          "title": "Advanced Cybersecurity System for Threats",
+          "artifact_type": "lean_proof_with_comments",
+          "maximum_marks": 15,
+          "task": {
+            "summary": "Prove that a detected threat leads to an automatic response, manual intervention and the conclusion that the threat is not a false positive.",
+            "propositions": {
+              "t": "A cybersecurity threat has been detected.",
+              "r": "An automatic response action is activated.",
+              "f": "The detected threat is a false positive.",
+              "m": "Manual intervention is initiated."
+            },
+            "target_statement": "((t -> r) ∧ (f -> ¬r) ∧ (r -> m) ∧ (¬m ∨ ¬f) ∧ t) -> (r ∧ m ∧ ¬f)"
+          },
+          "evaluation_requirements": [
+            {
+              "id": "S4-R1",
+              "criterion": "formalisation",
+              "requirement": "Use the exact implication required by the brief."
+            },
+            {
+              "id": "S4-R2",
+              "criterion": "proof_correctness",
+              "requirement": "Derive r from t and t -> r."
+            },
+            {
+              "id": "S4-R3",
+              "criterion": "proof_correctness",
+              "requirement": "Derive m from r and r -> m."
+            },
+            {
+              "id": "S4-R4",
+              "criterion": "proof_correctness",
+              "requirement": "Derive ¬f using the available assumptions."
+            },
+            {
+              "id": "S4-R5",
+              "criterion": "proof_correctness",
+              "requirement": "Construct the final result r ∧ m ∧ ¬f with the correct conjunction structure."
+            },
+            {
+              "id": "S4-R6",
+              "criterion": "requirements_compliance",
+              "requirement": "The proof must target the required implication rather than a modified statement."
+            },
+            {
+              "id": "S4-R7",
+              "criterion": "explanation",
+              "requirement": "Explain the derivation of r, m and ¬f."
+            },
+            {
+              "id": "S4-R8",
+              "criterion": "compilation",
+              "requirement": "The submitted Lean code must compile."
+            }
+          ],
+          "marks": {
+            "formalisation_and_proof_correctness": 12,
+            "explanation": 3
+          }
+        }
+      ]
+    },
+    {
+      "part_id": "part_2",
+      "title": "Proofs Using Supplied Provability Axioms",
+      "description": "Four Lean theorems using opaque propositions and supplied axioms. Each theorem must replace sorry with a complete proof and include an explanation.",
+      "shared_declarations": [
+        "opaque conj : Prop -> Prop -> Prop",
+        "opaque provable : Prop -> Prop",
+        "axiom AxConjElimRight : ∀ x y, provable (conj x y) -> provable y",
+        "axiom AxConjElimLeft : ∀ x y, provable (conj x y) -> provable x",
+        "axiom AxConjIntro : ∀ x y, provable x -> provable y -> provable (conj x y)",
+        "axiom AxPrTrue : provable True",
+        "axiom AxNotPrFalse : provable False -> False"
+      ],
+      "shared_requirements": [
+        "Use the supplied declarations and axioms.",
+        "Replace sorry with a complete proof.",
+        "Provide an explanation as a Lean comment.",
+        "Ensure the theorem compiles."
+      ],
+      "components": [
+        {
+          "component_id": "theorem_1",
+          "title": "Conjunction with False Is Not Provable",
+          "artifact_type": "lean_theorem_with_comments",
+          "maximum_marks": 10,
+          "target_statement": "∀ x, ¬ provable (conj x False) ∧ (provable x -> ¬ provable False)",
+          "evaluation_requirements": [
+            {
+              "id": "T1-R1",
+              "criterion": "proof_correctness",
+              "requirement": "Prove that provable (conj x False) leads to a contradiction."
+            },
+            {
+              "id": "T1-R2",
+              "criterion": "proof_correctness",
+              "requirement": "Prove that provable x does not imply that False is provable."
+            },
+            {
+              "id": "T1-R3",
+              "criterion": "axiom_usage",
+              "requirement": "Use appropriate supplied axioms, including conjunction elimination and AxNotPrFalse."
+            },
+            {
+              "id": "T1-R4",
+              "criterion": "explanation",
+              "requirement": "Explain both conjuncts of the theorem."
+            },
+            {
+              "id": "T1-R5",
+              "criterion": "compilation",
+              "requirement": "The theorem must compile."
+            }
+          ],
+          "marks": {
+            "proof_correctness": 8,
+            "explanation": 2
+          }
+        },
+        {
+          "component_id": "theorem_2",
+          "title": "Principle of Explosion",
+          "artifact_type": "lean_theorem_with_comments",
+          "maximum_marks": 10,
+          "target_statement": "∀ x y, provable (conj x False) -> provable y",
+          "evaluation_requirements": [
+            {
+              "id": "T2-R1",
+              "criterion": "proof_correctness",
+              "requirement": "Extract provable False from provable (conj x False)."
+            },
+            {
+              "id": "T2-R2",
+              "criterion": "proof_correctness",
+              "requirement": "Use the resulting contradiction to derive provable y."
+            },
+            {
+              "id": "T2-R3",
+              "criterion": "axiom_usage",
+              "requirement": "Use the supplied conjunction-elimination and falsehood axioms appropriately."
+            },
+            {
+              "id": "T2-R4",
+              "criterion": "explanation",
+              "requirement": "Explain the principle of explosion and how it is implemented."
+            },
+            {
+              "id": "T2-R5",
+              "criterion": "compilation",
+              "requirement": "The theorem must compile."
+            }
+          ],
+          "marks": {
+            "proof_correctness": 8,
+            "explanation": 2
+          }
+        },
+        {
+          "component_id": "theorem_3",
+          "title": "Rearranging Nested Conjunctions",
+          "artifact_type": "lean_theorem_with_comments",
+          "maximum_marks": 10,
+          "target_statement": "∀ x y z, provable (conj x (conj y z)) -> provable (conj (conj y x) z)",
+          "evaluation_requirements": [
+            {
+              "id": "T3-R1",
+              "criterion": "proof_correctness",
+              "requirement": "Extract provable x, provable y and provable z from the nested conjunction."
+            },
+            {
+              "id": "T3-R2",
+              "criterion": "proof_correctness",
+              "requirement": "Construct provable (conj y x)."
+            },
+            {
+              "id": "T3-R3",
+              "criterion": "proof_correctness",
+              "requirement": "Construct provable (conj (conj y x) z)."
+            },
+            {
+              "id": "T3-R4",
+              "criterion": "axiom_usage",
+              "requirement": "Use AxConjElimLeft, AxConjElimRight and AxConjIntro appropriately."
+            },
+            {
+              "id": "T3-R5",
+              "criterion": "explanation",
+              "requirement": "Explain the elimination and reconstruction steps."
+            },
+            {
+              "id": "T3-R6",
+              "criterion": "compilation",
+              "requirement": "The theorem must compile."
+            }
+          ],
+          "marks": {
+            "proof_correctness": 8,
+            "explanation": 2
+          }
+        },
+        {
+          "component_id": "theorem_4",
+          "title": "Using Negation to Infer Missing Provability",
+          "artifact_type": "lean_theorem_with_comments",
+          "maximum_marks": 10,
+          "target_statement": "∀ x y : Prop, ¬ provable (conj x y) -> provable x -> ¬ provable y",
+          "evaluation_requirements": [
+            {
+              "id": "T4-R1",
+              "criterion": "proof_correctness",
+              "requirement": "Assume provable y and combine it with provable x."
+            },
+            {
+              "id": "T4-R2",
+              "criterion": "proof_correctness",
+              "requirement": "Use AxConjIntro to derive provable (conj x y)."
+            },
+            {
+              "id": "T4-R3",
+              "criterion": "proof_correctness",
+              "requirement": "Use the contradiction with ¬ provable (conj x y) to establish ¬ provable y."
+            },
+            {
+              "id": "T4-R4",
+              "criterion": "axiom_usage",
+              "requirement": "Supply the arguments to AxConjIntro correctly."
+            },
+            {
+              "id": "T4-R5",
+              "criterion": "explanation",
+              "requirement": "Explain the contradiction-based proof strategy."
+            },
+            {
+              "id": "T4-R6",
+              "criterion": "compilation",
+              "requirement": "The theorem must compile."
+            }
+          ],
+          "marks": {
+            "proof_correctness": 8,
+            "explanation": 2
+          }
+        }
+      ]
+    }
+  ],
+  "evaluation_policy": {
+    "human_oversight_required": true,
+    "evaluate_proof_and_explanation_separately": true,
+    "compilation_policy": {
+      "description": "Compilation is a necessary part of proof verification.",
+      "guidance": [
+        "A compilation failure should negatively affect formalisation or proof-correctness marks.",
+        "A compilation failure should not automatically reduce explanation marks if the explanation remains logically accurate.",
+        "Errors caused by shared declarations may affect multiple components, but the evaluator should identify the original source of the error.",
+        "Do not assume a proof is correct merely because its intended reasoning appears plausible."
+      ]
+    },
+    "submission_format_policy": {
+      "required": "One Lean file containing both parts.",
+      "guidance": "A multi-file submission should be recorded as a requirements-compliance issue. It should not automatically be treated as a logical or proof error unless the file separation affects compilation or verification."
+    },
+    "feedback_requirements": [
+      "Feedback must identify the relevant component.",
+      "Feedback must distinguish strengths from weaknesses.",
+      "Feedback must cite evidence from the submission.",
+      "Feedback must distinguish formalisation, proof correctness, compilation and explanation issues.",
+      "Feedback must not invent missing requirements or assumptions.",
+      "Suggestions must be actionable and grounded in the assessment specification."
+    ]
+  },
+  "specification_notes": [
+    {
+        "component_id": "scenario_3",
+        "issue": "The supplied brief does not provide an explicit complete target formula or fixed Lean theorem statement.",
+        "resolution": "The intended semantic conclusion is that the car successfully reaches the destination. Students may use different proposition names and may formalise the antecedent in different logically valid ways.",
+        "evaluation_guidance": "Evaluate whether the student's proposition representing destination_reached is correctly derived from a formalisation that preserves the stated scenario conditions. Do not require an exact variable name or exact theorem syntax."
+    },
+    {
+        "component_id": "scenario_1",
+        "issue": "The intended eligibility condition is explicitly defined as requiring both a prerequisite disjunction and an approval disjunction. However, the supplied implication rules make each individual prerequisite or approval independently sufficient for deriving provable z, and the disjunction assumptions provide x1, x2, y1 or y2 rather than their provable forms.",
+        "resolution": "Use the conjunctive requirement ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z as the authoritative semantic expectation.",
+        "evaluation_guidance": "Evaluate whether the student meaningfully uses both prerequisite and approval conditions and handles all four combinations. Separately identify proof defects caused by unused case evidence, reliance on unrelated additional assumptions, or failure to connect ordinary propositions with the provable predicate.",
+        "required_action": "Preserve the supplied Lean declarations in the assessment materials, but document that they do not fully encode the stated conjunctive eligibility requirement."
+        }
+  ]
+}

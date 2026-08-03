@@ -1,0 +1,612 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Generated Feedback",
+  "description": "Schema for structured, rubric-guided formative feedback generated from a processed student submission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "feedback_id",
+    "processed_submission_id",
+    "student_id",
+    "assessment_id",
+    "generation",
+    "criterion_assessments",
+    "observations",
+    "feedback_sections",
+    "overall_feedback"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of the generated feedback schema.",
+      "minLength": 1
+    },
+    "feedback_id": {
+      "type": "string",
+      "description": "Unique identifier for this generated feedback record.",
+      "minLength": 1
+    },
+    "processed_submission_id": {
+      "type": "string",
+      "description": "Identifier of the processed submission used to generate the feedback.",
+      "minLength": 1
+    },
+    "student_id": {
+      "type": "string",
+      "description": "Identifier of the student associated with the submission.",
+      "minLength": 1
+    },
+    "assessment_id": {
+      "type": "string",
+      "description": "Identifier of the assessment specification used during feedback generation.",
+      "minLength": 1
+    },
+    "generation": {
+      "$ref": "#/$defs/generationRecord"
+    },
+    "criterion_assessments": {
+      "type": "array",
+      "description": "Internal rubric-level assessments. Every applicable rubric requirement should receive an assessment.",
+      "items": {
+        "$ref": "#/$defs/criterionAssessment"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "description": "Consolidated feedback observations derived from one or more criterion assessments.",
+      "items": {
+        "$ref": "#/$defs/feedbackObservation"
+      }
+    },
+    "feedback_sections": {
+      "type": "array",
+      "description": "Student-facing feedback grouped at part, task, task-group or overall level.",
+      "items": {
+        "$ref": "#/$defs/feedbackSection"
+      }
+    },
+    "overall_feedback": {
+      "$ref": "#/$defs/overallFeedback"
+    }
+  },
+  "$defs": {
+    "generationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "provider",
+        "model",
+        "prompt_template_id",
+        "pipeline_version"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "description": "Feedback-generation method or experimental condition.",
+          "enum": [
+            "baseline",
+            "criterion_decomposed",
+            "self_reflective",
+            "criterion_decomposed_self_reflective",
+            "other"
+          ]
+        },
+        "provider": {
+          "type": "string",
+          "description": "Provider or runtime used to execute the model.",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "description": "Name or identifier of the model used.",
+          "minLength": 1
+        },
+        "prompt_template_id": {
+          "type": "string",
+          "description": "Identifier of the prompt template used for generation.",
+          "minLength": 1
+        },
+        "pipeline_version": {
+          "type": "string",
+          "description": "Version of the feedback-generation pipeline.",
+          "minLength": 1
+        }
+      }
+    },
+    "criterionAssessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "criterion_assessment_id",
+        "requirement_id",
+        "status",
+        "internal_finding",
+        "verification_status",
+        "confidence"
+      ],
+      "properties": {
+        "criterion_assessment_id": {
+          "type": "string",
+          "description": "Unique identifier for this criterion-level assessment.",
+          "minLength": 1
+        },
+        "requirement_id": {
+          "type": "string",
+          "description": "Identifier of the rubric requirement from the assessment specification.",
+          "minLength": 1
+        },
+        "part_ids": {
+          "type": "array",
+          "description": "Assessment parts associated with this criterion assessment.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "task_ids": {
+          "type": "array",
+          "description": "Assessment tasks associated with this criterion assessment.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "type": "string",
+          "description": "The extent to which the submission satisfies the rubric requirement.",
+          "enum": [
+            "met",
+            "partially_met",
+            "not_met",
+            "missing",
+            "not_assessable"
+          ]
+        },
+        "internal_finding": {
+          "type": "string",
+          "description": "Technical or evaluator-facing explanation of the criterion judgement.",
+          "minLength": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verificationStatus"
+        },
+        "evidence": {
+          "type": "array",
+          "description": "Evidence supporting the criterion assessment. Optional at schema level but expected whenever relevant evidence exists.",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the assessment based on the available evidence.",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "feedbackObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observation_id",
+        "feedback_type",
+        "scope",
+        "requirement_ids",
+        "internal_finding",
+        "student_feedback",
+        "verification_status",
+        "confidence"
+      ],
+      "properties": {
+        "observation_id": {
+          "type": "string",
+          "description": "Unique identifier for the feedback observation.",
+          "minLength": 1
+        },
+        "feedback_type": {
+          "type": "string",
+          "description": "Communicative purpose of the feedback observation.",
+          "enum": [
+            "strength",
+            "error",
+            "omission",
+            "suggestion"
+          ]
+        },
+        "scope": {
+          "type": "string",
+          "description": "Level of the assessment to which the observation applies.",
+          "enum": [
+            "overall",
+            "part",
+            "task",
+            "task_group",
+            "attempt"
+          ]
+        },
+        "part_ids": {
+          "type": "array",
+          "description": "Assessment parts associated with the observation.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "task_ids": {
+          "type": "array",
+          "description": "Assessment tasks associated with the observation.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "attempt_unit_ids": {
+          "type": "array",
+          "description": "Processed submission unit identifiers for specific attempts discussed by this observation.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "requirement_ids": {
+          "type": "array",
+          "description": "Rubric requirements addressed by the observation.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "criterion_assessment_ids": {
+          "type": "array",
+          "description": "Criterion assessments consolidated into this feedback observation.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "internal_finding": {
+          "type": "string",
+          "description": "Technical or evaluator-facing account of the finding.",
+          "minLength": 1
+        },
+        "student_feedback": {
+          "type": "string",
+          "description": "Final student-facing formulation of the feedback observation.",
+          "minLength": 1
+        },
+        "suggestion": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Optional actionable suggestion linked to the observation.",
+          "minLength": 1
+        },
+        "verification_status": {
+          "$ref": "#/$defs/verificationStatus"
+        },
+        "confidence": {
+          "type": "number",
+          "description": "Confidence in the assessment based on the available evidence.",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "evidence": {
+          "type": "array",
+          "description": "Evidence supporting the observation. Optional at schema level but expected whenever relevant evidence exists.",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        }
+      }
+    },
+    "feedbackSection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section_id",
+        "scope",
+        "summary",
+        "observation_ids"
+      ],
+      "properties": {
+        "section_id": {
+          "type": "string",
+          "description": "Unique identifier for this feedback section.",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "description": "Optional human-readable section label.",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "description": "Assessment level represented by this feedback section.",
+          "enum": [
+            "overall",
+            "part",
+            "task",
+            "task_group"
+          ]
+        },
+        "part_ids": {
+          "type": "array",
+          "description": "Assessment parts covered by the section.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "task_ids": {
+          "type": "array",
+          "description": "Assessment tasks covered by the section.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "summary": {
+          "type": "string",
+          "description": "Student-facing synthesis for this assessment section.",
+          "minLength": 1
+        },
+        "observation_ids": {
+          "type": "array",
+          "description": "Feedback observations represented in the section.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "const": "part"
+              }
+            },
+            "required": [
+              "scope"
+            ]
+          },
+          "then": {
+            "required": [
+              "part_ids"
+            ],
+            "properties": {
+              "part_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "enum": [
+                  "task",
+                  "task_group"
+                ]
+              }
+            },
+            "required": [
+              "scope"
+            ]
+          },
+          "then": {
+            "required": [
+              "task_ids"
+            ],
+            "properties": {
+              "task_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "overallFeedback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary",
+        "strengths_summary",
+        "improvement_summary",
+        "observation_ids"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "description": "Concise overall student-facing assessment of the submission.",
+          "minLength": 1
+        },
+        "strengths_summary": {
+          "type": "string",
+          "description": "Overall synthesis of the submission's main strengths.",
+          "minLength": 1
+        },
+        "improvement_summary": {
+          "type": "string",
+          "description": "Overall synthesis of the most important areas for improvement.",
+          "minLength": 1
+        },
+        "observation_ids": {
+          "type": "array",
+          "description": "Observations reflected in the overall feedback.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "verificationStatus": {
+      "type": "string",
+      "description": "How the finding or observation was verified.",
+      "enum": [
+        "verified_by_tool",
+        "supported_by_submission",
+        "inferred",
+        "not_verified"
+      ]
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/submissionReferenceEvidence"
+        },
+        {
+          "$ref": "#/$defs/absenceEvidence"
+        }
+      ]
+    },
+    "submissionReferenceEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_type",
+        "artifact_id"
+      ],
+      "properties": {
+        "evidence_type": {
+          "const": "submission_reference"
+        },
+        "artifact_id": {
+          "type": "string",
+          "description": "Identifier of the processed artifact containing the evidence.",
+          "minLength": 1
+        },
+        "unit_id": {
+          "type": "string",
+          "description": "Identifier of the processed submission unit containing the evidence.",
+          "minLength": 1
+        },
+        "block_id": {
+          "type": "string",
+          "description": "Identifier of the content block containing the evidence.",
+          "minLength": 1
+        },
+        "excerpt": {
+          "type": "string",
+          "description": "Optional short excerpt illustrating the evidence.",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "description": "Optional explanation of how the referenced content supports the finding.",
+          "minLength": 1
+        },
+        "source_range": {
+          "$ref": "#/$defs/sourceRange"
+        }
+      },
+      "anyOf": [
+        {
+          "required": ["unit_id"]
+        },
+        {
+          "required": ["block_id"]
+        },
+        {
+          "required": ["source_range"]
+        }
+      ]
+    },
+    "absenceEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_type",
+        "description"
+      ],
+      "properties": {
+        "evidence_type": {
+          "const": "absence"
+        },
+        "part_id": {
+          "type": "string",
+          "description": "Assessment part for which content was expected but not identified.",
+          "minLength": 1
+        },
+        "task_id": {
+          "type": "string",
+          "description": "Assessment task for which content was expected but not identified.",
+          "minLength": 1
+        },
+        "requirement_id": {
+          "type": "string",
+          "description": "Rubric requirement for which supporting content was absent.",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "description": "Explanation of the missing or absent evidence.",
+          "minLength": 1
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "part_id"
+          ]
+        },
+        {
+          "required": [
+            "task_id"
+          ]
+        },
+        {
+          "required": [
+            "requirement_id"
+          ]
+        }
+      ]
+    },
+    "sourceRange": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start_line",
+        "end_line"
+      ],
+      "properties": {
+        "start_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "end_line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "start_column": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        },
+        "end_column": {
+          "type": ["integer", "null"],
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,923 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evaluation Results",
+  "description": "Schema for automatic evaluation of generated feedback against normalised human feedback, rubric requirements and submission evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evaluation_id",
+    "generated_feedback_id",
+    "human_feedback_id",
+    "processed_submission_id",
+    "assessment_id",
+    "student_id",
+    "evaluator",
+    "observation_matches",
+    "human_observation_results",
+    "generated_observation_results",
+    "rubric_evaluation",
+    "summary_comparisons",
+    "aggregate_metrics"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Version of the evaluation results schema.",
+      "minLength": 1
+    },
+    "evaluation_id": {
+      "type": "string",
+      "description": "Unique identifier for this evaluation record.",
+      "minLength": 1
+    },
+    "generated_feedback_id": {
+      "type": "string",
+      "description": "Identifier of the generated feedback record being evaluated.",
+      "minLength": 1
+    },
+    "human_feedback_id": {
+      "type": "string",
+      "description": "Identifier of the normalised human feedback record used as a reference.",
+      "minLength": 1
+    },
+    "processed_submission_id": {
+      "type": "string",
+      "description": "Identifier of the processed submission used for evidence checking.",
+      "minLength": 1
+    },
+    "assessment_id": {
+      "type": "string",
+      "description": "Identifier of the assessment specification and rubric used in evaluation.",
+      "minLength": 1
+    },
+    "student_id": {
+      "type": "string",
+      "description": "Identifier of the student associated with the evaluated submission.",
+      "minLength": 1
+    },
+    "evaluator": {
+      "$ref": "#/$defs/evaluatorRecord"
+    },
+    "observation_matches": {
+      "type": "array",
+      "description": "Many-to-many mappings between human and generated feedback observations.",
+      "items": {
+        "$ref": "#/$defs/observationMatch"
+      }
+    },
+    "human_observation_results": {
+      "type": "array",
+      "description": "Evaluation outcome for every human feedback observation.",
+      "items": {
+        "$ref": "#/$defs/humanObservationResult"
+      }
+    },
+    "generated_observation_results": {
+      "type": "array",
+      "description": "Mapping and evidence-based validity outcome for every generated observation.",
+      "items": {
+        "$ref": "#/$defs/generatedObservationResult"
+      }
+    },
+    "rubric_evaluation": {
+      "$ref": "#/$defs/rubricEvaluation"
+    },
+    "summary_comparisons": {
+      "type": "array",
+      "description": "Automatic comparisons between generated and human overall or section-level feedback.",
+      "items": {
+        "$ref": "#/$defs/summaryComparison"
+      }
+    },
+    "aggregate_metrics": {
+      "$ref": "#/$defs/aggregateMetrics"
+    },
+    "diagnostics": {
+      "type": "array",
+      "description": "Optional warnings, failures or ambiguities encountered during evaluation.",
+      "items": {
+        "$ref": "#/$defs/diagnostic"
+      }
+    }
+  },
+  "$defs": {
+    "evaluatorRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_method",
+        "provider",
+        "model",
+        "prompt_template_id",
+        "pipeline_version",
+        "matching_configuration"
+      ],
+      "properties": {
+        "evaluation_method": {
+          "type": "string",
+          "description": "Automatic evaluation method used.",
+          "enum": [
+            "semantic_structural_evidence_based",
+            "llm_judge",
+            "embedding_based",
+            "hybrid",
+            "other"
+          ]
+        },
+        "provider": {
+          "type": "string",
+          "description": "Provider or runtime used to execute the evaluator.",
+          "minLength": 1
+        },
+        "model": {
+          "type": "string",
+          "description": "Name or identifier of the primary evaluation model.",
+          "minLength": 1
+        },
+        "embedding_model": {
+          "type": "string",
+          "description": "Optional embedding model used for semantic similarity.",
+          "minLength": 1
+        },
+        "prompt_template_id": {
+          "type": "string",
+          "description": "Identifier of the evaluation prompt template.",
+          "minLength": 1
+        },
+        "pipeline_version": {
+          "type": "string",
+          "description": "Version of the evaluation pipeline.",
+          "minLength": 1
+        },
+        "matching_configuration": {
+          "$ref": "#/$defs/matchingConfiguration"
+        }
+      }
+    },
+    "matchingConfiguration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic_similarity_enabled",
+        "scope_alignment_enabled",
+        "feedback_type_alignment_enabled",
+        "requirement_overlap_enabled",
+        "combined_match_threshold"
+      ],
+      "properties": {
+        "semantic_similarity_enabled": {
+          "type": "boolean"
+        },
+        "scope_alignment_enabled": {
+          "type": "boolean"
+        },
+        "feedback_type_alignment_enabled": {
+          "type": "boolean"
+        },
+        "requirement_overlap_enabled": {
+          "type": "boolean"
+        },
+        "semantic_similarity_threshold": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "combined_match_threshold": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "weights": {
+          "$ref": "#/$defs/matchingWeights"
+        }
+      }
+    },
+    "matchingWeights": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "semantic_similarity": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "scope_alignment": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "feedback_type_alignment": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "requirement_overlap": {
+          "$ref": "#/$defs/unitInterval"
+        }
+      },
+      "minProperties": 1
+    },
+    "observationMatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "match_id",
+        "human_observation_ids",
+        "generated_observation_ids",
+        "match_type",
+        "decision",
+        "scores",
+        "rationale"
+      ],
+      "properties": {
+        "match_id": {
+          "type": "string",
+          "description": "Unique identifier for the observation match.",
+          "minLength": 1
+        },
+        "human_observation_ids": {
+          "$ref": "#/$defs/nonEmptyIdArray"
+        },
+        "generated_observation_ids": {
+          "$ref": "#/$defs/nonEmptyIdArray"
+        },
+        "match_type": {
+          "type": "string",
+          "enum": [
+            "one_to_one",
+            "one_to_many",
+            "many_to_one",
+            "many_to_many"
+          ]
+        },
+        "decision": {
+          "type": "string",
+          "description": "Final automatic matching decision.",
+          "enum": [
+            "matched",
+            "partial_match",
+            "not_matched",
+            "unresolved"
+          ]
+        },
+        "scores": {
+          "$ref": "#/$defs/matchScores"
+        },
+        "matched_claims": {
+          "type": "array",
+          "description": "Optional concise descriptions of the claims shared across the observations.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "unmatched_claims": {
+          "type": "array",
+          "description": "Optional claims represented on only one side of a partial match.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Explanation for the automatic match decision.",
+          "minLength": 1
+        }
+      }
+    },
+    "matchScores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "combined_score"
+      ],
+      "properties": {
+        "semantic_similarity": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "scope_alignment": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "feedback_type_alignment": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "requirement_overlap": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "combined_score": {
+          "$ref": "#/$defs/unitInterval"
+        }
+      }
+    },
+    "humanObservationResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_observation_id",
+        "status",
+        "match_ids"
+      ],
+      "properties": {
+        "human_observation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "matched",
+            "partially_matched",
+            "not_matched",
+            "not_assessable",
+            "unresolved"
+          ]
+        },
+        "match_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "coverage_score": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Optional explanation of whether and how the human observation was covered.",
+          "minLength": 1
+        }
+      }
+    },
+    "generatedObservationResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generated_observation_id",
+        "mapping_status",
+        "validity_status",
+        "classification",
+        "match_ids",
+        "evidence_evaluation"
+      ],
+      "properties": {
+        "generated_observation_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mapping_status": {
+          "type": "string",
+          "description": "Whether the observation maps to human feedback.",
+          "enum": [
+            "matched",
+            "partially_matched",
+            "no_mapping",
+            "unresolved"
+          ]
+        },
+        "validity_status": {
+          "type": "string",
+          "description": "Evidence-based automatic judgement of the generated observation.",
+          "enum": [
+            "supported",
+            "partially_supported",
+            "unsupported",
+            "not_assessable",
+            "unresolved"
+          ]
+        },
+        "classification": {
+          "type": "string",
+          "description": "Final category used for aggregate evaluation.",
+          "enum": [
+            "matched_human_feedback",
+            "additional_valid",
+            "unsupported",
+            "unresolved"
+          ]
+        },
+        "match_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "evidence_evaluation": {
+          "$ref": "#/$defs/evidenceEvaluation"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Optional explanation of the final classification.",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "const": "matched_human_feedback"
+              }
+            },
+            "required": [
+              "classification"
+            ]
+          },
+          "then": {
+            "properties": {
+              "match_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "const": "additional_valid"
+              }
+            },
+            "required": [
+              "classification"
+            ]
+          },
+          "then": {
+            "properties": {
+              "mapping_status": {
+                "const": "no_mapping"
+              },
+              "validity_status": {
+                "enum": [
+                  "supported",
+                  "partially_supported"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "classification": {
+                "const": "unsupported"
+              }
+            },
+            "required": [
+              "classification"
+            ]
+          },
+          "then": {
+            "properties": {
+              "validity_status": {
+                "const": "unsupported"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "evidenceEvaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "evidence_coverage",
+        "rubric_alignment",
+        "rationale"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "partially_supported",
+            "unsupported",
+            "not_assessable",
+            "unresolved"
+          ]
+        },
+        "evidence_coverage": {
+          "type": "string",
+          "description": "Whether the cited or located evidence sufficiently supports the observation.",
+          "enum": [
+            "sufficient",
+            "partial",
+            "insufficient",
+            "none",
+            "not_applicable",
+            "unresolved"
+          ]
+        },
+        "rubric_alignment": {
+          "type": "string",
+          "description": "Whether the observation aligns with the assessment requirements.",
+          "enum": [
+            "aligned",
+            "partially_aligned",
+            "not_aligned",
+            "not_applicable",
+            "unresolved"
+          ]
+        },
+        "requirement_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "artifact_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "unit_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Explanation of the evidence and rubric judgement.",
+          "minLength": 1
+        }
+      }
+    },
+    "rubricEvaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applicable_requirement_ids",
+        "assessed_requirement_ids",
+        "unassessed_requirement_ids",
+        "student_facing_requirement_ids",
+        "rubric_coverage",
+        "requirement_results"
+      ],
+      "properties": {
+        "applicable_requirement_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "assessed_requirement_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "unassessed_requirement_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "student_facing_requirement_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "rubric_coverage": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "student_facing_issue_coverage": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "requirement_results": {
+          "type": "array",
+          "description": "Evaluation result for each applicable rubric requirement.",
+          "items": {
+            "$ref": "#/$defs/requirementEvaluation"
+          }
+        }
+      }
+    },
+    "requirementEvaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requirement_id",
+        "criterion_assessment_present",
+        "student_facing_observation_present",
+        "status"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "criterion_assessment_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "criterion_assessment_present": {
+          "type": "boolean"
+        },
+        "student_facing_observation_present": {
+          "type": "boolean"
+        },
+        "generated_observation_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "covered",
+            "partially_covered",
+            "internally_assessed_only",
+            "not_covered",
+            "not_applicable",
+            "unresolved"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "summaryComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "comparison_id",
+        "scope",
+        "generated_section_ids",
+        "human_section_ids",
+        "semantic_similarity",
+        "key_point_coverage",
+        "contradiction_status",
+        "scope_alignment",
+        "rationale"
+      ],
+      "properties": {
+        "comparison_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "enum": [
+            "overall",
+            "part",
+            "task",
+            "task_group"
+          ]
+        },
+        "part_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "task_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "generated_section_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "human_section_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "semantic_similarity": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "key_point_coverage": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "contradiction_status": {
+          "type": "string",
+          "enum": [
+            "none",
+            "minor",
+            "major",
+            "unresolved"
+          ]
+        },
+        "scope_alignment": {
+          "type": "string",
+          "enum": [
+            "aligned",
+            "partially_aligned",
+            "not_aligned",
+            "unresolved"
+          ]
+        },
+        "shared_key_points": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "missing_key_points": {
+          "type": "array",
+          "description": "Important human-feedback points absent from the generated summary.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "additional_key_points": {
+          "type": "array",
+          "description": "Generated-summary points not expressed in the human summary.",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "const": "part"
+              }
+            },
+            "required": [
+              "scope"
+            ]
+          },
+          "then": {
+            "required": [
+              "part_ids"
+            ],
+            "properties": {
+              "part_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scope": {
+                "enum": [
+                  "task",
+                  "task_group"
+                ]
+              }
+            },
+            "required": [
+              "scope"
+            ]
+          },
+          "then": {
+            "required": [
+              "task_ids"
+            ],
+            "properties": {
+              "task_ids": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "aggregateMetrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_feedback_coverage",
+        "observation_precision",
+        "observation_recall",
+        "rubric_coverage",
+        "additional_valid_observation_rate",
+        "counts"
+      ],
+      "properties": {
+        "human_feedback_coverage": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "observation_precision": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "observation_recall": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "rubric_coverage": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "student_facing_issue_coverage": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "additional_valid_observation_rate": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "average_match_score": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "average_summary_similarity": {
+          "$ref": "#/$defs/unitInterval"
+        },
+        "counts": {
+          "$ref": "#/$defs/evaluationCounts"
+        }
+      }
+    },
+    "evaluationCounts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "human_observations",
+        "matched_human_observations",
+        "partially_matched_human_observations",
+        "unmatched_human_observations",
+        "generated_observations",
+        "matched_generated_observations",
+        "additional_valid_observations",
+        "unsupported_generated_observations",
+        "unresolved_generated_observations",
+        "applicable_requirements",
+        "assessed_requirements"
+      ],
+      "properties": {
+        "human_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "matched_human_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "partially_matched_human_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "unmatched_human_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "not_assessable_human_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "generated_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "matched_generated_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "additional_valid_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "unsupported_generated_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "unresolved_generated_observations": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "applicable_requirements": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "assessed_requirements": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        },
+        "student_facing_requirements": {
+          "$ref": "#/$defs/nonNegativeInteger"
+        }
+      }
+    },
+    "diagnostic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "diagnostic_id",
+        "severity",
+        "code",
+        "message"
+      ],
+      "properties": {
+        "diagnostic_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "description": "Machine-readable diagnostic code.",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "description": "Human-readable diagnostic message.",
+          "minLength": 1
+        },
+        "related_human_observation_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "related_generated_observation_ids": {
+          "$ref": "#/$defs/idArray"
+        },
+        "related_requirement_ids": {
+          "$ref": "#/$defs/idArray"
+        }
+      }
+    },
+    "unitInterval": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "nonNegativeInteger": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "idArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "nonEmptyIdArray": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}

@@ -1,0 +1,760 @@
+{
+  "assessment_id": "assessment_2",
+  "title": "Ontology, Prolog and Modal Logic",
+  "module": {
+    "code": "OCOM5201M",
+    "title": "Knowledge Representation and Reasoning"
+  },
+  "assessment_structure": {
+    "part_1": {
+      "id": "part_1_ontology",
+      "title": "Ontology",
+      "weight_percentage": 60,
+      "required_artifacts": [
+        {
+          "artifact_type": "owl_ontology",
+          "formats": ["owl", "owx"],
+          "required": true
+        },
+        {
+          "artifact_type": "report",
+          "format": "pdf",
+          "required": true,
+          "maximum_words": 750
+        }
+      ]
+    },
+    "part_2": {
+      "id": "part_2_prolog_modal_logic",
+      "title": "Prolog and Modal Logic",
+      "weight_percentage": 40,
+      "required_artifacts": [
+        {
+          "artifact_type": "prolog_source",
+          "formats": ["pl", "txt"],
+          "required": true
+        }
+      ]
+    }
+  },
+
+  "global_requirements": [
+    {
+        "id": "GR1",
+        "requirement": "All required artifacts for Part 1 and Part 2 must be submitted.",
+        "applies_to": "entire_submission",
+        "evaluation_dimension": "completeness"
+    },
+    {
+        "id": "GR2",
+        "requirement": "The submitted artifacts must be readable and accessible in the required formats.",
+        "applies_to": "entire_submission",
+        "evaluation_dimension": "submission_format"
+    },
+    {
+        "id": "GR3",
+        "requirement": "Part 1 must include both the OWL ontology and the accompanying report.",
+        "applies_to": "part_1",
+        "evaluation_dimension": "completeness"
+    },
+    {
+        "id": "GR4",
+        "requirement": "The ontology must be logically consistent and must load successfully in a compatible ontology editor or reasoner.",
+        "applies_to": "part_1",
+        "evaluation_dimension": "ontology_validity"
+    },
+    {
+        "id": "GR5",
+        "requirement": "The report must describe and justify the ontology design presented in the submitted OWL artifact.",
+        "applies_to": "part_1",
+        "evaluation_dimension": "explanation"
+    },
+    {
+        "id": "GR6",
+        "requirement": "Part 2 must be completed using the supplied Prolog and modal logic framework.",
+        "applies_to": "part_2",
+        "evaluation_dimension": "framework_compliance"
+    },
+    {
+        "id": "GR7",
+        "requirement": "The submitted Prolog source must load without syntax errors.",
+        "applies_to": "part_2",
+        "evaluation_dimension": "compilation"
+    },
+    {
+        "id": "GR8",
+        "requirement": "Answers for Tasks 1 to 4 must be implemented in their required answer predicates using the formula constructors supported by the supplied framework.",
+        "applies_to": "part_2_tasks_1_to_4",
+        "evaluation_dimension": "requirements_compliance"
+    },
+    {
+        "id": "GR9",
+        "requirement": "Each formula submitted for Tasks 1 to 4 must express the semantic constraint described by the corresponding task.",
+        "applies_to": "part_2_tasks_1_to_4",
+        "evaluation_dimension": "logical_correctness"
+    },
+    {
+        "id": "GR10",
+        "requirement": "Task 5 must contain three distinct problem-and-solution examples implemented in the required answer predicates.",
+        "applies_to": "part_2_task_5",
+        "evaluation_dimension": "completeness"
+    },
+    {
+        "id": "GR11",
+        "requirement": "Each Task 5 preventive formula must correspond to the problem described in the same example.",
+        "applies_to": "part_2_task_5",
+        "evaluation_dimension": "semantic_alignment"
+    }
+],
+
+  "part_2_environment": {
+    "summary": "Modal logic interpreted over a rectangular grid of states.",
+
+    "state_representation": {
+      "format": "[Row, Column]",
+      "row_range": {
+        "minimum": 0,
+        "maximum": 10
+      },
+      "column_range": {
+        "minimum": 0,
+        "maximum": 10
+      }
+    },
+
+    "atomic_propositions": {
+      "bread": "Bread is present at the current state.",
+      "filling": "Filling is present at the current state.",
+      "false": "False proposition."
+    },
+
+    "logical_operators": {
+      "or(P,Q)": "Logical disjunction.",
+      "and(P,Q)": "Logical conjunction.",
+      "not(P)": "Logical negation.",
+      "implies(P,Q)": "Logical implication."
+    },
+
+    "modal_operators": {
+      "dia(R,F)": "Formula F holds at some state reachable by relation R.",
+      "box(R,F)": "Formula F holds at every state reachable by relation R."
+    },
+
+    "relations": {
+      "above": "Relation defined by rel(above,...).",
+      "oneabove": "Relation defined by rel(oneabove,...).",
+      "below": "Inverse of above.",
+      "onebelow": "Inverse of oneabove.",
+      "isLeftOf": "Relation defined by rel(isLeftOf,...).",
+      "isRightOf": "Inverse of isLeftOf."
+    },
+
+    "evaluation_policy": [
+      "Evaluate formulas according to the supplied Prolog semantics.",
+      "Do not assume spatial meanings beyond the supplied rel/3 definitions.",
+      "Accept any logically equivalent formula.",
+      "Do not require syntactic equivalence."
+    ]
+  },
+
+  "specification_notes": [
+    {
+      "component_id": "part_2",
+      "issue": "The assessment brief's detailed marking guidance refers to predicates and examples that do not appear in the supplied Prolog starter code.",
+      "resolution": "The supplied Prolog file is treated as the authoritative specification for Tasks 1–5.",
+      "evaluation_guidance": "Evaluate answers according to the supplied predicates, relations and task descriptions rather than the inconsistent examples in the assessment brief."
+    }
+  ],
+
+  "components": [
+    {
+      "component_id": "part_1_ontology",
+      "title": "Sandwich Ontology",
+      "component_type": "ontology_and_report",
+      "maximum_percentage": 60,
+
+      "artifacts": [
+        {
+          "artifact_type": "owl_ontology",
+          "required": true
+        },
+        {
+          "artifact_type": "report",
+          "required": true
+        }
+      ],
+
+      "task": {
+            "description": "Develop an OWL ontology modelling the sandwich domain and submit an accompanying report describing the ontology design and implementation."
+    },
+
+      "evaluation_requirements": [
+        {
+            "id": "P1-R1",
+            "criterion": "classes",
+            "requirement": "The ontology contains at least ten relevant and appropriately varied classes."
+        },
+        {
+            "id": "P1-R2",
+            "criterion": "class_hierarchy",
+            "requirement": "Subclass relationships are logically justified and appropriately modelled."
+        },
+        {
+            "id": "P1-R3",
+            "criterion": "properties",
+            "requirement": "The ontology contains at least five meaningful object and/or data properties."
+        },
+        {
+            "id": "P1-R4",
+            "criterion": "property_characteristics",
+            "requirement": "Property domains, ranges, hierarchies, and characteristics are correctly modelled where appropriate."
+        },
+        {
+            "id": "P1-R5",
+            "criterion": "description_logic_axiom",
+            "requirement": "The ontology contains one logically correct Description Logic axiom using a number restriction."
+        },
+        {
+            "id": "P1-R6",
+            "criterion": "ontology_consistency",
+            "requirement": "The ontology is logically coherent and internally consistent."
+        },
+        {
+            "id": "P1-R7",
+            "criterion": "report_accuracy",
+            "requirement": "The report accurately describes the submitted ontology."
+        },
+        {
+            "id": "P1-R8",
+            "criterion": "report_overview",
+            "requirement": "The report clearly explains the purpose and scope of the ontology."
+        },
+        {
+            "id": "P1-R9",
+            "criterion": "report_hierarchy",
+            "requirement": "The report justifies the chosen class and property hierarchies."
+        },
+        {
+            "id": "P1-R10",
+            "criterion": "report_axiom",
+            "requirement": "The report correctly explains the Description Logic axiom and relates it to the source text."
+        },
+        {
+            "id": "P1-R11",
+            "criterion": "critical_reflection",
+            "requirement": "The report critically discusses the strengths and limitations of the ontology."
+        },
+        {
+            "id": "P1-R12",
+            "criterion": "word_limit",
+            "requirement": "The report does not exceed the specified word limit of 750 words."
+        }
+    ]
+    },
+        {
+      "component_id": "part_2_task_1",
+      "title": "Bread and Filling Mutual Exclusivity",
+      "component_type": "modal_logic_formula",
+      "maximum_percentage": 5,
+
+      "artifact": {
+        "artifact_type": "prolog_source",
+        "answer_location": "answer1/1"
+      },
+
+      "task": {
+        "description": "Write a modal logic formula expressing that bread and filling cannot occupy the same grid state.",
+
+        "semantic_goal": {
+          "type": "mutual_exclusivity",
+          "entities": [
+            "bread",
+            "filling"
+          ],
+          "interpretation": "No grid state may satisfy both bread and filling simultaneously."
+        },
+
+        "expected_properties": [
+          "The formula expresses mutual exclusion.",
+          "The formula applies locally to every grid state.",
+          "The formula is compatible with the supplied modal logic language."
+        ]
+      },
+
+      "evaluation_requirements": [
+        {
+          "id": "P2-T1-R1",
+          "criterion": "logical_correctness",
+          "requirement": "The formula correctly prevents bread and filling from holding simultaneously."
+        },
+        {
+          "id": "P2-T1-R2",
+          "criterion": "semantic_alignment",
+          "requirement": "The formula captures the intended meaning of mutual exclusivity."
+        },
+        {
+          "id": "P2-T1-R3",
+          "criterion": "formula_validity",
+          "requirement": "The submitted formula is well formed according to the supplied modal logic syntax."
+        },
+        {
+          "id": "P2-T1-R4",
+          "criterion": "framework_compliance",
+          "requirement": "The answer is provided in the required predicate answer1/1."
+        }
+      ],
+
+      "evaluation_guidance": {
+        "accept_logically_equivalent_formulas": true,
+        "require_exact_formula_match": false,
+        "ignore_superficial_differences": [
+          "Parenthesisation",
+          "Equivalent logical rewrites",
+          "Equivalent use of implication or negation"
+        ]
+      }
+    },
+    {
+      "component_id": "part_2_task_2",
+      "title": "Bread Immediately Above and Below Filling",
+      "component_type": "modal_logic_formula",
+      "maximum_percentage": 8,
+
+      "artifact": {
+        "artifact_type": "prolog_source",
+        "answer_location": "answer2/1"
+      },
+
+      "task": {
+        "description": "Write a modal logic formula expressing that every state containing filling has bread immediately above it and immediately below it.",
+
+        "semantic_goal": {
+          "type": "immediate_vertical_adjacency",
+
+          "condition": "filling",
+
+          "required_configuration": [
+            {
+              "relation": "oneabove",
+              "entity": "bread"
+            },
+            {
+              "relation": "onebelow",
+              "entity": "bread"
+            }
+          ],
+
+          "interpretation": "Whenever filling occurs, bread must occupy the immediately adjacent states above and below."
+        },
+
+        "expected_properties": [
+          "The requirement is conditional on the presence of filling.",
+          "Both immediate neighbours are required.",
+          "Immediate adjacency is expressed using the supplied relations.",
+          "The formula is compatible with the supplied modal logic language."
+        ]
+      },
+
+      "evaluation_requirements": [
+        {
+          "id": "P2-T2-R1",
+          "criterion": "conditional_structure",
+          "requirement": "The bread requirement is correctly conditioned on the presence of filling."
+        },
+        {
+          "id": "P2-T2-R2",
+          "criterion": "upper_adjacency",
+          "requirement": "The formula requires bread immediately above filling."
+        },
+        {
+          "id": "P2-T2-R3",
+          "criterion": "lower_adjacency",
+          "requirement": "The formula requires bread immediately below filling."
+        },
+        {
+          "id": "P2-T2-R4",
+          "criterion": "adjacency_scope",
+          "requirement": "The formula expresses immediate adjacency rather than arbitrary vertical distance."
+        },
+        {
+          "id": "P2-T2-R5",
+          "criterion": "modal_logic_correctness",
+          "requirement": "The modal operators are used consistently with the supplied framework."
+        },
+        {
+          "id": "P2-T2-R6",
+          "criterion": "formula_validity",
+          "requirement": "The submitted formula is well formed according to the supplied modal logic syntax."
+        },
+        {
+          "id": "P2-T2-R7",
+          "criterion": "framework_compliance",
+          "requirement": "The answer is provided in the required predicate answer2/1."
+        }
+      ],
+
+      "evaluation_guidance": {
+        "accept_logically_equivalent_formulas": true,
+        "require_exact_formula_match": false,
+        "ignore_superficial_differences": [
+          "Equivalent logical rewrites",
+          "Equivalent modal formulations",
+          "Alternative but logically equivalent nesting of conjunctions"
+        ]
+      }
+    },
+        {
+      "component_id": "part_2_task_3",
+      "title": "No Bread More Than One Row Below Filling",
+      "component_type": "modal_logic_formula",
+      "maximum_percentage": 8,
+
+      "artifact": {
+        "artifact_type": "prolog_source",
+        "answer_location": "answer3/1"
+      },
+
+      "task": {
+        "description": "Write a modal logic formula expressing that bread must not occur more than one row below a state containing filling.",
+
+        "semantic_goal": {
+          "type": "distance_constraint",
+
+          "condition": "filling",
+
+          "permitted_configuration": [
+            "Bread may occur immediately below filling."
+          ],
+
+          "prohibited_configuration": [
+            "Bread occurring beyond the immediately adjacent lower row."
+          ],
+
+          "interpretation": "The formula should distinguish immediate adjacency from greater vertical distances below a filling state."
+        },
+
+        "expected_properties": [
+          "The restriction is conditional on the presence of filling.",
+          "Immediate bread below filling remains permitted.",
+          "Bread located further below filling is prohibited.",
+          "The formula correctly represents vertical distance using the supplied modal relations.",
+          "The formula is compatible with the supplied modal logic language."
+        ]
+      },
+
+      "evaluation_requirements": [
+        {
+          "id": "P2-T3-R1",
+          "criterion": "conditional_structure",
+          "requirement": "The distance restriction is correctly conditioned on the presence of filling."
+        },
+        {
+          "id": "P2-T3-R2",
+          "criterion": "distance_interpretation",
+          "requirement": "The formula distinguishes immediate adjacency from greater vertical distance."
+        },
+        {
+          "id": "P2-T3-R3",
+          "criterion": "permitted_configuration",
+          "requirement": "The formula does not incorrectly prohibit bread immediately below filling."
+        },
+        {
+          "id": "P2-T3-R4",
+          "criterion": "prohibited_configuration",
+          "requirement": "The formula prevents bread from occurring more than one row below filling."
+        },
+        {
+          "id": "P2-T3-R5",
+          "criterion": "modal_logic_correctness",
+          "requirement": "The modal operators correctly express the intended spatial constraint."
+        },
+        {
+          "id": "P2-T3-R6",
+          "criterion": "formula_validity",
+          "requirement": "The submitted formula is well formed according to the supplied modal logic syntax."
+        },
+        {
+          "id": "P2-T3-R7",
+          "criterion": "framework_compliance",
+          "requirement": "The answer is provided in the required predicate answer3/1."
+        }
+      ],
+
+      "evaluation_guidance": {
+        "accept_logically_equivalent_formulas": true,
+        "require_exact_formula_match": false,
+        "ignore_superficial_differences": [
+          "Equivalent modal formulations",
+          "Equivalent logical rewrites",
+          "Alternative logically equivalent nesting of operators"
+        ]
+      }
+    },
+        {
+      "component_id": "part_2_task_4",
+      "title": "No Filling Anywhere Above Filling",
+      "component_type": "modal_logic_formula",
+      "maximum_percentage": 8,
+
+      "artifact": {
+        "artifact_type": "prolog_source",
+        "answer_location": "answer4/1"
+      },
+
+      "task": {
+        "description": "Write a modal logic formula expressing that if a state contains filling, then no state anywhere above it may also contain filling.",
+
+        "semantic_goal": {
+          "type": "global_vertical_constraint",
+
+          "condition": "filling",
+
+          "prohibited_configuration": [
+            {
+              "relation": "above",
+              "entity": "filling"
+            }
+          ],
+
+          "interpretation": "Whenever filling occurs, all states above it must not contain filling."
+        },
+
+        "expected_properties": [
+          "The restriction is conditional on the presence of filling.",
+          "The constraint applies to every state above, not only the immediately adjacent state.",
+          "The formula represents a global vertical constraint using the supplied modal relations.",
+          "The formula is compatible with the supplied modal logic language."
+        ]
+      },
+
+      "evaluation_requirements": [
+        {
+          "id": "P2-T4-R1",
+          "criterion": "conditional_structure",
+          "requirement": "The restriction is correctly conditioned on the presence of filling."
+        },
+        {
+          "id": "P2-T4-R2",
+          "criterion": "vertical_scope",
+          "requirement": "The formula applies to all relevant states above the current filling state rather than only the immediately adjacent state."
+        },
+        {
+          "id": "P2-T4-R3",
+          "criterion": "prohibited_configuration",
+          "requirement": "The formula prevents filling from occurring anywhere above another filling state."
+        },
+        {
+          "id": "P2-T4-R4",
+          "criterion": "modal_logic_correctness",
+          "requirement": "The modal operators correctly express the intended spatial constraint."
+        },
+        {
+          "id": "P2-T4-R5",
+          "criterion": "formula_validity",
+          "requirement": "The submitted formula is well formed according to the supplied modal logic syntax."
+        },
+        {
+          "id": "P2-T4-R6",
+          "criterion": "framework_compliance",
+          "requirement": "The answer is provided in the required predicate answer4/1."
+        }
+      ],
+
+      "evaluation_guidance": {
+        "accept_logically_equivalent_formulas": true,
+        "require_exact_formula_match": false,
+        "ignore_superficial_differences": [
+          "Equivalent logical rewrites",
+          "Equivalent modal formulations",
+          "Alternative but logically equivalent use of necessity and possibility operators"
+        ]
+      }
+    },
+        {
+      "component_id": "part_2_task_5",
+      "title": "Additional Problematic Sandwich Configurations",
+      "component_type": "open_ended_modal_logic",
+      "maximum_percentage": 11,
+
+      "artifact": {
+        "artifact_type": "prolog_source",
+        "answer_locations": [
+          "answer51/1",
+          "answer52/1",
+          "answer53/1"
+        ]
+      },
+
+      "task": {
+        "description": "Identify three different sandwich configurations that satisfy the constraints from Tasks 1–4 but could reasonably be argued not to represent proper sandwiches. For each configuration, provide a natural-language description and a modal logic formula that prevents the configuration.",
+
+        "required_examples": 3,
+
+        "example_structure": {
+          "problem_description": "Describe a configuration that satisfies Tasks 1–4 but should not be considered a proper sandwich.",
+          "preventive_formula": "Provide a modal logic formula that rules out the described configuration.",
+          "additional_relations": "Optional. Students may introduce additional relations where appropriate."
+        },
+
+        "semantic_goal": {
+          "type": "constraint_extension",
+          "interpretation": "Each example should identify a limitation of the original sandwich specification and propose an additional logical constraint that removes that limitation."
+        },
+
+        "expected_properties": [
+          "Each example describes a distinct problematic sandwich configuration.",
+          "Each described configuration satisfies the constraints from Tasks 1–4.",
+          "Each preventive formula directly addresses the described problem.",
+          "The three examples demonstrate different limitations of the original specification.",
+          "The proposed formulas are compatible with the supplied modal logic framework."
+        ]
+      },
+
+      "evaluation_requirements": [
+        {
+          "id": "P2-T5-R1",
+          "criterion": "number_of_examples",
+          "requirement": "Exactly three examples are provided."
+        },
+        {
+          "id": "P2-T5-R2",
+          "criterion": "problem_description",
+          "requirement": "Each example clearly describes a problematic sandwich configuration."
+        },
+        {
+          "id": "P2-T5-R3",
+          "criterion": "constraint_compatibility",
+          "requirement": "Each described configuration is compatible with the constraints established in Tasks 1–4."
+        },
+        {
+          "id": "P2-T5-R4",
+          "criterion": "distinctness",
+          "requirement": "The three examples identify meaningfully different shortcomings of the original specification."
+        },
+        {
+          "id": "P2-T5-R5",
+          "criterion": "formula_alignment",
+          "requirement": "Each preventive formula directly addresses the corresponding problem description."
+        },
+        {
+          "id": "P2-T5-R6",
+          "criterion": "logical_correctness",
+          "requirement": "Each preventive formula successfully excludes the described configuration."
+        },
+        {
+          "id": "P2-T5-R7",
+          "criterion": "formula_validity",
+          "requirement": "Each submitted formula is well formed according to the supplied modal logic syntax."
+        },
+        {
+          "id": "P2-T5-R8",
+          "criterion": "framework_compliance",
+          "requirement": "The responses are provided in answer51/1, answer52/1 and answer53/1."
+        }
+      ],
+
+      "evaluation_guidance": {
+        "accept_multiple_valid_solutions": true,
+        "require_exact_examples": false,
+        "evaluate_semantically": true,
+
+        "acceptable_problem_categories": [
+          "Disconnected sandwich components",
+          "Multiple sandwiches represented in the same grid",
+          "Excessively large sandwiches",
+          "Unbounded sandwich dimensions",
+          "Insufficient enclosure of filling",
+          "Degenerate sandwich structures",
+          "Other logically justified limitations of the original specification"
+        ],
+
+        "guidance": [
+          "The listed categories are examples rather than an exhaustive answer key.",
+          "Do not penalise students for proposing valid alternative configurations.",
+          "Evaluate whether the proposed formula addresses the described limitation.",
+          "Focus on the logical relationship between the description and the preventive formula rather than matching a predefined solution."
+        ]
+      }
+    }
+        ],
+
+    "cross_component_evaluation_requirements": [
+      {
+        "id": "P2-G1",
+        "criterion": "syntax_correctness",
+        "requirement": "The submitted Prolog source loads without syntax errors."
+      },
+      {
+        "id": "P2-G2",
+        "criterion": "framework_compliance",
+        "requirement": "Answers are implemented within the supplied Prolog framework unless the task explicitly permits additional definitions."
+      },
+      {
+        "id": "P2-G3",
+        "criterion": "modal_logic_validity",
+        "requirement": "Submitted formulas use the supplied modal logic language and recognised formula constructors."
+      },
+      {
+        "id": "P2-G4",
+        "criterion": "semantic_equivalence",
+        "requirement": "Logically equivalent formulas should be evaluated as correct regardless of their syntactic form."
+      },
+      {
+        "id": "P2-G5",
+        "criterion": "relation_interpretation",
+        "requirement": "Spatial relations are interpreted according to the supplied rel/3 definitions rather than their natural-language names."
+      },
+      {
+        "id": "P2-G6",
+        "criterion": "answer_location",
+        "requirement": "Responses are provided in the required answer predicates."
+      }
+    ],
+
+    "feedback_generation_guidance": {
+      "general_principles": [
+        "Generate criterion-referenced feedback.",
+        "Support feedback with evidence from the student's submission.",
+        "Separate syntax errors from semantic errors.",
+        "Distinguish partially correct reasoning from incorrect reasoning.",
+        "Provide actionable suggestions for improvement.",
+        "Do not infer work that is absent from the submission."
+      ],
+
+      "ontology_feedback": [
+        "Comment on modelling decisions rather than assuming a single correct ontology.",
+        "Differentiate structural ontology issues from weaker modelling choices.",
+        "Identify inconsistencies between the OWL ontology and the accompanying report.",
+        "Explain logical inconsistencies only when they can be established from the submitted ontology."
+      ],
+
+      "prolog_feedback": [
+        "Explain incorrect use of modal operators where applicable.",
+        "Explain incorrect use of spatial relations where applicable.",
+        "Distinguish logical errors from Prolog syntax errors.",
+        "Acknowledge logically equivalent formulations.",
+        "For Task 5, evaluate the relationship between the described problem and the proposed preventive formula."
+      ],
+
+      "uncertainty_policy": "If the submitted artifacts do not provide sufficient evidence to evaluate a criterion, state that the criterion could not be fully assessed rather than making unsupported assumptions."
+    },
+
+    "specification_assumptions": [
+      {
+        "id": "SA-1",
+        "description": "The supplied Prolog starter code is treated as the authoritative specification for Part 2."
+      },
+      {
+        "id": "SA-2",
+        "description": "The assessment brief is used to determine assessment objectives and weighting, while the starter code defines the executable semantics."
+      },
+      {
+        "id": "SA-3",
+        "description": "Students may express equivalent logical constraints using different but semantically equivalent modal logic formulas."
+      },
+      {
+        "id": "SA-4",
+        "description": "Task 5 intentionally permits multiple valid solutions and should be evaluated semantically rather than against a fixed answer key."
+      }
+    ]
+}
