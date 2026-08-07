@@ -1,0 +1,1685 @@
+{
+  "schema_version": "1.0",
+  "processed_submission_id": "processed_assessment_2_student_2",
+  "source_submission_id": "assessment_2_student_2",
+  "student_id": "student_2",
+  "assessment_id": "assessment_2",
+  "processing_version": "0.1.0",
+  "artifacts": [
+    {
+      "artifact_id": "artifact_001",
+      "artifact_type": "owl_ontology",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "parser",
+        "detected_content_type": "owl_xml",
+        "tools": [
+          {
+            "name": "xml.etree.ElementTree",
+            "version": null,
+            "purpose": "Parsing OWL/XML and RDF/XML ontology documents."
+          },
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.3.0",
+            "purpose": "Normalisation of ontology declarations, hierarchy axioms, restrictions, domains, ranges, and property characteristics."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "owl_parse",
+            "status": "passed",
+            "tool": "xml.etree.ElementTree",
+            "summary": "Parsed ontology as owl_xml."
+          },
+          {
+            "check_type": "owl_structural_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 35 ontology unit(s)."
+          },
+          {
+            "check_type": "owl_consistency",
+            "status": "not_run",
+            "tool": null,
+            "summary": "An OWL reasoner was not run, so logical consistency was not verified."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_001_unit_001",
+          "unit_type": "ontology_class",
+          "label": "BLT",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_001_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#BLT\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "BLT",
+            "iri": "#BLT",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_002",
+          "unit_type": "ontology_class",
+          "label": "Bread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_002_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Bread\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Bread",
+            "iri": "#Bread",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_003",
+          "unit_type": "ontology_class",
+          "label": "Cheese",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_003_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Cheese\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Cheese",
+            "iri": "#Cheese",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_004",
+          "unit_type": "ontology_class",
+          "label": "ClubSandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_004_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#ClubSandwich\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "ClubSandwich",
+            "iri": "#ClubSandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_005",
+          "unit_type": "ontology_class",
+          "label": "DoubleDeckerSandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_005_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#DoubleDeckerSandwich\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "DoubleDeckerSandwich",
+            "iri": "#DoubleDeckerSandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_006",
+          "unit_type": "ontology_class",
+          "label": "Egg",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_006_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Egg\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Egg",
+            "iri": "#Egg",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_007",
+          "unit_type": "ontology_class",
+          "label": "Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_007_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Filling\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Filling",
+            "iri": "#Filling",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_008",
+          "unit_type": "ontology_class",
+          "label": "Meat",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_008_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Meat\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Meat",
+            "iri": "#Meat",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_009",
+          "unit_type": "ontology_class",
+          "label": "OpenSandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_009_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#OpenSandwich\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "OpenSandwich",
+            "iri": "#OpenSandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_010",
+          "unit_type": "ontology_class",
+          "label": "Panini",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_010_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Panini\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Panini",
+            "iri": "#Panini",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_011",
+          "unit_type": "ontology_class",
+          "label": "Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_011_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Sandwich\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Sandwich",
+            "iri": "#Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_012",
+          "unit_type": "ontology_class",
+          "label": "ToastedSandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_012_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#ToastedSandwich\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "ToastedSandwich",
+            "iri": "#ToastedSandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_013",
+          "unit_type": "ontology_class",
+          "label": "Vegetable",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_013_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Vegetable\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Vegetable",
+            "iri": "#Vegetable",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_014",
+          "unit_type": "ontology_class",
+          "label": "WhiteBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_014_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#WhiteBread\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "WhiteBread",
+            "iri": "#WhiteBread",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_015",
+          "unit_type": "ontology_class",
+          "label": "WholeGrainBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_015_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#WholeGrainBread\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "WholeGrainBread",
+            "iri": "#WholeGrainBread",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_016",
+          "unit_type": "ontology_object_property",
+          "label": "hasBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_016_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#hasBread\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasBread",
+            "iri": "#hasBread",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_017",
+          "unit_type": "ontology_object_property",
+          "label": "hasFilling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_017_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#hasFilling\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasFilling",
+            "iri": "#hasFilling",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_018",
+          "unit_type": "ontology_object_property",
+          "label": "hasIngredient",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_018_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#hasIngredient\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasIngredient",
+            "iri": "#hasIngredient",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_019",
+          "unit_type": "ontology_object_property",
+          "label": "isLayeredWith",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_019_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#isLayeredWith\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "isLayeredWith",
+            "iri": "#isLayeredWith",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_020",
+          "unit_type": "ontology_object_property",
+          "label": "isTypeOf",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_020_content",
+              "block_type": "xml",
+              "content": "<ns0:Declaration xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#isTypeOf\" />\n    </ns0:Declaration>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "isTypeOf",
+            "iri": "#isTypeOf",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_021",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "BLT subclass of ClubSandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_021_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#BLT\" />\n        <ns0:Class IRI=\"#ClubSandwich\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "BLT",
+            "parent": "ClubSandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_022",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Cheese subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_022_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Cheese\" />\n        <ns0:Class IRI=\"#Filling\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Cheese",
+            "parent": "Filling",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_023",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "ClubSandwich subclass of Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_023_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#ClubSandwich\" />\n        <ns0:Class IRI=\"#Sandwich\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "ClubSandwich",
+            "parent": "Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_024",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "DoubleDeckerSandwich subclass of Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_024_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#DoubleDeckerSandwich\" />\n        <ns0:Class IRI=\"#Sandwich\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "DoubleDeckerSandwich",
+            "parent": "Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_025",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Egg subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_025_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Egg\" />\n        <ns0:Class IRI=\"#Filling\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Egg",
+            "parent": "Filling",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_026",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Meat subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_026_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Meat\" />\n        <ns0:Class IRI=\"#Filling\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Meat",
+            "parent": "Filling",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_027",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "OpenSandwich subclass of Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_027_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#OpenSandwich\" />\n        <ns0:Class IRI=\"#Sandwich\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "OpenSandwich",
+            "parent": "Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_028",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Panini subclass of Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_028_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Panini\" />\n        <ns0:Class IRI=\"#Sandwich\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Panini",
+            "parent": "Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_029",
+          "unit_type": "ontology_restriction",
+          "label": "Sandwich: object_min_cardinality on hasBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_029_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Sandwich\" />\n        <ns0:ObjectMinCardinality cardinality=\"2\">\n            <ns0:ObjectProperty IRI=\"#hasBread\" />\n            <ns0:Class IRI=\"#Bread\" />\n        </ns0:ObjectMinCardinality>\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "axiom_type": "object_min_cardinality",
+            "property": "hasBread",
+            "filler": "Bread",
+            "cardinality": 2,
+            "item_kind": "axiom",
+            "subject": "Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_030",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "ToastedSandwich subclass of Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_030_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#ToastedSandwich\" />\n        <ns0:Class IRI=\"#Sandwich\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "ToastedSandwich",
+            "parent": "Sandwich",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_031",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Vegetable subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_031_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#Vegetable\" />\n        <ns0:Class IRI=\"#Filling\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Vegetable",
+            "parent": "Filling",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_032",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "WhiteBread subclass of Bread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_032_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#WhiteBread\" />\n        <ns0:Class IRI=\"#Bread\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "WhiteBread",
+            "parent": "Bread",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_033",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "WholeGrainBread subclass of Bread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_033_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubClassOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:Class IRI=\"#WholeGrainBread\" />\n        <ns0:Class IRI=\"#Bread\" />\n    </ns0:SubClassOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "WholeGrainBread",
+            "parent": "Bread",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_034",
+          "unit_type": "ontology_subproperty_axiom",
+          "label": "hasBread: sub_object_property_of hasIngredient",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_034_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubObjectPropertyOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#hasBread\" />\n        <ns0:ObjectProperty IRI=\"#hasIngredient\" />\n    </ns0:SubObjectPropertyOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "sub_object_property_of",
+            "subproperty": "hasBread",
+            "superproperty": "hasIngredient",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_035",
+          "unit_type": "ontology_subproperty_axiom",
+          "label": "hasFilling: sub_object_property_of hasIngredient",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_035_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:SubObjectPropertyOf xmlns:ns0=\"http://www.w3.org/2002/07/owl#\">\n        <ns0:ObjectProperty IRI=\"#hasFilling\" />\n        <ns0:ObjectProperty IRI=\"#hasIngredient\" />\n    </ns0:SubObjectPropertyOf>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "sub_object_property_of",
+            "subproperty": "hasFilling",
+            "superproperty": "hasIngredient",
+            "serialisation": "owl_xml"
+          },
+          "extraction_confidence": 0.98
+        }
+      ]
+    },
+    {
+      "artifact_id": "artifact_002",
+      "artifact_type": "prolog_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "assessment_2_prolog_modal_logic",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.3.0",
+            "purpose": "Structural extraction of Assessment 2 Prolog answer predicates, modal formulas, and Task 5 explanations."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "prolog_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 7 Assessment 2 answer predicate(s)."
+          },
+          {
+            "check_type": "prolog_parse",
+            "status": "not_run",
+            "tool": null,
+            "summary": "A Prolog parser or interpreter was not executed during this preprocessing version."
+          },
+          {
+            "check_type": "prolog_load",
+            "status": "not_run",
+            "tool": null,
+            "summary": "The submitted source was not loaded in SWI-Prolog during preprocessing."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_002_unit_001",
+          "unit_type": "prolog_answer",
+          "label": "answer1",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_1"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer1/1 maps to part_2_task_1."
+            ]
+          },
+          "source_range": {
+            "start_line": 71,
+            "end_line": 71
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_001_clause",
+              "block_type": "code",
+              "content": "answer1( and(implies(bread, not(filling)), implies(filling, not(bread))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 71,
+                "end_line": 71
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_001_formula",
+              "block_type": "formula",
+              "content": "and(implies(bread, not(filling)), implies(filling, not(bread)))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 71,
+                "end_line": 71
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer1",
+            "predicate_arity": 1,
+            "formula": "and(implies(bread, not(filling)), implies(filling, not(bread)))",
+            "is_task_5_answer": false,
+            "has_explanation": false
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_002_unit_002",
+          "unit_type": "prolog_answer",
+          "label": "answer2",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_2"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer2/1 maps to part_2_task_2."
+            ]
+          },
+          "source_range": {
+            "start_line": 74,
+            "end_line": 74
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_002_clause",
+              "block_type": "code",
+              "content": "answer2( implies(filling, and(dia(oneabove, bread), dia(onebelow, bread))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 74,
+                "end_line": 74
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_002_formula",
+              "block_type": "formula",
+              "content": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 74,
+                "end_line": 74
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer2",
+            "predicate_arity": 1,
+            "formula": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))",
+            "is_task_5_answer": false,
+            "has_explanation": false
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_002_unit_003",
+          "unit_type": "prolog_answer",
+          "label": "answer3",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_3"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer3/1 maps to part_2_task_3."
+            ]
+          },
+          "source_range": {
+            "start_line": 77,
+            "end_line": 77
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_003_clause",
+              "block_type": "code",
+              "content": "answer3( implies(filling, box(below, box(below, not(bread)))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 77,
+                "end_line": 77
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_003_formula",
+              "block_type": "formula",
+              "content": "implies(filling, box(below, box(below, not(bread))))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 77,
+                "end_line": 77
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer3",
+            "predicate_arity": 1,
+            "formula": "implies(filling, box(below, box(below, not(bread))))",
+            "is_task_5_answer": false,
+            "has_explanation": false
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_002_unit_004",
+          "unit_type": "prolog_answer",
+          "label": "answer4",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_4"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer4/1 maps to part_2_task_4."
+            ]
+          },
+          "source_range": {
+            "start_line": 80,
+            "end_line": 80
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_004_clause",
+              "block_type": "code",
+              "content": "answer4( implies(filling, box(above, not(filling))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 80,
+                "end_line": 80
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_004_formula",
+              "block_type": "formula",
+              "content": "implies(filling, box(above, not(filling)))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 80,
+                "end_line": 80
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer4",
+            "predicate_arity": 1,
+            "formula": "implies(filling, box(above, not(filling)))",
+            "is_task_5_answer": false,
+            "has_explanation": false
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_002_unit_005",
+          "unit_type": "prolog_task_5_answer",
+          "label": "answer51",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_5"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer51/1 maps to part_2_task_5."
+            ]
+          },
+          "source_range": {
+            "start_line": 87,
+            "end_line": 87
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_005_clause",
+              "block_type": "code",
+              "content": "answer51( box(above, box(above, not(bread))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 87,
+                "end_line": 87
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_005_formula",
+              "block_type": "formula",
+              "content": "box(above, box(above, not(bread)))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 87,
+                "end_line": 87
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_005_explanation",
+              "block_type": "explanation",
+              "content": "A sandwich that is extremely tall—e.g., filling with 6 layers of bread—may satisfy all logical constraints but is unreasonable in practice.\nPrevent sandwiches taller than 3 layers by ensuring that if a cell has bread, no bread can be more than 2 rows above or below.",
+              "language": "en",
+              "source_range": {
+                "start_line": 85,
+                "end_line": 86
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer51",
+            "predicate_arity": 1,
+            "formula": "box(above, box(above, not(bread)))",
+            "is_task_5_answer": true,
+            "has_explanation": true
+          },
+          "extraction_confidence": 0.98,
+          "attempt": {
+            "attempt_index": 1,
+            "attempt_group_id": "part_2_task_5_examples",
+            "declared_as_alternative": true
+          }
+        },
+        {
+          "unit_id": "artifact_002_unit_006",
+          "unit_type": "prolog_task_5_answer",
+          "label": "answer52",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_5"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer52/1 maps to part_2_task_5."
+            ]
+          },
+          "source_range": {
+            "start_line": 92,
+            "end_line": 92
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_006_clause",
+              "block_type": "code",
+              "content": "answer52( implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 92,
+                "end_line": 92
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_006_formula",
+              "block_type": "formula",
+              "content": "implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling)))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 92,
+                "end_line": 92
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_006_explanation",
+              "block_type": "explanation",
+              "content": "A sandwich where the filling is only one cell wide with long bread strips may pass logic but lacks practical balance.\nPrevent too-narrow fillings by requiring that filling regions have adjacent fillings horizontally.",
+              "language": "en",
+              "source_range": {
+                "start_line": 90,
+                "end_line": 91
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer52",
+            "predicate_arity": 1,
+            "formula": "implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling)))",
+            "is_task_5_answer": true,
+            "has_explanation": true
+          },
+          "extraction_confidence": 0.98,
+          "attempt": {
+            "attempt_index": 2,
+            "attempt_group_id": "part_2_task_5_examples",
+            "declared_as_alternative": true
+          }
+        },
+        {
+          "unit_id": "artifact_002_unit_007",
+          "unit_type": "prolog_task_5_answer",
+          "label": "answer53",
+          "task_mapping": {
+            "part_ids": [
+              "part_2_prolog_modal_logic"
+            ],
+            "task_ids": [
+              "part_2_task_5"
+            ],
+            "source": "declared",
+            "confidence": 1.0,
+            "evidence": [
+              "Predicate answer53/1 maps to part_2_task_5."
+            ]
+          },
+          "source_range": {
+            "start_line": 97,
+            "end_line": 97
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_007_clause",
+              "block_type": "code",
+              "content": "answer53( implies(filling, and(dia(oneabove, bread), dia(onebelow, bread))) ).",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 97,
+                "end_line": 97
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_007_formula",
+              "block_type": "formula",
+              "content": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))",
+              "language": "prolog",
+              "source_range": {
+                "start_line": 97,
+                "end_line": 97
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_007_explanation",
+              "block_type": "explanation",
+              "content": "A sandwich where the filling is at the bottom and bread is on top—i.e., upside-down—violates the expected order.\nRequire filling to be vertically between two breads, not at grid top/bottom.",
+              "language": "en",
+              "source_range": {
+                "start_line": 95,
+                "end_line": 96
+              }
+            }
+          ],
+          "structured_data": {
+            "predicate_name": "answer53",
+            "predicate_arity": 1,
+            "formula": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))",
+            "is_task_5_answer": true,
+            "has_explanation": true
+          },
+          "extraction_confidence": 0.98,
+          "attempt": {
+            "attempt_index": 3,
+            "attempt_group_id": "part_2_task_5_examples",
+            "declared_as_alternative": true
+          }
+        }
+      ]
+    },
+    {
+      "artifact_id": "artifact_003",
+      "artifact_type": "ontology_report",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "ontology_design_report",
+        "tools": [
+          {
+            "name": "pypdf",
+            "version": null,
+            "purpose": "PDF text extraction during submission ingestion."
+          },
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.3.0",
+            "purpose": "Removal of report boilerplate and structural extraction of ontology-report sections."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "report_text_extraction",
+            "status": "passed",
+            "tool": "pypdf",
+            "summary": "Text was extracted from the submitted ontology report."
+          },
+          {
+            "check_type": "report_section_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 1 substantive report section(s)."
+          }
+        ],
+        "diagnostics": [
+          {
+            "diagnostic_id": "diagnostic_001",
+            "severity": "info",
+            "diagnostic_type": "unrecognised_report_sections",
+            "message": "The following common report sections were not identified: advantages and disadvantages, axiom, justification, overview.",
+            "related_unit_ids": []
+          }
+        ]
+      },
+      "units": [
+        {
+          "unit_id": "artifact_003_unit_001",
+          "unit_type": "ontology_report_section",
+          "label": "Ontology Report",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 0.95,
+            "evidence": [
+              "The section occurs in the submitted Part 1 ontology report."
+            ]
+          },
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1252
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_001_heading",
+              "block_type": "heading",
+              "content": "Ontology Report",
+              "language": "en",
+              "source_range": {
+                "start_line": 1,
+                "end_line": 1252
+              }
+            },
+            {
+              "block_id": "artifact_003_unit_001_prose",
+              "block_type": "prose",
+              "content": "Overview  of  the  Ontology\nThis  ontology  is  designed  to  model  fundamental  aspects  of  sandwiches,  drawing  upon  the\ndescription\n\nprovided\n\nin\n\nthe\n\nSimple\n\nEnglish\n\nWikipedia\n\narticle.\n\nThe\n\nprimary\n\nfocus\n\nis\n\nto\n\nrepresent\n\nthe\n\nstructural\n\nand\n\ncompositional\n\nelements\n\nthat\n\ndefine\n\ndifferent\n\ntypes\n\nof\n\nsandwiches.\n\nThe\n\nontology\n\nformalizes\n\nrelationships\n\nbetween\n\nsandwich\n\ntypes,\n\nthe\n\ningredients\n\nthey\n\ncontain,\n\nand\n\ntheir\n\nstructural\n\nconfiguration.\n\nIt\n\ncaptures\n\ngeneral\n\ncategories\n\nsuch\n\nas\n\nopen\n\nsandwiches,\n\nclub\n\nsandwiches,\n\nand\n\ndouble-decker\n\nsandwiches,\n\nwhile\n\nalso\n\nrepresenting\n\nthe\n\ncore\n\ncomponents\n\nlike\n\nbread\n\nand\n\nfillings.\n\nSpecial\n\nattention\n\nis\n\ngiven\n\nto\n\nstructural\n\nrequirements,\n\nsuch\n\nas\n\nthe\n\nnumber\n\nof\n\nbread\n\nlayers,\n\nand\n\nto\n\norganizing\n\ningredients\n\ninto\n\nlogical\n\nsubtypes.\n\nLogical\n\nroles\n\nare\n\nemployed\n\nto\n\nexpress\n\nstacking\n\nand\n\ntype\n\nrelationships\n\nwithin\n\na\n\nsandwich.\n\nThe  ontology  comprises  fifteen  classes.  These  include  Sandwich  as  the  overarching\nconcept,\n\nand\n\neleven\n\nsubclasses\n\nthat\n\nrepresent\n\nspecific\n\nsandwich\n\ntypes\n\nand\n\ncomponents:\n\nBread,\n\nFilling,\n\nOpenSandwich,\n\nDoubleDeckerSandwich,\n\nClubSandwich,\n\nBLT,\n\nPanini,\n\nand\n\nToastedSandwich.\n\nThese\n\nclasses\n\ncollectively\n\ncapture\n\na\n\nrange\n\nof\n\nsandwich\n\nvariations.\n\nIn  addition  to  the  core  classes,  the  ontology  includes  five  object  properties  that  define\nrelationships\n\nbetween\n\nsandwich\n\nelements.\n\nThese\n\nare\n\nhasIngredient,\n\nhasBread,\n\nhasFilling,\n\nisLayeredWith,\n\nand\n\nisTypeOf.\n\nThe\n\nhasIngredient\n\nproperty\n\nserves\n\nas\n\na\n\ngeneral\n\nlink\n\nbetween\n\na\n\nsandwich\n\nand\n\nany\n\nof\n\nits\n\ncomponents.\n\nThe\n\nproperties\n\nhasBread\n\nand\n\nhasFilling\n\nare\n\nintroduced\n\nas\n\nsub-properties\n\nof\n\nhasIngredient.\n\nThis\n\nstructure\n\nallows\n\nthe\n\nontology\n\nto\n\nexpress\n\nboth\n\ngeneral\n\nand\n\ndetailed\n\nstatements\n\nabout\n\nsandwich\n\ncomposition\n\nwhile\n\nmaintaining\n\nlogical\n\nconsistency.\n\nThe  class  Bread  is  further  divided  into  WhiteBread  and  WholeGrainBread,  providing  a\nmeans\n\nof\n\ndistinguishing\n\nsandwiches\n\nbased\n\non\n\nthe\n\ntype\n\nof\n\nbread\n\nused.\n\nSimilarly,\n\nthe\n\nclass\n\nFilling\n\nis\n\nsubdivided\n\ninto\n\nfour\n\ncategories:\n\nCheese,\n\nMeat,\n\nEgg,\n\nand\n\nVegetable.\n\nThese\n\nsubclasses\n\nreflect\n\ncommon\n\ntypes\n\nof\n\nsandwich\n\nfillings\n\nas\n\nmentioned\n\nin\n\nthe\n\nsource\n\nmaterial.\n\nThis\n\nhierarchical\n\norganization\n\nsupports\n\nreasoning\n\nabout\n\nsandwich\n\ncontent\n\nand\n\nenables\n\ndetailed\n\ncategorization\n\nor\n\nfiltering\n\nbased\n\non\n\ndietary\n\nor\n\ningredient-based\n\nqueries.\n\nThe  class  Sandwich  serves  as  the  parent  for  all  sandwich  variants.  OpenSandwich,\nDoubleDeckerSandwich,\n\nand\n\nClubSandwich\n\nare\n\nall\n\ndefined\n\nas\n\nsubclasses\n\nof\n\nSandwich,\n\nenabling\n\nstructured\n\ninheritance\n\nof\n\nsandwich\n\nproperties.\n\nThe\n\nBLT\n\nis\n\nfurther\n\nmodeled\n\nas\n\na\n\nsubclass\n\nof\n\nClubSandwich.\n\nThis\n\nstructure\n\nreflects\n\nthe\n\nreal-world\n\nhierarchy\n\nof\n\nsandwich\n\ntypes\n\nand\n\nsupports\n\ninference\n\nmechanisms\n\nwithin\n\nthe\n\nontology.\n\nThe\n\norganization\n\nof\n\nobject\n\nproperties\n\nalso\n\ncontributes\n\nto\n\nthis\n\nlogical\n\nframework.\n\nhasBread\n\nand\n\nhasFilling\n\nare\n\ndefined\n\nas\n\nsub-properties\n\nof\n\nhasIngredient,\n\nwhich\n\nallows\n\nfor\n\ngeneral\n\nrules\n\nto\n\napply\n\nacross\n\nall\n\ningredients\n\nwhen\n\nneeded,\n\nwhile\n\nmaintaining\n\nthe\n\ncapacity\n\nfor\n\nmore\n\nspecific\n\nassertions.\n\nThe  property  isLayeredWith  is  marked  as  transitive  to  represent  the  concept  of  stacking\nwithin\n\na\n\nsandwich.\n\nThis\n\nallows\n\nthe\n\nontology\n\nto\n\nmodel\n\nthe\n\nidea\n\nthat\n\nif\n\none\n\ningredient\n\nis\n\nlayered\n\nwith\n\nanother,\n\nand\n\nthat\n\nsecond\n\ningredient\n\nis\n\nin\n\nturn\n\nlayered\n\nwith\n\na\n\nthird,\n\nthen\n\nthe\n\nfirst\n\nis\n\nindirectly\n\nlayered\n\nwith\n\nthe\n\nthird.\n\nThis\n\nis\n\nparticularly\n\nuseful\n\nfor\n\nmodeling\n\nthe\n\ninternal\n\narrangement\n\nof\n\ndouble\n\nor\n\ntriple-decker\n\nsandwiches.\n\nThe\n\nproperty\n\nisTypeOf\n\nis\n\ndeclared\n\nfunctional\n\nto\n\nensure\n\nthat\n\nan\n\nindividual\n\nsandwich\n\ninstance\n\ncorresponds\n\nto\n\nexactly\n\none\n\nsandwich  type.  For  example,  a  BLT  can  be  defined  as  a  specific  individual  that  isTypeOf\nClubSandwich.\n\nA  central  axiom  implemented  in  the  ontology  is  the  constraint  that  every  sandwich  must  have\nat\n\nleast\n\ntwo\n\nslices\n\nof\n\nbread.\n\nThis\n\nis\n\nexpressed\n\nin\n\ndescription\n\nlogic\n\nas:\n\nSandwich\n\nis\n\na\n\nsubclass\n\nof\n\nthings\n\nthat\n\nhave\n\nat\n\nleast\n\ntwo\n\nhasBread\n\nrelationships\n\nwith\n\nBread,\n\nor\n\nmore\n\nformally,\n\nSandwich\n\n⊑\n\n≥2\n\nhasBread.Bread.\n\nIn\n\nnatural\n\nlanguage,\n\nthis\n\nmeans\n\nthat\n\nevery\n\nsandwich\n\nmust\n\nhave\n\ntwo\n\nor\n\nmore\n\nslices\n\nof\n\nbread.\n\nThis\n\naxiom\n\ndirectly\n\ncorresponds\n\nto\n\na\n\nstatement\n\nin\n\nthe\n\nsource\n\ntext:\n\n“A\n\nsandwich\n\nis\n\na\n\nfood\n\nprepared\n\nby\n\nplacing\n\ndifferent\n\nkinds\n\nof\n\nfoods\n\nbetween\n\ntwo\n\npieces\n\nof\n\nbread.”\n\nBy\n\nenforcing\n\nthis\n\nrequirement,\n\nthe\n\nontology\n\nformalizes\n\nthe\n\nstructural\n\nminimum\n\nneeded\n\nto\n\nqualify\n\nas\n\na\n\nsandwich.\n\nThere  are  several  advantages  to  building  a  sandwich  ontology  using  this  structure.  It  enables\nlogical\n\nformalization\n\nof\n\nsandwich\n\ntypes\n\nand\n\ncomponents,\n\nallowing\n\nfor\n\nautomated\n\nclassification\n\nand\n\nstructured\n\nqueries.\n\nThe\n\nhierarchical\n\norganization\n\nallows\n\nfor\n\nstraightforward\n\nextension\n\nto\n\ninclude\n\ncultural\n\nor\n\ndietary\n\nvariations.\n\nDefining\n\nsubclasses\n\nfor\n\ningredients\n\nand\n\nsandwich\n\ntypes\n\nincreases\n\nsemantic\n\nclarity\n\nand\n\nprecision.\n\nThe\n\nuse\n\nof\n\nlogical\n\naxioms\n\nensures\n\nthat\n\nonly\n\nstructurally\n\nvalid\n\nsandwiches\n\nare\n\nrepresented.\n\nHowever,  this  ontology  also  has  limitations.  It  reflects  a  largely  Western  conception  of\nsandwiches\n\nand\n\nmay\n\nnot\n\neasily\n\naccommodate\n\nregional\n\nor\n\nnon-standard\n\nforms\n\nsuch\n\nas\n\nwraps\n\nor\n\nice\n\ncream\n\nsandwiches.\n\nThese\n\nedge\n\ncases\n\nmight\n\nviolate\n\nstructural\n\naxioms\n\nand\n\nrequire\n\nexceptions\n\nor\n\nredefinition\n\nof\n\ncertain\n\nrules.\n\nModeling\n\nevery\n\npossible\n\nfilling\n\nas\n\na\n\nseparate\n\nsubclass\n\ncould\n\nlead\n\nto\n\nunnecessary\n\ncomplexity.\n\nLastly,\n\nexpressing\n\ncertain\n\nreal-world\n\nknowledge,\n\nsuch\n\nas\n\na\n\nclub\n\nsandwich\n\nrequiring\n\nbacon,\n\nchicken,\n\nand\n\nsalad,\n\nwould\n\nrequire\n\nmore\n\ndetailed\n\naxioms\n\nor\n\nthe\n\nuse\n\nof\n\ndata\n\nproperties,\n\nwhich\n\nare\n\noutside\n\nthe\n\ncurrent\n\nscope.",
+              "language": "en",
+              "source_range": {
+                "start_line": 1,
+                "end_line": 1252
+              }
+            }
+          ],
+          "structured_data": {
+            "section_title": "Ontology Report",
+            "page_numbers": [
+              1,
+              2
+            ]
+          },
+          "extraction_confidence": 0.95
+        }
+      ]
+    }
+  ],
+  "cross_artifact_links": []
+}

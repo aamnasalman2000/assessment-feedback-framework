@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/trail/ontologies/2025/5/untitled-ontology-4"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/trail/ontologies/2025/5/untitled-ontology-4">
+    <Prefix name="" IRI="http://www.semanticweb.org/trail/ontologies/2025/5/untitled-ontology-4/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Ontology of sandwiches based on https://simple.wikipedia.org/wiki/Sandwich</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#BLT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Bread"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cheese"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClubSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoubleDeckerSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Egg"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Filling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Meat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Panini"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToastedSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vegetable"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WhiteBread"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WholeGrainBread"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBread"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFilling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLayeredWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTypeOf"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#BLT"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#isTypeOf"/>
+            <Class IRI="#ClubSandwich"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ClubSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasBread"/>
+                <Class IRI="#Bread"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#Filling"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DoubleDeckerSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isLayeredWith"/>
+                <Class IRI="#Filling"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DoubleDeckerSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectMinCardinality cardinality="3">
+                <ObjectProperty IRI="#hasBread"/>
+                <Class IRI="#Bread"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#Filling"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpenSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasBread"/>
+                <Class IRI="#Bread"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#Filling"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Panini"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasBread"/>
+                <Class IRI="#Bread"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#Filling"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ToastedSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasBread"/>
+                <Class IRI="#Bread"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasFilling"/>
+                <Class IRI="#Filling"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#BLT"/>
+        <Class IRI="#ClubSandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cheese"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClubSandwich"/>
+        <Class IRI="#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DoubleDeckerSandwich"/>
+        <Class IRI="#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Egg"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Meat"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpenSandwich"/>
+        <Class IRI="#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Panini"/>
+        <Class IRI="#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sandwich"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#hasBread"/>
+            <Class IRI="#Bread"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToastedSandwich"/>
+        <Class IRI="#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vegetable"/>
+        <Class IRI="#Filling"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WhiteBread"/>
+        <Class IRI="#Bread"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WholeGrainBread"/>
+        <Class IRI="#Bread"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasBread"/>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFilling"/>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isTypeOf"/>
+    </FunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isLayeredWith"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasBread"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBread"/>
+            <Class IRI="#Sandwich"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFilling"/>
+            <Class IRI="#Sandwich"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class IRI="#Sandwich"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasBread"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBread"/>
+            <Class IRI="#Bread"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasFilling"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasFilling"/>
+            <Class IRI="#Filling"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class abbreviatedIRI="owl:Thing"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

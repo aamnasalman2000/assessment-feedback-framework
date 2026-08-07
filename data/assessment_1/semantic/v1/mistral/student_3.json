@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "source_submission_id": "assessment_1_student_3",
+  "processed_submission_id": "processed_assessment_1_student_3",
+  "extractor_version": "0.2.0",
+  "model_name": "Lean Extractor",
+  "document_regions": [],
+  "unit_annotations": [
+    {
+      "unit_id": "artifact_001_unit_001",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "Assumes a, b, c, and d are propositions.",
+      "confidence": 1.0,
+      "domain_annotations": {}
+    },
+    {
+      "unit_id": "artifact_001_unit_002",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "Assumes h1 is a function that maps ¬a to d.",
+      "confidence": 1.0,
+      "domain_annotations": {}
+    },
+    {
+      "unit_id": "artifact_001_unit_003",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "Assumes h2 is a function that maps (a ∧ ¬b ∧ c) to d.",
+      "confidence": 1.0,
+      "domain_annotations": {}
+    },
+    {
+      "unit_id": "artifact_001_unit_004",
+      "region_ids": [],
+      "semantic_role": "explanation",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "Demonstrates that ( (a ∧ b) ∨ (a ∧ ¬b ∧ ¬c) ) → ¬d holds by considering two cases: when the disjunction is Or.inl (a ∧ b), and when it's Or.inr (a ∧ ¬b ∧ ¬c).",
+      "confidence": 1.0,
+      "domain_annotations": {}
+    },
+    {
+      "unit_id": "artifact_001_unit_005",
+      "region_ids": [],
+      "semantic_role": "explanation",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "Demonstrates that ((t → r) ∧ (f → ¬r) ∧ (r → m) ∧ (¬m ∨ ¬f) ∧ t) → (r ∧ m ∧ ¬f) holds by decomposing the proposition and making use of the given assumptions.",
+      "confidence": 1.0,
+      "domain_annotations": {}
+    }
+  ],
+  "unresolved_observations": [],
+  "warnings": [],
+  "raw_model_response": null
+}

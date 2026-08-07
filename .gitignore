@@ -16,10 +16,6 @@ env/
 .env
 .env.*
 
-# Generated outputs
-results/
-artifacts/
-
 # Python caches
 .pytest_cache/
 .mypy_cache/
@@ -36,5 +32,3 @@ Thumbs.db
 tree.txt
 
 assessment_materials/
-
-data/

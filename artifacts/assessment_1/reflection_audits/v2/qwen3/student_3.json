@@ -1,0 +1,1783 @@
+{
+  "assessment_id": "assessment_1",
+  "student_id": "student_3",
+  "model": "qwen3:8b",
+  "reflection_version": "v2",
+  "audits": [
+    {
+      "criterion_assessment_id": "ca_001",
+      "requirement_id": "S1-R1",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [
+            "The absence of test cases in the submission reference directly contradicts the rubric's requirement for test coverage."
+          ],
+          "missing_rubric_points": [
+            "Test case implementation is missing from the submission reference."
+          ],
+          "preferred_solution_bias": true,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The submitted code implements a correct factorial function but lacks test cases, which is a required rubric criterion. The absence of test cases is explicitly noted in the evidence."
+        },
+        "revised_status": "missing",
+        "revised_internal_finding": "The submission implements the factorial function correctly but fails to include required test cases, which is a mandatory criterion for this assessment requirement.",
+        "revised_student_feedback": "Your implementation correctly calculates factorials, but you must add test cases to verify functionality across edge cases (e.g., 0!, 1!, 5!).",
+        "revised_suggestion": "Include test cases for boundary values and invalid inputs to demonstrate comprehensive validation.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "factorial-test-cases",
+            "description": "The submission reference contains a factorial implementation without test cases."
+          },
+          {
+            "evidence_type": "absence",
+            "requirement_id": "factorial-test-cases",
+            "description": "The submission reference implements a correct factorial function but lacks test coverage."
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_002",
+      "requirement_id": "S1-R2",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly implements the area calculation but lacks essential error handling for invalid inputs such as negative dimensions.",
+        "revised_student_feedback": "Your implementation correctly calculates the area but misses critical error handling for invalid inputs. Please add validation to ensure dimensions are non-negative.",
+        "revised_suggestion": "Implement input validation to check for negative values and raise appropriate exceptions.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_003",
+      "requirement_id": "S1-R3",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_004",
+      "requirement_id": "S1-R4",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_005",
+      "requirement_id": "S1-R5",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_006",
+      "requirement_id": "S1-R6",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_007",
+      "requirement_id": "S1-R7",
+      "task_ids": [
+        "scenario_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_008",
+      "requirement_id": "S2-R1",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_009",
+      "requirement_id": "S2-R2",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_010",
+      "requirement_id": "S2-R3",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_011",
+      "requirement_id": "S2-R4",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_012",
+      "requirement_id": "S2-R5",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_013",
+      "requirement_id": "S2-R6",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_014",
+      "requirement_id": "S2-R7",
+      "task_ids": [
+        "scenario_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_015",
+      "requirement_id": "S3-R1",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_016",
+      "requirement_id": "S3-R2",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_017",
+      "requirement_id": "S3-R3",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_018",
+      "requirement_id": "S3-R4",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_019",
+      "requirement_id": "S3-R5",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_020",
+      "requirement_id": "S3-R6",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_021",
+      "requirement_id": "S3-R7",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_022",
+      "requirement_id": "S3-R8",
+      "task_ids": [
+        "scenario_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_023",
+      "requirement_id": "S4-R1",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_024",
+      "requirement_id": "S4-R2",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_025",
+      "requirement_id": "S4-R3",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_026",
+      "requirement_id": "S4-R4",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_027",
+      "requirement_id": "S4-R5",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_028",
+      "requirement_id": "S4-R6",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_029",
+      "requirement_id": "S4-R7",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_030",
+      "requirement_id": "S4-R8",
+      "task_ids": [
+        "scenario_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_031",
+      "requirement_id": "T1-R1",
+      "task_ids": [
+        "theorem_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_032",
+      "requirement_id": "T1-R2",
+      "task_ids": [
+        "theorem_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_033",
+      "requirement_id": "T1-R3",
+      "task_ids": [
+        "theorem_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_034",
+      "requirement_id": "T1-R4",
+      "task_ids": [
+        "theorem_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_035",
+      "requirement_id": "T1-R5",
+      "task_ids": [
+        "theorem_1"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_036",
+      "requirement_id": "T2-R1",
+      "task_ids": [
+        "theorem_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_037",
+      "requirement_id": "T2-R2",
+      "task_ids": [
+        "theorem_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_038",
+      "requirement_id": "T2-R3",
+      "task_ids": [
+        "theorem_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_039",
+      "requirement_id": "T2-R4",
+      "task_ids": [
+        "theorem_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_040",
+      "requirement_id": "T2-R5",
+      "task_ids": [
+        "theorem_2"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_041",
+      "requirement_id": "T3-R1",
+      "task_ids": [
+        "theorem_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_042",
+      "requirement_id": "T3-R2",
+      "task_ids": [
+        "theorem_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_043",
+      "requirement_id": "T3-R3",
+      "task_ids": [
+        "theorem_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_044",
+      "requirement_id": "T3-R4",
+      "task_ids": [
+        "theorem_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_045",
+      "requirement_id": "T3-R5",
+      "task_ids": [
+        "theorem_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_046",
+      "requirement_id": "T3-R6",
+      "task_ids": [
+        "theorem_3"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_047",
+      "requirement_id": "T4-R1",
+      "task_ids": [
+        "theorem_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_048",
+      "requirement_id": "T4-R2",
+      "task_ids": [
+        "theorem_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_049",
+      "requirement_id": "T4-R3",
+      "task_ids": [
+        "theorem_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_050",
+      "requirement_id": "T4-R4",
+      "task_ids": [
+        "theorem_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_051",
+      "requirement_id": "T4-R5",
+      "task_ids": [
+        "theorem_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    },
+    {
+      "criterion_assessment_id": "ca_052",
+      "requirement_id": "T4-R6",
+      "task_ids": [
+        "theorem_4"
+      ],
+      "decision": {
+        "analysis": {
+          "evidence_supported": false,
+          "unsupported_claims": [],
+          "overlooked_evidence": [],
+          "missing_rubric_points": [
+            "error_handling"
+          ],
+          "preferred_solution_bias": false,
+          "confidence_assessment": "too_low",
+          "should_revise": true,
+          "revision_reason": "The original assessment failed to identify the absence of error handling in the code example, which is a critical aspect of the requirement."
+        },
+        "revised_status": "partially_met",
+        "revised_internal_finding": "The code correctly calculates the area but lacks error handling for invalid inputs (e.g., negative dimensions).",
+        "revised_student_feedback": "Your code correctly computes the area but needs error handling to validate inputs (e.g., ensuring dimensions are non-negative).",
+        "revised_suggestion": "Add input validation to handle cases where width or height is negative.",
+        "revised_verification_status": "inferred",
+        "revised_confidence": 0.7,
+        "revised_evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "req-001",
+            "description": "Code example lacks error handling for invalid inputs"
+          }
+        ]
+      }
+    }
+  ]
+}

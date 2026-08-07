@@ -1,0 +1,202 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/jorge/ontologies/2025/5/untitled-ontology-9"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/jorge/ontologies/2025/5/untitled-ontology-9">
+    <Prefix name="" IRI="http://www.semanticweb.org/jorge/ontologies/2025/5/untitled-ontology-9/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Bread"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Country"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deck"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DoubleDeckerSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Filling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpenSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SideDish"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToastedBread"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ToastedSandwich"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasBreadSlice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDeck"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isCommonIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFilledWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isServedWith"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Crisps"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#bacon"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#chicken"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#clubSandwich"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#salad"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#DoubleDeckerSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectExactCardinality cardinality="3">
+                <ObjectProperty IRI="#hasBreadSlice"/>
+                <Class IRI="#Bread"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="2">
+                <ObjectProperty IRI="#hasDeck"/>
+                <Class IRI="#Deck"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpenSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasBreadSlice"/>
+                <Class IRI="#Deck"/>
+            </ObjectExactCardinality>
+            <ObjectExactCardinality cardinality="1">
+                <ObjectProperty IRI="#hasDeck"/>
+                <Class IRI="#Deck"/>
+            </ObjectExactCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#ToastedSandwich"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sandwich"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasBreadSlice"/>
+                <Class IRI="#ToastedBread"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Sandwich"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasBreadSlice"/>
+            <Class IRI="#Bread"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sandwich"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasIngredient"/>
+            <Class IRI="#Filling"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ToastedBread"/>
+        <Class IRI="#Bread"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#SideDish"/>
+        <NamedIndividual IRI="#Crisps"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Filling"/>
+        <NamedIndividual IRI="#bacon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Filling"/>
+        <NamedIndividual IRI="#chicken"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DoubleDeckerSandwich"/>
+        <NamedIndividual IRI="#clubSandwich"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Filling"/>
+        <NamedIndividual IRI="#salad"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <NamedIndividual IRI="#clubSandwich"/>
+        <NamedIndividual IRI="#bacon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <NamedIndividual IRI="#clubSandwich"/>
+        <NamedIndividual IRI="#chicken"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasIngredient"/>
+        <NamedIndividual IRI="#clubSandwich"/>
+        <NamedIndividual IRI="#salad"/>
+    </ObjectPropertyAssertion>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#hasDeck"/>
+    </InverseFunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#isServedWith"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasBreadSlice"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasDeck"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isCommonIn"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isFilledWith"/>
+    </AsymmetricObjectProperty>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#hasDeck"/>
+            <ObjectProperty IRI="#isFilledWith"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#hasIngredient"/>
+    </SubObjectPropertyOf>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

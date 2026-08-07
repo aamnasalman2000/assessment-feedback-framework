@@ -1,0 +1,1845 @@
+{
+  "schema_version": "1.0",
+  "processed_submission_id": "processed_assessment_1_student_2",
+  "source_submission_id": "assessment_1_student_2",
+  "student_id": "student_2",
+  "assessment_id": "assessment_1",
+  "processing_version": "0.1.0",
+  "artifacts": [
+    {
+      "artifact_id": "artifact_001",
+      "artifact_type": "lean_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "lean_4_source",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.2.0",
+            "purpose": "Structural textual extraction of Lean declarations, context, comments, and proof bodies."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "lean_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 11 Lean declaration(s)."
+          },
+          {
+            "check_type": "lean_compile",
+            "status": "not_run",
+            "tool": null,
+            "summary": "Lean compilation is not included in this preprocessing version."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_001_unit_001",
+          "unit_type": "lean_opaque_declaration",
+          "label": "conj",
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_001_statement",
+              "block_type": "formal_statement",
+              "content": "opaque conj : Prop → Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 4,
+                "end_line": 4
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_002",
+          "unit_type": "lean_opaque_declaration",
+          "label": "provable",
+          "source_range": {
+            "start_line": 5,
+            "end_line": 5
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_002_statement",
+              "block_type": "formal_statement",
+              "content": "opaque provable : Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 5,
+                "end_line": 5
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_003",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimRight",
+          "source_range": {
+            "start_line": 8,
+            "end_line": 8
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_003_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimRight : ∀ x y, provable (conj x y) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 8,
+                "end_line": 8
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_004",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimLeft",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_004_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) → provable x",
+              "language": "lean",
+              "source_range": {
+                "start_line": 9,
+                "end_line": 9
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_005",
+          "unit_type": "lean_axiom",
+          "label": "AxConjIntro",
+          "source_range": {
+            "start_line": 10,
+            "end_line": 10
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_005_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjIntro : ∀ x y, provable x → provable y → provable (conj x y)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 10,
+                "end_line": 10
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_006",
+          "unit_type": "lean_axiom",
+          "label": "AxPrTrue",
+          "source_range": {
+            "start_line": 11,
+            "end_line": 11
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_006_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxPrTrue : provable True",
+              "language": "lean",
+              "source_range": {
+                "start_line": 11,
+                "end_line": 11
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_007",
+          "unit_type": "lean_axiom",
+          "label": "AxNotPrFalse",
+          "source_range": {
+            "start_line": 12,
+            "end_line": 12
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_007_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxNotPrFalse : provable False → False",
+              "language": "lean",
+              "source_range": {
+                "start_line": 12,
+                "end_line": 12
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_008",
+          "unit_type": "lean_theorem",
+          "label": "ex1",
+          "source_range": {
+            "start_line": 16,
+            "end_line": 31
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_008_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex1 : ∀ x, ¬provable (conj x False) ∧ (provable x → ¬provable False)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 16,
+                "end_line": 16
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_008_proof",
+              "block_type": "proof_body",
+              "content": "by\n  intro x\n  constructor\n  -- Part 1: Prove ¬provable (conj x False)\n  · intro h\n    -- Assume provable (conj x False)\n    -- Use AxConjElimRight to get provable False\n    have h_false : provable False := AxConjElimRight x False h\n    -- Apply AxNotPrFalse: provable False → False\n    exact AxNotPrFalse h_false\n  -- Part 2: Prove provable x → ¬provable False\n  · intro h_px\n    -- Assume provable x, need ¬provable False\n    intro h_false\n    -- provable False leads to contradiction via AxNotPrFalse\n    exact AxNotPrFalse h_false",
+              "language": "lean",
+              "source_range": {
+                "start_line": 16,
+                "end_line": 31
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_008_explanation",
+              "block_type": "explanation",
+              "content": "Explanation for ex1:\nAssumptions: Use axioms AxConjElimRight and AxNotPrFalse.\nStrategy:\n- For ¬provable (conj x False):\n- Assume provable (conj x False).\n- Extract provable False using AxConjElimRight.\n- Use AxNotPrFalse to derive a contradiction, proving the negation.\n- For provable x → ¬provable False:\n- Assume provable x and provable False.\n- AxNotPrFalse directly gives a contradiction, so ¬provable False holds.\nThe proof uses contradiction to handle negations.",
+              "language": "en",
+              "source_range": {
+                "start_line": 33,
+                "end_line": 43
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_009",
+          "unit_type": "lean_theorem",
+          "label": "ex2",
+          "source_range": {
+            "start_line": 47,
+            "end_line": 55
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_009_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex2 : ∀ x y, provable (conj x False) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 47,
+                "end_line": 47
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_009_proof",
+              "block_type": "proof_body",
+              "content": "by\n  intro x y h\n  -- Assume provable (conj x False)\n  -- Use AxConjElimRight to get provable False\n  have h_false : provable False := AxConjElimRight x False h\n  -- Use AxNotPrFalse to derive False\n  have contra : False := AxNotPrFalse h_false\n  -- From False, anything follows (ex falso quodlibet)\n  exact False.elim contra",
+              "language": "lean",
+              "source_range": {
+                "start_line": 47,
+                "end_line": 55
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_009_explanation",
+              "block_type": "explanation",
+              "content": "Explanation for ex2:\nAssumptions: Use AxConjElimRight and AxNotPrFalse.\nStrategy:\n- Assume provable (conj x False).\n- Extract provable False using AxConjElimRight.\n- Apply AxNotPrFalse to get False.\n- Use False.elim to derive any proposition y (principle of explosion).\nThe proof exploits the contradiction in provable False to prove any y.",
+              "language": "en",
+              "source_range": {
+                "start_line": 57,
+                "end_line": 64
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_010",
+          "unit_type": "lean_theorem",
+          "label": "ex3",
+          "source_range": {
+            "start_line": 68,
+            "end_line": 79
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_010_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex3 : ∀ x y z, provable (conj x (conj y z)) → provable (conj (conj y x) z)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 68,
+                "end_line": 68
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_010_proof",
+              "block_type": "proof_body",
+              "content": "by\n  intro x y z h\n  -- Assume provable (conj x (conj y z))\n  -- Extract components using elimination axioms\n  have h_x : provable x := AxConjElimLeft x (conj y z) h\n  have h_yz : provable (conj y z) := AxConjElimRight x (conj y z) h\n  have h_y : provable y := AxConjElimLeft y z h_yz\n  have h_z : provable z := AxConjElimRight y z h_yz\n  -- Construct provable (conj y x) using AxConjIntro\n  have h_yx : provable (conj y x) := AxConjIntro y x h_y h_x\n  -- Construct the goal: provable (conj (conj y x) z)\n  exact AxConjIntro (conj y x) z h_yx h_z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 68,
+                "end_line": 79
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_010_explanation",
+              "block_type": "explanation",
+              "content": "Explanation for ex3:\nAssumptions: Use AxConjElimLeft, AxConjElimRight, and AxConjIntro.\nStrategy:\n- From provable (conj x (conj y z)), extract provable x and provable (conj y z).\n- From provable (conj y z), extract provable y and provable z.\n- Build provable (conj y x) using provable y and provable x.\n- Build the goal provable (conj (conj y x) z) using provable (conj y x) and provable z.\nThe proof rearranges conjunctions by extracting and recombining components.",
+              "language": "en",
+              "source_range": {
+                "start_line": 81,
+                "end_line": 88
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_011",
+          "unit_type": "lean_theorem",
+          "label": "ex4",
+          "source_range": {
+            "start_line": 92,
+            "end_line": 101
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_011_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex4 : ∀ x y, ¬provable (conj x y) → provable x → ¬provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 92,
+                "end_line": 92
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_011_proof",
+              "block_type": "proof_body",
+              "content": "by\n  intro x y h_nconj h_px\n  -- Assume ¬provable (conj x y) and provable x\n  -- Need to prove ¬provable y\n  intro h_py\n  -- Assume provable y, derive contradiction\n  -- Since provable x and provable y, use AxConjIntro to get provable (conj x y)\n  have h_conj : provable (conj x y) := AxConjIntro x y h_px h_py\n  -- This contradicts h_nconj: ¬provable (conj x y)\n  exact h_nconj h_conj",
+              "language": "lean",
+              "source_range": {
+                "start_line": 92,
+                "end_line": 101
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_011_explanation",
+              "block_type": "explanation",
+              "content": "Explanation for ex4:\nAssumptions: Use AxConjIntro.\nStrategy:\n- Assume ¬provable (conj x y), provable x, and (for contradiction) provable y.\n- Use provable x and provable y to construct provable (conj x y) via AxConjIntro.\n- This contradicts the assumption ¬provable (conj x y).\n- Thus, provable y cannot hold, so ¬provable y.\nThe proof uses proof by contradiction to show y is not provable.",
+              "language": "en",
+              "source_range": {
+                "start_line": 103,
+                "end_line": 110
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        }
+      ]
+    },
+    {
+      "artifact_id": "artifact_002",
+      "artifact_type": "lean_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "lean_4_source",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.2.0",
+            "purpose": "Structural textual extraction of Lean declarations, context, comments, and proof bodies."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "lean_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 7 Lean declaration(s)."
+          },
+          {
+            "check_type": "lean_compile",
+            "status": "not_run",
+            "tool": null,
+            "summary": "Lean compilation is not included in this preprocessing version."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_002_unit_001",
+          "unit_type": "lean_axiom",
+          "label": "Hx",
+          "source_range": {
+            "start_line": 22,
+            "end_line": 22
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_001_statement",
+              "block_type": "formal_statement",
+              "content": "axiom Hx : ∀ (x1 x2 : Prop) (provable : Prop → Prop), provable x1 ∨ provable x2",
+              "language": "lean",
+              "source_range": {
+                "start_line": 22,
+                "end_line": 22
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_002_unit_002",
+          "unit_type": "lean_axiom",
+          "label": "Hy",
+          "source_range": {
+            "start_line": 23,
+            "end_line": 23
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_002_statement",
+              "block_type": "formal_statement",
+              "content": "axiom Hy : ∀ (y1 y2 : Prop) (provable : Prop → Prop), provable y1 ∨ provable y2",
+              "language": "lean",
+              "source_range": {
+                "start_line": 23,
+                "end_line": 23
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_002_unit_003",
+          "unit_type": "lean_axiom",
+          "label": "R1",
+          "source_range": {
+            "start_line": 24,
+            "end_line": 24
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_003_statement",
+              "block_type": "formal_statement",
+              "content": "axiom R1 : ∀ (x1 z : Prop) (provable : Prop → Prop), provable x1 → provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 24,
+                "end_line": 24
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_002_unit_004",
+          "unit_type": "lean_axiom",
+          "label": "R2",
+          "source_range": {
+            "start_line": 25,
+            "end_line": 25
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_004_statement",
+              "block_type": "formal_statement",
+              "content": "axiom R2 : ∀ (x2 z : Prop) (provable : Prop → Prop), provable x2 → provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 25,
+                "end_line": 25
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_002_unit_005",
+          "unit_type": "lean_axiom",
+          "label": "R3",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 26
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_005_statement",
+              "block_type": "formal_statement",
+              "content": "axiom R3 : ∀ (y1 z : Prop) (provable : Prop → Prop), provable y1 → provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 26,
+                "end_line": 26
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_002_unit_006",
+          "unit_type": "lean_axiom",
+          "label": "R4",
+          "source_range": {
+            "start_line": 27,
+            "end_line": 27
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_006_statement",
+              "block_type": "formal_statement",
+              "content": "axiom R4 : ∀ (y2 z : Prop) (provable : Prop → Prop), provable y2 → provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 27,
+                "end_line": 27
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_002_unit_007",
+          "unit_type": "lean_example",
+          "label": "example_1",
+          "source_range": {
+            "start_line": 29,
+            "end_line": 37
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_002_unit_007_statement",
+              "block_type": "formal_statement",
+              "content": "example : provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 29,
+                "end_line": 29
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_007_proof",
+              "block_type": "proof_body",
+              "content": "by\n  have h : provable x1 ∨ provable x2 := Hx x1 x2 provable\n  cases h with\n  | inl px1 =>\n      have r1 : provable x1 → provable z := R1 x1 z provable\n      exact r1 px1\n  | inr px2 =>\n      have r2 : provable x2 → provable z := R2 x2 z provable\n      exact r2 px2",
+              "language": "lean",
+              "source_range": {
+                "start_line": 29,
+                "end_line": 37
+              }
+            },
+            {
+              "block_id": "artifact_002_unit_007_explanation",
+              "block_type": "explanation",
+              "content": "Explanation:\n   - Hx is a function that, given x1, x2, and provable, yields provable x1 ∨ provable x2.\n   - We instantiate Hx with the current x1, x2, provable to obtain the disjunction.\n   - Using disjunction elimination (cases tactic), we handle two cases:\n     - Case provable x1: Instantiate R1 to get provable x1 → provable z, then apply it.\n     - Case provable x2: Instantiate R2 to get provable x2 → provable z, then apply it.\n   - R1 and R2 are similarly instantiated to match the specific x1, x2, z, provable.\n   - Alternatively, we could use Hy with R3 and R4, but Hx is sufficient and chosen for simplicity.\n   - No additional assumptions are made beyond the given axioms.",
+              "language": "en",
+              "source_range": {
+                "start_line": 39,
+                "end_line": 48
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": false,
+            "scope_path": [
+              "Scenario1",
+              "Scenario1"
+            ],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              }
+            ],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        }
+      ]
+    },
+    {
+      "artifact_id": "artifact_003",
+      "artifact_type": "lean_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "lean_4_source",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.2.0",
+            "purpose": "Structural textual extraction of Lean declarations, context, comments, and proof bodies."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "lean_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 16 Lean declaration(s)."
+          },
+          {
+            "check_type": "lean_compile",
+            "status": "not_run",
+            "tool": null,
+            "summary": "Lean compilation is not included in this preprocessing version."
+          }
+        ],
+        "diagnostics": [
+          {
+            "diagnostic_id": "diagnostic_001",
+            "severity": "warning",
+            "diagnostic_type": "lean_sorry",
+            "message": "The declaration contains a `sorry` or `admit` placeholder and is therefore incomplete.",
+            "source_range": {
+              "start_line": 26,
+              "end_line": 48
+            },
+            "related_unit_ids": [
+              "artifact_003_unit_016"
+            ]
+          }
+        ]
+      },
+      "units": [
+        {
+          "unit_id": "artifact_003_unit_001",
+          "unit_type": "lean_opaque_declaration",
+          "label": "a",
+          "source_range": {
+            "start_line": 5,
+            "end_line": 5
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_001_statement",
+              "block_type": "formal_statement",
+              "content": "opaque a : Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 5,
+                "end_line": 5
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_002",
+          "unit_type": "lean_opaque_declaration",
+          "label": "b",
+          "source_range": {
+            "start_line": 6,
+            "end_line": 6
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_002_statement",
+              "block_type": "formal_statement",
+              "content": "opaque b : Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 6,
+                "end_line": 6
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_003",
+          "unit_type": "lean_opaque_declaration",
+          "label": "c",
+          "source_range": {
+            "start_line": 7,
+            "end_line": 7
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_003_statement",
+              "block_type": "formal_statement",
+              "content": "opaque c : Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 7,
+                "end_line": 7
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_004",
+          "unit_type": "lean_opaque_declaration",
+          "label": "d",
+          "source_range": {
+            "start_line": 8,
+            "end_line": 8
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_004_statement",
+              "block_type": "formal_statement",
+              "content": "opaque d : Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 8,
+                "end_line": 8
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_005",
+          "unit_type": "lean_opaque_declaration",
+          "label": "conj",
+          "source_range": {
+            "start_line": 11,
+            "end_line": 11
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_005_statement",
+              "block_type": "formal_statement",
+              "content": "opaque conj : Prop → Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 11,
+                "end_line": 11
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_006",
+          "unit_type": "lean_opaque_declaration",
+          "label": "disj",
+          "source_range": {
+            "start_line": 12,
+            "end_line": 12
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_006_statement",
+              "block_type": "formal_statement",
+              "content": "opaque disj : Prop → Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 12,
+                "end_line": 12
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_007",
+          "unit_type": "lean_opaque_declaration",
+          "label": "impl",
+          "source_range": {
+            "start_line": 13,
+            "end_line": 13
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_007_statement",
+              "block_type": "formal_statement",
+              "content": "opaque impl : Prop → Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 13,
+                "end_line": 13
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_008",
+          "unit_type": "lean_opaque_declaration",
+          "label": "neg",
+          "source_range": {
+            "start_line": 14,
+            "end_line": 14
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_008_statement",
+              "block_type": "formal_statement",
+              "content": "opaque neg : Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 14,
+                "end_line": 14
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_009",
+          "unit_type": "lean_opaque_declaration",
+          "label": "provable",
+          "source_range": {
+            "start_line": 15,
+            "end_line": 15
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_009_statement",
+              "block_type": "formal_statement",
+              "content": "opaque provable : Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 15,
+                "end_line": 15
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_010",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimLeft",
+          "source_range": {
+            "start_line": 18,
+            "end_line": 18
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_010_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) → provable x",
+              "language": "lean",
+              "source_range": {
+                "start_line": 18,
+                "end_line": 18
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_011",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimRight",
+          "source_range": {
+            "start_line": 19,
+            "end_line": 19
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_011_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimRight : ∀ x y, provable (conj x y) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 19,
+                "end_line": 19
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_012",
+          "unit_type": "lean_axiom",
+          "label": "AxConjIntro",
+          "source_range": {
+            "start_line": 20,
+            "end_line": 20
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_012_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjIntro : ∀ x y, provable x → provable y → provable (conj x y)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 20,
+                "end_line": 20
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_013",
+          "unit_type": "lean_axiom",
+          "label": "AxDisjElim",
+          "source_range": {
+            "start_line": 21,
+            "end_line": 21
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_013_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxDisjElim : ∀ x y z, provable (disj x y) → (provable x → provable z) → (provable y → provable z) → provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 21,
+                "end_line": 21
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_014",
+          "unit_type": "lean_axiom",
+          "label": "AxImplElim",
+          "source_range": {
+            "start_line": 22,
+            "end_line": 22
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_014_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxImplElim : ∀ x y, provable (impl x y) → provable x → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 22,
+                "end_line": 22
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_015",
+          "unit_type": "lean_axiom",
+          "label": "AxNotPrFalse",
+          "source_range": {
+            "start_line": 23,
+            "end_line": 23
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_015_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxNotPrFalse : provable False → False",
+              "language": "lean",
+              "source_range": {
+                "start_line": 23,
+                "end_line": 23
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_003_unit_016",
+          "unit_type": "lean_theorem",
+          "label": "scenario2",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 48
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_016_statement",
+              "block_type": "formal_statement",
+              "content": "theorem scenario2 : provable (conj (impl b d) (conj (impl (neg a) (conj c d)) (disj a d))) → provable (conj a d)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 26,
+                "end_line": 26
+              }
+            },
+            {
+              "block_id": "artifact_003_unit_016_proof",
+              "block_type": "proof_body",
+              "content": "fun h =>\n    -- Extract conjuncts from the premise\n    let h_bd := AxConjElimLeft (impl b d) (conj (impl (neg a) (conj c d)) (disj a d)) h\n    let h_rest := AxConjElimRight (impl b d) (conj (impl (neg a) (conj c d)) (disj a d)) h\n    let h_nacd := AxConjElimLeft (impl (neg a) (conj c d)) (disj a d) h_rest\n    let h_ad := AxConjElimRight (impl (neg a) (conj c d)) (disj a d) h_rest\n    -- Use disjunction elimination on a ∨ d\n    AxDisjElim a d (conj a d) h_ad\n      -- Case 1: provable a\n      (fun ha =>\n        -- Need provable d to prove conj a d\n        -- Try b → d, but need provable b, which isn’t available\n        -- Try ¬a → (c ∧ d) with ¬a to get c ∧ d\n        sorry\n        -- Cannot derive provable d without additional axioms\n      )\n      -- Case 2: provable d\n      (fun hd =>\n        -- Need provable a to prove conj a d\n        -- From a ∨ d and provable d, cannot derive provable a\n        sorry\n      )",
+              "language": "lean",
+              "source_range": {
+                "start_line": 27,
+                "end_line": 48
+              }
+            },
+            {
+              "block_id": "artifact_003_unit_016_explanation",
+              "block_type": "explanation",
+              "content": "Explanation:\nThe goal is to prove ((b → d) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d)) → (a ∧ d).\nWe extract the premises: provable (b → d), provable (¬a → (c ∧ d)), and provable (a ∨ d).\nUsing AxDisjElim on a ∨ d:\nCase 1 (provable a): Need provable d. From b → d, we need provable b, which isn’t\navailable. From ¬a → (c ∧ d), assuming ¬a gives c ∧ d, but combining with provable a\nrequires a contradiction (a ∧ ¬a → False), which isn’t supported by the axioms (no\naxiom like provable (conj a (neg a)) → provable False).\nCase 2 (provable d): Need provable a. From a ∨ d and provable d, a could be false,\nand ¬a → (c ∧ d) only gives c ∧ d under ¬a. No axiom derives provable a (e.g., ¬¬a → a).\nAssumptions: The conclusion (a ∧ d) ∧ (a ∧ d) is treated as (a ∧ d) due to redundancy.\nIssue: The implication likely does not hold with the given axioms, as neither case can\nderive the required propositions. Missing axioms for negation or classical logic (e.g.,\nprovable (conj a (neg a)) → provable False) prevent completion.\nRecommendation: Contact Professor to clarify if additional\naxioms were intended or if the problem statement is incorrect.",
+              "language": "en",
+              "source_range": {
+                "start_line": 50,
+                "end_line": 65
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": true,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        }
+      ]
+    },
+    {
+      "artifact_id": "artifact_004",
+      "artifact_type": "lean_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "lean_4_source",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.2.0",
+            "purpose": "Structural textual extraction of Lean declarations, context, comments, and proof bodies."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "lean_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 8 Lean declaration(s)."
+          },
+          {
+            "check_type": "lean_compile",
+            "status": "not_run",
+            "tool": null,
+            "summary": "Lean compilation is not included in this preprocessing version."
+          }
+        ],
+        "diagnostics": [
+          {
+            "diagnostic_id": "diagnostic_001",
+            "severity": "warning",
+            "diagnostic_type": "lean_sorry",
+            "message": "The declaration contains a `sorry` or `admit` placeholder and is therefore incomplete.",
+            "source_range": {
+              "start_line": 48,
+              "end_line": 51
+            },
+            "related_unit_ids": [
+              "artifact_004_unit_008"
+            ]
+          }
+        ]
+      },
+      "units": [
+        {
+          "unit_id": "artifact_004_unit_001",
+          "unit_type": "lean_axiom",
+          "label": "H1",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_001_statement",
+              "block_type": "formal_statement",
+              "content": "axiom H1 : ∀ (p q r s : Prop) (provable : Prop → Prop), provable (p → (¬q ∧ r → s))",
+              "language": "lean",
+              "source_range": {
+                "start_line": 9,
+                "end_line": 9
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_002",
+          "unit_type": "lean_axiom",
+          "label": "H2",
+          "source_range": {
+            "start_line": 10,
+            "end_line": 10
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_002_statement",
+              "block_type": "formal_statement",
+              "content": "axiom H2 : ∀ (p q : Prop) (provable : Prop → Prop), provable (q → ¬p)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 10,
+                "end_line": 10
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_003",
+          "unit_type": "lean_axiom",
+          "label": "AxMP",
+          "source_range": {
+            "start_line": 13,
+            "end_line": 13
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_003_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxMP : ∀ (p q : Prop), provable (p → q) → provable p → provable q",
+              "language": "lean",
+              "source_range": {
+                "start_line": 13,
+                "end_line": 13
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_004",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimLeft",
+          "source_range": {
+            "start_line": 14,
+            "end_line": 14
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_004_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimLeft : ∀ (x y : Prop), provable (x ∧ y) → provable x",
+              "language": "lean",
+              "source_range": {
+                "start_line": 14,
+                "end_line": 14
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_005",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimRight",
+          "source_range": {
+            "start_line": 15,
+            "end_line": 15
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_005_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimRight : ∀ (x y : Prop), provable (x ∧ y) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 15,
+                "end_line": 15
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_006",
+          "unit_type": "lean_axiom",
+          "label": "AxConjIntro",
+          "source_range": {
+            "start_line": 16,
+            "end_line": 16
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_006_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjIntro : ∀ (x y : Prop), provable x → provable y → provable (x ∧ y)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 16,
+                "end_line": 16
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_007",
+          "unit_type": "lean_example",
+          "label": "example_1",
+          "source_range": {
+            "start_line": 19,
+            "end_line": 22
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_007_statement",
+              "block_type": "formal_statement",
+              "content": "example : provable ((p ∧ ¬q ∧ r) → s)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 19,
+                "end_line": 19
+              }
+            },
+            {
+              "block_id": "artifact_004_unit_007_proof",
+              "block_type": "proof_body",
+              "content": "by\n  have h1 : provable (p → (¬q ∧ r → s)) := H1 p q r s provable\n  -- Goal is equivalent to p → (¬q ∧ r → s), as (p ∧ ¬q ∧ r) → s ≡ ¬(p ∧ ¬q ∧ r) ∨ s ≡ p → (¬q ∧ r → s)\n  exact h1",
+              "language": "lean",
+              "source_range": {
+                "start_line": 19,
+                "end_line": 22
+              }
+            },
+            {
+              "block_id": "artifact_004_unit_007_explanation",
+              "block_type": "explanation",
+              "content": "Explanation:\n   - Goal: Prove provable ((p ∧ ¬q ∧ r) → s)\n   - Constraints:\n     - H1: provable (p → (¬q ∧ r → s)) – If congestion (p), safe weather (¬q) and fuel (r) imply arrival (s).\n     - H2: provable (q → ¬p) – If weather is unsafe (q), no congestion (¬p).\n   - Logical Reasoning:\n     - The goal (p ∧ ¬q ∧ r) → s is equivalent to p → (¬q ∧ r → s):\n       - (p ∧ ¬q ∧ r) → s ≡ ¬(p ∧ ¬q ∧ r) ∨ s ≡ ¬p ∨ q ∨ ¬r ∨ s ≡ p → (¬q ∧ r → s).\n     - H1 directly provides provable (p → (¬q ∧ r → s)), matching the goal.\n     - H2 is not needed, as the goal concerns constraint 1.\n   - Proof Strategy:\n     - Instantiate H1 with p, q, r, s, provable to get provable (p → (¬q ∧ r → s)).\n     - Use h1 directly, as it equals the goal.\n   - Alternative Goal (provable s):\n     - Attempted but unprovable:\n       - If provable p, H1 requires provable (¬q ∧ r) for s.\n       - If provable q, H2 gives provable ¬p, but no path to s (e.g., no fuel).\n       - Counterexample: p=false, q=false, r=false, s=false satisfies H1, H2, but not s.\n     - Requires axioms like provable (¬p → s) or provable (¬q ∧ r).\n   - Assumptions: Only H1 used; H2 and Ax* axioms unused but included for consistency.\n   - Note: The assessment’s ambiguous “logical implication” suggests (p ∧ ¬q ∧ r) → s, matching constraint 1. If provable s was intended, a typo or missing axiom exists. Recommend clarifying with instructor (s.naqvi@leeds.ac.uk).",
+              "language": "en",
+              "source_range": {
+                "start_line": 24,
+                "end_line": 45
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_004_unit_008",
+          "unit_type": "lean_example",
+          "label": "example_2",
+          "source_range": {
+            "start_line": 48,
+            "end_line": 51
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_004_unit_008_statement",
+              "block_type": "formal_statement",
+              "content": "example : provable s",
+              "language": "lean",
+              "source_range": {
+                "start_line": 48,
+                "end_line": 48
+              }
+            },
+            {
+              "block_id": "artifact_004_unit_008_proof",
+              "block_type": "proof_body",
+              "content": "by\n  have h1 : provable (p → (¬q ∧ r → s)) := H1 p q r s provable\n  have h2 : provable (q → ¬p) := H2 p q provable\n  sorry",
+              "language": "lean",
+              "source_range": {
+                "start_line": 48,
+                "end_line": 51
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": true,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (p q r s : Prop)",
+                "source_range": {
+                  "start_line": 5,
+                  "end_line": 5
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (provable : Prop → Prop)",
+                "source_range": {
+                  "start_line": 6,
+                  "end_line": 6
+                }
+              }
+            ],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "cross_artifact_links": []
+}

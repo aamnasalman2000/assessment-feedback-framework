@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Prefix name="" IRI="http://www.semanticweb.org/senlin/ontologies/2025/5/untitled-ontology-5/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#BreadSlice"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ClubSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#DoubleDeckerSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Filling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#OpenSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Panini"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#SingleDeckerSandwich"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ToastedSandwich"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasBreadSlice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasFillingIngredient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasLayer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasMeatFilling"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasVegetableFilling"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ClubSandwich"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#DoubleDeckerSandwich"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#DoubleDeckerSandwich"/>
+        <ObjectExactCardinality cardinality="3">
+            <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasBreadSlice"/>
+            <Class IRI="http://www.co-ode.org/ontologies/ont.owl#BreadSlice"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#DoubleDeckerSandwich"/>
+        <ObjectExactCardinality cardinality="2">
+            <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasLayer"/>
+            <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#OpenSandwich"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Panini"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#SingleDeckerSandwich"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#SingleDeckerSandwich"/>
+        <ObjectExactCardinality cardinality="2">
+            <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasBreadSlice"/>
+            <Class IRI="http://www.co-ode.org/ontologies/ont.owl#BreadSlice"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#SingleDeckerSandwich"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasLayer"/>
+            <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#ToastedSandwich"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasBreadSlice"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasFillingIngredient"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasLayer"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasMeatFilling"/>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasFillingIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasMeatFilling"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasVegetableFilling"/>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasFillingIngredient"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasVegetableFilling"/>
+        <ObjectProperty IRI="topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasBreadSlice"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasFillingIngredient"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasLayer"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Sandwich"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasMeatFilling"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasVegetableFilling"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasBreadSlice"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#BreadSlice"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasFillingIngredient"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Filling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasLayer"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#LayerOfFilling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasMeatFilling"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Filling"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.co-ode.org/ontologies/ont.owl#hasVegetableFilling"/>
+        <Class IRI="http://www.co-ode.org/ontologies/ont.owl#Filling"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

@@ -1,0 +1,2333 @@
+{
+  "schema_version": "1.0",
+  "processed_submission_id": "processed_assessment_1_student_6",
+  "source_submission_id": "assessment_1_student_6",
+  "student_id": "student_6",
+  "assessment_id": "assessment_1",
+  "processing_version": "0.1.0",
+  "artifacts": [
+    {
+      "artifact_id": "artifact_001",
+      "artifact_type": "lean_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "lean_4_source",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.2.0",
+            "purpose": "Structural textual extraction of Lean declarations, context, comments, and proof bodies."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "lean_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 16 Lean declaration(s)."
+          },
+          {
+            "check_type": "lean_compile",
+            "status": "not_run",
+            "tool": null,
+            "summary": "Lean compilation is not included in this preprocessing version."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_001_unit_001",
+          "unit_type": "lean_theorem",
+          "label": "TheEligibility",
+          "source_range": {
+            "start_line": 62,
+            "end_line": 86
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_001_statement",
+              "block_type": "formal_statement",
+              "content": "theorem TheEligibility\n  (Passed1Preq : x1 ∨ x2) -- Defining the logic for passing at least one of the two prerequisites.\n  (Got1Approval : y1 ∨ y2) -- Defining securing approval from primary dept. or secondary committee.\n  (Course1Taken : x1 → z) -- Given that prerequisite 1 provable z\n  (Course2Taken : x2 → z) -- Given that prerequisite 2 provable z\n  (GotApproval1 : y1 → z) -- Given that approval from primary dept. provable z\n  (GotApproval2 : y2 → z) -- Given that approval from secondary committee provable z\n  (Eligibility : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z) -- Logic conjunction of both conditions.\n  : z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 62,
+                "end_line": 70
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_001_proof",
+              "block_type": "proof_body",
+              "content": "by\n  -- Handling at least one of the prerequisites (x1 ∨ x2)\n  have Finish_Preq : z :=\n    match Passed1Preq with\n    | Or.inl Course1 => Course1Taken Course1\n    | Or.inr Course2 => Course2Taken Course2\n\n  -- Handling one of the approvals (y1 ∨ y2)\n  have Get_approval : z :=\n    match Got1Approval with\n    | Or.inl Approval1 => GotApproval1 Approval1\n    | Or.inr Approval2 => GotApproval2 Approval2\n\n  -- Conjuction of both conditions, to be eligible\n  let Is_eligible := And.intro Passed1Preq Got1Approval\n  -- Accomplishing goal 'z', as a result\n  exact Eligibility Is_eligible",
+              "language": "lean",
+              "source_range": {
+                "start_line": 70,
+                "end_line": 86
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              }
+            ],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_002",
+          "unit_type": "lean_theorem",
+          "label": "Authorized",
+          "source_range": {
+            "start_line": 169,
+            "end_line": 193
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_002_statement",
+              "block_type": "formal_statement",
+              "content": "theorem Authorized : ((b → d) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 169,
+                "end_line": 169
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_002_proof",
+              "block_type": "proof_body",
+              "content": "by\n  rintro ⟨Condition1, Condition2, Condition3, Condition4, Condition5⟩\n\n  -- For Condition1: getting 'd' from Condition1 (b→d), and providing 'b' from Condition4\n  have hd : d := Condition1 Condition4\n\n  -- For Condition3: getting left 'a' or right 'd'\n  have ha : a := by\n    cases Condition3 with\n  -- In case of 'a', returning 'a'\n    | inl ha =>\n      exact ha\n  -- In case of 'd', this results in contradiction, since 'a' is false,\n  -- as explained above.\n  -- '¬a' is required for Condition2\n    | inr hd =>\n      apply Classical.byContradiction\n      intro hna\n      have hc_and_hd := Condition2 hna --Contradiction\n      have hc := hc_and_hd.1\n      exact Condition5 hc\n      -- Contradiction, requiring '¬c' to be true, as well as (c∧d) to be true\n\n  -- providing (a∧d)\n  exact ⟨ha,hd⟩",
+              "language": "lean",
+              "source_range": {
+                "start_line": 169,
+                "end_line": 193
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              }
+            ],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_003",
+          "unit_type": "lean_theorem",
+          "label": "TrafficNavigation",
+          "source_range": {
+            "start_line": 252,
+            "end_line": 273
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_003_statement",
+              "block_type": "formal_statement",
+              "content": "theorem TrafficNavigation\n\n-- Defining the rules\n  (Rule1 : h → (d → (¬w ∧ f)))\n  (Rule2 : w → ¬h) :\n\n-- Stating the complete logic\n  (h → (d → (¬w ∧ f))) ∧ (w → ¬h)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 252,
+                "end_line": 259
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_003_proof",
+              "block_type": "proof_body",
+              "content": "-- Conjunction of both Rules\n⟨\n  -- Rule1 : h→d→(¬w∧f)\n  -- fun for h and d, using Rule1 derives ¬w∧f\n  fun HeavyCongestion DestinationArrived =>\n    Rule1 HeavyCongestion DestinationArrived,\n\n\n  -- Rule2: w → ¬h\n  -- function for w to derive ¬h, using Rule2\n    fun WeatherUnsafe =>\n      fun NoHeavyCongestion => Rule2 WeatherUnsafe NoHeavyCongestion\n⟩",
+              "language": "lean",
+              "source_range": {
+                "start_line": 261,
+                "end_line": 273
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_004",
+          "unit_type": "lean_theorem",
+          "label": "Traffic_BasicVersion",
+          "source_range": {
+            "start_line": 286,
+            "end_line": 296
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_004_statement",
+              "block_type": "formal_statement",
+              "content": "theorem Traffic_BasicVersion\n\n-- Defining the rules\n  (Rule1 : h → d → (¬w ∧ f))\n  (Rule2 : w → ¬h) :\n\n-- Stating the complete logic\n  (h → (d → (¬w ∧ f))) ∧ (w → ¬h)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 286,
+                "end_line": 293
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_004_proof",
+              "block_type": "proof_body",
+              "content": "-- Concluding the logic, with conjunction of both Rule1 and Rule2\n  ⟨Rule1, Rule2⟩",
+              "language": "lean",
+              "source_range": {
+                "start_line": 295,
+                "end_line": 296
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_005",
+          "unit_type": "lean_theorem",
+          "label": "CyberSec",
+          "source_range": {
+            "start_line": 361,
+            "end_line": 388
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_005_statement",
+              "block_type": "formal_statement",
+              "content": "theorem CyberSec : ( (t → r) ∧ (f → ¬r) ∧ (r → m) ∧ (¬m ∨ ¬f) ∧ t ) → (r ∧ m ∧ ¬f)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 361,
+                "end_line": 361
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_005_proof",
+              "block_type": "proof_body",
+              "content": "by\n  rintro ⟨Cyber1, Cyber2, Cyber3, Cyber4, Cyber5⟩\n\n  -- t is given using Cyber5\n\n  -- Derive 'r' using Cyber1, and Cyber5\n  have hr : r := Cyber1 Cyber5\n\n  -- Derive 'm' using Cyber3\n  have hm : m := Cyber3 hr\n\n  -- Derive '¬f'\n  -- using Cyber2 to get '¬r' from 'f'\n  -- using hr, this will create contradiction, and use it to produce '¬f'\n  have hnf : ¬f :=\n      fun hf => (Cyber2 hf) hr\n\n  -- Analyze Cyber4 (¬m ∨ ¬f)\n  cases Cyber4 with\n  | inl hnm =>\n    -- in case of '¬m',\n    -- Since we have already established the 'm' is true.\n    -- '¬m' will not be the case, contradiction '¬m' with 'm'\n    contradiction\n\n  | inr hnf =>\n  -- in case of '¬f'\n    exact ⟨hr, hm, hnf⟩",
+              "language": "lean",
+              "source_range": {
+                "start_line": 361,
+                "end_line": 388
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "tactic"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_006",
+          "unit_type": "lean_opaque_declaration",
+          "label": "conj",
+          "source_range": {
+            "start_line": 406,
+            "end_line": 406
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_006_statement",
+              "block_type": "formal_statement",
+              "content": "opaque conj : Prop → Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 406,
+                "end_line": 406
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_007",
+          "unit_type": "lean_opaque_declaration",
+          "label": "provable",
+          "source_range": {
+            "start_line": 407,
+            "end_line": 407
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_007_statement",
+              "block_type": "formal_statement",
+              "content": "opaque provable : Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 407,
+                "end_line": 407
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_008",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimRight",
+          "source_range": {
+            "start_line": 408,
+            "end_line": 408
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_008_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimRight : ∀ x y, provable (conj x y) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 408,
+                "end_line": 408
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_009",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimLeft",
+          "source_range": {
+            "start_line": 409,
+            "end_line": 409
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_009_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) → provable x",
+              "language": "lean",
+              "source_range": {
+                "start_line": 409,
+                "end_line": 409
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_010",
+          "unit_type": "lean_axiom",
+          "label": "AxConjIntro",
+          "source_range": {
+            "start_line": 410,
+            "end_line": 410
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_010_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjIntro : ∀ x y, provable x → provable y → provable (conj x y)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 410,
+                "end_line": 410
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_011",
+          "unit_type": "lean_axiom",
+          "label": "AxPrTrue",
+          "source_range": {
+            "start_line": 411,
+            "end_line": 411
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_011_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxPrTrue   : provable True",
+              "language": "lean",
+              "source_range": {
+                "start_line": 411,
+                "end_line": 411
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_012",
+          "unit_type": "lean_axiom",
+          "label": "AxNotPrFalse",
+          "source_range": {
+            "start_line": 412,
+            "end_line": 412
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_012_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxNotPrFalse : provable False → False",
+              "language": "lean",
+              "source_range": {
+                "start_line": 412,
+                "end_line": 412
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_013",
+          "unit_type": "lean_theorem",
+          "label": "ex1",
+          "source_range": {
+            "start_line": 423,
+            "end_line": 442
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_013_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex1 : ∀ x, ¬ provable (conj x False) ∧ (provable x → ¬ provable False)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 423,
+                "end_line": 423
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_013_proof",
+              "block_type": "proof_body",
+              "content": "-- Defining function\n  fun x =>\n  -- Conjunction of both conditions\n\n      ⟨\n        fun FirstPart =>\n        -- Constructing the FirstPart\n        -- AxNotPrFalse for negation\n        -- AxConjElimRight for conjuction elimination\n          AxNotPrFalse (AxConjElimRight x False FirstPart),\n\n\n        -- Constructing the SecondPart\n        -- Prx for Provable x\n        -- PrFalse for provable False\n        fun _Prx PrFalse =>\n        -- AxNotPrFalse for negation of provable False\n         AxNotPrFalse PrFalse\n      ⟩",
+              "language": "lean",
+              "source_range": {
+                "start_line": 424,
+                "end_line": 442
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_014",
+          "unit_type": "lean_theorem",
+          "label": "ex2",
+          "source_range": {
+            "start_line": 454,
+            "end_line": 462
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_014_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex2 : ∀ x y, provable (conj x False) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 454,
+                "end_line": 454
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_014_proof",
+              "block_type": "proof_body",
+              "content": "-- Defining function\n  fun x _y Prx =>\n\n  -- Using absurd to derive contradiction\n  -- As per principle of explosion, since contradiction is derived, anything proposition is provable\n  -- AxConjElimRight to get the right side of the conjunction\n   absurd (AxConjElimRight x False Prx) AxNotPrFalse",
+              "language": "lean",
+              "source_range": {
+                "start_line": 456,
+                "end_line": 462
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_015",
+          "unit_type": "lean_theorem",
+          "label": "ex3",
+          "source_range": {
+            "start_line": 473,
+            "end_line": 494
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_015_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex3 : ∀ x y z, provable (conj x (conj y z)) → provable (conj (conj y x) z)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 473,
+                "end_line": 473
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_015_proof",
+              "block_type": "proof_body",
+              "content": "-- Defining function\n  fun x y z PrLogic =>\n\n    -- Defining PrZ to get the left side of the conjunction i.e x\n    have PrX := AxConjElimLeft x (conj y z) PrLogic\n\n    -- Defining Pryz to get the right side of the conjunction i.e. y ∧ z\n    have PrYZ := AxConjElimRight x (conj y z) PrLogic\n\n    -- Defining Pry to get the left of the Pryz, which is y\n    have PrY := AxConjElimLeft y z PrYZ\n\n    -- Defining Prz to get the right of the Pryz, which is z\n    have PrZ := AxConjElimRight y z PrYZ\n\n    -- By this, we have the x y z individually\n\n    -- Now combining the elements again in the order y x z\n\n    AxConjIntro (conj y x) z (AxConjIntro y x PrY PrX) PrZ",
+              "language": "lean",
+              "source_range": {
+                "start_line": 475,
+                "end_line": 494
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_016",
+          "unit_type": "lean_theorem",
+          "label": "ex4",
+          "source_range": {
+            "start_line": 504,
+            "end_line": 516
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_016_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex4 : ∀ x y : Prop, ¬ provable (conj x y) → provable x → ¬ provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 504,
+                "end_line": 504
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_016_proof",
+              "block_type": "proof_body",
+              "content": "-- Defining function\n  fun x y PrConjFalse PrX PrY =>\n\n    -- PrConjFalse is for conj x y is not true\n\n    -- Conjunction PrX and PrY is true\n    -- While PrConFalse is conj is not true, which is contradiction\n\n    -- absurd to prove that y is not true, and not provable\n\n    absurd (AxConjIntro x y PrX PrY) PrConjFalse",
+              "language": "lean",
+              "source_range": {
+                "start_line": 506,
+                "end_line": 516
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 158,
+                  "end_line": 158
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (Condition1 : (b→d))",
+                "source_range": {
+                  "start_line": 162,
+                  "end_line": 162
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (Condition2 : ¬a → (c ∧ d))",
+                "source_range": {
+                  "start_line": 163,
+                  "end_line": 163
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (Condition3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 164,
+                  "end_line": 164
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (Condition4 : b)",
+                "source_range": {
+                  "start_line": 165,
+                  "end_line": 165
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (Condition5 : ¬c)",
+                "source_range": {
+                  "start_line": 166,
+                  "end_line": 166
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (h w f d : Prop)",
+                "source_range": {
+                  "start_line": 283,
+                  "end_line": 283
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (t r m f : Prop)",
+                "source_range": {
+                  "start_line": 350,
+                  "end_line": 350
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (Cyber1 : t → r)",
+                "source_range": {
+                  "start_line": 353,
+                  "end_line": 353
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (Cyber2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 354,
+                  "end_line": 354
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (Cyber3 : r → m)",
+                "source_range": {
+                  "start_line": 355,
+                  "end_line": 355
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (Cyber4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 356,
+                  "end_line": 356
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (Cyber5 : t)",
+                "source_range": {
+                  "start_line": 357,
+                  "end_line": 357
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "cross_artifact_links": []
+}

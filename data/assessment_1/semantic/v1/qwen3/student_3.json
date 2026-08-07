@@ -1,0 +1,315 @@
+{
+  "schema_version": "2.0",
+  "source_submission_id": "assessment_1_student_3",
+  "processed_submission_id": "processed_assessment_1_student_3",
+  "extractor_version": "1.0",
+  "model_name": "qwen3:8b",
+  "document_regions": [],
+  "unit_annotations": [
+    {
+      "unit_id": "artifact_001_unit_001",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the implication ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": null,
+            "source_range": {
+              "start_line": 18,
+              "end_line": 18
+            },
+            "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": null,
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": null,
+            "source_range": {
+              "start_line": 19,
+              "end_line": 24
+            },
+            "excerpt": "match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_002",
+          "relevance": "required",
+          "reason": "h1 is directly applied in case a) with hx1 and hy1 arguments",
+          "confidence": 0.95
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "required",
+          "reason": "h2 is directly applied in case b) with hx1 and hy2 arguments",
+          "confidence": 0.95
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "required",
+          "reason": "h3 is directly applied in case c) with hx2 and hy1 arguments",
+          "confidence": 0.95
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "required",
+          "reason": "h4 is directly applied in case d) with hx2 and hy2 arguments",
+          "confidence": 0.95
+        }
+      ],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "The proof uses case analysis to decompose the conjunction and disjunction in the hypothesis. Each case applies a corresponding hypothesis (h1-h4) to construct the target z. The proof visibly constructs the target through direct application of the provided hypotheses in all four cases of the match expression. No comment-to-code inconsistencies were found. The student's intent is clearly to prove the logical implication stated in the formal statement.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_002",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the implication (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": null,
+            "source_range": {
+              "start_line": 32,
+              "end_line": 32
+            },
+            "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "decomposition_only",
+        "description": null,
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": null,
+            "source_range": {
+              "start_line": 33,
+              "end_line": 42
+            },
+            "excerpt": "let hbd := h.left   -- b → d\n  let h2 := h.right\n  let hnacd := h2.left   -- ¬ a → (c ∧ d)\n  let h3 := h2.right\n  let had := h3.left    -- a ∨ d\n  let h4 := h3.right\n  let hb := h4.left    -- b\n  let hnc := h4.right"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_006",
+          "relevance": "required",
+          "reason": "Variables a, b, c, d are declared in context_006 and used in the proof body",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 33,
+            "end_line": 33
+          },
+          "role": "strategy",
+          "content": "-- decomposition of the proposition",
+          "related_unit_ids": [],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "summary": "The proof body decomposes the compound hypothesis into individual components but does not visibly construct the target (a ∧ d). The decomposition strategy unpacks assumptions without deriving the final conjunction. The comment accurately describes the decomposition approach, and all context declarations are genuinely used in the proof structure.",
+      "confidence": 0.7
+    },
+    {
+      "unit_id": "artifact_001_unit_003",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the implication (¬a ∨ (a ∧ ¬b ∧ c)) → d",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_003_statement",
+            "source_range": {
+              "start_line": 63,
+              "end_line": 63
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": null,
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_003_proof",
+            "source_range": {
+              "start_line": 64,
+              "end_line": 67
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_008",
+          "relevance": "required",
+          "reason": "h1 is directly applied in the Or.inl branch of the match expression",
+          "confidence": 0.95
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "required",
+          "reason": "h2 is directly applied in the Or.inr branch of the match expression",
+          "confidence": 0.95
+        }
+      ],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "The proof uses case analysis to handle the disjunction in the antecedent. The Or.inl case applies h1 to derive d, while the Or.inr case applies h2 to derive d. Both branches directly construct the target proposition d, completing the proof by exhaustively covering the disjunction cases. The proof visibly constructs the target through direct application of the provided hypotheses.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_004",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove that if (a ∧ b) ∨ (a ∧ ¬b ∧ ¬c) holds, then ¬d follows",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": null,
+            "source_range": {
+              "start_line": 80,
+              "end_line": 80
+            },
+            "excerpt": "example : ( (a ∧ b) ∨ (a ∧ ¬b ∧ ¬c) ) → ¬d"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": null,
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": null,
+            "source_range": {
+              "start_line": 81,
+              "end_line": 84
+            },
+            "excerpt": "match h with\n  | Or.inl hL => h3 hL\n  | Or.inr hR => h4 hR"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_010",
+          "relevance": "required",
+          "reason": "h3 is directly applied in the first case branch",
+          "confidence": 0.95
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "required",
+          "reason": "h4 is directly applied in the second case branch",
+          "confidence": 0.95
+        }
+      ],
+      "comment_annotations": [],
+      "relationships": [],
+      "summary": "The proof uses case analysis on the disjunction (a ∧ b) ∨ (a ∧ ¬b ∧ ¬c). Each case branch applies a predeclared hypothesis (h3 for the left disjunct, h4 for the right) to derive ¬d. The proof visibly constructs the target by applying these hypotheses directly. No comment-to-code inconsistencies were found. The student's intent is clearly to establish the logical implication stated in the formal statement.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_005",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the implication ((t → r) ∧ (f → ¬r) ∧ (r → m) ∧ (¬m ∨ ¬f) ∧ t) → (r ∧ m ∧ ¬f)",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_005_statement",
+            "source_range": {
+              "start_line": 90,
+              "end_line": 90
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "decomposition_only",
+        "description": null,
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_005_proof",
+            "source_range": {
+              "start_line": 91,
+              "end_line": 102
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_012",
+          "relevance": "required",
+          "reason": "Variables t, r, f, m are declared and used in the proof structure",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 91,
+            "end_line": 91
+          },
+          "role": "strategy",
+          "content": "-- decomposition of the proposition:",
+          "related_unit_ids": [],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "summary": "The proof body decomposes the compound hypothesis into individual components using let bindings but does not visibly construct the full target conjunction (r ∧ m ∧ ¬f). The student derives r and m through hypothesis application but does not address ¬f in the conclusion. The decomposition strategy is explicitly stated in the comment, and all context declarations are genuinely used in the proof structure. No comment-to-code inconsistencies are detected. The proof completeness cannot be determined definitively from the provided source, as the final conjunction is not fully constructed.",
+      "confidence": 0.7
+    }
+  ],
+  "unresolved_observations": [],
+  "warnings": [],
+  "raw_model_response": null
+}
