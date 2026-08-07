@@ -4,13 +4,21 @@ import argparse
 from pathlib import Path
 from typing import Any
 
-from extraction.lean_processor import process_lean_artifact
-from storage.json_store import read_json, write_json
-from validation.schema_validator import (
+from src.extraction.lean_processor import process_lean_artifact
+from src.storage.json_store import read_json, write_json
+from src.validation.schema_validator import (
     ArtefactValidationError,
     validate_artefact,
 )
-
+from src.extraction.prolog_processor import (
+    process_prolog_artifact,
+)
+from src.extraction.ontology_report_processor import (
+    process_ontology_report_artifact,
+)
+from src.extraction.owl_ontology_processor import (
+    process_owl_ontology_artifact,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
@@ -88,7 +96,24 @@ def process_artifact(
     artifact_type = artifact["artifact_type"]
 
     if artifact_type == "lean_source":
-        return process_lean_artifact(artifact)
+        return process_lean_artifact(
+            artifact
+        )
+
+    if artifact_type == "prolog_source":
+        return process_prolog_artifact(
+            artifact
+        )
+    
+    if artifact_type == "ontology_report":
+        return process_ontology_report_artifact(
+        artifact
+    )
+
+    if artifact_type == "owl_ontology":
+        return process_owl_ontology_artifact(
+            artifact
+        )
 
     return {
         "artifact_id": artifact["artifact_id"],
@@ -113,14 +138,17 @@ def process_artifact(
             ],
             "diagnostics": [
                 {
-                    "diagnostic_id": "diagnostic_001",
+                    "diagnostic_id": (
+                        "diagnostic_001"
+                    ),
                     "severity": "warning",
                     "diagnostic_type": (
                         "unsupported_artifact_type"
                     ),
                     "message": (
-                        "No preprocessing implementation "
-                        f"exists for artifact type "
+                        "No preprocessing "
+                        "implementation exists for "
+                        f"artifact type "
                         f"`{artifact_type}`."
                     ),
                     "related_unit_ids": [],

@@ -3,9 +3,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from ingestion.submission import build_submission
-from storage.json_store import write_json
-from validation.schema_validator import (
+from src.ingestion.submission import build_submission
+from src.storage.json_store import write_json
+from src.validation.schema_validator import (
     ArtefactValidationError,
     validate_artefact,
 )

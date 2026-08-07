@@ -6,9 +6,8 @@ import json
 from typing import Any
 
 from .semantic_taxonomy import (
-    LEAN_STRATEGY_CATEGORY_MAP,
-    LEAN_STRATEGY_NAMES,
-    STRATEGY_CATEGORIES,
+    get_strategy_category_map,
+    get_strategy_names,
 )
 
 
@@ -270,7 +269,110 @@ Distinguish:
 - what the formal statement contains;
 - what the proof attempt actually does.
 """
+PROLOG_ANALYSIS_RULES = """
+PROLOG-SPECIFIC REQUIREMENTS
 
+For each extracted Prolog answer:
+
+- identify the constraint or modal-logic statement represented;
+- distinguish the submitted answer predicate from surrounding template code;
+- describe the logical operators and accessibility relations actually used;
+- do not claim that the clause loads or executes unless interpreter evidence
+  is supplied;
+- treat answer1, answer2, answer3, and answer4 as direct task answers;
+- treat answer51, answer52, and answer53 as separate attempts belonging to
+  Task 5;
+- distinguish the formal prevention formula from the required English
+  explanation;
+- do not infer that a Task 5 explanation exists merely because the supplied
+  template contains instructional comments;
+- preserve missing explanations as meaningful omissions when the processed
+  unit indicates that no student-authored explanation was identified.
+
+Useful Prolog concepts may include:
+
+- implication;
+- conjunction;
+- negation;
+- possibility using dia;
+- necessity using box;
+- spatial accessibility relations;
+- mutual exclusion;
+- local structural constraints;
+- global structural constraints;
+- alternative Task 5 examples.
+
+Do not determine semantic correctness solely from predicate names.
+Analyse the actual extracted formula.
+""".strip()
+
+
+ONTOLOGY_ANALYSIS_RULES = """
+ONTOLOGY-SPECIFIC REQUIREMENTS
+
+For each ontology unit:
+
+- identify whether it is a class declaration, property declaration, hierarchy
+  axiom, restriction, domain, range, subproperty relation, intersection, or
+  property characteristic;
+- use the deterministic structured_data as the authoritative representation
+  of the ontology structure;
+- do not regenerate or reinterpret deterministic fields without evidence;
+- distinguish an entity declaration from axioms involving that entity;
+- describe the modelling function of the unit;
+- identify meaningful relationships between ontology entities and axioms;
+- do not claim that the ontology is logically consistent unless reasoner
+  output is explicitly supplied;
+- do not assume that a declared class or property is used appropriately merely
+  because it exists;
+- do not treat owl:topObjectProperty relationships as meaningful modelling
+  choices unless they are explicitly relevant to the assessment.
+
+Relevant ontology concepts may include:
+
+- class hierarchy;
+- object-property modelling;
+- datatype-property modelling;
+- subclass relationships;
+- existential restrictions;
+- universal restrictions;
+- exact, minimum, and maximum cardinality;
+- domains and ranges;
+- subproperty hierarchies;
+- intersections;
+- property characteristics.
+
+The semantic summary should explain the modelling statement represented by
+the unit, not merely state that XML was extracted.
+""".strip()
+
+
+REPORT_ANALYSIS_RULES = """
+ONTOLOGY-REPORT REQUIREMENTS
+
+For each report section:
+
+- identify the purpose of the section;
+- distinguish description, justification, explanation, and critical
+  evaluation;
+- identify the ontology entities, axioms, or modelling choices discussed;
+- preserve the student's actual claims and terminology;
+- distinguish claims about the ontology from facts verified in the ontology
+  artifact;
+- do not assume that a reported modelling choice exists in the ontology
+  unless cross-artifact evidence supports it;
+- identify advantages, disadvantages, limitations, or design trade-offs when
+  explicitly discussed;
+- avoid interpreting submission coversheet or instructional text as student
+  analysis.
+
+Common section functions include:
+
+- overview of the ontology;
+- justification of class or property choices;
+- explanation of selected axioms;
+- discussion of advantages and disadvantages.
+""".strip()
 
 def _json_text(value: Any) -> str:
     if value is None:
@@ -283,6 +385,73 @@ def _json_text(value: Any) -> str:
         default=str,
     )
 
+def _analysis_rules_for_artifact(
+    artifact_type: str,
+) -> str:
+    rules_by_artifact_type = {
+        "lean_source": LEAN_ANALYSIS_RULES,
+        "prolog_source": PROLOG_ANALYSIS_RULES,
+        "owl_ontology": ONTOLOGY_ANALYSIS_RULES,
+        "ontology_report": REPORT_ANALYSIS_RULES,
+    }
+
+    return rules_by_artifact_type.get(
+        artifact_type,
+        """
+GENERAL UNIT REQUIREMENTS
+
+Analyse the unit according to its visible content and deterministic
+structured representation. Do not introduce format-specific assumptions
+that are unsupported by the supplied evidence.
+""".strip(),
+    )
+
+def _strategy_vocabulary_text(
+    artifact_type: str,
+) -> str:
+    strategy_names = get_strategy_names(
+        artifact_type
+    )
+
+    category_map = get_strategy_category_map(
+        artifact_type
+    )
+
+    return "\n".join(
+        (
+            f"- {strategy_name}: "
+            f"category={category_map.get(strategy_name, 'other')}"
+        )
+        for strategy_name in strategy_names
+    )
+def _strategy_normalisation_rules(
+    artifact_type: str,
+) -> str:
+    if artifact_type == "lean_source":
+        return """
+Normalisation rules:
+
+- Use "case_analysis" when the proof splits into explicit cases.
+- Use "conjunction_elimination" when conjunction assumptions are unpacked.
+- Use "conjunction_construction" only when the proof visibly constructs a
+  conjunction.
+- Use "decomposition_only" when the student only unpacks assumptions and
+  does not proceed to a more substantive proof step.
+- Use "direct_application" when an available hypothesis is directly applied
+  to produce the target.
+- Do not invent new strategy names.
+- The strategy category must match the category paired with the selected
+  strategy name.
+""".strip()
+
+    return """
+Normalisation rules:
+
+- Select only a strategy directly supported by the unit.
+- Do not invent new strategy names.
+- The strategy category must match the category paired with the selected
+  strategy name.
+""".strip()
 
 def _collect_valid_identifiers(
     processed_submission: dict[str, Any],
@@ -326,15 +495,38 @@ def build_semantic_extraction_prompt(
     assessment_metadata: dict[str, Any] | None = None,
     rubric: dict[str, Any] | None = None,
 ) -> str:
-    unit_ids, context_ids, content_block_ids = (
-        _collect_valid_identifiers(processed_submission)
-    )
+        unit_ids, context_ids, content_block_ids = (
+            _collect_valid_identifiers(
+                processed_submission
+            )
+        )
 
-    return f"""
+        artifact_types = {
+            artifact.get("artifact_type")
+            for artifact in processed_submission.get(
+                "artifacts",
+                [],
+            )
+            if isinstance(
+                artifact.get("artifact_type"),
+                str,
+            )
+        }
+
+        artifact_rules = "\n\n".join(
+            _analysis_rules_for_artifact(
+                artifact_type
+            )
+            for artifact_type in sorted(
+                artifact_types
+            )
+        )
+
+        return f"""
 
 {SEMANTIC_EXTRACTION_RULES.strip()}
 
-{LEAN_ANALYSIS_RULES.strip()}
+{artifact_rules}
 
 VALID UNIT IDS — COPY EXACTLY
 
@@ -358,7 +550,7 @@ and must contain no other unit IDs.
 
 ORIGINAL RAW SUBMISSION
 
-```lean
+```text
 {raw_source}
 ```
 
@@ -391,12 +583,14 @@ Before returning the structured response, verify that:
 - every referenced content block ID exists in the valid content block
   ID list;
 - every referenced region ID is defined in document_regions;
-- summaries describe the actual statement or proof;
-- Lean units with statements and proof bodies have an intent and
-  strategy whenever these can reasonably be inferred;
+- summaries describe the actual formal statement, model, constraint,
+  explanation, result, or design claim;
+- units have an intent and strategy whenever these can reasonably be
+  inferred;
 - substantive student comments have been analysed;
-- incomplete-looking proofs are described cautiously and are not
-  claimed to compile;
+- incomplete-looking work is described cautiously;
+- compilation, execution, parsing, and logical consistency are not
+  claimed without tool evidence;
 - confidence values match the quality and completeness of the evidence.
 
 Return only the structured response required by the JSON schema.
@@ -406,6 +600,7 @@ def build_semantic_unit_prompt(
     *,
     raw_source: str,
     unit: dict[str, Any],
+    artifact_type: str,
     all_unit_ids: list[str],
     assessment_metadata: dict[str, Any] | None = None,
     rubric: dict[str, Any] | None = None,
@@ -427,17 +622,28 @@ def build_semantic_unit_prompt(
         if isinstance(block.get("block_id"), str)
     ]
     
-    strategy_names = "\n".join(
-        f"- {name}: category={LEAN_STRATEGY_CATEGORY_MAP[name]}"
-        for name in LEAN_STRATEGY_NAMES
+    analysis_rules = _analysis_rules_for_artifact(
+        artifact_type
+    )
+
+    strategy_names = _strategy_vocabulary_text(
+        artifact_type
+    )
+
+    strategy_normalisation_rules = (
+        _strategy_normalisation_rules(
+            artifact_type
+        )
     )
 
     return f"""
-{LEAN_ANALYSIS_RULES.strip()}
+{analysis_rules}
 
 PER-UNIT EXTRACTION REQUIREMENTS
 
-Analyse exactly one processed Lean unit.
+Analyse exactly one processed unit from an artifact of type:
+
+{artifact_type}
 
 The application controls the unit ID and document-level metadata.
 Do not generate:
@@ -458,64 +664,61 @@ For this unit:
 
 - determine the unit's semantic role;
 - infer the student's intent when reasonably supported;
-- identify the proof or reasoning strategy actually visible;
+- identify the reasoning, proof, modelling, computational, analytical, or
+  presentation strategy actually visible;
 - identify context declarations that are genuinely used or relevant;
 - analyse substantive student-authored comments;
 - preserve student uncertainty;
-- identify comment-to-code inconsistencies;
-- describe visible proof completeness cautiously;
+- distinguish deterministic structure from higher-level interpretation;
 - assign evidence-sensitive confidence;
-- do not claim that the proof compiles unless compiler evidence is
-  supplied.
+- do not claim successful compilation, execution, parsing, reasoning, or
+  consistency unless corresponding tool evidence is supplied.
 
 SEMANTIC ROLE GUIDANCE
 
-A Lean theorem, example, or formal proof attempt that directly answers
-an assessment task should normally use:
+A unit that directly supplies an answer to an assessment task should normally
+use:
 
     main_answer
 
-Do not use:
+A supporting declaration or ontology entity may use:
 
-    explanation
+    supporting_definition
 
-merely because the unit contains comments or proof code.
+A formal ontology axiom or Prolog constraint may use:
 
-Use another semantic role only when the unit clearly serves that
-different function.
+    formal_constraint
+
+A report section explaining design choices may use:
+
+    design_justification
+
+A report section evaluating limitations may use:
+
+    critical_reflection
+
+Use another role only when the unit clearly serves that function.
 
 STUDENT INTENT GUIDANCE
 
-For a Lean theorem or proof attempt, student_intent should normally be
-present with:
+Infer intent from the unit type and actual content.
 
-    intent_type: prove_claim
+Examples include:
 
-unless the supplied evidence does not support that interpretation.
+- prove_claim for a Lean proof attempt;
+- formalise_constraint for a Prolog modal formula;
+- model_domain for ontology classes, properties, and axioms;
+- justify_modelling_choice for report justification;
+- evaluate_design for discussion of advantages or disadvantages.
 
-The intent description should state the proposition or logical goal the
-student is attempting to establish.
+Do not populate intent merely from the filename or unit position.
 
 STRATEGY GUIDANCE
 
-Populate strategy whenever a visible proof approach exists.
+Populate strategy only when a meaningful approach is visible.
 
-Describe the actual structure used, such as:
-
-- implication introduction;
-- direct hypothesis application;
-- conjunction decomposition;
-- conjunction construction;
-- disjunction introduction;
-- disjunction elimination;
-- case analysis;
-- nested case analysis;
-- contradiction;
-- intermediate derivation;
-- local binding.
-
-Do not use generic labels such as "logical reasoning" when a more
-specific proof strategy is visible.
+Choose one controlled strategy appropriate to the artifact type. Do not invent
+new strategy names. The selected category must match the supplied vocabulary.
 
 STRATEGY VOCABULARY
 
@@ -524,20 +727,7 @@ vocabulary. Use the category paired with that strategy name.
 
 {strategy_names}
 
-Normalisation rules:
-
-- Use "case_analysis" when the proof splits into explicit cases.
-- Use "conjunction_elimination" when conjunction assumptions are
-  unpacked.
-- Use "conjunction_construction" only when the proof visibly constructs
-  a conjunction.
-- Use "decomposition_only" when the student only unpacks assumptions
-  and does not proceed to a more substantive proof step.
-- Use "direct_application" when an available hypothesis is directly
-  applied to produce the target.
-- Do not invent new strategy names.
-- The strategy category must match the category paired with the selected
-  strategy name.
+{strategy_normalisation_rules}
 
 EVIDENCE REQUIREMENTS
 
@@ -546,9 +736,10 @@ one evidence item.
 
 Evidence must refer to visible material in the supplied unit, such as:
 
-- a match expression;
-- a let binding;
-- a hypothesis application;
+- a formal statement or proof step;
+- an extracted Prolog formula;
+- deterministic ontology structured data;
+- a report claim or explanation;
 - a student-authored comment;
 - a valid content block.
 
@@ -573,7 +764,8 @@ For comments that incorrectly describe a formal expression:
 - annotate its semantic role;
 - describe the inconsistency in the summary or another appropriate
   structured description;
-- do not treat the comment as changing the Lean proposition.
+- do not treat the comment as changing the authoritative formal or
+  deterministic representation.
 
 VALID CONTEXT IDS FOR THIS UNIT
 
@@ -600,7 +792,7 @@ another.
 
 ORIGINAL RAW SUBMISSION
 
-```lean
+```text
 {raw_source}
 ```
 
@@ -628,11 +820,12 @@ Verify that:
 
 semantic_role reflects the unit's function;
 student_intent is populated when reasonably inferable;
-strategy is populated when a proof approach is visible;
+strategy is populated when a meaningful approach is visibly supported;
 substantive comments have been analysed;
 student uncertainty has not been converted into a factual claim;
 comment-to-code inconsistencies are not ignored;
-proof completeness is described only from visible evidence;
+claims about compilation, execution, parsing, or ontology consistency are
+made only when corresponding tool evidence is supplied;
 relevant_context contains only valid context IDs;
 relationships contain only valid target unit IDs;
 evidence references use valid IDs and accurate source ranges;
