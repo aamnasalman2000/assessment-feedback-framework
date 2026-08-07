@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from enum import Enum
-from typing import Any, Literal
+from typing import Annotated, Any, Literal
 
 from pydantic import BaseModel, Field, model_validator
 
@@ -19,6 +19,11 @@ class SemanticRole(str, Enum):
     EVALUATION = "evaluation"
     CONCLUSION = "conclusion"
     EXPLANATION = "explanation"
+    FORMAL_CONSTRAINT = "formal_constraint"
+    ONTOLOGY_ENTITY = "ontology_entity"
+    ONTOLOGY_AXIOM = "ontology_axiom"
+    DESIGN_JUSTIFICATION = "design_justification"
+    CRITICAL_REFLECTION = "critical_reflection"
     OTHER = "other"
 
 
@@ -32,6 +37,10 @@ class IntentType(str, Enum):
     JUSTIFY_DECISION = "justify_decision"
     PRESENT_RESULT = "present_result"
     ANSWER_QUESTION = "answer_question"
+    MODEL_DOMAIN = "model_domain"
+    FORMALISE_CONSTRAINT = "formalise_constraint"
+    JUSTIFY_MODELLING_CHOICE = "justify_modelling_choice"
+    EVALUATE_DESIGN = "evaluate_design"
     OTHER = "other"
 
 
@@ -63,6 +72,13 @@ class RelationshipType(str, Enum):
     EXTENDS = "extends"
     SUMMARISES = "summarises"
     ALTERNATIVE_TO = "alternative_to"
+    SPECIALISES = "specialises"
+    RESTRICTS = "restricts"
+    HAS_DOMAIN = "has_domain"
+    HAS_RANGE = "has_range"
+    JUSTIFIES = "justifies"
+    DESCRIBES = "describes"
+    CORRESPONDS_TO = "corresponds_to"
     OTHER = "other"
 
 
@@ -170,14 +186,82 @@ class UnitRelationship(BaseModel):
     description: str | None = None
     confidence: float = Field(ge=0.0, le=1.0)
     
+class LeanDomainAnnotation(BaseModel):
+    annotation_type: Literal["lean"] = "lean"
+
+    declaration_type: str | None = None
+    proof_style: str | None = None
+    contains_sorry: bool | None = None
+    concepts: list[str] = Field(default_factory=list)
+
+
+class PrologDomainAnnotation(BaseModel):
+    annotation_type: Literal["prolog"] = "prolog"
+
+    predicate_name: str | None = None
+    formula_summary: str | None = None
+    operators: list[str] = Field(default_factory=list)
+    modal_relations: list[str] = Field(default_factory=list)
+    constraint_type: str | None = None
+
+
+class OntologyDomainAnnotation(BaseModel):
+    annotation_type: Literal["ontology"] = "ontology"
+
+    entity_type: str | None = None
+    entity_names: list[str] = Field(default_factory=list)
+    axiom_type: str | None = None
+
+    subject: str | None = None
+    property_name: str | None = None
+    target: str | None = None
+    filler: str | None = None
+    cardinality: int | None = Field(default=None, ge=0)
+
+    modelling_concepts: list[str] = Field(
+        default_factory=list
+    )
+
+
+class ReportDomainAnnotation(BaseModel):
+    annotation_type: Literal["report"] = "report"
+
+    section_type: str | None = None
+    discussed_entities: list[str] = Field(
+        default_factory=list
+    )
+    claims: list[str] = Field(default_factory=list)
+    justification_targets: list[str] = Field(
+        default_factory=list
+    )
+
+
+DomainAnnotation = Annotated[
+    LeanDomainAnnotation
+    | PrologDomainAnnotation
+    | OntologyDomainAnnotation
+    | ReportDomainAnnotation,
+    Field(discriminator="annotation_type"),
+]
+    
 class SemanticUnitLLMOutput(BaseModel):
     semantic_role: SemanticRole
     student_intent: StudentIntent | None = None
     strategy: StrategyAnnotation | None = None
 
-    relevant_context: list[ContextSelection] = Field(default_factory=list)
-    comment_annotations: list[CommentAnnotation] = Field(default_factory=list)
-    relationships: list[UnitRelationship] = Field(default_factory=list)
+    relevant_context: list[ContextSelection] = Field(
+        default_factory=list
+    )
+    comment_annotations: list[CommentAnnotation] = Field(
+        default_factory=list
+    )
+    relationships: list[UnitRelationship] = Field(
+        default_factory=list
+    )
+
+    domain_annotations: list[DomainAnnotation] = Field(
+        default_factory=list
+    )
 
     summary: str | None = None
     confidence: float = Field(ge=0.0, le=1.0)
@@ -191,15 +275,22 @@ class SemanticUnitAnnotation(BaseModel):
     student_intent: StudentIntent | None = None
     strategy: StrategyAnnotation | None = None
 
-    relevant_context: list[ContextSelection] = Field(default_factory=list)
-    comment_annotations: list[CommentAnnotation] = Field(default_factory=list)
-    relationships: list[UnitRelationship] = Field(default_factory=list)
+    relevant_context: list[ContextSelection] = Field(
+        default_factory=list
+    )
+    comment_annotations: list[CommentAnnotation] = Field(
+        default_factory=list
+    )
+    relationships: list[UnitRelationship] = Field(
+        default_factory=list
+    )
+
+    domain_annotations: list[DomainAnnotation] = Field(
+        default_factory=list
+    )
 
     summary: str | None = None
     confidence: float = Field(ge=0.0, le=1.0)
-
-
-    #domain_annotations: dict[str, Any] = Field(default_factory=dict)
 
 
 class SemanticExtractionResult(BaseModel):
