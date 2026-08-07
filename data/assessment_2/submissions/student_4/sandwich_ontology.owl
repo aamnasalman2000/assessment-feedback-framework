@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/sandwich#"
+     xml:base="http://www.semanticweb.org/sandwich"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sandwich"/>
+
+    <!-- Classes -->
+
+    <owl:Class rdf:about="#Sandwich"/>
+    <owl:Class rdf:about="#ToastedSandwich">
+        <rdfs:subClassOf rdf:resource="#Sandwich"/>
+    </owl:Class>
+    <owl:Class rdf:about="#ClubSandwich">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="#Sandwich"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#hasFilling"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="#Filling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Class rdf:about="#OpenFacedSandwich">
+        <rdfs:subClassOf rdf:resource="#Sandwich"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Bread"/>
+    <owl:Class rdf:about="#Filling"/>
+    <owl:Class rdf:about="#Meat">
+        <rdfs:subClassOf rdf:resource="#Filling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Cheese">
+        <rdfs:subClassOf rdf:resource="#Filling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Vegetable">
+        <rdfs:subClassOf rdf:resource="#Filling"/>
+    </owl:Class>
+    <owl:Class rdf:about="#Condiment"/>
+
+    <!-- Object Properties -->
+
+    <owl:ObjectProperty rdf:about="#hasFilling">
+        <rdfs:domain rdf:resource="#Sandwich"/>
+        <rdfs:range rdf:resource="#Filling"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#isMadeOf">
+        <rdfs:domain rdf:resource="#Sandwich"/>
+        <rdfs:range rdf:resource="#Bread"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#hasCondiment">
+        <rdfs:domain rdf:resource="#Sandwich"/>
+        <rdfs:range rdf:resource="#Condiment"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#containsIngredient">
+        <rdfs:domain rdf:resource="#Sandwich"/>
+        <rdfs:range rdf:resource="#Filling"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+
+    <!-- Datatype Property -->
+
+    <owl:DatatypeProperty rdf:about="#hasLayerCount">
+        <rdfs:domain rdf:resource="#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

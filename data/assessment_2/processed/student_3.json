@@ -1,0 +1,1456 @@
+{
+  "schema_version": "1.0",
+  "processed_submission_id": "processed_assessment_2_student_3",
+  "source_submission_id": "assessment_2_student_3",
+  "student_id": "student_3",
+  "assessment_id": "assessment_2",
+  "processing_version": "0.1.0",
+  "artifacts": [
+    {
+      "artifact_id": "artifact_001",
+      "artifact_type": "owl_ontology",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "parser",
+        "detected_content_type": "rdf_xml",
+        "tools": [
+          {
+            "name": "xml.etree.ElementTree",
+            "version": null,
+            "purpose": "Parsing OWL/XML and RDF/XML ontology documents."
+          },
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.3.0",
+            "purpose": "Normalisation of ontology declarations, hierarchy axioms, restrictions, domains, ranges, and property characteristics."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "owl_parse",
+            "status": "passed",
+            "tool": "xml.etree.ElementTree",
+            "summary": "Parsed ontology as rdf_xml."
+          },
+          {
+            "check_type": "owl_structural_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 38 ontology unit(s)."
+          },
+          {
+            "check_type": "owl_consistency",
+            "status": "not_run",
+            "tool": null,
+            "summary": "An OWL reasoner was not run, so logical consistency was not verified."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_001_unit_001",
+          "unit_type": "ontology_class",
+          "label": "Bread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_001_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Bread",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_002",
+          "unit_type": "ontology_class",
+          "label": "Cheese",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_002_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Cheese\">\n        <ns2:subClassOf rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Cheese",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Cheese",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_003",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Cheese subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_003_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:subClassOf xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Cheese",
+            "parent": "Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_004",
+          "unit_type": "ontology_class",
+          "label": "ClosingBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_004_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread\">\n        <ns2:subClassOf rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "ClosingBread",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_005",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "ClosingBread subclass of Bread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_005_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:subClassOf xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "ClosingBread",
+            "parent": "Bread",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_006",
+          "unit_type": "ontology_class",
+          "label": "Deck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_006_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\">\n        <ns2:subClassOf>\n            <ns0:Restriction>\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling\" />\n                <ns0:someValuesFrom rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n            </ns0:Restriction>\n        </ns2:subClassOf>\n        <ns2:subClassOf>\n            <ns0:Restriction>\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread\" />\n                <ns0:qualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:qualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />\n            </ns0:Restriction>\n        </ns2:subClassOf>\n        <ns2:subClassOf>\n            <ns0:Restriction>\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf\" />\n                <ns0:maxQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:maxQualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n            </ns0:Restriction>\n        </ns2:subClassOf>\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Deck",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_007",
+          "unit_type": "ontology_restriction",
+          "label": "Deck: object_some_values_from on hasFilling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_007_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:Restriction xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling\" />\n                <ns0:someValuesFrom rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n            </ns0:Restriction>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "axiom_type": "object_some_values_from",
+            "property": "hasFilling",
+            "filler": "Filling",
+            "item_kind": "axiom",
+            "subject": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_008",
+          "unit_type": "ontology_restriction",
+          "label": "Deck: object_exact_cardinality on hasBaseBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_008_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:Restriction xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread\" />\n                <ns0:qualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:qualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />\n            </ns0:Restriction>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "axiom_type": "object_exact_cardinality",
+            "property": "hasBaseBread",
+            "filler": "Bread",
+            "cardinality": 1,
+            "item_kind": "axiom",
+            "subject": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_009",
+          "unit_type": "ontology_restriction",
+          "label": "Deck: object_max_cardinality on isOnTopOf",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_009_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:Restriction xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf\" />\n                <ns0:maxQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:maxQualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n            </ns0:Restriction>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "axiom_type": "object_max_cardinality",
+            "property": "isOnTopOf",
+            "filler": "Deck",
+            "cardinality": 1,
+            "item_kind": "axiom",
+            "subject": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_010",
+          "unit_type": "ontology_class",
+          "label": "Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_010_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Filling",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_011",
+          "unit_type": "ontology_class",
+          "label": "Meat",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_011_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Meat\">\n        <ns2:subClassOf rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Meat",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Meat",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_012",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Meat subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_012_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:subClassOf xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Meat",
+            "parent": "Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_013",
+          "unit_type": "ontology_class",
+          "label": "OtherProtein",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_013_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#OtherProtein\">\n        <ns2:subClassOf rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "OtherProtein",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#OtherProtein",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_014",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "OtherProtein subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_014_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:subClassOf xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "OtherProtein",
+            "parent": "Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_015",
+          "unit_type": "ontology_class",
+          "label": "Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_015_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich\">\n        <ns2:subClassOf>\n            <ns0:Restriction>\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck\" />\n                <ns0:minQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:minQualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n            </ns0:Restriction>\n        </ns2:subClassOf>\n        <ns2:subClassOf>\n            <ns0:Restriction>\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread\" />\n                <ns0:maxQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:maxQualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread\" />\n            </ns0:Restriction>\n        </ns2:subClassOf>\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Sandwich",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_016",
+          "unit_type": "ontology_restriction",
+          "label": "Sandwich: object_min_cardinality on hasDeck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_016_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:Restriction xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck\" />\n                <ns0:minQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:minQualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n            </ns0:Restriction>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "axiom_type": "object_min_cardinality",
+            "property": "hasDeck",
+            "filler": "Deck",
+            "cardinality": 1,
+            "item_kind": "axiom",
+            "subject": "Sandwich",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_017",
+          "unit_type": "ontology_restriction",
+          "label": "Sandwich: object_max_cardinality on hasClosingBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_017_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:Restriction xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">\n                <ns0:onProperty rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread\" />\n                <ns0:maxQualifiedCardinality rdf:datatype=\"http://www.w3.org/2001/XMLSchema#nonNegativeInteger\">1</ns0:maxQualifiedCardinality>\n                <ns0:onClass rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread\" />\n            </ns0:Restriction>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "axiom_type": "object_max_cardinality",
+            "property": "hasClosingBread",
+            "filler": "ClosingBread",
+            "cardinality": 1,
+            "item_kind": "axiom",
+            "subject": "Sandwich",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_018",
+          "unit_type": "ontology_class",
+          "label": "Spread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_018_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Spread\">\n        <ns2:subClassOf rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Spread",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Spread",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_019",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Spread subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_019_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:subClassOf xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Spread",
+            "parent": "Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_020",
+          "unit_type": "ontology_class",
+          "label": "Vegetable",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_020_content",
+              "block_type": "xml",
+              "content": "<ns0:Class xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Vegetable\">\n        <ns2:subClassOf rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n    </ns0:Class>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "Class",
+            "entity": "Vegetable",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Vegetable",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_021",
+          "unit_type": "ontology_subclass_axiom",
+          "label": "Vegetable subclass of Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_021_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:subClassOf xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "subclass_of",
+            "subject": "Vegetable",
+            "parent": "Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_022",
+          "unit_type": "ontology_object_property",
+          "label": "hasBaseBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_022_content",
+              "block_type": "xml",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread\">\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasBaseBread",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread",
+            "domain": "Deck",
+            "range": "Bread",
+            "superproperty": null,
+            "characteristics": [],
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_023",
+          "unit_type": "ontology_property_domain",
+          "label": "hasBaseBread: domain Deck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_023_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:domain xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_domain",
+            "property": "hasBaseBread",
+            "domain": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_024",
+          "unit_type": "ontology_property_range",
+          "label": "hasBaseBread: range Bread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_024_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:range xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_range",
+            "property": "hasBaseBread",
+            "range": "Bread",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_025",
+          "unit_type": "ontology_object_property",
+          "label": "hasClosingBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_025_content",
+              "block_type": "xml",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread\">\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasClosingBread",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread",
+            "domain": "Sandwich",
+            "range": "ClosingBread",
+            "superproperty": null,
+            "characteristics": [],
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_026",
+          "unit_type": "ontology_property_domain",
+          "label": "hasClosingBread: domain Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_026_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:domain xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_domain",
+            "property": "hasClosingBread",
+            "domain": "Sandwich",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_027",
+          "unit_type": "ontology_property_range",
+          "label": "hasClosingBread: range ClosingBread",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_027_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:range xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_range",
+            "property": "hasClosingBread",
+            "range": "ClosingBread",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_028",
+          "unit_type": "ontology_object_property",
+          "label": "hasDeck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_028_content",
+              "block_type": "xml",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck\">\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasDeck",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck",
+            "domain": "Sandwich",
+            "range": "Deck",
+            "superproperty": null,
+            "characteristics": [],
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_029",
+          "unit_type": "ontology_property_domain",
+          "label": "hasDeck: domain Sandwich",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_029_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:domain xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_domain",
+            "property": "hasDeck",
+            "domain": "Sandwich",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_030",
+          "unit_type": "ontology_property_range",
+          "label": "hasDeck: range Deck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_030_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:range xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_range",
+            "property": "hasDeck",
+            "range": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_031",
+          "unit_type": "ontology_object_property",
+          "label": "hasFilling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_031_content",
+              "block_type": "xml",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling\">\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "hasFilling",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling",
+            "domain": "Deck",
+            "range": "Filling",
+            "superproperty": null,
+            "characteristics": [],
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_032",
+          "unit_type": "ontology_property_domain",
+          "label": "hasFilling: domain Deck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_032_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:domain xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_domain",
+            "property": "hasFilling",
+            "domain": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_033",
+          "unit_type": "ontology_property_range",
+          "label": "hasFilling: range Filling",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_033_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:range xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_range",
+            "property": "hasFilling",
+            "range": "Filling",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_034",
+          "unit_type": "ontology_object_property",
+          "label": "isOnTopOf",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_034_content",
+              "block_type": "xml",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf\">\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#AsymmetricProperty\" />\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#IrreflexiveProperty\" />\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "declaration",
+            "entity_type": "ObjectProperty",
+            "entity": "isOnTopOf",
+            "iri": "http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf",
+            "domain": "Deck",
+            "range": "Deck",
+            "superproperty": null,
+            "characteristics": [
+              "AsymmetricProperty",
+              "IrreflexiveProperty"
+            ],
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_035",
+          "unit_type": "ontology_property_domain",
+          "label": "isOnTopOf: domain Deck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_035_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:domain xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_domain",
+            "property": "isOnTopOf",
+            "domain": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_036",
+          "unit_type": "ontology_property_range",
+          "label": "isOnTopOf: range Deck",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_036_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:range xmlns:ns0=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_range",
+            "property": "isOnTopOf",
+            "range": "Deck",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_037",
+          "unit_type": "ontology_property_characteristic",
+          "label": "isOnTopOf: AsymmetricProperty",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_037_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf\">\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#AsymmetricProperty\" />\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#IrreflexiveProperty\" />\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_characteristic",
+            "property": "isOnTopOf",
+            "characteristic": "AsymmetricProperty",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        },
+        {
+          "unit_id": "artifact_001_unit_038",
+          "unit_type": "ontology_property_characteristic",
+          "label": "isOnTopOf: IrreflexiveProperty",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 1.0,
+            "evidence": [
+              "The unit was extracted from the submitted Part 1 ontology artifact."
+            ]
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_038_content",
+              "block_type": "formal_statement",
+              "content": "<ns0:ObjectProperty xmlns:ns0=\"http://www.w3.org/2002/07/owl#\" xmlns:ns2=\"http://www.w3.org/2000/01/rdf-schema#\" xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\" rdf:about=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf\">\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#AsymmetricProperty\" />\n        <rdf:type rdf:resource=\"http://www.w3.org/2002/07/owl#IrreflexiveProperty\" />\n        <ns2:domain rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n        <ns2:range rdf:resource=\"http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck\" />\n    </ns0:ObjectProperty>",
+              "language": "xml"
+            }
+          ],
+          "structured_data": {
+            "item_kind": "axiom",
+            "axiom_type": "property_characteristic",
+            "property": "isOnTopOf",
+            "characteristic": "IrreflexiveProperty",
+            "serialisation": "rdf_xml"
+          },
+          "extraction_confidence": 0.98
+        }
+      ]
+    },
+    {
+      "artifact_id": "artifact_002",
+      "artifact_type": "prolog_source",
+      "processing": {
+        "status": "failed",
+        "extraction_mode": "textual",
+        "detected_content_type": "assessment_2_prolog_modal_logic",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.3.0",
+            "purpose": "Structural extraction of Assessment 2 Prolog answer predicates, modal formulas, and Task 5 explanations."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "prolog_textual_extraction",
+            "status": "failed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 0 Assessment 2 answer predicate(s)."
+          },
+          {
+            "check_type": "prolog_parse",
+            "status": "not_run",
+            "tool": null,
+            "summary": "A Prolog parser or interpreter was not executed during this preprocessing version."
+          },
+          {
+            "check_type": "prolog_load",
+            "status": "not_run",
+            "tool": null,
+            "summary": "The submitted source was not loaded in SWI-Prolog during preprocessing."
+          }
+        ],
+        "diagnostics": [
+          {
+            "diagnostic_id": "diagnostic_001",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer1/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_002",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer2/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_003",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer3/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_004",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer4/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_005",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer51/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_006",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer52/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_007",
+            "severity": "warning",
+            "diagnostic_type": "missing_answer_predicate",
+            "message": "The expected Prolog predicate answer53/1 was not identified.",
+            "related_unit_ids": []
+          },
+          {
+            "diagnostic_id": "diagnostic_008",
+            "severity": "error",
+            "diagnostic_type": "no_answers_extracted",
+            "message": "No supported Assessment 2 answer predicates were extracted from the Prolog source.",
+            "related_unit_ids": []
+          }
+        ]
+      },
+      "units": []
+    },
+    {
+      "artifact_id": "artifact_003",
+      "artifact_type": "ontology_report",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "ontology_design_report",
+        "tools": [
+          {
+            "name": "pypdf",
+            "version": null,
+            "purpose": "PDF text extraction during submission ingestion."
+          },
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.3.0",
+            "purpose": "Removal of report boilerplate and structural extraction of ontology-report sections."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "report_text_extraction",
+            "status": "passed",
+            "tool": "pypdf",
+            "summary": "Text was extracted from the submitted ontology report."
+          },
+          {
+            "check_type": "report_section_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 1 substantive report section(s)."
+          }
+        ],
+        "diagnostics": [
+          {
+            "diagnostic_id": "diagnostic_001",
+            "severity": "info",
+            "diagnostic_type": "unrecognised_report_sections",
+            "message": "The following common report sections were not identified: advantages and disadvantages, axiom, justification, overview.",
+            "related_unit_ids": []
+          }
+        ]
+      },
+      "units": [
+        {
+          "unit_id": "artifact_003_unit_001",
+          "unit_type": "ontology_report_section",
+          "label": "Ontology Report",
+          "task_mapping": {
+            "part_ids": [
+              "part_1_ontology"
+            ],
+            "source": "inferred",
+            "confidence": 0.95,
+            "evidence": [
+              "The section occurs in the submitted Part 1 ontology report."
+            ]
+          },
+          "source_range": {
+            "start_line": 1,
+            "end_line": 104
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_003_unit_001_heading",
+              "block_type": "heading",
+              "content": "Ontology Report",
+              "language": "en",
+              "source_range": {
+                "start_line": 1,
+                "end_line": 104
+              }
+            },
+            {
+              "block_id": "artifact_003_unit_001_prose",
+              "block_type": "prose",
+              "content": "Student Name: Alex Tonev\nStudent ID: 201895897\nCourse: OCOM5201 - Knowledge Representation and Reasoning\nDate: 23.06.2025\nWord Count: 743\n\nReport on Sandwich Ontology Design\n\nThe designed ontology attempts to model the components and structure of a sandwich as\ndescribed by the Wikipedia article, as per the project guidelines.\nAt first the article describes a sandwich to be a piece of food consisting of one or more\nfillings between two pieces of bread. It mentions a wide variety of possible fillings, as well as\nthe possibility for there to be a number of pieces of bread different than two, introducing the\nconcepts of a “sandwich deck”, and that of an “open sandwich”. Multi-deck sandwiches may\nintroduce multiple additional layers of bread and filling, while open sandwiches omit the need\nfor a top bread. These special cases make the initial proposition for the definition of a\nsandwich being “bread-filling-bread” obsolete, as the number of pieces of bread is no longer\nfixed.\nTo accommodate all special cases, the ontology was designed to think of sandwiches in a\ndifferent way. The core of an open sandwich – our base case – is a base of bread, and some\nfillings. This open sandwich can then become closed with a further addition of a top bread, or\nbe complemented by a second deck. An interesting observation can be made that even\nsandwiches with the original 2 slices of bread can have some of their fillings on top, as are\nthe cases with the Croque monsieur and the Portuguese Francesinha. The ontology views\nthose cases as “open two-deck sandwiches”, threating the de-facto closing bread with\nadditional toppings simply as a second deck.\n\nThe ontology includes the following ten classes:\n• Sandwich: the root class.\n• Deck: composing of Bread and Filling.\n• Bread, with subclass ClosingBread.\n• Filling, with five subclasses: Meat, Cheese, Veg, Spread, and OtherProtein.\n\nThe “ClosingBread” subclass was chosen for specificity in object properties we will later see,\nbut also because many times the top bread of a sandwich has particularities, as is the case\nwith hamburgers for example.\nThe Filling classes chosen were all top-level fillings, with the intent of covering as much\nground as possible. “Spread” can be applied to both sweet and savory spreads.\n“OtherProtein” is an attempt to fit in miscellaneous items in sandwiches serving that\nparticular purpose, such as eggs, tofu, or hashbrowns. No hierarchy was applied there,\nbecause of the constraint of there being up to five object properties.\n\nAll five object properties were needed to describe a sandwich, given the above classes:\n1. hasDeck (Sandwich → Deck): must have at least one deck to be a sandwich.\n2. hasBaseBread (Deck → Bread): each Deck must have a base slice.\n3. hasFilling (Deck → Filling): a deck must contain one or more fillings.\n\n4. hasClosingBread (Sandwich → ClosingBread): optional top bread.\n5. isOnTopOf (Deck → Deck): to model the vertical order of decks in a sandwich.\n\nThis provides a comprehensive list of the possible relationship between all classes, as they\nwere defined. Sandwiches are comprised of at least one deck and an optional closing bread.\nAny deck has a base and a filling. The order of decks is modelled with the “isOnTopOf”\nrelationship.\n\nTo complete the ontology, the above structural restrictions are formalized as a set of axioms:\n\n1. Any sandwich must contain at least one deck:\n- Sandwich ⊑ (≥1 hasDeck.Deck)\n\n2. A sandwich may contain at most one closing bread:\n- Sandwich ⊑ (≤1 hasClosingBread.ClosingBread)\n\n3. Every deck needs to have exactly one base bread:\n- Deck ⊑ (=1 hasBaseBread.Bread)\n\n4. Every deck must contain one or more fillings:\n- Deck ⊑ (≥1 hasFilling.Filling)\n\n5. Two decks cannot be on top of one another at the same time:\n- Asymmetric(isOnTopOf)\n\n6. No deck can be on top of itself:\n- Irreflexive(isOnTopOf)\n\nWith this, the ontology provides a comprehensive structure for describing most sandwiches,\nwithin the required number of classes and properties. The design allows for the inference of\nwether a sandwich is open or closed, as well as knowledge of how the decks are stacked,\nwithout allowing for an obvious paradox to occur. The modular design of the ontology allows\nfor the addition of further classes, such as a open and closed sandwiches, and the addition\nof hierarchy within the Filling top class.\nWith the constraint on the number of properties allowed, however, some obvious limitations\narised. The “Filling” set of  subclasses don’t have a relationship to encode the order they\nappear in, as is possible with decks. Additionally, there are no clear restrictions on two\nindividuals using the same component instance, like sharing a closing bread for example.\n\nReferences\nUse of AI:\n1. Use of ChatGPT 4o, as a thinking partner during ontology design.\n“should sandwich hasClosingBread point to bread or closingbread?”\n“hmm if it is a reverse I continue thinking this isn't the right move. Help me with possible\nproperties I might not have thought of so far”\n\n2. Use of ChatGPT 4o, for help with structuring during writing\n“Knowing what you know now comprise a full breakdown on what to write in the report”\n“So far I have this. How do I transition to axioms from here. The designed ontology attempts\nto model the components and structure of a sandwich as described by the Wikipedia article,\nas per the project guidelines. At first the article describes a sandwich to be a piece of food\nconsisting of one or more…”",
+              "language": "en",
+              "source_range": {
+                "start_line": 1,
+                "end_line": 104
+              }
+            }
+          ],
+          "structured_data": {
+            "section_title": "Ontology Report",
+            "page_numbers": [
+              1,
+              2,
+              3
+            ]
+          },
+          "extraction_confidence": 0.95
+        }
+      ]
+    }
+  ],
+  "cross_artifact_links": []
+}

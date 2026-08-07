@@ -1,0 +1,12 @@
+{
+  "analysis": {
+    "evidence_supported": true,
+    "preferred_solution_bias": false,
+    "confidence_assessment": "appropriate",
+    "should_revise": false,
+    "revision_reason": "The model did not provide a complete valid revision patch, so the original assessment was preserved.",
+    "unsupported_claims": [],
+    "overlooked_evidence": [],
+    "missing_rubric_points": []
+  }
+}

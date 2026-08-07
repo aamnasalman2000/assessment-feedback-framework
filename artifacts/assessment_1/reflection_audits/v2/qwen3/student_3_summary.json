@@ -1,0 +1,14 @@
+{
+  "assessment_id": "assessment_1",
+  "student_id": "student_3",
+  "model": "qwen3:8b",
+  "total_requirements_reviewed": 52,
+  "requirements_revised": 52,
+  "requirements_unchanged": 0,
+  "unsupported_claims_identified": 0,
+  "overlooked_evidence_items": 1,
+  "missing_rubric_points_identified": 52,
+  "preferred_solution_bias_cases": 1,
+  "confidence_judged_too_high": 0,
+  "confidence_judged_too_low": 52
+}

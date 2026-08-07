@@ -1,0 +1,19 @@
+{
+  "status": "missing",
+  "internal_finding": "The student's submission lacks explicit handling of all four prerequisite/approval combinations in the eligibility condition. The provided Lean declarations do not fully encode the conjunctive requirement.",
+  "student_feedback": "Ensure your proof handles all combinations of prerequisite and approval conditions. Verify that your eligibility condition explicitly combines both requirements using logical conjunction.",
+  "verification_status": "inferred",
+  "confidence": 0.4,
+  "evidence": [
+    {
+      "description": "Lean declarations do not show explicit handling of all four combinations",
+      "evidence_type": "absence",
+      "requirement_id": "req-001"
+    },
+    {
+      "description": "No proof defects were explicitly identified in the supplied code",
+      "evidence_type": "absence",
+      "requirement_id": "req-001"
+    }
+  ]
+}

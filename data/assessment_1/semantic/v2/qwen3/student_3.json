@@ -1,0 +1,378 @@
+{
+  "schema_version": "2.0",
+  "source_submission_id": "assessment_1_student_3",
+  "processed_submission_id": "processed_assessment_1_student_3",
+  "extractor_version": "2.0",
+  "model_name": "qwen3:8b",
+  "document_regions": [],
+  "unit_annotations": [
+    {
+      "unit_id": "artifact_001_unit_001",
+      "region_ids": [],
+      "semantic_role": "evaluation",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 10
+          },
+          "role": "decorative_separator",
+          "content": "Theorem 1: Prove that provable (conj x False) leads to a contradiction, and explain both conjuncts in the context of the given axioms and theorems.",
+          "related_unit_ids": [],
+          "confidence": 0.98
+        },
+        {
+          "source_range": {
+            "start_line": 11,
+            "end_line": 20
+          },
+          "role": "decorative_separator",
+          "content": "Theorem 2: Demonstrate the principle of explosion using the given axioms and theorems, and explain the logical implications.",
+          "related_unit_ids": [],
+          "confidence": 0.97
+        },
+        {
+          "source_range": {
+            "start_line": 21,
+            "end_line": 30
+          },
+          "role": "decorative_separator",
+          "content": "Theorem 3: Extract provable x, y, z from the given context and demonstrate the application of the specified axioms.",
+          "related_unit_ids": [],
+          "confidence": 0.96
+        },
+        {
+          "source_range": {
+            "start_line": 31,
+            "end_line": 40
+          },
+          "role": "decorative_separator",
+          "content": "Theorem 4: Prove the destination_reached proposition using the provided scenario and evaluation requirements.",
+          "related_unit_ids": [],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [],
+      "summary": "The submission demonstrates a clear understanding of logical principles and axioms, with strong application of conjunction elimination and falsehood axioms. However, the explanation of the principle of explosion requires more detailed elaboration, and the final theorem's proof could benefit from additional contextual clarification to fully satisfy the evaluation requirements.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_002",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "role": "heading",
+          "content": "Theorem 1: Proving Contradiction from Provability of Conjunction with Falsehood",
+          "related_unit_ids": [],
+          "confidence": 0.98
+        },
+        {
+          "source_range": {
+            "start_line": 2,
+            "end_line": 2
+          },
+          "role": "heading",
+          "content": "Theorem 2: Principle of Explosion",
+          "related_unit_ids": [],
+          "confidence": 0.97
+        },
+        {
+          "source_range": {
+            "start_line": 3,
+            "end_line": 3
+          },
+          "role": "heading",
+          "content": "Theorem 3: Rearranging Nested Conjunctions",
+          "related_unit_ids": [],
+          "confidence": 0.96
+        },
+        {
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "role": "heading",
+          "content": "Theorem 4: Negation and Provability",
+          "related_unit_ids": [],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [
+        {
+          "target_unit_id": "artifact_001_unit_001",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.94
+        },
+        {
+          "target_unit_id": "artifact_001_unit_002",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.93
+        },
+        {
+          "target_unit_id": "artifact_001_unit_003",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.92
+        },
+        {
+          "target_unit_id": "artifact_001_unit_004",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.91
+        }
+      ],
+      "summary": "The submission demonstrates a clear understanding of logical theorems involving conjunction, falsehood, and negation. The proofs are structured and follow the required axioms, with appropriate explanations for each step. The compilation of theorems is successful, and the use of axioms is consistent with the evaluation requirements. However, the explanations could be more detailed in some areas, particularly in the derivation of the principle of explosion and the rearrangement of nested conjunctions.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_003",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "role": "heading",
+          "content": "Theorem 1: Proving Contradiction from Provability of Conjunction with Falsehood",
+          "related_unit_ids": [],
+          "confidence": 0.98
+        },
+        {
+          "source_range": {
+            "start_line": 2,
+            "end_line": 2
+          },
+          "role": "heading",
+          "content": "Theorem 2: Principle of Explosion",
+          "related_unit_ids": [],
+          "confidence": 0.97
+        },
+        {
+          "source_range": {
+            "start_line": 3,
+            "end_line": 3
+          },
+          "role": "heading",
+          "content": "Theorem 3: Rearranging Nested Conjunctions",
+          "related_unit_ids": [],
+          "confidence": 0.96
+        },
+        {
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "role": "heading",
+          "content": "Theorem 4: Negation and Provability",
+          "related_unit_ids": [],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [
+        {
+          "target_unit_id": "artifact_001_unit_001",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.94
+        },
+        {
+          "target_unit_id": "artifact_001_unit_002",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.93
+        },
+        {
+          "target_unit_id": "artifact_001_unit_003",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.92
+        },
+        {
+          "target_unit_id": "artifact_001_unit_004",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.91
+        }
+      ],
+      "summary": "The submission demonstrates a clear understanding of logical theorems involving conjunction, falsehood, and negation. The proofs are structured and follow the required axioms, with appropriate explanations for each step. The compilation of theorems is successful, and the use of axioms is consistent with the evaluation requirements. However, some explanations could be more detailed to fully address the assessment criteria.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_004",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "role": "heading",
+          "content": "Theorem 1: Proving Contradiction from Provability of Conjunction with Falsehood",
+          "related_unit_ids": [],
+          "confidence": 0.98
+        },
+        {
+          "source_range": {
+            "start_line": 2,
+            "end_line": 2
+          },
+          "role": "heading",
+          "content": "Theorem 2: Principle of Explosion",
+          "related_unit_ids": [],
+          "confidence": 0.97
+        },
+        {
+          "source_range": {
+            "start_line": 3,
+            "end_line": 3
+          },
+          "role": "heading",
+          "content": "Theorem 3: Rearranging Nested Conjunctions",
+          "related_unit_ids": [],
+          "confidence": 0.96
+        },
+        {
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "role": "heading",
+          "content": "Theorem 4: Negation and Provability",
+          "related_unit_ids": [],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [
+        {
+          "target_unit_id": "artifact_001_unit_001",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.94
+        },
+        {
+          "target_unit_id": "artifact_001_unit_002",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.93
+        },
+        {
+          "target_unit_id": "artifact_001_unit_003",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.92
+        },
+        {
+          "target_unit_id": "artifact_001_unit_004",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.91
+        }
+      ],
+      "summary": "The submission demonstrates a clear understanding of logical theorems involving conjunction, falsehood, and negation. The proofs are structured and follow the required axioms, with appropriate explanations for each step. The compilation of theorems is successful, and the use of axioms is consistent with the evaluation requirements. However, some explanations could be more detailed to fully address the assessment criteria.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_005",
+      "region_ids": [],
+      "semantic_role": "assumption",
+      "student_intent": null,
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "role": "heading",
+          "content": "Theorem 1: Proving Contradiction from Provability of Conjunction with Falsehood",
+          "related_unit_ids": [],
+          "confidence": 0.98
+        },
+        {
+          "source_range": {
+            "start_line": 2,
+            "end_line": 2
+          },
+          "role": "heading",
+          "content": "Theorem 2: Principle of Explosion",
+          "related_unit_ids": [],
+          "confidence": 0.97
+        },
+        {
+          "source_range": {
+            "start_line": 3,
+            "end_line": 3
+          },
+          "role": "heading",
+          "content": "Theorem 3: Rearranging Nested Conjunctions",
+          "related_unit_ids": [],
+          "confidence": 0.96
+        },
+        {
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "role": "heading",
+          "content": "Theorem 4: Negation and Provability",
+          "related_unit_ids": [],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [
+        {
+          "target_unit_id": "artifact_001_unit_001",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.94
+        },
+        {
+          "target_unit_id": "artifact_001_unit_002",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.93
+        },
+        {
+          "target_unit_id": "artifact_001_unit_003",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.92
+        },
+        {
+          "target_unit_id": "artifact_001_unit_004",
+          "relationship_type": "produces",
+          "description": null,
+          "confidence": 0.91
+        }
+      ],
+      "summary": "The submission demonstrates a clear understanding of logical theorems involving conjunction, falsehood, and negation. The proofs are structured and follow the required axioms, with appropriate explanations for each step. The compilation of theorems is successful, and the use of axioms is consistent with the evaluation requirements. However, some explanations could be more detailed to fully address the assessment criteria.",
+      "confidence": 0.95
+    }
+  ],
+  "unresolved_observations": [],
+  "warnings": [],
+  "raw_model_response": null
+}

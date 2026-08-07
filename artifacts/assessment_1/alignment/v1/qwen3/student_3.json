@@ -1,0 +1,102 @@
+{
+  "component_alignments": [
+    {
+      "component_id": "scenario_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_001"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The task requires proving student eligibility based on prerequisites and approval conditions, which aligns with the unit's focus on logical proof of eligibility.",
+      "confidence": 0.8,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_002"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The task involves proving implications between transaction-security conditions and verification requirements, matching the unit's focus on formalizing and proving such implications.",
+      "confidence": 0.7,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_003"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The task requires formalizing conditions for autonomous vehicle decisions and proving destination reachability, aligning with the unit's focus on logical formalization and proof.",
+      "confidence": 0.7,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_004"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The task involves proving a threat detection system's response logic, which aligns with the unit's focus on formalizing and proving system behavior.",
+      "confidence": 0.7,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_005"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The theorem about conjunction with false aligns with the unit's focus on logical principles and their proofs.",
+      "confidence": 0.6,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_005"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The theorem about disjunction with true aligns with the unit's focus on logical principles and their proofs.",
+      "confidence": 0.6,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_005"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The theorem about material implication aligns with the unit's focus on logical principles and their proofs.",
+      "confidence": 0.6,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_005"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The theorem about logical equivalence aligns with the unit's focus on logical principles and their proofs.",
+      "confidence": 0.6,
+      "unresolved": false
+    }
+  ],
+  "summary": "Each component has been aligned with the corresponding units based on the provided task summaries and valid unit IDs. The alignment assumes direct relevance between the component's task and the unit's content, as no additional content details were provided.",
+  "warnings": [
+    "Confidence scores are low due to lack of detailed content for units and components."
+  ],
+  "schema_version": "1.0",
+  "assessment_id": "assessment_1",
+  "source_submission_id": "assessment_1_student_3",
+  "processed_submission_id": "processed_assessment_1_student_3",
+  "model_name": "qwen3:8b",
+  "aligner_version": "1.0"
+}

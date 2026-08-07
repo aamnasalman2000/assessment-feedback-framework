@@ -1,0 +1,4130 @@
+{
+  "schema_version": "1.0",
+  "processed_submission_id": "processed_assessment_1_student_5",
+  "source_submission_id": "assessment_1_student_5",
+  "student_id": "student_5",
+  "assessment_id": "assessment_1",
+  "processing_version": "0.1.0",
+  "artifacts": [
+    {
+      "artifact_id": "artifact_001",
+      "artifact_type": "lean_source",
+      "processing": {
+        "status": "success",
+        "extraction_mode": "textual",
+        "detected_content_type": "lean_4_source",
+        "tools": [
+          {
+            "name": "assessment-feedback-preprocessor",
+            "version": "0.2.0",
+            "purpose": "Structural textual extraction of Lean declarations, context, comments, and proof bodies."
+          }
+        ],
+        "checks": [
+          {
+            "check_type": "lean_textual_extraction",
+            "status": "passed",
+            "tool": "assessment-feedback-preprocessor",
+            "summary": "Extracted 18 Lean declaration(s)."
+          },
+          {
+            "check_type": "lean_compile",
+            "status": "not_run",
+            "tool": null,
+            "summary": "Lean compilation is not included in this preprocessing version."
+          }
+        ],
+        "diagnostics": []
+      },
+      "units": [
+        {
+          "unit_id": "artifact_001_unit_001",
+          "unit_type": "lean_definition",
+          "label": "main",
+          "source_range": {
+            "start_line": 3,
+            "end_line": 4
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_001_statement",
+              "block_type": "formal_statement",
+              "content": "def main : IO Unit",
+              "language": "lean",
+              "source_range": {
+                "start_line": 3,
+                "end_line": 3
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_001_proof",
+              "block_type": "proof_body",
+              "content": "IO.println \"You have successfully proved the eligibility theorem!\"",
+              "language": "lean",
+              "source_range": {
+                "start_line": 4,
+                "end_line": 4
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "def",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_002",
+          "unit_type": "lean_definition",
+          "label": "provable",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_002_statement",
+              "block_type": "formal_statement",
+              "content": "def provable (p : Prop) : Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 9,
+                "end_line": 9
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_002_proof",
+              "block_type": "proof_body",
+              "content": "p",
+              "language": "lean",
+              "source_range": {
+                "start_line": 9,
+                "end_line": 9
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "def",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_003",
+          "unit_type": "lean_example",
+          "label": "example_1",
+          "source_range": {
+            "start_line": 25,
+            "end_line": 44
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_003_statement",
+              "block_type": "formal_statement",
+              "content": "example : provable z",
+              "language": "lean",
+              "source_range": {
+                "start_line": 25,
+                "end_line": 25
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_003_proof",
+              "block_type": "proof_body",
+              "content": "-- Start by eliminating the disjunction x1 ∨ x2\n  Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+              "language": "lean",
+              "source_range": {
+                "start_line": 26,
+                "end_line": 44
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_004",
+          "unit_type": "lean_example",
+          "label": "example_2",
+          "source_range": {
+            "start_line": 64,
+            "end_line": 73
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_004_statement",
+              "block_type": "formal_statement",
+              "content": "example : a ∧ d",
+              "language": "lean",
+              "source_range": {
+                "start_line": 64,
+                "end_line": 64
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_004_proof",
+              "block_type": "proof_body",
+              "content": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+              "language": "lean",
+              "source_range": {
+                "start_line": 65,
+                "end_line": 73
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_005",
+          "unit_type": "lean_definition",
+          "label": "provable",
+          "source_range": {
+            "start_line": 87,
+            "end_line": 87
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_005_statement",
+              "block_type": "formal_statement",
+              "content": "def provable (p : Prop) : Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 87,
+                "end_line": 87
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_005_proof",
+              "block_type": "proof_body",
+              "content": "p",
+              "language": "lean",
+              "source_range": {
+                "start_line": 87,
+                "end_line": 87
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "def",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_006",
+          "unit_type": "lean_example",
+          "label": "example_3",
+          "source_range": {
+            "start_line": 101,
+            "end_line": 135
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_006_statement",
+              "block_type": "formal_statement",
+              "content": "example : provable d",
+              "language": "lean",
+              "source_range": {
+                "start_line": 101,
+                "end_line": 101
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_006_proof",
+              "block_type": "proof_body",
+              "content": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This was given to us as hf.\n          hf\n\n      -- Apply the rule to get the goal d\n      show d from h1_congestion_case h_no_weather_and_fuel)\n\n    (fun hw : w =>\n      -- Case 2: Weather is unsafe.\n      -- Use the second part of the revised h1.\n      have h1_no_congestion_case : ¬c → d := And.right h1\n\n      -- From h2, unsafe weather implies no congestion.\n      have hnc : ¬c := h2 hw\n\n      -- Now we can apply our rule to get the goal d.\n      show d from h1_no_congestion_case hnc)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 102,
+                "end_line": 135
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_007",
+          "unit_type": "lean_example",
+          "label": "example_4",
+          "source_range": {
+            "start_line": 153,
+            "end_line": 160
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_007_statement",
+              "block_type": "formal_statement",
+              "content": "example : r ∧ m ∧ ¬f",
+              "language": "lean",
+              "source_range": {
+                "start_line": 153,
+                "end_line": 153
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_007_proof",
+              "block_type": "proof_body",
+              "content": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 154,
+                "end_line": 160
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "example",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_008",
+          "unit_type": "lean_opaque_declaration",
+          "label": "conj",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 168
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_008_statement",
+              "block_type": "formal_statement",
+              "content": "opaque conj : Prop → Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 168,
+                "end_line": 168
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_009",
+          "unit_type": "lean_opaque_declaration",
+          "label": "provable",
+          "source_range": {
+            "start_line": 169,
+            "end_line": 169
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_009_statement",
+              "block_type": "formal_statement",
+              "content": "opaque provable : Prop → Prop",
+              "language": "lean",
+              "source_range": {
+                "start_line": 169,
+                "end_line": 169
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "opaque",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_010",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimRight",
+          "source_range": {
+            "start_line": 173,
+            "end_line": 173
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_010_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimRight : ∀ x y, provable (conj x y) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 173,
+                "end_line": 173
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_011",
+          "unit_type": "lean_axiom",
+          "label": "AxConjElimLeft",
+          "source_range": {
+            "start_line": 176,
+            "end_line": 176
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_011_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) → provable x",
+              "language": "lean",
+              "source_range": {
+                "start_line": 176,
+                "end_line": 176
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_012",
+          "unit_type": "lean_axiom",
+          "label": "AxConjIntro",
+          "source_range": {
+            "start_line": 179,
+            "end_line": 179
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_012_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxConjIntro : ∀ x y, provable x → provable y → provable (conj x y)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 179,
+                "end_line": 179
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_013",
+          "unit_type": "lean_axiom",
+          "label": "AxPrTrue",
+          "source_range": {
+            "start_line": 182,
+            "end_line": 182
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_013_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxPrTrue : provable True",
+              "language": "lean",
+              "source_range": {
+                "start_line": 182,
+                "end_line": 182
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_014",
+          "unit_type": "lean_axiom",
+          "label": "AxNotPrFalse",
+          "source_range": {
+            "start_line": 185,
+            "end_line": 185
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_014_statement",
+              "block_type": "formal_statement",
+              "content": "axiom AxNotPrFalse : provable False → False",
+              "language": "lean",
+              "source_range": {
+                "start_line": 185,
+                "end_line": 185
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "axiom",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "none"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_015",
+          "unit_type": "lean_theorem",
+          "label": "ex1",
+          "source_range": {
+            "start_line": 188,
+            "end_line": 204
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_015_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex1 : ∀ x, ¬ provable (conj x False) ∧ (provable x → ¬ provable False)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 188,
+                "end_line": 188
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_015_proof",
+              "block_type": "proof_body",
+              "content": "λ x =>\n  -- We need to prove that `¬ provable (conj x False)`.\n  -- This means that if we have a proof of `conj x False`, it leads to a contradiction.\n  -- We can use the axiom `AxConjElimRight` to show that if we have a proof of `conj x False`,\n  -- then we can derive `provable False`, which contradicts the axiom `AxNotPrFalse`.\n  let hx : ¬ provable (conj x False) :=\n    λ h =>\n      let pr_false := AxConjElimRight x False h\n      AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable False :=\n    λ _ h_pf => AxNotPrFalse h_pf\n  -- Finally, we combine both parts into a conjunction\n  And.intro hx hxf",
+              "language": "lean",
+              "source_range": {
+                "start_line": 189,
+                "end_line": 204
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_016",
+          "unit_type": "lean_theorem",
+          "label": "ex2",
+          "source_range": {
+            "start_line": 208,
+            "end_line": 215
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_016_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex2 : ∀ x y, provable (conj x False) → provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 208,
+                "end_line": 208
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_016_proof",
+              "block_type": "proof_body",
+              "content": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+              "language": "lean",
+              "source_range": {
+                "start_line": 209,
+                "end_line": 215
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_017",
+          "unit_type": "lean_theorem",
+          "label": "ex3",
+          "source_range": {
+            "start_line": 220,
+            "end_line": 238
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_017_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex3 : ∀ x y z, provable (conj x (conj y z)) → provable (conj (conj y x) z)",
+              "language": "lean",
+              "source_range": {
+                "start_line": 220,
+                "end_line": 220
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_017_proof",
+              "block_type": "proof_body",
+              "content": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+              "language": "lean",
+              "source_range": {
+                "start_line": 221,
+                "end_line": 238
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        },
+        {
+          "unit_id": "artifact_001_unit_018",
+          "unit_type": "lean_theorem",
+          "label": "ex4",
+          "source_range": {
+            "start_line": 243,
+            "end_line": 256
+          },
+          "content_blocks": [
+            {
+              "block_id": "artifact_001_unit_018_statement",
+              "block_type": "formal_statement",
+              "content": "theorem ex4 : ∀ x y : Prop,\n  ¬ provable (conj x y) →\n  provable x →\n  ¬ provable y",
+              "language": "lean",
+              "source_range": {
+                "start_line": 243,
+                "end_line": 246
+              }
+            },
+            {
+              "block_id": "artifact_001_unit_018_proof",
+              "block_type": "proof_body",
+              "content": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+              "language": "lean",
+              "source_range": {
+                "start_line": 247,
+                "end_line": 256
+              }
+            }
+          ],
+          "structured_data": {
+            "declaration_type": "theorem",
+            "contains_sorry": false,
+            "scope_path": [],
+            "context_declarations": [
+              {
+                "context_id": "context_001",
+                "declaration_type": "variable",
+                "content": "variable (x1 x2 y1 y2 z : Prop)",
+                "source_range": {
+                  "start_line": 12,
+                  "end_line": 12
+                }
+              },
+              {
+                "context_id": "context_002",
+                "declaration_type": "variable",
+                "content": "variable (hx : provable (x1 ∨ x2))",
+                "source_range": {
+                  "start_line": 15,
+                  "end_line": 15
+                }
+              },
+              {
+                "context_id": "context_003",
+                "declaration_type": "variable",
+                "content": "variable (hy : provable (y1 ∨ y2))",
+                "source_range": {
+                  "start_line": 16,
+                  "end_line": 16
+                }
+              },
+              {
+                "context_id": "context_004",
+                "declaration_type": "variable",
+                "content": "variable (h1 : provable x1 → provable z)",
+                "source_range": {
+                  "start_line": 19,
+                  "end_line": 19
+                }
+              },
+              {
+                "context_id": "context_005",
+                "declaration_type": "variable",
+                "content": "variable (h2 : provable x2 → provable z)",
+                "source_range": {
+                  "start_line": 20,
+                  "end_line": 20
+                }
+              },
+              {
+                "context_id": "context_006",
+                "declaration_type": "variable",
+                "content": "variable (h3 : provable y1 → provable z)",
+                "source_range": {
+                  "start_line": 21,
+                  "end_line": 21
+                }
+              },
+              {
+                "context_id": "context_007",
+                "declaration_type": "variable",
+                "content": "variable (h4 : provable y2 → provable z)",
+                "source_range": {
+                  "start_line": 22,
+                  "end_line": 22
+                }
+              },
+              {
+                "context_id": "context_008",
+                "declaration_type": "variable",
+                "content": "variable (a b c d : Prop)",
+                "source_range": {
+                  "start_line": 54,
+                  "end_line": 54
+                }
+              },
+              {
+                "context_id": "context_009",
+                "declaration_type": "variable",
+                "content": "variable (h1 : b → d)",
+                "source_range": {
+                  "start_line": 57,
+                  "end_line": 57
+                }
+              },
+              {
+                "context_id": "context_010",
+                "declaration_type": "variable",
+                "content": "variable (h2 : ¬a → c ∧ d)",
+                "source_range": {
+                  "start_line": 58,
+                  "end_line": 58
+                }
+              },
+              {
+                "context_id": "context_011",
+                "declaration_type": "variable",
+                "content": "variable (h3 : a ∨ d)",
+                "source_range": {
+                  "start_line": 59,
+                  "end_line": 59
+                }
+              },
+              {
+                "context_id": "context_012",
+                "declaration_type": "variable",
+                "content": "variable (hb : b)",
+                "source_range": {
+                  "start_line": 60,
+                  "end_line": 60
+                }
+              },
+              {
+                "context_id": "context_013",
+                "declaration_type": "variable",
+                "content": "variable (hnc : ¬c)",
+                "source_range": {
+                  "start_line": 61,
+                  "end_line": 61
+                }
+              },
+              {
+                "context_id": "context_014",
+                "declaration_type": "variable",
+                "content": "variable (c : Prop)",
+                "source_range": {
+                  "start_line": 81,
+                  "end_line": 81
+                }
+              },
+              {
+                "context_id": "context_015",
+                "declaration_type": "variable",
+                "content": "variable (w : Prop)",
+                "source_range": {
+                  "start_line": 82,
+                  "end_line": 82
+                }
+              },
+              {
+                "context_id": "context_016",
+                "declaration_type": "variable",
+                "content": "variable (f : Prop)",
+                "source_range": {
+                  "start_line": 83,
+                  "end_line": 83
+                }
+              },
+              {
+                "context_id": "context_017",
+                "declaration_type": "variable",
+                "content": "variable (d : Prop)",
+                "source_range": {
+                  "start_line": 84,
+                  "end_line": 84
+                }
+              },
+              {
+                "context_id": "context_018",
+                "declaration_type": "variable",
+                "content": "variable (h1 : (c → ((¬w ∧ f) → d)) ∧ (¬c → d))",
+                "source_range": {
+                  "start_line": 90,
+                  "end_line": 90
+                }
+              },
+              {
+                "context_id": "context_019",
+                "declaration_type": "variable",
+                "content": "variable (h2 : w → ¬c)",
+                "source_range": {
+                  "start_line": 94,
+                  "end_line": 94
+                }
+              },
+              {
+                "context_id": "context_020",
+                "declaration_type": "variable",
+                "content": "variable (hf : f)",
+                "source_range": {
+                  "start_line": 97,
+                  "end_line": 97
+                }
+              },
+              {
+                "context_id": "context_021",
+                "declaration_type": "variable",
+                "content": "variable (hcase : c ∨ w)",
+                "source_range": {
+                  "start_line": 98,
+                  "end_line": 98
+                }
+              },
+              {
+                "context_id": "context_022",
+                "declaration_type": "variable",
+                "content": "variable (t r f m : Prop)",
+                "source_range": {
+                  "start_line": 143,
+                  "end_line": 143
+                }
+              },
+              {
+                "context_id": "context_023",
+                "declaration_type": "variable",
+                "content": "variable (h1 : t → r)",
+                "source_range": {
+                  "start_line": 146,
+                  "end_line": 146
+                }
+              },
+              {
+                "context_id": "context_024",
+                "declaration_type": "variable",
+                "content": "variable (h2 : f → ¬r)",
+                "source_range": {
+                  "start_line": 147,
+                  "end_line": 147
+                }
+              },
+              {
+                "context_id": "context_025",
+                "declaration_type": "variable",
+                "content": "variable (h3 : r → m)",
+                "source_range": {
+                  "start_line": 148,
+                  "end_line": 148
+                }
+              },
+              {
+                "context_id": "context_026",
+                "declaration_type": "variable",
+                "content": "variable (h4 : ¬m ∨ ¬f)",
+                "source_range": {
+                  "start_line": 149,
+                  "end_line": 149
+                }
+              },
+              {
+                "context_id": "context_027",
+                "declaration_type": "variable",
+                "content": "variable (ht : t)",
+                "source_range": {
+                  "start_line": 150,
+                  "end_line": 150
+                }
+              }
+            ],
+            "proof_style": "term"
+          },
+          "extraction_confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "cross_artifact_links": []
+}

@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich/"
+     xml:base="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich">
+        <rdfs:comment xml:lang="en">This is an ontology describing a Sandwich</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread -->
+
+    <owl:ObjectProperty rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread">
+        <rdfs:domain rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+        <rdfs:range rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread -->
+
+    <owl:ObjectProperty rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread">
+        <rdfs:domain rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck -->
+
+    <owl:ObjectProperty rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck">
+        <rdfs:domain rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich"/>
+        <rdfs:range rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling -->
+
+    <owl:ObjectProperty rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling">
+        <rdfs:domain rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+        <rdfs:range rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+        <rdfs:range rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread"/>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Cheese -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread">
+        <rdfs:subClassOf rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasBaseBread"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Bread"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#isOnTopOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Meat -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Meat">
+        <rdfs:subClassOf rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#OtherProtein -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#OtherProtein">
+        <rdfs:subClassOf rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Sandwich">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasDeck"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Deck"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#hasClosingBread"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#ClosingBread"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Spread -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Spread">
+        <rdfs:subClassOf rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Vegetable -->
+
+    <owl:Class rdf:about="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Vegetable">
+        <rdfs:subClassOf rdf:resource="http://www.leeds.ac.uk/xckx3323/ontologies/sandwich#Filling"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

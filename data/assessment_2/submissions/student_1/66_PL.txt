@@ -1,0 +1,170 @@
+% Assessment 2 Given Prolog Code.
+% Has only been tested on swish prolog (web wersion of swi-prolog)
+% other prolog may well not draw the pictures well.
+
+whitebox :- format('~s', ["\u25A1"]).
+space    :- format('~s', [" "]).
+blackBox :- format('~s', ["\u25A0"]).
+
+numb(0). numb(1). numb(2). numb(3). numb(4). numb(5).
+numb(6). numb(7). numb(8). numb(9). numb(10). 
+
+state([R,C]) :- numb(R),  numb(C).
+
+showWhere(Formula) :- showRows(Formula, 0).
+
+showRows(Formula, N) :- numb(N), !, showCols(Formula, N, 0),
+                        NPlus is N + 1, showRows(Formula, NPlus).
+showRows(_, _).
+
+showCols(Formula, R, C) :- numb(C), holds(Formula, [R,C]), !, 
+                           blackBox, space, CPlus is C + 1,
+                           showCols(Formula, R, CPlus).
+
+showCols(Formula, R, C) :- numb(C), !, 
+                           whitebox, space, CPlus is C + 1, 
+                           showCols(Formula, R, CPlus).
+showCols(_, _, _) :- nl.
+
+% holdsList is only provided as a convenience for creating 
+% scenarios for testing. You should use it to test your understanding 
+% of the problem and your solution.
+% With no clauses for holdsList swish will complain, but we
+% can get round this with the following:
+% 
+% holdsList(false, [ ]).
+% 
+% This means that the list of locations where the formula false holds 
+% is the empty list.
+
+holdsList(false, [ ]).
+
+holds(Formula, State) :- holdsList(Formula, StateList),
+                         member(State,StateList).
+
+holds( or(P,_), S):- holds(P,S).
+holds( or(_,Q), S):- holds(Q,S).
+
+holds( and(P,Q), S) :- holds(P,S), holds(Q,S).
+
+holds( not(P), S) :- form(P), chkstate(S), !, not(holds(P,S)).
+
+holds( implies(P, Q), S) :- holds(or(not(P),Q),S).
+
+holds( dia(R, F), S) :- rel(R, S, T), holds(F,T).
+
+holds( box(R,F), S) :- foreach(rel(R,S,T),holds(F,T)).
+
+form(bread).
+form(filling).
+form(or(X,Y))  :- form(X), form(Y).
+form(and(X,Y)) :- form(X), form(Y).
+form(implies(X,Y)) :- form(X), form(Y).
+form(not(X))   :- form(X).
+form(dia(_,X)) :- form(X).
+form(box(_,X)) :- form(X).
+form(false).
+
+chkstate(X) :- state(X), !.
+chkstate(X) :- write('unknown state : '),write(X), nl, fail. 
+
+rel(above, [X,Y], [Z,Y]) :- numb(X), numb(Y), numb(Z), X < Z.
+rel(oneabove, [X,Y], [Z,Y]) :- numb(X), numb(Y), numb(Z), Z is X + 1.
+
+rel(below, [X,Y], [Z,Y]) :- rel(above, [Z,Y], [X,Y]).
+rel(onebelow, [X,Y], [Z,Y]) :- rel(oneabove, [Z,Y], [X,Y]).
+
+rel(isLeftOf, [X,Y], [X,Z]) :- numb(X), numb(Y), numb(Z), Y < Z.
+
+rel(isRightOf, [X,Y], [X,Z])    :- rel(isLeftOf, [X,Z], [X,Y]).
+
+
+%*********************************************************************
+% Tasks and answers to 1-4
+% anything logically equivalent would get full marks
+
+%TASK 1:
+%Any place that has bread cannot also have filling and no place that has filling can also have bread.
+
+%Answers are allowed to be more than one line as long is the whole file submitted has no syntax errors.
+%To answer task 1: remove the % from start of the line below and insert your answer between
+%the parentheses. 
+%For example, If your answer is or(bread, filling) then where it says "%answer1( )." you need
+%to make it say "answer1(or(bread, filling))." and the quotes are not part of the answer.
+
+answer1(and(implies(bread, not(filling)), implies(filling, not(bread)))).
+
+%TASK 2:
+%Filling must have bread immediately above it and below it.
+
+%Answers are allowed to be more than one line as long is the whole file submitted has no syntax errors.
+%To answer task 2: remove the % from start of the line below and insert your answer between
+%the parentheses. 
+
+answer2(implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))).
+
+%TASK 3:
+%Going more than one row below filling there should be no bread.
+
+%Answers are allowed to be more than one line as long is the whole file submitted has no syntax errors.
+%To answer task 3: remove the % from start of the line below and insert your answer between
+%the parentheses. 
+
+answer3(implies(filling, box(below, box(below, not(bread))))).
+
+
+%TASK 4:
+%If somewhere has filling, then everywhere which is in any row anywhere above cannot have filling.
+
+%Answers are allowed to be more than one line as long is the whole file submitted has no syntax errors.
+%To answer task 4: remove the % from start of the line below and insert your answer between
+%the parentheses. 
+
+answer4(implies(filling, box(below, not(filling)))).
+
+
+%TASK 5
+%Give three different examples of ways in which the above constraints could all be satisfied but 
+%it can be argued that it is not really a sandwich. Hint: think about size of sandwiches may help.
+
+%Your answer will be English sentences describing a problematic sandwich. 
+%For example: "A sandwich that is knotted" rather than listing places which are bread and filling.
+%That was just a silly example. It is unclear what a knotted sandwich would be and it is nothing like correct.
+
+%In task 5 only (not in tasks 1 to 4) you may choose to define one or more extra relations. 
+%There are no extra marks for doing this - just a possibility if you find an answer that needs it.
+%Just add your relations after the ones given above.
+
+%Answers are allowed to be more than one line as long is the whole file submitted has no syntax errors.
+
+
+%ANSWER 5.1
+%write your answer here as a comment, as many lines as you need but start each with the % for comments
+
+%Give a formula below that prevents your example when it holds in EVERY state.
+%That is: If your formula holds everywhere than this kind of problematic sandwich cannot happen.
+%Remove the % and insert your formula in the space in the next line.
+
+answer51(implies(bread, dia(onebelow, filling))).
+
+%ANSWER 5.2
+%write your answer here as a comment, as many lines as you need but start each with the % for comments
+
+%Give a formula below that prevents your example when it holds in EVERY state.
+%That is: If your formula holds everywhere than this kind of problematic sandwich cannot happen.
+%Remove the % and insert your formula in the space in the next line.
+
+answer52(implies(filling,
+                 and(not(dia(isLeftOf,  filling)),
+                     not(dia(isRightOf, filling))))).
+
+%ANSWER 5.3
+%write your answer here as a comment, as many lines as you need but start each with the % for comments
+
+%Give a formula below that prevents your example when it holds in EVERY state.
+%That is: If your formula holds everywhere than this kind of problematic sandwich cannot happen.
+%Remove the % and insert your formula in the space in the next line.
+
+answer53(implies(filling, box(above, box(above, not(bread))))).
+
+    

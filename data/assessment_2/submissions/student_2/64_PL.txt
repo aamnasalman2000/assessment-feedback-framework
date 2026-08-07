@@ -1,0 +1,104 @@
+% Assessment 2 Given Prolog Code.
+% Has only been tested on swish prolog (web version of swi-prolog)
+% Other prolog may not draw the pictures properly.
+
+:- discontiguous holdsList/2.
+
+whitebox :- format('~s', ["\u25A1"]).
+space    :- format('~s', [" "]).
+blackBox :- format('~s', ["\u25A0"]).
+
+numb(0). numb(1). numb(2). numb(3). numb(4). numb(5).
+numb(6). numb(7). numb(8). numb(9). numb(10). 
+
+state([R,C]) :- numb(R),  numb(C).
+
+showWhere(Formula) :- showRows(Formula, 0).
+
+showRows(Formula, N) :- numb(N), !, showCols(Formula, N, 0),
+                        NPlus is N + 1, showRows(Formula, NPlus).
+showRows(_, _).
+
+showCols(Formula, R, C) :- numb(C), holds(Formula, [R,C]), !, 
+                           blackBox, space, CPlus is C + 1,
+                           showCols(Formula, R, CPlus).
+showCols(Formula, R, C) :- numb(C), !, 
+                           whitebox, space, CPlus is C + 1, 
+                           showCols(Formula, R, CPlus).
+showCols(_, _, _) :- nl.
+
+holdsList(false, [ ]).
+
+holds(Formula, State) :- holdsList(Formula, StateList),
+                         member(State,StateList).
+
+holds( or(P,_), S):- holds(P,S).
+holds( or(_,Q), S):- holds(Q,S).
+
+holds( and(P,Q), S) :- holds(P,S), holds(Q,S).
+
+holds( not(P), S) :- form(P), chkstate(S), !, not(holds(P,S)).
+
+holds( implies(P, Q), S) :- holds(or(not(P),Q),S).
+
+holds( dia(R, F), S) :- rel(R, S, T), holds(F,T).
+
+holds( box(R,F), S) :- foreach(rel(R,S,T),holds(F,T)).
+
+form(bread).
+form(filling).
+form(or(X,Y))  :- form(X), form(Y).
+form(and(X,Y)) :- form(X), form(Y).
+form(implies(X,Y)) :- form(X), form(Y).
+form(not(X))   :- form(X).
+form(dia(_,X)) :- form(X).
+form(box(_,X)) :- form(X).
+form(false).
+
+chkstate(X) :- state(X), !.
+chkstate(X) :- write('unknown state : '),write(X), nl, fail. 
+
+rel(above, [X,Y], [Z,Y]) :- numb(X), numb(Y), numb(Z), X < Z.
+rel(oneabove, [X,Y], [Z,Y]) :- numb(X), numb(Y), numb(Z), Z is X + 1.
+rel(below, [X,Y], [Z,Y]) :- rel(above, [Z,Y], [X,Y]).
+rel(onebelow, [X,Y], [Z,Y]) :- rel(oneabove, [Z,Y], [X,Y]).
+rel(isLeftOf, [X,Y], [X,Z]) :- numb(X), numb(Y), numb(Z), Y < Z.
+rel(isRightOf, [X,Y], [X,Z]) :- rel(isLeftOf, [X,Z], [X,Y]).
+
+%*********************************************************************
+
+% TASK 1: Bread and filling are mutually exclusive
+answer1( and(implies(bread, not(filling)), implies(filling, not(bread))) ).
+
+% TASK 2: Filling must have bread immediately above and below
+answer2( implies(filling, and(dia(oneabove, bread), dia(onebelow, bread))) ).
+
+% TASK 3: No bread more than one row below filling
+answer3( implies(filling, box(below, box(below, not(bread)))) ).
+
+% TASK 4: No filling in any row above another filling
+answer4( implies(filling, box(above, not(filling))) ).
+
+% TASK 5: Examples of problematic sandwiches
+
+% ANSWER 5.1
+% A sandwich that is extremely tall—e.g., filling with 6 layers of bread—may satisfy all logical constraints but is unreasonable in practice.
+% Prevent sandwiches taller than 3 layers by ensuring that if a cell has bread, no bread can be more than 2 rows above or below.
+answer51( box(above, box(above, not(bread))) ).
+
+% ANSWER 5.2
+% A sandwich where the filling is only one cell wide with long bread strips may pass logic but lacks practical balance.
+% Prevent too-narrow fillings by requiring that filling regions have adjacent fillings horizontally.
+answer52( implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling))) ).
+
+% ANSWER 5.3
+% A sandwich where the filling is at the bottom and bread is on top—i.e., upside-down—violates the expected order.
+% Require filling to be vertically between two breads, not at grid top/bottom.
+answer53( implies(filling, and(dia(oneabove, bread), dia(onebelow, bread))) ).
+
+%*********************************************************************
+
+% Sample sandwich configuration for testing
+holdsList(bread, [ [3,4], [3,5], [3,6], [3,7] ]). 
+holdsList(filling, [ [4,4], [4,5], [4,6], [4,7] ]). 
+holdsList(bread, [ [5,4], [5,5], [5,6], [5,7] ]).
