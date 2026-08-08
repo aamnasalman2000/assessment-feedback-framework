@@ -60,9 +60,7 @@ class FeedbackService:
         ) = None,
     ) -> None:
         self.llm_client = llm_client
-        self.reflection_service = (
-            reflection_service
-        )
+        self.reflection_service = reflection_service
 
     def generate_feedback(
         self,
@@ -74,15 +72,9 @@ class FeedbackService:
         self_reflective: bool = False,
     ) -> FeedbackLLMOutput:
         self._validate_submission_identifiers(
-            processed_submission=(
-                processed_submission
-            ),
-            semantic_extraction=(
-                semantic_extraction
-            ),
-            alignment_result=(
-                alignment_result
-            ),
+            processed_submission=processed_submission,
+            semantic_extraction=semantic_extraction,
+            alignment_result=alignment_result,
         )
 
         if (
@@ -157,9 +149,7 @@ class FeedbackService:
         for alignment in (
             alignment_result.component_alignments
         ):
-            component_id = (
-                alignment.component_id
-            )
+            component_id = alignment.component_id
 
             component_record = (
                 component_lookup.get(
@@ -242,9 +232,7 @@ class FeedbackService:
 
                 print(
                     "Candidate units:",
-                    len(
-                        candidate_unit_ids
-                    ),
+                    len(candidate_unit_ids),
                 )
 
                 candidate_units: list[
@@ -368,7 +356,9 @@ class FeedbackService:
                         semantic_annotations=(
                             semantic_annotations
                         ),
-                        alignment=alignment_data,
+                        alignment=(
+                            alignment_data
+                        ),
                         processing_checks=(
                             processing_checks
                         ),
@@ -462,8 +452,7 @@ class FeedbackService:
                             component_id
                         ],
                         status=(
-                            initial_feedback
-                            .status
+                            initial_feedback.status
                         ),
                         internal_finding=(
                             initial_feedback
@@ -474,12 +463,10 @@ class FeedbackService:
                             .verification_status
                         ),
                         confidence=(
-                            initial_feedback
-                            .confidence
+                            initial_feedback.confidence
                         ),
                         evidence=(
-                            initial_feedback
-                            .evidence
+                            initial_feedback.evidence
                         ),
                     )
                 )
@@ -531,8 +518,7 @@ class FeedbackService:
                             .verification_status
                         ),
                         confidence=(
-                            initial_feedback
-                            .confidence
+                            initial_feedback.confidence
                         ),
                         evidence=(
                             initial_feedback.evidence
@@ -576,15 +562,9 @@ class FeedbackService:
                     ) = (
                         reflection_service
                         .reflect_requirement_feedback(
-                            component=(
-                                component
-                            ),
-                            requirement=(
-                                requirement
-                            ),
-                            part_id=(
-                                part_id
-                            ),
+                            component=component,
+                            requirement=requirement,
+                            part_id=part_id,
                             candidate_units=(
                                 candidate_units
                             ),
@@ -826,6 +806,8 @@ class FeedbackService:
             dict[str, Any],
         ] = {}
 
+        # Assessment 1 layout:
+        # parts -> components
         for part in (
             assessment_specification.get(
                 "parts",
@@ -875,11 +857,11 @@ class FeedbackService:
                         )
                         else None
                     ),
-                    "component": (
-                        component
-                    ),
+                    "component": component,
                 }
 
+        # Assessment 2 layout:
+        # top-level components
         for component in (
             assessment_specification.get(
                 "components",
@@ -964,10 +946,7 @@ class FeedbackService:
         ]
 
         for part_id in part_ids:
-            if (
-                component_id
-                == part_id
-            ):
+            if component_id == part_id:
                 return part_id
 
         if component_id.startswith(
@@ -999,6 +978,7 @@ class FeedbackService:
     ) -> list[str]:
         collected: list[str] = []
 
+        # Assessment 1
         evaluation_policy = (
             assessment_specification.get(
                 "evaluation_policy",
@@ -1033,6 +1013,7 @@ class FeedbackService:
                             item.strip()
                         )
 
+        # Assessment 2
         guidance = (
             assessment_specification.get(
                 "feedback_generation_guidance",
@@ -1153,10 +1134,25 @@ class FeedbackService:
         aligned_unit_ids: list[str],
         unit_lookup: dict[str, Any],
     ) -> list[str]:
+        """
+        Narrow component-level alignment to evidence relevant to one
+        requirement.
+
+        This performs evidence routing only. It does not decide whether
+        the requirement is satisfied.
+
+        Assessment 1 keeps its existing aligned evidence.
+
+        Assessment 2 Prolog components are already narrowly aligned.
+
+        Assessment 2 Part 1 is narrowed by ontology/report unit type.
+        """
         component_id = component.get(
             "component_id"
         )
 
+        # Preserve Assessment 1 and already narrow
+        # Assessment 2 Prolog alignment.
         if (
             component_id
             != "part_1_ontology"
@@ -1225,6 +1221,10 @@ class FeedbackService:
 
         selected: list[str] = []
 
+        # --------------------------------------------------
+        # P1-R1: classes
+        # --------------------------------------------------
+
         if criterion == "classes":
             selected = [
                 unit_id
@@ -1237,6 +1237,10 @@ class FeedbackService:
                     == "ontology_class"
                 )
             ]
+
+        # --------------------------------------------------
+        # P1-R2: class hierarchy
+        # --------------------------------------------------
 
         elif (
             criterion
@@ -1256,6 +1260,10 @@ class FeedbackService:
                 )
             ]
 
+        # --------------------------------------------------
+        # P1-R3: properties
+        # --------------------------------------------------
+
         elif criterion == "properties":
             selected = [
                 unit_id
@@ -1270,11 +1278,18 @@ class FeedbackService:
                 }
             ]
 
+        # --------------------------------------------------
+        # P1-R4: property characteristics
+        #
+        # Keep declarations and hierarchy/characteristic
+        # evidence, then cap repetitive domain/range units.
+        # --------------------------------------------------
+
         elif (
             criterion
             == "property_characteristics"
         ):
-            selected = [
+            property_units = [
                 unit_id
                 for unit_id
                 in aligned_unit_ids
@@ -1284,12 +1299,32 @@ class FeedbackService:
                 in {
                     "ontology_object_property",
                     "ontology_data_property",
-                    "ontology_property_domain",
-                    "ontology_property_range",
                     "ontology_subproperty_axiom",
                     "ontology_property_characteristic",
                 }
             ]
+
+            domain_range_units = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if unit_type(
+                    unit_id
+                )
+                in {
+                    "ontology_property_domain",
+                    "ontology_property_range",
+                }
+            ][:8]
+
+            selected = (
+                property_units
+                + domain_range_units
+            )
+
+        # --------------------------------------------------
+        # P1-R5: Description Logic number restriction
+        # --------------------------------------------------
 
         elif (
             criterion
@@ -1307,10 +1342,30 @@ class FeedbackService:
                 )
             ]
 
+        # --------------------------------------------------
+        # P1-R6: ontology consistency
+        #
+        # A reasoner result is the strongest evidence for
+        # consistency. In this dataset consistency may be
+        # marked not_run. We therefore keep only a bounded
+        # structural sample and rely on deterministic
+        # processing checks to establish whether consistency
+        # was actually verified.
+        # --------------------------------------------------
+
         elif (
             criterion
             == "ontology_consistency"
         ):
+            structural_types = {
+                "ontology_subclass_axiom",
+                "ontology_restriction",
+                "ontology_subproperty_axiom",
+                "ontology_property_domain",
+                "ontology_property_range",
+                "ontology_property_characteristic",
+            }
+
             selected = [
                 unit_id
                 for unit_id
@@ -1318,21 +1373,22 @@ class FeedbackService:
                 if unit_type(
                     unit_id
                 )
-                in {
-                    "ontology_subclass_axiom",
-                    "ontology_restriction",
-                    "ontology_subproperty_axiom",
-                    "ontology_property_domain",
-                    "ontology_property_range",
-                    "ontology_property_characteristic",
-                }
-            ]
+                in structural_types
+            ][:8]
+
+        # --------------------------------------------------
+        # P1-R7: report accuracy
+        #
+        # Keep all report sections plus a bounded collection
+        # of ontology structures that the report is likely to
+        # describe.
+        # --------------------------------------------------
 
         elif (
             criterion
             == "report_accuracy"
         ):
-            selected = [
+            report_units = [
                 unit_id
                 for unit_id
                 in aligned_unit_ids
@@ -1343,16 +1399,31 @@ class FeedbackService:
                     == (
                         "ontology_report_section"
                     )
-                    or unit_type(
-                        unit_id
-                    )
-                    in {
-                        "ontology_subclass_axiom",
-                        "ontology_restriction",
-                        "ontology_subproperty_axiom",
-                    }
                 )
             ]
+
+            ontology_units = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if unit_type(
+                    unit_id
+                )
+                in {
+                    "ontology_subclass_axiom",
+                    "ontology_restriction",
+                    "ontology_subproperty_axiom",
+                }
+            ][:8]
+
+            selected = (
+                report_units
+                + ontology_units
+            )
+
+        # --------------------------------------------------
+        # P1-R8: report overview
+        # --------------------------------------------------
 
         elif (
             criterion
@@ -1377,6 +1448,10 @@ class FeedbackService:
                     )
                 )
             ]
+
+        # --------------------------------------------------
+        # P1-R9: hierarchy justification
+        # --------------------------------------------------
 
         elif (
             criterion
@@ -1411,6 +1486,10 @@ class FeedbackService:
                 )
             ]
 
+        # --------------------------------------------------
+        # P1-R10: report axiom explanation
+        # --------------------------------------------------
+
         elif (
             criterion
             == "report_axiom"
@@ -1444,6 +1523,10 @@ class FeedbackService:
                     )
                 )
             ]
+
+        # --------------------------------------------------
+        # P1-R11: critical reflection
+        # --------------------------------------------------
 
         elif (
             criterion
@@ -1481,6 +1564,10 @@ class FeedbackService:
                 )
             ]
 
+        # --------------------------------------------------
+        # P1-R12: report word limit
+        # --------------------------------------------------
+
         elif criterion == "word_limit":
             selected = [
                 unit_id
@@ -1501,6 +1588,8 @@ class FeedbackService:
                 aligned_unit_ids
             )
 
+        # If a deterministic routing rule unexpectedly finds
+        # nothing, do not silently remove evidence.
         if not selected:
             return list(
                 aligned_unit_ids
@@ -1792,9 +1881,7 @@ class FeedbackService:
     ) -> list[str]:
         errors: list[str] = []
 
-        for evidence in (
-            evidence_items
-        ):
+        for evidence in evidence_items:
             if (
                 evidence.evidence_type
                 != "submission_reference"
@@ -1812,8 +1899,7 @@ class FeedbackService:
                 )
 
             if (
-                evidence.unit_id
-                is not None
+                evidence.unit_id is not None
                 and evidence.unit_id
                 not in candidate_unit_ids
             ):
