@@ -6,6 +6,11 @@ from typing import Any
 from pydantic import BaseModel
 
 
+# ============================================================
+# Basic serialization
+# ============================================================
+
+
 def _to_serializable(
     value: Any,
 ) -> Any:
@@ -23,9 +28,7 @@ def _to_serializable(
         list,
     ):
         return [
-            _to_serializable(
-                item
-            )
+            _to_serializable(item)
             for item in value
         ]
 
@@ -34,11 +37,8 @@ def _to_serializable(
         dict,
     ):
         return {
-            key: _to_serializable(
-                item
-            )
-            for key, item
-            in value.items()
+            key: _to_serializable(item)
+            for key, item in value.items()
         }
 
     return value
@@ -48,20 +48,21 @@ def _json_block(
     value: Any,
 ) -> str:
     return json.dumps(
-        _to_serializable(
-            value
-        ),
+        _to_serializable(value),
         indent=2,
         ensure_ascii=False,
     )
 
 
+# ============================================================
+# Shared compact helpers
+# ============================================================
+
+
 def _compact_task_mapping(
     value: Any,
 ) -> dict[str, Any] | None:
-    data = _to_serializable(
-        value
-    )
+    data = _to_serializable(value)
 
     if not isinstance(
         data,
@@ -69,10 +70,7 @@ def _compact_task_mapping(
     ):
         return None
 
-    compact: dict[
-        str,
-        Any,
-    ] = {}
+    compact: dict[str, Any] = {}
 
     for field_name in (
         "part_ids",
@@ -99,9 +97,7 @@ def _compact_task_mapping(
 def _compact_source_range(
     value: Any,
 ) -> dict[str, Any] | None:
-    data = _to_serializable(
-        value
-    )
+    data = _to_serializable(value)
 
     if not isinstance(
         data,
@@ -110,9 +106,7 @@ def _compact_source_range(
         return None
 
     compact = {
-        field_name: data[
-            field_name
-        ]
+        field_name: data[field_name]
         for field_name in (
             "start_line",
             "end_line",
@@ -121,13 +115,94 @@ def _compact_source_range(
         )
         if (
             field_name in data
-            and data[
-                field_name
-            ] is not None
+            and data[field_name] is not None
         )
     }
 
     return compact or None
+
+
+# ============================================================
+# Unit classification
+# ============================================================
+
+
+def _is_ontology_structural_unit(
+    unit_type: str | None,
+) -> bool:
+    if not isinstance(
+        unit_type,
+        str,
+    ):
+        return False
+
+    if (
+        unit_type
+        == "ontology_report_section"
+    ):
+        return False
+
+    return unit_type.startswith(
+        "ontology_"
+    )
+
+
+def _is_report_unit(
+    unit_type: str | None,
+) -> bool:
+    return unit_type in {
+        "ontology_report_section",
+        "report_section",
+        "prose_section",
+    }
+
+
+def _is_prolog_unit(
+    unit_type: str | None,
+) -> bool:
+    if not isinstance(
+        unit_type,
+        str,
+    ):
+        return False
+
+    return (
+        unit_type.startswith(
+            "prolog_"
+        )
+        or unit_type
+        == "prolog_source"
+    )
+
+
+def _is_lean_unit(
+    unit_type: str | None,
+) -> bool:
+    if not isinstance(
+        unit_type,
+        str,
+    ):
+        return False
+
+    return (
+        unit_type.startswith(
+            "lean_"
+        )
+        or unit_type
+        in {
+            "theorem",
+            "lemma",
+            "example",
+            "axiom",
+            "definition",
+            "abbreviation",
+        }
+    )
+
+
+# ============================================================
+# Structured deterministic data
+# ============================================================
 
 
 def _compact_structured_data(
@@ -141,75 +216,55 @@ def _compact_structured_data(
     ):
         return None
 
-    if (
-        isinstance(
-            unit_type,
-            str,
-        )
-        and (
-            unit_type.startswith(
-                "prolog_"
-            )
-            or unit_type
-            == "prolog_source"
-        )
+    if _is_prolog_unit(
+        unit_type
     ):
         useful_fields = (
             "predicate_name",
             "answer_predicate",
             "formula",
+            "parsed_formula",
+            "operator",
+            "operators",
+            "relations",
+            "atoms",
             "task_id",
             "description",
         )
 
-    elif (
-        isinstance(
-            unit_type,
-            str,
-        )
-        and unit_type.startswith(
-            "ontology_"
-        )
-        and unit_type
-        != "ontology_report_section"
+    elif _is_ontology_structural_unit(
+        unit_type
     ):
         useful_fields = (
             "item_kind",
             "entity_type",
             "entity",
+            "name",
+            "iri",
             "axiom_type",
+            "restriction_type",
+            "restriction_kind",
             "subject",
+            "subclass",
+            "superclass",
             "parent",
             "property",
+            "property_name",
             "domain",
             "range",
             "subproperty",
             "superproperty",
             "filler",
+            "filler_class",
             "cardinality",
+            "value",
             "characteristic",
             "members",
+            "operands",
         )
 
-    elif (
-        isinstance(
-            unit_type,
-            str,
-        )
-        and (
-            unit_type.startswith(
-                "lean_"
-            )
-            or unit_type
-            in {
-                "theorem",
-                "lemma",
-                "example",
-                "axiom",
-                "definition",
-                "abbreviation",
-            }
-        )
+    elif _is_lean_unit(
+        unit_type
     ):
         useful_fields = (
             "declaration_type",
@@ -223,11 +278,9 @@ def _compact_structured_data(
             "scope",
         )
 
-    elif unit_type in {
-        "ontology_report_section",
-        "report_section",
-        "prose_section",
-    }:
+    elif _is_report_unit(
+        unit_type
+    ):
         useful_fields = (
             "section_title",
             "heading",
@@ -262,8 +315,7 @@ def _compact_structured_data(
         field_name: data[
             field_name
         ]
-        for field_name
-        in useful_fields
+        for field_name in useful_fields
         if (
             field_name in data
             and data[
@@ -275,56 +327,43 @@ def _compact_structured_data(
     return compact or None
 
 
+# ============================================================
+# Content blocks
+# ============================================================
+
+
 def _content_limit_for_unit(
+    *,
     unit_type: str | None,
+    criterion: str | None,
 ) -> int:
-    if unit_type in {
-        "ontology_report_section",
-        "report_section",
-        "prose_section",
-    }:
+    """
+    Return a source-content limit appropriate to the current requirement.
+
+    report_accuracy compares report statements with ontology structure.
+    It therefore needs direct report wording, but not long report excerpts.
+    Other report requirements retain more prose.
+    """
+    if _is_report_unit(
+        unit_type
+    ):
+        if (
+            criterion
+            == "report_accuracy"
+        ):
+            return 500
+
         return 900
 
-    if (
-        isinstance(
-            unit_type,
-            str,
-        )
-        and unit_type.startswith(
-            "lean_"
-        )
+    if _is_lean_unit(
+        unit_type
     ):
         return 1000
 
-    if unit_type in {
-        "theorem",
-        "lemma",
-        "example",
-        "definition",
-    }:
-        return 1000
-
-    if (
-        isinstance(
-            unit_type,
-            str,
-        )
-        and unit_type.startswith(
-            "prolog_"
-        )
+    if _is_prolog_unit(
+        unit_type
     ):
         return 500
-
-    if (
-        isinstance(
-            unit_type,
-            str,
-        )
-        and unit_type.startswith(
-            "ontology_"
-        )
-    ):
-        return 350
 
     return 700
 
@@ -333,7 +372,29 @@ def _compact_content_blocks(
     *,
     unit_type: str | None,
     blocks: Any,
+    criterion: str | None,
 ) -> list[dict[str, Any]]:
+    """
+    Keep source content only where it contributes useful evidence.
+
+    Deterministic ontology structures omit raw XML because structured_data
+    already preserves their relevant facts.
+
+    Task 5 Prolog answers also omit raw source blocks because the predicate
+    name and complete formula are already retained deterministically in
+    structured_data.
+    """
+    if _is_ontology_structural_unit(
+        unit_type
+    ):
+        return []
+
+    if (
+        unit_type
+        == "prolog_task_5_answer"
+    ):
+        return []
+
     if not isinstance(
         blocks,
         list,
@@ -346,7 +407,8 @@ def _compact_content_blocks(
 
     limit = (
         _content_limit_for_unit(
-            unit_type
+            unit_type=unit_type,
+            criterion=criterion,
         )
     )
 
@@ -376,17 +438,20 @@ def _compact_content_blocks(
             str,
             Any,
         ] = {
-            "block_type": (
-                block.get(
-                    "block_type"
-                )
-            ),
-            "content": (
-                content[
-                    :limit
-                ]
-            ),
+            "content": content[:limit],
         }
+
+        block_type = block.get(
+            "block_type"
+        )
+
+        if isinstance(
+            block_type,
+            str,
+        ):
+            compact_block[
+                "block_type"
+            ] = block_type
 
         block_id = block.get(
             "block_id"
@@ -423,8 +488,15 @@ def _compact_content_blocks(
     return compact_blocks[:2]
 
 
+# ============================================================
+# Candidate units
+# ============================================================
+
+
 def _compact_candidate_unit(
     unit: Any,
+    *,
+    criterion: str | None,
 ) -> dict[str, Any]:
     data = _to_serializable(
         unit
@@ -439,6 +511,12 @@ def _compact_candidate_unit(
     unit_type = data.get(
         "unit_type"
     )
+
+    if not isinstance(
+        unit_type,
+        str,
+    ):
+        unit_type = None
 
     compact: dict[
         str,
@@ -471,21 +549,24 @@ def _compact_candidate_unit(
             "label"
         ] = label
 
-    task_mapping = (
-        _compact_task_mapping(
-            data.get(
-                "task_mapping"
+    if not _is_ontology_structural_unit(
+        unit_type
+    ):
+        task_mapping = (
+            _compact_task_mapping(
+                data.get(
+                    "task_mapping"
+                )
             )
         )
-    )
 
-    if (
-        task_mapping
-        is not None
-    ):
-        compact[
-            "task_mapping"
-        ] = task_mapping
+        if (
+            task_mapping
+            is not None
+        ):
+            compact[
+                "task_mapping"
+            ] = task_mapping
 
     attempt = data.get(
         "attempt"
@@ -536,14 +617,7 @@ def _compact_candidate_unit(
 
     structured_data = (
         _compact_structured_data(
-            unit_type=(
-                unit_type
-                if isinstance(
-                    unit_type,
-                    str,
-                )
-                else None
-            ),
+            unit_type=unit_type,
             data=data.get(
                 "structured_data"
             ),
@@ -560,18 +634,12 @@ def _compact_candidate_unit(
 
     content_blocks = (
         _compact_content_blocks(
-            unit_type=(
-                unit_type
-                if isinstance(
-                    unit_type,
-                    str,
-                )
-                else None
-            ),
+            unit_type=unit_type,
             blocks=data.get(
                 "content_blocks",
                 [],
             ),
+            criterion=criterion,
         )
     )
 
@@ -586,12 +654,17 @@ def _compact_candidate_unit(
         )
     )
 
-    if isinstance(
-        extraction_confidence,
-        (
-            int,
-            float,
-        ),
+    if (
+        not _is_ontology_structural_unit(
+            unit_type
+        )
+        and isinstance(
+            extraction_confidence,
+            (
+                int,
+                float,
+            ),
+        )
     ):
         compact[
             "extraction_confidence"
@@ -607,17 +680,32 @@ def _compact_candidate_unit(
 
 def _compact_candidate_units(
     values: list[Any],
+    *,
+    criterion: str | None,
 ) -> list[dict[str, Any]]:
-    return [
-        compact
-        for value in values
-        if (
-            compact
-            := _compact_candidate_unit(
-                value
+    compact_units: list[
+        dict[str, Any]
+    ] = []
+
+    for value in values:
+        compact = (
+            _compact_candidate_unit(
+                value,
+                criterion=criterion,
             )
         )
-    ]
+
+        if compact:
+            compact_units.append(
+                compact
+            )
+
+    return compact_units
+
+
+# ============================================================
+# Semantic annotations
+# ============================================================
 
 
 def _compact_semantic_annotation(
@@ -701,9 +789,7 @@ def _compact_semantic_annotation(
         ):
             compact_intent[
                 "description"
-            ] = description[
-                :300
-            ]
+            ] = description[:240]
 
         if compact_intent:
             compact[
@@ -756,9 +842,7 @@ def _compact_semantic_annotation(
     ):
         compact[
             "summary"
-        ] = summary[
-            :400
-        ]
+        ] = summary[:300]
 
     confidence = data.get(
         "confidence"
@@ -780,17 +864,93 @@ def _compact_semantic_annotation(
 
 def _compact_semantic_annotations(
     values: list[Any],
+    *,
+    excluded_unit_ids: set[str],
+    criterion: str | None,
 ) -> list[dict[str, Any]]:
-    return [
-        compact
-        for value in values
+    """
+    Remove semantic annotations when stronger direct evidence is already
+    available.
+
+    For deterministic ontology structures, structured extraction is stronger
+    than LLM interpretation.
+
+    For report_accuracy, direct report prose and deterministic ontology
+    structure are sufficient.
+
+    For Task 5 Prolog requirements, all three complete formulas are already
+    represented deterministically in structured_data, so repeating their
+    semantic interpretations adds prompt cost without stronger evidence.
+    """
+    if (
+        criterion
+        == "report_accuracy"
+    ):
+        return []
+
+    task_5_criteria = {
+        "number_of_examples",
+        "problem_description",
+        "constraint_compatibility",
+        "distinctness",
+        "formula_alignment",
+        "logical_correctness",
+        "formula_validity",
+        "framework_compliance",
+    }
+
+    if (
+        criterion
+        in task_5_criteria
+    ):
+        return []
+
+    compact_annotations: list[
+        dict[str, Any]
+    ] = []
+
+    for value in values:
+        data = _to_serializable(
+            value
+        )
+
+        if not isinstance(
+            data,
+            dict,
+        ):
+            continue
+
+        unit_id = data.get(
+            "unit_id"
+        )
+
         if (
-            compact
-            := _compact_semantic_annotation(
-                value
+            isinstance(
+                unit_id,
+                str,
+            )
+            and unit_id
+            in excluded_unit_ids
+        ):
+            continue
+
+        compact = (
+            _compact_semantic_annotation(
+                data
             )
         )
-    ]
+
+        if compact:
+            compact_annotations.append(
+                compact
+            )
+
+    return compact_annotations
+
+
+# ============================================================
+# Component + requirement specification
+# ============================================================
 
 
 def _compact_component(
@@ -830,9 +990,7 @@ def _compact_component(
         artifact,
         dict,
     ):
-        compact[
-            "artifact"
-        ] = {
+        compact_artifact = {
             key: value
             for key, value
             in artifact.items()
@@ -843,6 +1001,11 @@ def _compact_component(
             }
         }
 
+        if compact_artifact:
+            compact[
+                "artifact"
+            ] = compact_artifact
+
     artifacts = component.get(
         "artifacts"
     )
@@ -851,9 +1014,7 @@ def _compact_component(
         artifacts,
         list,
     ):
-        compact[
-            "artifacts"
-        ] = [
+        compact_artifacts = [
             {
                 key: value
                 for key, value
@@ -869,6 +1030,11 @@ def _compact_component(
                 dict,
             )
         ]
+
+        if compact_artifacts:
+            compact[
+                "artifacts"
+            ] = compact_artifacts
 
     task = component.get(
         "task"
@@ -960,6 +1126,11 @@ def _compact_requirement(
     }
 
 
+# ============================================================
+# Alignment
+# ============================================================
+
+
 def _compact_alignment(
     alignment: dict[str, Any],
 ) -> dict[str, Any]:
@@ -989,6 +1160,11 @@ def _compact_alignment(
             )
         )
     }
+
+
+# ============================================================
+# Processing evidence
+# ============================================================
 
 
 def _compact_processing_check(
@@ -1032,16 +1208,23 @@ def _compact_processing_check(
 def _compact_processing_checks(
     values: list[Any],
 ) -> list[dict[str, Any]]:
-    return [
-        compact
-        for value in values
-        if (
-            compact
-            := _compact_processing_check(
+    compact_checks: list[
+        dict[str, Any]
+    ] = []
+
+    for value in values:
+        compact = (
+            _compact_processing_check(
                 value
             )
         )
-    ]
+
+        if compact:
+            compact_checks.append(
+                compact
+            )
+
+    return compact_checks
 
 
 def _compact_processing_diagnostic(
@@ -1104,16 +1287,28 @@ def _compact_processing_diagnostic(
 def _compact_processing_diagnostics(
     values: list[Any],
 ) -> list[dict[str, Any]]:
-    return [
-        compact
-        for value in values
-        if (
-            compact
-            := _compact_processing_diagnostic(
+    compact_diagnostics: list[
+        dict[str, Any]
+    ] = []
+
+    for value in values:
+        compact = (
+            _compact_processing_diagnostic(
                 value
             )
         )
-    ]
+
+        if compact:
+            compact_diagnostics.append(
+                compact
+            )
+
+    return compact_diagnostics
+
+
+# ============================================================
+# Assessment-level guidance filtering
+# ============================================================
 
 
 def _filter_global_requirements(
@@ -1163,7 +1358,8 @@ def _filter_global_requirements(
         elif (
             part_id
             and (
-                scope == part_id.lower()
+                scope
+                == part_id.lower()
                 or scope.startswith(
                     part_id.lower()
                 )
@@ -1262,6 +1458,11 @@ def _filter_feedback_requirements(
     return selected
 
 
+# ============================================================
+# Main requirement prompt
+# ============================================================
+
+
 def build_requirement_feedback_prompt(
     *,
     component: dict[str, Any],
@@ -1284,6 +1485,16 @@ def build_requirement_feedback_prompt(
         "id"
     ]
 
+    criterion = requirement.get(
+        "criterion"
+    )
+
+    if not isinstance(
+        criterion,
+        str,
+    ):
+        criterion = None
+
     compact_component = (
         _compact_component(
             component
@@ -1298,13 +1509,44 @@ def build_requirement_feedback_prompt(
 
     compact_units = (
         _compact_candidate_units(
-            candidate_units
+            candidate_units,
+            criterion=criterion,
         )
     )
 
+    deterministic_ontology_unit_ids = {
+        unit.get(
+            "unit_id"
+        )
+        for unit in compact_units
+        if (
+            isinstance(
+                unit.get(
+                    "unit_id"
+                ),
+                str,
+            )
+            and _is_ontology_structural_unit(
+                unit.get(
+                    "unit_type"
+                )
+            )
+        )
+    }
+
     compact_semantics = (
         _compact_semantic_annotations(
-            semantic_annotations
+            semantic_annotations,
+            excluded_unit_ids={
+                unit_id
+                for unit_id
+                in deterministic_ontology_unit_ids
+                if isinstance(
+                    unit_id,
+                    str,
+                )
+            },
+            criterion=criterion,
         )
     )
 
@@ -1385,14 +1627,14 @@ requirement for one component of a student submission.
 
 Evaluate the semantic requirement rather than conformity to a preferred
 solution, naming convention, proof style, code structure, ontology
-structure, formula syntax, ordering, or presentation style unless the
-assessment explicitly requires that form.
+structure, formula syntax, ordering, or presentation style unless that
+specific form is explicitly required by the assessment.
 
-The supplied units were selected through deterministic preprocessing and
-component alignment. Treat them as candidate evidence, not as proof that
-the requirement is satisfied.
+The supplied units were selected through deterministic preprocessing,
+component alignment, and requirement-level evidence routing. Their presence
+shows relevance only; it does not establish that the requirement is met.
 
-Rules:
+Follow these rules:
 
 1. Evaluate only the supplied requirement.
 2. Do not evaluate or score other requirements.
@@ -1400,17 +1642,18 @@ Rules:
 4. Accept valid alternative approaches.
 5. Do not invent student content, proof steps, ontology axioms, formulas,
    compilation results, source references, or missing work.
-6. Prefer direct structured source data and deterministic checks over
-   model-generated semantic interpretation.
+6. Prefer deterministic structured evidence over model-generated semantic
+   interpretation where both describe the same source material.
 7. Use not_assessable when available evidence cannot support a reliable
    judgement.
 8. Use missing only when required work is demonstrably absent.
-9. Never claim compilation, consistency, syntax validity, or tool
-   verification unless deterministic evidence establishes it.
-10. Feedback must be concise, specific, constructive, and actionable.
+9. Never claim compilation, logical consistency, syntax validity, execution,
+   or tool verification unless deterministic evidence explicitly establishes
+   it.
+10. Feedback must be specific, concise, constructive, and actionable.
 11. Every evidence object must contain evidence_type.
-12. Return only one valid JSON object matching the structured output schema
-    supplied separately by the client.
+12. Return exactly one valid JSON object matching the output schema supplied
+    separately by the structured client.
 
 Use submission_reference for supplied student evidence.
 Use absence only when required work is demonstrably absent.
@@ -1492,13 +1735,13 @@ Return one of:
 
 Use:
 
-- met when supplied evidence clearly demonstrates the requirement;
+- met when the supplied evidence clearly demonstrates the requirement;
 - partially_met when only part of the requirement is demonstrated;
 - not_met when relevant work is present but contradicts or fails the
   requirement;
-- missing when expected work is demonstrably absent;
-- not_assessable when evidence is irrelevant, insufficient, or reliable
-  verification is unavailable.
+- missing when required work is demonstrably absent;
+- not_assessable when the available evidence is irrelevant, insufficient,
+  or reliable verification is unavailable.
 
 FIELDS
 
@@ -1506,11 +1749,13 @@ internal_finding:
 Give a precise evidence-grounded analysis.
 
 student_feedback:
-Give concise student-facing feedback describing what was demonstrated or
+Give concise student-facing feedback explaining what was demonstrated or
 what needs improvement.
 
 suggestion:
-Include only when a practical improvement is appropriate.
+Include a suggestion only when a practical improvement is genuinely
+appropriate. Do not recommend extra work when the stated requirement has
+already been fully satisfied.
 
 verification_status:
 
@@ -1529,8 +1774,14 @@ For submission_reference evidence:
 
 - artifact_id must come from VALID CANDIDATE ARTIFACT IDS;
 - unit_id must come from VALID CANDIDATE UNIT IDS when referring to a unit;
-- use block_id or source_range only when supplied;
-- never invent an artifact ID, unit ID, block ID, excerpt, or source range.
+- use block_id only when that block ID appears in CANDIDATE STUDENT EVIDENCE;
+- use source_range only when that range is supplied;
+- use excerpt only when the exact excerpt is supplied;
+- never reconstruct or invent an artifact ID, unit ID, block ID, source
+  range, or excerpt.
+
+For deterministic ontology structures, the unit label and structured_data are
+direct evidence. Raw OWL/XML is not required for a submission_reference.
 
 If no valid submission reference supports the judgement, return an empty
 evidence array or valid absence evidence.
@@ -1539,22 +1790,27 @@ IMPORTANT ASSESSMENT RULES
 
 - Alignment indicates relevance only; it does not prove correctness.
 - Semantic annotations are interpretive and may be wrong.
-- Deterministic structured data takes precedence where they conflict.
+- Deterministic structured data takes precedence where the two conflict.
 - Do not penalise a valid alternative solution.
-- Do not infer omitted requirements from a preferred answer.
-- Do not claim a formula, proof, ontology, or program has been formally
+- Do not infer requirements from a preferred answer.
+- Do not claim that a formula, proof, ontology, or program has been formally
   verified unless deterministic evidence explicitly says so.
+- A successful OWL parse does not establish ontology consistency.
+- If an ontology consistency check is marked not_run, do not describe the
+  ontology as reasoner-verified or tool-verified for consistency.
 
 FINAL CHECK
 
 Before returning:
 
-- only this requirement has been evaluated;
+- only this single requirement has been evaluated;
 - no requirement ID or record ID has been generated;
 - every evidence reference exists in the supplied candidate evidence;
 - every evidence object includes evidence_type;
-- no unsupported tool, compilation, syntax, or consistency claim appears;
+- no unsupported tool, compilation, execution, syntax, or consistency claim
+  appears;
 - no preferred solution form has been imposed;
+- unnecessary improvement suggestions have been avoided;
 - the response contains exactly one JSON object.
 
 Return only the JSON object.

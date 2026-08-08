@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import Any
 
 from src.alignment.alignment_models import (
@@ -58,9 +60,19 @@ class FeedbackService:
         reflection_service: (
             FeedbackReflectionService | None
         ) = None,
+        checkpoint_dir: str | Path | None = None,
+        resume_from_checkpoints: bool = True,
     ) -> None:
         self.llm_client = llm_client
         self.reflection_service = reflection_service
+        self.checkpoint_dir = (
+            Path(checkpoint_dir)
+            if checkpoint_dir is not None
+            else None
+        )
+        self.resume_from_checkpoints = (
+            resume_from_checkpoints
+        )
 
     def generate_feedback(
         self,
@@ -345,80 +357,118 @@ class FeedbackService:
                     )
                 )
 
-                system_prompt, user_prompt = (
-                    build_requirement_feedback_prompt(
-                        component=component,
-                        requirement=requirement,
-                        part_id=part_id,
-                        candidate_units=(
-                            candidate_units
-                        ),
-                        semantic_annotations=(
-                            semantic_annotations
-                        ),
-                        alignment=(
-                            alignment_data
-                        ),
-                        processing_checks=(
-                            processing_checks
-                        ),
-                        processing_diagnostics=(
-                            processing_diagnostics
-                        ),
-                        global_requirements=(
-                            global_requirements
-                        ),
-                        feedback_requirements=(
-                            feedback_requirements
-                        ),
-                        specification_notes=(
-                            specification_notes
-                        ),
+                initial_feedback = (
+                    self._load_requirement_checkpoint(
+                        component_id=component_id,
+                        requirement_id=requirement_id,
                     )
                 )
 
-                initial_feedback = (
-                    self.llm_client
-                    .generate_requirement_feedback(
-                        system_prompt=(
-                            system_prompt
+                if initial_feedback is None:
+                    system_prompt, user_prompt = (
+                        build_requirement_feedback_prompt(
+                            component=component,
+                            requirement=requirement,
+                            part_id=part_id,
+                            candidate_units=(
+                                candidate_units
+                            ),
+                            semantic_annotations=(
+                                semantic_annotations
+                            ),
+                            alignment=(
+                                alignment_data
+                            ),
+                            processing_checks=(
+                                processing_checks
+                            ),
+                            processing_diagnostics=(
+                                processing_diagnostics
+                            ),
+                            global_requirements=(
+                                global_requirements
+                            ),
+                            feedback_requirements=(
+                                feedback_requirements
+                            ),
+                            specification_notes=(
+                                specification_notes
+                            ),
+                        )
+                    )
+
+                    initial_feedback = (
+                        self.llm_client
+                        .generate_requirement_feedback(
+                            system_prompt=(
+                                system_prompt
+                            ),
+                            user_prompt=(
+                                user_prompt
+                            ),
+                            candidate_artifact_ids=(
+                                sorted(
+                                    candidate_artifact_ids
+                                )
+                            ),
+                            candidate_unit_ids=(
+                                candidate_unit_ids
+                            ),
+                            log_name=(
+                                f"{component_id}_"
+                                f"{requirement_id}_"
+                                "initial"
+                            ),
+                        )
+                    )
+
+                    self._validate_requirement_feedback(
+                        component_id=(
+                            component_id
                         ),
-                        user_prompt=(
-                            user_prompt
+                        requirement_id=(
+                            requirement_id
                         ),
-                        candidate_artifact_ids=(
-                            sorted(
-                                candidate_artifact_ids
-                            )
+                        feedback=(
+                            initial_feedback
                         ),
-                        candidate_unit_ids=(
+                        candidate_unit_ids=set(
                             candidate_unit_ids
                         ),
-                        log_name=(
-                            f"{component_id}_"
-                            f"{requirement_id}_"
-                            "initial"
+                        candidate_artifact_ids=(
+                            candidate_artifact_ids
                         ),
                     )
-                )
 
-                self._validate_requirement_feedback(
-                    component_id=(
-                        component_id
-                    ),
-                    requirement_id=(
-                        requirement_id
-                    ),
-                    feedback=(
-                        initial_feedback
-                    ),
-                    candidate_unit_ids=set(
-                        candidate_unit_ids
-                    ),
-                    candidate_artifact_ids=(
-                        candidate_artifact_ids
-                    ),
-                )
+                    self._save_requirement_checkpoint(
+                        component_id=component_id,
+                        requirement_id=requirement_id,
+                        feedback=initial_feedback,
+                    )
+
+                else:
+                    self._validate_requirement_feedback(
+                        component_id=(
+                            component_id
+                        ),
+                        requirement_id=(
+                            requirement_id
+                        ),
+                        feedback=(
+                            initial_feedback
+                        ),
+                        candidate_unit_ids=set(
+                            candidate_unit_ids
+                        ),
+                        candidate_artifact_ids=(
+                            candidate_artifact_ids
+                        ),
+                    )
+
+                    print(
+                        "✓ Loaded feedback checkpoint for "
+                        f"{component_id}/{requirement_id}"
+                    )
 
                 criterion_id = (
                     f"ca_{criterion_counter:03d}"
@@ -792,6 +842,176 @@ class FeedbackService:
                     all_observation_ids
                 ),
             ),
+        )
+
+    def _checkpoint_path(
+        self,
+        *,
+        component_id: str,
+        requirement_id: str,
+    ) -> Path | None:
+        if self.checkpoint_dir is None:
+            return None
+
+        filename = (
+            f"{component_id}__"
+            f"{requirement_id}.json"
+        )
+
+        return (
+            self.checkpoint_dir
+            / filename
+        )
+
+    def _load_requirement_checkpoint(
+        self,
+        *,
+        component_id: str,
+        requirement_id: str,
+    ) -> RequirementFeedbackLLMOutput | None:
+        if not self.resume_from_checkpoints:
+            return None
+
+        checkpoint_path = (
+            self._checkpoint_path(
+                component_id=component_id,
+                requirement_id=requirement_id,
+            )
+        )
+
+        if (
+            checkpoint_path is None
+            or not checkpoint_path.exists()
+        ):
+            return None
+
+        try:
+            with checkpoint_path.open(
+                "r",
+                encoding="utf-8",
+            ) as file:
+                payload = json.load(file)
+        except (
+            OSError,
+            json.JSONDecodeError,
+        ) as exc:
+            raise FeedbackServiceError(
+                "Could not read feedback checkpoint "
+                f"{checkpoint_path}."
+            ) from exc
+
+        if not isinstance(payload, dict):
+            raise FeedbackServiceError(
+                "Feedback checkpoint must contain "
+                "a JSON object: "
+                f"{checkpoint_path}."
+            )
+
+        if (
+            payload.get("component_id")
+            != component_id
+            or payload.get("requirement_id")
+            != requirement_id
+        ):
+            raise FeedbackServiceError(
+                "Feedback checkpoint identifiers "
+                "do not match the requested "
+                "component/requirement: "
+                f"{checkpoint_path}."
+            )
+
+        checkpoint_model = payload.get(
+            "model_name"
+        )
+
+        if (
+            isinstance(checkpoint_model, str)
+            and checkpoint_model
+            != self.llm_client.model_name
+        ):
+            return None
+
+        feedback_data = payload.get(
+            "feedback"
+        )
+
+        try:
+            return (
+                RequirementFeedbackLLMOutput
+                .model_validate(
+                    feedback_data
+                )
+            )
+        except (
+            ValueError,
+            TypeError,
+        ) as exc:
+            raise FeedbackServiceError(
+                "Feedback checkpoint contains "
+                "invalid requirement feedback: "
+                f"{checkpoint_path}."
+            ) from exc
+
+    def _save_requirement_checkpoint(
+        self,
+        *,
+        component_id: str,
+        requirement_id: str,
+        feedback: RequirementFeedbackLLMOutput,
+    ) -> None:
+        checkpoint_path = (
+            self._checkpoint_path(
+                component_id=component_id,
+                requirement_id=requirement_id,
+            )
+        )
+
+        if checkpoint_path is None:
+            return
+
+        checkpoint_path.parent.mkdir(
+            parents=True,
+            exist_ok=True,
+        )
+
+        payload = {
+            "schema_version": "1.0",
+            "component_id": component_id,
+            "requirement_id": requirement_id,
+            "model_name": (
+                self.llm_client.model_name
+            ),
+            "feedback": feedback.model_dump(
+                mode="json",
+                exclude_none=True,
+            ),
+        }
+
+        temporary_path = (
+            checkpoint_path.with_suffix(
+                checkpoint_path.suffix
+                + ".tmp"
+            )
+        )
+
+        with temporary_path.open(
+            "w",
+            encoding="utf-8",
+        ) as file:
+            json.dump(
+                payload,
+                file,
+                ensure_ascii=False,
+                indent=2,
+            )
+
+        temporary_path.replace(
+            checkpoint_path
+        )
+
+        print(
+            "✓ Saved feedback checkpoint for "
+            f"{component_id}/{requirement_id}"
         )
 
     @staticmethod
@@ -1414,7 +1634,7 @@ class FeedbackService:
                     "ontology_restriction",
                     "ontology_subproperty_axiom",
                 }
-            ][:8]
+            ][:5]
 
             selected = (
                 report_units

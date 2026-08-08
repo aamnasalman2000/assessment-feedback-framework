@@ -442,10 +442,13 @@ class FeedbackStructuredClient:
         client: Any,
         model: str,
     ) -> None:
-        self._client = OpenAICompatibleStructuredClient(
-            client=client,
-            model=model,
-        )
+        if hasattr(client, "generate_structured"):
+            self._client = client
+        else:
+            self._client = OpenAICompatibleStructuredClient(
+                client=client,
+                model=model,
+            )
 
     @property
     def model_name(self) -> str:
