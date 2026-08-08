@@ -130,7 +130,10 @@ regions merely to populate the field.
 RELATIONSHIPS
 
 Record relationships only when they are supported by the submission.
-
+- Do not create a relationship from a unit to itself.
+- Task mapping is already represented deterministically; do not create a
+  self-referential "answers" relationship merely to restate task_mapping.
+  
 Examples include:
 
 - one unit answering a task;
@@ -288,6 +291,12 @@ For each extracted Prolog answer:
   template contains instructional comments;
 - preserve missing explanations as meaningful omissions when the processed
   unit indicates that no student-authored explanation was identified.
+- Do not describe mutual exclusion, negation, or opposing implications as a
+  contradiction unless the formula actually requires both a proposition and
+  its negation to hold simultaneously.
+- Describe the logical effect of the formula conservatively. For example,
+  two implications preventing bread and filling from co-occurring represent
+  mutual exclusion, not contradiction.
 
 Useful Prolog concepts may include:
 
@@ -751,6 +760,32 @@ Evidence must come only from the supplied unit.
 Use high confidence only when the interpretation is directly supported
 by explicit evidence.
 
+For ontology units:
+
+- Prefer evidence references using reference_type "unit" or
+  "content_block".
+- Do not copy structured_data JSON into the evidence excerpt.
+- If the evidence comes from structured_data, set excerpt to null.
+- Do not place raw JSON fragments containing quotation marks inside
+  excerpt strings.
+Evidence reference_type must be one of the values allowed by the
+schema. Do not use "structured_data" as a reference_type. When
+structured_data supports an interpretation, cite the containing unit
+instead.
+
+ONTOLOGY EVIDENCE RULES
+
+For ontology units:
+
+- Do not use "structured_data" as an evidence reference_type.
+- When deterministic structured_data supports an interpretation, cite the
+  containing unit using reference_type "unit".
+- Prefer reference_type "unit" or "content_block" for ontology evidence.
+- Do not copy raw structured_data JSON into excerpt.
+- If quoting structured ontology data would require embedded quotation marks,
+  set excerpt to null instead.
+- Evidence excerpts must always remain valid JSON string values.
+
 COMMENTS
 
 Every substantive student-authored comment in this unit must be
@@ -781,14 +816,15 @@ Use only these content block IDs in evidence references:
 
 {_json_text(valid_content_block_ids)}
 
-VALID TARGET UNIT IDS
+RELATIONSHIPS
 
-Relationships may refer only to these unit IDs:
+Do not generate cross-unit relationships during this per-unit extraction
+stage.
 
-{_json_text(all_unit_ids)}
+Return an empty relationships array.
 
-Do not invent relationships merely because units appear near one
-another.
+Cross-unit and cross-artifact relationships are resolved separately after
+individual unit interpretation.
 
 ORIGINAL RAW SUBMISSION
 
