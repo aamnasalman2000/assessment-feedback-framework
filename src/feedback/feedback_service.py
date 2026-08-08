@@ -40,13 +40,15 @@ class FeedbackService:
     """
     Generate feedback one assessment requirement at a time.
 
-    Python controls all requirement IDs, feedback IDs, scopes, and
-    cross-references.
+    Python controls requirement IDs, feedback IDs, scopes, structural
+    references, and deterministic evidence routing.
 
-    When self-reflection is enabled, the initial structured feedback records
-    are audited by the reflection service. The reflection model returns only
-    an audit and optional patch; Python retains ownership of all structural
-    metadata.
+    The LLM determines whether the supplied evidence satisfies the
+    assessment requirement.
+
+    When self-reflection is enabled, initial feedback is audited by the
+    reflection service. Python retains ownership of all identifiers and
+    structural metadata.
     """
 
     def __init__(
@@ -58,7 +60,9 @@ class FeedbackService:
         ) = None,
     ) -> None:
         self.llm_client = llm_client
-        self.reflection_service = reflection_service
+        self.reflection_service = (
+            reflection_service
+        )
 
     def generate_feedback(
         self,
@@ -70,9 +74,15 @@ class FeedbackService:
         self_reflective: bool = False,
     ) -> FeedbackLLMOutput:
         self._validate_submission_identifiers(
-            processed_submission=processed_submission,
-            semantic_extraction=semantic_extraction,
-            alignment_result=alignment_result,
+            processed_submission=(
+                processed_submission
+            ),
+            semantic_extraction=(
+                semantic_extraction
+            ),
+            alignment_result=(
+                alignment_result
+            ),
         )
 
         if (
@@ -111,17 +121,9 @@ class FeedbackService:
             )
         )
 
-        evaluation_policy = (
-            assessment_specification.get(
-                "evaluation_policy",
-                {},
-            )
-        )
-
         feedback_requirements = (
-            evaluation_policy.get(
-                "feedback_requirements",
-                [],
+            self._collect_feedback_requirements(
+                assessment_specification
             )
         )
 
@@ -155,10 +157,14 @@ class FeedbackService:
         for alignment in (
             alignment_result.component_alignments
         ):
-            component_id = alignment.component_id
+            component_id = (
+                alignment.component_id
+            )
 
             component_record = (
-                component_lookup.get(component_id)
+                component_lookup.get(
+                    component_id
+                )
             )
 
             if component_record is None:
@@ -167,88 +173,18 @@ class FeedbackService:
                     f"component {component_id!r}."
                 )
 
-            part_id = component_record["part_id"]
-            component = component_record["component"]
+            part_id = component_record[
+                "part_id"
+            ]
 
-            candidate_unit_ids = (
+            component = component_record[
+                "component"
+            ]
+
+            aligned_unit_ids = (
                 self._collect_candidate_unit_ids(
                     alignment
                 )
-            )
-
-            candidate_units: list[
-                dict[str, Any]
-            ] = []
-
-            semantic_annotations: list[Any] = []
-            candidate_artifact_ids: set[str] = set()
-
-            for unit_id in candidate_unit_ids:
-                unit = unit_lookup.get(unit_id)
-
-                if unit is None:
-                    raise FeedbackServiceError(
-                        f"Component {component_id!r} "
-                        "references unknown unit "
-                        f"{unit_id!r}."
-                    )
-
-                artifact_id = (
-                    unit_artifact_lookup[unit_id]
-                )
-
-                candidate_artifact_ids.add(
-                    artifact_id
-                )
-
-                unit_data = unit.model_dump(
-                    mode="json",
-                    exclude_none=True,
-                )
-
-                unit_data["artifact_id"] = (
-                    artifact_id
-                )
-
-                candidate_units.append(unit_data)
-
-                annotation = semantic_lookup.get(
-                    unit_id
-                )
-
-                if annotation is not None:
-                    semantic_annotations.append(
-                        annotation
-                    )
-
-            (
-                processing_checks,
-                processing_diagnostics,
-            ) = self._collect_processing_evidence(
-                processed_submission=(
-                    processed_submission
-                ),
-                artifact_ids=(
-                    candidate_artifact_ids
-                ),
-            )
-
-            specification_notes = [
-                note
-                for note in all_specification_notes
-                if (
-                    not isinstance(note, dict)
-                    or note.get("component_id")
-                    in {
-                        None,
-                        component_id,
-                    }
-                )
-            ]
-
-            alignment_data = alignment.model_dump(
-                mode="json",
-                exclude_none=True,
             )
 
             component_observation_ids: list[
@@ -265,8 +201,16 @@ class FeedbackService:
             )
 
             for requirement in requirements:
-                requirement_id = requirement.get(
-                    "id"
+                if not isinstance(
+                    requirement,
+                    dict,
+                ):
+                    continue
+
+                requirement_id = (
+                    requirement.get(
+                        "id"
+                    )
                 )
 
                 if not isinstance(
@@ -275,10 +219,142 @@ class FeedbackService:
                 ):
                     continue
 
+                print()
                 print(
                     "Generating feedback for "
                     f"{component_id}/"
                     f"{requirement_id}..."
+                )
+
+                candidate_unit_ids = (
+                    self
+                    ._select_requirement_unit_ids(
+                        component=component,
+                        requirement=requirement,
+                        aligned_unit_ids=(
+                            aligned_unit_ids
+                        ),
+                        unit_lookup=(
+                            unit_lookup
+                        ),
+                    )
+                )
+
+                print(
+                    "Candidate units:",
+                    len(
+                        candidate_unit_ids
+                    ),
+                )
+
+                candidate_units: list[
+                    dict[str, Any]
+                ] = []
+
+                semantic_annotations: list[
+                    Any
+                ] = []
+
+                candidate_artifact_ids: set[
+                    str
+                ] = set()
+
+                for unit_id in (
+                    candidate_unit_ids
+                ):
+                    unit = unit_lookup.get(
+                        unit_id
+                    )
+
+                    if unit is None:
+                        raise FeedbackServiceError(
+                            f"Component "
+                            f"{component_id!r} "
+                            "references unknown unit "
+                            f"{unit_id!r}."
+                        )
+
+                    artifact_id = (
+                        unit_artifact_lookup[
+                            unit_id
+                        ]
+                    )
+
+                    candidate_artifact_ids.add(
+                        artifact_id
+                    )
+
+                    unit_data = (
+                        unit.model_dump(
+                            mode="json",
+                            exclude_none=True,
+                        )
+                    )
+
+                    unit_data[
+                        "artifact_id"
+                    ] = artifact_id
+
+                    candidate_units.append(
+                        unit_data
+                    )
+
+                    annotation = (
+                        semantic_lookup.get(
+                            unit_id
+                        )
+                    )
+
+                    if (
+                        annotation
+                        is not None
+                    ):
+                        semantic_annotations.append(
+                            annotation
+                        )
+
+                (
+                    processing_checks,
+                    processing_diagnostics,
+                ) = (
+                    self
+                    ._collect_processing_evidence(
+                        processed_submission=(
+                            processed_submission
+                        ),
+                        artifact_ids=(
+                            candidate_artifact_ids
+                        ),
+                    )
+                )
+
+                specification_notes = [
+                    note
+                    for note
+                    in all_specification_notes
+                    if (
+                        not isinstance(
+                            note,
+                            dict,
+                        )
+                        or note.get(
+                            "component_id"
+                        )
+                        in {
+                            None,
+                            component_id,
+                        }
+                    )
+                ]
+
+                alignment_data = (
+                    self
+                    ._build_requirement_alignment_data(
+                        alignment=alignment,
+                        candidate_unit_ids=set(
+                            candidate_unit_ids
+                        ),
+                    )
                 )
 
                 system_prompt, user_prompt = (
@@ -314,10 +390,16 @@ class FeedbackService:
                 initial_feedback = (
                     self.llm_client
                     .generate_requirement_feedback(
-                        system_prompt=system_prompt,
-                        user_prompt=user_prompt,
-                        candidate_artifact_ids=sorted(
-                            candidate_artifact_ids
+                        system_prompt=(
+                            system_prompt
+                        ),
+                        user_prompt=(
+                            user_prompt
+                        ),
+                        candidate_artifact_ids=(
+                            sorted(
+                                candidate_artifact_ids
+                            )
                         ),
                         candidate_unit_ids=(
                             candidate_unit_ids
@@ -331,9 +413,15 @@ class FeedbackService:
                 )
 
                 self._validate_requirement_feedback(
-                    component_id=component_id,
-                    requirement_id=requirement_id,
-                    feedback=initial_feedback,
+                    component_id=(
+                        component_id
+                    ),
+                    requirement_id=(
+                        requirement_id
+                    ),
+                    feedback=(
+                        initial_feedback
+                    ),
                     candidate_unit_ids=set(
                         candidate_unit_ids
                     ),
@@ -370,9 +458,12 @@ class FeedbackService:
                             )
                             else []
                         ),
-                        task_ids=[component_id],
+                        task_ids=[
+                            component_id
+                        ],
                         status=(
-                            initial_feedback.status
+                            initial_feedback
+                            .status
                         ),
                         internal_finding=(
                             initial_feedback
@@ -383,10 +474,12 @@ class FeedbackService:
                             .verification_status
                         ),
                         confidence=(
-                            initial_feedback.confidence
+                            initial_feedback
+                            .confidence
                         ),
                         evidence=(
-                            initial_feedback.evidence
+                            initial_feedback
+                            .evidence
                         ),
                     )
                 )
@@ -412,7 +505,9 @@ class FeedbackService:
                             )
                             else []
                         ),
-                        task_ids=[component_id],
+                        task_ids=[
+                            component_id
+                        ],
                         attempt_unit_ids=[],
                         requirement_ids=[
                             requirement_id
@@ -436,7 +531,8 @@ class FeedbackService:
                             .verification_status
                         ),
                         confidence=(
-                            initial_feedback.confidence
+                            initial_feedback
+                            .confidence
                         ),
                         evidence=(
                             initial_feedback.evidence
@@ -444,7 +540,10 @@ class FeedbackService:
                     )
                 )
 
-                final_criterion = initial_criterion
+                final_criterion = (
+                    initial_criterion
+                )
+
                 final_observation = (
                     initial_observation
                 )
@@ -454,7 +553,10 @@ class FeedbackService:
                         self.reflection_service
                     )
 
-                    if reflection_service is None:
+                    if (
+                        reflection_service
+                        is None
+                    ):
                         raise FeedbackServiceError(
                             "Reflection service became "
                             "unavailable during feedback "
@@ -474,9 +576,15 @@ class FeedbackService:
                     ) = (
                         reflection_service
                         .reflect_requirement_feedback(
-                            component=component,
-                            requirement=requirement,
-                            part_id=part_id,
+                            component=(
+                                component
+                            ),
+                            requirement=(
+                                requirement
+                            ),
+                            part_id=(
+                                part_id
+                            ),
                             candidate_units=(
                                 candidate_units
                             ),
@@ -515,11 +623,15 @@ class FeedbackService:
                     )
 
                     self._validate_final_records(
-                        component_id=component_id,
+                        component_id=(
+                            component_id
+                        ),
                         requirement_id=(
                             requirement_id
                         ),
-                        criterion=final_criterion,
+                        criterion=(
+                            final_criterion
+                        ),
                         observation=(
                             final_observation
                         ),
@@ -580,11 +692,14 @@ class FeedbackService:
                         .student_feedback
                     )
 
-                elif final_criterion.status in {
-                    "partially_met",
-                    "not_met",
-                    "missing",
-                }:
+                elif (
+                    final_criterion.status
+                    in {
+                        "partially_met",
+                        "not_met",
+                        "missing",
+                    }
+                ):
                     overall_improvements.append(
                         final_observation
                         .student_feedback
@@ -615,16 +730,29 @@ class FeedbackService:
 
             feedback_sections.append(
                 FeedbackSection(
-                    section_id=section_id,
-                    label=component.get("title"),
+                    section_id=(
+                        section_id
+                    ),
+                    label=(
+                        component.get(
+                            "title"
+                        )
+                    ),
                     scope="task",
                     part_ids=(
                         [part_id]
-                        if isinstance(part_id, str)
+                        if isinstance(
+                            part_id,
+                            str,
+                        )
                         else []
                     ),
-                    task_ids=[component_id],
-                    summary=section_summary,
+                    task_ids=[
+                        component_id
+                    ],
+                    summary=(
+                        section_summary
+                    ),
                     observation_ids=(
                         component_observation_ids
                     ),
@@ -645,15 +773,21 @@ class FeedbackService:
             criterion_assessments=(
                 criterion_assessments
             ),
-            observations=observations,
-            feedback_sections=feedback_sections,
+            observations=(
+                observations
+            ),
+            feedback_sections=(
+                feedback_sections
+            ),
             overall_feedback=OverallFeedback(
-                summary=self._combine_summaries(
-                    component_summaries,
-                    fallback=(
-                        "No component feedback was "
-                        "generated."
-                    ),
+                summary=(
+                    self._combine_summaries(
+                        component_summaries,
+                        fallback=(
+                            "No component feedback was "
+                            "generated."
+                        ),
+                    )
                 ),
                 strengths_summary=(
                     self._combine_summaries(
@@ -698,14 +832,30 @@ class FeedbackService:
                 [],
             )
         ):
-            part_id = part.get("part_id")
+            if not isinstance(
+                part,
+                dict,
+            ):
+                continue
+
+            part_id = part.get(
+                "part_id"
+            )
 
             for component in part.get(
                 "components",
                 [],
             ):
-                component_id = component.get(
-                    "component_id"
+                if not isinstance(
+                    component,
+                    dict,
+                ):
+                    continue
+
+                component_id = (
+                    component.get(
+                        "component_id"
+                    )
                 )
 
                 if not isinstance(
@@ -714,12 +864,689 @@ class FeedbackService:
                 ):
                     continue
 
-                lookup[component_id] = {
-                    "part_id": part_id,
-                    "component": component,
+                lookup[
+                    component_id
+                ] = {
+                    "part_id": (
+                        part_id
+                        if isinstance(
+                            part_id,
+                            str,
+                        )
+                        else None
+                    ),
+                    "component": (
+                        component
+                    ),
                 }
 
+        for component in (
+            assessment_specification.get(
+                "components",
+                [],
+            )
+        ):
+            if not isinstance(
+                component,
+                dict,
+            ):
+                continue
+
+            component_id = (
+                component.get(
+                    "component_id"
+                )
+            )
+
+            if not isinstance(
+                component_id,
+                str,
+            ):
+                continue
+
+            part_id = (
+                FeedbackService
+                ._infer_component_part_id(
+                    component_id=(
+                        component_id
+                    ),
+                    assessment_specification=(
+                        assessment_specification
+                    ),
+                )
+            )
+
+            lookup[
+                component_id
+            ] = {
+                "part_id": part_id,
+                "component": component,
+            }
+
         return lookup
+
+    @staticmethod
+    def _infer_component_part_id(
+        *,
+        component_id: str,
+        assessment_specification: dict[
+            str,
+            Any,
+        ],
+    ) -> str | None:
+        assessment_structure = (
+            assessment_specification.get(
+                "assessment_structure",
+                {},
+            )
+        )
+
+        if not isinstance(
+            assessment_structure,
+            dict,
+        ):
+            return None
+
+        part_ids = [
+            part.get("id")
+            for part
+            in assessment_structure.values()
+            if (
+                isinstance(
+                    part,
+                    dict,
+                )
+                and isinstance(
+                    part.get("id"),
+                    str,
+                )
+            )
+        ]
+
+        for part_id in part_ids:
+            if (
+                component_id
+                == part_id
+            ):
+                return part_id
+
+        if component_id.startswith(
+            "part_1"
+        ):
+            for part_id in part_ids:
+                if part_id.startswith(
+                    "part_1"
+                ):
+                    return part_id
+
+        if component_id.startswith(
+            "part_2"
+        ):
+            for part_id in part_ids:
+                if part_id.startswith(
+                    "part_2"
+                ):
+                    return part_id
+
+        return None
+
+    @staticmethod
+    def _collect_feedback_requirements(
+        assessment_specification: dict[
+            str,
+            Any,
+        ],
+    ) -> list[str]:
+        collected: list[str] = []
+
+        evaluation_policy = (
+            assessment_specification.get(
+                "evaluation_policy",
+                {},
+            )
+        )
+
+        if isinstance(
+            evaluation_policy,
+            dict,
+        ):
+            requirements = (
+                evaluation_policy.get(
+                    "feedback_requirements",
+                    [],
+                )
+            )
+
+            if isinstance(
+                requirements,
+                list,
+            ):
+                for item in requirements:
+                    if (
+                        isinstance(
+                            item,
+                            str,
+                        )
+                        and item.strip()
+                    ):
+                        collected.append(
+                            item.strip()
+                        )
+
+        guidance = (
+            assessment_specification.get(
+                "feedback_generation_guidance",
+                {},
+            )
+        )
+
+        if isinstance(
+            guidance,
+            dict,
+        ):
+            general_principles = (
+                guidance.get(
+                    "general_principles",
+                    [],
+                )
+            )
+
+            if isinstance(
+                general_principles,
+                list,
+            ):
+                for item in (
+                    general_principles
+                ):
+                    if (
+                        isinstance(
+                            item,
+                            str,
+                        )
+                        and item.strip()
+                    ):
+                        collected.append(
+                            item.strip()
+                        )
+
+            ontology_feedback = (
+                guidance.get(
+                    "ontology_feedback",
+                    [],
+                )
+            )
+
+            if isinstance(
+                ontology_feedback,
+                list,
+            ):
+                for item in (
+                    ontology_feedback
+                ):
+                    if (
+                        isinstance(
+                            item,
+                            str,
+                        )
+                        and item.strip()
+                    ):
+                        collected.append(
+                            "Ontology feedback: "
+                            + item.strip()
+                        )
+
+            prolog_feedback = (
+                guidance.get(
+                    "prolog_feedback",
+                    [],
+                )
+            )
+
+            if isinstance(
+                prolog_feedback,
+                list,
+            ):
+                for item in (
+                    prolog_feedback
+                ):
+                    if (
+                        isinstance(
+                            item,
+                            str,
+                        )
+                        and item.strip()
+                    ):
+                        collected.append(
+                            "Prolog feedback: "
+                            + item.strip()
+                        )
+
+            uncertainty_policy = (
+                guidance.get(
+                    "uncertainty_policy"
+                )
+            )
+
+            if (
+                isinstance(
+                    uncertainty_policy,
+                    str,
+                )
+                and uncertainty_policy.strip()
+            ):
+                collected.append(
+                    "Uncertainty policy: "
+                    + uncertainty_policy.strip()
+                )
+
+        return list(
+            dict.fromkeys(
+                collected
+            )
+        )
+
+    @staticmethod
+    def _select_requirement_unit_ids(
+        *,
+        component: dict[str, Any],
+        requirement: dict[str, Any],
+        aligned_unit_ids: list[str],
+        unit_lookup: dict[str, Any],
+    ) -> list[str]:
+        component_id = component.get(
+            "component_id"
+        )
+
+        if (
+            component_id
+            != "part_1_ontology"
+        ):
+            return list(
+                aligned_unit_ids
+            )
+
+        criterion = requirement.get(
+            "criterion"
+        )
+
+        if not isinstance(
+            criterion,
+            str,
+        ):
+            return list(
+                aligned_unit_ids
+            )
+
+        criterion = criterion.strip()
+
+        def unit_type(
+            unit_id: str,
+        ) -> str:
+            unit = unit_lookup.get(
+                unit_id
+            )
+
+            value = getattr(
+                unit,
+                "unit_type",
+                "",
+            )
+
+            return (
+                value
+                if isinstance(
+                    value,
+                    str,
+                )
+                else ""
+            )
+
+        def unit_label(
+            unit_id: str,
+        ) -> str:
+            unit = unit_lookup.get(
+                unit_id
+            )
+
+            value = getattr(
+                unit,
+                "label",
+                "",
+            )
+
+            return (
+                value.lower()
+                if isinstance(
+                    value,
+                    str,
+                )
+                else ""
+            )
+
+        selected: list[str] = []
+
+        if criterion == "classes":
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == "ontology_class"
+                )
+            ]
+
+        elif (
+            criterion
+            == "class_hierarchy"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == (
+                        "ontology_subclass_axiom"
+                    )
+                )
+            ]
+
+        elif criterion == "properties":
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if unit_type(
+                    unit_id
+                )
+                in {
+                    "ontology_object_property",
+                    "ontology_data_property",
+                }
+            ]
+
+        elif (
+            criterion
+            == "property_characteristics"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if unit_type(
+                    unit_id
+                )
+                in {
+                    "ontology_object_property",
+                    "ontology_data_property",
+                    "ontology_property_domain",
+                    "ontology_property_range",
+                    "ontology_subproperty_axiom",
+                    "ontology_property_characteristic",
+                }
+            ]
+
+        elif (
+            criterion
+            == "description_logic_axiom"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == "ontology_restriction"
+                )
+            ]
+
+        elif (
+            criterion
+            == "ontology_consistency"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if unit_type(
+                    unit_id
+                )
+                in {
+                    "ontology_subclass_axiom",
+                    "ontology_restriction",
+                    "ontology_subproperty_axiom",
+                    "ontology_property_domain",
+                    "ontology_property_range",
+                    "ontology_property_characteristic",
+                }
+            ]
+
+        elif (
+            criterion
+            == "report_accuracy"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == (
+                        "ontology_report_section"
+                    )
+                    or unit_type(
+                        unit_id
+                    )
+                    in {
+                        "ontology_subclass_axiom",
+                        "ontology_restriction",
+                        "ontology_subproperty_axiom",
+                    }
+                )
+            ]
+
+        elif (
+            criterion
+            == "report_overview"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == (
+                        "ontology_report_section"
+                    )
+                    and (
+                        "overview"
+                        in unit_label(
+                            unit_id
+                        )
+                    )
+                )
+            ]
+
+        elif (
+            criterion
+            == "report_hierarchy"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    (
+                        unit_type(
+                            unit_id
+                        )
+                        == (
+                            "ontology_report_section"
+                        )
+                        and (
+                            "justification"
+                            in unit_label(
+                                unit_id
+                            )
+                        )
+                    )
+                    or unit_type(
+                        unit_id
+                    )
+                    in {
+                        "ontology_subclass_axiom",
+                        "ontology_subproperty_axiom",
+                    }
+                )
+            ]
+
+        elif (
+            criterion
+            == "report_axiom"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    (
+                        unit_type(
+                            unit_id
+                        )
+                        == (
+                            "ontology_report_section"
+                        )
+                        and (
+                            "axiom"
+                            in unit_label(
+                                unit_id
+                            )
+                        )
+                    )
+                    or (
+                        unit_type(
+                            unit_id
+                        )
+                        == (
+                            "ontology_restriction"
+                        )
+                    )
+                )
+            ]
+
+        elif (
+            criterion
+            == "critical_reflection"
+        ):
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == (
+                        "ontology_report_section"
+                    )
+                    and (
+                        "advantage"
+                        in unit_label(
+                            unit_id
+                        )
+                        or "disadvantage"
+                        in unit_label(
+                            unit_id
+                        )
+                        or "limitation"
+                        in unit_label(
+                            unit_id
+                        )
+                        or "reflection"
+                        in unit_label(
+                            unit_id
+                        )
+                    )
+                )
+            ]
+
+        elif criterion == "word_limit":
+            selected = [
+                unit_id
+                for unit_id
+                in aligned_unit_ids
+                if (
+                    unit_type(
+                        unit_id
+                    )
+                    == (
+                        "ontology_report_section"
+                    )
+                )
+            ]
+
+        else:
+            selected = list(
+                aligned_unit_ids
+            )
+
+        if not selected:
+            return list(
+                aligned_unit_ids
+            )
+
+        return list(
+            dict.fromkeys(
+                selected
+            )
+        )
+
+    @staticmethod
+    def _build_requirement_alignment_data(
+        *,
+        alignment: ComponentAlignment,
+        candidate_unit_ids: set[str],
+    ) -> dict[str, Any]:
+        data = alignment.model_dump(
+            mode="json",
+            exclude_none=True,
+        )
+
+        for field_name in (
+            "primary_unit_ids",
+            "supporting_unit_ids",
+            "possibly_relevant_unit_ids",
+        ):
+            values = data.get(
+                field_name,
+                [],
+            )
+
+            if isinstance(
+                values,
+                list,
+            ):
+                data[field_name] = [
+                    value
+                    for value in values
+                    if (
+                        value
+                        in candidate_unit_ids
+                    )
+                ]
+
+        return data
 
     @staticmethod
     def _build_unit_lookups(
@@ -730,20 +1557,34 @@ class FeedbackService:
         dict[str, Any],
         dict[str, str],
     ]:
-        unit_lookup: dict[str, Any] = {}
-        artifact_lookup: dict[str, str] = {}
+        unit_lookup: dict[
+            str,
+            Any,
+        ] = {}
+
+        artifact_lookup: dict[
+            str,
+            str,
+        ] = {}
 
         for artifact in (
             processed_submission.artifacts
         ):
             for unit in artifact.units:
-                unit_lookup[unit.unit_id] = unit
+                unit_lookup[
+                    unit.unit_id
+                ] = unit
 
                 artifact_lookup[
                     unit.unit_id
-                ] = artifact.artifact_id
+                ] = (
+                    artifact.artifact_id
+                )
 
-        return unit_lookup, artifact_lookup
+        return (
+            unit_lookup,
+            artifact_lookup,
+        )
 
     @staticmethod
     def _collect_candidate_unit_ids(
@@ -757,7 +1598,9 @@ class FeedbackService:
         )
 
         return list(
-            dict.fromkeys(ordered_ids)
+            dict.fromkeys(
+                ordered_ids
+            )
         )
 
     @staticmethod
@@ -767,7 +1610,10 @@ class FeedbackService:
             ProcessedSubmission
         ),
         artifact_ids: set[str],
-    ) -> tuple[list[Any], list[Any]]:
+    ) -> tuple[
+        list[Any],
+        list[Any],
+    ]:
         checks: list[Any] = []
         diagnostics: list[Any] = []
 
@@ -786,10 +1632,14 @@ class FeedbackService:
             )
 
             diagnostics.extend(
-                artifact.processing.diagnostics
+                artifact.processing
+                .diagnostics
             )
 
-        return checks, diagnostics
+        return (
+            checks,
+            diagnostics,
+        )
 
     @staticmethod
     def _validate_requirement_feedback(
@@ -822,7 +1672,9 @@ class FeedbackService:
                 "Invalid feedback for "
                 f"{component_id!r}/"
                 f"{requirement_id!r}:\n- "
-                + "\n- ".join(errors)
+                + "\n- ".join(
+                    errors
+                )
             )
 
     @staticmethod
@@ -926,7 +1778,9 @@ class FeedbackService:
                 "feedback for "
                 f"{component_id!r}/"
                 f"{requirement_id!r}:\n- "
-                + "\n- ".join(errors)
+                + "\n- ".join(
+                    errors
+                )
             )
 
     @staticmethod
@@ -938,7 +1792,9 @@ class FeedbackService:
     ) -> list[str]:
         errors: list[str] = []
 
-        for evidence in evidence_items:
+        for evidence in (
+            evidence_items
+        ):
             if (
                 evidence.evidence_type
                 != "submission_reference"
@@ -956,7 +1812,8 @@ class FeedbackService:
                 )
 
             if (
-                evidence.unit_id is not None
+                evidence.unit_id
+                is not None
                 and evidence.unit_id
                 not in candidate_unit_ids
             ):
@@ -967,6 +1824,86 @@ class FeedbackService:
                 )
 
         return errors
+
+    @staticmethod
+    def _validate_submission_identifiers(
+        *,
+        processed_submission: (
+            ProcessedSubmission
+        ),
+        semantic_extraction: (
+            SemanticExtractionResult
+        ),
+        alignment_result: (
+            AlignmentResult
+        ),
+    ) -> None:
+        errors: list[str] = []
+
+        if (
+            semantic_extraction
+            .processed_submission_id
+            != processed_submission
+            .processed_submission_id
+        ):
+            errors.append(
+                "Semantic extraction does not "
+                "match the processed submission."
+            )
+
+        if (
+            semantic_extraction
+            .source_submission_id
+            != processed_submission
+            .source_submission_id
+        ):
+            errors.append(
+                "Semantic extraction source "
+                "submission does not match the "
+                "processed submission."
+            )
+
+        if (
+            alignment_result
+            .processed_submission_id
+            != processed_submission
+            .processed_submission_id
+        ):
+            errors.append(
+                "Alignment result does not match "
+                "the processed submission."
+            )
+
+        if (
+            alignment_result
+            .source_submission_id
+            != processed_submission
+            .source_submission_id
+        ):
+            errors.append(
+                "Alignment result source "
+                "submission does not match the "
+                "processed submission."
+            )
+
+        if (
+            alignment_result.assessment_id
+            != processed_submission
+            .assessment_id
+        ):
+            errors.append(
+                "Alignment result does not match "
+                "the assessment."
+            )
+
+        if errors:
+            raise FeedbackServiceError(
+                "Feedback inputs are "
+                "inconsistent:\n- "
+                + "\n- ".join(
+                    errors
+                )
+            )
 
     @staticmethod
     def _feedback_type_for_status(
@@ -984,58 +1921,6 @@ class FeedbackService:
         return "suggestion"
 
     @staticmethod
-    def _validate_submission_identifiers(
-        *,
-        processed_submission: (
-            ProcessedSubmission
-        ),
-        semantic_extraction: (
-            SemanticExtractionResult
-        ),
-        alignment_result: AlignmentResult,
-    ) -> None:
-        errors: list[str] = []
-
-        if (
-            semantic_extraction
-            .processed_submission_id
-            != processed_submission
-            .processed_submission_id
-        ):
-            errors.append(
-                "Semantic extraction does not "
-                "match the processed submission."
-            )
-
-        if (
-            alignment_result
-            .processed_submission_id
-            != processed_submission
-            .processed_submission_id
-        ):
-            errors.append(
-                "Alignment result does not match "
-                "the processed submission."
-            )
-
-        if (
-            alignment_result.assessment_id
-            != processed_submission
-            .assessment_id
-        ):
-            errors.append(
-                "Alignment result does not match "
-                "the assessment."
-            )
-
-        if errors:
-            raise FeedbackServiceError(
-                "Feedback inputs are "
-                "inconsistent:\n- "
-                + "\n- ".join(errors)
-            )
-
-    @staticmethod
     def _combine_summaries(
         values: list[str],
         *,
@@ -1045,7 +1930,10 @@ class FeedbackService:
             value.strip()
             for value in values
             if (
-                isinstance(value, str)
+                isinstance(
+                    value,
+                    str,
+                )
                 and value.strip()
             )
         ]
@@ -1053,4 +1941,6 @@ class FeedbackService:
         if not cleaned:
             return fallback
 
-        return " ".join(cleaned)
+        return " ".join(
+            cleaned
+        )
