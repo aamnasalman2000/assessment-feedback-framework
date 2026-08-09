@@ -361,6 +361,139 @@ def _unit_matches_component_mapping(
 
     return False
 
+def _normalise_scope_identifier(
+    value: str,
+) -> str:
+    """
+    Normalise specification/component identifiers and extracted scope
+    labels for deterministic comparison.
+
+    Examples:
+
+        scenario_1 -> scenario1
+        theorem_1 -> theorem1
+        Part1Scenario1 -> part1scenario1
+    """
+    return "".join(
+        character.lower()
+        for character in value
+        if character.isalnum()
+    )
+
+
+def _unit_matches_component_scope(
+    *,
+    unit: Any,
+    component_id: str,
+    part_id: str | None,
+) -> bool:
+    """
+    Match a processed unit to a component using deterministic scope_path
+    metadata when explicit task_mapping is unavailable.
+
+    This supports extracted source scopes such as:
+
+        Part1Scenario1
+        Part2Theorem1
+
+    without hard-coding assessment-specific component IDs.
+    """
+
+    structured_data = getattr(
+        unit,
+        "structured_data",
+        None,
+    )
+
+    if structured_data is None:
+        return False
+
+    if hasattr(
+        structured_data,
+        "model_dump",
+    ):
+        structured_data = (
+            structured_data.model_dump(
+                mode="json",
+                exclude_none=True,
+            )
+        )
+
+    if not isinstance(
+        structured_data,
+        dict,
+    ):
+        return False
+
+    scope_path = structured_data.get(
+        "scope_path"
+    )
+
+    if not isinstance(
+        scope_path,
+        list,
+    ):
+        return False
+
+    scope_values = [
+        value
+        for value in scope_path
+        if isinstance(
+            value,
+            str,
+        )
+    ]
+
+    if not scope_values:
+        return False
+
+    normalised_component = (
+        _normalise_scope_identifier(
+            component_id
+        )
+    )
+
+    normalised_part = (
+        _normalise_scope_identifier(
+            part_id
+        )
+        if isinstance(
+            part_id,
+            str,
+        )
+        else ""
+    )
+
+    expected_values = {
+        normalised_component,
+    }
+
+    if normalised_part:
+        expected_values.add(
+            normalised_part
+            + normalised_component
+        )
+
+    for scope_value in scope_values:
+        normalised_scope = (
+            _normalise_scope_identifier(
+                scope_value
+            )
+        )
+
+        if normalised_scope in expected_values:
+            return True
+
+        # Extracted scopes commonly include the part prefix, e.g.
+        # Part1Scenario1. Matching the component suffix remains
+        # deterministic because scope_path itself came from source
+        # structure rather than LLM inference.
+        if normalised_scope.endswith(
+            normalised_component
+        ):
+            return True
+
+    return False
 
 def _select_candidate_units(
     *,
@@ -369,15 +502,19 @@ def _select_candidate_units(
     part_id: str | None,
 ) -> list[dict[str, Any]]:
     """
-    Select component-level candidate units.
+    Select component-level candidate units using the strongest available
+    deterministic routing signal.
 
-    Selection priority:
+    Priority:
 
-    1. Exact deterministic task mapping for task-level components.
-    2. Deterministic part mapping for true part-level components.
-    3. Artifact-type fallback when no deterministic mapping is available.
+    1. exact task_mapping;
+    2. extracted scope_path;
+    3. part mapping for a true part-level component;
+    4. artifact-type fallback only when compatible units contain no finer
+       routing metadata.
 
-    This avoids leaking all units from a part into an individual task.
+    This prevents unrelated units from the same source artifact being
+    assigned to a component merely because they share an artifact type.
     """
 
     component_id = component.get(
@@ -400,6 +537,10 @@ def _select_candidate_units(
         dict[str, Any]
     ] = []
 
+    scope_candidates: list[
+        dict[str, Any]
+    ] = []
+
     part_candidates: list[
         dict[str, Any]
     ] = []
@@ -407,6 +548,8 @@ def _select_candidate_units(
     artifact_candidates: list[
         dict[str, Any]
     ] = []
+
+    compatible_units_have_routing_metadata = False
 
     is_part_level_component = (
         part_id is not None
@@ -434,6 +577,9 @@ def _select_candidate_units(
             for expected_type
             in expected_artifact_types
         )
+
+        if not artifact_type_matches:
+            continue
 
         for unit in artifact.units:
             unit_data = unit.model_dump(
@@ -473,14 +619,63 @@ def _select_candidate_units(
                 or []
             )
 
-            # Exact task mapping is the strongest signal.
+            if task_mapping is not None:
+                compatible_units_have_routing_metadata = True
+
+            structured_data = getattr(
+                unit,
+                "structured_data",
+                None,
+            )
+
+            if hasattr(
+                structured_data,
+                "model_dump",
+            ):
+                structured_data = (
+                    structured_data.model_dump(
+                        mode="json",
+                        exclude_none=True,
+                    )
+                )
+
+            if (
+                isinstance(
+                    structured_data,
+                    dict,
+                )
+                and structured_data.get(
+                    "scope_path"
+                )
+            ):
+                compatible_units_have_routing_metadata = True
+
+            # ----------------------------------------------
+            # 1. Exact task mapping
+            # ----------------------------------------------
+
             if component_id in task_ids:
                 exact_task_candidates.append(
                     unit_data
                 )
 
-            # Part mapping is used only when the component itself
-            # represents that part.
+            # ----------------------------------------------
+            # 2. Deterministic extracted scope
+            # ----------------------------------------------
+
+            if _unit_matches_component_scope(
+                unit=unit,
+                component_id=component_id,
+                part_id=part_id,
+            ):
+                scope_candidates.append(
+                    unit_data
+                )
+
+            # ----------------------------------------------
+            # 3. True part-level component
+            # ----------------------------------------------
+
             if (
                 is_part_level_component
                 and part_id in part_ids
@@ -489,20 +684,30 @@ def _select_candidate_units(
                     unit_data
                 )
 
-            if artifact_type_matches:
-                artifact_candidates.append(
-                    unit_data
-                )
+            artifact_candidates.append(
+                unit_data
+            )
 
     if exact_task_candidates:
         return _deduplicate_units(
             exact_task_candidates
         )
 
+    if scope_candidates:
+        return _deduplicate_units(
+            scope_candidates
+        )
+
     if part_candidates:
         return _deduplicate_units(
             part_candidates
         )
+
+    # If the compatible source units already contain deterministic
+    # routing metadata but none matches this component, returning the
+    # entire artifact would actively introduce unrelated evidence.
+    if compatible_units_have_routing_metadata:
+        return []
 
     return _deduplicate_units(
         artifact_candidates
