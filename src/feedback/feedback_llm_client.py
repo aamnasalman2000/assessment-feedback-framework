@@ -9,13 +9,19 @@ from src.extraction.semantic_llm_client import (
 )
 
 from .feedback_models import (
-    ReflectionDecision,
+    ReflectionAuditOutput,
+    ReflectionRevisionPatch,
     RequirementFeedbackLLMOutput,
 )
 
 
 class FeedbackLLMError(RuntimeError):
     """Raised when feedback generation cannot produce valid output."""
+
+
+# ============================================================
+# General evidence normalisation
+# ============================================================
 
 
 def _normalise_evidence_discriminators(
@@ -25,19 +31,35 @@ def _normalise_evidence_discriminators(
     Add a missing evidence_type discriminator when the evidence structure
     clearly identifies the intended variant.
     """
-    if isinstance(value, list):
+    if isinstance(
+        value,
+        list,
+    ):
         return [
-            _normalise_evidence_discriminators(item)
+            _normalise_evidence_discriminators(
+                item
+            )
             for item in value
         ]
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict,
+    ):
         normalised = {
-            key: _normalise_evidence_discriminators(item)
-            for key, item in value.items()
+            key: (
+                _normalise_evidence_discriminators(
+                    item
+                )
+            )
+            for key, item
+            in value.items()
         }
 
-        if "evidence_type" not in normalised:
+        if (
+            "evidence_type"
+            not in normalised
+        ):
             is_submission_reference = any(
                 key in normalised
                 for key in (
@@ -50,7 +72,8 @@ def _normalise_evidence_discriminators(
             )
 
             is_absence = (
-                "description" in normalised
+                "description"
+                in normalised
                 and any(
                     key in normalised
                     for key in (
@@ -59,16 +82,21 @@ def _normalise_evidence_discriminators(
                         "requirement_id",
                     )
                 )
-                and "artifact_id" not in normalised
+                and "artifact_id"
+                not in normalised
             )
 
             if is_submission_reference:
-                normalised["evidence_type"] = (
+                normalised[
+                    "evidence_type"
+                ] = (
                     "submission_reference"
                 )
 
             elif is_absence:
-                normalised["evidence_type"] = "absence"
+                normalised[
+                    "evidence_type"
+                ] = "absence"
 
         return normalised
 
@@ -87,40 +115,65 @@ def _normalise_submission_evidence_locations(
 
     This does not guess between multiple candidates.
     """
-    if isinstance(value, list):
+    if isinstance(
+        value,
+        list,
+    ):
         return [
             _normalise_submission_evidence_locations(
                 item,
-                fallback_artifact_id=fallback_artifact_id,
-                fallback_unit_id=fallback_unit_id,
+                fallback_artifact_id=(
+                    fallback_artifact_id
+                ),
+                fallback_unit_id=(
+                    fallback_unit_id
+                ),
             )
             for item in value
         ]
 
-    if isinstance(value, dict):
+    if isinstance(
+        value,
+        dict,
+    ):
         normalised = {
-            key: _normalise_submission_evidence_locations(
-                item,
-                fallback_artifact_id=fallback_artifact_id,
-                fallback_unit_id=fallback_unit_id,
+            key: (
+                _normalise_submission_evidence_locations(
+                    item,
+                    fallback_artifact_id=(
+                        fallback_artifact_id
+                    ),
+                    fallback_unit_id=(
+                        fallback_unit_id
+                    ),
+                )
             )
-            for key, item in value.items()
+            for key, item
+            in value.items()
         }
 
         if (
-            normalised.get("evidence_type")
+            normalised.get(
+                "evidence_type"
+            )
             == "submission_reference"
         ):
             if (
-                fallback_artifact_id is not None
-                and not normalised.get("artifact_id")
-            ):
-                normalised["artifact_id"] = (
-                    fallback_artifact_id
+                fallback_artifact_id
+                is not None
+                and not normalised.get(
+                    "artifact_id"
                 )
+            ):
+                normalised[
+                    "artifact_id"
+                ] = fallback_artifact_id
 
             has_location = any(
-                normalised.get(field_name) is not None
+                normalised.get(
+                    field_name
+                )
+                is not None
                 for field_name in (
                     "unit_id",
                     "block_id",
@@ -130,9 +183,12 @@ def _normalise_submission_evidence_locations(
 
             if (
                 not has_location
-                and fallback_unit_id is not None
+                and fallback_unit_id
+                is not None
             ):
-                normalised["unit_id"] = fallback_unit_id
+                normalised[
+                    "unit_id"
+                ] = fallback_unit_id
 
         return normalised
 
@@ -149,40 +205,63 @@ def _normalise_absence_evidence_scope(
     """
     Restore controlled scope identifiers for absence evidence.
 
-    The LLM may describe missing work, but Python owns the assessment
-    identifiers used to locate that absence.
+    Python owns the assessment identifiers used to locate an absence.
     """
-    if isinstance(value, list):
+    if isinstance(
+        value,
+        list,
+    ):
         return [
             _normalise_absence_evidence_scope(
                 item,
                 fallback_requirement_id=(
                     fallback_requirement_id
                 ),
-                fallback_part_id=fallback_part_id,
-                fallback_task_id=fallback_task_id,
+                fallback_part_id=(
+                    fallback_part_id
+                ),
+                fallback_task_id=(
+                    fallback_task_id
+                ),
             )
             for item in value
         ]
 
-    if not isinstance(value, dict):
+    if not isinstance(
+        value,
+        dict,
+    ):
         return value
 
     normalised = {
-        key: _normalise_absence_evidence_scope(
-            item,
-            fallback_requirement_id=(
-                fallback_requirement_id
-            ),
-            fallback_part_id=fallback_part_id,
-            fallback_task_id=fallback_task_id,
+        key: (
+            _normalise_absence_evidence_scope(
+                item,
+                fallback_requirement_id=(
+                    fallback_requirement_id
+                ),
+                fallback_part_id=(
+                    fallback_part_id
+                ),
+                fallback_task_id=(
+                    fallback_task_id
+                ),
+            )
         )
-        for key, item in value.items()
+        for key, item
+        in value.items()
     }
 
-    if normalised.get("evidence_type") == "absence":
+    if (
+        normalised.get(
+            "evidence_type"
+        )
+        == "absence"
+    ):
         has_scope = any(
-            normalised.get(field_name)
+            normalised.get(
+                field_name
+            )
             for field_name in (
                 "part_id",
                 "task_id",
@@ -191,22 +270,33 @@ def _normalise_absence_evidence_scope(
         )
 
         if not has_scope:
-            normalised["requirement_id"] = (
-                fallback_requirement_id
-            )
-
-        elif normalised.get("requirement_id") is not None:
-            normalised["requirement_id"] = (
-                fallback_requirement_id
-            )
+            normalised[
+                "requirement_id"
+            ] = fallback_requirement_id
 
         elif (
-            normalised.get("part_id") is None
-            and normalised.get("task_id") is None
-        ):
-            normalised["requirement_id"] = (
-                fallback_requirement_id
+            normalised.get(
+                "requirement_id"
             )
+            is not None
+        ):
+            normalised[
+                "requirement_id"
+            ] = fallback_requirement_id
+
+        elif (
+            normalised.get(
+                "part_id"
+            )
+            is None
+            and normalised.get(
+                "task_id"
+            )
+            is None
+        ):
+            normalised[
+                "requirement_id"
+            ] = fallback_requirement_id
 
     return normalised
 
@@ -219,77 +309,145 @@ def _normalise_reflection_evidence_references(
 ) -> Any:
     """
     Repair or remove invented submission-reference identifiers returned by
-    the reflection audit.
+    reflection revision generation.
 
-    When there is exactly one valid candidate, an invalid or missing
-    identifier can be restored deterministically. When multiple candidates
-    exist, invalid evidence is removed rather than mapped arbitrarily.
+    When exactly one valid candidate exists, an invalid or missing
+    identifier can be restored deterministically.
+
+    When multiple candidates exist, invalid evidence is removed rather than
+    mapped arbitrarily.
     """
-    valid_artifact_ids = set(candidate_artifact_ids)
-    valid_unit_ids = set(candidate_unit_ids)
+    valid_artifact_ids = set(
+        candidate_artifact_ids
+    )
+
+    valid_unit_ids = set(
+        candidate_unit_ids
+    )
 
     fallback_artifact_id = (
         candidate_artifact_ids[0]
-        if len(candidate_artifact_ids) == 1
+        if (
+            len(
+                candidate_artifact_ids
+            )
+            == 1
+        )
         else None
     )
 
     fallback_unit_id = (
         candidate_unit_ids[0]
-        if len(candidate_unit_ids) == 1
+        if (
+            len(
+                candidate_unit_ids
+            )
+            == 1
+        )
         else None
     )
 
-    def normalise(item: Any) -> Any:
-        if isinstance(item, list):
-            cleaned_items: list[Any] = []
+    def normalise(
+        item: Any,
+    ) -> Any:
+        if isinstance(
+            item,
+            list,
+        ):
+            cleaned_items: list[
+                Any
+            ] = []
 
             for child in item:
-                normalised_child = normalise(child)
+                normalised_child = (
+                    normalise(
+                        child
+                    )
+                )
 
-                if normalised_child is not None:
+                if (
+                    normalised_child
+                    is not None
+                ):
                     cleaned_items.append(
                         normalised_child
                     )
 
             return cleaned_items
 
-        if not isinstance(item, dict):
+        if not isinstance(
+            item,
+            dict,
+        ):
             return item
 
         normalised = {
-            key: normalise(child)
-            for key, child in item.items()
+            key: normalise(
+                child
+            )
+            for key, child
+            in item.items()
         }
 
         if (
-            normalised.get("evidence_type")
+            normalised.get(
+                "evidence_type"
+            )
             != "submission_reference"
         ):
             return normalised
 
-        artifact_id = normalised.get("artifact_id")
-        unit_id = normalised.get("unit_id")
+        artifact_id = (
+            normalised.get(
+                "artifact_id"
+            )
+        )
 
-        if artifact_id not in valid_artifact_ids:
-            if fallback_artifact_id is not None:
-                normalised["artifact_id"] = (
-                    fallback_artifact_id
-                )
+        unit_id = (
+            normalised.get(
+                "unit_id"
+            )
+        )
+
+        if (
+            artifact_id
+            not in valid_artifact_ids
+        ):
+            if (
+                fallback_artifact_id
+                is not None
+            ):
+                normalised[
+                    "artifact_id"
+                ] = fallback_artifact_id
+
             else:
                 return None
 
         if (
-            unit_id is not None
-            and unit_id not in valid_unit_ids
+            unit_id
+            is not None
+            and unit_id
+            not in valid_unit_ids
         ):
-            if fallback_unit_id is not None:
-                normalised["unit_id"] = fallback_unit_id
+            if (
+                fallback_unit_id
+                is not None
+            ):
+                normalised[
+                    "unit_id"
+                ] = fallback_unit_id
+
             else:
-                normalised["unit_id"] = None
+                normalised[
+                    "unit_id"
+                ] = None
 
         has_location = any(
-            normalised.get(field_name) is not None
+            normalised.get(
+                field_name
+            )
+            is not None
             for field_name in (
                 "unit_id",
                 "block_id",
@@ -298,141 +456,153 @@ def _normalise_reflection_evidence_references(
         )
 
         if not has_location:
-            if fallback_unit_id is not None:
-                normalised["unit_id"] = fallback_unit_id
+            if (
+                fallback_unit_id
+                is not None
+            ):
+                normalised[
+                    "unit_id"
+                ] = fallback_unit_id
+
             else:
                 return None
 
         return normalised
 
-    return normalise(value)
-
-
-def _normalise_reflection_revision_shape(
-    value: dict[str, Any],
-) -> dict[str, Any]:
-    """
-    Remove revised fields when no revision is requested.
-
-    Small models may populate revised_* fields despite returning
-    should_revise=false. The audit decision is treated as authoritative,
-    and unused patch fields are removed before validation.
-    """
-    normalised = dict(value)
-
-    analysis = normalised.get("analysis")
-
-    if not isinstance(analysis, dict):
-        return normalised
-
-    should_revise = analysis.get("should_revise")
-
-    revised_field_names = (
-        "revised_status",
-        "revised_internal_finding",
-        "revised_student_feedback",
-        "revised_suggestion",
-        "revised_verification_status",
-        "revised_confidence",
-        "revised_evidence",
+    return normalise(
+        value
     )
 
-    if should_revise is False:
-        for field_name in revised_field_names:
-            normalised.pop(field_name, None)
 
-    return normalised
+# ============================================================
+# Stage-1 reflection audit normalisation
+# ============================================================
 
-def _normalise_reflection_analysis_shape(
-    value: dict[str, Any],
+
+def _normalise_reflection_audit_shape(
+    value: Any,
 ) -> dict[str, Any]:
     """
-    Remove revision-only analysis fields when the model decides to keep
-    the original assessment.
+    Normalise a Stage-1 reflection audit.
+
+    The audit stage is intentionally allowed to contain only `analysis`.
+
+    Small models may still emit revised_* fields even when the structured
+    schema does not request them. Those fields are discarded here because
+    revision generation belongs exclusively to Stage 2.
     """
-    normalised = dict(value)
+    if not isinstance(
+        value,
+        dict,
+    ):
+        return {}
 
-    analysis = normalised.get("analysis")
+    analysis = value.get(
+        "analysis"
+    )
 
-    if not isinstance(analysis, dict):
-        return normalised
+    if not isinstance(
+        analysis,
+        dict,
+    ):
+        return {
+            "analysis": analysis
+        }
 
-    should_revise = analysis.get("should_revise")
+    allowed_analysis_fields = {
+        "evidence_supported",
+        "unsupported_claims",
+        "overlooked_evidence",
+        "missing_rubric_points",
+        "preferred_solution_bias",
+        "confidence_assessment",
+        "should_revise",
+        "revision_reason",
+        "requirement_basis",
+    }
+
+    cleaned_analysis = {
+        key: item
+        for key, item
+        in analysis.items()
+        if key
+        in allowed_analysis_fields
+    }
+
+    should_revise = (
+        cleaned_analysis.get(
+            "should_revise"
+        )
+    )
+
+    # --------------------------------------------------
+    # KEEP decisions
+    # --------------------------------------------------
 
     if should_revise is False:
-        cleaned_analysis = dict(analysis)
+        # requirement_basis belongs only to a revision decision.
         cleaned_analysis.pop(
             "requirement_basis",
             None,
         )
-        normalised["analysis"] = cleaned_analysis
 
-    return normalised
+        revision_reason = (
+            cleaned_analysis.get(
+                "revision_reason"
+            )
+        )
 
-def _normalise_incomplete_reflection_revision(
-    value: dict[str, Any],
-) -> dict[str, Any]:
-    """
-    Fail safely when the model requests revision but does not provide a
-    complete revision patch.
+        if (
+            not isinstance(
+                revision_reason,
+                str,
+            )
+            or not revision_reason.strip()
+        ):
+            cleaned_analysis[
+                "revision_reason"
+            ] = (
+                "The original assessment was "
+                "retained because no material "
+                "revision was required."
+            )
 
-    An incomplete patch must never replace the original assessment.
-    The decision is therefore downgraded to KEEP.
-    """
-    normalised = dict(value)
+    # --------------------------------------------------
+    # REVISE decisions
+    # --------------------------------------------------
 
-    analysis = normalised.get("analysis")
+    elif should_revise is True:
+        revision_reason = (
+            cleaned_analysis.get(
+                "revision_reason"
+            )
+        )
 
-    if not isinstance(analysis, dict):
-        return normalised
+        if (
+            not isinstance(
+                revision_reason,
+                str,
+            )
+            or not revision_reason.strip()
+        ):
+            cleaned_analysis[
+                "revision_reason"
+            ] = (
+                "The original assessment "
+                "contains a material defect "
+                "requiring revision."
+            )
 
-    if analysis.get("should_revise") is not True:
-        return normalised
+    return {
+        "analysis": (
+            cleaned_analysis
+        )
+    }
 
-    required_revision_fields = (
-        "revised_status",
-        "revised_internal_finding",
-        "revised_student_feedback",
-        "revised_verification_status",
-        "revised_confidence",
-        "revised_evidence",
-    )
 
-    has_complete_patch = all(
-        normalised.get(field_name) is not None
-        for field_name in required_revision_fields
-    )
-
-    if has_complete_patch:
-        return normalised
-
-    revised_field_names = (
-        *required_revision_fields,
-        "revised_suggestion",
-    )
-
-    for field_name in revised_field_names:
-        normalised.pop(field_name, None)
-
-    revised_analysis = dict(analysis)
-    revised_analysis["should_revise"] = False
-    revised_analysis["evidence_supported"] = True
-    revised_analysis["confidence_assessment"] = (
-        "appropriate"
-    )
-    revised_analysis["preferred_solution_bias"] = False
-    revised_analysis["unsupported_claims"] = []
-    revised_analysis["overlooked_evidence"] = []
-    revised_analysis["missing_rubric_points"] = []
-    revised_analysis.pop("requirement_basis", None)
-    revised_analysis["revision_reason"] = (
-        "The model did not provide a complete valid revision "
-        "patch, so the original assessment was preserved."
-    )
-
-    normalised["analysis"] = revised_analysis
-
-    return normalised
+# ============================================================
+# Feedback client
+# ============================================================
 
 
 class FeedbackStructuredClient:
@@ -442,17 +612,34 @@ class FeedbackStructuredClient:
         client: Any,
         model: str,
     ) -> None:
-        if hasattr(client, "generate_structured"):
+        # HuggingFaceStructuredClient already implements
+        # generate_structured(), so preserve it directly.
+        if hasattr(
+            client,
+            "generate_structured",
+        ):
             self._client = client
+
         else:
-            self._client = OpenAICompatibleStructuredClient(
-                client=client,
-                model=model,
+            self._client = (
+                OpenAICompatibleStructuredClient(
+                    client=client,
+                    model=model,
+                )
             )
 
     @property
-    def model_name(self) -> str:
-        return self._client.model_name
+    def model_name(
+        self,
+    ) -> str:
+        return (
+            self._client
+            .model_name
+        )
+
+    # ========================================================
+    # Initial requirement feedback
+    # ========================================================
 
     def generate_requirement_feedback(
         self,
@@ -463,13 +650,20 @@ class FeedbackStructuredClient:
         candidate_unit_ids: list[str],
         log_name: str,
     ) -> RequirementFeedbackLLMOutput:
-        response = self._client.generate_structured(
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
-            output_schema=(
-                RequirementFeedbackLLMOutput
-                .model_json_schema()
-            ),
+        response = (
+            self._client
+            .generate_structured(
+                system_prompt=(
+                    system_prompt
+                ),
+                user_prompt=(
+                    user_prompt
+                ),
+                output_schema=(
+                    RequirementFeedbackLLMOutput
+                    .model_json_schema()
+                ),
+            )
         )
 
         normalised_response = (
@@ -480,13 +674,23 @@ class FeedbackStructuredClient:
 
         fallback_artifact_id = (
             candidate_artifact_ids[0]
-            if len(candidate_artifact_ids) == 1
+            if (
+                len(
+                    candidate_artifact_ids
+                )
+                == 1
+            )
             else None
         )
 
         fallback_unit_id = (
             candidate_unit_ids[0]
-            if len(candidate_unit_ids) == 1
+            if (
+                len(
+                    candidate_unit_ids
+                )
+                == 1
+            )
             else None
         )
 
@@ -504,7 +708,9 @@ class FeedbackStructuredClient:
 
         self._save_debug_responses(
             raw_response=response,
-            normalised_response=normalised_response,
+            normalised_response=(
+                normalised_response
+            ),
             log_name=log_name,
         )
 
@@ -518,11 +724,80 @@ class FeedbackStructuredClient:
 
         except ValueError as exc:
             raise FeedbackLLMError(
-                "The model returned invalid structured "
-                "requirement feedback."
+                "The model returned invalid "
+                "structured requirement feedback."
             ) from exc
 
-    def generate_reflection_decision(
+    # ========================================================
+    # Stage 1: reflection audit
+    # ========================================================
+
+    def generate_reflection_audit(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        log_name: str,
+    ) -> ReflectionAuditOutput:
+        """
+        Generate the Stage-1 reflection audit.
+
+        This call decides only whether the original assessment should be
+        retained or revised.
+
+        It does not generate revised feedback or evidence.
+        """
+        response = (
+            self._client
+            .generate_structured(
+                system_prompt=(
+                    system_prompt
+                ),
+                user_prompt=(
+                    user_prompt
+                ),
+                output_schema=(
+                    ReflectionAuditOutput
+                    .model_json_schema()
+                ),
+            )
+        )
+
+        normalised_response = (
+            _normalise_reflection_audit_shape(
+                response
+            )
+        )
+
+        self._save_debug_responses(
+            raw_response=response,
+            normalised_response=(
+                normalised_response
+            ),
+            log_name=(
+                f"{log_name}_audit"
+            ),
+        )
+
+        try:
+            return (
+                ReflectionAuditOutput
+                .model_validate(
+                    normalised_response
+                )
+            )
+
+        except ValueError as exc:
+            raise FeedbackLLMError(
+                "The model returned an invalid "
+                "structured reflection audit."
+            ) from exc
+
+    # ========================================================
+    # Stage 2: reflection revision
+    # ========================================================
+
+    def generate_reflection_revision(
         self,
         *,
         system_prompt: str,
@@ -533,19 +808,29 @@ class FeedbackStructuredClient:
         part_id: str | None,
         component_id: str,
         log_name: str,
-    ) -> ReflectionDecision:
+    ) -> ReflectionRevisionPatch:
         """
-        Generate a rubric-guided audit and optional feedback patch.
+        Generate a Stage-2 revision patch.
 
-        The model does not generate record IDs or structural metadata.
+        This method must be called only when Stage 1 returned
+        analysis.should_revise=true.
+
+        Python retains ownership of all structural identifiers.
         """
-        response = self._client.generate_structured(
-            system_prompt=system_prompt,
-            user_prompt=user_prompt,
-            output_schema=(
-                ReflectionDecision
-                .model_json_schema()
-            ),
+        response = (
+            self._client
+            .generate_structured(
+                system_prompt=(
+                    system_prompt
+                ),
+                user_prompt=(
+                    user_prompt
+                ),
+                output_schema=(
+                    ReflectionRevisionPatch
+                    .model_json_schema()
+                ),
+            )
         )
 
         normalised_response = (
@@ -556,13 +841,23 @@ class FeedbackStructuredClient:
 
         fallback_artifact_id = (
             candidate_artifact_ids[0]
-            if len(candidate_artifact_ids) == 1
+            if (
+                len(
+                    candidate_artifact_ids
+                )
+                == 1
+            )
             else None
         )
 
         fallback_unit_id = (
             candidate_unit_ids[0]
-            if len(candidate_unit_ids) == 1
+            if (
+                len(
+                    candidate_unit_ids
+                )
+                == 1
+            )
             else None
         )
 
@@ -596,45 +891,42 @@ class FeedbackStructuredClient:
                 fallback_requirement_id=(
                     requirement_id
                 ),
-                fallback_part_id=part_id,
-                fallback_task_id=component_id,
-            )
-        )
-
-        normalised_response = (
-            _normalise_incomplete_reflection_revision(
-                normalised_response
-            )
-        )
-        
-        normalised_response = (
-            _normalise_reflection_analysis_shape(
-                normalised_response
-            )
-        )
-
-        normalised_response = (
-            _normalise_reflection_revision_shape(
-                normalised_response
+                fallback_part_id=(
+                    part_id
+                ),
+                fallback_task_id=(
+                    component_id
+                ),
             )
         )
 
         self._save_debug_responses(
             raw_response=response,
-            normalised_response=normalised_response,
-            log_name=log_name,
+            normalised_response=(
+                normalised_response
+            ),
+            log_name=(
+                f"{log_name}_revision"
+            ),
         )
 
         try:
-            return ReflectionDecision.model_validate(
-                normalised_response
+            return (
+                ReflectionRevisionPatch
+                .model_validate(
+                    normalised_response
+                )
             )
 
         except ValueError as exc:
             raise FeedbackLLMError(
-                "The model returned an invalid structured "
-                "reflection decision."
+                "The model returned an invalid "
+                "structured reflection revision."
             ) from exc
+
+    # ========================================================
+    # Debug output
+    # ========================================================
 
     @staticmethod
     def _save_debug_responses(
@@ -643,7 +935,10 @@ class FeedbackStructuredClient:
         normalised_response: dict[str, Any],
         log_name: str,
     ) -> None:
-        debug_dir = Path("results/logs")
+        debug_dir = Path(
+            "results/logs"
+        )
+
         debug_dir.mkdir(
             parents=True,
             exist_ok=True,
@@ -651,12 +946,18 @@ class FeedbackStructuredClient:
 
         raw_path = (
             debug_dir
-            / f"{log_name}_raw_response.json"
+            / (
+                f"{log_name}"
+                "_raw_response.json"
+            )
         )
 
         normalised_path = (
             debug_dir
-            / f"{log_name}_normalised_response.json"
+            / (
+                f"{log_name}"
+                "_normalised_response.json"
+            )
         )
 
         with raw_path.open(
