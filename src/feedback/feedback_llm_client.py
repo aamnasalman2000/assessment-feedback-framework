@@ -9,6 +9,7 @@ from src.extraction.semantic_llm_client import (
 )
 
 from .feedback_models import (
+    ComponentFeedbackLLMOutput,
     ReflectionAuditOutput,
     ReflectionRevisionPatch,
     RequirementFeedbackLLMOutput,
@@ -636,6 +637,453 @@ class FeedbackStructuredClient:
             self._client
             .model_name
         )
+    # ========================================================
+    # Baseline component feedback
+    # ========================================================
+
+    @staticmethod
+    def _normalise_component_absence_evidence(
+        value: Any,
+        *,
+        valid_requirement_ids: set[str],
+        component_id: str,
+        part_id: str | None,
+    ) -> Any:
+        """
+        Restore deterministic scope for absence evidence returned by
+        component-level baseline generation.
+
+        Criterion assessments can inherit their own requirement_id.
+
+        Observations that refer to exactly one requirement can inherit that
+        requirement_id. Otherwise the known part/component scope is used.
+
+        This is assessment-agnostic and does not invent rubric identifiers.
+        """
+
+        if not isinstance(
+            value,
+            dict,
+        ):
+            return value
+
+        normalised = dict(
+            value
+        )
+
+        # ----------------------------------------------------
+        # Criterion assessments
+        # ----------------------------------------------------
+
+        criterion_assessments = (
+            normalised.get(
+                "criterion_assessments"
+            )
+        )
+
+        if isinstance(
+            criterion_assessments,
+            list,
+        ):
+            cleaned_assessments: list[Any] = []
+
+            for assessment in criterion_assessments:
+                if not isinstance(
+                    assessment,
+                    dict,
+                ):
+                    cleaned_assessments.append(
+                        assessment
+                    )
+                    continue
+
+                cleaned_assessment = dict(
+                    assessment
+                )
+
+                requirement_id = (
+                    cleaned_assessment.get(
+                        "requirement_id"
+                    )
+                )
+
+                evidence_values = (
+                    cleaned_assessment.get(
+                        "evidence"
+                    )
+                )
+
+                if isinstance(
+                    evidence_values,
+                    list,
+                ):
+                    cleaned_evidence: list[Any] = []
+
+                    for evidence in evidence_values:
+                        if not isinstance(
+                            evidence,
+                            dict,
+                        ):
+                            cleaned_evidence.append(
+                                evidence
+                            )
+                            continue
+
+                        cleaned_item = dict(
+                            evidence
+                        )
+
+                        # A small model may omit evidence_type
+                        # for absence evidence when it provides
+                        # only a description.
+                        if (
+                            "evidence_type"
+                            not in cleaned_item
+                            and "description"
+                            in cleaned_item
+                            and not any(
+                                field_name
+                                in cleaned_item
+                                for field_name in (
+                                    "artifact_id",
+                                    "unit_id",
+                                    "block_id",
+                                    "source_range",
+                                    "excerpt",
+                                )
+                            )
+                        ):
+                            cleaned_item[
+                                "evidence_type"
+                            ] = "absence"
+
+                        if (
+                            cleaned_item.get(
+                                "evidence_type"
+                            )
+                            == "absence"
+                        ):
+                            has_scope = any(
+                                cleaned_item.get(
+                                    field_name
+                                )
+                                for field_name in (
+                                    "part_id",
+                                    "task_id",
+                                    "requirement_id",
+                                )
+                            )
+
+                            if not has_scope:
+                                if (
+                                    isinstance(
+                                        requirement_id,
+                                        str,
+                                    )
+                                    and requirement_id
+                                    in valid_requirement_ids
+                                ):
+                                    cleaned_item[
+                                        "requirement_id"
+                                    ] = requirement_id
+
+                                elif part_id is not None:
+                                    cleaned_item[
+                                        "part_id"
+                                    ] = part_id
+
+                                else:
+                                    cleaned_item[
+                                        "task_id"
+                                    ] = component_id
+
+                        cleaned_evidence.append(
+                            cleaned_item
+                        )
+
+                    cleaned_assessment[
+                        "evidence"
+                    ] = cleaned_evidence
+
+                cleaned_assessments.append(
+                    cleaned_assessment
+                )
+
+            normalised[
+                "criterion_assessments"
+            ] = cleaned_assessments
+
+        # ----------------------------------------------------
+        # Student-facing observations
+        # ----------------------------------------------------
+
+        observations = normalised.get(
+            "observations"
+        )
+
+        if isinstance(
+            observations,
+            list,
+        ):
+            cleaned_observations: list[Any] = []
+
+            for observation in observations:
+                if not isinstance(
+                    observation,
+                    dict,
+                ):
+                    cleaned_observations.append(
+                        observation
+                    )
+                    continue
+
+                cleaned_observation = dict(
+                    observation
+                )
+
+                observation_requirement_ids = [
+                    requirement_id
+                    for requirement_id
+                    in cleaned_observation.get(
+                        "requirement_ids",
+                        [],
+                    )
+                    if (
+                        isinstance(
+                            requirement_id,
+                            str,
+                        )
+                        and requirement_id
+                        in valid_requirement_ids
+                    )
+                ]
+
+                evidence_values = (
+                    cleaned_observation.get(
+                        "evidence"
+                    )
+                )
+
+                if isinstance(
+                    evidence_values,
+                    list,
+                ):
+                    cleaned_evidence: list[Any] = []
+
+                    for evidence in evidence_values:
+                        if not isinstance(
+                            evidence,
+                            dict,
+                        ):
+                            cleaned_evidence.append(
+                                evidence
+                            )
+                            continue
+
+                        cleaned_item = dict(
+                            evidence
+                        )
+
+                        if (
+                            "evidence_type"
+                            not in cleaned_item
+                            and "description"
+                            in cleaned_item
+                            and not any(
+                                field_name
+                                in cleaned_item
+                                for field_name in (
+                                    "artifact_id",
+                                    "unit_id",
+                                    "block_id",
+                                    "source_range",
+                                    "excerpt",
+                                )
+                            )
+                        ):
+                            cleaned_item[
+                                "evidence_type"
+                            ] = "absence"
+
+                        if (
+                            cleaned_item.get(
+                                "evidence_type"
+                            )
+                            == "absence"
+                        ):
+                            has_scope = any(
+                                cleaned_item.get(
+                                    field_name
+                                )
+                                for field_name in (
+                                    "part_id",
+                                    "task_id",
+                                    "requirement_id",
+                                )
+                            )
+
+                            if not has_scope:
+                                if (
+                                    len(
+                                        observation_requirement_ids
+                                    )
+                                    == 1
+                                ):
+                                    cleaned_item[
+                                        "requirement_id"
+                                    ] = (
+                                        observation_requirement_ids[
+                                            0
+                                        ]
+                                    )
+
+                                elif part_id is not None:
+                                    cleaned_item[
+                                        "part_id"
+                                    ] = part_id
+
+                                else:
+                                    cleaned_item[
+                                        "task_id"
+                                    ] = component_id
+
+                        cleaned_evidence.append(
+                            cleaned_item
+                        )
+
+                    cleaned_observation[
+                        "evidence"
+                    ] = cleaned_evidence
+
+                cleaned_observations.append(
+                    cleaned_observation
+                )
+
+            normalised[
+                "observations"
+            ] = cleaned_observations
+
+        return normalised
+
+    def generate_component_feedback(
+        self,
+        *,
+        system_prompt: str,
+        user_prompt: str,
+        candidate_artifact_ids: list[str],
+        candidate_unit_ids: list[str],
+        requirement_ids: list[str],
+        component_id: str,
+        part_id: str | None,
+        log_name: str,
+    ) -> ComponentFeedbackLLMOutput:
+        """
+        Generate Pipeline A feedback for one complete component.
+
+        All evaluation requirements for the component are supplied in one
+        prompt. Python retains ownership of final record identifiers.
+        """
+
+        response = (
+            self._client
+            .generate_structured(
+                system_prompt=(
+                    system_prompt
+                ),
+                user_prompt=(
+                    user_prompt
+                ),
+                output_schema=(
+                    ComponentFeedbackLLMOutput
+                    .model_json_schema()
+                ),
+            )
+        )
+
+        # ----------------------------------------------------
+        # General evidence normalisation
+        # ----------------------------------------------------
+
+        normalised_response = (
+            _normalise_evidence_discriminators(
+                response
+            )
+        )
+
+        fallback_artifact_id = (
+            candidate_artifact_ids[0]
+            if (
+                len(
+                    candidate_artifact_ids
+                )
+                == 1
+            )
+            else None
+        )
+
+        fallback_unit_id = (
+            candidate_unit_ids[0]
+            if (
+                len(
+                    candidate_unit_ids
+                )
+                == 1
+            )
+            else None
+        )
+
+        normalised_response = (
+            _normalise_submission_evidence_locations(
+                normalised_response,
+                fallback_artifact_id=(
+                    fallback_artifact_id
+                ),
+                fallback_unit_id=(
+                    fallback_unit_id
+                ),
+            )
+        )
+
+        # ----------------------------------------------------
+        # Baseline component absence normalisation
+        # ----------------------------------------------------
+
+        normalised_response = (
+            self._normalise_component_absence_evidence(
+                normalised_response,
+                valid_requirement_ids=set(
+                    requirement_ids
+                ),
+                component_id=(
+                    component_id
+                ),
+                part_id=(
+                    part_id
+                ),
+            )
+        )
+
+        self._save_debug_responses(
+            raw_response=response,
+            normalised_response=(
+                normalised_response
+            ),
+            log_name=log_name,
+        )
+
+        try:
+            return (
+                ComponentFeedbackLLMOutput
+                .model_validate(
+                    normalised_response
+                )
+            )
+
+        except ValueError as exc:
+            raise FeedbackLLMError(
+                "The model returned invalid "
+                "structured component feedback."
+            ) from exc
 
     # ========================================================
     # Initial requirement feedback

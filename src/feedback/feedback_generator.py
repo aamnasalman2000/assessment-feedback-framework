@@ -369,19 +369,25 @@ def _select_candidate_units(
     part_id: str | None,
 ) -> list[dict[str, Any]]:
     """
-    Select candidate processed units for a component.
+    Select component-level candidate units.
 
-    Deterministic task mappings are preferred.
+    Selection priority:
 
-    Artifact type is used as a fallback so that the
-    generator remains compatible with both Assessment 1
-    and Assessment 2.
+    1. Exact deterministic task mapping for task-level components.
+    2. Deterministic part mapping for true part-level components.
+    3. Artifact-type fallback when no deterministic mapping is available.
+
+    This avoids leaking all units from a part into an individual task.
     """
+
     component_id = component.get(
         "component_id"
     )
 
-    if not isinstance(component_id, str):
+    if not isinstance(
+        component_id,
+        str,
+    ):
         return []
 
     expected_artifact_types = (
@@ -390,13 +396,22 @@ def _select_candidate_units(
         )
     )
 
-    mapped_candidates: list[
+    exact_task_candidates: list[
+        dict[str, Any]
+    ] = []
+
+    part_candidates: list[
         dict[str, Any]
     ] = []
 
     artifact_candidates: list[
         dict[str, Any]
     ] = []
+
+    is_part_level_component = (
+        part_id is not None
+        and component_id == part_id
+    )
 
     for artifact in (
         generation_input
@@ -426,22 +441,51 @@ def _select_candidate_units(
                 exclude_none=True,
             )
 
-            # Add artifact identity so the LLM can produce
-            # valid SubmissionReferenceEvidence.
-            unit_data["artifact_id"] = (
-                artifact.artifact_id
+            unit_data[
+                "artifact_id"
+            ] = artifact.artifact_id
+
+            unit_data[
+                "artifact_type"
+            ] = processed_artifact_type
+
+            task_mapping = getattr(
+                unit,
+                "task_mapping",
+                None,
             )
 
-            unit_data["artifact_type"] = (
-                processed_artifact_type
+            task_ids = set(
+                getattr(
+                    task_mapping,
+                    "task_ids",
+                    [],
+                )
+                or []
             )
 
-            if _unit_matches_component_mapping(
-                unit=unit,
-                component_id=component_id,
-                part_id=part_id,
+            part_ids = set(
+                getattr(
+                    task_mapping,
+                    "part_ids",
+                    [],
+                )
+                or []
+            )
+
+            # Exact task mapping is the strongest signal.
+            if component_id in task_ids:
+                exact_task_candidates.append(
+                    unit_data
+                )
+
+            # Part mapping is used only when the component itself
+            # represents that part.
+            if (
+                is_part_level_component
+                and part_id in part_ids
             ):
-                mapped_candidates.append(
+                part_candidates.append(
                     unit_data
                 )
 
@@ -450,10 +494,14 @@ def _select_candidate_units(
                     unit_data
                 )
 
-    # Prefer explicit deterministic mappings.
-    if mapped_candidates:
+    if exact_task_candidates:
         return _deduplicate_units(
-            mapped_candidates
+            exact_task_candidates
+        )
+
+    if part_candidates:
+        return _deduplicate_units(
+            part_candidates
         )
 
     return _deduplicate_units(
