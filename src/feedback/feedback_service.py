@@ -242,6 +242,20 @@ class FeedbackService:
                     )
                 )
 
+                candidate_unit_ids = (
+                    self
+                    ._augment_requirement_unit_ids(
+                        component=component,
+                        requirement=requirement,
+                        candidate_unit_ids=(
+                            candidate_unit_ids
+                        ),
+                        unit_lookup=(
+                            unit_lookup
+                        ),
+                    )
+                )
+
                 print(
                     "Candidate units:",
                     len(candidate_unit_ids),
@@ -1820,6 +1834,102 @@ class FeedbackService:
                 selected
             )
         )
+
+    @staticmethod
+    def _augment_requirement_unit_ids(
+        *,
+        component: dict[str, Any],
+        requirement: dict[str, Any],
+        candidate_unit_ids: list[str],
+        unit_lookup: dict[str, Any],
+    ) -> list[str]:
+        """
+        Add narrowly scoped cross-task context when a requirement explicitly
+        depends on work submitted for another task.
+
+        P2-T5-R3 explicitly refers to the constraints established in Tasks 1-4.
+        Give that requirement the submitted answer1/1 through answer4/1 formula
+        units as comparison context in addition to its Task 5 evidence.
+        """
+
+        component_id = component.get(
+            "component_id"
+        )
+
+        requirement_id = requirement.get(
+            "id"
+        )
+
+        if (
+            component_id != "part_2_task_5"
+            or requirement_id != "P2-T5-R3"
+        ):
+            return list(
+                candidate_unit_ids
+            )
+
+        context_unit_ids: list[str] = []
+
+        expected_predicates = {
+            "answer1",
+            "answer2",
+            "answer3",
+            "answer4",
+        }
+
+        for unit_id, unit in unit_lookup.items():
+            unit_type = getattr(
+                unit,
+                "unit_type",
+                None,
+            )
+
+            structured_data = getattr(
+                unit,
+                "structured_data",
+                None,
+            )
+
+            if hasattr(
+                structured_data,
+                "model_dump",
+            ):
+                structured_data = (
+                    structured_data.model_dump(
+                        mode="python",
+                        exclude_none=True,
+                    )
+                )
+
+            if not isinstance(
+                structured_data,
+                dict,
+            ):
+                structured_data = {}
+
+            predicate_name = (
+                structured_data.get(
+                    "predicate_name"
+                )
+            )
+
+            if (
+                unit_type == "prolog_answer"
+                and predicate_name
+                in expected_predicates
+            ):
+                context_unit_ids.append(
+                    unit_id
+                )
+
+        return list(
+            dict.fromkeys(
+                [
+                    *candidate_unit_ids,
+                    *context_unit_ids,
+                ]
+            )
+        ) 
 
     @staticmethod
     def _build_requirement_alignment_data(

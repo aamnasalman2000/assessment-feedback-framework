@@ -995,6 +995,9 @@ STUDENT-FACING FEEDBACK
 
 The revised_student_feedback is shown directly to the student.
 
+The revised_suggestion is also shown directly to the student and must follow
+the same student-facing rules.
+
 It must discuss only the student's submitted work and the exact current
 criterion.
 
@@ -1008,6 +1011,9 @@ Never mention:
 - Stage 1;
 - Stage 2;
 - a correction made by the system.
+- the examiner or grader;
+- the model or prompt;
+- the revision process.
 
 Do not explain why an earlier judgement was wrong.
 

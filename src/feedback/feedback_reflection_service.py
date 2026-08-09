@@ -174,6 +174,9 @@ class FeedbackReflectionService:
                     processing_checks=(
                         processing_checks
                     ),
+                    candidate_units=(
+                        candidate_units
+                    ),
                     initial_criterion_assessment=(
                         initial_criterion_assessment
                     ),
@@ -432,6 +435,9 @@ class FeedbackReflectionService:
                 requirement=requirement,
                 processing_checks=(
                     processing_checks
+                ),
+                candidate_units=(
+                    candidate_units
                 ),
                 initial_criterion_assessment=(
                     initial_criterion_assessment
@@ -737,7 +743,7 @@ class FeedbackReflectionService:
         )
 
         payload = {
-            "schema_version": "3.1",
+            "schema_version": "3.2",
             "reflection_mode": (
                 "two_stage_guarded"
             ),
@@ -1286,11 +1292,57 @@ class FeedbackReflectionService:
         return False
 
     @staticmethod
+    def _requirement_needs_task_5_description(
+        requirement: dict[str, Any],
+    ) -> bool:
+        """Return true when the requirement depends on written explanation."""
+        requirement_text = requirement.get("requirement", "")
+        normalised = FeedbackReflectionService._normalise_text(requirement_text)
+        phrases = (
+            "description", "describe", "explanation", "explain",
+            "justification", "justify", "discussion", "discuss",
+        )
+        return any(phrase in normalised for phrase in phrases)
+
+    @staticmethod
+    def _task_5_candidates_have_explanation(
+        candidate_units: list[Any],
+    ) -> bool:
+        """Return true only if an aligned Task 5 unit records an explanation."""
+        for unit in candidate_units:
+            if isinstance(unit, dict):
+                data = unit
+            elif hasattr(unit, "model_dump"):
+                data = unit.model_dump(mode="python", exclude_none=True)
+            else:
+                data = {
+                    "unit_type": getattr(unit, "unit_type", None),
+                    "structured_data": getattr(unit, "structured_data", None),
+                }
+
+            structured_data = data.get("structured_data")
+            if not isinstance(structured_data, dict):
+                structured_data = {}
+
+            is_task_5 = (
+                data.get("unit_type") == "prolog_task_5_answer"
+                or structured_data.get("is_task_5_answer") is True
+            )
+            if (
+                is_task_5
+                and structured_data.get("has_explanation") is True
+            ):
+                return True
+
+        return False
+
+    @staticmethod
     def _collect_revision_guardrail_errors(
         *,
         decision: ReflectionDecision,
         requirement: dict[str, Any],
         processing_checks: list[Any],
+        candidate_units: list[Any],
         initial_criterion_assessment: CriterionAssessment,
     ) -> list[str]:
         """
@@ -1450,7 +1502,30 @@ class FeedbackReflectionService:
             )
 
         # ----------------------------------------------------
-        # 4. Verification-status sanity
+        # 4. Task 5 description-dependent requirements
+        # ----------------------------------------------------
+
+        if (
+            revised_status == "met"
+            and FeedbackReflectionService
+            ._requirement_needs_task_5_description(
+                requirement
+            )
+            and not FeedbackReflectionService
+            ._task_5_candidates_have_explanation(
+                candidate_units
+            )
+        ):
+            errors.append(
+                "The requirement depends on a student-provided "
+                "description or explanation, but the aligned Task 5 "
+                "submission units contain no explanation. Formula "
+                "evidence alone cannot establish that this requirement "
+                "is met."
+            )
+
+        # ----------------------------------------------------
+        # 5. Verification-status sanity
         # ----------------------------------------------------
 
         if (
