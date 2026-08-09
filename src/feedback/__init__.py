@@ -37,7 +37,8 @@ from .feedback_prompts import (
     build_requirement_feedback_prompt,
 )
 from .feedback_reflection_prompts import (
-    build_requirement_reflection_prompt,
+    build_requirement_reflection_audit_prompt,
+    build_requirement_reflection_revision_prompt,
 )
 from .feedback_reflection_service import (
     FeedbackReflectionError,
@@ -84,5 +85,6 @@ __all__ = [
     "SubmissionReferenceEvidence",
     "TaskMapping",
     "build_requirement_feedback_prompt",
-    "build_requirement_reflection_prompt",
+    "build_requirement_reflection_audit_prompt",
+    "build_requirement_reflection_revision_prompt",
 ]
