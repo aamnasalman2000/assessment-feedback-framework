@@ -1096,6 +1096,7 @@ class FeedbackStructuredClient:
         user_prompt: str,
         candidate_artifact_ids: list[str],
         candidate_unit_ids: list[str],
+        requirement_id: str,
         log_name: str,
     ) -> RequirementFeedbackLLMOutput:
         response = (
@@ -1150,6 +1151,15 @@ class FeedbackStructuredClient:
                 ),
                 fallback_unit_id=(
                     fallback_unit_id
+                ),
+            )
+        )
+
+        normalised_response = (
+            _normalise_absence_evidence_scope(
+                normalised_response,
+                fallback_requirement_id=(
+                    requirement_id
                 ),
             )
         )

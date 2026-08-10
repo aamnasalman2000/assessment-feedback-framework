@@ -428,6 +428,9 @@ class FeedbackService:
                             candidate_unit_ids=(
                                 candidate_unit_ids
                             ),
+                            requirement_id=(
+                                requirement_id
+                            ),
                             log_name=(
                                 f"{component_id}_"
                                 f"{requirement_id}_"

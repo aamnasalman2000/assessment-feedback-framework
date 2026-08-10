@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_2_task_5",
+  "requirement_id": "P2-T5-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The requirement is not met because the student's answer for Task 5 does not provide a natural-language description for each of the three examples, which is a critical part of the requirement. The student's submission only includes the formulas for the three examples but lacks the descriptions of the problematic configurations.",
+    "student_feedback": "Your submission for Task 5 is missing the natural-language descriptions of the three problematic sandwich configurations. Each example should include a description of the configuration and a formula that prevents it. Please provide these descriptions along with the formulas.",
+    "suggestion": "Include a natural-language description for each of the three examples, explaining the problematic configuration and the corresponding preventive formula.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": []
+  }
+}

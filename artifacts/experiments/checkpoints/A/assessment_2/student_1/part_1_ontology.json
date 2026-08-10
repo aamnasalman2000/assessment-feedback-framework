@@ -1,0 +1,297 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "part_1_ontology",
+  "requirement_ids": [
+    "P1-R1",
+    "P1-R2",
+    "P1-R3",
+    "P1-R4",
+    "P1-R5",
+    "P1-R6",
+    "P1-R7",
+    "P1-R8",
+    "P1-R9",
+    "P1-R10",
+    "P1-R11",
+    "P1-R12"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "P1-R1",
+        "status": "met",
+        "internal_finding": "The ontology contains at least ten relevant classes.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001_block",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "BreadSlice",
+            "description": "BreadSlice is a class in the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R2",
+        "status": "met",
+        "internal_finding": "Subclass relationships are logically justified.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_016",
+            "block_id": "artifact_003_unit_016_block",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "ClubSandwich subclass of Sandwich",
+            "description": "ClubSandwich is a subclass of Sandwich."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R3",
+        "status": "met",
+        "internal_finding": "The ontology contains at least five meaningful properties.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_011",
+            "block_id": "artifact_003_unit_011_block",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "hasBreadSlice",
+            "description": "hasBreadSlice is an object property."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R4",
+        "status": "met",
+        "internal_finding": "Property domains, ranges, and characteristics are correctly modelled.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_028",
+            "block_id": "artifact_003_unit_028_block",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "hasBreadSlice: object_property_domain Sandwich",
+            "description": "hasBreadSlice has domain Sandwich."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R5",
+        "status": "met",
+        "internal_finding": "The ontology contains a logically correct Description Logic axiom.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_018",
+            "block_id": "artifact_003_unit_018_block",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "DoubleDeckerSandwich: object_exact_cardinality on hasBreadSlice",
+            "description": "DoubleDeckerSandwich has exactly 3 BreadSlices."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R6",
+        "status": "met",
+        "internal_finding": "The ontology is logically coherent and internally consistent.",
+        "verification_status": "inferred",
+        "confidence": 0.85,
+        "evidence": []
+      },
+      {
+        "requirement_id": "P1-R7",
+        "status": "met",
+        "internal_finding": "The report accurately describes the submitted ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_001",
+            "block_id": "artifact_002_unit_001_block",
+            "source_range": {
+              "start_line": 25,
+              "end_line": 33
+            },
+            "excerpt": "The ontology models the structure of sandwiches that captures the whole (Sandwich), its parts (BreadSlice, LayerOfFilling, Filling), and six variants (SingleDeckerSandwich, DoubleDeckerSandwich, OpenSandwich, ToastedSandwich, Panini, ClubSandwich).",
+            "description": "The report describes the ontology's structure and classes."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R8",
+        "status": "met",
+        "internal_finding": "The report clearly explains the purpose and scope of the ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_001",
+            "block_id": "artifact_002_unit_001_block",
+            "source_range": {
+              "start_line": 25,
+              "end_line": 33
+            },
+            "excerpt": "The ontology models the structure of sandwiches that captures the whole (Sandwich), its parts (BreadSlice, LayerOfFilling, Filling), and six variants (SingleDeckerSandwich, DoubleDeckerSandwich, OpenSandwich, ToastedSandwich, Panini, ClubSandwich).",
+            "description": "The report explains the purpose and scope of the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R9",
+        "status": "met",
+        "internal_finding": "The report justifies the chosen class and property hierarchies.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_002",
+            "block_id": "artifact_002_unit_002_block",
+            "source_range": {
+              "start_line": 34,
+              "end_line": 45
+            },
+            "excerpt": "For classes, Sandwich is placed directly under owl:Thing; everything that is a sandwich inherits from it.",
+            "description": "The report justifies the class hierarchy."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R10",
+        "status": "met",
+        "internal_finding": "The report correctly explains the Description Logic axiom and relates it to the source text.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_block",
+            "source_range": {
+              "start_line": 46,
+              "end_line": 56
+            },
+            "excerpt": "For SingleDeckerSandwich the ontology contains hasBreadSlice exactly 2 BreadSlice and hasLayer exactly 1 LayerOfFilling . This mean every SingleDeckerSandwich must have exactly two bread slices and exactly one deck of filling.",
+            "description": "The report explains the axiom and relates it to the source text."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R11",
+        "status": "met",
+        "internal_finding": "The report critically discusses the strengths and limitations of the ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_004",
+            "block_id": "artifact_002_unit_004_block",
+            "source_range": {
+              "start_line": 57,
+              "end_line": 64
+            },
+            "excerpt": "The advantages of this ontology focuses on the structural and compositional aspects of a sandwich, like how many slices of bread it has, how many filling layers, and the distinction between meat and vegetable ingredients.",
+            "description": "The report discusses the strengths and limitations of the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R12",
+        "status": "met",
+        "internal_finding": "The report does not exceed the specified word limit of 750 words.",
+        "verification_status": "inferred",
+        "confidence": 0.95,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "P1-R1",
+          "P1-R2",
+          "P1-R3",
+          "P1-R4",
+          "P1-R5",
+          "P1-R7",
+          "P1-R8",
+          "P1-R9",
+          "P1-R10",
+          "P1-R11"
+        ],
+        "internal_finding": "The report and ontology meet all the requirements for completeness and correctness.",
+        "student_feedback": "The report and ontology are well-structured and meet all the requirements for completeness and correctness.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_001",
+            "block_id": "artifact_002_unit_001_block",
+            "source_range": {
+              "start_line": 25,
+              "end_line": 33
+            },
+            "excerpt": "The ontology models the structure of sandwiches that captures the whole (Sandwich), its parts (BreadSlice, LayerOfFilling, Filling), and six variants (SingleDeckerSandwich, DoubleDeckerSandwich, OpenSandwich, ToastedSandwich, Panini, ClubSandwich).",
+            "description": "The report describes the ontology's structure and classes."
+          }
+        ]
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "P1-R6"
+        ],
+        "internal_finding": "The ontology may need further validation for logical consistency.",
+        "student_feedback": "Consider using an OWL reasoner to validate the ontology's logical consistency.",
+        "verification_status": "inferred",
+        "confidence": 0.85,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component demonstrates strong adherence to the requirements, with a well-structured ontology and report. The report accurately describes the ontology and justifies its design. However, the ontology's logical consistency needs further validation."
+  }
+}

@@ -340,35 +340,27 @@ Important rules:
         content: str,
     ) -> dict[str, Any]:
         """
-        Extract the first complete top-level JSON object.
+        Extract complete top-level JSON objects from model output
+        and return the last valid object.
 
-        This helps when a model emits otherwise valid JSON
-        with surrounding prose.
+        This handles cases where a model echoes the JSON schema
+        before emitting the actual structured response.
 
-        It does not repair missing commas, mismatched
-        brackets, malformed quoting, or other structural
-        JSON errors.
+        It does not repair missing commas, mismatched brackets,
+        malformed quoting, or other structural JSON errors.
         """
-        start = content.find("{")
+        objects: list[
+            dict[str, Any]
+        ] = []
 
-        if start < 0:
-            raise RuntimeError(
-                "The model response did not "
-                "contain a JSON object."
-            )
-
+        start: int | None = None
         depth = 0
         in_string = False
         escaped = False
 
-        for position in range(
-            start,
-            len(content),
+        for position, character in enumerate(
+            content
         ):
-            character = content[
-                position
-            ]
-
             if in_string:
                 if escaped:
                     escaped = False
@@ -388,12 +380,22 @@ Important rules:
                 continue
 
             if character == "{":
-                depth += 1
+                if depth == 0:
+                    start = position
 
-            elif character == "}":
+                depth += 1
+                continue
+
+            if character == "}":
+                if depth == 0:
+                    continue
+
                 depth -= 1
 
-                if depth == 0:
+                if (
+                    depth == 0
+                    and start is not None
+                ):
                     candidate = content[
                         start:
                         position + 1
@@ -406,34 +408,35 @@ Important rules:
 
                     except json.JSONDecodeError:
                         try:
-                            parsed = (
-                                json.loads(
-                                    candidate,
-                                    strict=False,
-                                )
+                            parsed = json.loads(
+                                candidate,
+                                strict=False,
                             )
 
-                        except (
-                            json.JSONDecodeError
-                        ) as exc:
-                            raise RuntimeError(
-                                "The model returned "
-                                "malformed JSON."
-                            ) from exc
+                        except json.JSONDecodeError:
+                            start = None
+                            continue
 
-                    if not isinstance(
+                    if isinstance(
                         parsed,
                         dict,
                     ):
-                        raise RuntimeError(
-                            "The extracted JSON "
-                            "value was not an "
-                            "object."
+                        objects.append(
+                            parsed
                         )
 
-                    return parsed
+                    start = None
+
+        if objects:
+            return objects[-1]
+
+        if depth > 0:
+            raise RuntimeError(
+                "The model response contained "
+                "an incomplete JSON object."
+            )
 
         raise RuntimeError(
-            "The model response contained "
-            "an incomplete JSON object."
+            "The model response did not "
+            "contain a valid JSON object."
         )

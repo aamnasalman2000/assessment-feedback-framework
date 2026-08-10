@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_2_task_4",
+  "requirement_id": "P2-T4-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's submission includes a Prolog answer that formalises a modal logic formula: 'implies(filling, box(below, not(filling)))'. This formula correctly conditions the restriction on the presence of 'filling', ensuring that no state above it may contain 'filling'. The formula is structured to enforce the global vertical constraint as required by the task.",
+    "student_feedback": "Your formula correctly conditions the restriction on the presence of 'filling', ensuring that no state above it may contain 'filling'. The formula is structured to enforce the global vertical constraint as required by the task.",
+    "suggestion": "The formula is logically correct and meets the requirement. No further changes are needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.98,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_004",
+        "block_id": "artifact_001_unit_004_formula",
+        "source_range": {
+          "start_line": 123,
+          "end_line": 123
+        },
+        "excerpt": "implies(filling, box(below, not(filling)))",
+        "description": "The formula 'implies(filling, box(below, not(filling)))' is provided as the answer to the task."
+      }
+    ]
+  }
+}

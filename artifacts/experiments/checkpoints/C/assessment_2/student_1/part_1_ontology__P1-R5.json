@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission contains four units that each define an axiom using object_exact_cardinality with a number restriction. These axioms are correctly structured as Description Logic axioms and are explicitly labeled as such in the structured_data field.",
+    "student_feedback": "Your submission includes logically correct Description Logic axioms using number restrictions. The axioms are properly defined with subject, property, filler, and cardinality values.",
+    "suggestion": "Consider adding more axioms or exploring different types of restrictions to further enrich the ontology.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_018",
+        "description": "DoubleDeckerSandwich: object_exact_cardinality on hasBreadSlice with cardinality 3"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_019",
+        "description": "DoubleDeckerSandwich: object_exact_cardinality on hasLayer with cardinality 2"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_023",
+        "description": "SingleDeckerSandwich: object_exact_cardinality on hasBreadSlice with cardinality 2"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_024",
+        "description": "SingleDeckerSandwich: object_exact_cardinality on hasLayer with cardinality 1"
+      }
+    ]
+  }
+}

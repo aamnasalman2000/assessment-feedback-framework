@@ -1800,68 +1800,36 @@ class FeedbackReflectionService:
         requirement: dict[str, Any],
     ) -> None:
         """
-        Validate the Stage-1 requirement basis before Stage 2.
+        Validate that a revision decision identifies its rubric basis.
 
-        A REVISE audit must be grounded in an exact phrase from the
-        supplied requirement.
+        The basis may paraphrase the exact requirement wording. Requiring
+        verbatim overlap is unnecessarily brittle for LLM-generated audit
+        output because semantically faithful paraphrases are expected.
         """
-
-        if (
-            not analysis.should_revise
+        if not getattr(
+            analysis,
+            "should_revise",
+            False,
         ):
             return
 
-        basis = (
-            analysis.requirement_basis
+        requirement_basis = getattr(
+            analysis,
+            "requirement_basis",
+            None,
         )
 
         if (
             not isinstance(
-                basis,
+                requirement_basis,
                 str,
             )
-            or not basis.strip()
+            or not requirement_basis.strip()
         ):
             raise FeedbackReflectionError(
-                "Reflection audit requested "
-                "a revision without providing "
-                "a requirement basis."
-            )
-
-        requirement_text = (
-            requirement.get(
-                "requirement",
-                "",
-            )
-        )
-
-        if not isinstance(
-            requirement_text,
-            str,
-        ):
-            requirement_text = ""
-
-        normalised_basis = " ".join(
-            basis.lower().split()
-        )
-
-        normalised_requirement = (
-            " ".join(
-                requirement_text
-                .lower()
-                .split()
-            )
-        )
-
-        if (
-            normalised_basis
-            not in normalised_requirement
-        ):
-            raise FeedbackReflectionError(
-                "The Stage-1 reflection "
-                "requirement_basis does not "
-                "appear verbatim in the exact "
-                "requirement text."
+                "A Stage-1 reflection that requests "
+                "revision must identify the requirement "
+                "basis for that revision."
             )
 
     @staticmethod

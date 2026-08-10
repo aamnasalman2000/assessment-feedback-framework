@@ -1,0 +1,641 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_1_student_1_human_feedback",
+  "submission_id": "assessment_1_student_1_submission",
+  "student_id": "student_1",
+  "assessment_id": "assessment_1",
+  "source": {
+    "source_type": "spreadsheet",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "Overall a good attempt, however, in Scenario 1, while the use of Or.elim is valid, the proof concludes eligibility after only one of the two conditions is met, bypassing the requirement that both a prerequisite and an approval are needed; this results in an incomplete formalisation. Scenario 2 displays sound reasoning and structure, but uses by_contradiction, causing the proof to fail at the compilation level. Scenario 3 is well-handled, compiling successfully and using constructive reasoning across both disjunctive cases in a manner faithful to the task. In Scenario 4, the proof attempts to validate a different implication than the one required. In Part 2, theorems 1 through 3 are correct, demonstrating clean application of the provided axioms. Theorem 4 follows the correct logical idea but fails to compile due to an implicit argument error in AxConjIntro, likely from how the contradiction is structured.",
+    "notes": "Marker feedback and mark breakdown were manually normalised into task-level observations. Requirement mappings were assigned only where the marker feedback could be mapped reliably to the assessment specification."
+  },
+  "marks": {
+    "total_awarded": 66,
+    "total_available": 100,
+    "percentage": 66,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_scenario_1_correctness",
+        "label": "Scenario 1 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_1"
+        ],
+        "awarded": 8,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_scenario_1_explanation",
+        "label": "Scenario 1 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_1"
+        ],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_scenario_1_total",
+        "label": "Scenario 1 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_1"
+        ],
+        "awarded": 10,
+        "available": 15
+      },
+      {
+        "mark_entry_id": "mark_scenario_2_correctness",
+        "label": "Scenario 2 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_2"
+        ],
+        "awarded": 6,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_scenario_2_explanation",
+        "label": "Scenario 2 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_2"
+        ],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_scenario_2_total",
+        "label": "Scenario 2 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_2"
+        ],
+        "awarded": 8,
+        "available": 15
+      },
+      {
+        "mark_entry_id": "mark_scenario_3_correctness",
+        "label": "Scenario 3 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_3"
+        ],
+        "awarded": 10,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_scenario_3_explanation",
+        "label": "Scenario 3 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_3"
+        ],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_scenario_3_total",
+        "label": "Scenario 3 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_3"
+        ],
+        "awarded": 12,
+        "available": 15
+      },
+      {
+        "mark_entry_id": "mark_scenario_4_correctness",
+        "label": "Scenario 4 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_4"
+        ],
+        "awarded": 1,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_scenario_4_explanation",
+        "label": "Scenario 4 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_4"
+        ],
+        "awarded": 1,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_scenario_4_total",
+        "label": "Scenario 4 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_4"
+        ],
+        "awarded": 2,
+        "available": 15
+      },
+      {
+        "mark_entry_id": "mark_theorem_1_correctness",
+        "label": "Theorem 1 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_1"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_theorem_1_explanation",
+        "label": "Theorem 1 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_1"
+        ],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_theorem_1_total",
+        "label": "Theorem 1 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_1"
+        ],
+        "awarded": 10,
+        "available": 10
+      },
+      {
+        "mark_entry_id": "mark_theorem_2_correctness",
+        "label": "Theorem 2 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_2"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_theorem_2_explanation",
+        "label": "Theorem 2 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_2"
+        ],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_theorem_2_total",
+        "label": "Theorem 2 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_2"
+        ],
+        "awarded": 10,
+        "available": 10
+      },
+      {
+        "mark_entry_id": "mark_theorem_3_correctness",
+        "label": "Theorem 3 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_3"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_theorem_3_explanation",
+        "label": "Theorem 3 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_3"
+        ],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_theorem_3_total",
+        "label": "Theorem 3 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_3"
+        ],
+        "awarded": 10,
+        "available": 10
+      },
+      {
+        "mark_entry_id": "mark_theorem_4_correctness",
+        "label": "Theorem 4 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_4"
+        ],
+        "awarded": 3,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_theorem_4_explanation",
+        "label": "Theorem 4 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_4"
+        ],
+        "awarded": 1,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_theorem_4_total",
+        "label": "Theorem 4 - Total",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_4"
+        ],
+        "awarded": 4,
+        "available": 10
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "human_obs_001",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "requirement_ids": [
+        "S1-R3"
+      ],
+      "text": "The Scenario 1 proof uses a valid Or.elim approach, but it establishes eligibility after only one of the two required conditions is satisfied. It therefore does not fully formalise the requirement that both a prerequisite and an approval are necessary.",
+      "original_text": "In Scenario 1, while the use of Or.elim is valid, the proof concludes eligibility after only one of the two conditions is met, bypassing the requirement that both a prerequisite and an approval are needed; this results in an incomplete formalisation.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "Mapped to S1-R3 because the marker explicitly identifies failure to require both the prerequisite condition and the approval condition before deriving eligibility."
+    },
+    {
+      "observation_id": "human_obs_002",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "requirement_ids": [
+        "S2-R2",
+        "S2-R3",
+        "S2-R4"
+      ],
+      "text": "Scenario 2 demonstrates sound reasoning and proof structure.",
+      "original_text": "Scenario 2 displays sound reasoning and structure, but uses by_contradiction, causing the proof to fail at the compilation level.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "The marker gives a general positive judgement about the reasoning and structure rather than explicitly discussing each proof step, so the mapping to the three proof-correctness requirements is inferential."
+    },
+    {
+      "observation_id": "human_obs_003",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "requirement_ids": [
+        "S2-R5",
+        "S2-R7"
+      ],
+      "text": "The Scenario 2 proof fails to compile because the use of by_contradiction is not supported in the submitted Lean environment.",
+      "original_text": "Scenario 2 displays sound reasoning and structure, but uses by_contradiction, causing the proof to fail at the compilation level.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly links the use of by_contradiction to compilation failure. This corresponds directly to S2-R5 on supported classical reasoning and S2-R7 on compilation."
+    },
+    {
+      "observation_id": "human_obs_004",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "requirement_ids": [
+        "S3-R5",
+        "S3-R6",
+        "S3-R8"
+      ],
+      "text": "Scenario 3 compiles successfully and uses constructive reasoning across both disjunctive cases in a manner faithful to the task.",
+      "original_text": "Scenario 3 is well-handled, compiling successfully and using constructive reasoning across both disjunctive cases in a manner faithful to the task.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly confirms successful compilation and task-faithful reasoning leading through the cases. This supports S3-R5, S3-R6 and S3-R8."
+    },
+    {
+      "observation_id": "human_obs_005",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "requirement_ids": [
+        "S4-R1",
+        "S4-R6"
+      ],
+      "text": "The Scenario 4 proof attempts to establish a different implication from the implication required by the task.",
+      "original_text": "In Scenario 4, the proof attempts to validate a different implication than the one required.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker's criticism directly matches the requirements to use and target the exact implication required by the brief."
+    },
+    {
+      "observation_id": "human_obs_006",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1",
+        "theorem_2",
+        "theorem_3"
+      ],
+      "requirement_ids": [
+        "T1-R1",
+        "T1-R2",
+        "T1-R3",
+        "T2-R1",
+        "T2-R2",
+        "T2-R3",
+        "T3-R1",
+        "T3-R2",
+        "T3-R3",
+        "T3-R4"
+      ],
+      "text": "Theorems 1, 2 and 3 are correct and demonstrate clean application of the supplied axioms.",
+      "original_text": "In Part 2, theorems 1 through 3 are correct, demonstrating clean application of the provided axioms.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly assesses the proofs as correct and highlights correct application of the supplied axioms. Explanation and compilation requirements are not included because they are not explicitly discussed in this sentence."
+    },
+    {
+      "observation_id": "human_obs_007",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "requirement_ids": [
+        "T4-R1",
+        "T4-R3"
+      ],
+      "text": "Theorem 4 follows the correct contradiction-based logical idea.",
+      "original_text": "Theorem 4 follows the correct logical idea but fails to compile due to an implicit argument error in AxConjIntro, likely from how the contradiction is structured.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "The marker confirms that the overall logical strategy is correct, but does not explicitly validate every proof step. The mapping captures the assumption-and-contradiction structure without treating the AxConjIntro step as correct."
+    },
+    {
+      "observation_id": "human_obs_008",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "requirement_ids": [
+        "T4-R2",
+        "T4-R4",
+        "T4-R6"
+      ],
+      "text": "Theorem 4 fails to compile because the arguments to AxConjIntro are not supplied correctly.",
+      "original_text": "Theorem 4 follows the correct logical idea but fails to compile due to an implicit argument error in AxConjIntro, likely from how the contradiction is structured.",
+      "source_span": {
+        "span_type": "whole_feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The implicit argument error directly concerns the use of AxConjIntro and results in compilation failure, corresponding to T4-R2, T4-R4 and T4-R6."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "human_section_scenario_1",
+      "label": "Scenario 1",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "summary": "The proof uses a valid disjunction-elimination approach but incompletely formalises eligibility because it does not require both a prerequisite and an approval.",
+      "original_text": "In Scenario 1, while the use of Or.elim is valid, the proof concludes eligibility after only one of the two conditions is met, bypassing the requirement that both a prerequisite and an approval are needed; this results in an incomplete formalisation.",
+      "observation_ids": [
+        "human_obs_001"
+      ]
+    },
+    {
+      "section_id": "human_section_scenario_2",
+      "label": "Scenario 2",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "summary": "The proof demonstrates sound reasoning and structure but fails to compile because of the use of by_contradiction.",
+      "original_text": "Scenario 2 displays sound reasoning and structure, but uses by_contradiction, causing the proof to fail at the compilation level.",
+      "observation_ids": [
+        "human_obs_002",
+        "human_obs_003"
+      ]
+    },
+    {
+      "section_id": "human_section_scenario_3",
+      "label": "Scenario 3",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "summary": "The proof compiles successfully and uses constructive reasoning across both disjunctive cases in a way that is faithful to the task.",
+      "original_text": "Scenario 3 is well-handled, compiling successfully and using constructive reasoning across both disjunctive cases in a manner faithful to the task.",
+      "observation_ids": [
+        "human_obs_004"
+      ]
+    },
+    {
+      "section_id": "human_section_scenario_4",
+      "label": "Scenario 4",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "summary": "The submitted proof attempts to establish a different implication from the one required.",
+      "original_text": "In Scenario 4, the proof attempts to validate a different implication than the one required.",
+      "observation_ids": [
+        "human_obs_005"
+      ]
+    },
+    {
+      "section_id": "human_section_theorems_1_to_3",
+      "label": "Theorems 1-3",
+      "scope": "task_group",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1",
+        "theorem_2",
+        "theorem_3"
+      ],
+      "summary": "Theorems 1 through 3 are correct and demonstrate clean use of the supplied axioms.",
+      "original_text": "In Part 2, theorems 1 through 3 are correct, demonstrating clean application of the provided axioms.",
+      "observation_ids": [
+        "human_obs_006"
+      ]
+    },
+    {
+      "section_id": "human_section_theorem_4",
+      "label": "Theorem 4",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "summary": "The theorem follows the correct logical idea but does not compile because of an implicit argument error involving AxConjIntro.",
+      "original_text": "Theorem 4 follows the correct logical idea but fails to compile due to an implicit argument error in AxConjIntro, likely from how the contradiction is structured.",
+      "observation_ids": [
+        "human_obs_007",
+        "human_obs_008"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "Overall, the submission is a good attempt. Scenario 3 and Theorems 1-3 are particularly strong. Scenario 1 contains an incomplete formalisation, Scenario 2 has a compilation failure despite sound reasoning, Scenario 4 proves a different implication from the one required, and Theorem 4 follows the correct logical approach but fails to compile because of an AxConjIntro implicit argument error.",
+    "strengths_summary": "Scenario 3 compiles successfully and uses constructive reasoning faithfully. Theorems 1-3 are correct and make clean use of the supplied axioms. Scenario 2 also demonstrates sound reasoning and structure despite its compilation issue.",
+    "improvement_summary": "Scenario 1 should enforce both prerequisite and approval conditions before deriving eligibility. Scenario 2 needs its compilation issue resolved. Scenario 4 should prove the required implication rather than a different one. Theorem 4 needs the AxConjIntro implicit argument error corrected.",
+    "original_text": "Overall a good attempt, however, in Scenario 1, while the use of Or.elim is valid, the proof concludes eligibility after only one of the two conditions is met, bypassing the requirement that both a prerequisite and an approval are needed; this results in an incomplete formalisation. Scenario 2 displays sound reasoning and structure, but uses by_contradiction, causing the proof to fail at the compilation level. Scenario 3 is well-handled, compiling successfully and using constructive reasoning across both disjunctive cases in a manner faithful to the task. In Scenario 4, the proof attempts to validate a different implication than the one required. In Part 2, theorems 1 through 3 are correct, demonstrating clean application of the provided axioms. Theorem 4 follows the correct logical idea but fails to compile due to an implicit argument error in AxConjIntro, likely from how the contradiction is structured.",
+    "observation_ids": [
+      "human_obs_001",
+      "human_obs_002",
+      "human_obs_003",
+      "human_obs_004",
+      "human_obs_005",
+      "human_obs_006",
+      "human_obs_007",
+      "human_obs_008"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission contains five object properties: hasBreadSlice, hasFillingIngredient, hasLayer, hasMeatFilling, and hasVegetableFilling. These properties are correctly declared as ObjectProperties in the ontology, satisfying the requirement of at least five meaningful object properties.",
+    "student_feedback": "Your ontology includes five object properties, which meets the requirement. Ensure that each property is meaningful and well-defined in the context of the sandwich domain.",
+    "suggestion": "Consider adding more properties or refining existing ones to further enhance the ontology's expressiveness.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_011",
+        "description": "ObjectProperty hasBreadSlice declared as an ObjectProperty in the ontology."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_012",
+        "description": "ObjectProperty hasFillingIngredient declared as an ObjectProperty in the ontology."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_013",
+        "description": "ObjectProperty hasLayer declared as an ObjectProperty in the ontology."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_014",
+        "description": "ObjectProperty hasMeatFilling declared as an ObjectProperty in the ontology."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_003",
+        "unit_id": "artifact_003_unit_015",
+        "description": "ObjectProperty hasVegetableFilling declared as an ObjectProperty in the ontology."
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "component_alignments": [
+    {
+      "component_id": "part_1_ontology",
+      "primary_unit_ids": [
+        "artifact_002_unit_001",
+        "artifact_002_unit_002",
+        "artifact_002_unit_003",
+        "artifact_002_unit_004",
+        "artifact_003_unit_001",
+        "artifact_003_unit_002",
+        "artifact_003_unit_003",
+        "artifact_003_unit_004",
+        "artifact_003_unit_005",
+        "artifact_003_unit_006",
+        "artifact_003_unit_007",
+        "artifact_003_unit_008",
+        "artifact_003_unit_009",
+        "artifact_003_unit_010",
+        "artifact_003_unit_011",
+        "artifact_003_unit_012",
+        "artifact_003_unit_013",
+        "artifact_003_unit_014",
+        "artifact_003_unit_015",
+        "artifact_003_unit_016",
+        "artifact_003_unit_017",
+        "artifact_003_unit_018",
+        "artifact_003_unit_019",
+        "artifact_003_unit_020",
+        "artifact_003_unit_021",
+        "artifact_003_unit_022",
+        "artifact_003_unit_023",
+        "artifact_003_unit_024",
+        "artifact_003_unit_025",
+        "artifact_003_unit_026",
+        "artifact_003_unit_027",
+        "artifact_003_unit_028",
+        "artifact_003_unit_029",
+        "artifact_003_unit_030",
+        "artifact_003_unit_031",
+        "artifact_003_unit_032",
+        "artifact_003_unit_033",
+        "artifact_003_unit_034",
+        "artifact_003_unit_035",
+        "artifact_003_unit_036",
+        "artifact_003_unit_037"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The units directly address the development of the ontology and its accompanying report, covering the ontology model, class declarations, and design justifications. These units provide the necessary evidence for the component. All units are ontology class declarations that directly answer the component's task of developing an OWL ontology for the sandwich domain. Each unit defines a new class in the ontology, which is a core part of the ontology development task. All units are directly related to the ontology development task for the sandwich domain. They include class declarations and property declarations that are essential for building the ontology as required by the assessment component. All units are directly related to the ontology development task for the Sandwich Ontology component. The units include object property declarations and a subclass axiom, which are essential for building the ontology as required by the assessment component. All units directly contribute to the development of the OWL ontology for the sandwich domain, including subclass relationships and cardinality constraints. These units are explicitly mapped to part_1_ontology and are part of the ontology de...",
+      "confidence": 0.9499999999999998,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_001"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit provides a Prolog answer that formalises a constraint using modal logic to represent mutual exclusion between bread and filling. The formula expresses that bread and filling cannot co-occur, which is a logical constraint in modal logic.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_002"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit provides a Prolog answer that directly addresses the assessment component. The formula implies(filling, and(dia(oneabove, bread), dia(onebelow, bread))) formalises the constraint that filling can only be true if bread is both one above and one below in a spatial context, which matches the task summary and semantic goal of the component.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_003"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit provides a Prolog answer that formalises a modal logic constraint. The constraint uses the implies operator to express that the presence of filling (filling) necessitates that bread is not present in a certain spatial accessibility relation (below). The box operator is used to indicate necessity, with the inner box indicating a nested spatial accessibility relation. The formula enforces that filling can only occur in contexts where bread is not present in a nested spatial accessibility.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_004"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit provides a Prolog answer that formalises a modal logic constraint. The constraint states that 'filling' is only possible if 'box(below, not(filling))' holds, which enforces a relationship between 'filling' and 'box(below, not(filling))'. The student's intent is to formalise this constraint, and the strategy involves using modal logic to express the relationship.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_5",
+      "primary_unit_ids": [
+        "artifact_001_unit_005",
+        "artifact_001_unit_006",
+        "artifact_001_unit_007"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "All three units are prolog_task_5_answers with task_mapping indicating they are for part_2_task_5. The structured_data contains modal logic formulas that directly address the task of providing preventive formulas for problematic sandwich configurations. The semantic interpretations confirm that these units formalise constraints using modal logic as required for the task.",
+      "confidence": 0.95,
+      "unresolved": false
+    }
+  ],
+  "summary": "Assessment components were aligned using deterministic candidate selection followed by component-level model-assisted evidence routing.",
+  "warnings": [],
+  "schema_version": "1.0",
+  "assessment_id": "assessment_2",
+  "source_submission_id": "assessment_2_student_1",
+  "processed_submission_id": "processed_assessment_2_student_1",
+  "model_name": "Qwen/Qwen3-4B",
+  "aligner_version": "1.0"
+}
