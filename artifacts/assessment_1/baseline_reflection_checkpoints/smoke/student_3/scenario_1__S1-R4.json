@@ -1,0 +1,107 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_004",
+  "initial_observation_id": "b_initial_obs_004",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The proof does not handle all four combinations explicitly."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment incorrectly claims the proof does not handle all four combinations explicitly, when the student work actually includes all four cases in the proof body.",
+      "requirement_basis": "Correctly reason through the four possible prerequisite–approval combinations when deriving the target proposition."
+    },
+    "revised_status": "met",
+    "revised_internal_finding": "The proof explicitly handles all four combinations.",
+    "revised_student_feedback": "The proof explicitly handles all four combinations.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.8,
+    "revised_evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof body explicitly handles all four combinations."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_004",
+    "requirement_id": "S1-R4",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "status": "met",
+    "internal_finding": "The proof explicitly handles all four combinations.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof body explicitly handles all four combinations."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_004",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S1-R4"
+    ],
+    "criterion_assessment_ids": [
+      "ca_004"
+    ],
+    "internal_finding": "The proof explicitly handles all four combinations.",
+    "student_feedback": "The proof explicitly handles all four combinations.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof body explicitly handles all four combinations."
+      }
+    ]
+  }
+}

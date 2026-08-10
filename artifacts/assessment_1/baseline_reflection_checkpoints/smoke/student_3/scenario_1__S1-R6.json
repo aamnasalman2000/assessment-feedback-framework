@@ -1,0 +1,87 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R6",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_006",
+  "initial_observation_id": "b_initial_obs_006",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The proof lacks a brief explanation of the reasoning."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement depends on a student-provided description or explanation, but the aligned Task 5 submission units contain no explanation. Formula evidence alone cannot establish that this requirement is met."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_006",
+    "requirement_id": "S1-R6",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "status": "not_met",
+    "internal_finding": "The proof lacks a brief explanation of the reasoning.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof does not include any comments explaining the reasoning."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_006",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S1-R6"
+    ],
+    "criterion_assessment_ids": [
+      "ca_006"
+    ],
+    "internal_finding": "The proof lacks a brief explanation of the reasoning.",
+    "student_feedback": "The proof lacks a brief explanation of the reasoning.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.7,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof does not include any comments explaining the reasoning."
+      }
+    ]
+  }
+}

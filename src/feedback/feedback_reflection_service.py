@@ -177,9 +177,6 @@ class FeedbackReflectionService:
                     candidate_units=(
                         candidate_units
                     ),
-                    initial_criterion_assessment=(
-                        initial_criterion_assessment
-                    ),
                 )
             )
 
@@ -438,9 +435,6 @@ class FeedbackReflectionService:
                 ),
                 candidate_units=(
                     candidate_units
-                ),
-                initial_criterion_assessment=(
-                    initial_criterion_assessment
                 ),
             )
         )
@@ -1085,11 +1079,17 @@ class FeedbackReflectionService:
             "ontology remains consistent",
             "satisfiable",
             "unsatisfiable",
+            "must compile",
+            "must compile successfully",
             "compiles successfully",
             "compiles without",
             "compilation",
+            "must execute",
             "executes successfully",
+            "must run",
             "runs successfully",
+            "must pass all tests",
+            "must pass the tests",
             "passes all tests",
             "passes the tests",
         )
@@ -1343,7 +1343,6 @@ class FeedbackReflectionService:
         requirement: dict[str, Any],
         processing_checks: list[Any],
         candidate_units: list[Any],
-        initial_criterion_assessment: CriterionAssessment,
     ) -> list[str]:
         """
         Check a proposed Stage-2 patch for high-confidence deterministic

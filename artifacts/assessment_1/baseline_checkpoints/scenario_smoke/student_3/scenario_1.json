@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_1",
+  "requirement_ids": [
+    "S1-R1",
+    "S1-R2",
+    "S1-R3",
+    "S1-R4",
+    "S1-R5",
+    "S1-R6",
+    "S1-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S1-R1",
+        "status": "met",
+        "internal_finding": "Prerequisite requirement is correctly represented as x1 ∨ x2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_statement",
+            "source_range": {
+              "start_line": 18,
+              "end_line": 18
+            },
+            "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+            "description": "The formal statement includes the prerequisite disjunction."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R2",
+        "status": "met",
+        "internal_finding": "Approval requirement is correctly represented as y1 ∨ y2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_statement",
+            "source_range": {
+              "start_line": 18,
+              "end_line": 18
+            },
+            "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+            "description": "The formal statement includes the approval disjunction."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R3",
+        "status": "partially_met",
+        "internal_finding": "The proof uses both conditions but does not explicitly state the conjunctive requirement.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S1-R4",
+        "status": "not_met",
+        "internal_finding": "The proof does not handle all four combinations explicitly.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_proof",
+            "source_range": {
+              "start_line": 19,
+              "end_line": 24
+            },
+            "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+            "description": "The proof handles all four combinations but does not explicitly derive the conclusion."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R5",
+        "status": "not_met",
+        "internal_finding": "The proof relies on unrelated assumptions and does not use case evidence effectively.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_proof",
+            "source_range": {
+              "start_line": 19,
+              "end_line": 24
+            },
+            "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+            "description": "The proof uses h1, h2, h3, h4 which are not defined in the submission."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R6",
+        "status": "not_met",
+        "internal_finding": "The proof lacks a brief explanation of the reasoning.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_proof",
+            "source_range": {
+              "start_line": 19,
+              "end_line": 24
+            },
+            "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+            "description": "The proof does not include any comments explaining the reasoning."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R7",
+        "status": "missing",
+        "internal_finding": "The submitted Lean code does not compile successfully.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S1-R4",
+          "S1-R5",
+          "S1-R6"
+        ],
+        "internal_finding": "The proof lacks a clear explanation of the reasoning and does not effectively use case evidence.",
+        "student_feedback": "Ensure the proof includes a brief explanation of the reasoning and explicitly derive the conclusion from the case analysis.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S1-R3",
+          "S1-R7"
+        ],
+        "internal_finding": "The proof does not explicitly state the conjunctive requirement, and the code does not compile.",
+        "student_feedback": "Preserve the supplied Lean declarations but document that they do not fully encode the stated conjunctive eligibility requirement.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.7,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission correctly formalises the prerequisite and approval requirements. However, the proof lacks a clear explanation of the reasoning and does not effectively use case evidence. The code also does not compile successfully."
+  }
+}
