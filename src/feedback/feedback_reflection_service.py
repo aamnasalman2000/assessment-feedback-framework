@@ -1149,6 +1149,9 @@ class FeedbackReflectionService:
         if any(
             phrase in normalised
             for phrase in (
+                "must compile",
+                "must compile successfully",
+                "compile successfully",
                 "compiles successfully",
                 "compiles without",
                 "compilation",
@@ -1158,6 +1161,7 @@ class FeedbackReflectionService:
                 "compile",
                 "compilation",
                 "code_compile",
+                "lean_compile",
             }
 
         if any(
@@ -1476,9 +1480,6 @@ class FeedbackReflectionService:
 
         if (
             revised_status == "met"
-            and initial_criterion_assessment
-            .status
-            == "not_assessable"
             and FeedbackReflectionService
             ._requirement_needs_deterministic_verification(
                 requirement
@@ -1495,9 +1496,9 @@ class FeedbackReflectionService:
                 "The requirement concerns a property that "
                 "requires deterministic verification, but no "
                 "successful requirement-specific processing "
-                "check establishes that property. A previous "
-                "'not_assessable' result cannot safely be "
-                "promoted to 'met'."
+                "check establishes that property. The "
+                "requirement cannot safely be marked as "
+                "'met'."
             )
 
         # ----------------------------------------------------
