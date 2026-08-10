@@ -38,3 +38,6 @@ artifacts/assessment_2/feedback_checkpoints/
 # LLM debug response logs
 results/logs/*_raw_response.json
 results/logs/*_normalised_response.json
+
+# Generated experiment artifacts and checkpoints
+artifacts/
