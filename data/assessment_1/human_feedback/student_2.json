@@ -1,0 +1,439 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_1_student_2_human_feedback",
+  "submission_id": "assessment_1_student_2_submission",
+  "student_id": "student_2",
+  "assessment_id": "assessment_1",
+  "source": {
+    "source_type": "manual_entry",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "Good work. However, the scenario1 clearly specifies that eligibility depends on both meeting a prerequisite and receiving an approval. Your proof doesn't make use of the Hy, R3, or R4 axioms, which are needed to validate the second condition.\nFor scenario 2, The proof is incomplete, and both branches of the AxDisjElim remain sorry.\nScenario 3 is fairly done, and Scenario 4 is missing.",
+    "notes": "Marks and textual feedback were manually transcribed from the human marking record. Textual observations were normalised conservatively and mapped only where the marker feedback provides a clear basis."
+  },
+  "marks": {
+    "total_awarded": 67,
+    "total_available": 100,
+    "percentage": 67,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_001",
+        "label": "Scenario 1 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_1"
+        ],
+        "awarded": 7,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_002",
+        "label": "Scenario 1 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_1"
+        ],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_003",
+        "label": "Scenario 2 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_2"
+        ],
+        "awarded": 5,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_004",
+        "label": "Scenario 2 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_2"
+        ],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_005",
+        "label": "Scenario 3 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_3"
+        ],
+        "awarded": 7,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_006",
+        "label": "Scenario 3 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_3"
+        ],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_007",
+        "label": "Scenario 4 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_4"
+        ],
+        "awarded": 0,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_008",
+        "label": "Scenario 4 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_1"
+        ],
+        "task_ids": [
+          "scenario_4"
+        ],
+        "awarded": 0,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_009",
+        "label": "Theorem 1 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_1"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_010",
+        "label": "Theorem 1 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_1"
+        ],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_011",
+        "label": "Theorem 2 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_2"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_012",
+        "label": "Theorem 2 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_2"
+        ],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_013",
+        "label": "Theorem 3 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_3"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_014",
+        "label": "Theorem 3 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_3"
+        ],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_015",
+        "label": "Theorem 4 - Proof Correctness",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_4"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_016",
+        "label": "Theorem 4 - Explanation",
+        "scope": "task",
+        "part_ids": [
+          "part_2"
+        ],
+        "task_ids": [
+          "theorem_4"
+        ],
+        "awarded": 2,
+        "available": 2
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "overall",
+      "text": "The submission represents a good overall attempt.",
+      "original_text": "Good work.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 0
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "requirement_ids": [
+        "S1-R3"
+      ],
+      "text": "The proof does not adequately establish that eligibility depends on both satisfying a prerequisite and receiving an approval.",
+      "original_text": "However, the scenario1 clearly specifies that eligibility depends on both meeting a prerequisite and receiving an approval.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 1
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "requirement_ids": [
+        "S1-R3",
+        "S1-R4",
+        "S1-R5"
+      ],
+      "text": "The proof does not use Hy, R3, or R4, so the approval condition is not properly used to validate eligibility.",
+      "original_text": "Your proof doesn't make use of the Hy, R3, or R4 axioms, which are needed to validate the second condition.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 2
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies unused proof evidence and connects it to failure to validate the second eligibility condition. This maps to the conjunctive eligibility requirement, case reasoning, and use of introduced evidence."
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "requirement_ids": [
+        "S2-R7"
+      ],
+      "text": "The proof is incomplete because both branches of AxDisjElim still contain sorry.",
+      "original_text": "For scenario 2, The proof is incomplete, and both branches of the AxDisjElim remain sorry.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 3
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies unresolved sorry expressions. This directly establishes that the submitted proof is incomplete and does not constitute a completed compiling proof."
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "text": "Scenario 3 is fairly well completed.",
+      "original_text": "Scenario 3 is fairly done",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 4
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "No individual rubric requirements are assigned because the marker provides only a general positive assessment and does not identify which specific aspects of Scenario 3 were successful."
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "omission",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "requirement_ids": [
+        "S4-R1",
+        "S4-R2",
+        "S4-R3",
+        "S4-R4",
+        "S4-R5",
+        "S4-R6",
+        "S4-R7",
+        "S4-R8"
+      ],
+      "text": "Scenario 4 is missing from the submission.",
+      "original_text": "Scenario 4 is missing.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 4
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "Because the marker explicitly states that the entire scenario is missing, all Scenario 4 evaluation requirements are affected."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Scenario 1",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "summary": "The proof does not adequately establish the required combination of a prerequisite and an approval. In particular, Hy, R3, and R4 are not used to validate the approval condition.",
+      "original_text": "However, the scenario1 clearly specifies that eligibility depends on both meeting a prerequisite and receiving an approval. Your proof doesn't make use of the Hy, R3, or R4 axioms, which are needed to validate the second condition.",
+      "observation_ids": [
+        "obs_002",
+        "obs_003"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Scenario 2",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "summary": "The proof is incomplete because both branches of AxDisjElim remain sorry.",
+      "original_text": "For scenario 2, The proof is incomplete, and both branches of the AxDisjElim remain sorry.",
+      "observation_ids": [
+        "obs_004"
+      ]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Scenario 3",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "summary": "Scenario 3 is fairly well completed.",
+      "original_text": "Scenario 3 is fairly done",
+      "observation_ids": [
+        "obs_005"
+      ]
+    },
+    {
+      "section_id": "section_004",
+      "label": "Scenario 4",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "summary": "Scenario 4 is missing from the submission.",
+      "original_text": "Scenario 4 is missing.",
+      "observation_ids": [
+        "obs_006"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission is a good overall attempt. Scenario 1 does not adequately establish that eligibility requires both a prerequisite and an approval, and relevant proof evidence is left unused. Scenario 2 is incomplete because both AxDisjElim branches retain sorry. Scenario 3 is fairly well completed, while Scenario 4 is missing.",
+    "strengths_summary": "The marker describes the work positively overall and identifies Scenario 3 as fairly well completed. The marks also record full credit for all four Part 2 theorems, although no textual feedback was supplied for those theorems.",
+    "improvement_summary": "Scenario 1 should use the relevant approval evidence so that both required eligibility conditions are established. Scenario 2 requires complete proofs in both AxDisjElim branches, and Scenario 4 needs to be completed.",
+    "original_text": "Good work. However, the scenario1 clearly specifies that eligibility depends on both meeting a prerequisite and receiving an approval. Your proof doesn't make use of the Hy, R3, or R4 axioms, which are needed to validate the second condition.\nFor scenario 2, The proof is incomplete, and both branches of the AxDisjElim remain sorry.\nScenario 3 is fairly done, and Scenario 4 is missing.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006"
+    ]
+  }
+}

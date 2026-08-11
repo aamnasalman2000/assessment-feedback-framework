@@ -480,6 +480,66 @@ def _normalise_reflection_evidence_references(
 # ============================================================
 
 
+def _recover_reflection_requirement_basis(
+    revision_reason: Any,
+) -> str | None:
+    """
+    Recover a missing Stage-1 requirement_basis only when the model has
+    explicitly stated it inside revision_reason.
+
+    This is a narrow structured-output repair. It does not infer or invent
+    a requirement basis.
+    """
+    if not isinstance(
+        revision_reason,
+        str,
+    ):
+        return None
+
+    lower_reason = (
+        revision_reason.lower()
+    )
+
+    markers = (
+        "the requirement basis is '",
+        'the requirement basis is "',
+    )
+
+    for marker in markers:
+        start = lower_reason.find(
+            marker
+        )
+
+        if start == -1:
+            continue
+
+        start += len(
+            marker
+        )
+
+        quote = marker[-1]
+
+        end = revision_reason.find(
+            quote,
+            start,
+        )
+
+        if end == -1:
+            continue
+
+        recovered = (
+            revision_reason[
+                start:end
+            ]
+            .strip()
+        )
+
+        if recovered:
+            return recovered
+
+    return None
+
+
 def _normalise_reflection_audit_shape(
     value: Any,
 ) -> dict[str, Any]:
@@ -594,11 +654,75 @@ def _normalise_reflection_audit_shape(
                 "requiring revision."
             )
 
+        # Small models may explicitly state the requirement basis
+        # inside revision_reason but omit/null the structured field.
+        # Recover it only when it is already present verbatim in the
+        # model's own output; never infer a new basis.
+        requirement_basis = (
+            cleaned_analysis.get(
+                "requirement_basis"
+            )
+        )
+
+        if (
+            not isinstance(
+                requirement_basis,
+                str,
+            )
+            or not requirement_basis.strip()
+        ):
+            recovered_basis = (
+                _recover_reflection_requirement_basis(
+                    revision_reason
+                )
+            )
+
+            if recovered_basis is not None:
+                cleaned_analysis[
+                    "requirement_basis"
+                ] = recovered_basis
+
     return {
         "analysis": (
             cleaned_analysis
         )
     }
+
+
+def _normalise_verification_status(
+    value: Any,
+) -> Any:
+    """
+    Repair the narrow structured-output case where a small model uses
+    criterion status 'missing' as verification_status.
+
+    'missing' is a valid CriterionStatus but not a valid
+    VerificationStatus. When no work/evidence is present, the
+    corresponding verification state is 'not_verified'.
+
+    No other verification-status values are changed.
+    """
+    if not isinstance(
+        value,
+        dict,
+    ):
+        return value
+
+    normalised = dict(
+        value
+    )
+
+    if (
+        normalised.get(
+            "verification_status"
+        )
+        == "missing"
+    ):
+        normalised[
+            "verification_status"
+        ] = "not_verified"
+
+    return normalised
 
 
 # ============================================================
@@ -1161,6 +1285,16 @@ class FeedbackStructuredClient:
                 fallback_requirement_id=(
                     requirement_id
                 ),
+            )
+        )
+
+        # Small models occasionally reuse the criterion status
+        # "missing" as verification_status. The verification
+        # schema instead represents absence of verification as
+        # "not_verified".
+        normalised_response = (
+            _normalise_verification_status(
+                normalised_response
             )
         )
 

@@ -1,0 +1,334 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_1_student_4_human_feedback",
+  "submission_id": "assessment_1_student_4_submission",
+  "student_id": "student_4",
+  "assessment_id": "assessment_1",
+  "source": {
+    "source_type": "manual_entry",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "Your submission demonstrates a partial understanding of formal logic encoding in Lean, with some reasonable attempts at real-world scenario modelling. In Scenario 2 and Scenario 4, you provide working proofs that are logically valid, though slightly underexplained in parts. However, Scenario 1 lacks full justification your proof uses only the prerequisite disjunction and disregards the second required condition (approval), which violates the requirement to use both inputs as specified in the brief. Scenario 3 does not attempt to reach the goal statement of arrival under specified route conditions and instead builds a partial implication. Additionally, Part 2 proofs are not attempted.",
+    "notes": "Marks and textual feedback were manually transcribed from the human marking record. Requirement mappings were assigned conservatively where the marker feedback clearly supports them."
+  },
+  "marks": {
+    "total_awarded": 38,
+    "total_available": 100,
+    "percentage": 38,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_001",
+        "label": "Scenario 1 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_1"],
+        "awarded": 6,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_002",
+        "label": "Scenario 1 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_1"],
+        "awarded": 1,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_003",
+        "label": "Scenario 2 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_2"],
+        "awarded": 9,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_004",
+        "label": "Scenario 2 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_2"],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_005",
+        "label": "Scenario 3 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_3"],
+        "awarded": 6,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_006",
+        "label": "Scenario 3 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_3"],
+        "awarded": 1,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_007",
+        "label": "Scenario 4 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_4"],
+        "awarded": 11,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_008",
+        "label": "Scenario 4 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_4"],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_009",
+        "label": "Theorem 1",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_1"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      },
+      {
+        "mark_entry_id": "mark_010",
+        "label": "Theorem 2",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_2"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      },
+      {
+        "mark_entry_id": "mark_011",
+        "label": "Theorem 3",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_3"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      },
+      {
+        "mark_entry_id": "mark_012",
+        "label": "Theorem 4",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_4"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "overall",
+      "text": "The submission demonstrates a partial understanding of formal logic encoding in Lean and includes some reasonable attempts at modelling the scenarios.",
+      "original_text": "Your submission demonstrates a partial understanding of formal logic encoding in Lean, with some reasonable attempts at real-world scenario modelling.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 0
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_2", "scenario_4"],
+      "text": "Scenarios 2 and 4 contain working proofs that are logically valid.",
+      "original_text": "In Scenario 2 and Scenario 4, you provide working proofs that are logically valid, though slightly underexplained in parts.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 1
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies both proofs as working and logically valid, but does not identify individual proof steps."
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "suggestion",
+      "scope": "task_group",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_2", "scenario_4"],
+      "requirement_ids": [
+        "S2-R6",
+        "S4-R7"
+      ],
+      "text": "The reasoning in Scenarios 2 and 4 should be explained more fully.",
+      "original_text": "In Scenario 2 and Scenario 4, you provide working proofs that are logically valid, though slightly underexplained in parts.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 1
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies under-explanation in both scenarios, which maps directly to their explanation requirements."
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_1"],
+      "requirement_ids": [
+        "S1-R3",
+        "S1-R5"
+      ],
+      "text": "Scenario 1 uses only the prerequisite disjunction and does not use the required approval condition, so eligibility is not established from both required inputs.",
+      "original_text": "However, Scenario 1 lacks full justification your proof uses only the prerequisite disjunction and disregards the second required condition (approval), which violates the requirement to use both inputs as specified in the brief.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 2
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies failure to use both prerequisite and approval evidence, which maps directly to the conjunctive eligibility requirement and the requirement to use relevant case evidence."
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_3"],
+      "requirement_ids": [
+        "S3-R5",
+        "S3-R6"
+      ],
+      "text": "Scenario 3 does not derive the required destination conclusion and instead proves only a partial implication.",
+      "original_text": "Scenario 3 does not attempt to reach the goal statement of arrival under specified route conditions and instead builds a partial implication.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 3
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies failure to reach the destination goal and a mismatch between the submitted implication and the intended scenario meaning."
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "omission",
+      "scope": "part",
+      "part_ids": ["part_2"],
+      "task_ids": [
+        "theorem_1",
+        "theorem_2",
+        "theorem_3",
+        "theorem_4"
+      ],
+      "requirement_ids": [
+        "T1-R1",
+        "T1-R2",
+        "T1-R3",
+        "T1-R4",
+        "T1-R5",
+        "T2-R1",
+        "T2-R2",
+        "T2-R3",
+        "T2-R4",
+        "T2-R5",
+        "T3-R1",
+        "T3-R2",
+        "T3-R3",
+        "T3-R4",
+        "T3-R5",
+        "T3-R6",
+        "T4-R1",
+        "T4-R2",
+        "T4-R3",
+        "T4-R4",
+        "T4-R5",
+        "T4-R6"
+      ],
+      "text": "Part 2 is not attempted, including all four required theorems.",
+      "original_text": "Additionally, Part 2 proofs are not attempted.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 4
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marking table independently records every Part 2 theorem as not done, confirming the whole-part omission."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Scenario 1",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_1"],
+      "summary": "The proof uses the prerequisite condition but does not incorporate the required approval condition, so the eligibility justification is incomplete.",
+      "original_text": "However, Scenario 1 lacks full justification your proof uses only the prerequisite disjunction and disregards the second required condition (approval), which violates the requirement to use both inputs as specified in the brief.",
+      "observation_ids": ["obs_004"]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Scenario 2",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_2"],
+      "summary": "The proof is logically valid, but the reasoning is slightly underexplained.",
+      "original_text": "In Scenario 2 and Scenario 4, you provide working proofs that are logically valid, though slightly underexplained in parts.",
+      "observation_ids": [
+        "obs_002",
+        "obs_003"
+      ]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Scenario 3",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_3"],
+      "summary": "The proof does not reach the required arrival conclusion and instead establishes only a partial implication.",
+      "original_text": "Scenario 3 does not attempt to reach the goal statement of arrival under specified route conditions and instead builds a partial implication.",
+      "observation_ids": ["obs_005"]
+    },
+    {
+      "section_id": "section_004",
+      "label": "Scenario 4",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_4"],
+      "summary": "The proof is logically valid, but the reasoning is slightly underexplained.",
+      "original_text": "In Scenario 2 and Scenario 4, you provide working proofs that are logically valid, though slightly underexplained in parts.",
+      "observation_ids": [
+        "obs_002",
+        "obs_003"
+      ]
+    },
+    {
+      "section_id": "section_005",
+      "label": "Part 2",
+      "scope": "part",
+      "part_ids": ["part_2"],
+      "summary": "Part 2 is not attempted, including all four required theorems.",
+      "original_text": "Additionally, Part 2 proofs are not attempted.",
+      "observation_ids": ["obs_006"]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission shows partial understanding of formal logic encoding in Lean. Scenarios 2 and 4 contain logically valid working proofs but are somewhat underexplained. Scenario 1 does not use the required approval condition alongside the prerequisite condition, and Scenario 3 does not derive the required destination goal. Part 2 is entirely unattempted.",
+    "strengths_summary": "Scenarios 2 and 4 contain working, logically valid proofs, and the submission shows some reasonable modelling attempts.",
+    "improvement_summary": "Scenario 1 should use both the prerequisite and approval conditions, Scenario 3 should derive the required arrival conclusion rather than a partial implication, the explanations in Scenarios 2 and 4 should be expanded, and all four Part 2 theorems need to be completed.",
+    "original_text": "Your submission demonstrates a partial understanding of formal logic encoding in Lean, with some reasonable attempts at real-world scenario modelling. In Scenario 2 and Scenario 4, you provide working proofs that are logically valid, though slightly underexplained in parts. However, Scenario 1 lacks full justification your proof uses only the prerequisite disjunction and disregards the second required condition (approval), which violates the requirement to use both inputs as specified in the brief. Scenario 3 does not attempt to reach the goal statement of arrival under specified route conditions and instead builds a partial implication. Additionally, Part 2 proofs are not attempted.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006"
+    ]
+  }
+}

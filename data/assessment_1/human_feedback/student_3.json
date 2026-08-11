@@ -1,0 +1,327 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_1_student_3_human_feedback",
+  "submission_id": "assessment_1_student_3_submission",
+  "student_id": "student_3",
+  "assessment_id": "assessment_1",
+  "source": {
+    "source_type": "manual_entry",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "You’ve made a strong start in this assessment, especially with Scenario 1, where your case-by-case analysis clearly captures all eligibility conditions, and Scenario 3, where your reasoning is logically sound and well structured. However, Scenario 2 was left incomplete, and Scenario 4 lacks a conclusion and doesn’t fully establish the goal. Most importantly, Part 2 worth 40% of the marks is entirely missing.",
+    "notes": "Marks and textual feedback were manually transcribed from the human marking record. The original student identifier was intentionally excluded and replaced by the pseudonymised research identifier student_3."
+  },
+  "marks": {
+    "total_awarded": 39,
+    "total_available": 100,
+    "percentage": 39,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_001",
+        "label": "Scenario 1 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_1"],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_002",
+        "label": "Scenario 1 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_1"],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_003",
+        "label": "Scenario 2 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_2"],
+        "awarded": 0,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_004",
+        "label": "Scenario 2 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_2"],
+        "awarded": 1,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_005",
+        "label": "Scenario 3 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_3"],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_006",
+        "label": "Scenario 3 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_3"],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_007",
+        "label": "Scenario 4 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_4"],
+        "awarded": 6,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_008",
+        "label": "Scenario 4 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_4"],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_009",
+        "label": "Theorem 1",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_1"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      },
+      {
+        "mark_entry_id": "mark_010",
+        "label": "Theorem 2",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_2"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      },
+      {
+        "mark_entry_id": "mark_011",
+        "label": "Theorem 3",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_3"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      },
+      {
+        "mark_entry_id": "mark_012",
+        "label": "Theorem 4",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_4"],
+        "awarded": 0,
+        "available": 10,
+        "description": "Not done."
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "overall",
+      "text": "The submission makes a strong start overall.",
+      "original_text": "You’ve made a strong start in this assessment",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 0
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_1"],
+      "requirement_ids": [
+        "S1-R3",
+        "S1-R4"
+      ],
+      "text": "The case-by-case analysis in Scenario 1 clearly captures all of the eligibility conditions.",
+      "original_text": "especially with Scenario 1, where your case-by-case analysis clearly captures all eligibility conditions",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 0
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly praises both coverage of the eligibility conditions and the case-by-case analysis. This maps directly to the requirement that both prerequisite and approval conditions be satisfied and that the four prerequisite-approval combinations be handled."
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_3"],
+      "requirement_ids": [
+        "S3-R5",
+        "S3-R6"
+      ],
+      "text": "The reasoning in Scenario 3 is logically sound and well structured.",
+      "original_text": "Scenario 3, where your reasoning is logically sound and well structured",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 0
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "The marker gives a general positive assessment of the logical reasoning. It supports proof correctness and preservation of the intended scenario meaning, but does not explicitly discuss individual formalisation details."
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "omission",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_2"],
+      "text": "Scenario 2 is incomplete.",
+      "original_text": "Scenario 2 was left incomplete",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 1
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "No narrower requirement mapping is assigned because the marker states only that the scenario is incomplete without identifying which proof step or requirement is missing."
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_4"],
+      "requirement_ids": [
+        "S4-R5"
+      ],
+      "text": "Scenario 4 lacks a conclusion and therefore does not fully establish the required goal.",
+      "original_text": "Scenario 4 lacks a conclusion and doesn’t fully establish the goal.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 1
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker specifically identifies failure to complete the conclusion, which maps directly to constructing the required final result."
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "omission",
+      "scope": "part",
+      "part_ids": ["part_2"],
+      "task_ids": [
+        "theorem_1",
+        "theorem_2",
+        "theorem_3",
+        "theorem_4"
+      ],
+      "requirement_ids": [
+        "T1-R1",
+        "T1-R2",
+        "T1-R3",
+        "T1-R4",
+        "T1-R5",
+        "T2-R1",
+        "T2-R2",
+        "T2-R3",
+        "T2-R4",
+        "T2-R5",
+        "T3-R1",
+        "T3-R2",
+        "T3-R3",
+        "T3-R4",
+        "T3-R5",
+        "T3-R6",
+        "T4-R1",
+        "T4-R2",
+        "T4-R3",
+        "T4-R4",
+        "T4-R5",
+        "T4-R6"
+      ],
+      "text": "Part 2 is entirely missing, including all four required theorems.",
+      "original_text": "Most importantly, Part 2 worth 40% of the marks is entirely missing.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 2
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marking table independently records all four Part 2 theorems as 'Not done'. Because the entire part is absent, none of its proof, explanation, axiom-usage, or compilation requirements can be satisfied."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Scenario 1",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_1"],
+      "summary": "The case-by-case analysis clearly captures all eligibility conditions.",
+      "original_text": "especially with Scenario 1, where your case-by-case analysis clearly captures all eligibility conditions",
+      "observation_ids": ["obs_002"]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Scenario 2",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_2"],
+      "summary": "Scenario 2 is incomplete.",
+      "original_text": "Scenario 2 was left incomplete",
+      "observation_ids": ["obs_004"]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Scenario 3",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_3"],
+      "summary": "The reasoning is logically sound and well structured.",
+      "original_text": "Scenario 3, where your reasoning is logically sound and well structured",
+      "observation_ids": ["obs_003"]
+    },
+    {
+      "section_id": "section_004",
+      "label": "Scenario 4",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_4"],
+      "summary": "Scenario 4 lacks a conclusion and does not fully establish the required goal.",
+      "original_text": "Scenario 4 lacks a conclusion and doesn’t fully establish the goal.",
+      "observation_ids": ["obs_005"]
+    },
+    {
+      "section_id": "section_005",
+      "label": "Part 2",
+      "scope": "part",
+      "part_ids": ["part_2"],
+      "summary": "Part 2 is entirely missing, including all four required theorems.",
+      "original_text": "Most importantly, Part 2 worth 40% of the marks is entirely missing.",
+      "observation_ids": ["obs_006"]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission makes a strong start, with Scenario 1 successfully covering the eligibility conditions through case analysis and Scenario 3 demonstrating logically sound, well-structured reasoning. Scenario 2 is incomplete, Scenario 4 does not complete the required conclusion, and the entirety of Part 2 is missing.",
+    "strengths_summary": "Scenario 1 clearly captures all eligibility conditions through case-by-case analysis, and Scenario 3 demonstrates logically sound and well-structured reasoning.",
+    "improvement_summary": "Scenario 2 needs to be completed, Scenario 4 needs a complete conclusion establishing the required goal, and all four Part 2 theorems need to be attempted.",
+    "original_text": "You’ve made a strong start in this assessment, especially with Scenario 1, where your case-by-case analysis clearly captures all eligibility conditions, and Scenario 3, where your reasoning is logically sound and well structured. However, Scenario 2 was left incomplete, and Scenario 4 lacks a conclusion and doesn’t fully establish the goal. Most importantly, Part 2 worth 40% of the marks is entirely missing.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006"
+    ]
+  }
+}

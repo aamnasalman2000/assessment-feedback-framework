@@ -1,0 +1,305 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_2_student_2_human_feedback",
+  "submission_id": "assessment_2_student_2_submission",
+  "student_id": "student_2",
+  "assessment_id": "assessment_2",
+  "source": {
+    "source_type": "manual_entry",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "Part 1 Feedback: You have created a justified ontology, and the class hierarchy includes both sandwich types and ingredient subclasses. Your property design is thoughtful, utilising subproperties and transitive/functional characteristics to enable expressive and logical relationships. The central axiom is formalized in description logic, directly linked to the Wikipedia baseline, and is clearly explained. You articulate both the strengths of your ontology (logical precision, extension, automated reasoning) and the main limitations, such as cultural specificity and the challenges of modelling all possible sandwich variations or ingredient requirements. You could have considered providing even more explicit referencing and expand your critical reflection to cover more modelling alternatives and cultural breadth.\n\nPart 2 Feedback: Your Prolog logic is technically sound, with all symbolic formulas being valid and structurally correct. However, your submission is missing the required comments particularly explanations, real-world sandwich examples (e.g. from Wikipedia), and cultural reflections.",
+    "notes": "Marks and textual feedback were manually transcribed from the human marking record. Requirement mappings were assigned conservatively. Marker comments concerning real-world examples, Wikipedia references, or cultural reflection in Part 2 were retained without being forced onto requirements that are not present in the normalised assessment specification."
+  },
+  "marks": {
+    "total_awarded": 64,
+    "total_available": 100,
+    "percentage": 64,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_001",
+        "label": "Part 1 - Concept",
+        "scope": "criterion",
+        "part_ids": ["part_1_ontology"],
+        "awarded": 11,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_002",
+        "label": "Part 1 - Property",
+        "scope": "criterion",
+        "part_ids": ["part_1_ontology"],
+        "awarded": 11,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_003",
+        "label": "Part 1 - Axiom",
+        "scope": "criterion",
+        "part_ids": ["part_1_ontology"],
+        "awarded": 13,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_004",
+        "label": "Part 1 - Report",
+        "scope": "criterion",
+        "part_ids": ["part_1_ontology"],
+        "awarded": 12,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_005",
+        "label": "Part 1 Total",
+        "scope": "part",
+        "part_ids": ["part_1_ontology"],
+        "awarded": 47,
+        "available": 60
+      },
+      {
+        "mark_entry_id": "mark_006",
+        "label": "Task 1",
+        "scope": "task",
+        "part_ids": ["part_2_prolog_modal_logic"],
+        "task_ids": ["part_2_task_1"],
+        "awarded": 2,
+        "available": 5
+      },
+      {
+        "mark_entry_id": "mark_007",
+        "label": "Task 2",
+        "scope": "task",
+        "part_ids": ["part_2_prolog_modal_logic"],
+        "task_ids": ["part_2_task_2"],
+        "awarded": 3,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_008",
+        "label": "Task 3",
+        "scope": "task",
+        "part_ids": ["part_2_prolog_modal_logic"],
+        "task_ids": ["part_2_task_3"],
+        "awarded": 3,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_009",
+        "label": "Task 4",
+        "scope": "task",
+        "part_ids": ["part_2_prolog_modal_logic"],
+        "task_ids": ["part_2_task_4"],
+        "awarded": 3,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_010",
+        "label": "Task 5",
+        "scope": "task",
+        "part_ids": ["part_2_prolog_modal_logic"],
+        "task_ids": ["part_2_task_5"],
+        "awarded": 6,
+        "available": 11
+      },
+      {
+        "mark_entry_id": "mark_011",
+        "label": "Part 2 Total",
+        "scope": "part",
+        "part_ids": ["part_2_prolog_modal_logic"],
+        "awarded": 17,
+        "available": 40
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "requirement_ids": [
+        "P1-R2"
+      ],
+      "text": "The ontology has a justified class hierarchy that includes both sandwich types and ingredient subclasses.",
+      "original_text": "You have created a justified ontology, and the class hierarchy includes both sandwich types and ingredient subclasses.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "requirement_ids": [
+        "P1-R3",
+        "P1-R4"
+      ],
+      "text": "The property design is thoughtful and makes effective use of subproperties and transitive or functional characteristics to create expressive logical relationships.",
+      "original_text": "Your property design is thoughtful, utilising subproperties and transitive/functional characteristics to enable expressive and logical relationships.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "requirement_ids": [
+        "P1-R5",
+        "P1-R10"
+      ],
+      "text": "The central axiom is formalised in Description Logic, clearly explained, and directly linked to the source baseline.",
+      "original_text": "The central axiom is formalized in description logic, directly linked to the Wikipedia baseline, and is clearly explained.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The report discusses both strengths and limitations of the ontology, including logical precision, extensibility, automated reasoning, cultural specificity, and difficulty modelling all possible sandwich variations or ingredient requirements.",
+      "original_text": "You articulate both the strengths of your ontology (logical precision, extension, automated reasoning) and the main limitations, such as cultural specificity and the challenges of modelling all possible sandwich variations or ingredient requirements.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "suggestion",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "requirement_ids": [
+        "P1-R10"
+      ],
+      "text": "The report could provide more explicit referencing for the source material associated with the axiom.",
+      "original_text": "You could have considered providing even more explicit referencing",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "The normalised specification requires the report to relate the Description Logic axiom to the source text. The marker's request for more explicit referencing is therefore mapped to P1-R10."
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "suggestion",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The critical reflection could be expanded to consider more modelling alternatives and broader cultural perspectives.",
+      "original_text": "and expand your critical reflection to cover more modelling alternatives and cultural breadth.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_007",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": ["part_2_prolog_modal_logic"],
+      "text": "The Prolog modal logic is technically sound, and the symbolic formulas are valid and structurally correct.",
+      "original_text": "Your Prolog logic is technically sound, with all symbolic formulas being valid and structurally correct.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker provides a broad positive judgment across Part 2 but does not identify individual task-level requirements. No task-specific requirement mappings are therefore assigned."
+    },
+    {
+      "observation_id": "obs_008",
+      "feedback_type": "omission",
+      "scope": "part",
+      "part_ids": ["part_2_prolog_modal_logic"],
+      "text": "The Part 2 submission is missing the required explanatory comments.",
+      "original_text": "However, your submission is missing the required comments particularly explanations",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The supplied normalised specification does not define a dedicated explanation requirement for Tasks 1–4, so this marker criticism is retained as a part-level observation without forcing it onto unrelated logical-correctness criteria."
+    },
+    {
+      "observation_id": "obs_009",
+      "feedback_type": "omission",
+      "scope": "part",
+      "part_ids": ["part_2_prolog_modal_logic"],
+      "text": "The submission does not include the real-world sandwich examples and cultural reflection expected by the marker.",
+      "original_text": "real-world sandwich examples (e.g. from Wikipedia), and cultural reflections.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "These expectations appear in the human marker feedback but are not represented as explicit requirements in the normalised Assessment 2 specification. They are therefore preserved as marker observations without requirement IDs."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Part 1 - Ontology and Report",
+      "scope": "part",
+      "part_ids": ["part_1_ontology"],
+      "summary": "The ontology is well justified, with a strong class hierarchy, thoughtful property modelling, and a clearly explained Description Logic axiom linked to the source baseline. The report also reflects on key strengths and limitations, though its referencing and critical discussion could be expanded further.",
+      "original_text": "You have created a justified ontology, and the class hierarchy includes both sandwich types and ingredient subclasses. Your property design is thoughtful, utilising subproperties and transitive/functional characteristics to enable expressive and logical relationships. The central axiom is formalized in description logic, directly linked to the Wikipedia baseline, and is clearly explained. You articulate both the strengths of your ontology (logical precision, extension, automated reasoning) and the main limitations, such as cultural specificity and the challenges of modelling all possible sandwich variations or ingredient requirements. You could have considered providing even more explicit referencing and expand your critical reflection to cover more modelling alternatives and cultural breadth.",
+      "observation_ids": [
+        "obs_001",
+        "obs_002",
+        "obs_003",
+        "obs_004",
+        "obs_005",
+        "obs_006"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Part 2 - Prolog and Modal Logic",
+      "scope": "part",
+      "part_ids": ["part_2_prolog_modal_logic"],
+      "summary": "The symbolic Prolog formulas are technically sound, valid, and structurally correct. However, the submission lacks the explanatory comments, real-world sandwich examples, and cultural reflection expected by the marker.",
+      "original_text": "Your Prolog logic is technically sound, with all symbolic formulas being valid and structurally correct. However, your submission is missing the required comments particularly explanations, real-world sandwich examples (e.g. from Wikipedia), and cultural reflections.",
+      "observation_ids": [
+        "obs_007",
+        "obs_008",
+        "obs_009"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The ontology and report demonstrate strong modelling choices, including a justified hierarchy, thoughtful property design, a well-presented Description Logic axiom, and meaningful reflection on strengths and limitations. Further improvement could come from more explicit referencing and broader critical reflection. In Part 2, the symbolic formulas are technically sound and structurally correct, but the submission lacks the explanatory comments and contextual discussion expected by the marker.",
+    "strengths_summary": "The ontology is well justified, uses thoughtful property modelling, and contains a clearly explained Description Logic axiom linked to the source baseline. The Part 2 formulas are technically sound, valid, and structurally correct.",
+    "improvement_summary": "The report could strengthen its source referencing and broaden its critical discussion of modelling alternatives and cultural perspectives. Part 2 should include the explanatory comments and contextual material expected by the marker.",
+    "original_text": "Part 1 Feedback: You have created a justified ontology, and the class hierarchy includes both sandwich types and ingredient subclasses. Your property design is thoughtful, utilising subproperties and transitive/functional characteristics to enable expressive and logical relationships. The central axiom is formalized in description logic, directly linked to the Wikipedia baseline, and is clearly explained. You articulate both the strengths of your ontology (logical precision, extension, automated reasoning) and the main limitations, such as cultural specificity and the challenges of modelling all possible sandwich variations or ingredient requirements. You could have considered providing even more explicit referencing and expand your critical reflection to cover more modelling alternatives and cultural breadth.\n\nPart 2 Feedback: Your Prolog logic is technically sound, with all symbolic formulas being valid and structurally correct. However, your submission is missing the required comments particularly explanations, real-world sandwich examples (e.g. from Wikipedia), and cultural reflections.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006",
+      "obs_007",
+      "obs_008",
+      "obs_009"
+    ]
+  }
+}

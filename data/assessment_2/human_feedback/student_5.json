@@ -1,0 +1,412 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "human_feedback_assessment_2_student_5",
+  "submission_id": "submission_assessment_2_student_5",
+  "student_id": "student_5",
+  "assessment_id": "assessment_2",
+  "source": {
+    "source_type": "spreadsheet",
+    "normalisation_method": "manual",
+    "original_feedback_text": "Part 1 Feedback: Your work demonstrates a strong, practical approach to sandwich ontology modelling, including cultural awareness with the Torta example. The class and property structures are well-justified, and the inclusion of two axioms (ClassicSandwich and Torta) is a strength. However, the axioms lack direct Wikipedia citation. The critical analysis is precise, and proper reasoning is a strength; however, more in-depth discussion on whether Wikipedia could be a good source or not, etc, could provide in-depth insights into ontology.\n\nPart 2 Feedback: Your submission demonstrates strong conceptual understanding of modal logic, and you show good thinking in your comments, particularly in cultural reasoning across Tasks 1, 2, and 5. You grasp the semantic intent behind box and dia, and you contextualize real-world exceptions such as open sandwiches, wraps, and unusual bread types. However, there are several syntax issues, such as misuse of dia/3 and malformed formula structures in Tasks 2 and 4."
+  },
+  "marks": {
+    "total_awarded": 75,
+    "total_available": 100,
+    "percentage": 75,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_s5_a2_p1_concept",
+        "label": "Part 1 - Concept",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 11,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p1_property",
+        "label": "Part 1 - Property",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p1_axiom",
+        "label": "Part 1 - Axiom",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 10,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p1_report",
+        "label": "Part 1 - Report",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 15,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p1_total",
+        "label": "Part 1 Total",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 48,
+        "available": 60
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p2_t1",
+        "label": "Part 2 - Task 1",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_1"
+        ],
+        "awarded": 5,
+        "available": 5
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p2_t2",
+        "label": "Part 2 - Task 2",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_2"
+        ],
+        "awarded": 5,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p2_t3",
+        "label": "Part 2 - Task 3",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_3"
+        ],
+        "awarded": 5,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p2_t4",
+        "label": "Part 2 - Task 4",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_4"
+        ],
+        "awarded": 4,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p2_t5",
+        "label": "Part 2 - Task 5",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_5"
+        ],
+        "awarded": 8,
+        "available": 11
+      },
+      {
+        "mark_entry_id": "mark_s5_a2_p2_total",
+        "label": "Part 2 Total",
+        "scope": "part",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "awarded": 27,
+        "available": 40
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_s5_a2_001",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [],
+      "text": "The ontology demonstrates a strong and practical approach to modelling the sandwich domain, including culturally aware modelling through the Torta example.",
+      "original_text": "Your work demonstrates a strong, practical approach to sandwich ontology modelling, including cultural awareness with the Torta example.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_002",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R2",
+        "P1-R4",
+        "P1-R9"
+      ],
+      "text": "The class and property structures are well justified.",
+      "original_text": "The class and property structures are well-justified",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_003",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R5"
+      ],
+      "text": "The inclusion of the ClassicSandwich and Torta axioms is identified as a strength.",
+      "original_text": "the inclusion of two axioms (ClassicSandwich and Torta) is a strength.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "Mapped to the ontology axiom requirement because the marker explicitly praises the submitted axioms. The feedback does not independently establish that the required number restriction is present."
+    },
+    {
+      "observation_id": "obs_s5_a2_004",
+      "feedback_type": "omission",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [],
+      "text": "The axioms are not supported by direct Wikipedia citation.",
+      "original_text": "However, the axioms lack direct Wikipedia citation.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "No assessment requirement explicitly requires direct Wikipedia citation, so no rubric requirement ID has been assigned."
+    },
+    {
+      "observation_id": "obs_s5_a2_005",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The critical analysis is precise and demonstrates strong reasoning.",
+      "original_text": "The critical analysis is precise, and proper reasoning is a strength",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_006",
+      "feedback_type": "suggestion",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The critical discussion could be developed further by considering issues such as whether Wikipedia is an appropriate source for ontology development.",
+      "original_text": "however, more in-depth discussion on whether Wikipedia could be a good source or not, etc, could provide in-depth insights into ontology.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_007",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "requirement_ids": [
+        "P2-G3"
+      ],
+      "text": "The submission demonstrates strong conceptual understanding of modal logic.",
+      "original_text": "Your submission demonstrates strong conceptual understanding of modal logic",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "The marker gives a broad judgement about modal-logic understanding rather than evaluating one specific task formula."
+    },
+    {
+      "observation_id": "obs_s5_a2_008",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "task_ids": [
+        "part_2_task_1",
+        "part_2_task_2",
+        "part_2_task_5"
+      ],
+      "requirement_ids": [],
+      "text": "The comments for Tasks 1, 2 and 5 demonstrate thoughtful cultural reasoning.",
+      "original_text": "you show good thinking in your comments, particularly in cultural reasoning across Tasks 1, 2, and 5.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_009",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "requirement_ids": [
+        "P2-G3"
+      ],
+      "text": "The submission demonstrates understanding of the semantic intent of the box and dia modal operators.",
+      "original_text": "You grasp the semantic intent behind box and dia",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_010",
+      "feedback_type": "strength",
+      "scope": "task",
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "requirement_ids": [
+        "P2-T5-R2",
+        "P2-T5-R4"
+      ],
+      "text": "The work considers meaningful real-world exceptions to the sandwich specification, including open sandwiches, wraps and unusual bread types.",
+      "original_text": "you contextualize real-world exceptions such as open sandwiches, wraps, and unusual bread types.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "Mapped to Task 5 problem-description and distinctness requirements because the examples concern limitations and exceptions to the original sandwich specification."
+    },
+    {
+      "observation_id": "obs_s5_a2_011",
+      "feedback_type": "error",
+      "scope": "task",
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "requirement_ids": [
+        "P2-T2-R5",
+        "P2-T2-R6",
+        "P2-G3"
+      ],
+      "text": "Task 2 contains syntax or formula-structure errors, including misuse of dia/3.",
+      "original_text": "However, there are several syntax issues, such as misuse of dia/3 and malformed formula structures in Tasks 2 and 4.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s5_a2_012",
+      "feedback_type": "error",
+      "scope": "task",
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "requirement_ids": [
+        "P2-T4-R4",
+        "P2-T4-R5",
+        "P2-G3"
+      ],
+      "text": "Task 4 contains malformed formula structures and associated modal-logic syntax issues.",
+      "original_text": "However, there are several syntax issues, such as misuse of dia/3 and malformed formula structures in Tasks 2 and 4.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_s5_a2_part1",
+      "label": "Part 1 - Ontology",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "summary": "The ontology demonstrates strong practical modelling, well-justified class and property structures, useful axioms, and precise critical analysis. The marker notes that the axioms lack direct Wikipedia citation and recommends deeper discussion of the suitability of sources such as Wikipedia for ontology development.",
+      "original_text": "Your work demonstrates a strong, practical approach to sandwich ontology modelling, including cultural awareness with the Torta example. The class and property structures are well-justified, and the inclusion of two axioms (ClassicSandwich and Torta) is a strength. However, the axioms lack direct Wikipedia citation. The critical analysis is precise, and proper reasoning is a strength; however, more in-depth discussion on whether Wikipedia could be a good source or not, etc, could provide in-depth insights into ontology.",
+      "observation_ids": [
+        "obs_s5_a2_001",
+        "obs_s5_a2_002",
+        "obs_s5_a2_003",
+        "obs_s5_a2_004",
+        "obs_s5_a2_005",
+        "obs_s5_a2_006"
+      ]
+    },
+    {
+      "section_id": "section_s5_a2_part2",
+      "label": "Part 2 - Prolog and Modal Logic",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "summary": "The submission demonstrates strong conceptual understanding of modal logic and thoughtful consideration of culturally and practically unusual sandwich configurations. The marker identifies syntax and formula-structure problems in Tasks 2 and 4, including misuse of dia/3.",
+      "original_text": "Your submission demonstrates strong conceptual understanding of modal logic, and you show good thinking in your comments, particularly in cultural reasoning across Tasks 1, 2, and 5. You grasp the semantic intent behind box and dia, and you contextualize real-world exceptions such as open sandwiches, wraps, and unusual bread types. However, there are several syntax issues, such as misuse of dia/3 and malformed formula structures in Tasks 2 and 4.",
+      "observation_ids": [
+        "obs_s5_a2_007",
+        "obs_s5_a2_008",
+        "obs_s5_a2_009",
+        "obs_s5_a2_010",
+        "obs_s5_a2_011",
+        "obs_s5_a2_012"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission received 75/100 overall. Part 1 was strong in practical ontology modelling, justified class and property structures, axioms and critical reasoning, while further source-related discussion was recommended. Part 2 demonstrated good conceptual understanding of modal logic and thoughtful real-world reasoning, but syntax and formula-structure errors were identified in Tasks 2 and 4.",
+    "strengths_summary": "Key strengths include practical and culturally aware ontology modelling, well-justified class and property structures, strong critical reasoning, conceptual understanding of modal logic, and thoughtful consideration of real-world sandwich exceptions.",
+    "improvement_summary": "The marker recommends deeper critical discussion of ontology information sources and identifies syntax and malformed formula-structure issues in Tasks 2 and 4, including misuse of dia/3.",
+    "original_text": "Part 1 Feedback: Your work demonstrates a strong, practical approach to sandwich ontology modelling, including cultural awareness with the Torta example. The class and property structures are well-justified, and the inclusion of two axioms (ClassicSandwich and Torta) is a strength. However, the axioms lack direct Wikipedia citation. The critical analysis is precise, and proper reasoning is a strength; however, more in-depth discussion on whether Wikipedia could be a good source or not, etc, could provide in-depth insights into ontology.\n\nPart 2 Feedback: Your submission demonstrates strong conceptual understanding of modal logic, and you show good thinking in your comments, particularly in cultural reasoning across Tasks 1, 2, and 5. You grasp the semantic intent behind box and dia, and you contextualize real-world exceptions such as open sandwiches, wraps, and unusual bread types. However, there are several syntax issues, such as misuse of dia/3 and malformed formula structures in Tasks 2 and 4.",
+    "observation_ids": [
+      "obs_s5_a2_001",
+      "obs_s5_a2_002",
+      "obs_s5_a2_003",
+      "obs_s5_a2_004",
+      "obs_s5_a2_005",
+      "obs_s5_a2_006",
+      "obs_s5_a2_007",
+      "obs_s5_a2_008",
+      "obs_s5_a2_009",
+      "obs_s5_a2_010",
+      "obs_s5_a2_011",
+      "obs_s5_a2_012"
+    ]
+  }
+}

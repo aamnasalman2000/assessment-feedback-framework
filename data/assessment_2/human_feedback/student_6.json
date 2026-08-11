@@ -1,0 +1,383 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "human_feedback_assessment_2_student_6",
+  "submission_id": "submission_assessment_2_student_6",
+  "student_id": "student_6",
+  "assessment_id": "assessment_2",
+  "source": {
+    "source_type": "spreadsheet",
+    "normalisation_method": "manual",
+    "original_feedback_text": "Part 1 Feedback: In your ontology, you create a thoughtful, top-down design that is articulated and supported by a six-property hierarchy, including inverse functional and symmetric declarations, which are applied appropriately. The axiom defining the open, toasted and double decker variants uses number restrictions and is traceable to cited text, showing good alignment. The narrative is concise yet comprehensive. You could consider adding a brief reflection on scalability trade-offs and also evaluating whether Wikipedia is a reliable source.\n\nPart 2 Feedback: Your modal logic tasks are well-structured, and the formulas are correct, concise, and effectively utilise the provided spatial relations and operators to model the sandwich constraints for each task. Your comments are clear and demonstrate not only technical accuracy but also an excellent understanding of the real-world and cultural context behind the rules, drawing on specific Wikipedia references and plausible food examples."
+  },
+  "marks": {
+    "total_awarded": 96,
+    "total_available": 100,
+    "percentage": 96,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_s6_a2_p1_concept",
+        "label": "Part 1 - Concept",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p1_property",
+        "label": "Part 1 - Property",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p1_axiom",
+        "label": "Part 1 - Axiom",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 17,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p1_report",
+        "label": "Part 1 - Report",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 15,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p1_total",
+        "label": "Part 1 Total",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 56,
+        "available": 60
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p2_t1",
+        "label": "Part 2 - Task 1",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_1"
+        ],
+        "awarded": 5,
+        "available": 5
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p2_t2",
+        "label": "Part 2 - Task 2",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_2"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p2_t3",
+        "label": "Part 2 - Task 3",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_3"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p2_t4",
+        "label": "Part 2 - Task 4",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_4"
+        ],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p2_t5",
+        "label": "Part 2 - Task 5",
+        "scope": "task",
+        "task_ids": [
+          "part_2_task_5"
+        ],
+        "awarded": 11,
+        "available": 11
+      },
+      {
+        "mark_entry_id": "mark_s6_a2_p2_total",
+        "label": "Part 2 Total",
+        "scope": "part",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "awarded": 40,
+        "available": 40
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_s6_a2_001",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R2",
+        "P1-R9"
+      ],
+      "text": "The ontology uses a thoughtful top-down design with a well-articulated hierarchy.",
+      "original_text": "In your ontology, you create a thoughtful, top-down design that is articulated",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_002",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R3",
+        "P1-R4"
+      ],
+      "text": "The ontology contains a six-property hierarchy, including inverse functional and symmetric property declarations that are applied appropriately.",
+      "original_text": "supported by a six-property hierarchy, including inverse functional and symmetric declarations, which are applied appropriately.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_003",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R5",
+        "P1-R10"
+      ],
+      "text": "The axiom defining the open, toasted and double-decker variants uses number restrictions and is traceable to cited source text.",
+      "original_text": "The axiom defining the open, toasted and double decker variants uses number restrictions and is traceable to cited text, showing good alignment.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_004",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R7",
+        "P1-R8"
+      ],
+      "text": "The report narrative is concise while remaining comprehensive.",
+      "original_text": "The narrative is concise yet comprehensive.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "Mapped to report accuracy and overview because the marker positively evaluates the quality and completeness of the narrative without identifying one narrower report criterion."
+    },
+    {
+      "observation_id": "obs_s6_a2_005",
+      "feedback_type": "suggestion",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The critical reflection could be strengthened by briefly discussing scalability trade-offs.",
+      "original_text": "You could consider adding a brief reflection on scalability trade-offs",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_006",
+      "feedback_type": "suggestion",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The critical discussion could also evaluate whether Wikipedia is a reliable source for ontology development.",
+      "original_text": "and also evaluating whether Wikipedia is a reliable source.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_007",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "task_ids": [
+        "part_2_task_1",
+        "part_2_task_2",
+        "part_2_task_3",
+        "part_2_task_4",
+        "part_2_task_5"
+      ],
+      "requirement_ids": [
+        "P2-G3"
+      ],
+      "text": "The modal logic tasks are well structured and the submitted formulas are correct and concise.",
+      "original_text": "Your modal logic tasks are well-structured, and the formulas are correct, concise",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_008",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "task_ids": [
+        "part_2_task_1",
+        "part_2_task_2",
+        "part_2_task_3",
+        "part_2_task_4",
+        "part_2_task_5"
+      ],
+      "requirement_ids": [
+        "P2-G3",
+        "P2-G5"
+      ],
+      "text": "The formulas effectively use the supplied spatial relations and modal operators to express the required sandwich constraints.",
+      "original_text": "effectively utilise the provided spatial relations and operators to model the sandwich constraints for each task.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_009",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "task_ids": [
+        "part_2_task_1",
+        "part_2_task_2",
+        "part_2_task_3",
+        "part_2_task_4",
+        "part_2_task_5"
+      ],
+      "requirement_ids": [],
+      "text": "The comments are clear and technically accurate.",
+      "original_text": "Your comments are clear and demonstrate not only technical accuracy",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_s6_a2_010",
+      "feedback_type": "strength",
+      "scope": "task_group",
+      "task_ids": [
+        "part_2_task_1",
+        "part_2_task_2",
+        "part_2_task_3",
+        "part_2_task_4",
+        "part_2_task_5"
+      ],
+      "requirement_ids": [],
+      "text": "The comments demonstrate excellent understanding of the real-world and cultural context behind the sandwich rules, supported by specific Wikipedia references and plausible food examples.",
+      "original_text": "but also an excellent understanding of the real-world and cultural context behind the rules, drawing on specific Wikipedia references and plausible food examples.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part2 Feedback"
+      },
+      "mapping_confidence": "high"
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_s6_a2_part1",
+      "label": "Part 1 - Ontology",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "summary": "The ontology uses a thoughtful top-down design, a strong property hierarchy, appropriate property characteristics, and a number-restriction axiom that is traceable to cited text. The report is concise and comprehensive. The marker suggests extending the critical reflection to discuss scalability trade-offs and the reliability of Wikipedia as a source.",
+      "original_text": "In your ontology, you create a thoughtful, top-down design that is articulated and supported by a six-property hierarchy, including inverse functional and symmetric declarations, which are applied appropriately. The axiom defining the open, toasted and double decker variants uses number restrictions and is traceable to cited text, showing good alignment. The narrative is concise yet comprehensive. You could consider adding a brief reflection on scalability trade-offs and also evaluating whether Wikipedia is a reliable source.",
+      "observation_ids": [
+        "obs_s6_a2_001",
+        "obs_s6_a2_002",
+        "obs_s6_a2_003",
+        "obs_s6_a2_004",
+        "obs_s6_a2_005",
+        "obs_s6_a2_006"
+      ]
+    },
+    {
+      "section_id": "section_s6_a2_part2",
+      "label": "Part 2 - Prolog and Modal Logic",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "summary": "The modal logic work is well structured, correct and concise, with effective use of the supplied relations and modal operators. The comments are technically accurate and demonstrate excellent understanding of real-world and cultural contexts through appropriate references and examples.",
+      "original_text": "Your modal logic tasks are well-structured, and the formulas are correct, concise, and effectively utilise the provided spatial relations and operators to model the sandwich constraints for each task. Your comments are clear and demonstrate not only technical accuracy but also an excellent understanding of the real-world and cultural context behind the rules, drawing on specific Wikipedia references and plausible food examples.",
+      "observation_ids": [
+        "obs_s6_a2_007",
+        "obs_s6_a2_008",
+        "obs_s6_a2_009",
+        "obs_s6_a2_010"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission received 96/100 overall. Part 1 demonstrates strong ontology design, property modelling, number-restriction axioms and concise reporting, with only minor suggestions for deeper critical reflection. Part 2 received full marks and was judged correct, well structured and technically accurate, with effective use of modal operators, spatial relations and culturally informed examples.",
+    "strengths_summary": "Key strengths include thoughtful top-down ontology design, a well-developed property hierarchy, appropriate property characteristics, correctly aligned number-restriction axioms, concise reporting, correct and concise modal logic formulas, effective use of the supplied relations and operators, and strong real-world and cultural contextualisation.",
+    "improvement_summary": "The marker suggests expanding the ontology report's critical reflection by considering scalability trade-offs and evaluating the reliability of Wikipedia as a source.",
+    "original_text": "Part 1 Feedback: In your ontology, you create a thoughtful, top-down design that is articulated and supported by a six-property hierarchy, including inverse functional and symmetric declarations, which are applied appropriately. The axiom defining the open, toasted and double decker variants uses number restrictions and is traceable to cited text, showing good alignment. The narrative is concise yet comprehensive. You could consider adding a brief reflection on scalability trade-offs and also evaluating whether Wikipedia is a reliable source.\n\nPart 2 Feedback: Your modal logic tasks are well-structured, and the formulas are correct, concise, and effectively utilise the provided spatial relations and operators to model the sandwich constraints for each task. Your comments are clear and demonstrate not only technical accuracy but also an excellent understanding of the real-world and cultural context behind the rules, drawing on specific Wikipedia references and plausible food examples.",
+    "observation_ids": [
+      "obs_s6_a2_001",
+      "obs_s6_a2_002",
+      "obs_s6_a2_003",
+      "obs_s6_a2_004",
+      "obs_s6_a2_005",
+      "obs_s6_a2_006",
+      "obs_s6_a2_007",
+      "obs_s6_a2_008",
+      "obs_s6_a2_009",
+      "obs_s6_a2_010"
+    ]
+  }
+}

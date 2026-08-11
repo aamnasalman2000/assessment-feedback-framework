@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_1_student_7_human_feedback",
+  "submission_id": "assessment_1_student_7_submission",
+  "student_id": "student_7",
+  "assessment_id": "assessment_1",
+  "source": {
+    "source_type": "manual_entry",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "Overall good work. In Scenario 1 proof did not properly combine the two required conditions for eligibility prerequisite completion (x1 ∨ x2) and departmental approval (y1 ∨ y2) into a single conjunctive requirement. Additionally, marks were deducted from Theorem ex1 because the goal was to prove a conjunction: ¬provable (conj x False) ∧ (provable x → ¬provable False). However, an implication was proved from a conjunction to a single outcome.",
+    "notes": "Marks and textual feedback were manually transcribed from the human marking record. Requirement mappings were assigned conservatively where the marker feedback clearly supports them."
+  },
+  "marks": {
+    "total_awarded": 90,
+    "total_available": 100,
+    "percentage": 90,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_001",
+        "label": "Scenario 1 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_1"],
+        "awarded": 10,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_002",
+        "label": "Scenario 1 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_1"],
+        "awarded": 2,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_003",
+        "label": "Scenario 2 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_2"],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_004",
+        "label": "Scenario 2 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_2"],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_005",
+        "label": "Scenario 3 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_3"],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_006",
+        "label": "Scenario 3 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_3"],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_007",
+        "label": "Scenario 4 - Formalization and Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_4"],
+        "awarded": 12,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_008",
+        "label": "Scenario 4 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_1"],
+        "task_ids": ["scenario_4"],
+        "awarded": 3,
+        "available": 3
+      },
+      {
+        "mark_entry_id": "mark_009",
+        "label": "Theorem 1 - Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_1"],
+        "awarded": 2,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_010",
+        "label": "Theorem 1 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_1"],
+        "awarded": 1,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_011",
+        "label": "Theorem 2 - Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_2"],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_012",
+        "label": "Theorem 2 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_2"],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_013",
+        "label": "Theorem 3 - Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_3"],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_014",
+        "label": "Theorem 3 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_3"],
+        "awarded": 2,
+        "available": 2
+      },
+      {
+        "mark_entry_id": "mark_015",
+        "label": "Theorem 4 - Proof Correctness",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_4"],
+        "awarded": 8,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_016",
+        "label": "Theorem 4 - Explanation",
+        "scope": "task",
+        "part_ids": ["part_2"],
+        "task_ids": ["theorem_4"],
+        "awarded": 2,
+        "available": 2
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "overall",
+      "text": "The submission is good overall.",
+      "original_text": "Overall good work.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 0
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_1"],
+      "requirement_ids": [
+        "S1-R3"
+      ],
+      "text": "Scenario 1 does not correctly combine the prerequisite condition and approval condition into the required conjunctive eligibility condition.",
+      "original_text": "In Scenario 1 proof did not properly combine the two required conditions for eligibility prerequisite completion (x1 ∨ x2) and departmental approval (y1 ∨ y2) into a single conjunctive requirement.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 1
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly identifies failure to combine the prerequisite and approval requirements into the required conjunction. This maps directly to the conjunctive eligibility requirement."
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": ["part_2"],
+      "task_ids": ["theorem_1"],
+      "requirement_ids": [
+        "T1-R1",
+        "T1-R2"
+      ],
+      "text": "Theorem 1 proves the wrong logical structure: the required goal is a conjunction containing two claims, but the submitted proof instead establishes an implication from a conjunction to a single outcome.",
+      "original_text": "Additionally, marks were deducted from Theorem ex1 because the goal was to prove a conjunction: ¬provable (conj x False) ∧ (provable x → ¬provable False). However, an implication was proved from a conjunction to a single outcome.",
+      "source_span": {
+        "span_type": "sentence",
+        "sentence_index": 2
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly contrasts the required conjunctive theorem with the different implication actually proved. This affects both required conjuncts of Theorem 1."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Scenario 1",
+      "scope": "task",
+      "part_ids": ["part_1"],
+      "task_ids": ["scenario_1"],
+      "summary": "The proof does not properly combine the prerequisite and approval conditions into the required conjunctive eligibility condition.",
+      "original_text": "In Scenario 1 proof did not properly combine the two required conditions for eligibility prerequisite completion (x1 ∨ x2) and departmental approval (y1 ∨ y2) into a single conjunctive requirement.",
+      "observation_ids": ["obs_002"]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Theorem 1",
+      "scope": "task",
+      "part_ids": ["part_2"],
+      "task_ids": ["theorem_1"],
+      "summary": "The theorem proves the wrong logical structure: the required conjunction is replaced by an implication to a single outcome.",
+      "original_text": "Additionally, marks were deducted from Theorem ex1 because the goal was to prove a conjunction: ¬provable (conj x False) ∧ (provable x → ¬provable False). However, an implication was proved from a conjunction to a single outcome.",
+      "observation_ids": ["obs_003"]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission is good overall. Scenario 1 does not correctly combine the prerequisite and approval requirements into the required conjunctive eligibility condition. Theorem 1 proves a different logical structure from the required conjunction, while the remaining assessed components received strong marks.",
+    "strengths_summary": "The marker describes the work as good overall. Scenario 2, Scenario 3, Scenario 4, Theorem 2, Theorem 3, and Theorem 4 received full marks.",
+    "improvement_summary": "Scenario 1 should explicitly combine the prerequisite and approval conditions into the required conjunction. Theorem 1 should prove both required conjuncts rather than replacing the target with an implication to a single outcome.",
+    "original_text": "Overall good work. In Scenario 1 proof did not properly combine the two required conditions for eligibility prerequisite completion (x1 ∨ x2) and departmental approval (y1 ∨ y2) into a single conjunctive requirement. Additionally, marks were deducted from Theorem ex1 because the goal was to prove a conjunction: ¬provable (conj x False) ∧ (provable x → ¬provable False). However, an implication was proved from a conjunction to a single outcome.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003"
+    ]
+  }
+}

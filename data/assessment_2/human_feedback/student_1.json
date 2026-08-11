@@ -1,0 +1,350 @@
+{
+  "schema_version": "1.0",
+  "human_feedback_id": "assessment_2_student_1_human_feedback",
+  "submission_id": "assessment_2_student_1_submission",
+  "student_id": "student_1",
+  "assessment_id": "assessment_2",
+  "source": {
+    "source_type": "manual_entry",
+    "normalisation_method": "manual",
+    "normalised_by": "researcher",
+    "original_feedback_text": "Part 1 Feedback: Your ontology structure is logically sound, with appropriate use of subclassing, properties, and a well-formed axiom. However, the report falls short in several areas: it is very brief, lacks formal DL syntax, does not quote or refer to the original Wikipedia source for the axiom, and offers limited critical reflection on design decisions. These omissions reduced the clarity and depth required by the brief.\n\nPart 2 Feedback: Your modal logic formulas are mostly accurate and syntactically correct. However, the absence of explanations, real-world references, and proper justification for your rules, especially in Task 5, limits the interpretability and depth of your work. Additionally, Task 4 contains a directional error in the use of modal operators.",
+    "notes": "Marks and textual feedback were manually transcribed from the human marking record. The original student identifier was excluded in favour of the pseudonymised research identifier student_1. Requirement mappings were assigned conservatively. Marker comments that do not correspond directly to requirements in the normalised assessment specification were retained without forced rubric mappings."
+  },
+  "marks": {
+    "total_awarded": 66,
+    "total_available": 100,
+    "percentage": 66,
+    "breakdown": [
+      {
+        "mark_entry_id": "mark_001",
+        "label": "Part 1 - Concept",
+        "scope": "criterion",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 10,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_002",
+        "label": "Part 1 - Property",
+        "scope": "criterion",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 10,
+        "available": 12
+      },
+      {
+        "mark_entry_id": "mark_003",
+        "label": "Part 1 - Axiom",
+        "scope": "criterion",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 15,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_004",
+        "label": "Part 1 - Report",
+        "scope": "criterion",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 8,
+        "available": 18
+      },
+      {
+        "mark_entry_id": "mark_005",
+        "label": "Part 1 Total",
+        "scope": "part",
+        "part_ids": [
+          "part_1_ontology"
+        ],
+        "awarded": 43,
+        "available": 60
+      },
+      {
+        "mark_entry_id": "mark_006",
+        "label": "Task 1",
+        "scope": "task",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "task_ids": [
+          "part_2_task_1"
+        ],
+        "awarded": 3,
+        "available": 5
+      },
+      {
+        "mark_entry_id": "mark_007",
+        "label": "Task 2",
+        "scope": "task",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "task_ids": [
+          "part_2_task_2"
+        ],
+        "awarded": 4,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_008",
+        "label": "Task 3",
+        "scope": "task",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "task_ids": [
+          "part_2_task_3"
+        ],
+        "awarded": 5,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_009",
+        "label": "Task 4",
+        "scope": "task",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "task_ids": [
+          "part_2_task_4"
+        ],
+        "awarded": 4,
+        "available": 8
+      },
+      {
+        "mark_entry_id": "mark_010",
+        "label": "Task 5",
+        "scope": "task",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "task_ids": [
+          "part_2_task_5"
+        ],
+        "awarded": 7,
+        "available": 11
+      },
+      {
+        "mark_entry_id": "mark_011",
+        "label": "Part 2 Total",
+        "scope": "part",
+        "part_ids": [
+          "part_2_prolog_modal_logic"
+        ],
+        "awarded": 23,
+        "available": 40
+      }
+    ]
+  },
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R2",
+        "P1-R3",
+        "P1-R5",
+        "P1-R6"
+      ],
+      "text": "The ontology is logically sound and makes appropriate use of subclassing, properties, and a well-formed Description Logic axiom.",
+      "original_text": "Your ontology structure is logically sound, with appropriate use of subclassing, properties, and a well-formed axiom.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker explicitly praises the ontology's subclassing, properties, axiom construction, and overall logical soundness."
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "error",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "text": "The report is too brief to provide the clarity and depth expected by the assessment.",
+      "original_text": "However, the report falls short in several areas: it is very brief",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "This is retained as a general report-quality observation rather than mapped to a specific requirement because brevity alone does not identify which report requirement is unmet."
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "error",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R10"
+      ],
+      "text": "The report does not present the axiom using formal Description Logic syntax or adequately relate it to the original source material.",
+      "original_text": "lacks formal DL syntax, does not quote or refer to the original Wikipedia source for the axiom",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "This maps directly to the requirement that the report explain the Description Logic axiom and relate it to the source text."
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "error",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "requirement_ids": [
+        "P1-R11"
+      ],
+      "text": "The report provides limited critical reflection on the ontology design decisions.",
+      "original_text": "and offers limited critical reflection on design decisions.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 1 Feedback"
+      },
+      "mapping_confidence": "high"
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "text": "The modal logic formulas are mostly accurate and syntactically correct.",
+      "original_text": "Your modal logic formulas are mostly accurate and syntactically correct.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker gives a broad positive assessment across Part 2 but does not identify which individual task requirements are satisfied, so no requirement-level mapping is imposed."
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "suggestion",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "text": "The modal logic rules would benefit from clearer explanations and justification to improve their interpretability and depth.",
+      "original_text": "However, the absence of explanations, real-world references, and proper justification for your rules, especially in Task 5, limits the interpretability and depth of your work.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker also requests real-world references, but these are not an explicit requirement in the normalised Part 2 specification. The observation is therefore retained without forcing a requirement mapping."
+    },
+    {
+      "observation_id": "obs_007",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "requirement_ids": [
+        "P2-T5-R2",
+        "P2-T5-R5"
+      ],
+      "text": "Task 5 needs clearer explanation and justification of the proposed problematic configurations and the rules intended to prevent them.",
+      "original_text": "the absence of explanations, real-world references, and proper justification for your rules, especially in Task 5, limits the interpretability and depth of your work.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "medium",
+      "annotation_notes": "The Task 5 specification requires problem descriptions and correspondence between each description and preventive formula. The marker's broader request for real-world references is not treated as a rubric requirement."
+    },
+    {
+      "observation_id": "obs_008",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "requirement_ids": [
+        "P2-T4-R4"
+      ],
+      "text": "Task 4 contains a directional error in the use of modal operators.",
+      "original_text": "Additionally, Task 4 contains a directional error in the use of modal operators.",
+      "source_span": {
+        "span_type": "section",
+        "section_label": "Part 2 Feedback"
+      },
+      "mapping_confidence": "high",
+      "annotation_notes": "The marker identifies incorrect modal-direction usage specifically in Task 4. This maps directly to modal logic correctness. No narrower vertical-scope claim is inferred."
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Part 1 - Ontology and Report",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "summary": "The ontology itself is logically sound, with appropriate subclassing, properties, and a well-formed axiom. The report is substantially weaker: it is very brief, does not adequately present and relate the Description Logic axiom to the source material, and provides limited critical reflection.",
+      "original_text": "Your ontology structure is logically sound, with appropriate use of subclassing, properties, and a well-formed axiom. However, the report falls short in several areas: it is very brief, lacks formal DL syntax, does not quote or refer to the original Wikipedia source for the axiom, and offers limited critical reflection on design decisions. These omissions reduced the clarity and depth required by the brief.",
+      "observation_ids": [
+        "obs_001",
+        "obs_002",
+        "obs_003",
+        "obs_004"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Part 2 - Prolog and Modal Logic",
+      "scope": "part",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "summary": "The modal logic formulas are mostly accurate and syntactically correct, but the work would benefit from clearer explanation and justification. Task 5 particularly lacks sufficient supporting explanation, and Task 4 contains a directional error in its modal operator usage.",
+      "original_text": "Your modal logic formulas are mostly accurate and syntactically correct. However, the absence of explanations, real-world references, and proper justification for your rules, especially in Task 5, limits the interpretability and depth of your work. Additionally, Task 4 contains a directional error in the use of modal operators.",
+      "observation_ids": [
+        "obs_005",
+        "obs_006",
+        "obs_007",
+        "obs_008"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The ontology component is structurally strong, with appropriate subclassing, properties, and a well-formed axiom, but the accompanying report lacks depth, formal treatment of the Description Logic axiom, source linkage, and critical reflection. In Part 2, the formulas are mostly accurate and syntactically correct, but explanations and justification are limited, particularly in Task 5, and Task 4 contains a directional modal-operator error.",
+    "strengths_summary": "The ontology structure is logically sound and makes appropriate use of subclassing, properties, and a well-formed axiom. The Part 2 formulas are mostly accurate and syntactically correct.",
+    "improvement_summary": "The report should provide greater depth, formally explain the Description Logic axiom, relate it clearly to the source material, and include stronger critical reflection. Part 2 would benefit from clearer explanations and justification, particularly for Task 5, and the directional modal-operator error in Task 4 should be corrected.",
+    "original_text": "Part 1 Feedback: Your ontology structure is logically sound, with appropriate use of subclassing, properties, and a well-formed axiom. However, the report falls short in several areas: it is very brief, lacks formal DL syntax, does not quote or refer to the original Wikipedia source for the axiom, and offers limited critical reflection on design decisions. These omissions reduced the clarity and depth required by the brief.\n\nPart 2 Feedback: Your modal logic formulas are mostly accurate and syntactically correct. However, the absence of explanations, real-world references, and proper justification for your rules, especially in Task 5, limits the interpretability and depth of your work. Additionally, Task 4 contains a directional error in the use of modal operators.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006",
+      "obs_007",
+      "obs_008"
+    ]
+  }
+}
