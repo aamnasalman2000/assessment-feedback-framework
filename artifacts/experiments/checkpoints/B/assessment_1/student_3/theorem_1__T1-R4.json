@@ -1,0 +1,89 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_034",
+  "initial_observation_id": "b_initial_obs_034",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The requirement to explain both conjuncts of the theorem is not addressed."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment claims that the requirement is not addressed, but the student work is empty. The requirement is to explain both conjuncts of the theorem, and the student work is absent. However, the original assessment does not provide a basis for the claim that the requirement is not addressed, as the student work is not present. The requirement basis is 'Explain both conjuncts of the theorem.'",
+      "requirement_basis": "Explain both conjuncts of the theorem."
+    },
+    "revised_status": "missing",
+    "revised_internal_finding": "The requirement to explain both conjuncts of the theorem is not addressed.",
+    "revised_student_feedback": "The requirement to explain both conjuncts of the theorem is not addressed.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.9,
+    "revised_evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T1-R4",
+        "description": "The student work is absent, and the requirement is to explain both conjuncts of the theorem."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_034",
+    "requirement_id": "T1-R4",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "status": "missing",
+    "internal_finding": "The requirement to explain both conjuncts of the theorem is not addressed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T1-R4",
+        "description": "The student work is absent, and the requirement is to explain both conjuncts of the theorem."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_034",
+    "feedback_type": "omission",
+    "scope": "task",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "T1-R4"
+    ],
+    "criterion_assessment_ids": [
+      "ca_034"
+    ],
+    "internal_finding": "The requirement to explain both conjuncts of the theorem is not addressed.",
+    "student_feedback": "The requirement to explain both conjuncts of the theorem is not addressed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T1-R4",
+        "description": "The student work is absent, and the requirement is to explain both conjuncts of the theorem."
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "missing",
+    "internal_finding": "The requirement S3-R5 is missing because no unit directly addresses the scenario_3 component. The candidate student evidence and valid artifact/unit IDs are empty, indicating no submission was made for this component.",
+    "student_feedback": "No submission was made for the scenario_3 component. Please ensure that the required Lean file is submitted with the formalised assumptions and proof for the destination_reached proposition.",
+    "suggestion": "Submit a Lean file that includes the formalised assumptions and the proof for the destination_reached proposition as per the scenario conditions.",
+    "verification_status": "inferred",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R5",
+        "description": "No unit directly addresses the scenario_3 component."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "partially_met",
+    "internal_finding": "The student's submission includes a formal statement of the target proposition and a proof body that attempts to decompose the proposition. The proof body includes variables for each part of the assumption and references the necessary assumptions. However, the proof is incomplete as it does not fully derive the conclusion (a ∧ d) from the given assumptions.",
+    "student_feedback": "The submission demonstrates an understanding of the logical structure of the problem. The proof body correctly decomposes the assumptions, but the proof is incomplete and does not fully derive the conclusion from the given assumptions.",
+    "suggestion": "The proof needs to be completed to show that the conclusion (a ∧ d) follows from the given assumptions. Specifically, the proof should include the steps that connect the decomposed assumptions to the final conclusion.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "description": "The proof body includes decomposition of the proposition and references the necessary assumptions but does not fully derive the conclusion."
+      }
+    ]
+  }
+}

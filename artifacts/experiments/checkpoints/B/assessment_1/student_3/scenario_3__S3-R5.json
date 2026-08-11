@@ -1,0 +1,89 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_019",
+  "initial_observation_id": "b_initial_obs_019",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment claims that the proposition for destination_reached is not derived from the formalised assumptions, but the student work does not include a proposition for destination_reached. The requirement asks to derive the proposition mapped to destination_reached, but the student work does not provide such a proposition. This is an unsupported claim as the evidence does not include the required proposition.",
+      "requirement_basis": "Derive the proposition mapped to destination_reached from the student's formalised assumptions."
+    },
+    "revised_status": "not_met",
+    "revised_internal_finding": "The requirement asks to derive the proposition mapped to destination_reached from the student's formalised assumptions. The student work does not include a proposition for destination_reached, so the requirement is not met.",
+    "revised_student_feedback": "The requirement asks to derive the proposition mapped to destination_reached from the student's formalised assumptions. The student work does not include a proposition for destination_reached, so the requirement is not met.",
+    "revised_suggestion": "The student should include a proposition for destination_reached in their formalised assumptions to meet the requirement.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.8,
+    "revised_evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R5",
+        "description": "The student work does not include a proposition for destination_reached."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_019",
+    "requirement_id": "S3-R5",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "status": "not_met",
+    "internal_finding": "The requirement asks to derive the proposition mapped to destination_reached from the student's formalised assumptions. The student work does not include a proposition for destination_reached, so the requirement is not met.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R5",
+        "description": "The student work does not include a proposition for destination_reached."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_019",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S3-R5"
+    ],
+    "criterion_assessment_ids": [
+      "ca_019"
+    ],
+    "internal_finding": "The requirement asks to derive the proposition mapped to destination_reached from the student's formalised assumptions. The student work does not include a proposition for destination_reached, so the requirement is not met.",
+    "student_feedback": "The requirement asks to derive the proposition mapped to destination_reached from the student's formalised assumptions. The student work does not include a proposition for destination_reached, so the requirement is not met.",
+    "suggestion": "The student should include a proposition for destination_reached in their formalised assumptions to meet the requirement.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R5",
+        "description": "The student work does not include a proposition for destination_reached."
+      }
+    ]
+  }
+}

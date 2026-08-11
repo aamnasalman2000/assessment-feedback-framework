@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_2",
+  "requirement_id": "T2-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The submission does not meet the requirement as the proof does not explicitly derive 'provable y' from the contradiction. The evidence shows the use of logical principles and axioms, but the specific derivation of 'y' is missing.",
+    "student_feedback": "The submission demonstrates understanding of logical principles but fails to explicitly derive 'provable y' from the contradiction as required by the assessment.",
+    "suggestion": "The proof should include a clear derivation of 'y' from the contradiction, ensuring that the final conclusion directly follows from the premises.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T2-R2",
+        "description": "The proof does not explicitly derive 'provable y' from the contradiction."
+      }
+    ]
+  }
+}

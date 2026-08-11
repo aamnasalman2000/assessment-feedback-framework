@@ -1,0 +1,121 @@
+{
+  "component_alignments": [
+    {
+      "component_id": "scenario_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_001"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_002",
+        "artifact_001_unit_003",
+        "artifact_001_unit_004",
+        "artifact_001_unit_005"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_001 directly addresses the scenario_1 component by formalizing the eligibility requirements and proving the target proposition. The other units provide supporting context and explanation for the logical steps involved in the proof.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_002"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_002 directly addresses the scenario_2 component by formalizing the transaction-security conditions and proving the target statement.",
+      "confidence": 0.9,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_3",
+      "primary_unit_ids": [],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "No unit directly addresses the scenario_3 component. The units provided do not match the task summary or target conditions of scenario_3.",
+      "confidence": 0.0,
+      "unresolved": true,
+      "unresolved_reason": "No unit directly addresses the scenario_3 component."
+    },
+    {
+      "component_id": "scenario_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_005"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_005 directly addresses the scenario_4 component by formalizing the cybersecurity system and proving the target statement.",
+      "confidence": 0.9,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_1",
+      "primary_unit_ids": [],
+      "supporting_unit_ids": [
+        "artifact_001_unit_001",
+        "artifact_001_unit_002",
+        "artifact_001_unit_003",
+        "artifact_001_unit_004",
+        "artifact_001_unit_005"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The units provided do not directly address the theorem_1 component. However, the logical structures and proofs in the units may support the theorem_1 component indirectly.",
+      "confidence": 0.75,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_2",
+      "primary_unit_ids": [],
+      "supporting_unit_ids": [
+        "artifact_001_unit_001",
+        "artifact_001_unit_002",
+        "artifact_001_unit_003",
+        "artifact_001_unit_004",
+        "artifact_001_unit_005"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The units provided do not directly address the theorem_2 component. However, the logical structures and proofs in the units may support the theorem_2 component indirectly.",
+      "confidence": 0.75,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_3",
+      "primary_unit_ids": [],
+      "supporting_unit_ids": [
+        "artifact_001_unit_002",
+        "artifact_001_unit_003",
+        "artifact_001_unit_004",
+        "artifact_001_unit_005"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The units provided do not directly address the theorem_3 component. However, the logical structures and proofs in the units may support the theorem_3 component indirectly.",
+      "confidence": 0.75,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_4",
+      "primary_unit_ids": [],
+      "supporting_unit_ids": [
+        "artifact_001_unit_001",
+        "artifact_001_unit_002",
+        "artifact_001_unit_003",
+        "artifact_001_unit_004",
+        "artifact_001_unit_005"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The units provided do not directly address the theorem_4 component. However, the logical structures and proofs in the units may support the theorem_4 component indirectly.",
+      "confidence": 0.75,
+      "unresolved": false
+    }
+  ],
+  "summary": "The alignment shows that units_001, 002, and 005 directly address scenario_1, scenario_2, and scenario_4 components respectively. The other units provide supporting context for the logical steps in the proofs. Theorem_1 to theorem_4 components are not directly addressed by any unit, but their logical structures may support them indirectly.",
+  "warnings": [
+    "The theorem_1 to theorem_4 components are not directly addressed by any unit, but their logical structures may support them indirectly."
+  ],
+  "schema_version": "1.0",
+  "assessment_id": "assessment_1",
+  "source_submission_id": "assessment_1_student_3",
+  "processed_submission_id": "processed_assessment_1_student_3",
+  "model_name": "Qwen/Qwen3-4B",
+  "aligner_version": "1.0"
+}

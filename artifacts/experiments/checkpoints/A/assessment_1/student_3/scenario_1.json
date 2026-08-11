@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_1",
+  "requirement_ids": [
+    "S1-R1",
+    "S1-R2",
+    "S1-R3",
+    "S1-R4",
+    "S1-R5",
+    "S1-R6",
+    "S1-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S1-R1",
+        "status": "met",
+        "internal_finding": "Prerequisite requirement is correctly represented as x1 ∨ x2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_statement",
+            "source_range": {
+              "start_line": 18,
+              "end_line": 18
+            },
+            "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+            "description": "The formal statement includes the prerequisite disjunction."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R2",
+        "status": "met",
+        "internal_finding": "Approval requirement is correctly represented as y1 ∨ y2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001_statement",
+            "source_range": {
+              "start_line": 18,
+              "end_line": 18
+            },
+            "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+            "description": "The formal statement includes the approval disjunction."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R3",
+        "status": "partially_met",
+        "internal_finding": "The proof uses both conditions but does not fully address the conjunctive requirement.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S1-R4",
+        "status": "not_met",
+        "internal_finding": "The proof does not correctly handle all four combinations of cases.",
+        "verification_status": "inferred",
+        "confidence": 0.6,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S1-R5",
+        "status": "not_met",
+        "internal_finding": "The proof relies on unrelated assumptions and does not use case evidence effectively.",
+        "verification_status": "inferred",
+        "confidence": 0.6,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S1-R6",
+        "status": "not_met",
+        "internal_finding": "The proof lacks a brief explanation of the reasoning.",
+        "verification_status": "inferred",
+        "confidence": 0.6,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S1-R7",
+        "status": "missing",
+        "internal_finding": "The submitted Lean code does not compile successfully.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S1-R3",
+          "S1-R4",
+          "S1-R5",
+          "S1-R6"
+        ],
+        "internal_finding": "The proof does not fully address the conjunctive requirement and lacks necessary explanations.",
+        "student_feedback": "Ensure the proof correctly handles all four cases and includes a brief explanation of the reasoning.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S1-R7"
+        ],
+        "internal_finding": "The submitted Lean code does not compile successfully.",
+        "student_feedback": "Ensure the Lean code compiles correctly in Lean 4.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission correctly formalises the prerequisite and approval requirements but lacks a complete proof and explanation. The Lean code does not compile successfully, which affects the overall assessment."
+  }
+}

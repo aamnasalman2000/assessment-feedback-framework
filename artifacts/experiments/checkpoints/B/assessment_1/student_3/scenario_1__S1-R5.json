@@ -1,0 +1,109 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_005",
+  "initial_observation_id": "b_initial_obs_005",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The proof relies on unrelated assumptions and does not use case evidence effectively."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment claims that the proof relies on unrelated assumptions and does not use case evidence effectively, but the evidence provided in the student work does not support this claim. The student's proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions. The original assessment makes an unsupported claim about the student's work.",
+      "requirement_basis": "Use the evidence introduced during case analysis to derive the conclusion rather than relying on unrelated assumptions."
+    },
+    "revised_status": "met",
+    "revised_internal_finding": "The proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions.",
+    "revised_student_feedback": "Your proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions.",
+    "revised_suggestion": "None",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.8,
+    "revised_evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_005",
+    "requirement_id": "S1-R5",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "status": "met",
+    "internal_finding": "The proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_005",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S1-R5"
+    ],
+    "criterion_assessment_ids": [
+      "ca_005"
+    ],
+    "internal_finding": "The proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions.",
+    "student_feedback": "Your proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions.",
+    "suggestion": "None",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The proof uses case evidence (e.g., 'case a', 'case b', 'case c', 'case d') and does not appear to rely on unrelated assumptions."
+      }
+    ]
+  }
+}

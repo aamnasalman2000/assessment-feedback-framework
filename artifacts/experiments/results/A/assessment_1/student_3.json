@@ -1,0 +1,1362 @@
+{
+  "criterion_assessments": [
+    {
+      "criterion_assessment_id": "ca_001",
+      "requirement_id": "S1-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "Prerequisite requirement is correctly represented as x1 ∨ x2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_001",
+          "block_id": "artifact_001_unit_001_statement",
+          "source_range": {
+            "start_line": 18,
+            "end_line": 18
+          },
+          "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+          "description": "The formal statement includes the prerequisite disjunction."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_002",
+      "requirement_id": "S1-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "Approval requirement is correctly represented as y1 ∨ y2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_001",
+          "block_id": "artifact_001_unit_001_statement",
+          "source_range": {
+            "start_line": 18,
+            "end_line": 18
+          },
+          "excerpt": "example : ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z",
+          "description": "The formal statement includes the approval disjunction."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_003",
+      "requirement_id": "S1-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The proof uses both conditions but does not fully address the conjunctive requirement.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_004",
+      "requirement_id": "S1-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof does not correctly handle all four combinations of cases.",
+      "verification_status": "inferred",
+      "confidence": 0.6,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_005",
+      "requirement_id": "S1-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof relies on unrelated assumptions and does not use case evidence effectively.",
+      "verification_status": "inferred",
+      "confidence": 0.6,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_006",
+      "requirement_id": "S1-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof lacks a brief explanation of the reasoning.",
+      "verification_status": "inferred",
+      "confidence": 0.6,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_007",
+      "requirement_id": "S1-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "missing",
+      "internal_finding": "The submitted Lean code does not compile successfully.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_008",
+      "requirement_id": "S2-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "The formal statement matches the required logical implication.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_statement",
+          "source_range": {
+            "start_line": 32,
+            "end_line": 32
+          },
+          "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+          "description": "The formal statement matches the required logical implication."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_009",
+      "requirement_id": "S2-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "The proof body correctly decomposes the proposition.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_proof",
+          "source_range": {
+            "start_line": 33,
+            "end_line": 42
+          },
+          "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+          "description": "The proof body correctly decomposes the proposition."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_010",
+      "requirement_id": "S2-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof does not establish 'a' using the assumptions.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_011",
+      "requirement_id": "S2-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The final conjunction 'a ∧ d' is not explicitly constructed.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_012",
+      "requirement_id": "S2-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "Classical reasoning is used in a valid manner.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_proof",
+          "source_range": {
+            "start_line": 33,
+            "end_line": 42
+          },
+          "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+          "description": "Classical reasoning is used in a valid manner."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_013",
+      "requirement_id": "S2-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The explanation is missing from the Lean file.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_014",
+      "requirement_id": "S2-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "missing",
+      "internal_finding": "The submission does not compile in Lean 4.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_015",
+      "requirement_id": "S3-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Student does not identify propositions for heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_016",
+      "requirement_id": "S3-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Safe weather is not represented as the negation of unsafe weather.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_017",
+      "requirement_id": "S3-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The 'only if' interpretation is not correctly applied in the formalisation.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_018",
+      "requirement_id": "S3-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Unsafe alternate-route weather is not implied to imply absence of congestion on the usual route.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_019",
+      "requirement_id": "S3-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_020",
+      "requirement_id": "S3-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The proof preserves the intended meaning despite different proposition names.",
+      "verification_status": "inferred",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_021",
+      "requirement_id": "S3-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proposition mapping and 'only if' interpretation are not explained in comments.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_022",
+      "requirement_id": "S3-R8",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The submitted Lean code does not compile as the compilation check was not run.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_023",
+      "requirement_id": "S4-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The formal statement matches the target implication exactly.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_024",
+      "requirement_id": "S4-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "r is derived from t and t → r as required.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_025",
+      "requirement_id": "S4-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "m is derived from r and r → m as required.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_026",
+      "requirement_id": "S4-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "¬f is not derived from the available assumptions.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_027",
+      "requirement_id": "S4-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The final result r ∧ m ∧ ¬f is constructed correctly.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_028",
+      "requirement_id": "S4-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The proof targets the required implication, not a modified version.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_029",
+      "requirement_id": "S4-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The derivation of ¬f is not explained in comments.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_030",
+      "requirement_id": "S4-R8",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The Lean code does not compile as the compilation check was not run.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_031",
+      "requirement_id": "T1-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to prove that provable (conj x False) leads to a contradiction is not addressed.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_032",
+      "requirement_id": "T1-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to prove that provable x does not imply that False is provable is not addressed.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_033",
+      "requirement_id": "T1-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to use appropriate supplied axioms is not addressed.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_034",
+      "requirement_id": "T1-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to explain both conjuncts of the theorem is not addressed.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_035",
+      "requirement_id": "T1-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement that the theorem must compile is not addressed.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_036",
+      "requirement_id": "T2-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to extract provable False from provable (conj x False) is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "T2-R1",
+          "description": "The requirement to extract provable False from provable (conj x False) is not present."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_037",
+      "requirement_id": "T2-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to use the resulting contradiction to derive provable y is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "T2-R2",
+          "description": "The requirement to use the resulting contradiction to derive provable y is not present."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_038",
+      "requirement_id": "T2-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "T2-R3",
+          "description": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is not present."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_039",
+      "requirement_id": "T2-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to explain the principle of explosion and how it is implemented is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "T2-R4",
+          "description": "The requirement to explain the principle of explosion and how it is implemented is not present."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_040",
+      "requirement_id": "T2-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement that the theorem must compile is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "T2-R5",
+          "description": "The requirement that the theorem must compile is not present."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_041",
+      "requirement_id": "T3-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The nested conjunction's components are not extracted.",
+      "verification_status": "not_verified",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_042",
+      "requirement_id": "T3-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The construction of (conj y x) is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_043",
+      "requirement_id": "T3-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The construction of (conj (conj y x) z) is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_044",
+      "requirement_id": "T3-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_045",
+      "requirement_id": "T3-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The explanation of elimination and reconstruction steps is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_046",
+      "requirement_id": "T3-R6",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "missing",
+      "internal_finding": "The theorem does not compile as the submission is empty.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_047",
+      "requirement_id": "T4-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The requirement to assume provable y and combine it with provable x is not addressed.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_048",
+      "requirement_id": "T4-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The use of AxConjIntro to derive provable (conj x y) is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_049",
+      "requirement_id": "T4-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The contradiction with ¬ provable (conj x y) to establish ¬ provable y is not present.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_050",
+      "requirement_id": "T4-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The arguments to AxConjIntro are not supplied correctly.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_051",
+      "requirement_id": "T4-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The contradiction-based proof strategy is not explained.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_052",
+      "requirement_id": "T4-R6",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "missing",
+      "internal_finding": "The theorem does not compile in Lean 4.",
+      "verification_status": "not_verified",
+      "confidence": 0.9,
+      "evidence": []
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R3",
+        "S1-R4",
+        "S1-R5",
+        "S1-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_003",
+        "ca_004",
+        "ca_005",
+        "ca_006"
+      ],
+      "internal_finding": "The proof does not fully address the conjunctive requirement and lacks necessary explanations.",
+      "student_feedback": "Ensure the proof correctly handles all four cases and includes a brief explanation of the reasoning.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_007"
+      ],
+      "internal_finding": "The submitted Lean code does not compile successfully.",
+      "student_feedback": "Ensure the Lean code compiles correctly in Lean 4.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R3",
+        "S2-R4",
+        "S2-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_010",
+        "ca_011",
+        "ca_013"
+      ],
+      "internal_finding": "The proof lacks the necessary steps to derive 'a' and construct 'a ∧ d', and the explanation is missing.",
+      "student_feedback": "The proof needs to explicitly derive 'a' using the assumptions and construct 'a ∧ d'. Add comments explaining the reasoning.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_014"
+      ],
+      "internal_finding": "The submission does not compile in Lean 4.",
+      "student_feedback": "Ensure the Lean code compiles by checking for syntax errors and missing imports.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R1",
+        "S3-R2",
+        "S3-R3",
+        "S3-R4",
+        "S3-R5",
+        "S3-R7",
+        "S3-R8"
+      ],
+      "criterion_assessment_ids": [
+        "ca_015",
+        "ca_016",
+        "ca_017",
+        "ca_018",
+        "ca_019",
+        "ca_021",
+        "ca_022"
+      ],
+      "internal_finding": "The student's work lacks clear identification of propositions and explanations, and the code does not compile.",
+      "student_feedback": "Identify propositions for heavy congestion, unsafe weather, sufficient fuel, and destination reached. Represent safe weather as the negation of unsafe weather. Include comments explaining the logic and ensure the Lean code compiles.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_020"
+      ],
+      "internal_finding": "The proof preserves the intended meaning despite different proposition names.",
+      "student_feedback": "Ensure the proof structure maintains the intended meaning of the scenario even with different proposition names.",
+      "verification_status": "inferred",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_007",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R4",
+        "S4-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_026",
+        "ca_029"
+      ],
+      "internal_finding": "The derivation of ¬f is missing from the proof.",
+      "student_feedback": "The proof needs to include an explanation of how ¬f is derived from the assumptions.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_008",
+      "feedback_type": "omission",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R8"
+      ],
+      "criterion_assessment_ids": [
+        "ca_030"
+      ],
+      "internal_finding": "The Lean code does not compile as the compilation check was not run.",
+      "student_feedback": "The submission should include a compilation check to ensure the code is valid.",
+      "verification_status": "not_verified",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_009",
+      "feedback_type": "omission",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R1",
+        "T1-R2",
+        "T1-R3",
+        "T1-R4",
+        "T1-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_031",
+        "ca_032",
+        "ca_033",
+        "ca_034",
+        "ca_035"
+      ],
+      "internal_finding": "The component is missing all required elements for the theorem.",
+      "student_feedback": "The component does not include the required proof, explanations, or compilation.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_010",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R1",
+        "T2-R2",
+        "T2-R3",
+        "T2-R4",
+        "T2-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_036",
+        "ca_037",
+        "ca_038",
+        "ca_039",
+        "ca_040"
+      ],
+      "internal_finding": "All requirements for the component are missing.",
+      "student_feedback": "The component is missing all required elements for proof correctness, explanation, and compilation. The theorem does not meet the submission criteria.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_011",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R1",
+        "T3-R2",
+        "T3-R3",
+        "T3-R4",
+        "T3-R5",
+        "T3-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_041",
+        "ca_042",
+        "ca_043",
+        "ca_044",
+        "ca_045",
+        "ca_046"
+      ],
+      "internal_finding": "The component lacks all required elements for a correct and complete theorem.",
+      "student_feedback": "The theorem is not implemented. Please replace 'sorry' with actual proofs and add explanations.",
+      "verification_status": "inferred",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_012",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R1",
+        "T4-R2",
+        "T4-R3",
+        "T4-R4",
+        "T4-R5",
+        "T4-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_047",
+        "ca_048",
+        "ca_049",
+        "ca_050",
+        "ca_051",
+        "ca_052"
+      ],
+      "internal_finding": "The component lacks all required proof elements and explanations, and the theorem does not compile.",
+      "student_feedback": "The theorem must include a proof using AxConjIntro, explain the contradiction-based strategy, and compile in Lean 4.",
+      "verification_status": "inferred",
+      "confidence": 0.9,
+      "evidence": []
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Advanced Course Eligibility Decision",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "summary": "The submission correctly formalises the prerequisite and approval requirements but lacks a complete proof and explanation. The Lean code does not compile successfully, which affects the overall assessment.",
+      "observation_ids": [
+        "obs_001",
+        "obs_002"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Complex Transaction Verification System",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "summary": "The submission correctly formalises the implication and uses classical reasoning. However, the proof lacks steps to derive 'a' and construct 'a ∧ d', and the explanation is missing. The submission also does not compile in Lean 4.",
+      "observation_ids": [
+        "obs_003",
+        "obs_004"
+      ]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Advanced Autonomous Vehicle Decision System",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "summary": "The student's work lacks clear proposition identification and explanations. The code does not compile, and the formalisation does not correctly represent the scenario conditions. The proof needs to be more explicit in its reasoning.",
+      "observation_ids": [
+        "obs_005",
+        "obs_006"
+      ]
+    },
+    {
+      "section_id": "section_004",
+      "label": "Advanced Cybersecurity System for Threats",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "summary": "The proof correctly derives r, m, and the final result. However, ¬f is not derived, and the code does not compile. The formalisation is correct, but the explanation is missing.",
+      "observation_ids": [
+        "obs_007",
+        "obs_008"
+      ]
+    },
+    {
+      "section_id": "section_005",
+      "label": "Conjunction with False Is Not Provable",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "summary": "The component is missing all required elements for the theorem. It does not include the required proof, explanations, or compilation. The submission is incomplete and does not meet the evaluation criteria.",
+      "observation_ids": [
+        "obs_009"
+      ]
+    },
+    {
+      "section_id": "section_006",
+      "label": "Principle of Explosion",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "summary": "The component is missing all required elements for proof correctness, explanation, and compilation. The theorem does not meet the submission criteria.",
+      "observation_ids": [
+        "obs_010"
+      ]
+    },
+    {
+      "section_id": "section_007",
+      "label": "Rearranging Nested Conjunctions",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "summary": "The component is incomplete and lacks all necessary elements for a correct and complete theorem. The submission is empty and does not compile. All requirements are missing.",
+      "observation_ids": [
+        "obs_011"
+      ]
+    },
+    {
+      "section_id": "section_008",
+      "label": "Using Negation to Infer Missing Provability",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "summary": "The component is missing all required proof elements, explanations, and compilation. The theorem does not compile in Lean 4, and no proof strategy is provided.",
+      "observation_ids": [
+        "obs_012"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission correctly formalises the prerequisite and approval requirements but lacks a complete proof and explanation. The Lean code does not compile successfully, which affects the overall assessment. The submission correctly formalises the implication and uses classical reasoning. However, the proof lacks steps to derive 'a' and construct 'a ∧ d', and the explanation is missing. The submission also does not compile in Lean 4. The student's work lacks clear proposition identification and explanations. The code does not compile, and the formalisation does not correctly represent the scenario conditions. The proof needs to be more explicit in its reasoning. The proof correctly derives r, m, and the final result. However, ¬f is not derived, and the code does not compile. The formalisation is correct, but the explanation is missing. The component is missing all required elements for the theorem. It does not include the required proof, explanations, or compilation. The submission is incomplete and does not meet the evaluation criteria. The component is missing all required elements for proof correctness, explanation, and compilation. The theorem does not meet the submission criteria. The component is incomplete and lacks all necessary elements for a correct and complete theorem. The submission is empty and does not compile. All requirements are missing. The component is missing all required proof elements, explanations, and compilation. The theorem does not compile in Lean 4, and no proof strategy is provided.",
+    "strengths_summary": "No distinct strengths were summarised separately from the component feedback.",
+    "improvement_summary": "Ensure the proof correctly handles all four cases and includes a brief explanation of the reasoning. Ensure the Lean code compiles correctly in Lean 4. The proof needs to explicitly derive 'a' using the assumptions and construct 'a ∧ d'. Add comments explaining the reasoning.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006",
+      "obs_007",
+      "obs_008",
+      "obs_009",
+      "obs_010",
+      "obs_011",
+      "obs_012"
+    ]
+  }
+}

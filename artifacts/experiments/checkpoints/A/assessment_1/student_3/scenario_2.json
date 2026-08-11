@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_2",
+  "requirement_ids": [
+    "S2-R1",
+    "S2-R2",
+    "S2-R3",
+    "S2-R4",
+    "S2-R5",
+    "S2-R6",
+    "S2-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S2-R1",
+        "status": "met",
+        "internal_finding": "The formal statement matches the required logical implication.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_002",
+            "block_id": "artifact_001_unit_002_statement",
+            "source_range": {
+              "start_line": 32,
+              "end_line": 32
+            },
+            "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+            "description": "The formal statement matches the required logical implication."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R2",
+        "status": "met",
+        "internal_finding": "The proof body correctly decomposes the proposition.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_002",
+            "block_id": "artifact_001_unit_002_proof",
+            "source_range": {
+              "start_line": 33,
+              "end_line": 42
+            },
+            "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+            "description": "The proof body correctly decomposes the proposition."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R3",
+        "status": "not_met",
+        "internal_finding": "The proof does not establish 'a' using the assumptions.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S2-R4",
+        "status": "not_met",
+        "internal_finding": "The final conjunction 'a ∧ d' is not explicitly constructed.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S2-R5",
+        "status": "met",
+        "internal_finding": "Classical reasoning is used in a valid manner.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_002",
+            "block_id": "artifact_001_unit_002_proof",
+            "source_range": {
+              "start_line": 33,
+              "end_line": 42
+            },
+            "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+            "description": "Classical reasoning is used in a valid manner."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R6",
+        "status": "not_met",
+        "internal_finding": "The explanation is missing from the Lean file.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S2-R7",
+        "status": "missing",
+        "internal_finding": "The submission does not compile in Lean 4.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S2-R3",
+          "S2-R4",
+          "S2-R6"
+        ],
+        "internal_finding": "The proof lacks the necessary steps to derive 'a' and construct 'a ∧ d', and the explanation is missing.",
+        "student_feedback": "The proof needs to explicitly derive 'a' using the assumptions and construct 'a ∧ d'. Add comments explaining the reasoning.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S2-R7"
+        ],
+        "internal_finding": "The submission does not compile in Lean 4.",
+        "student_feedback": "Ensure the Lean code compiles by checking for syntax errors and missing imports.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission correctly formalises the implication and uses classical reasoning. However, the proof lacks steps to derive 'a' and construct 'a ∧ d', and the explanation is missing. The submission also does not compile in Lean 4."
+  }
+}

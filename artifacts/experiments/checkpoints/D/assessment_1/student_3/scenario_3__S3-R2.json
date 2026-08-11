@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "missing",
+    "internal_finding": "The requirement 'Represent safe weather as the negation of the proposition representing unsafe weather.' is not met because no unit or artifact directly addresses this requirement. The student submission does not include any evidence that explicitly represents safe weather as the negation of unsafe weather.",
+    "student_feedback": "Your submission does not include any evidence that represents safe weather as the negation of the proposition for unsafe weather. Please ensure that this formalisation is included in your Lean file.",
+    "suggestion": "Include a Lean proposition that explicitly represents safe weather as the negation of the unsafe_weather proposition. Ensure that this is clearly documented in comments within the Lean file.",
+    "verification_status": "inferred",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R2",
+        "description": "No unit or artifact directly addresses the requirement to represent safe weather as the negation of the proposition for unsafe weather."
+      }
+    ]
+  }
+}

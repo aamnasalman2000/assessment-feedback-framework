@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_4",
+  "requirement_id": "T4-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The submission does not meet the requirement to use the contradiction with ¬ provable (conj x y) to establish ¬ provable y. The evidence provided includes multiple Lean examples with formal statements and proof bodies, but none of them explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y. The semantic interpretations suggest that the proofs are structured and follow axioms, but they do not directly address the specific requirement mentioned.",
+    "student_feedback": "The submission includes multiple Lean examples with structured proofs, but none of them explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y. The proofs are structured and follow axioms, but the specific requirement related to the contradiction with ¬ provable is not addressed.",
+    "suggestion": "The student should review the requirement and ensure that the proof explicitly uses the contradiction with ¬ provable (conj x y) to establish ¬ provable y. This may involve modifying the proof structure to include the necessary logical steps.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T4-R3",
+        "description": "The submission does not include any evidence that explicitly uses the contradiction with ¬ provable (conj x y) to establish ¬ provable y."
+      }
+    ]
+  }
+}

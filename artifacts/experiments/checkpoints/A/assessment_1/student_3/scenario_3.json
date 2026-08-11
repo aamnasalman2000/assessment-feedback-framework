@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_3",
+  "requirement_ids": [
+    "S3-R1",
+    "S3-R2",
+    "S3-R3",
+    "S3-R4",
+    "S3-R5",
+    "S3-R6",
+    "S3-R7",
+    "S3-R8"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S3-R1",
+        "status": "not_met",
+        "internal_finding": "Student does not identify propositions for heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R2",
+        "status": "not_met",
+        "internal_finding": "Safe weather is not represented as the negation of unsafe weather.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R3",
+        "status": "not_met",
+        "internal_finding": "The 'only if' interpretation is not correctly applied in the formalisation.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R4",
+        "status": "not_met",
+        "internal_finding": "Unsafe alternate-route weather is not implied to imply absence of congestion on the usual route.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R5",
+        "status": "not_met",
+        "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R6",
+        "status": "partially_met",
+        "internal_finding": "The proof preserves the intended meaning despite different proposition names.",
+        "verification_status": "inferred",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R7",
+        "status": "not_met",
+        "internal_finding": "The proposition mapping and 'only if' interpretation are not explained in comments.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R8",
+        "status": "missing",
+        "internal_finding": "The submitted Lean code does not compile as the compilation check was not run.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S3-R1",
+          "S3-R2",
+          "S3-R3",
+          "S3-R4",
+          "S3-R5",
+          "S3-R7",
+          "S3-R8"
+        ],
+        "internal_finding": "The student's work lacks clear identification of propositions and explanations, and the code does not compile.",
+        "student_feedback": "Identify propositions for heavy congestion, unsafe weather, sufficient fuel, and destination reached. Represent safe weather as the negation of unsafe weather. Include comments explaining the logic and ensure the Lean code compiles.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "S3-R6"
+        ],
+        "internal_finding": "The proof preserves the intended meaning despite different proposition names.",
+        "student_feedback": "Ensure the proof structure maintains the intended meaning of the scenario even with different proposition names.",
+        "verification_status": "inferred",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The student's work lacks clear proposition identification and explanations. The code does not compile, and the formalisation does not correctly represent the scenario conditions. The proof needs to be more explicit in its reasoning."
+  }
+}

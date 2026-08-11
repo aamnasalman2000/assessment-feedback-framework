@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R8",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "missing",
+    "internal_finding": "The requirement S3-R8 (compilation) is missing because no Lean artifact was submitted and no unit or artifact IDs are provided in the candidate evidence. The submission_reference evidence is not available to verify compilation.",
+    "student_feedback": "No Lean artifact was submitted to compile. Please ensure that the submission includes the required Lean code for compilation.",
+    "suggestion": "Submit the Lean code as an artifact with a valid artifact ID and ensure it compiles in Lean 4.",
+    "verification_status": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R8",
+        "description": "No Lean artifact was submitted to compile."
+      }
+    ]
+  }
+}

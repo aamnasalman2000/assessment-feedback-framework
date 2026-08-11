@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_assessable",
+    "internal_finding": "The requirement 'S2-R7' (compilation) cannot be assessed due to the absence of lean compilation evidence in the student submission. The preprocessing checks indicate that lean compilation is not included in this preprocessing version, and no explicit compilation result is provided in the student evidence.",
+    "student_feedback": "The submission does not include evidence of Lean compilation, so we cannot assess whether the submitted Lean code compiles.",
+    "suggestion": "Ensure that the Lean code is compiled and include the compilation result as part of the submission for assessment.",
+    "verification_status": "not_verified",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S2-R7",
+        "description": "No evidence of Lean compilation is provided in the submission."
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R6",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "partially_met",
+    "internal_finding": "The student's submission includes a formal statement of the eligibility condition ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z, which aligns with the requirement. However, the proof body does not explicitly explain how the prerequisite and approval conditions together establish eligibility. The proof is structured but lacks the necessary explanation of the reasoning.",
+    "student_feedback": "The submission correctly formalizes the eligibility condition, but it needs to include a detailed explanation of how the prerequisite and approval conditions together establish eligibility. The proof should be accompanied by comments that clarify the reasoning steps.",
+    "suggestion": "Add comments within the Lean file to explain the logical steps and how the prerequisite and approval conditions contribute to the eligibility determination.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": []
+  }
+}

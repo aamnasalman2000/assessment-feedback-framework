@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission includes a formal statement of the target implication and a structured proof body that decomposes the proposition into subgoals. The proof style is term-based, and the logical structure aligns with the requirement to use the exact logical implication. The structured data indicates the proof is correctly formatted and includes comments, which supports the formalisation criterion.",
+    "student_feedback": "The submission correctly formalises the target implication and provides a structured proof. The proof body decomposes the proposition into subgoals, demonstrating an understanding of the logical implication required by the brief.",
+    "suggestion": "Ensure that the comments in the proof are detailed enough to explain the reasoning steps clearly.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The submission includes the exact logical implication required by the brief."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "The proof body decomposes the proposition into subgoals, demonstrating the logical implication."
+      }
+    ]
+  }
+}

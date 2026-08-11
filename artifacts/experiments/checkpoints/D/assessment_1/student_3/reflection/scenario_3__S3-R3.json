@@ -1,0 +1,76 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_017",
+  "initial_observation_id": "obs_017",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The original assessment claims that no evidence directly addresses the requirement, but the structured_data includes 5 Lean declaration(s) which are considered evidence."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. A 'met' revision must be supported by submission-reference evidence or an explicit deterministic tool verification; absence evidence alone cannot establish that a requirement is met."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_017",
+    "requirement_id": "S3-R3",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "status": "missing",
+    "internal_finding": "No evidence directly addresses the requirement. The student submission does not include any unit or artifact that explicitly interprets the scenario conditions as specified in the requirement.",
+    "verification_status": "inferred",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R3",
+        "description": "No unit or artifact directly addresses the scenario_3 component for the requirement S3-R3."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "obs_017",
+    "feedback_type": "omission",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S3-R3"
+    ],
+    "criterion_assessment_ids": [
+      "ca_017"
+    ],
+    "internal_finding": "No evidence directly addresses the requirement. The student submission does not include any unit or artifact that explicitly interprets the scenario conditions as specified in the requirement.",
+    "student_feedback": "Your submission does not include any unit or artifact that interprets the scenario conditions as required. Please ensure that your formalisation correctly captures the implication direction for the destination condition.",
+    "suggestion": "Include a unit or artifact that explicitly formalises the scenario conditions with the correct implication direction for the destination condition.",
+    "verification_status": "inferred",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R3",
+        "description": "No unit or artifact directly addresses the scenario_3 component for the requirement S3-R3."
+      }
+    ]
+  }
+}

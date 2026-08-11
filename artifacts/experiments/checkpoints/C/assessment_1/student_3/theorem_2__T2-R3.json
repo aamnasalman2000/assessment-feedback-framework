@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_2",
+  "requirement_id": "T2-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission demonstrates the use of conjunction-elimination and falsehood axioms appropriately in all five examples. Each example includes a formal statement and a proof body with structured logical steps, indicating proper application of the required axioms.",
+    "student_feedback": "The student has correctly applied the conjunction-elimination and falsehood axioms in all five examples. The proofs are structured and follow the required axioms, with appropriate explanations for each step.",
+    "suggestion": "Consider adding more detailed comments to explain the logical steps in the proofs for better clarity.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "description": "Proof body for example 1 showing use of conjunction-elimination and falsehood axioms."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "description": "Proof body for example 2 showing use of conjunction-elimination and falsehood axioms."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 64,
+          "end_line": 67
+        },
+        "description": "Proof body for example 3 showing use of conjunction-elimination and falsehood axioms."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_004",
+        "block_id": "artifact_001_unit_004_proof",
+        "source_range": {
+          "start_line": 81,
+          "end_line": 84
+        },
+        "description": "Proof body for example 4 showing use of conjunction-elimination and falsehood axioms."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_005",
+        "block_id": "artifact_001_unit_005_proof",
+        "source_range": {
+          "start_line": 91,
+          "end_line": 102
+        },
+        "description": "Proof body for example 5 showing use of conjunction-elimination and falsehood axioms."
+      }
+    ]
+  }
+}

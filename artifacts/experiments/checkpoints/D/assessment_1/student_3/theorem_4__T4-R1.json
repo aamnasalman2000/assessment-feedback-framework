@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_4",
+  "requirement_id": "T4-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The requirement T4-R1, which asks to 'Assume provable y and combine it with provable x.' is not met. The student's submission does not include any explicit reference to combining provable x and y. The provided Lean examples focus on logical theorems and proofs but do not demonstrate the specific combination of provable x and y as required by the assessment criterion.",
+    "student_feedback": "The submission includes several logical theorems and proofs, but it does not explicitly combine provable x and y as required by the assessment criterion. The proofs are structured and follow logical axioms, but the specific combination of x and y is missing.",
+    "suggestion": "The student should explicitly reference and combine provable x and y in the proof, as required by the assessment criterion.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "task_id": "T4-R1",
+        "requirement_id": "T4-R1",
+        "description": "The submission does not include any explicit reference to combining provable x and y as required by the assessment criterion."
+      }
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_2",
+  "requirement_ids": [
+    "T2-R1",
+    "T2-R2",
+    "T2-R3",
+    "T2-R4",
+    "T2-R5"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T2-R1",
+        "status": "missing",
+        "internal_finding": "The requirement to extract provable False from provable (conj x False) is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "T2-R1",
+            "description": "The requirement to extract provable False from provable (conj x False) is not present."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R2",
+        "status": "missing",
+        "internal_finding": "The requirement to use the resulting contradiction to derive provable y is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "T2-R2",
+            "description": "The requirement to use the resulting contradiction to derive provable y is not present."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R3",
+        "status": "missing",
+        "internal_finding": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "T2-R3",
+            "description": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is not present."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R4",
+        "status": "missing",
+        "internal_finding": "The requirement to explain the principle of explosion and how it is implemented is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "T2-R4",
+            "description": "The requirement to explain the principle of explosion and how it is implemented is not present."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R5",
+        "status": "missing",
+        "internal_finding": "The requirement that the theorem must compile is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "T2-R5",
+            "description": "The requirement that the theorem must compile is not present."
+          }
+        ]
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T2-R1",
+          "T2-R2",
+          "T2-R3",
+          "T2-R4",
+          "T2-R5"
+        ],
+        "internal_finding": "All requirements for the component are missing.",
+        "student_feedback": "The component is missing all required elements for proof correctness, explanation, and compilation. The theorem does not meet the submission criteria.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component is missing all required elements for proof correctness, explanation, and compilation. The theorem does not meet the submission criteria."
+  }
+}

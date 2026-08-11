@@ -1,0 +1,85 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_009",
+  "initial_observation_id": "b_initial_obs_009",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_009",
+    "requirement_id": "S2-R2",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "status": "met",
+    "internal_finding": "The proof body correctly decomposes the proposition.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "The proof body correctly decomposes the proposition."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_009",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S2-R2"
+    ],
+    "criterion_assessment_ids": [
+      "ca_009"
+    ],
+    "internal_finding": "The proof body correctly decomposes the proposition.",
+    "student_feedback": "The proof body correctly decomposes the proposition.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "The proof body correctly decomposes the proposition."
+      }
+    ]
+  }
+}

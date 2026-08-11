@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_3",
+  "requirement_id": "T3-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission demonstrates the appropriate use of AxConjElimLeft, AxConjElimRight, and AxConjIntro in the proof bodies of the examples. The proofs are structured with clear decomposition of propositions and use of axioms, as indicated by the structured_data and content_blocks. The use of these axioms is consistent with the requirement.",
+    "student_feedback": "The student has correctly applied AxConjElimLeft, AxConjElimRight, and AxConjIntro in the proofs. The use of these axioms is appropriate and well-explained in the comments within the Lean examples.",
+    "suggestion": "No further action is needed as the requirement is fully met.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "description": "Proof body of example_2 demonstrating use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 64,
+          "end_line": 67
+        },
+        "description": "Proof body of example_3 demonstrating use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_004",
+        "block_id": "artifact_001_unit_004_proof",
+        "source_range": {
+          "start_line": 81,
+          "end_line": 84
+        },
+        "description": "Proof body of example_4 demonstrating use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_005",
+        "block_id": "artifact_001_unit_005_proof",
+        "source_range": {
+          "start_line": 91,
+          "end_line": 102
+        },
+        "description": "Proof body of example_5 demonstrating use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      }
+    ]
+  }
+}

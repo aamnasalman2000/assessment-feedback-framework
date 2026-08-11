@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "missing",
+    "internal_finding": "No evidence directly addresses the requirement. The student submission does not include any unit or artifact that explicitly interprets the scenario conditions as specified in the requirement.",
+    "student_feedback": "Your submission does not include any unit or artifact that interprets the scenario conditions as required. Please ensure that your formalisation correctly captures the implication direction for the destination condition.",
+    "suggestion": "Include a unit or artifact that explicitly formalises the scenario conditions with the correct implication direction for the destination condition.",
+    "verification_status": "inferred",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R3",
+        "description": "No unit or artifact directly addresses the scenario_3 component for the requirement S3-R3."
+      }
+    ]
+  }
+}

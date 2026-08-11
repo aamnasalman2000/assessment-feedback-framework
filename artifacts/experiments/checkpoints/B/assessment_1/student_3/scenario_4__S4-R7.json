@@ -1,0 +1,65 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_029",
+  "initial_observation_id": "b_initial_obs_029",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The derivation of ¬f is not explained in comments."
+      ],
+      "overlooked_evidence": [
+        "The student work includes a proof body with comments explaining the decomposition of the proposition."
+      ],
+      "missing_rubric_points": [
+        "The derivation of ¬f is not explicitly explained in the comments, which is a material defect."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement depends on a student-provided description or explanation, but the aligned Task 5 submission units contain no explanation. Formula evidence alone cannot establish that this requirement is met."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_029",
+    "requirement_id": "S4-R7",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "status": "not_met",
+    "internal_finding": "The derivation of ¬f is not explained in comments.",
+    "verification_status": "inferred",
+    "confidence": 0.7,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_029",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S4-R7"
+    ],
+    "criterion_assessment_ids": [
+      "ca_029"
+    ],
+    "internal_finding": "The derivation of ¬f is not explained in comments.",
+    "student_feedback": "The derivation of ¬f is not explained in comments.",
+    "verification_status": "inferred",
+    "confidence": 0.7,
+    "evidence": []
+  }
+}

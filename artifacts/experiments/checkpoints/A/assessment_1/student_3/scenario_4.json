@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_4",
+  "requirement_ids": [
+    "S4-R1",
+    "S4-R2",
+    "S4-R3",
+    "S4-R4",
+    "S4-R5",
+    "S4-R6",
+    "S4-R7",
+    "S4-R8"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S4-R1",
+        "status": "met",
+        "internal_finding": "The formal statement matches the target implication exactly.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R2",
+        "status": "met",
+        "internal_finding": "r is derived from t and t → r as required.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R3",
+        "status": "met",
+        "internal_finding": "m is derived from r and r → m as required.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R4",
+        "status": "not_met",
+        "internal_finding": "¬f is not derived from the available assumptions.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R5",
+        "status": "met",
+        "internal_finding": "The final result r ∧ m ∧ ¬f is constructed correctly.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R6",
+        "status": "met",
+        "internal_finding": "The proof targets the required implication, not a modified version.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R7",
+        "status": "not_met",
+        "internal_finding": "The derivation of ¬f is not explained in comments.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R8",
+        "status": "missing",
+        "internal_finding": "The Lean code does not compile as the compilation check was not run.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S4-R4",
+          "S4-R7"
+        ],
+        "internal_finding": "The derivation of ¬f is missing from the proof.",
+        "student_feedback": "The proof needs to include an explanation of how ¬f is derived from the assumptions.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "feedback_type": "omission",
+        "requirement_ids": [
+          "S4-R8"
+        ],
+        "internal_finding": "The Lean code does not compile as the compilation check was not run.",
+        "student_feedback": "The submission should include a compilation check to ensure the code is valid.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The proof correctly derives r, m, and the final result. However, ¬f is not derived, and the code does not compile. The formalisation is correct, but the explanation is missing."
+  }
+}

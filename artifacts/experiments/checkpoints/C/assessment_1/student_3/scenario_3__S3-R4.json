@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "missing",
+    "internal_finding": "The requirement S3-R4 is not met because no unit or artifact was submitted that addresses the scenario_3 component. The candidate evidence is empty, and no valid artifact or unit IDs are provided, indicating that the required work is demonstrably absent.",
+    "student_feedback": "No submission was made for the scenario_3 component. Please ensure that the required units and artifacts are included in the submission to address the formalisation requirement.",
+    "suggestion": "Submit the required units and artifacts for the scenario_3 component to formalise the conditions as specified in the requirement.",
+    "verification_status": "not_verified",
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R4",
+        "description": "No unit or artifact was submitted for the scenario_3 component, indicating that the required work is absent."
+      }
+    ]
+  }
+}

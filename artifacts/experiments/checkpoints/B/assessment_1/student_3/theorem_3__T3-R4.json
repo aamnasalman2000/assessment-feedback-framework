@@ -1,0 +1,91 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "theorem_3",
+  "requirement_id": "T3-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_044",
+  "initial_observation_id": "b_initial_obs_044",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_low",
+      "should_revise": true,
+      "revision_reason": "The original assessment claims that the use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present, but the student work is empty. The requirement is to use these axioms appropriately, but the absence of any student work means the assessment cannot determine if these axioms were used. The original finding is an unsupported claim because there is no evidence to evaluate the use of these axioms.",
+      "requirement_basis": "Use AxConjElimLeft, AxConjElimRight and AxConjIntro appropriately."
+    },
+    "revised_status": "missing",
+    "revised_internal_finding": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present in the submitted work.",
+    "revised_student_feedback": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present in the submitted work.",
+    "revised_suggestion": "Please ensure that the axioms AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in your submission.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.8,
+    "revised_evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T3-R4",
+        "description": "The submitted work is empty, so there is no evidence of the use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_044",
+    "requirement_id": "T3-R4",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_3"
+    ],
+    "status": "missing",
+    "internal_finding": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present in the submitted work.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T3-R4",
+        "description": "The submitted work is empty, so there is no evidence of the use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_044",
+    "feedback_type": "omission",
+    "scope": "task",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "T3-R4"
+    ],
+    "criterion_assessment_ids": [
+      "ca_044"
+    ],
+    "internal_finding": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present in the submitted work.",
+    "student_feedback": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present in the submitted work.",
+    "suggestion": "Please ensure that the axioms AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in your submission.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T3-R4",
+        "description": "The submitted work is empty, so there is no evidence of the use of AxConjElimLeft, AxConjElimRight, and AxConjIntro."
+      }
+    ]
+  }
+}

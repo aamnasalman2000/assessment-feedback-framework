@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "partially_met",
+    "internal_finding": "The submission includes a formal statement and a proof body that attempts to derive the target statement. The proof body includes decomposition of the proposition and references to variables, but the actual derivation steps are not fully shown. The structured data indicates the proof style is 'term', and the content includes comments, which supports the requirement.",
+    "student_feedback": "The submission demonstrates an attempt to derive the target statement from the given assumptions. However, the proof body does not fully show the derivation steps required to conclude (a ∧ d). The comments in the proof body support the requirement, but the derivation is incomplete.",
+    "suggestion": "The proof body should include the explicit steps to derive (a ∧ d) from the given assumptions, ensuring that each logical step is clearly shown and justified.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "description": "The proof body includes decomposition of the proposition and references to variables, but the actual derivation steps are not fully shown."
+      },
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S2-R2",
+        "description": "The proof body does not fully show the derivation steps required to conclude (a ∧ d)."
+      }
+    ]
+  }
+}

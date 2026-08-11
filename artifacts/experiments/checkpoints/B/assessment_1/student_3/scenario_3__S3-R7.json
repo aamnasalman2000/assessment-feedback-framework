@@ -1,0 +1,61 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_021",
+  "initial_observation_id": "b_initial_obs_021",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The proposition mapping and 'only if' interpretation are not explained in comments."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement depends on a student-provided description or explanation, but the aligned Task 5 submission units contain no explanation. Formula evidence alone cannot establish that this requirement is met."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_021",
+    "requirement_id": "S3-R7",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "status": "not_met",
+    "internal_finding": "The proposition mapping and 'only if' interpretation are not explained in comments.",
+    "verification_status": "inferred",
+    "confidence": 0.8,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_021",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S3-R7"
+    ],
+    "criterion_assessment_ids": [
+      "ca_021"
+    ],
+    "internal_finding": "The proposition mapping and 'only if' interpretation are not explained in comments.",
+    "student_feedback": "The proposition mapping and 'only if' interpretation are not explained in comments.",
+    "verification_status": "inferred",
+    "confidence": 0.8,
+    "evidence": []
+  }
+}

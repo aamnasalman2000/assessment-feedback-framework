@@ -1,0 +1,59 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_025",
+  "initial_observation_id": "b_initial_obs_025",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_025",
+    "requirement_id": "S4-R3",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "status": "met",
+    "internal_finding": "m is derived from r and r → m as required.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_025",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S4-R3"
+    ],
+    "criterion_assessment_ids": [
+      "ca_025"
+    ],
+    "internal_finding": "m is derived from r and r → m as required.",
+    "student_feedback": "m is derived from r and r → m as required.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": []
+  }
+}

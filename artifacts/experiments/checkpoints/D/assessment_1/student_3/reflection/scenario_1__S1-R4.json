@@ -1,0 +1,132 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_004",
+  "initial_observation_id": "obs_004",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The original assessment claims that the other examples are not directly relevant to the requirement."
+      ],
+      "overlooked_evidence": [
+        "The first example directly addresses the target proposition and handles all four cases."
+      ],
+      "missing_rubric_points": [
+        "The original assessment does not explicitly state that the proof needs to connect the cases to the target proposition z."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment incorrectly claims that the other examples are not directly relevant to the requirement, which is a material defect as it overlooks the evidence provided in the student work.",
+      "requirement_basis": "Correctly reason through the four possible prerequisite–approval combinations when deriving the target proposition."
+    },
+    "revised_status": "met",
+    "revised_internal_finding": "The student's submission includes four examples that address the four possible prerequisite–approval combinations. The first example directly addresses the target proposition ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z and handles all four cases. The proof body explicitly connects the cases to the target proposition z, and the reasoning is fully explained. The other examples are directly relevant to the requirement.",
+    "revised_student_feedback": "Your submitted work correctly addresses the four combinations and connects the cases to the target proposition z. The reasoning is fully explained and the examples are directly relevant to the requirement.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.95,
+    "revised_evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The first example directly addresses the target proposition and handles all four cases."
+      },
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "task_1",
+        "requirement_id": "S1-R4",
+        "description": "The original assessment incorrectly claims that the other examples are not directly relevant to the requirement."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_004",
+    "requirement_id": "S1-R4",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "status": "met",
+    "internal_finding": "The student's submission includes four examples that address the four possible prerequisite–approval combinations. The first example directly addresses the target proposition ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z and handles all four cases. The proof body explicitly connects the cases to the target proposition z, and the reasoning is fully explained. The other examples are directly relevant to the requirement.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The first example directly addresses the target proposition and handles all four cases."
+      },
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "task_1",
+        "requirement_id": "S1-R4",
+        "description": "The original assessment incorrectly claims that the other examples are not directly relevant to the requirement."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "obs_004",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S1-R4"
+    ],
+    "criterion_assessment_ids": [
+      "ca_004"
+    ],
+    "internal_finding": "The student's submission includes four examples that address the four possible prerequisite–approval combinations. The first example directly addresses the target proposition ((x1 ∨ x2) ∧ (y1 ∨ y2)) → z and handles all four cases. The proof body explicitly connects the cases to the target proposition z, and the reasoning is fully explained. The other examples are directly relevant to the requirement.",
+    "student_feedback": "Your submitted work correctly addresses the four combinations and connects the cases to the target proposition z. The reasoning is fully explained and the examples are directly relevant to the requirement.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "excerpt": "fun h =>\n    match h with\n    | And.intro (Or.inl hx1) (Or.inl hy1) => h1 hx1 hy1 -- case a)\n    | And.intro (Or.inl hx1) (Or.inr hy2) => h2 hx1 hy2 -- case b)\n    | And.intro (Or.inr hx2) (Or.inl hy1) => h3 hx2 hy1 -- case c)\n    | And.intro (Or.inr hx2) (Or.inr hy2) => h4 hx2 hy2",
+        "description": "The first example directly addresses the target proposition and handles all four cases."
+      },
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "task_1",
+        "requirement_id": "S1-R4",
+        "description": "The original assessment incorrectly claims that the other examples are not directly relevant to the requirement."
+      }
+    ]
+  }
+}

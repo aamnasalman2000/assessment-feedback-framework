@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_1",
+  "requirement_ids": [
+    "T1-R1",
+    "T1-R2",
+    "T1-R3",
+    "T1-R4",
+    "T1-R5"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T1-R1",
+        "status": "missing",
+        "internal_finding": "The requirement to prove that provable (conj x False) leads to a contradiction is not addressed.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T1-R2",
+        "status": "missing",
+        "internal_finding": "The requirement to prove that provable x does not imply that False is provable is not addressed.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T1-R3",
+        "status": "missing",
+        "internal_finding": "The requirement to use appropriate supplied axioms is not addressed.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T1-R4",
+        "status": "missing",
+        "internal_finding": "The requirement to explain both conjuncts of the theorem is not addressed.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T1-R5",
+        "status": "missing",
+        "internal_finding": "The requirement that the theorem must compile is not addressed.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "omission",
+        "requirement_ids": [
+          "T1-R1",
+          "T1-R2",
+          "T1-R3",
+          "T1-R4",
+          "T1-R5"
+        ],
+        "internal_finding": "The component is missing all required elements for the theorem.",
+        "student_feedback": "The component does not include the required proof, explanations, or compilation.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component is missing all required elements for the theorem. It does not include the required proof, explanations, or compilation. The submission is incomplete and does not meet the evaluation criteria."
+  }
+}

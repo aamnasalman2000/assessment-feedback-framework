@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "missing",
+    "internal_finding": "The requirement 'S3-R1' is missing from the submission. No student-defined propositions were identified that represent heavy congestion, unsafe weather, sufficient fuel, or destination reached. The candidate evidence and unit IDs are empty, indicating no relevant work was submitted.",
+    "student_feedback": "Your submission does not include any propositions that define the concepts required for this assessment. Please ensure you define the propositions for heavy congestion, unsafe weather, sufficient fuel, and destination reached as specified in the requirement.",
+    "suggestion": "Define the propositions for heavy congestion, unsafe weather, sufficient fuel, and destination reached in your Lean file. Ensure these are clearly labeled and included in the submission.",
+    "verification_status": "not_verified",
+    "confidence": 1.0,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R1",
+        "description": "No student-defined propositions were identified that represent heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+      }
+    ]
+  }
+}

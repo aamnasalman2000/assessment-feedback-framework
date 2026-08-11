@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "partially_met",
+    "internal_finding": "The student's submission includes a formal statement that aligns with the requirement, but the proof body does not fully demonstrate the conjunctive eligibility condition. The proof body handles all four cases but does not explicitly connect the conditions to the provable predicate z as required.",
+    "student_feedback": "The submission demonstrates an understanding of the conjunctive eligibility condition, but the proof needs to explicitly connect the conditions to the provable predicate z to fully meet the requirement.",
+    "suggestion": "Ensure that the proof explicitly connects the prerequisite and approval conditions to the provable predicate z.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_statement",
+        "source_range": {
+          "start_line": 18,
+          "end_line": 18
+        },
+        "description": "Formal statement of the eligibility condition."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "block_id": "artifact_001_unit_001_proof",
+        "source_range": {
+          "start_line": 19,
+          "end_line": 24
+        },
+        "description": "Proof body that handles all four cases of the eligibility condition."
+      }
+    ]
+  }
+}

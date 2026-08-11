@@ -1,0 +1,61 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R8",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_030",
+  "initial_observation_id": "b_initial_obs_030",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The Lean code does not compile as the compilation check was not run."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_low",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement concerns a property that requires deterministic verification, but no successful requirement-specific processing check establishes that property. The requirement cannot safely be marked as 'met'."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_030",
+    "requirement_id": "S4-R8",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "status": "missing",
+    "internal_finding": "The Lean code does not compile as the compilation check was not run.",
+    "verification_status": "not_verified",
+    "confidence": 0.5,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_030",
+    "feedback_type": "omission",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S4-R8"
+    ],
+    "criterion_assessment_ids": [
+      "ca_030"
+    ],
+    "internal_finding": "The Lean code does not compile as the compilation check was not run.",
+    "student_feedback": "The submission should include a compilation check to ensure the code is valid.",
+    "verification_status": "not_verified",
+    "confidence": 0.5,
+    "evidence": []
+  }
+}

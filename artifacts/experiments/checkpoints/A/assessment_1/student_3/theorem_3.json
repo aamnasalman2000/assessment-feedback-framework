@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_3",
+  "requirement_ids": [
+    "T3-R1",
+    "T3-R2",
+    "T3-R3",
+    "T3-R4",
+    "T3-R5",
+    "T3-R6"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T3-R1",
+        "status": "missing",
+        "internal_finding": "The nested conjunction's components are not extracted.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T3-R2",
+        "status": "missing",
+        "internal_finding": "The construction of (conj y x) is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T3-R3",
+        "status": "missing",
+        "internal_finding": "The construction of (conj (conj y x) z) is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T3-R4",
+        "status": "missing",
+        "internal_finding": "The use of AxConjElimLeft, AxConjElimRight, and AxConjIntro is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T3-R5",
+        "status": "missing",
+        "internal_finding": "The explanation of elimination and reconstruction steps is not present.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T3-R6",
+        "status": "missing",
+        "internal_finding": "The theorem does not compile as the submission is empty.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T3-R1",
+          "T3-R2",
+          "T3-R3",
+          "T3-R4",
+          "T3-R5",
+          "T3-R6"
+        ],
+        "internal_finding": "The component lacks all required elements for a correct and complete theorem.",
+        "student_feedback": "The theorem is not implemented. Please replace 'sorry' with actual proofs and add explanations.",
+        "verification_status": "inferred",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component is incomplete and lacks all necessary elements for a correct and complete theorem. The submission is empty and does not compile. All requirements are missing."
+  }
+}

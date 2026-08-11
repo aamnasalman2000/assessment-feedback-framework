@@ -1,0 +1,89 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_035",
+  "initial_observation_id": "b_initial_obs_035",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The requirement that the theorem must compile is not addressed."
+      ],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment claims that the requirement is not addressed, but the student work is empty and the evidence is not present. The requirement is about compilation, which is not addressed by the student work, but the original assessment does not provide a basis for this claim.",
+      "requirement_basis": "The theorem must compile."
+    },
+    "revised_status": "missing",
+    "revised_internal_finding": "The requirement that the theorem must compile is not addressed by the student work.",
+    "revised_student_feedback": "The requirement that the theorem must compile is not addressed by the student work.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.9,
+    "revised_evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T1-R5",
+        "description": "The student work is empty and does not contain any content that addresses the compilation requirement."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_035",
+    "requirement_id": "T1-R5",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "status": "missing",
+    "internal_finding": "The requirement that the theorem must compile is not addressed by the student work.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T1-R5",
+        "description": "The student work is empty and does not contain any content that addresses the compilation requirement."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_035",
+    "feedback_type": "omission",
+    "scope": "task",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "T1-R5"
+    ],
+    "criterion_assessment_ids": [
+      "ca_035"
+    ],
+    "internal_finding": "The requirement that the theorem must compile is not addressed by the student work.",
+    "student_feedback": "The requirement that the theorem must compile is not addressed by the student work.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "requirement_id": "T1-R5",
+        "description": "The student work is empty and does not contain any content that addresses the compilation requirement."
+      }
+    ]
+  }
+}

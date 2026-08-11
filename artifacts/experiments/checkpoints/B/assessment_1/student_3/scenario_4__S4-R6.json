@@ -1,0 +1,59 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R6",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_028",
+  "initial_observation_id": "b_initial_obs_028",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_028",
+    "requirement_id": "S4-R6",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "status": "met",
+    "internal_finding": "The proof targets the required implication, not a modified version.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_028",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S4-R6"
+    ],
+    "criterion_assessment_ids": [
+      "ca_028"
+    ],
+    "internal_finding": "The proof targets the required implication, not a modified version.",
+    "student_feedback": "The proof targets the required implication, not a modified version.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": []
+  }
+}

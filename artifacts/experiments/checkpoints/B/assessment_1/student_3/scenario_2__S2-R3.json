@@ -1,0 +1,113 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_010",
+  "initial_observation_id": "b_initial_obs_010",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The proof does not establish 'a' using the assumptions."
+      ],
+      "overlooked_evidence": [
+        "The student work includes the assumption ¬a → (c ∧ d) and ¬c."
+      ],
+      "missing_rubric_points": [
+        "The student work includes the assumption ¬a → (c ∧ d) and ¬c."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment incorrectly claims that the proof does not establish 'a' using the assumptions, despite the student work including the necessary assumptions and a formal statement that includes 'a ∧ d' as the conclusion.",
+      "requirement_basis": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c."
+    },
+    "revised_status": "met",
+    "revised_internal_finding": "The proof establishes 'a' using the assumptions ¬a → (c ∧ d) and ¬c.",
+    "revised_student_feedback": "The proof correctly establishes 'a' using the assumptions ¬a → (c ∧ d) and ¬c.",
+    "revised_suggestion": "Ensure the proof explicitly concludes 'a' based on the given assumptions.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.9,
+    "revised_evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The formal statement includes 'a ∧ d' as the conclusion, indicating 'a' is established."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_010",
+    "requirement_id": "S2-R3",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "status": "met",
+    "internal_finding": "The proof establishes 'a' using the assumptions ¬a → (c ∧ d) and ¬c.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The formal statement includes 'a ∧ d' as the conclusion, indicating 'a' is established."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_010",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S2-R3"
+    ],
+    "criterion_assessment_ids": [
+      "ca_010"
+    ],
+    "internal_finding": "The proof establishes 'a' using the assumptions ¬a → (c ∧ d) and ¬c.",
+    "student_feedback": "The proof correctly establishes 'a' using the assumptions ¬a → (c ∧ d) and ¬c.",
+    "suggestion": "Ensure the proof explicitly concludes 'a' based on the given assumptions.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The formal statement includes 'a ∧ d' as the conclusion, indicating 'a' is established."
+      }
+    ]
+  }
+}

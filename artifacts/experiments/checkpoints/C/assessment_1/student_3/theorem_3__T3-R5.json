@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_3",
+  "requirement_id": "T3-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission includes four units (artifact_001_unit_002, artifact_001_unit_003, artifact_001_unit_004, artifact_001_unit_005) that are aligned with the requirement. Each unit contains a formal statement and a proof body with comments explaining the decomposition of the proposition. The structured_data indicates the proof_style is 'term', and the content_blocks show the use of comments to explain the steps. The extraction_confidence for all units is 0.9, indicating strong alignment with the requirement.",
+    "student_feedback": "The submission demonstrates a clear understanding of the elimination and reconstruction steps in the theorems. The proofs include comments that explain the decomposition of the propositions, which aligns with the requirement for explanations. The structured data and content blocks support the explanation of the steps in the proofs.",
+    "suggestion": "The submission is already aligned with the requirement. No further action is needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "Proof body with comments explaining the decomposition of the proposition in example_2."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 64,
+          "end_line": 67
+        },
+        "excerpt": "fun h =>\n      match h with\n      | Or.inl hL => h1 hL\n      | Or.inr hR => h2 hR",
+        "description": "Proof body with comments explaining the decomposition of the proposition in example_3."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_004",
+        "block_id": "artifact_001_unit_004_proof",
+        "source_range": {
+          "start_line": 81,
+          "end_line": 84
+        },
+        "excerpt": "fun h =>\n    match h with\n      | Or.inl hL => h3 hL\n      | Or.inr hR => h4 hR",
+        "description": "Proof body with comments explaining the decomposition of the proposition in example_4."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_005",
+        "block_id": "artifact_001_unit_005_proof",
+        "source_range": {
+          "start_line": 91,
+          "end_line": 102
+        },
+        "excerpt": "fun h =>\n  -- decomposition of the proposition:\n    let htr       := h.left     -- (t → r)\n    let h2        := h.right\n    let hfr       := h2.left    -- (f → r)\n    let h3        := h2.right\n    let hrm       := h3.left    -- (r → m)\n    let h4        := h3.right\n    let hnmnf     := h4.left    -- (¬m ∨ ¬f)\n    let ht        := h4.right   -- t\n    let hr        := htr ht     -- r implied by t\n    let hm        := hrm hr",
+        "description": "Proof body with comments explaining the decomposition of the proposition in example_5."
+      }
+    ]
+  }
+}

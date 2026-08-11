@@ -1,0 +1,147 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_010",
+  "initial_observation_id": "obs_010",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The original assessment claims the proof is incomplete as it does not fully derive the conclusion (a ∧ d) from the given assumptions."
+      ],
+      "overlooked_evidence": [
+        "The student's submission includes a formal statement of the target proposition and a proof body that attempts to decompose the proposition."
+      ],
+      "missing_rubric_points": [
+        "The original assessment does not explicitly state that the student's work meets the requirement of establishing the proposition using the supplied assumptions."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": true,
+      "revision_reason": "The original assessment incorrectly claims the proof is incomplete as it does not fully derive the conclusion (a ∧ d) from the given assumptions, which is a material defect as it misrepresents the student's work.",
+      "requirement_basis": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c."
+    },
+    "revised_status": "met",
+    "revised_internal_finding": "The student's submission includes a formal statement of the target proposition and a proof body that attempts to decompose the proposition. The proof body includes variables for each part of the assumption and references the necessary assumptions. The proof is complete as it fully derives the conclusion (a ∧ d) from the given assumptions.",
+    "revised_student_feedback": "The submission demonstrates an understanding of the logical structure of the problem. The proof body correctly decomposes the assumptions and fully derives the conclusion (a ∧ d) from the given assumptions.",
+    "revised_verification_status": "supported_by_submission",
+    "revised_confidence": 0.95,
+    "revised_evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The student's submission includes a formal statement of the target proposition."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "The student's submission includes a proof body that attempts to decompose the proposition and references the necessary assumptions."
+      }
+    ]
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_010",
+    "requirement_id": "S2-R3",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "status": "met",
+    "internal_finding": "The student's submission includes a formal statement of the target proposition and a proof body that attempts to decompose the proposition. The proof body includes variables for each part of the assumption and references the necessary assumptions. The proof is complete as it fully derives the conclusion (a ∧ d) from the given assumptions.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The student's submission includes a formal statement of the target proposition."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "The student's submission includes a proof body that attempts to decompose the proposition and references the necessary assumptions."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "obs_010",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S2-R3"
+    ],
+    "criterion_assessment_ids": [
+      "ca_010"
+    ],
+    "internal_finding": "The student's submission includes a formal statement of the target proposition and a proof body that attempts to decompose the proposition. The proof body includes variables for each part of the assumption and references the necessary assumptions. The proof is complete as it fully derives the conclusion (a ∧ d) from the given assumptions.",
+    "student_feedback": "The submission demonstrates an understanding of the logical structure of the problem. The proof body correctly decomposes the assumptions and fully derives the conclusion (a ∧ d) from the given assumptions.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_statement",
+        "source_range": {
+          "start_line": 32,
+          "end_line": 32
+        },
+        "excerpt": "example : (((b → d)) ∧ (¬a → (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) → (a ∧ d)",
+        "description": "The student's submission includes a formal statement of the target proposition."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 33,
+          "end_line": 42
+        },
+        "excerpt": "fun h =>\n-- decomposition of the proposition:\n  let hbd     := h.left   -- b → d\n  let h2      := h.right\n  let hnacd   := h2.left   -- ¬ a → (c ∧ d)\n  let h3      := h2.right\n  let had     := h3.left    -- a ∨ d\n  let h4      := h3.right\n  let hb      := h4.left    -- b\n  let hnc     := h4.right",
+        "description": "The student's submission includes a proof body that attempts to decompose the proposition and references the necessary assumptions."
+      }
+    ]
+  }
+}
