@@ -1,0 +1,1303 @@
+{
+  "criterion_assessments": [
+    {
+      "criterion_assessment_id": "ca_001",
+      "requirement_id": "P1-R1",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The ontology contains at least ten relevant classes.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_001",
+          "block_id": "artifact_001_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "excerpt": "Bread",
+          "description": "Class Bread is included in the ontology."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_002",
+      "requirement_id": "P1-R2",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "partially_met",
+      "internal_finding": "Subclass relationships are partially justified.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_024",
+          "block_id": "artifact_001_unit_024",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "excerpt": "ToastedBread subclass of Bread",
+          "description": "Subclass relationship is explicitly defined."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_003",
+      "requirement_id": "P1-R3",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The ontology contains at least five meaningful object properties.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_011",
+          "block_id": "artifact_001_unit_011",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "excerpt": "hasBreadSlice",
+          "description": "Object property hasBreadSlice is included in the ontology."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_004",
+      "requirement_id": "P1-R4",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "partially_met",
+      "internal_finding": "Property characteristics are not fully modelled.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_011",
+          "block_id": "artifact_001_unit_011",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "excerpt": "hasBreadSlice",
+          "description": "Property hasBreadSlice is defined but domain/range not specified."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_005",
+      "requirement_id": "P1-R5",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The ontology contains a logically correct Description Logic axiom.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_022",
+          "block_id": "artifact_001_unit_022",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "excerpt": "Sandwich: object_some_values_from on hasBreadSlice",
+          "description": "Axiom is correctly defined with filler Bread."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_006",
+      "requirement_id": "P1-R6",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "not_met",
+      "internal_finding": "The ontology is not logically coherent.",
+      "verification_status": "inferred",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1_ontology",
+          "task_id": "part_1_ontology",
+          "requirement_id": "P1-R6",
+          "description": "No logical consistency check was performed."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_007",
+      "requirement_id": "P1-R7",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The report accurately describes the submitted ontology.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_003",
+          "unit_id": "artifact_003_unit_001",
+          "block_id": "artifact_003_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "excerpt": "Sandwich Ontology\n1 Introduction\nA sandwich is simply bread plus filling...",
+          "description": "Report accurately describes the ontology."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_008",
+      "requirement_id": "P1-R8",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The report clearly explains the purpose and scope of the ontology.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_003",
+          "unit_id": "artifact_003_unit_001",
+          "block_id": "artifact_003_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "excerpt": "Sandwich Ontology\n1 Introduction\nA sandwich is simply bread plus filling...",
+          "description": "Report clearly explains the purpose and scope of the ontology."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_009",
+      "requirement_id": "P1-R9",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The report justifies the chosen class and property hierarchies.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_003",
+          "unit_id": "artifact_003_unit_001",
+          "block_id": "artifact_003_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "excerpt": "Sandwich Ontology\n2 Classes\n2.1 Core Classes\nCore Class Role Modelling Rationale...",
+          "description": "Report justifies the chosen class and property hierarchies."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_010",
+      "requirement_id": "P1-R10",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The report correctly explains the Description Logic axiom.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_003",
+          "unit_id": "artifact_003_unit_001",
+          "block_id": "artifact_003_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "excerpt": "Sandwich Ontology\n2 Classes\n2.1 Core Classes\nCore Class Role Modelling Rationale...",
+          "description": "Report correctly explains the Description Logic axiom."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_011",
+      "requirement_id": "P1-R11",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "not_met",
+      "internal_finding": "The report lacks critical discussion of the ontology's strengths and limitations.",
+      "verification_status": "inferred",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1_ontology",
+          "task_id": "part_1_ontology",
+          "requirement_id": "P1-R11",
+          "description": "No critical discussion of strengths and limitations is present."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_012",
+      "requirement_id": "P1-R12",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "status": "met",
+      "internal_finding": "The report does not exceed the specified word limit of 750 words.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_003",
+          "unit_id": "artifact_003_unit_001",
+          "block_id": "artifact_003_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "excerpt": "Sandwich Ontology\n1 Introduction\nA sandwich is simply bread plus filling...",
+          "description": "Report is within the specified word limit."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_013",
+      "requirement_id": "P2-T1-R1",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_1"
+      ],
+      "status": "met",
+      "internal_finding": "The formula correctly prevents bread and filling from holding simultaneously.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_014",
+      "requirement_id": "P2-T1-R2",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_1"
+      ],
+      "status": "met",
+      "internal_finding": "The formula captures the intended meaning of mutual exclusivity.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_015",
+      "requirement_id": "P2-T1-R3",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_1"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted formula is well formed according to the supplied modal logic syntax.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_016",
+      "requirement_id": "P2-T1-R4",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_1"
+      ],
+      "status": "met",
+      "internal_finding": "The answer is provided in the required predicate answer1/1.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_017",
+      "requirement_id": "P2-T2-R1",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The bread requirement is not correctly conditioned on the presence of filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "P2-T2-R1",
+          "description": "The formula does not correctly condition the bread requirement on the presence of filling."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_018",
+      "requirement_id": "P2-T2-R2",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The formula does not require bread immediately above filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "P2-T2-R2",
+          "description": "The formula does not explicitly require bread immediately above filling."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_019",
+      "requirement_id": "P2-T2-R3",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The formula does not require bread immediately below filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "P2-T2-R3",
+          "description": "The formula does not explicitly require bread immediately below filling."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_020",
+      "requirement_id": "P2-T2-R4",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "met",
+      "internal_finding": "The formula expresses immediate adjacency rather than arbitrary vertical distance.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_002",
+          "description": "The formula uses dia(above, bread) and dia(below, bread) to express immediate adjacency."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_021",
+      "requirement_id": "P2-T2-R5",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The modal operators are used inconsistently with the supplied framework.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "P2-T2-R5",
+          "description": "The formula uses dia(above, bread) and dia(below, bread), which may not align with the framework's operator definitions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_022",
+      "requirement_id": "P2-T2-R6",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted formula is well formed according to the supplied modal logic syntax.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_002",
+          "description": "The formula is well-formed with proper syntax and structure."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_023",
+      "requirement_id": "P2-T2-R7",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "status": "met",
+      "internal_finding": "The answer is provided in the required predicate answer2/1.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_002",
+          "description": "The answer is provided in the required predicate answer2/1."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_024",
+      "requirement_id": "P2-T3-R1",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "met",
+      "internal_finding": "The distance restriction is correctly conditioned on the presence of filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_003",
+          "block_id": "artifact_002_unit_003_formula",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 175
+          },
+          "description": "The formula includes a condition on filling."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_025",
+      "requirement_id": "P2-T3-R2",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "met",
+      "internal_finding": "The formula distinguishes immediate adjacency from greater vertical distance.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_003",
+          "block_id": "artifact_002_unit_003_formula",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 175
+          },
+          "description": "The formula uses 'dia' and 'box' to express distance."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_026",
+      "requirement_id": "P2-T3-R3",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The formula incorrectly prohibits bread immediately below filling.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2_prolog_modal_logic",
+          "task_id": "part_2_task_3",
+          "requirement_id": "P2-T3-R3",
+          "description": "The formula does not explicitly allow bread immediately below filling."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_027",
+      "requirement_id": "P2-T3-R4",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "met",
+      "internal_finding": "The formula prevents bread from occurring more than one row below filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_003",
+          "block_id": "artifact_002_unit_003_formula",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 175
+          },
+          "description": "The formula uses 'box( above, not(bread) )' to prevent deeper bread."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_028",
+      "requirement_id": "P2-T3-R5",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "met",
+      "internal_finding": "The modal operators correctly express the intended spatial constraint.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_003",
+          "block_id": "artifact_002_unit_003_formula",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 175
+          },
+          "description": "The formula uses 'dia' and 'box' to express spatial constraints."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_029",
+      "requirement_id": "P2-T3-R6",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted formula is well formed according to the supplied modal logic syntax.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_003",
+          "block_id": "artifact_002_unit_003_formula",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 175
+          },
+          "description": "The formula is well-formed with proper syntax."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_030",
+      "requirement_id": "P2-T3-R7",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "status": "met",
+      "internal_finding": "The answer is provided in the required predicate answer3/1.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_002",
+          "unit_id": "artifact_002_unit_003",
+          "block_id": "artifact_002_unit_003_clause",
+          "source_range": {
+            "start_line": 168,
+            "end_line": 175
+          },
+          "description": "The predicate is named 'answer3' as required."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_031",
+      "requirement_id": "P2-T4-R1",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "status": "met",
+      "internal_finding": "The restriction is correctly conditioned on the presence of filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_032",
+      "requirement_id": "P2-T4-R2",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The formula applies only to the immediately adjacent state, not all relevant states above.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_033",
+      "requirement_id": "P2-T4-R3",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "status": "met",
+      "internal_finding": "The formula prevents filling from occurring anywhere above another filling state.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_034",
+      "requirement_id": "P2-T4-R4",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The modal operators do not correctly express the intended spatial constraint.",
+      "verification_status": "inferred",
+      "confidence": 0.75,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_035",
+      "requirement_id": "P2-T4-R5",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted formula is well formed according to the supplied modal logic syntax.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_036",
+      "requirement_id": "P2-T4-R6",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "status": "met",
+      "internal_finding": "The answer is provided in the required predicate answer4/1.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_037",
+      "requirement_id": "P2-T5-R1",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "Exactly three examples are provided.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_038",
+      "requirement_id": "P2-T5-R2",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "Each example clearly describes a problematic sandwich configuration.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_039",
+      "requirement_id": "P2-T5-R3",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "Each described configuration is compatible with the constraints established in Tasks 1–4.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_040",
+      "requirement_id": "P2-T5-R4",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "The three examples identify meaningfully different shortcomings of the original specification.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_041",
+      "requirement_id": "P2-T5-R5",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "Each preventive formula directly addresses the corresponding problem description.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_042",
+      "requirement_id": "P2-T5-R6",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "not_met",
+      "internal_finding": "At least one preventive formula does not successfully exclude the described configuration.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_043",
+      "requirement_id": "P2-T5-R7",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "Each submitted formula is well formed according to the supplied modal logic syntax.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_044",
+      "requirement_id": "P2-T5-R8",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "status": "met",
+      "internal_finding": "The responses are provided in answer51/1, answer52/1 and answer53/1.",
+      "verification_status": "supported_by_submission",
+      "confidence": 1.0,
+      "evidence": []
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "strength",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P1-R1",
+        "P1-R3",
+        "P1-R7",
+        "P1-R8",
+        "P1-R9",
+        "P1-R10",
+        "P1-R12"
+      ],
+      "criterion_assessment_ids": [
+        "ca_001",
+        "ca_003",
+        "ca_007",
+        "ca_008",
+        "ca_009",
+        "ca_010",
+        "ca_012"
+      ],
+      "internal_finding": "The ontology and report meet most requirements, with clear class definitions and accurate report descriptions.",
+      "student_feedback": "The ontology includes ten classes and five properties, and the report accurately describes the design.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_001",
+          "block_id": "artifact_001_unit_001",
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1
+          },
+          "excerpt": "Bread",
+          "description": "Class Bread is included in the ontology."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "error",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P1-R2",
+        "P1-R4",
+        "P1-R6",
+        "P1-R11"
+      ],
+      "criterion_assessment_ids": [
+        "ca_002",
+        "ca_004",
+        "ca_006",
+        "ca_011"
+      ],
+      "internal_finding": "Subclass relationships and property characteristics are not fully justified, and the report lacks critical analysis.",
+      "student_feedback": "Ensure subclass relationships are logically justified and property domains/ranges are specified. Add critical discussion of strengths and limitations.",
+      "verification_status": "inferred",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1_ontology",
+          "task_id": "part_1_ontology",
+          "requirement_id": "P1-R6",
+          "description": "No logical consistency check was performed."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T1-R1",
+        "P2-T1-R2",
+        "P2-T1-R3",
+        "P2-T1-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_013",
+        "ca_014",
+        "ca_015",
+        "ca_016"
+      ],
+      "internal_finding": "The formula correctly prevents bread and filling from holding simultaneously and is well-formed according to the modal logic syntax.",
+      "student_feedback": "The formula meets all the requirements for the task, including mutual exclusivity and proper formatting.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.98,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T2-R1",
+        "P2-T2-R2",
+        "P2-T2-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_017",
+        "ca_018",
+        "ca_019"
+      ],
+      "internal_finding": "The formula does not correctly condition the bread requirement on the presence of filling or require bread immediately above and below filling.",
+      "student_feedback": "Ensure the formula correctly conditions the bread requirement on the presence of filling and explicitly requires bread immediately above and below filling.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T2-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_021"
+      ],
+      "internal_finding": "The modal operators may not align with the framework's definitions.",
+      "student_feedback": "Review the framework's modal operator definitions to ensure consistency in the formula.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T3-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_026"
+      ],
+      "internal_finding": "The formula incorrectly prohibits bread immediately below filling.",
+      "student_feedback": "The formula should explicitly allow bread immediately below filling.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_007",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T3-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_026"
+      ],
+      "internal_finding": "The formula incorrectly prohibits bread immediately below filling.",
+      "student_feedback": "Consider adding a condition to explicitly allow bread immediately below filling.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_008",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T4-R2",
+        "P2-T4-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_032",
+        "ca_034"
+      ],
+      "internal_finding": "The formula does not correctly enforce the vertical constraint across all relevant states above.",
+      "student_feedback": "Use 'box' with 'above' to ensure all states above are checked, not just adjacent ones.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_009",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T4-R2",
+        "P2-T4-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_032",
+        "ca_034"
+      ],
+      "internal_finding": "The formula's modal logic may not correctly express the vertical constraint.",
+      "student_feedback": "Consider using 'forall' with 'above' to explicitly check all states above.",
+      "verification_status": "inferred",
+      "confidence": 0.85,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_010",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "P2-T5-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_042"
+      ],
+      "internal_finding": "At least one preventive formula does not successfully exclude the described configuration.",
+      "student_feedback": "Ensure that each preventive formula effectively excludes the described configuration.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Sandwich Ontology",
+      "scope": "part",
+      "part_ids": [
+        "part_1_ontology"
+      ],
+      "task_ids": [],
+      "summary": "The ontology includes ten classes and five properties, with a well-structured report. Subclass relationships and property characteristics need improvement, and the report lacks critical analysis.",
+      "observation_ids": [
+        "obs_001",
+        "obs_002"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Bread and Filling Mutual Exclusivity",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_1"
+      ],
+      "summary": "The formula correctly prevents bread and filling from occupying the same grid state. The answer is well-formed and meets all the requirements for the task.",
+      "observation_ids": [
+        "obs_003"
+      ]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Bread Immediately Above and Below Filling",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_2"
+      ],
+      "summary": "The formula correctly expresses immediate adjacency but fails to condition the bread requirement on filling and explicitly require bread above and below. Modal operators may not align with the framework's definitions.",
+      "observation_ids": [
+        "obs_004",
+        "obs_005"
+      ]
+    },
+    {
+      "section_id": "section_004",
+      "label": "No Bread More Than One Row Below Filling",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_3"
+      ],
+      "summary": "The formula correctly expresses the spatial constraint, but incorrectly prohibits bread immediately below filling. The formula is well-formed and meets all other requirements.",
+      "observation_ids": [
+        "obs_006",
+        "obs_007"
+      ]
+    },
+    {
+      "section_id": "section_005",
+      "label": "No Filling Anywhere Above Filling",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_4"
+      ],
+      "summary": "The formula correctly enforces the filling restriction but fails to apply the vertical constraint to all relevant states above. The modal logic may not correctly express the intended spatial constraint.",
+      "observation_ids": [
+        "obs_008",
+        "obs_009"
+      ]
+    },
+    {
+      "section_id": "section_006",
+      "label": "Additional Problematic Sandwich Configurations",
+      "scope": "task",
+      "part_ids": [
+        "part_2_prolog_modal_logic"
+      ],
+      "task_ids": [
+        "part_2_task_5"
+      ],
+      "summary": "The component provides three well-formed examples with preventive formulas. However, one formula may not effectively exclude the described configuration, which needs correction.",
+      "observation_ids": [
+        "obs_010"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The ontology includes ten classes and five properties, with a well-structured report. Subclass relationships and property characteristics need improvement, and the report lacks critical analysis. The formula correctly prevents bread and filling from occupying the same grid state. The answer is well-formed and meets all the requirements for the task. The formula correctly expresses immediate adjacency but fails to condition the bread requirement on filling and explicitly require bread above and below. Modal operators may not align with the framework's definitions. The formula correctly expresses the spatial constraint, but incorrectly prohibits bread immediately below filling. The formula is well-formed and meets all other requirements. The formula correctly enforces the filling restriction but fails to apply the vertical constraint to all relevant states above. The modal logic may not correctly express the intended spatial constraint. The component provides three well-formed examples with preventive formulas. However, one formula may not effectively exclude the described configuration, which needs correction.",
+    "strengths_summary": "The ontology includes ten classes and five properties, and the report accurately describes the design. The formula meets all the requirements for the task, including mutual exclusivity and proper formatting.",
+    "improvement_summary": "Ensure subclass relationships are logically justified and property domains/ranges are specified. Add critical discussion of strengths and limitations. Ensure the formula correctly conditions the bread requirement on the presence of filling and explicitly requires bread immediately above and below filling. Review the framework's modal operator definitions to ensure consistency in the formula.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006",
+      "obs_007",
+      "obs_008",
+      "obs_009",
+      "obs_010"
+    ]
+  }
+}

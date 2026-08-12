@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The requirement P1-R4 is met as the student has provided six units, each representing an object property in the OWL ontology. Each unit has a label and structured data indicating the entity type as ObjectProperty, with the correct IRI format. The units are relevant to the sandwich domain and correctly model property domains, ranges, hierarchies, and characteristics as per the requirement.",
+    "student_feedback": "The student has correctly modelled six object properties in the OWL ontology, each with appropriate labels and structured data. The properties are relevant to the sandwich domain and correctly represent property domains, ranges, hierarchies, and characteristics.",
+    "suggestion": "No further action is required as the requirement is fully met.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_011",
+        "description": "ObjectProperty 'hasBreadSlice' is correctly modelled with IRI #hasBreadSlice."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_012",
+        "description": "ObjectProperty 'hasDeck' is correctly modelled with IRI #hasDeck."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_013",
+        "description": "ObjectProperty 'hasIngredient' is correctly modelled with IRI #hasIngredient."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_014",
+        "description": "ObjectProperty 'isCommonIn' is correctly modelled with IRI #isCommonIn."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_015",
+        "description": "ObjectProperty 'isFilledWith' is correctly modelled with IRI #isFilledWith."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_016",
+        "description": "ObjectProperty 'isServedWith' is correctly modelled with IRI #isServedWith."
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission contains two units that each represent an axiom using a number restriction. The first unit, 'Sandwich: object_some_values_from on hasBreadSlice', defines that a Sandwich has some values from the Bread class via the hasBreadSlice property. The second unit, 'Sandwich: object_some_values_from on hasIngredient', defines that a Sandwich has some values from the Filling class via the hasIngredient property. Both axioms use the 'object_some_values_from' type, which is a form of number restriction in OWL.",
+    "student_feedback": "Your submission includes two axioms that use number restrictions. These axioms correctly model the domain by defining relationships between the Sandwich and its components. However, the axioms use 'object_some_values_from' which is a form of number restriction, but it may be more appropriate to use 'some_values_from' for this purpose.",
+    "suggestion": "Consider using 'some_values_from' instead of 'object_some_values_from' for the axioms to better express the intended number restriction.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_022",
+        "description": "Axiom defining that a Sandwich has some values from the Bread class via the hasBreadSlice property."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_023",
+        "description": "Axiom defining that a Sandwich has some values from the Filling class via the hasIngredient property."
+      }
+    ]
+  }
+}

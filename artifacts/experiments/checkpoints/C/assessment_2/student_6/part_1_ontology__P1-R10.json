@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R10",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's submission does not include a report that explains the Description Logic axiom and relates it to the source text. The evidence provided only includes ontology restrictions and does not contain any report-related content.",
+    "student_feedback": "Your submission includes ontology restrictions but does not include a report that explains the Description Logic axiom and relates it to the source text. Please ensure that the report is included and that it addresses the Description Logic axiom as required.",
+    "suggestion": "Include a report that explains the Description Logic axiom and relates it to the source text. Ensure that the report is part of the submission and that it clearly addresses the axiom in the context of the ontology.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1_ontology",
+        "requirement_id": "P1-R10",
+        "description": "The report that explains the Description Logic axiom and relates it to the source text is missing from the submission."
+      }
+    ]
+  }
+}

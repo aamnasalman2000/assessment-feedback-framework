@@ -1,0 +1,105 @@
+{
+  "component_alignments": [
+    {
+      "component_id": "part_1_ontology",
+      "primary_unit_ids": [
+        "artifact_001_unit_001",
+        "artifact_001_unit_002",
+        "artifact_001_unit_003",
+        "artifact_001_unit_004",
+        "artifact_001_unit_005",
+        "artifact_001_unit_006",
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011",
+        "artifact_001_unit_012",
+        "artifact_001_unit_013",
+        "artifact_001_unit_014",
+        "artifact_001_unit_015",
+        "artifact_001_unit_016",
+        "artifact_001_unit_017",
+        "artifact_001_unit_018",
+        "artifact_001_unit_019",
+        "artifact_001_unit_020",
+        "artifact_001_unit_021",
+        "artifact_001_unit_022",
+        "artifact_001_unit_023",
+        "artifact_001_unit_024"
+      ],
+      "supporting_unit_ids": [
+        "artifact_003_unit_001"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "All units are ontology class declarations that directly contribute to the development of the OWL ontology for the sandwich domain. Each unit defines a class in the ontology, which is a core requirement for the 'Sandwich Ontology' component. All units directly declare classes in the ontology domain, which is the primary task of the component 'part_1_ontology'. Each unit is a declaration of a class in the OWL ontology, which is part of the ontology domain. These units serve as the foundational elements of the ontology structure. All units declare object properties in the ontology domain, directly answering the component's task of developing an OWL ontology for the sandwich domain. All units directly contribute to the development of the OWL ontology for the sandwich domain by declaring entities and properties. The units are explicitly mapped to part_1_ontology and are part of the ontology development task. The units directly implement the ontology for the sandwich domain, including class declarations, subclass relationships, and property restrictions. The report section provides supporting justification for the ontology design.",
+      "confidence": 0.938,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_1",
+      "primary_unit_ids": [
+        "artifact_002_unit_001"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit contains a modal logic formula that directly addresses the mutual exclusivity between bread and filling, as required by the component. The formula ensures that no grid state may satisfy both bread and filling simultaneously.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_2",
+      "primary_unit_ids": [
+        "artifact_002_unit_002"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit provides a modal logic formula that directly answers the component's task of expressing the constraint that bread must be immediately above and below filling. The formula uses the dia operator with the above and below relations to enforce vertical adjacency between bread and filling, which aligns with the component's semantic goal.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_3",
+      "primary_unit_ids": [
+        "artifact_002_unit_003"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit provides a modal logic formula that directly addresses the task of ensuring bread does not appear more than one row below a state containing filling. The formula uses the 'dia' operator and 'box' operator to express the required distance constraint, aligning with the task summary and semantic goal.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_4",
+      "primary_unit_ids": [
+        "artifact_002_unit_004"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit contains a modal logic formula that directly answers the component's task of expressing a global vertical constraint. The formula uses the box operator to enforce that if a state contains filling, no state above it may also contain filling, which matches the semantic goal of the component.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "part_2_task_5",
+      "primary_unit_ids": [
+        "artifact_002_unit_005",
+        "artifact_002_unit_006",
+        "artifact_002_unit_007"
+      ],
+      "supporting_unit_ids": [],
+      "possibly_relevant_unit_ids": [],
+      "reason": "All three units are prolog_task_5_answers with task_mapping indicating they are part of part_2_prolog_modal_logic and part_2_task_5. The structured_data in each unit contains modal logic formulas that directly address the task of formalising constraints for the sandwich domain, which aligns with the assessment component's goal of identifying problematic configurations and adding constraints.",
+      "confidence": 0.95,
+      "unresolved": false
+    }
+  ],
+  "summary": "Assessment components were aligned using deterministic candidate selection followed by component-level model-assisted evidence routing.",
+  "warnings": [],
+  "schema_version": "1.0",
+  "assessment_id": "assessment_2",
+  "source_submission_id": "assessment_2_student_6",
+  "processed_submission_id": "processed_assessment_2_student_6",
+  "model_name": "Qwen/Qwen3-4B",
+  "aligner_version": "1.0"
+}

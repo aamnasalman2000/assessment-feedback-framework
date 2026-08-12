@@ -1,0 +1,321 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "part_1_ontology",
+  "requirement_ids": [
+    "P1-R1",
+    "P1-R2",
+    "P1-R3",
+    "P1-R4",
+    "P1-R5",
+    "P1-R6",
+    "P1-R7",
+    "P1-R8",
+    "P1-R9",
+    "P1-R10",
+    "P1-R11",
+    "P1-R12"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "P1-R1",
+        "status": "met",
+        "internal_finding": "The ontology contains at least ten relevant classes.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "Bread",
+            "description": "Class Bread is included in the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R2",
+        "status": "partially_met",
+        "internal_finding": "Subclass relationships are partially justified.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_024",
+            "block_id": "artifact_001_unit_024",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "ToastedBread subclass of Bread",
+            "description": "Subclass relationship is explicitly defined."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R3",
+        "status": "met",
+        "internal_finding": "The ontology contains at least five meaningful object properties.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_011",
+            "block_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "hasBreadSlice",
+            "description": "Object property hasBreadSlice is included in the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R4",
+        "status": "partially_met",
+        "internal_finding": "Property characteristics are not fully modelled.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_011",
+            "block_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "hasBreadSlice",
+            "description": "Property hasBreadSlice is defined but domain/range not specified."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R5",
+        "status": "met",
+        "internal_finding": "The ontology contains a logically correct Description Logic axiom.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_022",
+            "block_id": "artifact_001_unit_022",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "Sandwich: object_some_values_from on hasBreadSlice",
+            "description": "Axiom is correctly defined with filler Bread."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R6",
+        "status": "not_met",
+        "internal_finding": "The ontology is not logically coherent.",
+        "verification_status": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1_ontology",
+            "task_id": "part_1_ontology",
+            "requirement_id": "P1-R6",
+            "description": "No logical consistency check was performed."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R7",
+        "status": "met",
+        "internal_finding": "The report accurately describes the submitted ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": "Sandwich Ontology\n1 Introduction\nA sandwich is simply bread plus filling...",
+            "description": "Report accurately describes the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R8",
+        "status": "met",
+        "internal_finding": "The report clearly explains the purpose and scope of the ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": "Sandwich Ontology\n1 Introduction\nA sandwich is simply bread plus filling...",
+            "description": "Report clearly explains the purpose and scope of the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R9",
+        "status": "met",
+        "internal_finding": "The report justifies the chosen class and property hierarchies.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": "Sandwich Ontology\n2 Classes\n2.1 Core Classes\nCore Class Role Modelling Rationale...",
+            "description": "Report justifies the chosen class and property hierarchies."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R10",
+        "status": "met",
+        "internal_finding": "The report correctly explains the Description Logic axiom.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": "Sandwich Ontology\n2 Classes\n2.1 Core Classes\nCore Class Role Modelling Rationale...",
+            "description": "Report correctly explains the Description Logic axiom."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R11",
+        "status": "not_met",
+        "internal_finding": "The report lacks critical discussion of the ontology's strengths and limitations.",
+        "verification_status": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1_ontology",
+            "task_id": "part_1_ontology",
+            "requirement_id": "P1-R11",
+            "description": "No critical discussion of strengths and limitations is present."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R12",
+        "status": "met",
+        "internal_finding": "The report does not exceed the specified word limit of 750 words.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": "Sandwich Ontology\n1 Introduction\nA sandwich is simply bread plus filling...",
+            "description": "Report is within the specified word limit."
+          }
+        ]
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "P1-R1",
+          "P1-R3",
+          "P1-R7",
+          "P1-R8",
+          "P1-R9",
+          "P1-R10",
+          "P1-R12"
+        ],
+        "internal_finding": "The ontology and report meet most requirements, with clear class definitions and accurate report descriptions.",
+        "student_feedback": "The ontology includes ten classes and five properties, and the report accurately describes the design.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "Bread",
+            "description": "Class Bread is included in the ontology."
+          }
+        ]
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "P1-R2",
+          "P1-R4",
+          "P1-R6",
+          "P1-R11"
+        ],
+        "internal_finding": "Subclass relationships and property characteristics are not fully justified, and the report lacks critical analysis.",
+        "student_feedback": "Ensure subclass relationships are logically justified and property domains/ranges are specified. Add critical discussion of strengths and limitations.",
+        "verification_status": "inferred",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1_ontology",
+            "task_id": "part_1_ontology",
+            "requirement_id": "P1-R6",
+            "description": "No logical consistency check was performed."
+          }
+        ]
+      }
+    ],
+    "component_summary": "The ontology includes ten classes and five properties, with a well-structured report. Subclass relationships and property characteristics need improvement, and the report lacks critical analysis."
+  }
+}

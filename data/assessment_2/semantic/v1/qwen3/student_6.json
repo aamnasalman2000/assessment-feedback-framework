@@ -1,0 +1,2043 @@
+{
+  "schema_version": "2.0",
+  "source_submission_id": "assessment_2_student_6",
+  "processed_submission_id": "processed_assessment_2_student_6",
+  "extractor_version": "2.0",
+  "model_name": "Qwen/Qwen3-4B",
+  "document_regions": [],
+  "unit_annotations": [
+    {
+      "unit_id": "artifact_001_unit_001",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Bread"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Bread' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. The unit serves as a supporting definition for the ontology domain, providing a foundational class that may be used in the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_002",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_002",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_002",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Country"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Country' in the ontology domain. The class is defined with the IRI '#Country' and is part of the ontology class declaration. The unit serves as a supporting definition for the ontology domain, providing a class declaration that is part of the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_003",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Deck"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Deck' in the ontology domain. The class is defined with the IRI '#Deck' and is part of the OWL XML serialization. The unit serves as a class declaration in the ontology, which is a fundamental element of the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_004",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_004",
+            "source_range": {
+              "start_line": 3,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_004",
+            "source_range": {
+              "start_line": 3,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "DoubleDeckerSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class in the ontology domain. The class 'DoubleDeckerSandwich' is defined as a class in the ontology. This declaration serves to model the domain by introducing a new class that represents a type of sandwich.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_005",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_005",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_005",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Filling"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class named 'Filling' in the ontology domain. The class is defined with the IRI '#Filling' and is part of the ontology class declaration. This declaration serves as a foundational entity in the ontology, representing a class that may be used to model the presence of filling in the sandwich domain.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_006",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_006",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_006",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "OpenSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'OpenSandwich' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology, which is part of the ontology domain. The unit serves as a supporting definition for the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_007",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_007",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_007",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Sandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Sandwich' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. The unit serves as a supporting definition for the ontology domain, providing a foundational class that may be used in the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_008",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_008",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_008",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "SideDish"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'SideDish' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology, which is part of the ontology domain. The class is not associated with any properties or axioms, but it serves as a basic class declaration in the ontology.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_009",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_009",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_009",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "ToastedBread"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'ToastedBread' in the ontology domain. The class is defined as a declaration of a class with the IRI '#ToastedBread'. This represents a basic class declaration in the ontology, which is a fundamental element of the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_010",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_010",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_010",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "ToastedSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class in the ontology domain. The class 'ToastedSandwich' is defined as a class in the ontology. This declaration serves as a foundational element of the ontology, representing a type of sandwich that is toasted.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_011",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "hasBreadSlice"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property in the ontology domain. The property 'hasBreadSlice' is defined as an ObjectProperty with the IRI '#hasBreadSlice'. This declaration represents a relationship between entities in the ontology domain, specifically indicating that one entity has a bread slice related to another entity.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_012",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "hasDeck"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property 'hasDeck' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#hasDeck'. This declaration represents a formal ontology entity that defines a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_013",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "hasIngredient"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property in the ontology domain. The property 'hasIngredient' is defined as an ObjectProperty with the IRI '#hasIngredient'. This declaration represents a formal ontology entity that models a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_014",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_014",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_014",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "isCommonIn"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property named 'isCommonIn' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#isCommonIn'. This declaration represents a formal ontology entity that defines a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_015",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "isFilledWith"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property named 'isFilledWith' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#isFilledWith'. This declaration represents a formal ontology entity that defines a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_016",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declaring an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_016",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declaring an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_016",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "isServedWith"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property 'isServedWith' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#isServedWith'. This declaration serves to model a relationship between entities in the ontology domain, specifically representing a property that connects two entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_017",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_017",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_017",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "NamedIndividual",
+          "entity_names": [
+            "Crisps"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a named individual entity 'Crisps' in the ontology domain. The entity is defined with the IRI '#Crisps' and is part of the owl_xml serialisation format. The unit represents a declaration of an individual entity in the ontology, which is a fundamental element of ontology modelling.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_018",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_018",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "analytical_method",
+        "name": "ontology_pattern",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_018",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "NamedIndividual",
+          "entity_names": [
+            "bacon"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a named individual entity 'bacon' in the ontology domain. The entity is defined as a NamedIndividual with the IRI '#bacon' in the owl_xml serialisation format.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_019",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_019",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "analytical_method",
+        "name": "ontology_pattern",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_019",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "NamedIndividual",
+          "entity_names": [
+            "chicken"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a named individual entity 'chicken' in the ontology domain. The entity is defined as a NamedIndividual with the IRI '#chicken' in the owl_xml serialisation format.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_020",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_020",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "analytical_method",
+        "name": "ontology_pattern",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_020",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "NamedIndividual",
+          "entity_names": [
+            "clubSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a named individual entity 'clubSandwich' in the ontology domain. The entity is defined with the IRI '#clubSandwich' and is part of the owl_xml serialisation format. The declaration represents a concrete entity in the ontology domain, which is a basic entity in the ontology.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_021",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_021",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "analytical_method",
+        "name": "ontology_pattern",
+        "description": "Declare an individual entity in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_021",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "NamedIndividual",
+          "entity_names": [
+            "salad"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a named individual entity 'salad' in the ontology domain. The entity is identified by the IRI '#salad' and is part of the ontology individual declaration. This declaration serves as a basic entity in the ontology domain, representing a specific instance within the sandwich ontology.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_022",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a class hierarchy and property restrictions for the sandwich domain.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_022",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "This unit models a property restriction in the ontology.",
+        "confidence": 0.92,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_022",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Sandwich",
+            "hasBreadSlice",
+            "Bread"
+          ],
+          "axiom_type": "object_some_values_from",
+          "subject": "Sandwich",
+          "property_name": "hasBreadSlice",
+          "target": null,
+          "filler": "Bread",
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a class hierarchy and property restrictions for the sandwich domain. The unit specifies that the class 'Sandwich' has an object some values from relationship with the property 'hasBreadSlice' and the class 'Bread'. This represents a class hierarchy and property restriction in the ontology.",
+      "confidence": 0.93
+    },
+    {
+      "unit_id": "artifact_001_unit_023",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Modeling the domain of sandwiches using an ontology restriction",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_023",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 10
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Modelling the property 'hasIngredient' with a restriction on the filler class 'Filling'",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_023",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 10
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Sandwich",
+            "hasIngredient",
+            "Filling"
+          ],
+          "axiom_type": "object_some_values_from",
+          "subject": "Sandwich",
+          "property_name": "hasIngredient",
+          "target": null,
+          "filler": "Filling",
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines an ontology restriction that specifies that the class 'Sandwich' has some instances of the property 'hasIngredient' with the filler class 'Filling'. The restriction indicates that for every instance of 'Sandwich', there exists at least one instance of 'Filling' that is related through the 'hasIngredient' property. This forms part of the class hierarchy and property modelling in the ontology.",
+      "confidence": 0.97
+    },
+    {
+      "unit_id": "artifact_001_unit_024",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subclass relationship between 'ToastedBread' and 'Bread' in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_024",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_024_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "This unit defines a subclass relationship between 'ToastedBread' and 'Bread' in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_024",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_024_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "ToastedBread",
+            "Bread"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "ToastedBread",
+          "property_name": null,
+          "target": "Bread",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between 'ToastedBread' and 'Bread' in the ontology. It represents a direct subclass relationship where 'ToastedBread' is a subclass of 'Bread', indicating that 'ToastedBread' is a specific type of 'Bread'. This is a fundamental class hierarchy relationship in the ontology, establishing the inheritance of properties and constraints from 'Bread' to 'ToastedBread'.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_001",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a constraint expressing mutual exclusivity between bread and filling in a modal logic framework.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_001",
+            "source_range": {
+              "start_line": 105,
+              "end_line": 108
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_001_formula",
+            "source_range": {
+              "start_line": 105,
+              "end_line": 108
+            },
+            "excerpt": "and( implies(bread,   not(filling)),\n             implies(filling, not(bread)) )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express the mutual exclusivity constraint using modal logic operators and implications.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_001_formula",
+            "source_range": {
+              "start_line": 105,
+              "end_line": 108
+            },
+            "excerpt": "and( implies(bread,   not(filling)),\n             implies(filling, not(bread)) )"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer1",
+          "formula_summary": "and( implies(bread,   not(filling)),\n             implies(filling, not(bread)) )",
+          "operators": [
+            "and",
+            "not",
+            "implies"
+          ],
+          "modal_relations": [],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The submitted answer expresses a mutual exclusivity constraint between bread and filling using modal logic. The formula ensures that no grid state may satisfy both bread and filling simultaneously by requiring that if bread is present, filling is not, and vice versa.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_002",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for the sandwich domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_002",
+            "source_range": {
+              "start_line": 140,
+              "end_line": 147
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_002_formula",
+            "source_range": {
+              "start_line": 140,
+              "end_line": 147
+            },
+            "excerpt": "implies(\n            filling,\n            and( dia(above, bread),                  % bread below (always)\n                 or( dia(below, bread),              % bread above  (closed)\n                     dia(openSandwich, filling) ) )  % or it’s open-face\n        )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express the constraint using modal logic operators and spatial relations",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_002_formula",
+            "source_range": {
+              "start_line": 140,
+              "end_line": 147
+            },
+            "excerpt": "implies(\n            filling,\n            and( dia(above, bread),                  % bread below (always)\n                 or( dia(below, bread),              % bread above  (closed)\n                     dia(openSandwich, filling) ) )  % or it’s open-face\n        )"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer2",
+          "formula_summary": "implies(\n            filling,\n            and( dia(above, bread),                  % bread below (always)\n                 or( dia(below, bread),              % bread above  (closed)\n                     dia(openSandwich, filling) ) )  % or it’s open-face\n        )",
+          "operators": [
+            "and",
+            "or",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "above",
+            "below",
+            "openSandwich"
+          ],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The unit provides a modal logic formula that expresses the constraint that whenever filling is present, bread must be immediately above and below it. The formula uses the dia operator with the above and below relations to enforce vertical adjacency between bread and filling.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_003",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for the sandwich domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_003",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "excerpt": "implies(\n            filling,\n            dia( oneabove,                          % jump to the cell 1 row below\n                 and( bread,                        % that cell is bread\n                      box( above, not(bread) ) ) )  % every deeper cell is NOT bread\n        )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express the constraint using modal logic operators",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "excerpt": "implies(\n            filling,\n            dia( oneabove,                          % jump to the cell 1 row below\n                 and( bread,                        % that cell is bread\n                      box( above, not(bread) ) ) )  % every deeper cell is NOT bread\n        )"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer3",
+          "formula_summary": "implies(\n            filling,\n            dia( oneabove,                          % jump to the cell 1 row below\n                 and( bread,                        % that cell is bread\n                      box( above, not(bread) ) ) )  % every deeper cell is NOT bread\n        )",
+          "operators": [
+            "and",
+            "not",
+            "implies",
+            "dia",
+            "box"
+          ],
+          "modal_relations": [
+            "oneabove",
+            "above"
+          ],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The unit provides a modal logic formula that ensures bread does not appear in any cell that is more than one row below a cell containing filling. The formula uses the 'dia' operator to express that if a cell contains filling, then there exists some cell reachable via 'oneabove' where both bread and a cell with 'box(above, not(bread))' are present. This ensures that bread does not appear in any cell that is more than one row below a cell with filling.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_004",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "The student is formalising a constraint using modal logic to enforce a global vertical constraint on the sandwich domain.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_004",
+            "source_range": {
+              "start_line": 197,
+              "end_line": 201
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_004_formula",
+            "source_range": {
+              "start_line": 197,
+              "end_line": 201
+            },
+            "excerpt": "implies( filling,                    % if a cell contains filling\n                 box( below,                 % then for *every* cell that is\n                      not(filling) ) )       % reachable by going down (i.e. any row above),"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "The student is using modal logic to express a global vertical constraint that prevents filling from appearing in any state above another filling state.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_004",
+            "source_range": {
+              "start_line": 197,
+              "end_line": 201
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_004_formula",
+            "source_range": {
+              "start_line": 197,
+              "end_line": 201
+            },
+            "excerpt": "implies( filling,                    % if a cell contains filling\n                 box( below,                 % then for *every* cell that is\n                      not(filling) ) )       % reachable by going down (i.e. any row above),"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer4",
+          "formula_summary": "implies( filling,                    % if a cell contains filling\n                 box( below,                 % then for *every* cell that is\n                      not(filling) ) )       % reachable by going down (i.e. any row above),",
+          "operators": [
+            "not",
+            "implies",
+            "box"
+          ],
+          "modal_relations": [
+            "below"
+          ],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The student has provided a modal logic formula that expresses a global vertical constraint: if a state contains filling, then no state anywhere above it may also contain filling. This formula uses the box operator to enforce that for every cell reachable by going down (i.e., any row above), the cell does not contain filling. This represents a global vertical constraint that prevents filling from appearing in any state above another filling state.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_005",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a constraint using modal logic to represent the sandwich domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_005",
+            "source_range": {
+              "start_line": 249,
+              "end_line": 256
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_005_formula",
+            "source_range": {
+              "start_line": 249,
+              "end_line": 256
+            },
+            "excerpt": "and(  implies( bread,\n                  or( dia(isLeftOf,  bread),\n                      dia(isRightOf, bread) ) ),\n        implies( filling,\n                 or( dia(isLeftOf,  filling),\n                     dia(isRightOf, filling) ) ) )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Use modal logic to represent spatial constraints between bread and filling",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_005",
+            "source_range": {
+              "start_line": 249,
+              "end_line": 256
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_005_formula",
+            "source_range": {
+              "start_line": 249,
+              "end_line": 256
+            },
+            "excerpt": "and(  implies( bread,\n                  or( dia(isLeftOf,  bread),\n                      dia(isRightOf, bread) ) ),\n        implies( filling,\n                 or( dia(isLeftOf,  filling),\n                     dia(isRightOf, filling) ) ) )"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer51",
+          "formula_summary": "and(  implies( bread,\n                  or( dia(isLeftOf,  bread),\n                      dia(isRightOf, bread) ) ),\n        implies( filling,\n                 or( dia(isLeftOf,  filling),\n                     dia(isRightOf, filling) ) ) )",
+          "operators": [
+            "and",
+            "or",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "isLeftOf",
+            "isRightOf"
+          ],
+          "constraint_type": "prolog_task_5_answer"
+        }
+      ],
+      "summary": "This answer provides a modal logic formula that ensures bread and filling are positioned in such a way that they are not in the same grid state. The formula uses the 'dia' modal operator to express that bread and filling must be positioned in adjacent states (left or right) in some reachable state. This represents a constraint that prevents bread and filling from occupying the same state simultaneously.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_006",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a constraint using modal logic to represent the relationship between bread and filling in a sandwich.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_006",
+            "source_range": {
+              "start_line": 276,
+              "end_line": 280
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_006_formula",
+            "source_range": {
+              "start_line": 276,
+              "end_line": 280
+            },
+            "excerpt": "implies( bread,\n                 or( dia(above, filling),\n                     dia(below, filling) ) )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Use modal logic to express a constraint that bread and filling cannot co-occur in any state.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_006",
+            "source_range": {
+              "start_line": 276,
+              "end_line": 280
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_006_formula",
+            "source_range": {
+              "start_line": 276,
+              "end_line": 280
+            },
+            "excerpt": "implies( bread,\n                 or( dia(above, filling),\n                     dia(below, filling) ) )"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer52",
+          "formula_summary": "implies( bread,\n                 or( dia(above, filling),\n                     dia(below, filling) ) )",
+          "operators": [
+            "or",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "above",
+            "below"
+          ],
+          "constraint_type": "prolog_task_5_answer"
+        }
+      ],
+      "summary": "The unit provides a modal logic formula that expresses the constraint that bread and filling cannot co-occur in any state. The formula uses the 'implies' operator to ensure that if bread is present, then filling cannot be present in any state reachable by 'above' or 'below' relations.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_007",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for Task 5",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_007",
+            "source_range": {
+              "start_line": 299,
+              "end_line": 306
+            },
+            "excerpt": "answer53(\n        implies( bread,\n                 not( dia(isRightOf,                     % step 1 is there a gap?\n                          and( not(bread),               %   middle cell empty\n                               dia(isRightOf, bread) )   %   step 2 is it bread\n                        ) )\n               )\n)."
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express a modal logic constraint using the dia operator and spatial relations",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_007_formula",
+            "source_range": {
+              "start_line": 299,
+              "end_line": 306
+            },
+            "excerpt": "implies( bread,\n                 not( dia(isRightOf,                     % step 1 is there a gap?\n                          and( not(bread),               %   middle cell empty\n                               dia(isRightOf, bread) )   %   step 2 is it bread\n                        ) )\n               )"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer53",
+          "formula_summary": "implies( bread,\n                 not( dia(isRightOf,                     % step 1 is there a gap?\n                          and( not(bread),               %   middle cell empty\n                               dia(isRightOf, bread) )   %   step 2 is it bread\n                        ) )\n               )",
+          "operators": [
+            "and",
+            "not",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "isRightOf"
+          ],
+          "constraint_type": "prolog_task_5_answer"
+        }
+      ],
+      "summary": "This Prolog answer implements a modal logic constraint for Task 5. The formula expresses that bread cannot co-occur with a state where the middle cell is empty and the step 2 state is bread. The constraint uses the dia operator with the isRightOf relation to enforce a spatial condition.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_003_unit_001",
+      "region_ids": [],
+      "semantic_role": "design_justification",
+      "student_intent": {
+        "intent_type": "justify_modelling_choice",
+        "description": "The report justifies the ontology design by explaining the rationale behind class and property choices, and discusses the strengths and limitations of the ontology.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "presentation_method",
+        "name": "design_justification",
+        "description": "The report presents the ontology design and justifies the choices made in the ontology structure.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 134
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "role": "heading",
+          "content": "Ontology Report",
+          "related_unit_ids": [
+            "artifact_003_unit_001"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "role": "student_explanation",
+          "content": "The report justifies the ontology design by explaining the rationale behind class and property choices, and discusses the strengths and limitations of the ontology.",
+          "related_unit_ids": [
+            "artifact_003_unit_001"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 134
+          },
+          "role": "uncertainty",
+          "content": "The report acknowledges the limitations of the ontology, such as the omission of fine-grained detail and the implicit Western perspective.",
+          "related_unit_ids": [
+            "artifact_003_unit_001"
+          ],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "report",
+          "section_type": "Ontology Report",
+          "discussed_entities": [],
+          "claims": [],
+          "justification_targets": []
+        }
+      ],
+      "summary": "The report justifies the ontology design by explaining the rationale behind class and property choices, and discusses the strengths and limitations of the ontology. It highlights the practical advantages of starting with the Simple-Wikipedia 'Sandwich' entry, while also acknowledging unavoidable drawbacks such as the omission of fine-grained detail and the implicit Western perspective.",
+      "confidence": 0.95
+    }
+  ],
+  "unresolved_observations": [],
+  "warnings": [],
+  "raw_model_response": null
+}

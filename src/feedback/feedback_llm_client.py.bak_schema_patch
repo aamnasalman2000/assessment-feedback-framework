@@ -16,96 +16,6 @@ from .feedback_models import (
 )
 
 
-
-
-def _normalise_submission_reference_fields(
-    value: Any,
-) -> Any:
-    """
-    Remove unsolicited fields from submission-reference evidence.
-
-    Small models sometimes copy descriptive unit metadata such as
-    `unit_type`, `label`, or `structured_data` into evidence objects.
-    These fields are useful prompt context but are not part of the
-    canonical SubmissionReferenceEvidence schema.
-
-    Only unsupported metadata is removed; canonical evidence-location
-    and descriptive fields are preserved.
-    """
-    if not isinstance(value, dict):
-        return value
-
-    normalised = dict(value)
-
-    evidence = normalised.get("evidence")
-
-    if not isinstance(evidence, list):
-        return normalised
-
-    allowed_fields = {
-        "evidence_type",
-        "artifact_id",
-        "unit_id",
-        "block_id",
-        "source_range",
-        "excerpt",
-        "description",
-    }
-
-    cleaned_evidence = []
-
-    for item in evidence:
-        if not isinstance(item, dict):
-            cleaned_evidence.append(item)
-            continue
-
-        if (
-            item.get("evidence_type")
-            == "submission_reference"
-        ):
-            cleaned_item = {
-                key: item_value
-                for key, item_value in item.items()
-                if key in allowed_fields
-            }
-
-            cleaned_evidence.append(
-                cleaned_item
-            )
-        else:
-            cleaned_evidence.append(
-                item
-            )
-
-    normalised["evidence"] = (
-        cleaned_evidence
-    )
-
-    return normalised
-
-
-
-def _normalise_top_level_schema_field(
-    value: Any,
-) -> Any:
-    """
-    Remove an unsolicited top-level `$schema` field from structured
-    model output.
-
-    Some models emit schema metadata even when it is not part of the
-    requested Pydantic output model. No substantive output fields are
-    changed.
-    """
-    if not isinstance(value, dict):
-        return value
-
-    normalised = dict(value)
-    normalised.pop("$schema", None)
-
-    return normalised
-
-
-
 class FeedbackLLMError(RuntimeError):
     """Raised when feedback generation cannot produce valid output."""
 
@@ -1219,14 +1129,8 @@ class FeedbackStructuredClient:
         # ----------------------------------------------------
 
         normalised_response = (
-            _normalise_top_level_schema_field(
-                response
-            )
-        )
-
-        normalised_response = (
             _normalise_evidence_discriminators(
-                normalised_response
+                response
             )
         )
 
@@ -1336,20 +1240,8 @@ class FeedbackStructuredClient:
         )
 
         normalised_response = (
-            _normalise_top_level_schema_field(
-                response
-            )
-        )
-
-        normalised_response = (
             _normalise_evidence_discriminators(
-                normalised_response
-            )
-        )
-
-        normalised_response = (
-            _normalise_submission_reference_fields(
-                normalised_response
+                response
             )
         )
 
@@ -1534,14 +1426,8 @@ class FeedbackStructuredClient:
         )
 
         normalised_response = (
-            _normalise_top_level_schema_field(
-                response
-            )
-        )
-
-        normalised_response = (
             _normalise_evidence_discriminators(
-                normalised_response
+                response
             )
         )
 

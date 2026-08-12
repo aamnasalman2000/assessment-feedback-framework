@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "part_2_task_3",
+  "requirement_ids": [
+    "P2-T3-R1",
+    "P2-T3-R2",
+    "P2-T3-R3",
+    "P2-T3-R4",
+    "P2-T3-R5",
+    "P2-T3-R6",
+    "P2-T3-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "P2-T3-R1",
+        "status": "met",
+        "internal_finding": "The distance restriction is correctly conditioned on the presence of filling.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "description": "The formula includes a condition on filling."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P2-T3-R2",
+        "status": "met",
+        "internal_finding": "The formula distinguishes immediate adjacency from greater vertical distance.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "description": "The formula uses 'dia' and 'box' to express distance."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P2-T3-R3",
+        "status": "not_met",
+        "internal_finding": "The formula incorrectly prohibits bread immediately below filling.",
+        "verification_status": "inferred",
+        "confidence": 0.85,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_2_prolog_modal_logic",
+            "task_id": "part_2_task_3",
+            "requirement_id": "P2-T3-R3",
+            "description": "The formula does not explicitly allow bread immediately below filling."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P2-T3-R4",
+        "status": "met",
+        "internal_finding": "The formula prevents bread from occurring more than one row below filling.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "description": "The formula uses 'box( above, not(bread) )' to prevent deeper bread."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P2-T3-R5",
+        "status": "met",
+        "internal_finding": "The modal operators correctly express the intended spatial constraint.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "description": "The formula uses 'dia' and 'box' to express spatial constraints."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P2-T3-R6",
+        "status": "met",
+        "internal_finding": "The submitted formula is well formed according to the supplied modal logic syntax.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "description": "The formula is well-formed with proper syntax."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P2-T3-R7",
+        "status": "met",
+        "internal_finding": "The answer is provided in the required predicate answer3/1.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_002",
+            "unit_id": "artifact_002_unit_003",
+            "block_id": "artifact_002_unit_003_clause",
+            "source_range": {
+              "start_line": 168,
+              "end_line": 175
+            },
+            "description": "The predicate is named 'answer3' as required."
+          }
+        ]
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "P2-T3-R3"
+        ],
+        "internal_finding": "The formula incorrectly prohibits bread immediately below filling.",
+        "student_feedback": "The formula should explicitly allow bread immediately below filling.",
+        "verification_status": "inferred",
+        "confidence": 0.85,
+        "evidence": []
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "P2-T3-R3"
+        ],
+        "internal_finding": "The formula incorrectly prohibits bread immediately below filling.",
+        "student_feedback": "Consider adding a condition to explicitly allow bread immediately below filling.",
+        "verification_status": "inferred",
+        "confidence": 0.85,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The formula correctly expresses the spatial constraint, but incorrectly prohibits bread immediately below filling. The formula is well-formed and meets all other requirements."
+  }
+}

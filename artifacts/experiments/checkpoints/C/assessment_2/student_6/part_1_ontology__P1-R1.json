@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission contains 10 units, each representing an ontology class. The classes include Bread, Country, Deck, DoubleDeckerSandwich, Filling, OpenSandwich, Sandwich, SideDish, ToastedBread, and ToastedSandwich. These classes are relevant to the sandwich domain and demonstrate appropriate variety.",
+    "student_feedback": "The ontology contains at least ten relevant and appropriately varied classes as required.",
+    "suggestion": "No further action is needed as the requirement is fully met.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.938,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_001",
+        "description": "Bread class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "description": "Country class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "description": "Deck class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_004",
+        "description": "DoubleDeckerSandwich class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_005",
+        "description": "Filling class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_006",
+        "description": "OpenSandwich class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_007",
+        "description": "Sandwich class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_008",
+        "description": "SideDish class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_009",
+        "description": "ToastedBread class is a relevant ontology class."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_010",
+        "description": "ToastedSandwich class is a relevant ontology class."
+      }
+    ]
+  }
+}

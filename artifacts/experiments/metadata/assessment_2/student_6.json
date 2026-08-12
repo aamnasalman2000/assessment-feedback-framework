@@ -1,0 +1,26 @@
+{
+  "assessment_id": "assessment_2",
+  "student_id": "student_6",
+  "pipelines": {
+    "A": {
+      "runtime_seconds": 0.0,
+      "source": "cached_result"
+    },
+    "B": {
+      "runtime_seconds": 0.0,
+      "source": "cached_result"
+    },
+    "C": {
+      "runtime_seconds": 1303.9612367340005,
+      "source": "generated"
+    },
+    "D": {
+      "runtime_seconds": 2546.860259624,
+      "source": "generated"
+    }
+  },
+  "alignment": {
+    "runtime_seconds": 0.0,
+    "source": "cached_result"
+  }
+}
