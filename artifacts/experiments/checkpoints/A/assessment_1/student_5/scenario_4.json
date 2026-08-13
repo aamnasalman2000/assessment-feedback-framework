@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_4",
+  "requirement_ids": [
+    "S4-R1",
+    "S4-R2",
+    "S4-R3",
+    "S4-R4",
+    "S4-R5",
+    "S4-R6",
+    "S4-R7",
+    "S4-R8"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S4-R1",
+        "status": "not_met",
+        "internal_finding": "The proof does not use the exact implication required by the brief.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R1",
+            "description": "The proof does not target the required implication."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R2",
+        "status": "met",
+        "internal_finding": "Derives r from t and t -> r.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R3",
+        "status": "met",
+        "internal_finding": "Derives m from r and r -> m.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R4",
+        "status": "not_met",
+        "internal_finding": "Derives ¬f using the available assumptions.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R4",
+            "description": "The proof does not derive ¬f using the available assumptions."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R5",
+        "status": "met",
+        "internal_finding": "Constructs the final result r ∧ m ∧ ¬f with the correct conjunction structure.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S4-R6",
+        "status": "not_met",
+        "internal_finding": "The proof must target the required implication rather than a modified statement.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R6",
+            "description": "The proof does not target the required implication."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R7",
+        "status": "not_met",
+        "internal_finding": "Explains the derivation of r, m and ¬f.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R7",
+            "description": "The proof does not include explanations of the derivation steps."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R8",
+        "status": "met",
+        "internal_finding": "The submitted Lean code must compile.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S4-R1",
+          "S4-R4",
+          "S4-R6",
+          "S4-R7"
+        ],
+        "internal_finding": "The proof does not meet the required formalisation and explanation standards.",
+        "student_feedback": "The proof needs to target the exact implication and include explanations of the derivation steps.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R1",
+            "description": "The proof does not use the exact implication required by the brief."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R4",
+            "description": "The proof does not derive ¬f using the available assumptions."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R6",
+            "description": "The proof does not target the required implication."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "S4-R7",
+            "description": "The proof does not include explanations of the derivation steps."
+          }
+        ]
+      },
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "S4-R2",
+          "S4-R3",
+          "S4-R5",
+          "S4-R8"
+        ],
+        "internal_finding": "The proof correctly derives r, m, and constructs the final result with correct conjunction structure.",
+        "student_feedback": "The proof correctly derives r, m, and constructs the final result with correct conjunction structure.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission includes a correct proof of r, m, and the final result with correct conjunction structure. However, the proof does not meet the required formalisation and explanation standards."
+  }
+}

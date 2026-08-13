@@ -1,0 +1,170 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_3",
+  "requirement_ids": [
+    "S3-R1",
+    "S3-R2",
+    "S3-R3",
+    "S3-R4",
+    "S3-R5",
+    "S3-R6",
+    "S3-R7",
+    "S3-R8"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S3-R1",
+        "status": "not_met",
+        "internal_finding": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S3-R1",
+            "description": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R2",
+        "status": "not_met",
+        "internal_finding": "Safe weather is not represented as the negation of unsafe weather.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S3-R2",
+            "description": "Safe weather is not represented as the negation of unsafe weather."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R3",
+        "status": "not_met",
+        "internal_finding": "The 'only if' condition is not correctly interpreted as an implication.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S3-R3",
+            "description": "The 'only if' condition is not correctly interpreted as an implication."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R4",
+        "status": "not_met",
+        "internal_finding": "Unsafe alternate-route weather is not implied to require no congestion on the usual route.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S3-R4",
+            "description": "Unsafe alternate-route weather is not implied to require no congestion on the usual route."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R5",
+        "status": "not_met",
+        "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S3-R5",
+            "description": "The proposition for destination_reached is not derived from the formalised assumptions."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R6",
+        "status": "partially_met",
+        "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_006",
+            "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R7",
+        "status": "not_met",
+        "internal_finding": "The proposition mapping, 'only if' interpretation, and assumption logic are not explained.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S3-R7",
+            "description": "The proposition mapping, 'only if' interpretation, and assumption logic are not explained."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S3-R8",
+        "status": "met",
+        "internal_finding": "The submitted Lean code compiles without errors.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S3-R1",
+          "S3-R2",
+          "S3-R3",
+          "S3-R4",
+          "S3-R5",
+          "S3-R7"
+        ],
+        "internal_finding": "The student's submission lacks explicit identification of propositions and explanations for key concepts.",
+        "student_feedback": "Identify which propositions represent heavy congestion, unsafe weather, sufficient fuel, and destination reached. Explain the 'only if' condition and how assumptions lead to the destination conclusion.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "description": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+          }
+        ]
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "S3-R6"
+        ],
+        "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+        "student_feedback": "Ensure the proof includes a brief explanation of the reasoning and the use of different proposition names.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_006",
+            "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+          }
+        ]
+      }
+    ],
+    "component_summary": "The submission includes a Lean file with multiple theorems and proofs, but lacks explicit identification of propositions and explanations for key concepts. The code compiles correctly, but the formalisation and proof correctness need improvement."
+  }
+}

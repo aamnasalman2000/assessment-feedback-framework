@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's proof for the theorem 'ex1' uses the axioms AxConjElimRight and AxNotPrFalse as required. The proof body includes explicit references to these axioms in the proof steps, demonstrating the use of appropriate supplied axioms for the requirement.",
+    "student_feedback": "The student's proof correctly uses the axioms AxConjElimRight and AxNotPrFalse as required for the requirement. The proof is well-structured and includes comments explaining the use of these axioms.",
+    "suggestion": "The proof is already fully compliant with the requirement. No further action is needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_015",
+        "block_id": "artifact_001_unit_015_proof",
+        "source_range": {
+          "start_line": 189,
+          "end_line": 204
+        },
+        "description": "The proof body of the theorem 'ex1' uses the axioms AxConjElimRight and AxNotPrFalse as required."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_010",
+        "block_id": "artifact_001_unit_010_statement",
+        "source_range": {
+          "start_line": 173,
+          "end_line": 173
+        },
+        "description": "The axiom AxConjElimRight is used in the proof as required by the requirement."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_014",
+        "block_id": "artifact_001_unit_014_statement",
+        "source_range": {
+          "start_line": 185,
+          "end_line": 185
+        },
+        "description": "The axiom AxNotPrFalse is used in the proof as required by the requirement."
+      }
+    ]
+  }
+}

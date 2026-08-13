@@ -1,0 +1,77 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_019",
+  "initial_observation_id": "b_initial_obs_019",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The proposition for destination_reached is not derived from the formalised assumptions."
+      ],
+      "overlooked_evidence": [
+        "The student's work includes multiple formalised assumptions and proofs that may relate to the destination_reached proposition."
+      ],
+      "missing_rubric_points": [
+        "The assessment does not evaluate whether the destination_reached proposition is derived from the formalised assumptions."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. A 'met' revision must be supported by submission-reference evidence or an explicit deterministic tool verification; absence evidence alone cannot establish that a requirement is met."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_019",
+    "requirement_id": "S3-R5",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "status": "not_met",
+    "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "requirement_id": "S3-R5",
+        "description": "The proposition for destination_reached is not derived from the formalised assumptions."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_019",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S3-R5"
+    ],
+    "criterion_assessment_ids": [
+      "ca_019"
+    ],
+    "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+    "student_feedback": "The proposition for destination_reached is not derived from the formalised assumptions.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "requirement_id": "S3-R5",
+        "description": "The proposition for destination_reached is not derived from the formalised assumptions."
+      }
+    ]
+  }
+}

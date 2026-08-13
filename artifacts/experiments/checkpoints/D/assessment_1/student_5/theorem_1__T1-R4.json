@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's submission includes the theorem 'ex1' which explicitly states the two conjuncts of the theorem: '¬ provable (conj x False)' and '(provable x → ¬ provable False)'. The proof body provides detailed comments explaining both parts of the theorem, aligning with the requirement to 'Explain both conjuncts of the theorem.'",
+    "student_feedback": "The student has correctly explained both conjuncts of the theorem. The proof includes detailed comments that clarify the logical steps for both parts of the theorem.",
+    "suggestion": "The explanation is already sufficient and meets the requirement. No further action is needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_015",
+        "block_id": "artifact_001_unit_015_proof",
+        "source_range": {
+          "start_line": 189,
+          "end_line": 204
+        },
+        "excerpt": "λ x =>\n  -- We need to prove that `¬ provable (conj x False)`.\n  -- This means that if we have a proof of `conj x False`, it leads to a contradiction.\n  -- We can use the axiom `AxConjElimRight` to show that if we have a proof of `conj x False`,\n  -- then we can derive `provable False`, which contradicts the axiom `AxNotPrFalse`.\n  let hx : ¬ provable (conj x False) :=\n    λ h =>\n      let pr_false := AxConjElimRight x False h\n      AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable False :=\n    λ _ h_pf => AxNotPrFalse h_pf\n  -- Finally, we combine both parts into a conjunction\n  And.intro hx hxf",
+        "description": "The proof body includes detailed comments explaining both conjuncts of the theorem."
+      }
+    ]
+  }
+}

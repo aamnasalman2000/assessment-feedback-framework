@@ -1,0 +1,1890 @@
+{
+  "criterion_assessments": [
+    {
+      "criterion_assessment_id": "ca_001",
+      "requirement_id": "S1-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "Prerequisite requirement is not correctly represented as x1 ∨ x2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R1",
+          "description": "No direct representation of x1 ∨ x2 is found in the submission."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_002",
+      "requirement_id": "S1-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "Approval requirement is not correctly represented as y1 ∨ y2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R2",
+          "description": "No direct representation of y1 ∨ y2 is found in the submission."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_003",
+      "requirement_id": "S1-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "Eligibility depends on both prerequisite and approval conditions is not demonstrated.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R3",
+          "description": "No direct demonstration of the combined eligibility condition is found."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_004",
+      "requirement_id": "S1-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "partially_met",
+      "internal_finding": "Four combinations are not fully addressed in the proof.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R4",
+          "description": "The proof does not fully address all four combinations of the conditions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_005",
+      "requirement_id": "S1-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "Evidence from case analysis is not used to derive the conclusion.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R5",
+          "description": "The proof does not use evidence from case analysis to derive the conclusion."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_006",
+      "requirement_id": "S1-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explanation of how conditions establish eligibility is missing.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R6",
+          "description": "No explanation is provided of how the conditions establish eligibility."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_007",
+      "requirement_id": "S1-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code compiles successfully.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_008",
+      "requirement_id": "S2-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The submission does not use the exact logical implication required by the brief.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_009",
+      "requirement_id": "S2-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "Derive d from b and b -> d.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done",
+          "description": "Derives d from b and b -> d."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_010",
+      "requirement_id": "S2-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+      "verification_status": "inferred",
+      "confidence": 0.6,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_011",
+      "requirement_id": "S2-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "Construct the final conjunction a ∧ d.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "And.intro ha hd",
+          "description": "Constructs the final conjunction a ∧ d."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_012",
+      "requirement_id": "S2-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "Any use of classical reasoning must be valid and supported by the Lean environment.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c",
+          "description": "Classical reasoning is used and supported by the Lean environment."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_013",
+      "requirement_id": "S2-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explain how the assumptions lead to a and d.",
+      "verification_status": "inferred",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_014",
+      "requirement_id": "S2-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code must compile.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_015",
+      "requirement_id": "S3-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R1",
+          "description": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_016",
+      "requirement_id": "S3-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Safe weather is not represented as the negation of unsafe weather.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R2",
+          "description": "Safe weather is not represented as the negation of unsafe weather."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_017",
+      "requirement_id": "S3-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The 'only if' condition is not correctly interpreted as an implication.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R3",
+          "description": "The 'only if' condition is not correctly interpreted as an implication."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_018",
+      "requirement_id": "S3-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Unsafe alternate-route weather is not implied to require no congestion on the usual route.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R4",
+          "description": "Unsafe alternate-route weather is not implied to require no congestion on the usual route."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_019",
+      "requirement_id": "S3-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R5",
+          "description": "The proposition for destination_reached is not derived from the formalised assumptions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_020",
+      "requirement_id": "S3-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_021",
+      "requirement_id": "S3-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proposition mapping, 'only if' interpretation, and assumption logic are not explained.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R7",
+          "description": "The proposition mapping, 'only if' interpretation, and assumption logic are not explained."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_022",
+      "requirement_id": "S3-R8",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code compiles without errors.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_023",
+      "requirement_id": "S4-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof does not use the exact implication required by the brief.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R1",
+          "description": "The proof does not target the required implication."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_024",
+      "requirement_id": "S4-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "Derives r from t and t -> r.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_025",
+      "requirement_id": "S4-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "Derives m from r and r -> m.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_026",
+      "requirement_id": "S4-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "Derives ¬f using the available assumptions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R4",
+          "description": "The proof does not derive ¬f using the available assumptions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_027",
+      "requirement_id": "S4-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "Constructs the final result r ∧ m ∧ ¬f with the correct conjunction structure.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_028",
+      "requirement_id": "S4-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof must target the required implication rather than a modified statement.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R6",
+          "description": "The proof does not target the required implication."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_029",
+      "requirement_id": "S4-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explains the derivation of r, m and ¬f.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R7",
+          "description": "The proof does not include explanations of the derivation steps."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_030",
+      "requirement_id": "S4-R8",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code must compile.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_031",
+      "requirement_id": "T1-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem proves that provable (conj x False) leads to a contradiction.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "λ x =>\n  -- We need to prove that `¬ provable (conj x False)`.\n  -- This means that if we have a proof of `conj x False`, it leads to a contradiction.\n  -- We can use the axiom `AxConjElimRight` to show that if we have a proof of `conj x False`,\n  -- then we can derive `provable False`, which contradicts the axiom `AxNotPrFalse`."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_032",
+      "requirement_id": "T1-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem proves that provable x does not imply that False is provable.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hxf : provable x → ¬ provable False :=\n    λ _ h_pf => AxNotPrFalse h_pf"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_033",
+      "requirement_id": "T1-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n    λ h =>\n      let pr_false := AxConjElimRight x False h\n      AxNotPrFalse pr_false"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_034",
+      "requirement_id": "T1-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "The explanation of both conjuncts is missing in the theorem.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_035",
+      "requirement_id": "T1-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem compiles as per the Lean 4 syntax.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_036",
+      "requirement_id": "T2-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "met",
+      "internal_finding": "The requirement to extract provable False from provable (conj x False) is met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_037",
+      "requirement_id": "T2-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "met",
+      "internal_finding": "The requirement to use the resulting contradiction to derive provable y is met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "False.elim contradiction"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_038",
+      "requirement_id": "T2-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "met",
+      "internal_finding": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_039",
+      "requirement_id": "T2-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The requirement to explain the principle of explosion and how it is implemented is not met.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_040",
+      "requirement_id": "T2-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem must compile, which is met in the submission.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_041",
+      "requirement_id": "T3-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "Provable x, y, z are extracted from nested conjunctions in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable x, y, z are extracted from nested conjunctions in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_042",
+      "requirement_id": "T3-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "Provable (conj y x) is constructed using AxConjIntro in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable (conj y x) is constructed using AxConjIntro in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_043",
+      "requirement_id": "T3-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "Provable (conj (conj y x) z) is constructed using AxConjIntro in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable (conj (conj y x) z) is constructed using AxConjIntro in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_044",
+      "requirement_id": "T3-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_045",
+      "requirement_id": "T3-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explanations of elimination and reconstruction steps are missing in the proof body.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T3-R5",
+          "requirement_id": "T3-R5",
+          "description": "Explanations of elimination and reconstruction steps are missing in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_046",
+      "requirement_id": "T3-R6",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem compiles as no 'sorry' is present in the submission.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_047",
+      "requirement_id": "T4-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Assume provable y and combine it with provable x.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Assume provable y and combine it with provable x."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_048",
+      "requirement_id": "T4-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Use AxConjIntro to derive provable (conj x y).",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Use AxConjIntro to derive provable (conj x y)."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_049",
+      "requirement_id": "T4-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Use the contradiction with ¬ provable (conj x y) to establish ¬ provable y.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Use the contradiction with ¬ provable (conj x y) to establish ¬ provable y."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_050",
+      "requirement_id": "T4-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Supply the arguments to AxConjIntro correctly.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Supply the arguments to AxConjIntro correctly."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_051",
+      "requirement_id": "T4-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explain the contradiction-based proof strategy.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T4-R5",
+          "requirement_id": "T4-R5",
+          "description": "No direct explanation of the contradiction-based proof strategy is present in the submission."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_052",
+      "requirement_id": "T4-R6",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem must compile.",
+      "verification_status": "not_verified",
+      "confidence": 0.0,
+      "evidence": []
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_001",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R1",
+        "S1-R2",
+        "S1-R3",
+        "S1-R5",
+        "S1-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_001",
+        "ca_002",
+        "ca_003",
+        "ca_005",
+        "ca_006"
+      ],
+      "internal_finding": "The submission fails to correctly formalise the prerequisite and approval conditions and explain how they establish eligibility.",
+      "student_feedback": "The submission does not correctly represent the prerequisite and approval conditions or explain how they establish eligibility. The proof also does not use case analysis evidence to derive the conclusion.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R1",
+          "description": "No direct representation of x1 ∨ x2 is found in the submission."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R2",
+          "description": "No direct representation of y1 ∨ y2 is found in the submission."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R3",
+          "description": "No direct demonstration of the combined eligibility condition is found."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R5",
+          "description": "The proof does not use evidence from case analysis to derive the conclusion."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R6",
+          "description": "No explanation is provided of how the conditions establish eligibility."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_002",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R4",
+        "S1-R5",
+        "S1-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_004",
+        "ca_005",
+        "ca_006"
+      ],
+      "internal_finding": "The proof needs to address all four combinations and use case analysis evidence to derive the conclusion.",
+      "student_feedback": "The proof should address all four combinations of the conditions and use case analysis evidence to derive the conclusion. Additionally, an explanation of how the conditions establish eligibility is needed.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R4",
+          "description": "The proof does not fully address all four combinations of the conditions."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R5",
+          "description": "The proof does not use evidence from case analysis to derive the conclusion."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R6",
+          "description": "No explanation is provided of how the conditions establish eligibility."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_003",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R2",
+        "S2-R4",
+        "S2-R5",
+        "S2-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_009",
+        "ca_011",
+        "ca_012",
+        "ca_014"
+      ],
+      "internal_finding": "The submission correctly derives d from b and b -> d, constructs a ∧ d, uses classical reasoning, and compiles in Lean.",
+      "student_feedback": "The submission demonstrates strong logical reasoning and correct use of Lean's proof mechanisms.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "And.intro ha hd",
+          "description": "Constructs the final conjunction a ∧ d."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_004",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R1",
+        "S2-R3",
+        "S2-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_008",
+        "ca_010",
+        "ca_013"
+      ],
+      "internal_finding": "The submission lacks the exact logical implication and explanation required for the proof.",
+      "student_feedback": "The proof needs to explicitly use the logical implication and provide a clear explanation of the reasoning steps.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_005",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R1",
+        "S3-R2",
+        "S3-R3",
+        "S3-R4",
+        "S3-R5",
+        "S3-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_015",
+        "ca_016",
+        "ca_017",
+        "ca_018",
+        "ca_019",
+        "ca_021"
+      ],
+      "internal_finding": "The student's submission lacks explicit identification of propositions and explanations for key concepts.",
+      "student_feedback": "Identify which propositions represent heavy congestion, unsafe weather, sufficient fuel, and destination reached. Explain the 'only if' condition and how assumptions lead to the destination conclusion.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "description": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_006",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_020"
+      ],
+      "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+      "student_feedback": "Ensure the proof includes a brief explanation of the reasoning and the use of different proposition names.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_007",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R1",
+        "S4-R4",
+        "S4-R6",
+        "S4-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_023",
+        "ca_026",
+        "ca_028",
+        "ca_029"
+      ],
+      "internal_finding": "The proof does not meet the required formalisation and explanation standards.",
+      "student_feedback": "The proof needs to target the exact implication and include explanations of the derivation steps.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R1",
+          "description": "The proof does not use the exact implication required by the brief."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R4",
+          "description": "The proof does not derive ¬f using the available assumptions."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R6",
+          "description": "The proof does not target the required implication."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R7",
+          "description": "The proof does not include explanations of the derivation steps."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_008",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R2",
+        "S4-R3",
+        "S4-R5",
+        "S4-R8"
+      ],
+      "criterion_assessment_ids": [
+        "ca_024",
+        "ca_025",
+        "ca_027",
+        "ca_030"
+      ],
+      "internal_finding": "The proof correctly derives r, m, and constructs the final result with correct conjunction structure.",
+      "student_feedback": "The proof correctly derives r, m, and constructs the final result with correct conjunction structure.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_009",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R1",
+        "T1-R2",
+        "T1-R3",
+        "T1-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_031",
+        "ca_032",
+        "ca_033",
+        "ca_035"
+      ],
+      "internal_finding": "The theorem correctly uses axioms and proves the required properties.",
+      "student_feedback": "The theorem successfully proves the required properties using the provided axioms and Lean 4 syntax.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_010",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_034"
+      ],
+      "internal_finding": "The explanation of both conjuncts is missing in the theorem.",
+      "student_feedback": "The theorem should include comments explaining the reasoning behind both parts of the proof.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_011",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R1",
+        "T2-R2",
+        "T2-R3",
+        "T2-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_036",
+        "ca_037",
+        "ca_038",
+        "ca_040"
+      ],
+      "internal_finding": "The submission correctly implements the principle of explosion in ex2.",
+      "student_feedback": "The theorem ex2 correctly applies the principle of explosion by deriving provable y from a contradiction.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false"
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_012",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_039"
+      ],
+      "internal_finding": "The explanation of the principle of explosion is missing in the submission.",
+      "student_feedback": "The submission lacks an explanation of the principle of explosion and how it is implemented.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "observation_id": "obs_013",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R1",
+        "T3-R2",
+        "T3-R3",
+        "T3-R4",
+        "T3-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_041",
+        "ca_042",
+        "ca_043",
+        "ca_044",
+        "ca_046"
+      ],
+      "internal_finding": "The proof correctly extracts and constructs provable statements using the required axioms.",
+      "student_feedback": "The proof demonstrates a clear understanding of nested conjunctions and their manipulation using the specified axioms.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "The proof correctly extracts and constructs provable statements using the required axioms."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_014",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_045"
+      ],
+      "internal_finding": "The proof lacks explanations of the elimination and reconstruction steps.",
+      "student_feedback": "The proof should include comments explaining the logical steps involved in manipulating the nested conjunctions.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T3-R5",
+          "requirement_id": "T3-R5",
+          "description": "Explanations of elimination and reconstruction steps are missing in the proof body."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_015",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R1",
+        "T4-R2",
+        "T4-R3",
+        "T4-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_047",
+        "ca_048",
+        "ca_049",
+        "ca_050"
+      ],
+      "internal_finding": "The submission correctly applies the axioms and logical steps for the proof strategy.",
+      "student_feedback": "The proof strategy effectively uses the provided axioms and logical steps to derive the required conclusions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "The proof strategy effectively uses the provided axioms and logical steps to derive the required conclusions."
+        }
+      ]
+    },
+    {
+      "observation_id": "obs_016",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_051"
+      ],
+      "internal_finding": "The contradiction-based proof strategy is not explicitly explained in the submission.",
+      "student_feedback": "The submission should include a brief explanation of the contradiction-based proof strategy in the comments.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T4-R5",
+          "requirement_id": "T4-R5",
+          "description": "No direct explanation of the contradiction-based proof strategy is present in the submission."
+        }
+      ]
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Advanced Course Eligibility Decision",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "summary": "The submission correctly compiles but fails to correctly formalise the prerequisite and approval conditions. The proof does not use case analysis evidence to derive the conclusion and lacks an explanation of how the conditions establish eligibility.",
+      "observation_ids": [
+        "obs_001",
+        "obs_002"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Complex Transaction Verification System",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "summary": "The submission demonstrates strong logical reasoning and correct use of Lean's proof mechanisms. However, it lacks the exact logical implication and explanation required for the proof.",
+      "observation_ids": [
+        "obs_003",
+        "obs_004"
+      ]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Advanced Autonomous Vehicle Decision System",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "summary": "The submission includes a Lean file with multiple theorems and proofs, but lacks explicit identification of propositions and explanations for key concepts. The code compiles correctly, but the formalisation and proof correctness need improvement.",
+      "observation_ids": [
+        "obs_005",
+        "obs_006"
+      ]
+    },
+    {
+      "section_id": "section_004",
+      "label": "Advanced Cybersecurity System for Threats",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "summary": "The submission includes a correct proof of r, m, and the final result with correct conjunction structure. However, the proof does not meet the required formalisation and explanation standards.",
+      "observation_ids": [
+        "obs_007",
+        "obs_008"
+      ]
+    },
+    {
+      "section_id": "section_005",
+      "label": "Conjunction with False Is Not Provable",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "summary": "The component successfully proves the required properties using the provided axioms and Lean 4 syntax. However, the explanation of both conjuncts is missing, which could improve clarity and completeness.",
+      "observation_ids": [
+        "obs_009",
+        "obs_010"
+      ]
+    },
+    {
+      "section_id": "section_006",
+      "label": "Principle of Explosion",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "summary": "The submission correctly implements the principle of explosion in ex2, but lacks an explanation of the principle and its implementation. The theorem compiles and correctly applies the required axioms.",
+      "observation_ids": [
+        "obs_011",
+        "obs_012"
+      ]
+    },
+    {
+      "section_id": "section_007",
+      "label": "Rearranging Nested Conjunctions",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "summary": "The proof correctly extracts and constructs provable statements using the required axioms. However, it lacks explanations of the elimination and reconstruction steps, which could improve clarity and understanding.",
+      "observation_ids": [
+        "obs_013",
+        "obs_014"
+      ]
+    },
+    {
+      "section_id": "section_008",
+      "label": "Using Negation to Infer Missing Provability",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "summary": "The submission demonstrates strong proof correctness and axiom usage, with clear logical steps. However, the contradiction-based proof strategy lacks explicit explanation, which could be improved with additional comments.",
+      "observation_ids": [
+        "obs_015",
+        "obs_016"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The submission correctly compiles but fails to correctly formalise the prerequisite and approval conditions. The proof does not use case analysis evidence to derive the conclusion and lacks an explanation of how the conditions establish eligibility. The submission demonstrates strong logical reasoning and correct use of Lean's proof mechanisms. However, it lacks the exact logical implication and explanation required for the proof. The submission includes a Lean file with multiple theorems and proofs, but lacks explicit identification of propositions and explanations for key concepts. The code compiles correctly, but the formalisation and proof correctness need improvement. The submission includes a correct proof of r, m, and the final result with correct conjunction structure. However, the proof does not meet the required formalisation and explanation standards. The component successfully proves the required properties using the provided axioms and Lean 4 syntax. However, the explanation of both conjuncts is missing, which could improve clarity and completeness. The submission correctly implements the principle of explosion in ex2, but lacks an explanation of the principle and its implementation. The theorem compiles and correctly applies the required axioms. The proof correctly extracts and constructs provable statements using the required axioms. However, it lacks explanations of the elimination and reconstruction steps, which could improve clarity and understanding. The submission demonstrates strong proof correctness and axiom usage, with clear logical steps. However, the contradiction-based proof strategy lacks explicit explanation, which could be improved with additional comments.",
+    "strengths_summary": "The submission demonstrates strong logical reasoning and correct use of Lean's proof mechanisms. The proof correctly derives r, m, and constructs the final result with correct conjunction structure. The theorem successfully proves the required properties using the provided axioms and Lean 4 syntax.",
+    "improvement_summary": "The submission does not correctly represent the prerequisite and approval conditions or explain how they establish eligibility. The proof also does not use case analysis evidence to derive the conclusion. The proof should address all four combinations of the conditions and use case analysis evidence to derive the conclusion. Additionally, an explanation of how the conditions establish eligibility is needed. The proof needs to explicitly use the logical implication and provide a clear explanation of the reasoning steps.",
+    "observation_ids": [
+      "obs_001",
+      "obs_002",
+      "obs_003",
+      "obs_004",
+      "obs_005",
+      "obs_006",
+      "obs_007",
+      "obs_008",
+      "obs_009",
+      "obs_010",
+      "obs_011",
+      "obs_012",
+      "obs_013",
+      "obs_014",
+      "obs_015",
+      "obs_016"
+    ]
+  }
+}

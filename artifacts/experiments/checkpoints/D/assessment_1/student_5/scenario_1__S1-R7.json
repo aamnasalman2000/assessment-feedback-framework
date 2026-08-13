@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The submitted Lean code does not fully compile as the 'provable' function is defined in multiple ways, leading to conflicts. The 'provable' function is defined as a proposition in unit_002, as an opaque proposition in unit_009, and as a function in unit_005, which creates a conflict in the submission.",
+    "student_feedback": "The submission contains conflicting definitions of the 'provable' function, which prevents the Lean code from compiling. The definitions in units 002, 005, and 009 are inconsistent and need to be resolved to ensure the code compiles correctly.",
+    "suggestion": "Resolve the conflicting definitions of the 'provable' function by ensuring all definitions are consistent. Use the definition from unit_002 as the primary definition and adjust other units to align with it.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S1-R7",
+        "description": "The submission contains conflicting definitions of the 'provable' function, leading to compilation errors."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "description": "Definition of 'provable' as a proposition in unit_002."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_005",
+        "description": "Definition of 'provable' as a function in unit_005."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_009",
+        "description": "Definition of 'provable' as an opaque proposition in unit_009."
+      }
+    ]
+  }
+}

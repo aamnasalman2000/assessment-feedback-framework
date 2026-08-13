@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_2",
+  "requirement_ids": [
+    "T2-R1",
+    "T2-R2",
+    "T2-R3",
+    "T2-R4",
+    "T2-R5"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T2-R1",
+        "status": "met",
+        "internal_finding": "The requirement to extract provable False from provable (conj x False) is met in ex2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_016",
+            "block_id": "artifact_001_unit_016_proof",
+            "source_range": {
+              "start_line": 209,
+              "end_line": 215
+            },
+            "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R2",
+        "status": "met",
+        "internal_finding": "The requirement to use the resulting contradiction to derive provable y is met in ex2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_016",
+            "block_id": "artifact_001_unit_016_proof",
+            "source_range": {
+              "start_line": 209,
+              "end_line": 215
+            },
+            "excerpt": "False.elim contradiction"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R3",
+        "status": "met",
+        "internal_finding": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is met in ex2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_016",
+            "block_id": "artifact_001_unit_016_proof",
+            "source_range": {
+              "start_line": 209,
+              "end_line": 215
+            },
+            "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R4",
+        "status": "not_met",
+        "internal_finding": "The requirement to explain the principle of explosion and how it is implemented is not met.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T2-R5",
+        "status": "met",
+        "internal_finding": "The theorem must compile, which is met in the submission.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "T2-R1",
+          "T2-R2",
+          "T2-R3",
+          "T2-R5"
+        ],
+        "internal_finding": "The submission correctly implements the principle of explosion in ex2.",
+        "student_feedback": "The theorem ex2 correctly applies the principle of explosion by deriving provable y from a contradiction.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_016",
+            "block_id": "artifact_001_unit_016_proof",
+            "source_range": {
+              "start_line": 209,
+              "end_line": 215
+            },
+            "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false"
+          }
+        ]
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T2-R4"
+        ],
+        "internal_finding": "The explanation of the principle of explosion is missing in the submission.",
+        "student_feedback": "The submission lacks an explanation of the principle of explosion and how it is implemented.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission correctly implements the principle of explosion in ex2, but lacks an explanation of the principle and its implementation. The theorem compiles and correctly applies the required axioms."
+  }
+}

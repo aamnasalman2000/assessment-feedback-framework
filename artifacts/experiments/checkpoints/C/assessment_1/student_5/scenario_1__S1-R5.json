@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's proof in artifact_001_unit_003 uses case analysis on the disjunctions x1 ∨ x2 and y1 ∨ y2, but the proof is incomplete as it does not fully construct the target proposition z. The proof relies on the hypotheses h1, h3, and h4, which are not explicitly defined in the submission. The proof also does not fully connect the disjunction assumptions to the conclusion z, which is required by the requirement.",
+    "student_feedback": "The proof in the submission uses case analysis on the disjunctions, but it is incomplete and does not fully connect the disjunction assumptions to the conclusion z. The hypotheses h1, h3, and h4 are not defined, which may lead to an incomplete proof.",
+    "suggestion": "Define the hypotheses h1, h3, and h4 explicitly in the submission to ensure the proof is complete and connects the disjunction assumptions to the conclusion z.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 26,
+          "end_line": 44
+        },
+        "excerpt": "-- Start by eliminating the disjunction x1 ∨ x2\n  Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+        "description": "The proof in artifact_001_unit_003 uses case analysis on the disjunctions but is incomplete and relies on undefined hypotheses."
+      }
+    ]
+  }
+}

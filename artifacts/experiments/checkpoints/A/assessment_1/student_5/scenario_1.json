@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_1",
+  "requirement_ids": [
+    "S1-R1",
+    "S1-R2",
+    "S1-R3",
+    "S1-R4",
+    "S1-R5",
+    "S1-R6",
+    "S1-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S1-R1",
+        "status": "not_met",
+        "internal_finding": "Prerequisite requirement is not correctly represented as x1 ∨ x2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R1",
+            "description": "No direct representation of x1 ∨ x2 is found in the submission."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R2",
+        "status": "not_met",
+        "internal_finding": "Approval requirement is not correctly represented as y1 ∨ y2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R2",
+            "description": "No direct representation of y1 ∨ y2 is found in the submission."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R3",
+        "status": "not_met",
+        "internal_finding": "Eligibility depends on both prerequisite and approval conditions is not demonstrated.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R3",
+            "description": "No direct demonstration of the combined eligibility condition is found."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R4",
+        "status": "partially_met",
+        "internal_finding": "Four combinations are not fully addressed in the proof.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R4",
+            "description": "The proof does not fully address all four combinations of the conditions."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R5",
+        "status": "not_met",
+        "internal_finding": "Evidence from case analysis is not used to derive the conclusion.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R5",
+            "description": "The proof does not use evidence from case analysis to derive the conclusion."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R6",
+        "status": "not_met",
+        "internal_finding": "Explanation of how conditions establish eligibility is missing.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R6",
+            "description": "No explanation is provided of how the conditions establish eligibility."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R7",
+        "status": "met",
+        "internal_finding": "The submitted Lean code compiles successfully.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S1-R1",
+          "S1-R2",
+          "S1-R3",
+          "S1-R5",
+          "S1-R6"
+        ],
+        "internal_finding": "The submission fails to correctly formalise the prerequisite and approval conditions and explain how they establish eligibility.",
+        "student_feedback": "The submission does not correctly represent the prerequisite and approval conditions or explain how they establish eligibility. The proof also does not use case analysis evidence to derive the conclusion.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R1",
+            "description": "No direct representation of x1 ∨ x2 is found in the submission."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R2",
+            "description": "No direct representation of y1 ∨ y2 is found in the submission."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R3",
+            "description": "No direct demonstration of the combined eligibility condition is found."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R5",
+            "description": "The proof does not use evidence from case analysis to derive the conclusion."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R6",
+            "description": "No explanation is provided of how the conditions establish eligibility."
+          }
+        ]
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "S1-R4",
+          "S1-R5",
+          "S1-R6"
+        ],
+        "internal_finding": "The proof needs to address all four combinations and use case analysis evidence to derive the conclusion.",
+        "student_feedback": "The proof should address all four combinations of the conditions and use case analysis evidence to derive the conclusion. Additionally, an explanation of how the conditions establish eligibility is needed.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R4",
+            "description": "The proof does not fully address all four combinations of the conditions."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R5",
+            "description": "The proof does not use evidence from case analysis to derive the conclusion."
+          },
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R6",
+            "description": "No explanation is provided of how the conditions establish eligibility."
+          }
+        ]
+      }
+    ],
+    "component_summary": "The submission correctly compiles but fails to correctly formalise the prerequisite and approval conditions. The proof does not use case analysis evidence to derive the conclusion and lacks an explanation of how the conditions establish eligibility."
+  }
+}

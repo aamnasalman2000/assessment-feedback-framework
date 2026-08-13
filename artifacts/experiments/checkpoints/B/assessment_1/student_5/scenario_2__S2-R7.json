@@ -1,0 +1,59 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_014",
+  "initial_observation_id": "b_initial_obs_014",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_014",
+    "requirement_id": "S2-R7",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "status": "met",
+    "internal_finding": "The submitted Lean code must compile.",
+    "verification_status": "verified_by_tool",
+    "confidence": 1.0,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_014",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S2-R7"
+    ],
+    "criterion_assessment_ids": [
+      "ca_014"
+    ],
+    "internal_finding": "The submitted Lean code must compile.",
+    "student_feedback": "The submitted Lean code must compile.",
+    "verification_status": "verified_by_tool",
+    "confidence": 1.0,
+    "evidence": []
+  }
+}

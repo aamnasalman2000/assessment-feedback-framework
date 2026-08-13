@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The theorem 'ex1' is compiled as a theorem with a term-style proof. The proof body includes the necessary axioms and uses the provided axioms to construct the proof. The structured data indicates that the theorem is properly declared and the proof is implemented without 'sorry' markers.",
+    "student_feedback": "The theorem 'ex1' is correctly compiled with a term-style proof. The proof uses the provided axioms to construct the proof and does not contain any 'sorry' markers.",
+    "suggestion": "The proof is correctly implemented. No further action is needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_015",
+        "block_id": "artifact_001_unit_015_statement",
+        "source_range": {
+          "start_line": 188,
+          "end_line": 188
+        },
+        "description": "The theorem is declared and compiled as a theorem with a term-style proof."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_015",
+        "block_id": "artifact_001_unit_015_proof",
+        "source_range": {
+          "start_line": 189,
+          "end_line": 204
+        },
+        "description": "The proof body includes the necessary axioms and uses the provided axioms to construct the proof."
+      }
+    ]
+  }
+}

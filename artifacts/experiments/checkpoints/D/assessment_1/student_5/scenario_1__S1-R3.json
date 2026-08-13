@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "partially_met",
+    "internal_finding": "The student's proof in artifact_001_unit_003 attempts to demonstrate that eligibility depends on satisfying both the prerequisite requirement and the approval requirement. The proof uses case analysis on the disjunctions x1 ∨ x2 and y1 ∨ y2, and applies hypotheses h1, h3, and h4 to derive provable z. However, the proof is incomplete as it does not fully construct the target proposition and lacks explicit handling of all four combinations of x1, x2, y1, and y2.",
+    "student_feedback": "The proof demonstrates an attempt to satisfy both prerequisite and approval requirements, but it is incomplete and lacks full handling of all case combinations. The proof should explicitly handle all four cases (x1 ∧ y1, x1 ∧ y2, x2 ∧ y1, x2 ∧ y2) and ensure that both conditions are fully addressed.",
+    "suggestion": "Complete the proof by explicitly handling all four combinations of x1, x2, y1, and y2. Ensure that both the prerequisite and approval conditions are fully addressed in each case.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 26,
+          "end_line": 44
+        },
+        "excerpt": "-- Start by eliminating the disjunction x1 ∨ x2\n  Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+        "description": "The proof in artifact_001_unit_003 attempts to show that the proposition z is provable by using case analysis on the disjunctions x1 ∨ x2 and y1 ∨ y2. The proof uses the provided hypotheses h1, h3, and h4 to derive provable z in each case."
+      }
+    ]
+  }
+}

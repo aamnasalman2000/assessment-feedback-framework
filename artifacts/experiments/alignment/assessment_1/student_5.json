@@ -1,0 +1,139 @@
+{
+  "component_alignments": [
+    {
+      "component_id": "scenario_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_003"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_002",
+        "artifact_001_unit_005",
+        "artifact_001_unit_009"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_003 proof attempts to prove the proposition z by case analysis on the disjunctions x1 ∨ x2 and y1 ∨ y2, aligning with the scenario_1 task of proving the student's eligibility. The provable proposition (unit_002 and unit_005) and its definition (unit_009) support the logical structure required for the scenario.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_004"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_002",
+        "artifact_001_unit_005",
+        "artifact_001_unit_009"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_004 proof attempts to prove the proposition a ∧ d using a proof by contradiction and case analysis, aligning with the scenario_2 task of proving transaction-security conditions. The provable proposition (unit_002 and unit_005) and its definition (unit_009) support the logical structure required for the scenario.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_006",
+        "artifact_001_unit_007"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_002",
+        "artifact_001_unit_005",
+        "artifact_001_unit_009"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_006 and unit_007 proofs attempt to prove the proposition r ∧ m ∧ ¬f using case analysis and logical steps, aligning with the scenario_3 task of proving the car reaches the destination. The provable proposition (unit_002 and unit_005) and its definition (unit_009) support the logical structure required for the scenario.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_007"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_002",
+        "artifact_001_unit_005",
+        "artifact_001_unit_009"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_007 proof attempts to prove the proposition r ∧ m ∧ ¬f, aligning with the scenario_4 task of proving the threat leads to an automatic response, manual intervention, and the conclusion that the threat is not a false positive. The provable proposition (unit_002 and unit_005) and its definition (unit_009) support the logical structure required for the scenario.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_015"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_010",
+        "artifact_001_unit_011",
+        "artifact_001_unit_012",
+        "artifact_001_unit_014"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_015 theorem proves the theorem that involves conjunctions with false and implications involving provability, aligning with the theorem_1 task of proving that conjunction with false is not provable. The axioms (unit_010, unit_011, unit_012, unit_014) support the logical structure required for the theorem.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_016"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_010",
+        "artifact_001_unit_011",
+        "artifact_001_unit_012",
+        "artifact_001_unit_014"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_016 theorem proves the theorem that if provable (conj x False) then provable y, aligning with the theorem_2 task of proving the principle of explosion. The axioms (unit_010, unit_011, unit_012, unit_014) support the logical structure required for the theorem.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_017"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_010",
+        "artifact_001_unit_011",
+        "artifact_001_unit_012",
+        "artifact_001_unit_014"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_017 theorem proves the theorem that the provability of a nested conjunction implies the provability of a reordered conjunction, aligning with the theorem_3 task of rearranging nested conjunctions. The axioms (unit_010, unit_011, unit_012, unit_014) support the logical structure required for the theorem.",
+      "confidence": 0.85,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_018"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_010",
+        "artifact_001_unit_011",
+        "artifact_001_unit_012",
+        "artifact_001_unit_014"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_018 theorem proves the theorem that if conj x y is not provable, then provable x implies not provable y, aligning with the theorem_4 task of using negation to infer missing provability. The axioms (unit_010, unit_011, unit_012, unit_014) support the logical structure required for the theorem.",
+      "confidence": 0.85,
+      "unresolved": false
+    }
+  ],
+  "summary": "The student's submission aligns with all assessment components. Primary units directly address the component tasks, while supporting units provide necessary definitions and axioms. The alignment is based on the logical structure and semantic interpretations of the units.",
+  "warnings": [
+    "No warnings were generated as all components were resolved with aligned units."
+  ],
+  "schema_version": "1.0",
+  "assessment_id": "assessment_1",
+  "source_submission_id": "assessment_1_student_5",
+  "processed_submission_id": "processed_assessment_1_student_5",
+  "model_name": "Qwen/Qwen3-4B",
+  "aligner_version": "1.0"
+}

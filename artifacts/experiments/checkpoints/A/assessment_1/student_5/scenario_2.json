@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_2",
+  "requirement_ids": [
+    "S2-R1",
+    "S2-R2",
+    "S2-R3",
+    "S2-R4",
+    "S2-R5",
+    "S2-R6",
+    "S2-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S2-R1",
+        "status": "not_met",
+        "internal_finding": "The submission does not use the exact logical implication required by the brief.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S2-R2",
+        "status": "met",
+        "internal_finding": "Derive d from b and b -> d.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_004",
+            "block_id": "artifact_001_unit_004_proof",
+            "source_range": {
+              "start_line": 65,
+              "end_line": 73
+            },
+            "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done",
+            "description": "Derives d from b and b -> d."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R3",
+        "status": "not_met",
+        "internal_finding": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+        "verification_status": "inferred",
+        "confidence": 0.6,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S2-R4",
+        "status": "met",
+        "internal_finding": "Construct the final conjunction a ∧ d.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_004",
+            "block_id": "artifact_001_unit_004_proof",
+            "source_range": {
+              "start_line": 65,
+              "end_line": 73
+            },
+            "excerpt": "And.intro ha hd",
+            "description": "Constructs the final conjunction a ∧ d."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R5",
+        "status": "met",
+        "internal_finding": "Any use of classical reasoning must be valid and supported by the Lean environment.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_004",
+            "block_id": "artifact_001_unit_004_proof",
+            "source_range": {
+              "start_line": 65,
+              "end_line": 73
+            },
+            "excerpt": "have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c",
+            "description": "Classical reasoning is used and supported by the Lean environment."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R6",
+        "status": "not_met",
+        "internal_finding": "Explain how the assumptions lead to a and d.",
+        "verification_status": "inferred",
+        "confidence": 0.5,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S2-R7",
+        "status": "met",
+        "internal_finding": "The submitted Lean code must compile.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "S2-R2",
+          "S2-R4",
+          "S2-R5",
+          "S2-R7"
+        ],
+        "internal_finding": "The submission correctly derives d from b and b -> d, constructs a ∧ d, uses classical reasoning, and compiles in Lean.",
+        "student_feedback": "The submission demonstrates strong logical reasoning and correct use of Lean's proof mechanisms.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_004",
+            "block_id": "artifact_001_unit_004_proof",
+            "source_range": {
+              "start_line": 65,
+              "end_line": 73
+            },
+            "excerpt": "And.intro ha hd",
+            "description": "Constructs the final conjunction a ∧ d."
+          }
+        ]
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S2-R1",
+          "S2-R3",
+          "S2-R6"
+        ],
+        "internal_finding": "The submission lacks the exact logical implication and explanation required for the proof.",
+        "student_feedback": "The proof needs to explicitly use the logical implication and provide a clear explanation of the reasoning steps.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission demonstrates strong logical reasoning and correct use of Lean's proof mechanisms. However, it lacks the exact logical implication and explanation required for the proof."
+  }
+}

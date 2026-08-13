@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_1",
+  "requirement_ids": [
+    "T1-R1",
+    "T1-R2",
+    "T1-R3",
+    "T1-R4",
+    "T1-R5"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T1-R1",
+        "status": "met",
+        "internal_finding": "The theorem proves that provable (conj x False) leads to a contradiction.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 189,
+              "end_line": 204
+            },
+            "excerpt": "λ x =>\n  -- We need to prove that `¬ provable (conj x False)`.\n  -- This means that if we have a proof of `conj x False`, it leads to a contradiction.\n  -- We can use the axiom `AxConjElimRight` to show that if we have a proof of `conj x False`,\n  -- then we can derive `provable False`, which contradicts the axiom `AxNotPrFalse`."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T1-R2",
+        "status": "met",
+        "internal_finding": "The theorem proves that provable x does not imply that False is provable.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 189,
+              "end_line": 204
+            },
+            "excerpt": "let hxf : provable x → ¬ provable False :=\n    λ _ h_pf => AxNotPrFalse h_pf"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T1-R3",
+        "status": "met",
+        "internal_finding": "The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 189,
+              "end_line": 204
+            },
+            "excerpt": "let hx : ¬ provable (conj x False) :=\n    λ h =>\n      let pr_false := AxConjElimRight x False h\n      AxNotPrFalse pr_false"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T1-R4",
+        "status": "not_met",
+        "internal_finding": "The explanation of both conjuncts is missing in the theorem.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T1-R5",
+        "status": "met",
+        "internal_finding": "The theorem compiles as per the Lean 4 syntax.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "T1-R1",
+          "T1-R2",
+          "T1-R3",
+          "T1-R5"
+        ],
+        "internal_finding": "The theorem correctly uses axioms and proves the required properties.",
+        "student_feedback": "The theorem successfully proves the required properties using the provided axioms and Lean 4 syntax.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": []
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T1-R4"
+        ],
+        "internal_finding": "The explanation of both conjuncts is missing in the theorem.",
+        "student_feedback": "The theorem should include comments explaining the reasoning behind both parts of the proof.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component successfully proves the required properties using the provided axioms and Lean 4 syntax. However, the explanation of both conjuncts is missing, which could improve clarity and completeness."
+  }
+}

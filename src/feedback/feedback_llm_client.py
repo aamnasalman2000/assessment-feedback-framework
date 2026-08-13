@@ -783,36 +783,58 @@ def _normalise_verification_status(
     value: Any,
 ) -> Any:
     """
-    Repair the narrow structured-output case where a small model uses
-    criterion status 'missing' as verification_status.
+    Normalise invalid model-generated verification-status values.
 
-    'missing' is a valid CriterionStatus but not a valid
-    VerificationStatus. When no work/evidence is present, the
-    corresponding verification state is 'not_verified'.
+    Criterion status and verification status use separate controlled
+    vocabularies. Small models may occasionally reuse criterion-status
+    values such as 'missing' or 'not_assessable' as verification_status.
 
-    No other verification-status values are changed.
+    Such values indicate that reliable verification is unavailable and
+    are therefore normalised to 'not_verified'.
+
+    The transformation is applied recursively so nested criterion
+    assessments and observations are handled consistently.
     """
-    if not isinstance(
+    if isinstance(
         value,
         dict,
     ):
-        return value
+        normalised = {}
 
-    normalised = dict(
-        value
-    )
+        for key, item in value.items():
+            if (
+                key == "verification_status"
+                and isinstance(
+                    item,
+                    str,
+                )
+                and item in {
+                    "missing",
+                    "not_assessable",
+                }
+            ):
+                item = "not_verified"
 
-    if (
-        normalised.get(
-            "verification_status"
-        )
-        == "missing"
+            normalised[key] = (
+                _normalise_verification_status(
+                    item
+                )
+            )
+
+        return normalised
+
+    if isinstance(
+        value,
+        list,
     ):
-        normalised[
-            "verification_status"
-        ] = "not_verified"
+        return [
+            _normalise_verification_status(
+                item
+            )
+            for item in value
+        ]
 
-    return normalised
+    return value
 
 
 # ============================================================
@@ -1283,6 +1305,20 @@ class FeedbackStructuredClient:
             )
         )
 
+        # ----------------------------------------------------
+        # Verification-status normalisation
+        # ----------------------------------------------------
+        #
+        # Small models may occasionally reuse criterion-status
+        # values such as "not_assessable" or "missing" as a
+        # verification_status. The verification schema instead
+        # represents unavailable verification as "not_verified".
+        normalised_response = (
+            _normalise_verification_status(
+                normalised_response
+            )
+        )
+
         self._save_debug_responses(
             raw_response=response,
             normalised_response=(
@@ -1319,21 +1355,131 @@ class FeedbackStructuredClient:
         requirement_id: str,
         log_name: str,
     ) -> RequirementFeedbackLLMOutput:
-        response = (
-            self._client
-            .generate_structured(
-                system_prompt=(
-                    system_prompt
-                ),
-                user_prompt=(
+        # ----------------------------------------------------
+        # Requirement feedback generation with schema-echo retry
+        # ----------------------------------------------------
+        #
+        # Small local models may occasionally reproduce the supplied
+        # JSON schema instead of returning an instance conforming to it.
+        # Retry once with an explicit corrective instruction rather
+        # than attempting to fabricate substantive feedback.
+
+        response = None
+
+        for attempt in range(2):
+            attempt_user_prompt = (
+                user_prompt
+                if attempt == 0
+                else (
                     user_prompt
-                ),
-                output_schema=(
-                    RequirementFeedbackLLMOutput
-                    .model_json_schema()
-                ),
+                    + """
+
+CRITICAL OUTPUT CORRECTION
+
+Your previous response reproduced or modified the JSON schema instead of
+returning an evaluation result.
+
+Do NOT return schema metadata or schema definitions.
+
+Do NOT return:
+- $schema
+- $defs
+- properties
+- required
+- title
+- type
+- additionalProperties
+
+Return an INSTANCE of the requested requirement-feedback object.
+
+The top-level JSON object must contain feedback values such as:
+
+{
+  "status": "...",
+  "internal_finding": "...",
+  "student_feedback": "...",
+  "verification_status": "...",
+  "confidence": 0.0,
+  "evidence": []
+}
+
+Populate these fields with the actual evaluation of the supplied
+requirement.
+
+Return exactly one valid JSON object and nothing else.
+"""
+                )
             )
-        )
+
+            try:
+                response = (
+                    self._client
+                    .generate_structured(
+                        system_prompt=(
+                            system_prompt
+                        ),
+                        user_prompt=(
+                            attempt_user_prompt
+                        ),
+                        output_schema=(
+                            RequirementFeedbackLLMOutput
+                            .model_json_schema()
+                        ),
+                    )
+                )
+
+            except RuntimeError as exc:
+                # The structured client may fail before returning a dict
+                # when the schema echo itself is malformed JSON.
+                if (
+                    attempt == 0
+                    and (
+                        "valid JSON object"
+                        in str(exc)
+                        or "incomplete JSON object"
+                        in str(exc)
+                    )
+                ):
+                    print(
+                        "Requirement feedback returned malformed "
+                        "structured output; retrying..."
+                    )
+                    continue
+
+                raise
+
+            is_schema_echo = (
+                isinstance(
+                    response,
+                    dict,
+                )
+                and (
+                    "$defs" in response
+                    or "$schema" in response
+                    or (
+                        "properties" in response
+                        and "status"
+                        not in response
+                    )
+                    or (
+                        response.get("title")
+                        == "RequirementFeedbackLLMOutput"
+                    )
+                )
+            )
+
+            if not is_schema_echo:
+                break
+
+            print(
+                "Requirement feedback returned schema metadata "
+                "instead of a feedback instance; retrying..."
+            )
+
+        if response is None:
+            raise FeedbackLLMError(
+                "The model returned no requirement feedback."
+            )
 
         normalised_response = (
             _normalise_top_level_schema_field(
@@ -1447,21 +1593,106 @@ class FeedbackStructuredClient:
 
         It does not generate revised feedback or evidence.
         """
-        response = (
-            self._client
-            .generate_structured(
-                system_prompt=(
-                    system_prompt
-                ),
-                user_prompt=(
+        # ----------------------------------------------------
+        # Reflection audit generation with schema-echo retry
+        # ----------------------------------------------------
+        #
+        # Small local models may occasionally reproduce the supplied
+        # JSON schema itself instead of returning an instance conforming
+        # to that schema. Such a response contains structural schema
+        # fields such as "$defs", "properties" or "title" but no actual
+        # audit analysis.
+        #
+        # Do not fabricate or normalise an audit from a schema echo.
+        # Retry once with an explicit corrective instruction.
+
+        response = None
+
+        for attempt in range(2):
+            attempt_user_prompt = (
+                user_prompt
+                if attempt == 0
+                else (
                     user_prompt
-                ),
-                output_schema=(
-                    ReflectionAuditOutput
-                    .model_json_schema()
-                ),
+                    + """
+
+CRITICAL OUTPUT CORRECTION
+
+Your previous response reproduced the JSON schema instead of
+providing an evaluation result.
+
+Do NOT return:
+- $schema
+- $defs
+- properties
+- required
+- title
+- type
+- schema definitions
+
+Return an INSTANCE of the requested output.
+
+The top-level object must contain exactly:
+
+{
+  "analysis": {
+    ...
+  }
+}
+
+Populate analysis with the actual audit decision for the supplied
+requirement. Do not reproduce or explain the schema.
+"""
+                )
             )
-        )
+
+            response = (
+                self._client
+                .generate_structured(
+                    system_prompt=(
+                        system_prompt
+                    ),
+                    user_prompt=(
+                        attempt_user_prompt
+                    ),
+                    output_schema=(
+                        ReflectionAuditOutput
+                        .model_json_schema()
+                    ),
+                )
+            )
+
+            is_schema_echo = (
+                isinstance(
+                    response,
+                    dict,
+                )
+                and (
+                    "$defs" in response
+                    or (
+                        "properties" in response
+                        and "analysis"
+                        not in response
+                    )
+                    or (
+                        response.get("title")
+                        == "ReflectionAuditOutput"
+                    )
+                )
+            )
+
+            if not is_schema_echo:
+                break
+
+            print(
+                "Reflection audit returned schema metadata "
+                "instead of an audit instance; retrying..."
+            )
+
+        if response is None:
+            raise FeedbackLLMError(
+                "The model returned no reflection audit."
+            )
 
         normalised_response = (
             _normalise_reflection_audit_shape(

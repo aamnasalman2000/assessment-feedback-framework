@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's proof attempt does not correctly formalise the logical implication required by the brief. The proof body uses case analysis and contradiction but does not directly address the target statement ((b -> d) ∧ (¬a -> (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) -> (a ∧ d). The main answer unit (artifact_001_unit_004) attempts to prove a ∧ d but does not explicitly link the premises to the conclusion as required.",
+    "student_feedback": "The proof attempt does not fully satisfy the requirement to use the exact logical implication. The main answer unit proves a ∧ d but does not directly address the target statement as specified in the brief.",
+    "suggestion": "The student should explicitly structure the proof to directly address the target statement ((b -> d) ∧ (¬a -> (c ∧ d)) ∧ (a ∨ d) ∧ b ∧ ¬c) -> (a ∧ d) by linking the premises to the conclusion using the logical implication.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S2-R1",
+        "description": "The student's proof does not directly address the target statement as required by the brief."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_004",
+        "description": "The main answer unit attempts to prove a ∧ d but does not explicitly link the premises to the conclusion as required by the brief."
+      }
+    ]
+  }
+}

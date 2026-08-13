@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's proof does not correctly represent the prerequisite requirement as the disjunction x1 ∨ x2. The proof uses case analysis on x1 ∨ x2 and y1 ∨ y2, but the formalisation of the prerequisite requirement is not explicitly stated as x1 ∨ x2. The proof body uses the disjunctions but does not directly formalise the prerequisite requirement as the disjunction x1 ∨ x2.",
+    "student_feedback": "The student's proof includes case analysis on the disjunctions x1 ∨ x2 and y1 ∨ y2, but the formalisation of the prerequisite requirement is not explicitly stated as the disjunction x1 ∨ x2. The requirement is to correctly represent the prerequisite requirement as the disjunction x1 ∨ x2, which is not fully demonstrated in the proof.",
+    "suggestion": "The student should explicitly state the prerequisite requirement as the disjunction x1 ∨ x2 in the formalisation section of the proof.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S1-R1",
+        "description": "The student's proof does not explicitly formalise the prerequisite requirement as the disjunction x1 ∨ x2."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "description": "The proof body includes case analysis on x1 ∨ x2 and y1 ∨ y2, but the formalisation of the prerequisite requirement is not explicitly stated as x1 ∨ x2."
+      }
+    ]
+  }
+}

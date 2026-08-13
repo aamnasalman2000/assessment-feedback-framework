@@ -1,0 +1,175 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_4",
+  "requirement_ids": [
+    "T4-R1",
+    "T4-R2",
+    "T4-R3",
+    "T4-R4",
+    "T4-R5",
+    "T4-R6"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T4-R1",
+        "status": "met",
+        "internal_finding": "Assume provable y and combine it with provable x.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_018",
+            "block_id": "artifact_001_unit_018_proof",
+            "source_range": {
+              "start_line": 247,
+              "end_line": 256
+            },
+            "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+            "description": "Assume provable y and combine it with provable x."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R2",
+        "status": "met",
+        "internal_finding": "Use AxConjIntro to derive provable (conj x y).",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_018",
+            "block_id": "artifact_001_unit_018_proof",
+            "source_range": {
+              "start_line": 247,
+              "end_line": 256
+            },
+            "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+            "description": "Use AxConjIntro to derive provable (conj x y)."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R3",
+        "status": "met",
+        "internal_finding": "Use the contradiction with ¬ provable (conj x y) to establish ¬ provable y.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_018",
+            "block_id": "artifact_001_unit_018_proof",
+            "source_range": {
+              "start_line": 247,
+              "end_line": 256
+            },
+            "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+            "description": "Use the contradiction with ¬ provable (conj x y) to establish ¬ provable y."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R4",
+        "status": "met",
+        "internal_finding": "Supply the arguments to AxConjIntro correctly.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_018",
+            "block_id": "artifact_001_unit_018_proof",
+            "source_range": {
+              "start_line": 247,
+              "end_line": 256
+            },
+            "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+            "description": "Supply the arguments to AxConjIntro correctly."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R5",
+        "status": "not_met",
+        "internal_finding": "Explain the contradiction-based proof strategy.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_2",
+            "task_id": "T4-R5",
+            "requirement_id": "T4-R5",
+            "description": "No direct explanation of the contradiction-based proof strategy is present in the submission."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R6",
+        "status": "met",
+        "internal_finding": "The theorem must compile.",
+        "verification_status": "not_verified",
+        "confidence": 0.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "T4-R1",
+          "T4-R2",
+          "T4-R3",
+          "T4-R4"
+        ],
+        "internal_finding": "The submission correctly applies the axioms and logical steps for the proof strategy.",
+        "student_feedback": "The proof strategy effectively uses the provided axioms and logical steps to derive the required conclusions.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_018",
+            "block_id": "artifact_001_unit_018_proof",
+            "source_range": {
+              "start_line": 247,
+              "end_line": 256
+            },
+            "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+            "description": "The proof strategy effectively uses the provided axioms and logical steps to derive the required conclusions."
+          }
+        ]
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T4-R5"
+        ],
+        "internal_finding": "The contradiction-based proof strategy is not explicitly explained in the submission.",
+        "student_feedback": "The submission should include a brief explanation of the contradiction-based proof strategy in the comments.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_2",
+            "task_id": "T4-R5",
+            "requirement_id": "T4-R5",
+            "description": "No direct explanation of the contradiction-based proof strategy is present in the submission."
+          }
+        ]
+      }
+    ],
+    "component_summary": "The submission demonstrates strong proof correctness and axiom usage, with clear logical steps. However, the contradiction-based proof strategy lacks explicit explanation, which could be improved with additional comments."
+  }
+}

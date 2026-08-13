@@ -1,0 +1,80 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_014",
+  "initial_observation_id": "obs_014",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The submitted Lean code does not compile as the requirement specifies."
+      ],
+      "overlooked_evidence": [
+        "The Lean compilation check was not run, so we cannot verify the compilation status."
+      ],
+      "missing_rubric_points": [
+        "The requirement states that the submitted Lean code must compile. The original assessment claims that the code does not compile, but there is no explicit evidence of this in the student work."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_low",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement concerns a property that requires deterministic verification, but no successful requirement-specific processing check establishes that property. The requirement cannot safely be marked as 'met'."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_014",
+    "requirement_id": "S2-R7",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "status": "not_met",
+    "internal_finding": "The submitted Lean code does not compile as the requirement specifies. The evidence includes units that are not directly related to the compilation check, and there is no explicit indication that the code compiles. The Lean compilation check was not run, so we cannot verify the compilation status.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S2-R7",
+        "description": "No evidence of successful compilation is present in the submission."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "obs_014",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S2-R7"
+    ],
+    "criterion_assessment_ids": [
+      "ca_014"
+    ],
+    "internal_finding": "The submitted Lean code does not compile as the requirement specifies. The evidence includes units that are not directly related to the compilation check, and there is no explicit indication that the code compiles. The Lean compilation check was not run, so we cannot verify the compilation status.",
+    "student_feedback": "The submitted Lean code does not compile. The requirement specifies that the submitted Lean code must compile, but there is no evidence that this has been achieved. The code may contain syntax errors or other issues that prevent it from compiling.",
+    "suggestion": "Ensure that the Lean code is correctly formatted and that all definitions and proofs are properly structured. Check for any syntax errors or missing imports that may prevent the code from compiling.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S2-R7",
+        "description": "No evidence of successful compilation is present in the submission."
+      }
+    ]
+  }
+}

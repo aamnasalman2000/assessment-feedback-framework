@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R6",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's proof attempts to show that z is provable by case analysis on x1 ∨ x2 and y1 ∨ y2, using hypotheses h1, h3, and h4. However, the proof is incomplete as it does not fully construct the target proposition. The explanation is missing, and the proof does not explicitly connect the prerequisite and approval conditions to establish eligibility.",
+    "student_feedback": "The proof demonstrates case analysis on the disjunctions, but it is incomplete and lacks a clear explanation of how the conditions establish eligibility. The explanation is missing, and the proof does not fully connect the prerequisite and approval conditions to the eligibility requirement.",
+    "suggestion": "Include a brief explanation of the reasoning as comments within the Lean file to meet the explanation requirement.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S1-R6",
+        "description": "The explanation of the reasoning is missing from the submission."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "description": "The proof is incomplete and lacks a clear explanation of how the conditions establish eligibility."
+      }
+    ]
+  }
+}

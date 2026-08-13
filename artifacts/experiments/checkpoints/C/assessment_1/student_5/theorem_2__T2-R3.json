@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_2",
+  "requirement_id": "T2-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's theorem ex2 uses the conjunction-elimination axioms AxConjElimRight and AxNotPrFalse appropriately. The proof body correctly applies AxConjElimRight to extract provable False from the assumption, then uses AxNotPrFalse to derive a contradiction, and finally uses False.elim to conclude provable y. The relevant units (artifact_001_unit_016, artifact_001_unit_010, artifact_001_unit_014) are present and correctly referenced.",
+    "student_feedback": "The student has correctly applied the conjunction-elimination and falsehood axioms in the proof of theorem ex2. The use of AxConjElimRight and AxNotPrFalse is appropriate and well-explained with comments.",
+    "suggestion": "The proof is correct and well-structured. No further action is needed as the requirement is fully met.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_016",
+        "block_id": "artifact_001_unit_016_proof",
+        "source_range": {
+          "start_line": 209,
+          "end_line": 215
+        },
+        "description": "Proof body of theorem ex2 using AxConjElimRight and AxNotPrFalse"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_010",
+        "block_id": "artifact_001_unit_010_statement",
+        "source_range": {
+          "start_line": 173,
+          "end_line": 173
+        },
+        "description": "Axiom AxConjElimRight used in the proof"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_014",
+        "block_id": "artifact_001_unit_014_statement",
+        "source_range": {
+          "start_line": 185,
+          "end_line": 185
+        },
+        "description": "Axiom AxNotPrFalse used in the proof"
+      }
+    ]
+  }
+}

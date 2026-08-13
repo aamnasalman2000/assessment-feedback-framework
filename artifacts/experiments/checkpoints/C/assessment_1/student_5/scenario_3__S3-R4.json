@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The requirement 'Represent unsafe alternate-route weather as implying the absence of congestion on the usual route' is not met. The student's evidence does not directly show that unsafe alternate-route weather implies the absence of congestion on the usual route. The proof attempts in the units focus on different conditions and do not explicitly link unsafe weather on the alternate route to the absence of congestion on the usual route.",
+    "student_feedback": "The student's work does not demonstrate the required formalisation that unsafe alternate-route weather implies the absence of congestion on the usual route. The proof attempts focus on different conditions and do not explicitly link these concepts.",
+    "suggestion": "The student should explicitly formalise the relationship between unsafe alternate-route weather and the absence of congestion on the usual route. This can be done by defining a proposition that captures this implication and proving it using the given conditions.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "task_1",
+        "requirement_id": "S3-R4",
+        "description": "No direct evidence is present that unsafe alternate-route weather implies the absence of congestion on the usual route."
+      }
+    ]
+  }
+}

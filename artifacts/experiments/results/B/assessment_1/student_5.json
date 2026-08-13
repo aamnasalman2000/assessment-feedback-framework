@@ -1,0 +1,3951 @@
+{
+  "criterion_assessments": [
+    {
+      "criterion_assessment_id": "ca_001",
+      "requirement_id": "S1-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "excerpt": "-- Start by eliminating the disjunction x1 ∨ x2\n  Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_002",
+      "requirement_id": "S1-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "The approval requirement is correctly represented as y1 ∨ y2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hy\n  (fun hy1 =>\n    -- Subcase: y1 is provable\n    -- Use rule h3 to derive provable z\n    h3 hy1)\n  (fun hy2 =>\n    -- Subcase: y2 is provable\n    -- Use rule h4 to derive provable z\n    h4 hy2))",
+          "description": "Proofs involving disjunctions in example_1 and example_2 directly relate to the requirement of representing the approval requirement as y1 ∨ y2."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "Proofs involving disjunctions in example_1 and example_2 directly relate to the requirement of representing the approval requirement as y1 ∨ y2."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_003",
+      "requirement_id": "S1-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "Eligibility depends on both prerequisite and approval conditions is demonstrated through the use of multiple proofs and axioms in the student work.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'h1', 'h3', and 'h4' in the proofs of 'ex1', 'ex2', 'ex3', and 'ex4'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjElimRight' and 'AxNotPrFalse' in the proof of 'ex1'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjElimRight' and 'AxNotPrFalse' in the proof of 'ex2'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "excerpt": "let px : provable x := AxConjElimLeft x (conj y z) h\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjElimLeft' and 'AxConjElimRight' in the proof of 'ex3'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "excerpt": "let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjIntro' in the proof of 'ex4'."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_004",
+      "requirement_id": "S1-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "The student work includes multiple examples and proofs that address the four prerequisite–approval combinations.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proofs addressing the four combinations in example_1"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "Proofs addressing the four combinations in example_2"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "Proofs addressing the four combinations in example_3"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "Proofs addressing the four combinations in example_4"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_005",
+      "requirement_id": "S1-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "The student work explicitly uses case analysis to derive conclusions in multiple examples.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Example 1 uses case analysis to derive conclusions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "by\n  by_cases ha : a               -- Case analysis on a\n  · exact ha                      -- If a is true, we're done\n  · let hcd := h2 ha               -- From ¬a → c ∧ d\n    have hc := hcd.left            -- Extract c\n    exact absurd hc hnc           -- Contradiction: have c and ¬c",
+          "description": "Example 2 uses case analysis to derive conclusions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "Example 3 uses case analysis to derive conclusions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hf : ¬f :=                -- Need to show ¬f\n  Or.elim h4\n    (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n    (fun hnf : ¬f => hnf)          -- If ¬f, we are done",
+          "description": "Example 4 uses case analysis to derive conclusions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_006",
+      "requirement_id": "S1-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explanation of how conditions establish eligibility is missing.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R6",
+          "description": "No explanation is provided of how the conditions establish eligibility."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_007",
+      "requirement_id": "S1-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code compiles successfully.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_008",
+      "requirement_id": "S2-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The submission does not use the exact logical implication required by the brief.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_009",
+      "requirement_id": "S2-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "Derive d from b and b -> d.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done",
+          "description": "Derives d from b and b -> d."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_010",
+      "requirement_id": "S2-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+      "verification_status": "inferred",
+      "confidence": 0.6,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_011",
+      "requirement_id": "S2-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "Construct the final conjunction a ∧ d.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "And.intro ha hd",
+          "description": "Constructs the final conjunction a ∧ d."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_012",
+      "requirement_id": "S2-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques. The use of classical reasoning is valid and supported by the Lean environment.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_013",
+      "requirement_id": "S2-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explain how the assumptions lead to a and d.",
+      "verification_status": "inferred",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_014",
+      "requirement_id": "S2-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code must compile.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_015",
+      "requirement_id": "S3-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R1",
+          "description": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_016",
+      "requirement_id": "S3-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "met",
+      "internal_finding": "Safe weather is represented as the negation of the proposition representing unsafe weather.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_statement",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "excerpt": "def provable (p : Prop) : Prop",
+          "description": "The definition of 'provable' as a proposition."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_005",
+          "block_id": "artifact_001_unit_005_statement",
+          "source_range": {
+            "start_line": 87,
+            "end_line": 87
+          },
+          "excerpt": "def provable (p : Prop) : Prop",
+          "description": "The definition of 'provable' as a proposition."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_017",
+      "requirement_id": "S3-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "met",
+      "internal_finding": "The 'only if' condition is correctly interpreted as an implication in the context of the problem.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student's proof uses the 'only if' condition as an implication in the context of the problem."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_018",
+      "requirement_id": "S3-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "met",
+      "internal_finding": "The student work includes multiple proofs and axioms that demonstrate logical connections between propositions, including the use of axioms like AxConjElimRight, AxConjElimLeft, and AxConjIntro to derive conclusions about provable statements.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proofs using axioms to derive conclusions about provable statements."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "Proofs using axioms to derive conclusions about provable statements."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "fun hprovY : provable y =>\n  -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n  let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n  -- But that contradicts the assumption that conj x y is not provable\n  hnotConj hConj",
+          "description": "Proofs using axioms to derive conclusions about provable statements."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_019",
+      "requirement_id": "S3-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R5",
+          "description": "The proposition for destination_reached is not derived from the formalised assumptions."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_020",
+      "requirement_id": "S3-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_021",
+      "requirement_id": "S3-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The student work contains proofs and definitions that could be relevant to the requirement, but the assessment does not evaluate the presence of explanations related to proposition mapping, 'only if' interpretation, or assumption logic in the student work.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proof body containing Or.elim and use of rules h1, h3, h4 to derive provable z."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "Proof body containing AxConjElimRight and AxNotPrFalse."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "scenario_3",
+          "requirement_id": "S3-R7",
+          "description": "The assessment does not evaluate the presence of explanations related to proposition mapping, 'only if' interpretation, or assumption logic in the student work."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_022",
+      "requirement_id": "S3-R8",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code compiles without errors.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_023",
+      "requirement_id": "S4-R1",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The proof does not use the exact implication required by the brief.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R1",
+          "description": "The proof does not target the required implication."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_024",
+      "requirement_id": "S4-R2",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The student work includes multiple proofs and examples that demonstrate logical derivations involving t, r, and t -> r.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "Proof of r from t and t -> r in example_4"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false\n  let contradiction : False := AxNotPrFalse pr_false\n  False.elim contradiction",
+          "description": "Proof of r from t and t -> r in example_2"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "let px : provable x := AxConjElimLeft x (conj y z) h\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n  let py : provable y := AxConjElimLeft y z pyz\n  let pz : provable z := AxConjElimRight y z pyz\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Proof of r from t and t -> r in example_3"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_025",
+      "requirement_id": "S4-R3",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "Derives m from r and r -> m.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_026",
+      "requirement_id": "S4-R4",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "Derives ¬f using the available assumptions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "excerpt": "have hf : ¬f :=\n  Or.elim h4\n    (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n    (fun hnf : ¬f => hnf)          -- If ¬f, we are done",
+          "description": "Proof of ¬f in example_4"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "excerpt": "have hf : ¬f :=\n  by\n    by_cases ha : a               -- Case analysis on a\n    · exact ha                      -- If a is true, we're done\n    · let hcd := h2 ha               -- From ¬a → c ∧ d\n      have hc := hcd.left            -- Extract c\n      exact absurd hc hnc           -- Contradiction: have c and ¬c",
+          "description": "Proof of ¬f in example_2"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_027",
+      "requirement_id": "S4-R5",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The student's work includes a proof of r ∧ m ∧ ¬f using the correct conjunction structure, but the explicit construction of r ∧ m ∧ ¬f is not directly evident in the provided evidence.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_statement",
+          "source_range": {
+            "start_line": 153,
+            "end_line": 153
+          },
+          "excerpt": "example : r ∧ m ∧ ¬f",
+          "description": "The student's work includes a formal statement of r ∧ m ∧ ¬f."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht\n  have hm : m := h3 hr\n  have hf : ¬f :=\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm)\n      (fun hnf : ¬f => hnf)\n  And.intro hr (And.intro hm hf)",
+          "description": "The student's work includes a proof of r ∧ m ∧ ¬f using the correct conjunction structure."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_028",
+      "requirement_id": "S4-R6",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The proof directly addresses the required implication.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_001",
+          "block_id": "artifact_001_unit_001_proof",
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "excerpt": "IO.println \"You have successfully proved the eligibility theorem!\"",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_proof",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "excerpt": "p",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_005",
+          "block_id": "artifact_001_unit_005_proof",
+          "source_range": {
+            "start_line": 87,
+            "end_line": 87
+          },
+          "excerpt": "p",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "fun hprovY : provable y =>\n  -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n  let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n  -- But that contradicts the assumption that conj x y is not provable\n  hnotConj hConj",
+          "description": "The proof includes a direct statement of the required implication."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_029",
+      "requirement_id": "S4-R7",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explains the derivation of r, m and ¬f.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R7",
+          "description": "The proof does not include explanations of the derivation steps."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_030",
+      "requirement_id": "S4-R8",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "status": "met",
+      "internal_finding": "The submitted Lean code must compile.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_031",
+      "requirement_id": "T1-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "The requirement to prove that provable (conj x False) leads to a contradiction is not directly addressed in the student's work.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "task_2",
+          "requirement_id": "T1-R1",
+          "description": "The student's work does not directly prove that provable (conj x False) leads to a contradiction."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_032",
+      "requirement_id": "T1-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The student's work includes multiple theorems and examples that demonstrate the logical structure of the proof, but the specific claim that 'provable x does not imply that False is provable' is not explicitly verified.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "λ x =>\n  -- We need to prove that `¬ provable (conj x False)`.\n  -- This means that if we have a proof of `conj x False`, it leads to a contradiction.\n  -- We can use the axiom `AxConjElimRight` to show that if we have a proof of `conj x False`,\n  -- then we can derive `provable False`, which contradicts the axiom `AxNotPrFalse`.\n  let hx : ¬ provable (conj x False) :=\n    λ h =>\n      let pr_false := AxConjElimRight x False h\n      AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "The proof in the theorem ex1 includes a reference to the axiom AxConjElimRight and the axiom AxNotPrFalse, which are relevant to the requirement."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T1-R2",
+          "requirement_id": "T1-R2",
+          "description": "The specific claim that 'provable x does not imply that False is provable' is not explicitly verified in the submitted material."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_033",
+      "requirement_id": "T1-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse as required.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_010",
+          "block_id": "artifact_001_unit_010_statement",
+          "source_range": {
+            "start_line": 173,
+            "end_line": 173
+          },
+          "excerpt": "axiom AxConjElimRight : ∀ x y, provable (conj x y) → provable y",
+          "description": "AxConjElimRight is explicitly referenced in the proof sections."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_014",
+          "block_id": "artifact_001_unit_014_statement",
+          "source_range": {
+            "start_line": 185,
+            "end_line": 185
+          },
+          "excerpt": "axiom AxNotPrFalse : provable False → False",
+          "description": "AxNotPrFalse is explicitly referenced in the proof sections."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_034",
+      "requirement_id": "T1-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "not_met",
+      "internal_finding": "The explanation of both conjuncts is missing in the theorem.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_035",
+      "requirement_id": "T1-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem compiles as per the Lean 4 syntax.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_036",
+      "requirement_id": "T2-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "not_met",
+      "internal_finding": "The requirement to extract provable False from provable (conj x False) is not met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+          "description": "The proof in ex2 uses AxConjElimRight to derive provable False from provable (conj x False), but this does not explicitly extract provable False from provable (conj x False) as required by the exact requirement."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_037",
+      "requirement_id": "T2-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "met",
+      "internal_finding": "The requirement to use the resulting contradiction to derive provable y is met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "False.elim contradiction"
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_038",
+      "requirement_id": "T2-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is partially met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+          "description": "The proof in ex2 uses the conjunction-elimination axiom and the falsehood axiom, but the explicit application of these axioms is not clearly demonstrated."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_039",
+      "requirement_id": "T2-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "partially_met",
+      "internal_finding": "The requirement to explain the principle of explosion and how it is implemented is partially met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_040",
+      "requirement_id": "T2-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem must compile, which is met in the submission.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_041",
+      "requirement_id": "T3-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "Provable x, y, z are extracted from nested conjunctions in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable x, y, z are extracted from nested conjunctions in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_042",
+      "requirement_id": "T3-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "Provable (conj y x) is constructed using AxConjIntro in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable (conj y x) is constructed using AxConjIntro in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_043",
+      "requirement_id": "T3-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "The student's work demonstrates the use of AxConjIntro to construct the required conj (conj y x) z.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "excerpt": "let pyx : provable (conj y x) := AxConjIntro y x py px\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "The student's proof body includes the use of AxConjIntro to construct conj (conj y x) z."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_044",
+      "requirement_id": "T3-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_045",
+      "requirement_id": "T3-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explanations of elimination and reconstruction steps are missing in the proof body.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T3-R5",
+          "requirement_id": "T3-R5",
+          "description": "Explanations of elimination and reconstruction steps are missing in the proof body."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_046",
+      "requirement_id": "T3-R6",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem compiles as no 'sorry' is present in the submission.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "criterion_assessment_id": "ca_047",
+      "requirement_id": "T4-R1",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Assume provable y and combine it with provable x.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Assume provable y and combine it with provable x."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_048",
+      "requirement_id": "T4-R2",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Use AxConjIntro to derive provable (conj x y) in various contexts.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proof using AxConjIntro to derive provable (conj x y) in various contexts."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "excerpt": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y",
+          "description": "Proof using AxConjIntro to derive provable (conj x y) in various contexts."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_049",
+      "requirement_id": "T4-R3",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "The student's work does not explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y as required by the exact requirement.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "task_2",
+          "requirement_id": "T4-R3",
+          "description": "The student's work does not explicitly reference the use of the contradiction with ¬ provable (conj x y) to establish ¬ provable y."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_050",
+      "requirement_id": "T4-R4",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "Supply the arguments to AxConjIntro correctly.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Supply the arguments to AxConjIntro correctly."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_051",
+      "requirement_id": "T4-R5",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "not_met",
+      "internal_finding": "Explain the contradiction-based proof strategy.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T4-R5",
+          "requirement_id": "T4-R5",
+          "description": "No direct explanation of the contradiction-based proof strategy is present in the submission."
+        }
+      ]
+    },
+    {
+      "criterion_assessment_id": "ca_052",
+      "requirement_id": "T4-R6",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "status": "met",
+      "internal_finding": "The theorem must compile.",
+      "verification_status": "not_verified",
+      "confidence": 0.0,
+      "evidence": []
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "b_obs_001",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_001"
+      ],
+      "internal_finding": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement.",
+      "student_feedback": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement.",
+      "suggestion": "None",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "excerpt": "-- Start by eliminating the disjunction x1 ∨ x2\n  Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_002",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_002"
+      ],
+      "internal_finding": "The approval requirement is correctly represented as y1 ∨ y2.",
+      "student_feedback": "Your submitted work includes multiple proofs that involve disjunctions (e.g., Or.elim in example_1 and example_2), which directly relate to the requirement of representing the approval requirement as y1 ∨ y2.",
+      "suggestion": "No further action is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hy\n  (fun hy1 =>\n    -- Subcase: y1 is provable\n    -- Use rule h3 to derive provable z\n    h3 hy1)\n  (fun hy2 =>\n    -- Subcase: y2 is provable\n    -- Use rule h4 to derive provable z\n    h4 hy2))",
+          "description": "Proofs involving disjunctions in example_1 and example_2 directly relate to the requirement of representing the approval requirement as y1 ∨ y2."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "Proofs involving disjunctions in example_1 and example_2 directly relate to the requirement of representing the approval requirement as y1 ∨ y2."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_003",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_003"
+      ],
+      "internal_finding": "Eligibility depends on both prerequisite and approval conditions is demonstrated through the use of multiple proofs and axioms in the student work.",
+      "student_feedback": "Eligibility depends on both prerequisite and approval conditions is demonstrated through the use of multiple proofs and axioms in the student work.",
+      "suggestion": "No suggestion is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'h1', 'h3', and 'h4' in the proofs of 'ex1', 'ex2', 'ex3', and 'ex4'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjElimRight' and 'AxNotPrFalse' in the proof of 'ex1'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjElimRight' and 'AxNotPrFalse' in the proof of 'ex2'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "excerpt": "let px : provable x := AxConjElimLeft x (conj y z) h\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjElimLeft' and 'AxConjElimRight' in the proof of 'ex3'."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "excerpt": "let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY",
+          "description": "The student work includes proofs that involve both prerequisite and approval conditions, such as the use of 'AxConjIntro' in the proof of 'ex4'."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_004",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_004"
+      ],
+      "internal_finding": "The student work includes multiple examples and proofs that address the four prerequisite–approval combinations.",
+      "student_feedback": "Your submitted work addresses the four prerequisite–approval combinations through multiple examples and proofs.",
+      "suggestion": "No suggestion is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proofs addressing the four combinations in example_1"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "Proofs addressing the four combinations in example_2"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "Proofs addressing the four combinations in example_3"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "Proofs addressing the four combinations in example_4"
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_005",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_005"
+      ],
+      "internal_finding": "The student work explicitly uses case analysis to derive conclusions in multiple examples.",
+      "student_feedback": "Your submitted work uses case analysis to derive conclusions in multiple examples, as required.",
+      "suggestion": "No suggestion is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Example 1 uses case analysis to derive conclusions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "by\n  by_cases ha : a               -- Case analysis on a\n  · exact ha                      -- If a is true, we're done\n  · let hcd := h2 ha               -- From ¬a → c ∧ d\n    have hc := hcd.left            -- Extract c\n    exact absurd hc hnc           -- Contradiction: have c and ¬c",
+          "description": "Example 2 uses case analysis to derive conclusions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "Example 3 uses case analysis to derive conclusions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hf : ¬f :=                -- Need to show ¬f\n  Or.elim h4\n    (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n    (fun hnf : ¬f => hnf)          -- If ¬f, we are done",
+          "description": "Example 4 uses case analysis to derive conclusions."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_006",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_006"
+      ],
+      "internal_finding": "Explanation of how conditions establish eligibility is missing.",
+      "student_feedback": "Explanation of how conditions establish eligibility is missing.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "task_1",
+          "requirement_id": "S1-R6",
+          "description": "No explanation is provided of how the conditions establish eligibility."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_007",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S1-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_007"
+      ],
+      "internal_finding": "The submitted Lean code compiles successfully.",
+      "student_feedback": "The submitted Lean code compiles successfully.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_008",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_008"
+      ],
+      "internal_finding": "The submission does not use the exact logical implication required by the brief.",
+      "student_feedback": "The submission does not use the exact logical implication required by the brief.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_009",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_009"
+      ],
+      "internal_finding": "Derive d from b and b -> d.",
+      "student_feedback": "Derive d from b and b -> d.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done",
+          "description": "Derives d from b and b -> d."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_010",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_010"
+      ],
+      "internal_finding": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+      "student_feedback": "Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+      "verification_status": "inferred",
+      "confidence": 0.6,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_011",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_011"
+      ],
+      "internal_finding": "Construct the final conjunction a ∧ d.",
+      "student_feedback": "Construct the final conjunction a ∧ d.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "And.intro ha hd",
+          "description": "Constructs the final conjunction a ∧ d."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_012",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_012"
+      ],
+      "internal_finding": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques. The use of classical reasoning is valid and supported by the Lean environment.",
+      "student_feedback": "Your submitted work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques. The use of classical reasoning is valid and supported by the Lean environment.",
+      "suggestion": "None",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "The student's work includes multiple proofs that use classical reasoning, such as Or.elim, by_cases, and other classical proof techniques."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_013",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_013"
+      ],
+      "internal_finding": "Explain how the assumptions lead to a and d.",
+      "student_feedback": "Explain how the assumptions lead to a and d.",
+      "verification_status": "inferred",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_014",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S2-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_014"
+      ],
+      "internal_finding": "The submitted Lean code must compile.",
+      "student_feedback": "The submitted Lean code must compile.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_015",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_015"
+      ],
+      "internal_finding": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+      "student_feedback": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R1",
+          "description": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_016",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_016"
+      ],
+      "internal_finding": "Safe weather is represented as the negation of the proposition representing unsafe weather.",
+      "student_feedback": "Your submitted work correctly represents safe weather as the negation of the proposition representing unsafe weather.",
+      "suggestion": "No suggestion is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_statement",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "excerpt": "def provable (p : Prop) : Prop",
+          "description": "The definition of 'provable' as a proposition."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_005",
+          "block_id": "artifact_001_unit_005_statement",
+          "source_range": {
+            "start_line": 87,
+            "end_line": 87
+          },
+          "excerpt": "def provable (p : Prop) : Prop",
+          "description": "The definition of 'provable' as a proposition."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "The proof body demonstrates the use of 'provable' to derive propositions."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_017",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_017"
+      ],
+      "internal_finding": "The 'only if' condition is correctly interpreted as an implication in the context of the problem.",
+      "student_feedback": "The 'only if' condition is correctly interpreted as an implication in the context of the problem.",
+      "suggestion": "No suggestion is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The student's proof uses the 'only if' condition as an implication in the context of the problem."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_018",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_018"
+      ],
+      "internal_finding": "The student work includes multiple proofs and axioms that demonstrate logical connections between propositions, including the use of axioms like AxConjElimRight, AxConjElimLeft, and AxConjIntro to derive conclusions about provable statements.",
+      "student_feedback": "Your submitted work demonstrates logical connections between propositions using axioms like AxConjElimRight, AxConjElimLeft, and AxConjIntro to derive conclusions about provable statements.",
+      "suggestion": "No further action is needed as the requirement is fully met.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proofs using axioms to derive conclusions about provable statements."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "Proofs using axioms to derive conclusions about provable statements."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "fun hprovY : provable y =>\n  -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n  let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n  -- But that contradicts the assumption that conj x y is not provable\n  hnotConj hConj",
+          "description": "Proofs using axioms to derive conclusions about provable statements."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_019",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_019"
+      ],
+      "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+      "student_feedback": "The proposition for destination_reached is not derived from the formalised assumptions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "requirement_id": "S3-R5",
+          "description": "The proposition for destination_reached is not derived from the formalised assumptions."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_020",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_020"
+      ],
+      "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+      "student_feedback": "Ensure the proof includes a brief explanation of the reasoning and the use of different proposition names.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_021",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_021"
+      ],
+      "internal_finding": "The student work contains proofs and definitions that could be relevant to the requirement, but the assessment does not evaluate the presence of explanations related to proposition mapping, 'only if' interpretation, or assumption logic in the student work.",
+      "student_feedback": "The student work contains proofs and definitions that could be relevant to the requirement, but the assessment does not evaluate the presence of explanations related to proposition mapping, 'only if' interpretation, or assumption logic in the student work.",
+      "suggestion": "The student should provide explicit explanations of proposition mapping, the interpretation of 'only if', and how the assumptions lead to the destination conclusion in their work.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proof body containing Or.elim and use of rules h1, h3, h4 to derive provable z."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "Proof body containing AxConjElimRight and AxNotPrFalse."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "scenario_3",
+          "requirement_id": "S3-R7",
+          "description": "The assessment does not evaluate the presence of explanations related to proposition mapping, 'only if' interpretation, or assumption logic in the student work."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_022",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S3-R8"
+      ],
+      "criterion_assessment_ids": [
+        "ca_022"
+      ],
+      "internal_finding": "The submitted Lean code compiles without errors.",
+      "student_feedback": "The submitted Lean code compiles without errors.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_023",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_023"
+      ],
+      "internal_finding": "The proof does not use the exact implication required by the brief.",
+      "student_feedback": "The proof does not use the exact implication required by the brief.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R1",
+          "description": "The proof does not target the required implication."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_024",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_024"
+      ],
+      "internal_finding": "The student work includes multiple proofs and examples that demonstrate logical derivations involving t, r, and t -> r.",
+      "student_feedback": "The student work includes multiple proofs and examples that demonstrate logical derivations involving t, r, and t -> r.",
+      "suggestion": "The student work includes multiple proofs and examples that demonstrate logical derivations involving t, r, and t -> r.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "Proof of r from t and t -> r in example_4"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false\n  let contradiction : False := AxNotPrFalse pr_false\n  False.elim contradiction",
+          "description": "Proof of r from t and t -> r in example_2"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "let px : provable x := AxConjElimLeft x (conj y z) h\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n  let py : provable y := AxConjElimLeft y z pyz\n  let pz : provable z := AxConjElimRight y z pyz\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Proof of r from t and t -> r in example_3"
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_025",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_025"
+      ],
+      "internal_finding": "Derives m from r and r -> m.",
+      "student_feedback": "Derives m from r and r -> m.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_026",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_026"
+      ],
+      "internal_finding": "Derives ¬f using the available assumptions.",
+      "student_feedback": "Your submitted work includes a proof of ¬f using the available assumptions.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "excerpt": "have hf : ¬f :=\n  Or.elim h4\n    (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n    (fun hnf : ¬f => hnf)          -- If ¬f, we are done",
+          "description": "Proof of ¬f in example_4"
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "excerpt": "have hf : ¬f :=\n  by\n    by_cases ha : a               -- Case analysis on a\n    · exact ha                      -- If a is true, we're done\n    · let hcd := h2 ha               -- From ¬a → c ∧ d\n      have hc := hcd.left            -- Extract c\n      exact absurd hc hnc           -- Contradiction: have c and ¬c",
+          "description": "Proof of ¬f in example_2"
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_027",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_027"
+      ],
+      "internal_finding": "The student's work includes a proof of r ∧ m ∧ ¬f using the correct conjunction structure, but the explicit construction of r ∧ m ∧ ¬f is not directly evident in the provided evidence.",
+      "student_feedback": "The student's work includes a proof of r ∧ m ∧ ¬f using the correct conjunction structure, but the explicit construction of r ∧ m ∧ ¬f is not directly evident in the provided evidence.",
+      "suggestion": "The student should explicitly construct r ∧ m ∧ ¬f using the conjunction structure provided in the requirement.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_statement",
+          "source_range": {
+            "start_line": 153,
+            "end_line": 153
+          },
+          "excerpt": "example : r ∧ m ∧ ¬f",
+          "description": "The student's work includes a formal statement of r ∧ m ∧ ¬f."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht\n  have hm : m := h3 hr\n  have hf : ¬f :=\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm)\n      (fun hnf : ¬f => hnf)\n  And.intro hr (And.intro hm hf)",
+          "description": "The student's work includes a proof of r ∧ m ∧ ¬f using the correct conjunction structure."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_028",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_028"
+      ],
+      "internal_finding": "The proof directly addresses the required implication.",
+      "student_feedback": "The proof directly addresses the required implication.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_001",
+          "block_id": "artifact_001_unit_001_proof",
+          "source_range": {
+            "start_line": 4,
+            "end_line": 4
+          },
+          "excerpt": "IO.println \"You have successfully proved the eligibility theorem!\"",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_002",
+          "block_id": "artifact_001_unit_002_proof",
+          "source_range": {
+            "start_line": 9,
+            "end_line": 9
+          },
+          "excerpt": "p",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "source_range": {
+            "start_line": 26,
+            "end_line": 44
+          },
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_004",
+          "block_id": "artifact_001_unit_004_proof",
+          "source_range": {
+            "start_line": 65,
+            "end_line": 73
+          },
+          "excerpt": "have hd : d := h1 hb         -- If transaction amount exceeds spending, biometric must be done\n  have ha : a :=               -- Prove a using proof by contradiction\n    by\n      by_cases ha : a               -- Case analysis on a\n      · exact ha                      -- If a is true, we're done\n      · let hcd := h2 ha               -- From ¬a → c ∧ d\n        have hc := hcd.left            -- Extract c\n        exact absurd hc hnc           -- Contradiction: have c and ¬c\n  And.intro ha hd",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_005",
+          "block_id": "artifact_001_unit_005_proof",
+          "source_range": {
+            "start_line": 87,
+            "end_line": 87
+          },
+          "excerpt": "p",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_006",
+          "block_id": "artifact_001_unit_006_proof",
+          "source_range": {
+            "start_line": 102,
+            "end_line": 135
+          },
+          "excerpt": "-- Eliminate the disjunction c ∨ w. We will prove d in both cases.\n  Or.elim hcase\n    (fun hc : c =>\n      -- Case 1: Congestion exists.\n      -- We need to use the first part of our revised h1.\n      have h1_congestion_case : (¬w ∧ f) → d := (And.left h1) hc\n\n      -- To use that, we need a proof of (¬w ∧ f).\n      have h_no_weather_and_fuel : ¬w ∧ f :=\n\n        -- Proof of the conjunction\n        And.intro\n          -- Assume w and show it leads to a contradiction.\n          (fun hw : w =>\n            -- If w is true, then h2 hw gives us a proof of ¬c.\n            -- This contradicts hc (our assumption that c is true).\n            show False from (h2 hw) hc)\n\n          -- Proof of f: This",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_007",
+          "block_id": "artifact_001_unit_007_proof",
+          "source_range": {
+            "start_line": 154,
+            "end_line": 160
+          },
+          "excerpt": "have hr : r := h1 ht           -- From a threat, auto-response occurs\n  have hm : m := h3 hr           -- From auto-response, manual intervention occurs\n  have hf : ¬f :=                -- Need to show ¬f\n    Or.elim h4\n      (fun hnm : ¬m => absurd hm hnm) -- If ¬m but we have m, contradiction\n      (fun hnf : ¬f => hnf)          -- If ¬f, we are done\n  And.intro hr (And.intro hm hf)",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "let hx : ¬ provable (conj x False) :=\n  λ h =>\n    let pr_false := AxConjElimRight x False h\n    AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "let pr_false : provable False := AxConjElimRight x False h\n  let contradiction : False := AxNotPrFalse pr_false\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "The proof includes a direct statement of the required implication."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "fun hprovY : provable y =>\n  -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n  let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n  -- But that contradicts the assumption that conj x y is not provable\n  hnotConj hConj",
+          "description": "The proof includes a direct statement of the required implication."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_029",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R7"
+      ],
+      "criterion_assessment_ids": [
+        "ca_029"
+      ],
+      "internal_finding": "Explains the derivation of r, m and ¬f.",
+      "student_feedback": "Explains the derivation of r, m and ¬f.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_1",
+          "task_id": "S4-R7",
+          "description": "The proof does not include explanations of the derivation steps."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_030",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "S4-R8"
+      ],
+      "criterion_assessment_ids": [
+        "ca_030"
+      ],
+      "internal_finding": "The submitted Lean code must compile.",
+      "student_feedback": "The submitted Lean code must compile.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_031",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_031"
+      ],
+      "internal_finding": "The requirement to prove that provable (conj x False) leads to a contradiction is not directly addressed in the student's work.",
+      "student_feedback": "The student's work does not directly prove that provable (conj x False) leads to a contradiction. The provided examples and theorems demonstrate the use of provable and conj, but the specific requirement is not met.",
+      "suggestion": "The student should focus on proving that assuming provable (conj x False) leads to a contradiction using the provided axioms and theorems.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "task_2",
+          "requirement_id": "T1-R1",
+          "description": "The student's work does not directly prove that provable (conj x False) leads to a contradiction."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_032",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_032"
+      ],
+      "internal_finding": "The student's work includes multiple theorems and examples that demonstrate the logical structure of the proof, but the specific claim that 'provable x does not imply that False is provable' is not explicitly verified.",
+      "student_feedback": "The student's work includes multiple theorems and examples that demonstrate the logical structure of the proof. However, the specific claim that 'provable x does not imply that False is provable' is not explicitly verified in the submitted material.",
+      "suggestion": "The student should explicitly verify the specific claim that 'provable x does not imply that False is provable' by providing a direct proof or reference to the relevant part of the submitted work.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_015",
+          "block_id": "artifact_001_unit_015_proof",
+          "source_range": {
+            "start_line": 189,
+            "end_line": 204
+          },
+          "excerpt": "λ x =>\n  -- We need to prove that `¬ provable (conj x False)`.\n  -- This means that if we have a proof of `conj x False`, it leads to a contradiction.\n  -- We can use the axiom `AxConjElimRight` to show that if we have a proof of `conj x False`,\n  -- then we can derive `provable False`, which contradicts the axiom `AxNotPrFalse`.\n  let hx : ¬ provable (conj x False) :=\n    λ h =>\n      let pr_false := AxConjElimRight x False h\n      AxNotPrFalse pr_false\n  -- We need to prove that if `provable x` then `¬ provable False`\n  -- This means that if we have a proof of `x`, we cannot have a proof of `False`.\n  -- We can use the axiom `AxNotPrFalse` to show this.\n  let hxf : provable x → ¬ provable",
+          "description": "The proof in the theorem ex1 includes a reference to the axiom AxConjElimRight and the axiom AxNotPrFalse, which are relevant to the requirement."
+        },
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T1-R2",
+          "requirement_id": "T1-R2",
+          "description": "The specific claim that 'provable x does not imply that False is provable' is not explicitly verified in the submitted material."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_033",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_033"
+      ],
+      "internal_finding": "The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse as required.",
+      "student_feedback": "The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse as required.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_010",
+          "block_id": "artifact_001_unit_010_statement",
+          "source_range": {
+            "start_line": 173,
+            "end_line": 173
+          },
+          "excerpt": "axiom AxConjElimRight : ∀ x y, provable (conj x y) → provable y",
+          "description": "AxConjElimRight is explicitly referenced in the proof sections."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_014",
+          "block_id": "artifact_001_unit_014_statement",
+          "source_range": {
+            "start_line": 185,
+            "end_line": 185
+          },
+          "excerpt": "axiom AxNotPrFalse : provable False → False",
+          "description": "AxNotPrFalse is explicitly referenced in the proof sections."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_034",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_034"
+      ],
+      "internal_finding": "The explanation of both conjuncts is missing in the theorem.",
+      "student_feedback": "The theorem should include comments explaining the reasoning behind both parts of the proof.",
+      "verification_status": "inferred",
+      "confidence": 0.8,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_035",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T1-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_035"
+      ],
+      "internal_finding": "The theorem compiles as per the Lean 4 syntax.",
+      "student_feedback": "The theorem compiles as per the Lean 4 syntax.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_036",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_036"
+      ],
+      "internal_finding": "The requirement to extract provable False from provable (conj x False) is not met in ex2.",
+      "student_feedback": "The requirement to extract provable False from provable (conj x False) is not met in ex2.",
+      "suggestion": "The proof in ex2 uses AxConjElimRight to derive provable False from provable (conj x False), but this does not explicitly extract provable False from provable (conj x False) as required by the exact requirement.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+          "description": "The proof in ex2 uses AxConjElimRight to derive provable False from provable (conj x False), but this does not explicitly extract provable False from provable (conj x False) as required by the exact requirement."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_037",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_037"
+      ],
+      "internal_finding": "The requirement to use the resulting contradiction to derive provable y is met in ex2.",
+      "student_feedback": "The requirement to use the resulting contradiction to derive provable y is met in ex2.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "False.elim contradiction"
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_038",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_038"
+      ],
+      "internal_finding": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is partially met in ex2.",
+      "student_feedback": "The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is partially met in ex2.",
+      "suggestion": "Ensure that the use of the conjunction-elimination and falsehood axioms is explicitly demonstrated in the proof steps.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "source_range": {
+            "start_line": 209,
+            "end_line": 215
+          },
+          "excerpt": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y\n  False.elim contradiction",
+          "description": "The proof in ex2 uses the conjunction-elimination axiom and the falsehood axiom, but the explicit application of these axioms is not clearly demonstrated."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_039",
+      "feedback_type": "suggestion",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_039"
+      ],
+      "internal_finding": "The requirement to explain the principle of explosion and how it is implemented is partially met.",
+      "student_feedback": "The submission contains logical constructs and axioms that may relate to the principle of explosion, but it does not explicitly explain the principle of explosion or its implementation as required by the exact requirement.",
+      "suggestion": "The student should explicitly explain the principle of explosion and how it is implemented in their submission.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_040",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T2-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_040"
+      ],
+      "internal_finding": "The theorem must compile, which is met in the submission.",
+      "student_feedback": "The theorem must compile, which is met in the submission.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_041",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_041"
+      ],
+      "internal_finding": "Provable x, y, z are extracted from nested conjunctions in the proof body.",
+      "student_feedback": "Provable x, y, z are extracted from nested conjunctions in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable x, y, z are extracted from nested conjunctions in the proof body."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_042",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_042"
+      ],
+      "internal_finding": "Provable (conj y x) is constructed using AxConjIntro in the proof body.",
+      "student_feedback": "Provable (conj y x) is constructed using AxConjIntro in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "Provable (conj y x) is constructed using AxConjIntro in the proof body."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_043",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_043"
+      ],
+      "internal_finding": "The student's work demonstrates the use of AxConjIntro to construct the required conj (conj y x) z.",
+      "student_feedback": "The student's work demonstrates the use of AxConjIntro to construct the required conj (conj y x) z.",
+      "suggestion": "Ensure that the construction of conj (conj y x) z is explicitly shown in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "excerpt": "let pyx : provable (conj y x) := AxConjIntro y x py px\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "The student's proof body includes the use of AxConjIntro to construct conj (conj y x) z."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_044",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_044"
+      ],
+      "internal_finding": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body.",
+      "student_feedback": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_017",
+          "block_id": "artifact_001_unit_017_proof",
+          "source_range": {
+            "start_line": 221,
+            "end_line": 238
+          },
+          "excerpt": "λ x y z h =>\n  -- Step 1: Extract x from the outer conjunction\n  let px : provable x := AxConjElimLeft x (conj y z) h\n\n  -- Step 2: Extract (y ∧ z) from the outer conjunction\n  let pyz : provable (conj y z) := AxConjElimRight x (conj y z) h\n\n  -- Step 3: Extract y from (y ∧ z)\n  let py : provable y := AxConjElimLeft y z pyz\n\n  -- Step 4: Extract z from (y ∧ z)\n  let pz : provable z := AxConjElimRight y z pyz\n\n  -- Step 5: Combine y and x to get provable (y ∧ x)\n  let pyx : provable (conj y x) := AxConjIntro y x py px\n\n  -- Step 6: Combine (y ∧ x) and z to get the final result\n  AxConjIntro (conj y x) z pyx pz",
+          "description": "AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately in the proof body."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_045",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_045"
+      ],
+      "internal_finding": "Explanations of elimination and reconstruction steps are missing in the proof body.",
+      "student_feedback": "The proof should include comments explaining the logical steps involved in manipulating the nested conjunctions.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T3-R5",
+          "requirement_id": "T3-R5",
+          "description": "Explanations of elimination and reconstruction steps are missing in the proof body."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_046",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T3-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_046"
+      ],
+      "internal_finding": "The theorem compiles as no 'sorry' is present in the submission.",
+      "student_feedback": "The theorem compiles as no 'sorry' is present in the submission.",
+      "verification_status": "verified_by_tool",
+      "confidence": 1.0,
+      "evidence": []
+    },
+    {
+      "observation_id": "b_obs_047",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R1"
+      ],
+      "criterion_assessment_ids": [
+        "ca_047"
+      ],
+      "internal_finding": "Assume provable y and combine it with provable x.",
+      "student_feedback": "Assume provable y and combine it with provable x.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Assume provable y and combine it with provable x."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_048",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R2"
+      ],
+      "criterion_assessment_ids": [
+        "ca_048"
+      ],
+      "internal_finding": "Use AxConjIntro to derive provable (conj x y) in various contexts.",
+      "student_feedback": "Your submitted work includes multiple proofs that use AxConjIntro to derive provable (conj x y) in various contexts.",
+      "suggestion": "None",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_003",
+          "block_id": "artifact_001_unit_003_proof",
+          "excerpt": "Or.elim hx\n    (fun hx1 =>\n      -- Case: x1 is provable\n      -- Use rule h1 to derive provable z\n      h1 hx1)\n    (fun _ =>\n      -- Case: x2 is provable\n\n      -- Now eliminate the disjunction y1 ∨ y2\n      Or.elim hy\n        (fun hy1 =>\n          -- Subcase: y1 is provable\n          -- Use rule h3 to derive provable z\n          h3 hy1)\n        (fun hy2 =>\n          -- Subcase: y2 is provable\n          -- Use rule h4 to derive provable z\n          h4 hy2))",
+          "description": "Proof using AxConjIntro to derive provable (conj x y) in various contexts."
+        },
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_016",
+          "block_id": "artifact_001_unit_016_proof",
+          "excerpt": "λ x _ h =>\n  -- Step 1: Extract provable False from provable (x ∧ False)\n  let pr_false : provable False := AxConjElimRight x False h\n  -- Step 2: Turn provable False into contradiction using the axiom\n  let contradiction : False := AxNotPrFalse pr_false\n  -- Step 3: Eliminate the contradiction to produce provable y",
+          "description": "Proof using AxConjIntro to derive provable (conj x y) in various contexts."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_049",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R3"
+      ],
+      "criterion_assessment_ids": [
+        "ca_049"
+      ],
+      "internal_finding": "The student's work does not explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y as required by the exact requirement.",
+      "student_feedback": "The student's work does not explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y as required by the exact requirement.",
+      "suggestion": "The student should explicitly demonstrate the use of the contradiction with ¬ provable (conj x y) to establish ¬ provable y in their submission.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "task_2",
+          "requirement_id": "T4-R3",
+          "description": "The student's work does not explicitly reference the use of the contradiction with ¬ provable (conj x y) to establish ¬ provable y."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_050",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R4"
+      ],
+      "criterion_assessment_ids": [
+        "ca_050"
+      ],
+      "internal_finding": "Supply the arguments to AxConjIntro correctly.",
+      "student_feedback": "Supply the arguments to AxConjIntro correctly.",
+      "verification_status": "supported_by_submission",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "evidence_type": "submission_reference",
+          "artifact_id": "artifact_001",
+          "unit_id": "artifact_001_unit_018",
+          "block_id": "artifact_001_unit_018_proof",
+          "source_range": {
+            "start_line": 247,
+            "end_line": 256
+          },
+          "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+          "description": "Supply the arguments to AxConjIntro correctly."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_051",
+      "feedback_type": "error",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R5"
+      ],
+      "criterion_assessment_ids": [
+        "ca_051"
+      ],
+      "internal_finding": "Explain the contradiction-based proof strategy.",
+      "student_feedback": "The submission should include a brief explanation of the contradiction-based proof strategy in the comments.",
+      "verification_status": "inferred",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "evidence_type": "absence",
+          "part_id": "part_2",
+          "task_id": "T4-R5",
+          "requirement_id": "T4-R5",
+          "description": "No direct explanation of the contradiction-based proof strategy is present in the submission."
+        }
+      ]
+    },
+    {
+      "observation_id": "b_obs_052",
+      "feedback_type": "strength",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "attempt_unit_ids": [],
+      "requirement_ids": [
+        "T4-R6"
+      ],
+      "criterion_assessment_ids": [
+        "ca_052"
+      ],
+      "internal_finding": "The theorem must compile.",
+      "student_feedback": "The theorem must compile.",
+      "verification_status": "not_verified",
+      "confidence": 0.0,
+      "evidence": []
+    }
+  ],
+  "feedback_sections": [
+    {
+      "section_id": "section_001",
+      "label": "Advanced Course Eligibility Decision",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_1"
+      ],
+      "summary": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement. Your submitted work includes multiple proofs that involve disjunctions (e.g., Or.elim in example_1 and example_2), which directly relate to the requirement of representing the approval requirement as y1 ∨ y2. Eligibility depends on both prerequisite and approval conditions is demonstrated through the use of multiple proofs and axioms in the student work.",
+      "observation_ids": [
+        "b_obs_001",
+        "b_obs_002",
+        "b_obs_003",
+        "b_obs_004",
+        "b_obs_005",
+        "b_obs_006",
+        "b_obs_007"
+      ]
+    },
+    {
+      "section_id": "section_002",
+      "label": "Complex Transaction Verification System",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_2"
+      ],
+      "summary": "The submission does not use the exact logical implication required by the brief. Derive d from b and b -> d. Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+      "observation_ids": [
+        "b_obs_008",
+        "b_obs_009",
+        "b_obs_010",
+        "b_obs_011",
+        "b_obs_012",
+        "b_obs_013",
+        "b_obs_014"
+      ]
+    },
+    {
+      "section_id": "section_003",
+      "label": "Advanced Autonomous Vehicle Decision System",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_3"
+      ],
+      "summary": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached. Your submitted work correctly represents safe weather as the negation of the proposition representing unsafe weather. The 'only if' condition is correctly interpreted as an implication in the context of the problem.",
+      "observation_ids": [
+        "b_obs_015",
+        "b_obs_016",
+        "b_obs_017",
+        "b_obs_018",
+        "b_obs_019",
+        "b_obs_020",
+        "b_obs_021",
+        "b_obs_022"
+      ]
+    },
+    {
+      "section_id": "section_004",
+      "label": "Advanced Cybersecurity System for Threats",
+      "scope": "task",
+      "part_ids": [
+        "part_1"
+      ],
+      "task_ids": [
+        "scenario_4"
+      ],
+      "summary": "The proof does not use the exact implication required by the brief. The student work includes multiple proofs and examples that demonstrate logical derivations involving t, r, and t -> r. Derives m from r and r -> m.",
+      "observation_ids": [
+        "b_obs_023",
+        "b_obs_024",
+        "b_obs_025",
+        "b_obs_026",
+        "b_obs_027",
+        "b_obs_028",
+        "b_obs_029",
+        "b_obs_030"
+      ]
+    },
+    {
+      "section_id": "section_005",
+      "label": "Conjunction with False Is Not Provable",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_1"
+      ],
+      "summary": "The student's work does not directly prove that provable (conj x False) leads to a contradiction. The provided examples and theorems demonstrate the use of provable and conj, but the specific requirement is not met. The student's work includes multiple theorems and examples that demonstrate the logical structure of the proof. However, the specific claim that 'provable x does not imply that False is provable' is not explicitly verified in the submitted material. The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse as required.",
+      "observation_ids": [
+        "b_obs_031",
+        "b_obs_032",
+        "b_obs_033",
+        "b_obs_034",
+        "b_obs_035"
+      ]
+    },
+    {
+      "section_id": "section_006",
+      "label": "Principle of Explosion",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_2"
+      ],
+      "summary": "The requirement to extract provable False from provable (conj x False) is not met in ex2. The requirement to use the resulting contradiction to derive provable y is met in ex2. The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is partially met in ex2.",
+      "observation_ids": [
+        "b_obs_036",
+        "b_obs_037",
+        "b_obs_038",
+        "b_obs_039",
+        "b_obs_040"
+      ]
+    },
+    {
+      "section_id": "section_007",
+      "label": "Rearranging Nested Conjunctions",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_3"
+      ],
+      "summary": "Provable x, y, z are extracted from nested conjunctions in the proof body. Provable (conj y x) is constructed using AxConjIntro in the proof body. The student's work demonstrates the use of AxConjIntro to construct the required conj (conj y x) z.",
+      "observation_ids": [
+        "b_obs_041",
+        "b_obs_042",
+        "b_obs_043",
+        "b_obs_044",
+        "b_obs_045",
+        "b_obs_046"
+      ]
+    },
+    {
+      "section_id": "section_008",
+      "label": "Using Negation to Infer Missing Provability",
+      "scope": "task",
+      "part_ids": [
+        "part_2"
+      ],
+      "task_ids": [
+        "theorem_4"
+      ],
+      "summary": "Assume provable y and combine it with provable x. Your submitted work includes multiple proofs that use AxConjIntro to derive provable (conj x y) in various contexts. The student's work does not explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y as required by the exact requirement.",
+      "observation_ids": [
+        "b_obs_047",
+        "b_obs_048",
+        "b_obs_049",
+        "b_obs_050",
+        "b_obs_051",
+        "b_obs_052"
+      ]
+    }
+  ],
+  "overall_feedback": {
+    "summary": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement. Your submitted work includes multiple proofs that involve disjunctions (e.g., Or.elim in example_1 and example_2), which directly relate to the requirement of representing the approval requirement as y1 ∨ y2. Eligibility depends on both prerequisite and approval conditions is demonstrated through the use of multiple proofs and axioms in the student work. The submission does not use the exact logical implication required by the brief. Derive d from b and b -> d. Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c. No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached. Your submitted work correctly represents safe weather as the negation of the proposition representing unsafe weather. The 'only if' condition is correctly interpreted as an implication in the context of the problem. The proof does not use the exact implication required by the brief. The student work includes multiple proofs and examples that demonstrate logical derivations involving t, r, and t -> r. Derives m from r and r -> m. The student's work does not directly prove that provable (conj x False) leads to a contradiction. The provided examples and theorems demonstrate the use of provable and conj, but the specific requirement is not met. The student's work includes multiple theorems and examples that demonstrate the logical structure of the proof. However, the specific claim that 'provable x does not imply that False is provable' is not explicitly verified in the submitted material. The theorem uses appropriate axioms including AxConjElimRight and AxNotPrFalse as required. The requirement to extract provable False from provable (conj x False) is not met in ex2. The requirement to use the resulting contradiction to derive provable y is met in ex2. The requirement to use the supplied conjunction-elimination and falsehood axioms appropriately is partially met in ex2. Provable x, y, z are extracted from nested conjunctions in the proof body. Provable (conj y x) is constructed using AxConjIntro in the proof body. The student's work demonstrates the use of AxConjIntro to construct the required conj (conj y x) z. Assume provable y and combine it with provable x. Your submitted work includes multiple proofs that use AxConjIntro to derive provable (conj x y) in various contexts. The student's work does not explicitly use the contradiction with ¬ provable (conj x y) to establish ¬ provable y as required by the exact requirement.",
+    "strengths_summary": "The student work explicitly shows the disjunction x1 ∨ x2 as required by the exact requirement. Your submitted work includes multiple proofs that involve disjunctions (e.g., Or.elim in example_1 and example_2), which directly relate to the requirement of representing the approval requirement as y1 ∨ y2. Eligibility depends on both prerequisite and approval conditions is demonstrated through the use of multiple proofs and axioms in the student work.",
+    "improvement_summary": "Explanation of how conditions establish eligibility is missing. The submission does not use the exact logical implication required by the brief. Establish a using the supplied assumptions, including ¬a -> (c ∧ d) and ¬c.",
+    "observation_ids": [
+      "b_obs_001",
+      "b_obs_002",
+      "b_obs_003",
+      "b_obs_004",
+      "b_obs_005",
+      "b_obs_006",
+      "b_obs_007",
+      "b_obs_008",
+      "b_obs_009",
+      "b_obs_010",
+      "b_obs_011",
+      "b_obs_012",
+      "b_obs_013",
+      "b_obs_014",
+      "b_obs_015",
+      "b_obs_016",
+      "b_obs_017",
+      "b_obs_018",
+      "b_obs_019",
+      "b_obs_020",
+      "b_obs_021",
+      "b_obs_022",
+      "b_obs_023",
+      "b_obs_024",
+      "b_obs_025",
+      "b_obs_026",
+      "b_obs_027",
+      "b_obs_028",
+      "b_obs_029",
+      "b_obs_030",
+      "b_obs_031",
+      "b_obs_032",
+      "b_obs_033",
+      "b_obs_034",
+      "b_obs_035",
+      "b_obs_036",
+      "b_obs_037",
+      "b_obs_038",
+      "b_obs_039",
+      "b_obs_040",
+      "b_obs_041",
+      "b_obs_042",
+      "b_obs_043",
+      "b_obs_044",
+      "b_obs_045",
+      "b_obs_046",
+      "b_obs_047",
+      "b_obs_048",
+      "b_obs_049",
+      "b_obs_050",
+      "b_obs_051",
+      "b_obs_052"
+    ]
+  }
+}

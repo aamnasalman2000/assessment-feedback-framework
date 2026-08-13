@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The requirement asks to interpret 'reaching the destination only if safe weather and sufficient fuel hold' using the correct implication direction. The student's proof attempts to handle the conditions but does not explicitly address the formalisation of the 'only if' statement as required. The proof uses case analysis but does not clearly demonstrate the correct logical implication direction for the 'only if' condition.",
+    "student_feedback": "The student's proof does not explicitly formalise the 'only if' condition with the correct implication direction. The formalisation of the 'only if' statement should be explicitly addressed to meet the requirement.",
+    "verification_status": "inferred",
+    "confidence": 0.75,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R3",
+        "description": "The student's proof does not explicitly address the formalisation of the 'only if' condition with the correct implication direction."
+      }
+    ]
+  }
+}

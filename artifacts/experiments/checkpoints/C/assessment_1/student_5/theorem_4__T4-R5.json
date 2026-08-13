@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_4",
+  "requirement_id": "T4-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's theorem ex4 includes a proof by contradiction strategy, which is the focus of the requirement. The proof body explicitly states the assumption of provable y and derives a contradiction using the given assumption that conj x y is not provable. The semantic interpretation confirms the use of proof by contradiction as the reasoning strategy.",
+    "student_feedback": "The student has demonstrated an understanding of the contradiction-based proof strategy by implementing a proof by contradiction in the theorem ex4. The proof body includes comments that explain the assumption of provable y and the subsequent contradiction.",
+    "suggestion": "The student could further elaborate on the logical steps of the contradiction-based proof to enhance clarity.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_018",
+        "block_id": "artifact_001_unit_018_proof",
+        "source_range": {
+          "start_line": 247,
+          "end_line": 256
+        },
+        "excerpt": "λ x y hnotConj hprovX =>\n  -- Assume for contradiction that provable y\n  -- If conj x y is not provable, then we cannot have both x and y provable\n  -- If y is provable, then conj x y would be provable, showing a contradiction\n  fun hprovY : provable y =>\n    -- Then conj x y would be provable via AxConjIntro because we have both x and y provable\n    let hConj : provable (conj x y) := AxConjIntro x y hprovX hprovY\n\n    -- But that contradicts the assumption that conj x y is not provable\n    hnotConj hConj",
+        "description": "The proof body of theorem ex4 includes a contradiction-based proof strategy."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_018",
+        "block_id": "artifact_001_unit_018_statement",
+        "source_range": {
+          "start_line": 243,
+          "end_line": 246
+        },
+        "excerpt": "theorem ex4 : ∀ x y : Prop,\n  ¬ provable (conj x y) →\n  provable x →\n  ¬ provable y",
+        "description": "The theorem statement includes a contradiction-based proof strategy."
+      }
+    ]
+  }
+}

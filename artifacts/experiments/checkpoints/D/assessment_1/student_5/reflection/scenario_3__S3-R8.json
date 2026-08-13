@@ -1,0 +1,66 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R8",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_022",
+  "initial_observation_id": "obs_022",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The requirement 'The submitted Lean code must compile.' is not assessable because the Lean compilation is not included in the preprocessing version. The evidence provided does not include any compilation results or tool verification of the Lean code's compilation status."
+      ],
+      "overlooked_evidence": [
+        "The student work includes multiple Lean definitions and examples, which are part of the submitted code."
+      ],
+      "missing_rubric_points": [
+        "The requirement 'The submitted Lean code must compile.' is not assessable because the Lean compilation is not included in the preprocessing version."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement concerns a property that requires deterministic verification, but no successful requirement-specific processing check establishes that property. The requirement cannot safely be marked as 'met'."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_022",
+    "requirement_id": "S3-R8",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "status": "not_assessable",
+    "internal_finding": "The requirement 'The submitted Lean code must compile.' is not assessable because the Lean compilation is not included in the preprocessing version. The evidence provided does not include any compilation results or tool verification of the Lean code's compilation status.",
+    "verification_status": "not_verified",
+    "confidence": 0.9,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "obs_022",
+    "feedback_type": "suggestion",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S3-R8"
+    ],
+    "criterion_assessment_ids": [
+      "ca_022"
+    ],
+    "internal_finding": "The requirement 'The submitted Lean code must compile.' is not assessable because the Lean compilation is not included in the preprocessing version. The evidence provided does not include any compilation results or tool verification of the Lean code's compilation status.",
+    "student_feedback": "The compilation status of the submitted Lean code cannot be assessed as the preprocessing version does not include Lean compilation. Please ensure that the Lean code is compiled and verified for correctness.",
+    "suggestion": "Ensure that the Lean code is compiled and verified for correctness before submission.",
+    "verification_status": "not_verified",
+    "confidence": 0.9,
+    "evidence": []
+  }
+}

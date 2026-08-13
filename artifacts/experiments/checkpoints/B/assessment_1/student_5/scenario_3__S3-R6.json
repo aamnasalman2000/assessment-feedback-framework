@@ -1,0 +1,73 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R6",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_020",
+  "initial_observation_id": "b_initial_obs_020",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_020",
+    "requirement_id": "S3-R6",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "status": "partially_met",
+    "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_006",
+        "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_020",
+    "feedback_type": "suggestion",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S3-R6"
+    ],
+    "criterion_assessment_ids": [
+      "ca_020"
+    ],
+    "internal_finding": "The proof preserves the intended meaning of the scenario, but uses different proposition names.",
+    "student_feedback": "Ensure the proof includes a brief explanation of the reasoning and the use of different proposition names.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_006",
+        "description": "The proof uses different proposition names but preserves the intended meaning of the scenario."
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_029",
+  "initial_observation_id": "b_initial_obs_029",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_029",
+    "requirement_id": "S4-R7",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "status": "not_met",
+    "internal_finding": "Explains the derivation of r, m and ¬f.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "S4-R7",
+        "description": "The proof does not include explanations of the derivation steps."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_029",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S4-R7"
+    ],
+    "criterion_assessment_ids": [
+      "ca_029"
+    ],
+    "internal_finding": "Explains the derivation of r, m and ¬f.",
+    "student_feedback": "Explains the derivation of r, m and ¬f.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "S4-R7",
+        "description": "The proof does not include explanations of the derivation steps."
+      }
+    ]
+  }
+}
