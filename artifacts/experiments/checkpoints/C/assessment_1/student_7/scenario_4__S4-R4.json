@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's proof in artifact_001_unit_005 directly derives ¬f using the given assumptions. The proof uses case analysis to show that assuming f leads to a contradiction, thereby proving ¬f. The logical steps are grounded in the provided assumptions and the axioms from the supporting units.",
+    "student_feedback": "The student successfully derived ¬f using the given assumptions. The proof correctly applies logical reasoning to show that assuming f leads to a contradiction, thereby proving ¬f.",
+    "suggestion": "The proof is correct and meets the requirement. No further action is needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_005",
+        "block_id": "artifact_001_unit_005_proof",
+        "source_range": {
+          "start_line": 240,
+          "end_line": 253
+        },
+        "excerpt": "--m, (¬m ∨ ¬f) gives ¬f, i.e, assume f is true then, using modus ponens, f and (f → ¬r) will give ¬r.\n          --r is known to be True this this gives a contradiction. Therefore f must be False. ¬f must be True."
+      }
+    ]
+  }
+}

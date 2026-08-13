@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R7",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The submitted Lean code does not fully encode the stated conjunctive eligibility requirement. The proof attempts to use case analysis but does not meaningfully use both prerequisite and approval conditions. The proof relies on assumptions that do not directly connect to the provable predicate, and the disjunction assumptions are not properly handled as provable conditions.",
+    "student_feedback": "The proof does not fully satisfy the requirement that both prerequisite and approval conditions must be satisfied. The proof uses case analysis but does not properly handle the conjunctive requirement. The proof should ensure that both (x1 ∨ x2) and (y1 ∨ y2) are satisfied and that their conjunction implies z.",
+    "suggestion": "Ensure that the proof explicitly uses both (x1 ∨ x2) and (y1 ∨ y2) as conditions and that the proof connects these to the provable predicate z.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S1-R7",
+        "description": "The submitted Lean code does not fully encode the stated conjunctive eligibility requirement. The proof does not meaningfully use both prerequisite and approval conditions and fails to handle the disjunction assumptions as provable conditions."
+      }
+    ]
+  }
+}

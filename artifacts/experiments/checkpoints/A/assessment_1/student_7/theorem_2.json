@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_2",
+  "requirement_ids": [
+    "T2-R1",
+    "T2-R2",
+    "T2-R3",
+    "T2-R4",
+    "T2-R5"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T2-R1",
+        "status": "met",
+        "internal_finding": "The theorem ex1 correctly extracts provable False from provable (conj x False).",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_012",
+            "block_id": "artifact_001_unit_012_proof",
+            "source_range": {
+              "start_line": 274,
+              "end_line": 285
+            },
+            "excerpt": "fun x ConjArgument =>\n    (fun h : provable False =>\n        let hr := And.right ConjArgument\n        let hl := And.left ConjArgument\n        let hconj := AxConjIntro x False hr h\n        show False from absurd hconj hl\n    )"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R2",
+        "status": "met",
+        "internal_finding": "The theorem ex2 correctly uses the contradiction to derive provable y.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_013",
+            "block_id": "artifact_001_unit_013_proof",
+            "source_range": {
+              "start_line": 291,
+              "end_line": 298
+            },
+            "excerpt": "let pfFalse := AxNotPrFalse pfProvableFalse\n   False.elim pfFalse"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R3",
+        "status": "met",
+        "internal_finding": "The axioms are used appropriately in the proofs.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_013",
+            "block_id": "artifact_001_unit_013_proof",
+            "source_range": {
+              "start_line": 291,
+              "end_line": 298
+            },
+            "excerpt": "let pfProvablex := AxConjElimLeft x False ProvableConjArgument\n   let pfProvableFalse := AxConjElimRight x False ProvableConjArgument"
+          }
+        ]
+      },
+      {
+        "requirement_id": "T2-R4",
+        "status": "not_met",
+        "internal_finding": "The principle of explosion is not explicitly explained in the submission.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T2-R5",
+        "status": "met",
+        "internal_finding": "The theorem compiles as per the Lean 4 syntax.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "T2-R1",
+          "T2-R2",
+          "T2-R3",
+          "T2-R5"
+        ],
+        "internal_finding": "The proofs correctly use axioms and derive conclusions from contradictions.",
+        "student_feedback": "The proofs demonstrate a clear understanding of the principle of explosion through logical deductions.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": []
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T2-R4"
+        ],
+        "internal_finding": "The principle of explosion is not explicitly explained in the submission.",
+        "student_feedback": "The submission should include comments explaining the principle of explosion and its implementation.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission demonstrates strong proof correctness and axiom usage. The principle of explosion is implemented correctly but lacks explicit explanation. The theorem compiles successfully."
+  }
+}

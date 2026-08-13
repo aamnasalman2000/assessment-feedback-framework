@@ -1,0 +1,150 @@
+{
+  "component_alignments": [
+    {
+      "component_id": "scenario_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_002"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_002 provides the main proof for the advanced module eligibility decision. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_003"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_003 provides the main proof for the complex transaction verification system. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_004"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_004 provides the main proof for the advanced autonomous vehicle decision system. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "scenario_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_005"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_005 provides the main proof for the advanced cybersecurity system for threats. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_1",
+      "primary_unit_ids": [
+        "artifact_001_unit_012"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_012 provides the main proof for the theorem 'Conjunction with False Is Not Provable'. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_2",
+      "primary_unit_ids": [
+        "artifact_001_unit_013"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_013 provides the main proof for the theorem 'Principle of Explosion'. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_3",
+      "primary_unit_ids": [
+        "artifact_001_unit_014"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_014 provides the main proof for the theorem 'Rearranging Nested Conjunctions'. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    },
+    {
+      "component_id": "theorem_4",
+      "primary_unit_ids": [
+        "artifact_001_unit_015"
+      ],
+      "supporting_unit_ids": [
+        "artifact_001_unit_007",
+        "artifact_001_unit_008",
+        "artifact_001_unit_009",
+        "artifact_001_unit_010",
+        "artifact_001_unit_011"
+      ],
+      "possibly_relevant_unit_ids": [],
+      "reason": "The unit_015 provides the main proof for the theorem 'Using Negation to Infer Missing Provability'. The supporting units provide axioms and definitions used in the proof, such as provable True, provable False, and conjunction elimination rules.",
+      "confidence": 0.95,
+      "unresolved": false
+    }
+  ],
+  "summary": "The student's submission units are aligned with all assessment components. Each component is supported by one primary unit and several supporting units that provide axioms and definitions used in the proofs.",
+  "warnings": [
+    "No warnings were generated as all components were resolved with clear evidence."
+  ],
+  "schema_version": "1.0",
+  "assessment_id": "assessment_1",
+  "source_submission_id": "assessment_1_student_7",
+  "processed_submission_id": "processed_assessment_1_student_7",
+  "model_name": "Qwen/Qwen3-4B",
+  "aligner_version": "1.0"
+}

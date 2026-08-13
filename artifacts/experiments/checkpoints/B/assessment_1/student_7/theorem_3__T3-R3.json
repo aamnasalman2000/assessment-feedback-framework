@@ -1,0 +1,85 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "theorem_3",
+  "requirement_id": "T3-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_043",
+  "initial_observation_id": "b_initial_obs_043",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_043",
+    "requirement_id": "T3-R3",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_3"
+    ],
+    "status": "met",
+    "internal_finding": "Provable (conj (conj y x) z) is constructed using AxConjIntro.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_014",
+        "block_id": "artifact_001_unit_014_proof",
+        "source_range": {
+          "start_line": 305,
+          "end_line": 317
+        },
+        "excerpt": "AxConjIntro (conj y x) z hyx hz",
+        "description": "Provable (conj (conj y x) z) is constructed using AxConjIntro."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_043",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_3"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "T3-R3"
+    ],
+    "criterion_assessment_ids": [
+      "ca_043"
+    ],
+    "internal_finding": "Provable (conj (conj y x) z) is constructed using AxConjIntro.",
+    "student_feedback": "Provable (conj (conj y x) z) is constructed using AxConjIntro.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_014",
+        "block_id": "artifact_001_unit_014_proof",
+        "source_range": {
+          "start_line": 305,
+          "end_line": 317
+        },
+        "excerpt": "AxConjIntro (conj y x) z hyx hz",
+        "description": "Provable (conj (conj y x) z) is constructed using AxConjIntro."
+      }
+    ]
+  }
+}

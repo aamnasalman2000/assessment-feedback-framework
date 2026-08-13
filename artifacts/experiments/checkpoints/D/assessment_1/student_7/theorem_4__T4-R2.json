@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "component_id": "theorem_4",
+  "requirement_id": "T4-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The student's theorem ex4 uses the AxConjIntro axiom to derive the provable statement (conj x y) within the proof body. The proof employs a proof by contradiction strategy, assuming provable y and deriving a contradiction using the given assumptions, which aligns with the requirement to use AxConjIntro to derive provable (conj x y).",
+    "student_feedback": "The student's proof correctly uses AxConjIntro to derive the provable (conj x y) within the proof body. The proof by contradiction strategy is appropriately applied to show the desired result.",
+    "suggestion": "The proof is correct and meets the requirement. No further action is needed.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_015",
+        "block_id": "artifact_001_unit_015_proof",
+        "source_range": {
+          "start_line": 323,
+          "end_line": 331
+        },
+        "description": "The proof body of the theorem ex4 uses AxConjIntro to derive provable (conj x y) within the proof by contradiction strategy."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_011",
+        "block_id": "artifact_001_unit_011_statement",
+        "source_range": {
+          "start_line": 268,
+          "end_line": 268
+        },
+        "description": "The AxConjIntro axiom is used in the proof to construct the conjunction (conj x y) from provable x and y."
+      }
+    ]
+  }
+}

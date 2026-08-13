@@ -1,0 +1,81 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_034",
+  "initial_observation_id": "b_initial_obs_034",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The explanation of the theorem is missing in the proof body."
+      ],
+      "overlooked_evidence": [
+        "The student work contains multiple proof bodies with detailed reasoning, including the use of axioms and logical steps."
+      ],
+      "missing_rubric_points": [
+        "The student work includes detailed proofs for multiple theorems, which may indicate that the explanation of the theorem is present in the proof body."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement depends on a student-provided description or explanation, but the aligned Task 5 submission units contain no explanation. Formula evidence alone cannot establish that this requirement is met."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_034",
+    "requirement_id": "T1-R4",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "status": "not_met",
+    "internal_finding": "The explanation of the theorem is missing in the proof body.",
+    "verification_status": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "task_id": "T1-R4",
+        "requirement_id": "T1-R4",
+        "description": "No explanation of the theorem is present in the proof body."
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_034",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "T1-R4"
+    ],
+    "criterion_assessment_ids": [
+      "ca_034"
+    ],
+    "internal_finding": "The explanation of the theorem is missing in the proof body.",
+    "student_feedback": "The explanation of the theorem is missing in the proof body.",
+    "verification_status": "inferred",
+    "confidence": 0.8,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2",
+        "task_id": "T1-R4",
+        "requirement_id": "T1-R4",
+        "description": "No explanation of the theorem is present in the proof body."
+      }
+    ]
+  }
+}

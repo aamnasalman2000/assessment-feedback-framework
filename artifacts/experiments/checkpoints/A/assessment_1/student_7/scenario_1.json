@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_1",
+  "requirement_ids": [
+    "S1-R1",
+    "S1-R2",
+    "S1-R3",
+    "S1-R4",
+    "S1-R5",
+    "S1-R6",
+    "S1-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S1-R1",
+        "status": "met",
+        "internal_finding": "Prerequisite requirement is correctly represented as x1 ∨ x2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_002",
+            "block_id": "artifact_001_unit_002_statement",
+            "description": "Prerequisite requirement is correctly represented as x1 ∨ x2."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R2",
+        "status": "met",
+        "internal_finding": "Approval requirement is correctly represented as y1 ∨ y2.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_002",
+            "block_id": "artifact_001_unit_002_statement",
+            "description": "Approval requirement is correctly represented as y1 ∨ y2."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R3",
+        "status": "not_met",
+        "internal_finding": "Eligibility depends on satisfying both prerequisite and approval requirements is not clearly demonstrated.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R3",
+            "description": "Eligibility depends on satisfying both prerequisite and approval requirements is not clearly demonstrated."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R4",
+        "status": "not_met",
+        "internal_finding": "Four combinations are not fully addressed in the proof.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R4",
+            "description": "Four combinations are not fully addressed in the proof."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R5",
+        "status": "not_met",
+        "internal_finding": "Evidence from case analysis is not used to derive the conclusion.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R5",
+            "description": "Evidence from case analysis is not used to derive the conclusion."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R6",
+        "status": "not_met",
+        "internal_finding": "Explanation of how conditions establish eligibility is missing.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "task_id": "task_1",
+            "requirement_id": "S1-R6",
+            "description": "Explanation of how conditions establish eligibility is missing."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S1-R7",
+        "status": "met",
+        "internal_finding": "Lean code compiles successfully.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S1-R3",
+          "S1-R4",
+          "S1-R5",
+          "S1-R6"
+        ],
+        "internal_finding": "Eligibility conditions are not fully addressed, case analysis is incomplete, and explanations are missing.",
+        "student_feedback": "The proof needs to clearly demonstrate both prerequisite and approval conditions, address all four cases, and include an explanation of how the conditions establish eligibility.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "S1-R6"
+        ],
+        "internal_finding": "Explanation of how conditions establish eligibility is missing.",
+        "student_feedback": "Include a brief explanation of how the prerequisite and approval conditions together establish eligibility.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission correctly represents the prerequisite and approval requirements. However, the proof lacks clarity in demonstrating eligibility, addresses all four cases, and includes an explanation of how the conditions establish eligibility."
+  }
+}

@@ -3,7 +3,7 @@ from typing import Final
 
 STRATEGY_CATEGORIES: Final[tuple[str, ...]] = (
     "reasoning_strategy",
-    "proof_construction",
+    "reasoning_strategy",
     "computational_method",
     "modelling_strategy",
     "other",
@@ -32,14 +32,14 @@ LEAN_STRATEGY_NAMES: Final[tuple[str, ...]] = (
 LEAN_STRATEGY_CATEGORY_MAP: Final[dict[str, str]] = {
     "case_analysis": "reasoning_strategy",
     "conjunction_elimination": "reasoning_strategy",
-    "conjunction_construction": "proof_construction",
-    "direct_application": "proof_construction",
+    "conjunction_construction": "reasoning_strategy",
+    "direct_application": "reasoning_strategy",
     "implication_elimination": "reasoning_strategy",
     "contradiction": "reasoning_strategy",
     "proof_by_contradiction": "reasoning_strategy",
-    "negation_introduction": "proof_construction",
+    "negation_introduction": "reasoning_strategy",
     "disjunction_elimination": "reasoning_strategy",
-    "disjunction_introduction": "proof_construction",
+    "disjunction_introduction": "reasoning_strategy",
     "rewriting": "reasoning_strategy",
     "simplification": "reasoning_strategy",
     "induction": "reasoning_strategy",

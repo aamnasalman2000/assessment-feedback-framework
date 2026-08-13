@@ -1,0 +1,65 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_4",
+  "requirement_id": "S4-R8",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_030",
+  "initial_observation_id": "b_initial_obs_030",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [
+        "The submitted Lean code does not compile."
+      ],
+      "overlooked_evidence": [
+        "The student code contains multiple formal statements and axioms that are syntactically valid and semantically correct."
+      ],
+      "missing_rubric_points": [
+        "The code may contain syntax errors that prevent compilation in Lean 4."
+      ],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "too_high",
+      "should_revise": false,
+      "revision_reason": "A proposed reflection revision was rejected by deterministic guardrails, so the original assessment was preserved. The requirement concerns a property that requires deterministic verification, but no successful requirement-specific processing check establishes that property. The requirement cannot safely be marked as 'met'."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_030",
+    "requirement_id": "S4-R8",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "status": "not_met",
+    "internal_finding": "The submitted Lean code does not compile.",
+    "verification_status": "not_verified",
+    "confidence": 0.5,
+    "evidence": []
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_030",
+    "feedback_type": "error",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_4"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S4-R8"
+    ],
+    "criterion_assessment_ids": [
+      "ca_030"
+    ],
+    "internal_finding": "The submitted Lean code does not compile.",
+    "student_feedback": "The code may contain syntax errors that prevent compilation in Lean 4.",
+    "verification_status": "not_verified",
+    "confidence": 0.5,
+    "evidence": []
+  }
+}

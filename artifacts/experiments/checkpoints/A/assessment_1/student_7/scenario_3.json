@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_3",
+  "requirement_ids": [
+    "S3-R1",
+    "S3-R2",
+    "S3-R3",
+    "S3-R4",
+    "S3-R5",
+    "S3-R6",
+    "S3-R7",
+    "S3-R8"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S3-R1",
+        "status": "not_met",
+        "internal_finding": "No propositions are explicitly identified as heavy congestion, unsafe weather, sufficient fuel, or destination reached.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R2",
+        "status": "not_met",
+        "internal_finding": "Safe weather is not represented as the negation of unsafe weather.",
+        "verification_status": "inferred",
+        "confidence": 0.7,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R3",
+        "status": "not_met",
+        "internal_finding": "The 'only if' condition is not correctly interpreted as an implication.",
+        "verification_status": "inferred",
+        "confidence": 0.6,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R4",
+        "status": "not_met",
+        "internal_finding": "Unsafe alternate-route weather is not implied to require no congestion on the usual route.",
+        "verification_status": "inferred",
+        "confidence": 0.5,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R5",
+        "status": "not_met",
+        "internal_finding": "The proposition for destination_reached is not derived from the formalised assumptions.",
+        "verification_status": "inferred",
+        "confidence": 0.4,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R6",
+        "status": "met",
+        "internal_finding": "The proof preserves the intended meaning of the scenario despite different proposition names.",
+        "verification_status": "inferred",
+        "confidence": 0.9,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R7",
+        "status": "not_met",
+        "internal_finding": "No explanation of proposition mapping or 'only if' interpretation is provided.",
+        "verification_status": "inferred",
+        "confidence": 0.3,
+        "evidence": []
+      },
+      {
+        "requirement_id": "S3-R8",
+        "status": "missing",
+        "internal_finding": "Compilation status is not provided in the submission.",
+        "verification_status": "not_verified",
+        "confidence": 0.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S3-R1",
+          "S3-R2",
+          "S3-R3",
+          "S3-R4",
+          "S3-R5",
+          "S3-R7",
+          "S3-R8"
+        ],
+        "internal_finding": "The submission lacks explicit proposition identification, correct formalisation, and necessary explanations.",
+        "student_feedback": "Identify propositions for heavy congestion, unsafe weather, sufficient fuel, and destination reached. Represent safe weather as the negation of unsafe weather. Explain the 'only if' condition and how assumptions lead to the destination conclusion.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "feedback_type": "suggestion",
+        "requirement_ids": [
+          "S3-R6"
+        ],
+        "internal_finding": "The proof preserves the intended meaning of the scenario despite different proposition names.",
+        "student_feedback": "Ensure the proof clearly explains the reasoning and includes comments for clarity.",
+        "verification_status": "inferred",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission includes a complex set of proofs but lacks explicit proposition identification, correct formalisation, and necessary explanations. The proof preserves the intended meaning of the scenario, but compilation status is missing."
+  }
+}

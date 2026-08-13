@@ -1,0 +1,83 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "scenario_2",
+  "requirement_id": "S2-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_011",
+  "initial_observation_id": "b_initial_obs_011",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_011",
+    "requirement_id": "S2-R4",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "status": "met",
+    "internal_finding": "Construct the final conjunction a ∧ d using the derived values.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 129,
+          "end_line": 146
+        },
+        "excerpt": "have pfconj : (r ∧ (m ∧ ¬f)) := And.intro pfr (And.intro pfm pfnotf)"
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_011",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_1"
+    ],
+    "task_ids": [
+      "scenario_2"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "S2-R4"
+    ],
+    "criterion_assessment_ids": [
+      "ca_011"
+    ],
+    "internal_finding": "Construct the final conjunction a ∧ d using the derived values.",
+    "student_feedback": "Construct the final conjunction a ∧ d using the derived values.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.9,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_003",
+        "block_id": "artifact_001_unit_003_proof",
+        "source_range": {
+          "start_line": 129,
+          "end_line": 146
+        },
+        "excerpt": "have pfconj : (r ∧ (m ∧ ¬f)) := And.intro pfr (And.intro pfm pfnotf)"
+      }
+    ]
+  }
+}

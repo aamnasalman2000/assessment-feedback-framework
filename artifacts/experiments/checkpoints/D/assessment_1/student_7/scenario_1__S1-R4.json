@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "partially_met",
+    "internal_finding": "The student's proof in artifact_001_unit_002 attempts to handle all four cases using case analysis on the prerequisites and approvals. The proof uses Or.elim to handle the disjunctions and applies the approval hypotheses to derive the target proposition. However, the proof does not explicitly handle all four combinations of the prerequisite and approval conditions, and the use of 'True' and 'False' may not fully align with the stated conjunctive eligibility requirement.",
+    "student_feedback": "The proof demonstrates case analysis on the prerequisites and approvals, but it does not fully address all four combinations of the prerequisite and approval conditions as required. The use of 'True' and 'False' may not fully encode the stated conjunctive eligibility requirement.",
+    "suggestion": "Ensure that the proof explicitly handles all four combinations of the prerequisite and approval conditions, and that the use of 'True' and 'False' aligns with the stated conjunctive eligibility requirement.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_002",
+        "block_id": "artifact_001_unit_002_proof",
+        "source_range": {
+          "start_line": 54,
+          "end_line": 73
+        },
+        "excerpt": "--consider all four cases\n    Or.elim prerequisites\n        (\n         --x1 True\n         fun case1 =>\n            Or.elim approvals\n               --y1 True\n               (fun case1_1 => approval_1 h1)\n               --y2 True\n               (fun case1_2 => approval_2 h2)\n        )\n        (\n         --x2 True\n         fun case2 =>\n            Or.elim approvals\n               --y1 True\n               (fun case2_1 => approval_1 h1)\n               --y2 True\n               (fun case2_2 => approval_2 h2)\n        )"
+      }
+    ]
+  }
+}

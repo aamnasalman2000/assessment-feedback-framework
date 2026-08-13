@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_4",
+  "requirement_ids": [
+    "S4-R1",
+    "S4-R2",
+    "S4-R3",
+    "S4-R4",
+    "S4-R5",
+    "S4-R6",
+    "S4-R7",
+    "S4-R8"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S4-R1",
+        "status": "met",
+        "internal_finding": "The exact implication is used in the proof.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_statement",
+            "source_range": {
+              "start_line": 234,
+              "end_line": 239
+            },
+            "excerpt": "example (ThreatTriggersAutomaticResponse : t → r)\n        (ActionsTerminatedForFalsePositive : f → ¬r)\n        (AutomaticResponseAccompaniedByManualIntervention : r → m)\n        (ConsistentResponse : ¬m ∨ ¬f)\n        (ThreatDetected : t)\n        : (r ∧ m ∧ ¬f)",
+            "description": "The target implication is used in the proof."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R2",
+        "status": "met",
+        "internal_finding": "r is derived from t and t → r.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_proof",
+            "source_range": {
+              "start_line": 240,
+              "end_line": 253
+            },
+            "excerpt": "have pfr : r := ThreatTriggersAutomaticResponse ThreatDetected",
+            "description": "r is derived from t and t → r."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R3",
+        "status": "met",
+        "internal_finding": "m is derived from r and r → m.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_proof",
+            "source_range": {
+              "start_line": 240,
+              "end_line": 253
+            },
+            "excerpt": "have pfm : m := AutomaticResponseAccompaniedByManualIntervention pfr",
+            "description": "m is derived from r and r → m."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R4",
+        "status": "met",
+        "internal_finding": "¬f is derived using the available assumptions.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_proof",
+            "source_range": {
+              "start_line": 240,
+              "end_line": 253
+            },
+            "excerpt": "have pfnotf : ¬f := fun pff : f => ... show False from absurd pfr pfnotr",
+            "description": "¬f is derived using the available assumptions."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R5",
+        "status": "met",
+        "internal_finding": "The final result r ∧ m ∧ ¬f is constructed with the correct conjunction structure.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_proof",
+            "source_range": {
+              "start_line": 240,
+              "end_line": 253
+            },
+            "excerpt": "have pfconj : (r ∧ (m ∧ ¬f)) := And.intro pfr (And.intro pfm pfnotf)\n          show (r ∧ m ∧ ¬f) from pfconj",
+            "description": "The final result r ∧ m ∧ ¬f is constructed with the correct conjunction structure."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R6",
+        "status": "met",
+        "internal_finding": "The proof targets the required implication.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_statement",
+            "source_range": {
+              "start_line": 234,
+              "end_line": 239
+            },
+            "excerpt": "example (ThreatTriggersAutomaticResponse : t → r)\n        (ActionsTerminatedForFalsePositive : f → ¬r)\n        (AutomaticResponseAccompaniedByManualIntervention : r → m)\n        (ConsistentResponse : ¬m ∨ ¬f)\n        (ThreatDetected : t)\n        : (r ∧ m ∧ ¬f)",
+            "description": "The proof targets the required implication."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R7",
+        "status": "met",
+        "internal_finding": "The derivation of r, m, and ¬f is explained.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_005",
+            "block_id": "artifact_001_unit_005_proof",
+            "source_range": {
+              "start_line": 240,
+              "end_line": 253
+            },
+            "excerpt": "have pfr : r := ThreatTriggersAutomaticResponse ThreatDetected\n          have pfm : m := AutomaticResponseAccompaniedByManualIntervention pfr\n          have pfnotf : ¬f := fun pff : f => ... show False from absurd pfr pfnotr",
+            "description": "The derivation of r, m, and ¬f is explained."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S4-R8",
+        "status": "not_met",
+        "internal_finding": "The submitted Lean code does not compile.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "S4-R1",
+          "S4-R2",
+          "S4-R3",
+          "S4-R4",
+          "S4-R5",
+          "S4-R6",
+          "S4-R7"
+        ],
+        "internal_finding": "The proof correctly derives r, m, and ¬f and constructs the final result with the correct conjunction structure.",
+        "student_feedback": "The proof is well-structured and correctly follows the required implications and logical steps.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": []
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S4-R8"
+        ],
+        "internal_finding": "The submitted Lean code does not compile.",
+        "student_feedback": "The code may contain syntax errors that prevent compilation in Lean 4.",
+        "verification_status": "not_verified",
+        "confidence": 0.5,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The proof correctly derives r, m, and ¬f and constructs the final result with the correct conjunction structure. However, the submitted Lean code does not compile, which may indicate syntax errors."
+  }
+}

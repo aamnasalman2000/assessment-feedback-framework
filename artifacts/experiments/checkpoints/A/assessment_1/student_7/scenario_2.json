@@ -1,0 +1,165 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "scenario_2",
+  "requirement_ids": [
+    "S2-R1",
+    "S2-R2",
+    "S2-R3",
+    "S2-R4",
+    "S2-R5",
+    "S2-R6",
+    "S2-R7"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "S2-R1",
+        "status": "not_met",
+        "internal_finding": "The logical implication is not explicitly stated in the submission.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S2-R1",
+            "description": "The target statement is not explicitly stated in the submission."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R2",
+        "status": "met",
+        "internal_finding": "Derive d from b and b → d using modus ponens.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_003",
+            "block_id": "artifact_001_unit_003_proof",
+            "source_range": {
+              "start_line": 129,
+              "end_line": 146
+            },
+            "excerpt": "have pfd : d := BiometricIdentificationRequiredAsSpendingPatternExceeded SpendingPatternExceeded"
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R3",
+        "status": "not_met",
+        "internal_finding": "Establish a using ¬a → (c ∧ d) and ¬c is not directly shown.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S2-R3",
+            "description": "The derivation of a from ¬a → (c ∧ d) and ¬c is not explicitly shown."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R4",
+        "status": "met",
+        "internal_finding": "Construct the final conjunction a ∧ d using the derived values.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_003",
+            "block_id": "artifact_001_unit_003_proof",
+            "source_range": {
+              "start_line": 129,
+              "end_line": 146
+            },
+            "excerpt": "have pfconj : (r ∧ (m ∧ ¬f)) := And.intro pfr (And.intro pfm pfnotf)"
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R5",
+        "status": "met",
+        "internal_finding": "Classical reasoning is valid and supported by the Lean environment.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_003",
+            "block_id": "artifact_001_unit_003_proof",
+            "source_range": {
+              "start_line": 129,
+              "end_line": 146
+            },
+            "excerpt": "have pfnotf : ¬f := fun pff : f => ... show False from absurd pfc InconsistentLocationHist"
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R6",
+        "status": "not_met",
+        "internal_finding": "Explanation of the reasoning is missing in the submission.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "requirement_id": "S2-R6",
+            "description": "The submission lacks a brief explanation of the reasoning."
+          }
+        ]
+      },
+      {
+        "requirement_id": "S2-R7",
+        "status": "met",
+        "internal_finding": "The submitted Lean code compiles correctly.",
+        "verification_status": "verified_by_tool",
+        "confidence": 1.0,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "S2-R1",
+          "S2-R3",
+          "S2-R6"
+        ],
+        "internal_finding": "The submission lacks explicit logical implication and explanation.",
+        "student_feedback": "The target statement and explanation are not explicitly stated in the submission.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "evidence_type": "absence",
+            "part_id": "part_1",
+            "description": "The target statement and explanation are not explicitly stated in the submission."
+          }
+        ]
+      },
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "S2-R2",
+          "S2-R4",
+          "S2-R5",
+          "S2-R7"
+        ],
+        "internal_finding": "The submission correctly derives d and constructs a ∧ d using classical reasoning.",
+        "student_feedback": "The submission correctly derives d and constructs a ∧ d using classical reasoning.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The submission correctly derives d and constructs a ∧ d using classical reasoning. However, the target statement and explanation are not explicitly stated, and the logical implication is missing."
+  }
+}

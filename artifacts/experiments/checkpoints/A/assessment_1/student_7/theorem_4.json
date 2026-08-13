@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "theorem_4",
+  "requirement_ids": [
+    "T4-R1",
+    "T4-R2",
+    "T4-R3",
+    "T4-R4",
+    "T4-R5",
+    "T4-R6"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "T4-R1",
+        "status": "met",
+        "internal_finding": "Assumes provable y and combines it with provable x.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )",
+            "description": "Assumes provable y and combines it with provable x."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R2",
+        "status": "met",
+        "internal_finding": "Uses AxConjIntro to derive provable (conj x y).",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )",
+            "description": "Uses AxConjIntro to derive provable (conj x y)."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R3",
+        "status": "met",
+        "internal_finding": "Uses contradiction with ¬provable (conj x y) to establish ¬provable y.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )",
+            "description": "Uses contradiction with ¬provable (conj x y) to establish ¬provable y."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R4",
+        "status": "met",
+        "internal_finding": "Correctly supplies arguments to AxConjIntro.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )",
+            "description": "Correctly supplies arguments to AxConjIntro."
+          }
+        ]
+      },
+      {
+        "requirement_id": "T4-R5",
+        "status": "partially_met",
+        "internal_finding": "Explanation of contradiction-based proof strategy is missing.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "T4-R6",
+        "status": "met",
+        "internal_finding": "The theorem compiles in Lean 4.",
+        "verification_status": "not_verified",
+        "confidence": 0.9,
+        "evidence": []
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "T4-R1",
+          "T4-R2",
+          "T4-R3",
+          "T4-R4",
+          "T4-R6"
+        ],
+        "internal_finding": "The proof strategy correctly applies logical principles and uses axioms effectively.",
+        "student_feedback": "The proof demonstrates a clear understanding of logical principles and uses axioms effectively.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_015",
+            "block_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )",
+            "description": "The proof demonstrates a clear understanding of logical principles and uses axioms effectively."
+          }
+        ]
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "T4-R5"
+        ],
+        "internal_finding": "The contradiction-based proof strategy is not clearly explained.",
+        "student_feedback": "The proof should include a brief explanation of the contradiction-based reasoning.",
+        "verification_status": "inferred",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component demonstrates a strong understanding of logical principles and uses axioms effectively. However, the contradiction-based proof strategy lacks a clear explanation, which could improve clarity and completeness."
+  }
+}

@@ -1,0 +1,2454 @@
+{
+  "schema_version": "2.0",
+  "source_submission_id": "assessment_1_student_7",
+  "processed_submission_id": "processed_assessment_1_student_7",
+  "extractor_version": "2.0",
+  "model_name": "Qwen/Qwen3-4B",
+  "document_regions": [],
+  "unit_annotations": [
+    {
+      "unit_id": "artifact_001_unit_001",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that the provable predicate is opaque and depends on a proposition.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 35,
+              "end_line": 35
+            },
+            "excerpt": "opaque provable : Prop → Prop"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "decomposition_only",
+        "description": "The proof attempt only decomposes assumptions and does not proceed to a more substantive proof step.",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 35,
+              "end_line": 35
+            },
+            "excerpt": "opaque provable : Prop → Prop"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "opaque",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit defines an opaque proposition 'provable' that takes a proposition and returns a proposition. The proof attempt only decomposes assumptions and does not proceed to a more substantive proof step.",
+      "confidence": 0.85
+    },
+    {
+      "unit_id": "artifact_001_unit_002",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove that the student is eligible for the advanced module based on the given conditions.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_002_statement",
+            "source_range": {
+              "start_line": 53,
+              "end_line": 53
+            },
+            "excerpt": "example : provable z"
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_002_proof",
+            "source_range": {
+              "start_line": 54,
+              "end_line": 73
+            },
+            "excerpt": "--consider all four cases\n    Or.elim prerequisites\n        (\n         --x1 True\n         fun case1 =>\n            Or.elim approvals\n               --y1 True\n               (fun case1_1 => approval_1 h1)\n               --y2 True\n               (fun case1_2 => approval_2 h2)\n        )\n        (\n         --x2 True\n         fun case2 =>\n            Or.elim approvals\n               --y1 True\n               (fun case2_1 => approval_1 h1)\n               (fun case2_2 => approval_2 h2)\n        )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": "The proof uses case analysis on the prerequisites and approvals to derive the target proposition.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_002_proof",
+            "source_range": {
+              "start_line": 54,
+              "end_line": 73
+            },
+            "excerpt": "--consider all four cases\n    Or.elim prerequisites\n        (\n         --x1 True\n         fun case1 =>\n            Or.elim approvals\n               --y1 True\n               (fun case1_1 => approval_1 h1)\n               --y2 True\n               (fun case1_2 => approval_2 h2)\n        )\n        (\n         --x2 True\n         fun case2 =>\n            Or.elim approvals\n               --y1 True\n               (fun case2_1 => approval_1 h1)\n               --y2 True\n               (fun case2_2 => approval_2 h2)\n        )"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "The context declares variables x1, x2, y1, y2, and z which are used in the formal statement and proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "The context declares prerequisites which is used in the Or.elim function in the proof.",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "The context declares approvals which is used in the Or.elim function in the proof.",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "possibly_relevant",
+          "reason": "The context declares prerequisite_1 which is used in the proof.",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "possibly_relevant",
+          "reason": "The context declares prerequisite_2 which is used in the proof.",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "possibly_relevant",
+          "reason": "The context declares approval_1 which is used in the proof.",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "possibly_relevant",
+          "reason": "The context declares approval_2 which is used in the proof.",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "possibly_relevant",
+          "reason": "The context declares h1 which is used in the proof.",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "possibly_relevant",
+          "reason": "The context declares h2 which is used in the proof.",
+          "confidence": 0.7
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 54,
+            "end_line": 54
+          },
+          "role": "student_explanation",
+          "content": "consider all four cases",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 55,
+            "end_line": 55
+          },
+          "role": "student_explanation",
+          "content": "Or.elim prerequisites",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 56,
+            "end_line": 56
+          },
+          "role": "student_explanation",
+          "content": "fun case1 =>",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 57,
+            "end_line": 57
+          },
+          "role": "student_explanation",
+          "content": "Or.elim approvals",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 58,
+            "end_line": 58
+          },
+          "role": "student_explanation",
+          "content": "--y1 True",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 59,
+            "end_line": 59
+          },
+          "role": "student_explanation",
+          "content": "(fun case1_1 => approval_1 h1)",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 60,
+            "end_line": 60
+          },
+          "role": "student_explanation",
+          "content": "--y2 True",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 61,
+            "end_line": 61
+          },
+          "role": "student_explanation",
+          "content": "(fun case1_2 => approval_2 h2)",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 62,
+            "end_line": 62
+          },
+          "role": "student_explanation",
+          "content": "fun case2 =>",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 63,
+            "end_line": 63
+          },
+          "role": "student_explanation",
+          "content": "Or.elim approvals",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 64,
+            "end_line": 64
+          },
+          "role": "student_explanation",
+          "content": "--y1 True",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 65,
+            "end_line": 65
+          },
+          "role": "student_explanation",
+          "content": "(fun case2_1 => approval_1 h1)",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 66,
+            "end_line": 66
+          },
+          "role": "student_explanation",
+          "content": "--y2 True",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 67,
+            "end_line": 67
+          },
+          "role": "student_explanation",
+          "content": "(fun case2_2 => approval_2 h2)",
+          "related_unit_ids": [
+            "artifact_001_unit_002"
+          ],
+          "confidence": 0.8
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "example",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The proof attempts to prove that the student is eligible for the advanced module by using case analysis on the prerequisites and approvals. The proof uses Or.elim to handle the disjunctions and applies the approval hypotheses to derive the target proposition. The proof is structured to handle all four possible combinations of prerequisites and approvals.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_003",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the proposition (a ∧ d) using the given assumptions and logical steps",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003_statement",
+            "source_range": {
+              "start_line": 123,
+              "end_line": 128
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003_proof",
+            "source_range": {
+              "start_line": 129,
+              "end_line": 146
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": "Assume a is False and derive a contradiction to prove a is True",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003_proof",
+            "source_range": {
+              "start_line": 133,
+              "end_line": 146
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "required",
+          "reason": "Used in the proof to derive the target proposition",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 130,
+            "end_line": 130
+          },
+          "role": "student_explanation",
+          "content": "assume a is False, therefore from ¬a → (c ∧ d) both c and d must be True. However, it is given that ¬c is True.",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 131,
+            "end_line": 131
+          },
+          "role": "student_explanation",
+          "content": "Both c and ¬c cannot be True. This is a contradiction. Therefore the original assumption that a is False must be wrong.",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 132,
+            "end_line": 132
+          },
+          "role": "student_explanation",
+          "content": "a must therefore also be True.",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 134,
+            "end_line": 134
+          },
+          "role": "student_explanation",
+          "content": "show False from absurd pfc InconsistentLocationHistory",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 135,
+            "end_line": 135
+          },
+          "role": "student_explanation",
+          "content": "have pfconj : (a ∧ d) := And.intro pfa pfd",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 136,
+            "end_line": 136
+          },
+          "role": "student_explanation",
+          "content": "show (a ∧ d) from pfconj",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 137,
+            "end_line": 137
+          },
+          "role": "uncertainty",
+          "content": "I do not see how this can be proven.",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "source_range": {
+            "start_line": 138,
+            "end_line": 138
+          },
+          "role": "uncertainty",
+          "content": "This appears contradictory.",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "source_range": {
+            "start_line": 139,
+            "end_line": 139
+          },
+          "role": "uncertainty",
+          "content": "I am unsure about this step.",
+          "related_unit_ids": [
+            "artifact_001_unit_003"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "example",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The proof attempts to prove (a ∧ d) by assuming a is False and deriving a contradiction. The proof uses the given assumptions and logical steps to show that a must be True, leading to the conclusion (a ∧ d).",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_004",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove that the example is provable",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_004",
+            "source_range": {
+              "start_line": 181,
+              "end_line": 191
+            },
+            "excerpt": "example : provable y :=\n      --focus on each potential route\n      Or.elim CorrectRouteSelected\n      (\n         --using the alternate route, to prove y v must be True and ¬w must be True and x must be True\n         fun case1 => AlternateRoute h1\n      )\n      (\n         --using the usual route, to prove y w must be True and ¬v must be True\n         fun case2 => UsualRoute h2\n      )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": "The proof uses case analysis on the Or.elim constructor",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_004",
+            "source_range": {
+              "start_line": 182,
+              "end_line": 191
+            },
+            "excerpt": "Or.elim CorrectRouteSelected\n      (\n         --using the alternate route, to prove y v must be True and ¬w must be True and x must be True\n         fun case1 => AlternateRoute h1\n      )\n      (\n         --using the usual route, to prove y w must be True and ¬v must be True\n         fun case2 => UsualRoute h2\n      )"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "possibly_relevant",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "possibly_relevant",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "required",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "supporting",
+          "reason": "The variable declarations are used in the proof",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 182,
+            "end_line": 182
+          },
+          "role": "student_explanation",
+          "content": "focus on each potential route",
+          "related_unit_ids": [
+            "artifact_001_unit_004"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 183,
+            "end_line": 183
+          },
+          "role": "student_explanation",
+          "content": "using the alternate route, to prove y v must be True and ¬w must be True and x must be True",
+          "related_unit_ids": [
+            "artifact_001_unit_004"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "source_range": {
+            "start_line": 184,
+            "end_line": 184
+          },
+          "role": "student_explanation",
+          "content": "using the usual route, to prove y w must be True and ¬v must be True",
+          "related_unit_ids": [
+            "artifact_001_unit_004"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "example",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The example is a Lean proof that uses case analysis on the Or.elim constructor to prove that the example is provable. The proof uses the CorrectRouteSelected variable and the AlternateRoute and UsualRoute functions to handle the two cases. The proof is based on the context declarations provided in the unit.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_005",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the logical implication that a detected threat leads to an automatic response, manual intervention, and the conclusion that the threat is not a false positive.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_005",
+            "source_range": {
+              "start_line": 234,
+              "end_line": 253
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": "The proof uses case analysis to derive the target proposition by applying the given assumptions and theorems.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_005",
+            "source_range": {
+              "start_line": 234,
+              "end_line": 253
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_017",
+          "relevance": "required",
+          "reason": "The context declaration 't r f m : Prop' is used in the proof to represent the propositions involved in the logical implication.",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 240,
+            "end_line": 253
+          },
+          "role": "student_explanation",
+          "content": "The proof uses the given assumptions to derive the target proposition. The proof applies the given theorems to the assumptions and uses logical reasoning to arrive at the conclusion.",
+          "related_unit_ids": [
+            "artifact_001_unit_005"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 240,
+            "end_line": 253
+          },
+          "role": "uncertainty",
+          "content": "The student is uncertain about the correctness of the proof steps, particularly the use of the 'absurd' function to derive a contradiction.",
+          "related_unit_ids": [
+            "artifact_001_unit_005"
+          ],
+          "confidence": 0.7
+        },
+        {
+          "source_range": {
+            "start_line": 240,
+            "end_line": 253
+          },
+          "role": "strategy",
+          "content": "The proof uses the given theorems to derive the target proposition by applying the given assumptions and using logical reasoning.",
+          "related_unit_ids": [
+            "artifact_001_unit_005"
+          ],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "example",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit provides a proof of the logical implication that a detected threat leads to an automatic response, manual intervention, and the conclusion that the threat is not a false positive. The proof uses case analysis to derive the target proposition by applying the given assumptions and theorems.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_006",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that the opaque proposition conj is a function from Prop to Prop to Prop",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_006",
+            "source_range": {
+              "start_line": 257,
+              "end_line": 257
+            },
+            "excerpt": "opaque conj : Prop -> Prop -> Prop"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "decomposition_only",
+        "description": "The proof attempt only decomposes assumptions and does not proceed to a more substantive proof step",
+        "confidence": 0.8,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_006",
+            "source_range": {
+              "start_line": 257,
+              "end_line": 257
+            },
+            "excerpt": "opaque conj : Prop -> Prop -> Prop"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "required",
+          "reason": "This context declaration is explicitly used by the proof",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 257,
+            "end_line": 257
+          },
+          "role": "student_explanation",
+          "content": "Prove the claim that the opaque proposition conj is a function from Prop to Prop to Prop",
+          "related_unit_ids": [
+            "artifact_001_unit_006"
+          ],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "opaque",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit defines an opaque proposition conj that takes two Prop arguments and returns a Prop. The proof attempt only decomposes assumptions and does not proceed to a more substantive proof step. The student's intent is to prove the claim about the proposition. The strategy is decomposition_only, indicating that the proof attempt only unpacks assumptions without further development.",
+      "confidence": 0.85
+    },
+    {
+      "unit_id": "artifact_001_unit_007",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that True is provable",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_007",
+            "source_range": {
+              "start_line": 258,
+              "end_line": 258
+            },
+            "excerpt": "axiom AxPrTrue   : provable True"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "direct_application",
+        "description": "Directly apply the provable True axiom",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_007",
+            "source_range": {
+              "start_line": 258,
+              "end_line": 258
+            },
+            "excerpt": "axiom AxPrTrue   : provable True"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "axiom",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit declares an axiom that states that True is provable. The student intent is to prove this claim, and the strategy involves directly applying the provable True axiom.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_008",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that if provable False is assumed, then False follows.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_008",
+            "source_range": {
+              "start_line": 259,
+              "end_line": 259
+            },
+            "excerpt": "axiom AxNotPrFalse : provable False -> False"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "contradiction",
+        "description": "The proof uses the contradiction between provable False and False to establish the implication.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_008",
+            "source_range": {
+              "start_line": 259,
+              "end_line": 259
+            },
+            "excerpt": "axiom AxNotPrFalse : provable False -> False"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "supporting",
+          "reason": "The context declares variables used in the proof.",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 259,
+            "end_line": 259
+          },
+          "role": "student_explanation",
+          "content": "This axiom states that if provable False is assumed, then False follows.",
+          "related_unit_ids": [
+            "artifact_001_unit_008"
+          ],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "axiom",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit contains an axiom that states if provable False is assumed, then False follows. The axiom uses the contradiction between provable False and False to establish the implication. The proof uses the contradiction to derive the implication.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_009",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that if a conjunction is provable, then its left disjunct is provable.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_009",
+            "source_range": {
+              "start_line": 262,
+              "end_line": 262
+            },
+            "excerpt": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) -> provable x"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "conjunction_elimination",
+        "description": "This axiom allows the elimination of the left disjunct from a provable conjunction.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_009",
+            "source_range": {
+              "start_line": 262,
+              "end_line": 262
+            },
+            "excerpt": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) -> provable x"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "possibly_relevant",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.7
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 262,
+            "end_line": 262
+          },
+          "role": "student_explanation",
+          "content": "for all x and y, if there is a proof of x ∧ y",
+          "related_unit_ids": [
+            "artifact_001_unit_009"
+          ],
+          "confidence": 0.8
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "axiom",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "This unit provides an axiom that allows the elimination of the left disjunct from a provable conjunction. The axiom is used to prove that if a conjunction is provable, then its left disjunct is provable. The context declarations are used to provide variables for the proof.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_010",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that if a conjunction is provable, then the right disjunct is provable.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_010",
+            "source_range": {
+              "start_line": 264,
+              "end_line": 264
+            },
+            "excerpt": "axiom AxConjElimRight : ∀ x y, provable (conj x y) -> provable y"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "conjunction_elimination",
+        "description": "Apply conjunction elimination to the right disjunct of a provable conjunction.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_010",
+            "source_range": {
+              "start_line": 264,
+              "end_line": 264
+            },
+            "excerpt": "axiom AxConjElimRight : ∀ x y, provable (conj x y) -> provable y"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 264,
+            "end_line": 264
+          },
+          "role": "student_explanation",
+          "content": "for all x and y, if there is a proof of x ∧ y",
+          "related_unit_ids": [
+            "artifact_001_unit_010"
+          ],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "axiom",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit defines an axiom that states if a conjunction is provable, then the right disjunct is provable. The strategy involves applying conjunction elimination to the right disjunct of a provable conjunction.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_011",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that if x and y are provable, then conj x y is provable.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 268,
+              "end_line": 268
+            },
+            "excerpt": "axiom AxConjIntro : ∀ x y, provable x -> provable y -> provable (conj x y)"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "conjunction_construction",
+        "description": "The proof constructs a conjunction from provable premises.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 268,
+              "end_line": 268
+            },
+            "excerpt": "axiom AxConjIntro : ∀ x y, provable x -> provable y -> provable (conj x y)"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "supporting",
+          "reason": "This context declares variables used in the proof.",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 268,
+            "end_line": 268
+          },
+          "role": "student_explanation",
+          "content": "for all x and y, if x is provable and y is",
+          "related_unit_ids": [
+            "artifact_001_unit_011"
+          ],
+          "confidence": 0.8
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "axiom",
+          "proof_style": "none",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The unit defines an axiom that constructs a conjunction from provable premises. The student's intent is to prove the claim that if x and y are provable, then conj x y is provable. The strategy involves conjunction construction. The relevant contexts are all context IDs, as they declare variables used in the proof.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_012",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the claim that if provable (conj x False) and provable x, then ¬provable False",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012_statement",
+            "source_range": {
+              "start_line": 273,
+              "end_line": 273
+            },
+            "excerpt": "theorem ex1 : ∀ x, ¬provable (conj x False) ∧ provable x -> ¬provable False"
+          },
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012_proof",
+            "source_range": {
+              "start_line": 274,
+              "end_line": 285
+            },
+            "excerpt": "fun x ConjArgument =>\n    --Using proof by contradiction, assume provable False\n    (fun h : provable False =>\n        --extract each part of the conjunction\n        let hr := And.right ConjArgument\n        let hl := And.left ConjArgument\n        --as have provable False and provable x then can prove the conjunction, i.e., provable (conj x False)\n        let hconj := AxConjIntro x False hr h\n        --this is a contradiction, therefore the initial assumption provable False must be incorrect,\n        --therefore ¬provable False is True\n        show False from absurd hconj hl\n    )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "proof_by_contradiction",
+        "description": "Assume provable False and derive a contradiction to prove ¬provable False",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012_proof",
+            "source_range": {
+              "start_line": 274,
+              "end_line": 285
+            },
+            "excerpt": "fun x ConjArgument =>\n    --Using proof by contradiction, assume provable False\n    (fun h : provable False =>\n        --extract each part of the conjunction\n        let hr := And.right ConjArgument\n        let hl := And.left ConjArgument\n        --as have provable False and provable x then can prove the conjunction, i.e., provable (conj x False)\n        let hconj := AxConjIntro x False hr h\n        --this is a contradiction, therefore the initial assumption provable False must be incorrect,\n        --therefore ¬provable False is True\n        show False from absurd hconj hl\n    )"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "Used in the proof to extract parts of the conjunction",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "supporting",
+          "reason": "Supporting variables used in the proof",
+          "confidence": 0.7
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 274,
+            "end_line": 274
+          },
+          "role": "student_explanation",
+          "content": "Using proof by contradiction, assume provable False",
+          "related_unit_ids": [
+            "artifact_001_unit_012"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 275,
+            "end_line": 275
+          },
+          "role": "student_explanation",
+          "content": "extract each part of the conjunction",
+          "related_unit_ids": [
+            "artifact_001_unit_012"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 276,
+            "end_line": 276
+          },
+          "role": "student_explanation",
+          "content": "as have provable False and provable x then can prove the conjunction, i.e., provable (conj x False)",
+          "related_unit_ids": [
+            "artifact_001_unit_012"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 277,
+            "end_line": 277
+          },
+          "role": "student_explanation",
+          "content": "this is a contradiction, therefore the initial assumption provable False must be incorrect, therefore ¬provable False is True",
+          "related_unit_ids": [
+            "artifact_001_unit_012"
+          ],
+          "confidence": 0.8
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "theorem",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The proof attempts to prove that if provable (conj x False) and provable x, then ¬provable False using a proof by contradiction. The proof assumes provable False, extracts parts of the conjunction, and derives a contradiction to prove ¬provable False.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_013",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the theorem that if provable (conj x False) then provable y",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013_statement",
+            "source_range": {
+              "start_line": 290,
+              "end_line": 290
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013_proof",
+            "source_range": {
+              "start_line": 291,
+              "end_line": 298
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": "Extract provable x and provable False from provable (conj x False) by elimination",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013_proof",
+            "source_range": {
+              "start_line": 291,
+              "end_line": 298
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "Used in the proof body",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "possibly_relevant",
+          "reason": "Used in the proof body",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "possibly_relevant",
+          "reason": "Used in the proof body",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "possibly_relevant",
+          "reason": "Used in the proof body",
+          "confidence": 0.9
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "possibly_relevant",
+          "reason": "Available in the surrounding section",
+          "confidence": 0.8
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 291,
+            "end_line": 292
+          },
+          "role": "student_explanation",
+          "content": "extract provable x and provable False from provable (conj x False) by elimination",
+          "related_unit_ids": [
+            "artifact_001_unit_013"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 293,
+            "end_line": 294
+          },
+          "role": "student_explanation",
+          "content": "You can also use the function False.elim to obtain a proof of anything from a proof of False",
+          "related_unit_ids": [
+            "artifact_001_unit_013"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 295,
+            "end_line": 296
+          },
+          "role": "student_explanation",
+          "content": "3.2.4 Rules for Negation and False",
+          "related_unit_ids": [
+            "artifact_001_unit_013"
+          ],
+          "confidence": 0.7
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "theorem",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The proof attempts to extract provable x and provable False from provable (conj x False) using conjunction elimination. It then uses the resulting False to derive provable y via False.elim. The proof body stops after decomposing the assumptions.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_014",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the theorem that the provability of a nested conjunction implies the provability of a reordered conjunction.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_014",
+            "source_range": {
+              "start_line": 304,
+              "end_line": 317
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "case_analysis",
+        "description": "The proof uses conjunction elimination and introduction rules to extract and reconstruct propositions.",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_014",
+            "source_range": {
+              "start_line": 305,
+              "end_line": 317
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "The context declarations are used to extract and reconstruct propositions in the proof.",
+          "confidence": 0.9
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 305,
+            "end_line": 317
+          },
+          "role": "student_explanation",
+          "content": "Extract provable x from provable (conj x (conj y z))\nExtract provable conj (y z) from provable (conj x (conj y z))\nExtract provable y from provable conj (y z)\nExtract provable z from provable conj (y z)\nCreate provable (conj y x)\nCreate provable (conj (conj y x) z)",
+          "related_unit_ids": [
+            "artifact_001_unit_014"
+          ],
+          "confidence": 0.9
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "theorem",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The proof attempts to prove that the provability of a nested conjunction implies the provability of a reordered conjunction. The proof uses conjunction elimination and introduction rules to extract and reconstruct propositions. The proof is complete and correctly constructs the target proposition.",
+      "confidence": 0.9
+    },
+    {
+      "unit_id": "artifact_001_unit_015",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "prove_claim",
+        "description": "Prove the theorem that if ¬provable (conj x y) and provable x, then ¬provable y",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015_statement",
+            "source_range": {
+              "start_line": 322,
+              "end_line": 322
+            },
+            "excerpt": "theorem ex4 : ∀ x y : Prop, ¬provable (conj x y) -> provable x -> ¬provable y"
+          },
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "reasoning_strategy",
+        "name": "proof_by_contradiction",
+        "description": "Assume provable y and derive a contradiction using the given assumptions",
+        "confidence": 0.9,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015_proof",
+            "source_range": {
+              "start_line": 323,
+              "end_line": 331
+            },
+            "excerpt": "fun x y NotProvableConjArgument ProvablexArgument =>\n    --Using proof by contradiction, assume provable y\n    (fun h : provable y =>\n        --Given provable x, therefore using conjunction have provable (conj x y)\n        let prConj := AxConjIntro x y ProvablexArgument h\n        --Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.\n        --Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.\n        show False from absurd prConj NotProvableConjArgument\n    )"
+          }
+        ]
+      },
+      "relevant_context": [
+        {
+          "context_id": "context_001",
+          "relevance": "required",
+          "reason": "Used in the proof by contradiction strategy",
+          "confidence": 0.8
+        },
+        {
+          "context_id": "context_002",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_003",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_004",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_005",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_006",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_007",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_008",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_009",
+          "relevance": "supporting",
+          "reason": "Supports the logical structure of the proof",
+          "confidence": 0.7
+        },
+        {
+          "context_id": "context_010",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_011",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_012",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_013",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_014",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_015",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_016",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        },
+        {
+          "context_id": "context_017",
+          "relevance": "possibly_relevant",
+          "reason": "May be relevant to the logical structure of the proof",
+          "confidence": 0.6
+        }
+      ],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 323,
+            "end_line": 323
+          },
+          "role": "student_explanation",
+          "content": "Using proof by contradiction, assume provable y",
+          "related_unit_ids": [
+            "artifact_001_unit_015"
+          ],
+          "confidence": 0.9
+        },
+        {
+          "source_range": {
+            "start_line": 324,
+            "end_line": 324
+          },
+          "role": "student_explanation",
+          "content": "Given provable x, therefore using conjunction have provable (conj x y)",
+          "related_unit_ids": [
+            "artifact_001_unit_015"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 325,
+            "end_line": 325
+          },
+          "role": "student_explanation",
+          "content": "Given ¬provable (conj x y). Therefore have ¬provable (conj x y) and provable (conj x y) which is a contradiction.",
+          "related_unit_ids": [
+            "artifact_001_unit_015"
+          ],
+          "confidence": 0.8
+        },
+        {
+          "source_range": {
+            "start_line": 326,
+            "end_line": 326
+          },
+          "role": "student_explanation",
+          "content": "Therefore the initial assumption must be False, i.e., provable y is False, so ¬provable y is True.",
+          "related_unit_ids": [
+            "artifact_001_unit_015"
+          ],
+          "confidence": 0.8
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "lean",
+          "declaration_type": "theorem",
+          "proof_style": "term",
+          "contains_sorry": false,
+          "concepts": []
+        }
+      ],
+      "summary": "The theorem proves that if ¬provable (conj x y) and provable x, then ¬provable y using a proof by contradiction strategy. The proof assumes provable y, derives a contradiction using the given assumptions, and concludes that ¬provable y is True.",
+      "confidence": 0.9
+    }
+  ],
+  "unresolved_observations": [],
+  "warnings": [],
+  "raw_model_response": null
+}

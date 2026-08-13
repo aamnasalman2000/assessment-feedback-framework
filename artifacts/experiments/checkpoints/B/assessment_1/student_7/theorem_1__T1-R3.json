@@ -1,0 +1,133 @@
+{
+  "schema_version": "3.2",
+  "reflection_mode": "two_stage_guarded",
+  "component_id": "theorem_1",
+  "requirement_id": "T1-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "initial_criterion_assessment_id": "ca_033",
+  "initial_observation_id": "b_initial_obs_033",
+  "decision": {
+    "analysis": {
+      "evidence_supported": true,
+      "unsupported_claims": [],
+      "overlooked_evidence": [],
+      "missing_rubric_points": [],
+      "preferred_solution_bias": false,
+      "confidence_assessment": "appropriate",
+      "should_revise": false,
+      "revision_reason": "The original assessment was retained because no material revision was required."
+    }
+  },
+  "final_criterion": {
+    "criterion_assessment_id": "ca_033",
+    "requirement_id": "T1-R3",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "status": "met",
+    "internal_finding": "The axioms AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_009",
+        "block_id": "artifact_001_unit_009_statement",
+        "source_range": {
+          "start_line": 262,
+          "end_line": 262
+        },
+        "excerpt": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) -> provable x",
+        "description": "Axiom AxConjElimLeft"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_010",
+        "block_id": "artifact_001_unit_010_statement",
+        "source_range": {
+          "start_line": 264,
+          "end_line": 264
+        },
+        "excerpt": "axiom AxConjElimRight : ∀ x y, provable (conj x y) -> provable y",
+        "description": "Axiom AxConjElimRight"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_011",
+        "block_id": "artifact_001_unit_011_statement",
+        "source_range": {
+          "start_line": 268,
+          "end_line": 268
+        },
+        "excerpt": "axiom AxConjIntro : ∀ x y, provable x -> provable y -> provable (conj x y)",
+        "description": "Axiom AxConjIntro"
+      }
+    ]
+  },
+  "final_observation": {
+    "observation_id": "b_initial_obs_033",
+    "feedback_type": "strength",
+    "scope": "task",
+    "part_ids": [
+      "part_2"
+    ],
+    "task_ids": [
+      "theorem_1"
+    ],
+    "attempt_unit_ids": [],
+    "requirement_ids": [
+      "T1-R3"
+    ],
+    "criterion_assessment_ids": [
+      "ca_033"
+    ],
+    "internal_finding": "The axioms AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately.",
+    "student_feedback": "The axioms AxConjElimLeft, AxConjElimRight, and AxConjIntro are used appropriately.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_009",
+        "block_id": "artifact_001_unit_009_statement",
+        "source_range": {
+          "start_line": 262,
+          "end_line": 262
+        },
+        "excerpt": "axiom AxConjElimLeft : ∀ x y, provable (conj x y) -> provable x",
+        "description": "Axiom AxConjElimLeft"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_010",
+        "block_id": "artifact_001_unit_010_statement",
+        "source_range": {
+          "start_line": 264,
+          "end_line": 264
+        },
+        "excerpt": "axiom AxConjElimRight : ∀ x y, provable (conj x y) -> provable y",
+        "description": "Axiom AxConjElimRight"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_011",
+        "block_id": "artifact_001_unit_011_statement",
+        "source_range": {
+          "start_line": 268,
+          "end_line": 268
+        },
+        "excerpt": "axiom AxConjIntro : ∀ x y, provable x -> provable y -> provable (conj x y)",
+        "description": "Axiom AxConjIntro"
+      }
+    ]
+  }
+}

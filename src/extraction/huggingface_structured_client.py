@@ -110,6 +110,11 @@ The object must conform to this JSON schema:
 Important rules:
 
 - Return JSON only.
+- Return an INSTANCE of the requested schema, not the schema itself.
+- Do not reproduce, describe, modify, or echo the JSON schema.
+- Do not output schema-definition keys such as "$defs", "$schema",
+  "properties", "additionalProperties", "required", or "title"
+  unless one of those names is explicitly an output field in the schema.
 - Do not return Markdown.
 - Do not use code fences.
 - Do not include commentary before or after the JSON.
@@ -133,86 +138,174 @@ Important rules:
             },
         ]
 
-        prompt_text = (
-            self._apply_chat_template(
+        max_attempts = 2
+        last_error: Exception | None = None
+
+        for attempt in range(
+            1,
+            max_attempts + 1,
+        ):
+            attempt_messages = list(
                 messages
             )
-        )
 
-        model_inputs = self.tokenizer(
-            prompt_text,
-            return_tensors="pt",
-        )
+            if attempt > 1:
+                attempt_messages = [
+                    {
+                        "role": "system",
+                        "content": (
+                            structured_system_prompt
+                            + "\n\nRETRY INSTRUCTION\n"
+                            + "Your previous response echoed "
+                            + "the JSON Schema instead of "
+                            + "returning an instance. Return "
+                            + "ONLY the completed JSON data "
+                            + "object required by the schema. "
+                            + "Do not output schema definitions."
+                        ),
+                    },
+                    {
+                        "role": "user",
+                        "content": user_prompt,
+                    },
+                ]
 
-        model_inputs = {
-            key: value.to(
-                self.model.device
-            )
-            for key, value
-            in model_inputs.items()
-        }
-
-        input_length = (
-            model_inputs[
-                "input_ids"
-            ].shape[1]
-        )
-
-        print(
-            f"Prompt token count: {input_length}"
-        )
-
-        with torch.inference_mode():
-            generated_ids = (
-                self.model.generate(
-                    **model_inputs,
-                    max_new_tokens=(
-                        self.max_new_tokens
-                    ),
-                    do_sample=False,
-                    use_cache=True,
-                    pad_token_id=(
-                        self.tokenizer
-                        .eos_token_id
-                    ),
-                    eos_token_id=(
-                        self.tokenizer
-                        .eos_token_id
-                    ),
+            prompt_text = (
+                self._apply_chat_template(
+                    attempt_messages
                 )
             )
 
-        output_ids = generated_ids[
-            0,
-            input_length:,
-        ]
-
-        content = (
-            self.tokenizer.decode(
-                output_ids,
-                skip_special_tokens=True,
-            )
-            .strip()
-        )
-
-        if not content:
-            raise RuntimeError(
-                "The model returned an empty "
-                "response."
+            model_inputs = self.tokenizer(
+                prompt_text,
+                return_tensors="pt",
             )
 
-        print(
-            "\nRAW MODEL OUTPUT:\n"
-        )
+            model_inputs = {
+                key: value.to(
+                    self.model.device
+                )
+                for key, value
+                in model_inputs.items()
+            }
 
-        print(content)
+            input_length = (
+                model_inputs[
+                    "input_ids"
+                ].shape[1]
+            )
 
-        print(
-            "\nEND RAW MODEL OUTPUT\n"
-        )
+            print(
+                f"Prompt token count: "
+                f"{input_length}"
+            )
 
-        return self._parse_json_response(
-            content
+            with torch.inference_mode():
+                generated_ids = (
+                    self.model.generate(
+                        **model_inputs,
+                        max_new_tokens=(
+                            self.max_new_tokens
+                        ),
+                        do_sample=False,
+                        use_cache=True,
+                        pad_token_id=(
+                            self.tokenizer
+                            .eos_token_id
+                        ),
+                        eos_token_id=(
+                            self.tokenizer
+                            .eos_token_id
+                        ),
+                    )
+                )
+
+            output_ids = generated_ids[
+                0,
+                input_length:,
+            ]
+
+            content = (
+                self.tokenizer.decode(
+                    output_ids,
+                    skip_special_tokens=True,
+                )
+                .strip()
+            )
+
+            if not content:
+                last_error = RuntimeError(
+                    "The model returned an empty "
+                    "response."
+                )
+
+                if attempt < max_attempts:
+                    print(
+                        "⚠ Empty structured output; "
+                        "retrying..."
+                    )
+                    continue
+
+                raise last_error
+
+            print(
+                "\nRAW MODEL OUTPUT:\n"
+            )
+
+            print(content)
+
+            print(
+                "\nEND RAW MODEL OUTPUT\n"
+            )
+
+            try:
+                parsed = (
+                    self._parse_json_response(
+                        content
+                    )
+                )
+
+            except RuntimeError as exc:
+                last_error = exc
+
+                if attempt < max_attempts:
+                    print(
+                        "⚠ Structured output could "
+                        "not be parsed; retrying "
+                        f"({attempt + 1}/"
+                        f"{max_attempts})..."
+                    )
+                    continue
+
+                raise
+
+            if self._looks_like_json_schema(
+                parsed
+            ):
+                last_error = RuntimeError(
+                    "The model echoed the JSON "
+                    "Schema instead of returning "
+                    "a structured output instance."
+                )
+
+                if attempt < max_attempts:
+                    print(
+                        "⚠ Model echoed the output "
+                        "schema; retrying "
+                        f"({attempt + 1}/"
+                        f"{max_attempts})..."
+                    )
+                    continue
+
+                raise last_error
+
+            return parsed
+
+        if last_error is not None:
+            raise last_error
+
+        raise RuntimeError(
+            "Structured generation failed."
         )
 
     def _apply_chat_template(
@@ -269,6 +362,51 @@ Important rules:
         )
 
         return cleaned.strip()
+
+    @staticmethod
+    def _looks_like_json_schema(
+        value: Any,
+    ) -> bool:
+        """
+        Detect when the model has returned the requested JSON
+        Schema itself instead of an instance conforming to it.
+
+        Small local models sometimes copy the schema from the
+        prompt rather than filling it with output values.
+        """
+        if not isinstance(
+            value,
+            dict,
+        ):
+            return False
+
+        strong_schema_keys = {
+            "$defs",
+            "$schema",
+            "properties",
+            "additionalProperties",
+        }
+
+        strong_matches = sum(
+            key in value
+            for key in strong_schema_keys
+        )
+
+        if strong_matches >= 2:
+            return True
+
+        if (
+            "properties" in value
+            and "type" in value
+            and value.get("type") == "object"
+            and (
+                "required" in value
+                or "title" in value
+            )
+        ):
+            return True
+
+        return False
 
     @staticmethod
     def _parse_json_response(

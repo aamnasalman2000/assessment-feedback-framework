@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's formalisation of the requirement 'reaching the destination only if safe weather and sufficient fuel hold' does not correctly interpret the implication direction. The proof uses case analysis but does not explicitly formalise the condition as 'reaching the destination only if (safe weather and sufficient fuel)'. The formalisation is missing the correct logical structure to represent the 'only if' condition as an implication.",
+    "student_feedback": "The student's proof does not correctly formalise the 'only if' condition as an implication. The formalisation should represent 'reaching the destination only if (safe weather and sufficient fuel)' as 'reaching_the_destination → (safe_weather ∧ sufficient_fuel)'. The current proof does not explicitly show this logical structure.",
+    "suggestion": "The student should explicitly formalise the 'only if' condition as an implication in the proof. This would involve representing 'reaching_the_destination → (safe_weather ∧ sufficient_fuel)' as part of the proof's logical structure.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R3",
+        "description": "The student's proof does not explicitly formalise the 'only if' condition as an implication."
+      }
+    ]
+  }
+}

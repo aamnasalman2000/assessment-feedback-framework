@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_3",
+  "requirement_id": "S3-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The requirement 'Represent safe weather as the negation of the proposition representing unsafe weather.' is not met. The student's evidence does not show any explicit representation of 'safe weather' as the negation of 'unsafe weather'. The formalisation note in the requirement indicates that 'safe weather' should be represented as the negation of 'unsafe_weather', but this is not evident in the provided student evidence.",
+    "student_feedback": "The student's submission does not demonstrate the required formalisation of 'safe weather' as the negation of 'unsafe weather'. The formalisation note in the requirement indicates that 'safe weather' should be represented as the negation of 'unsafe_weather', but this is not evident in the provided student evidence.",
+    "suggestion": "The student should explicitly represent 'safe weather' as the negation of 'unsafe_weather' in their formalisation. This can be done by using the negation operator in the logical representation of the propositions.",
+    "verification_status": "inferred",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "requirement_id": "S3-R2",
+        "description": "No explicit representation of 'safe weather' as the negation of 'unsafe_weather' is present in the student submission."
+      }
+    ]
+  }
+}

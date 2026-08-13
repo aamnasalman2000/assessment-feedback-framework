@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "component_id": "scenario_1",
+  "requirement_id": "S1-R1",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's proof does not correctly represent the prerequisite requirement as the disjunction x1 ∨ x2. Instead, the proof uses Or.elim to handle the disjunctions, which suggests the student is using a different approach to handle the logical forms, but the formalisation of the prerequisite requirement as x1 ∨ x2 is not explicitly demonstrated.",
+    "student_feedback": "The student's proof uses case analysis to handle the disjunctions, but the formalisation of the prerequisite requirement as x1 ∨ x2 is not explicitly demonstrated. The proof should clearly represent the prerequisite requirement as the disjunction x1 ∨ x2.",
+    "suggestion": "The student should explicitly formalise the prerequisite requirement as the disjunction x1 ∨ x2 in the proof to meet the requirement.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1",
+        "task_id": "task_1",
+        "requirement_id": "S1-R1",
+        "description": "The student's proof does not explicitly formalise the prerequisite requirement as the disjunction x1 ∨ x2."
+      }
+    ]
+  }
+}
