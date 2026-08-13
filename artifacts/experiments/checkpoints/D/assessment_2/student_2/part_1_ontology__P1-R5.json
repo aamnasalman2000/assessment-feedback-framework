@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R5",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission contains an axiom with a number restriction, specifically 'Sandwich: object_min_cardinality on hasBread' with cardinality 2. This satisfies the requirement for a logically correct Description Logic axiom using a number restriction.",
+    "student_feedback": "Your ontology includes a correctly formatted Description Logic axiom with a number restriction. The axiom 'Sandwich: object_min_cardinality on hasBread' with cardinality 2 meets the requirement.",
+    "suggestion": "No further action is needed as the requirement has been fully satisfied.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_029",
+        "description": "Axiom with number restriction: 'Sandwich: object_min_cardinality on hasBread' with cardinality 2."
+      }
+    ]
+  }
+}

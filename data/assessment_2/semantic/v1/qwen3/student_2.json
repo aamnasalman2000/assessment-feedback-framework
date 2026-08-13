@@ -1,0 +1,2624 @@
+{
+  "schema_version": "2.0",
+  "source_submission_id": "assessment_2_student_2",
+  "processed_submission_id": "processed_assessment_2_student_2",
+  "extractor_version": "2.0",
+  "model_name": "Qwen/Qwen3-4B",
+  "document_regions": [],
+  "unit_annotations": [
+    {
+      "unit_id": "artifact_001_unit_001",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "BLT"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'BLT' in the ontology domain. The class is defined with the IRI '#BLT' and is part of the ontology class declaration. The unit serves as a supporting definition for the ontology domain, providing a class declaration that contributes to the overall ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_002",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_002",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_002",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Bread"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Bread' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. The unit serves as a supporting definition for the ontology domain, providing a basic class declaration that can be used in the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_003",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_003",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Cheese"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Cheese' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. The unit serves as a supporting definition for the ontology domain, providing a basic class declaration that can be used in the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_004",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_004",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_004",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "ClubSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class in the ontology domain. The class 'ClubSandwich' is defined as a class in the ontology. This declaration is part of the ontology class hierarchy and represents a basic class declaration in the ontology.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_005",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_005",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_005",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "DoubleDeckerSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class in the ontology domain. The class 'DoubleDeckerSandwich' is defined as a class in the ontology. This declaration represents a basic class hierarchy element in the ontology, which is used to model the sandwich domain.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_006",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_006",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_006",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Egg"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Egg' in the ontology domain. The class is defined with the IRI '#Egg' and is part of the ontology class declaration. The unit serves as a supporting definition for the ontology domain, providing a class declaration that contributes to the overall ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_007",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_007",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_007",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Filling"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Filling' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. The unit serves as a supporting definition for the ontology domain, providing the foundational class for the sandwich domain.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_008",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_008",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_008",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Meat"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Meat' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. The unit serves as a supporting definition for the ontology domain, providing a class that can be used in the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_009",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_009",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_009",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "OpenSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'OpenSandwich' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology, which is part of the ontology domain. The unit serves as a supporting definition for the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_010",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_010",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_010",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Panini"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Panini' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology. This is a fundamental element of the ontology, representing a class in the sandwich domain.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_011",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_011",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Sandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Sandwich' in the ontology domain. The class is defined as a declaration of a class in the OWL ontology, which is part of the ontology domain. The unit serves as a supporting definition for the ontology domain by establishing a class that can be used in further ontology modelling.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_012",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_012",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "ToastedSandwich"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class in the ontology domain. The class 'ToastedSandwich' is defined as a class in the ontology. This declaration serves as a foundational element of the ontology, representing a type of sandwich that is toasted.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_013",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_013",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "Vegetable"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'Vegetable' in the ontology domain. The class is defined as a declaration with the IRI '#Vegetable'. This represents a basic class declaration in the ontology, which is a fundamental element of the ontology structure.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_014",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_014",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_014",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "WhiteBread"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class 'WhiteBread' in the ontology domain. It represents a class declaration in the ontology, which is a fundamental element of the ontology structure. The class 'WhiteBread' is defined as a class with the IRI '#WhiteBread', indicating it is a class in the ontology.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_015",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "Declare a class in the ontology domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_015",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "Class",
+          "entity_names": [
+            "WholeGrainBread"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares a class in the ontology domain. The class 'WholeGrainBread' is defined as a class in the ontology. This declaration represents a basic class hierarchy element in the ontology, which is used to model the domain of sandwiches.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_016",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_016",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_016",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "hasBread"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property 'hasBread' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#hasBread'. This declaration represents a fundamental relationship in the ontology domain, specifying that 'hasBread' is an object property that connects entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_017",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_017",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_017",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "hasFilling"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property named 'hasFilling' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#hasFilling'. This declaration represents a formal ontology entity that models a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_018",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_018",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declare an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_018",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "hasIngredient"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property named 'hasIngredient' in the ontology domain. The property is defined as an ObjectProperty with the IRI '#hasIngredient'. This declaration represents a formal ontology entity that defines a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_019",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Declaring an object property in the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_019",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "Declaring an object property in the ontology",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_019",
+            "source_range": {
+              "start_line": 2,
+              "end_line": 2
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "isLayeredWith"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit declares an object property 'isLayeredWith' in the ontology. The property is defined as an ObjectProperty with the IRI '#isLayeredWith'. This declaration represents a formal ontology entity that models a relationship between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_020",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines an object property in the ontology domain.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_020",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "This unit models an object property in the ontology domain.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_020",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": "ObjectProperty",
+          "entity_names": [
+            "isTypeOf"
+          ],
+          "axiom_type": null,
+          "subject": null,
+          "property_name": null,
+          "target": null,
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines an object property 'isTypeOf' in the ontology domain. It represents an object property declaration in the OWL ontology, which is used to model relationships between entities in the sandwich domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_021",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subclass relationship between BLT and ClubSandwich in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_021",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_021_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "BLT",
+            "ClubSandwich"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "BLT",
+          "property_name": null,
+          "target": "ClubSandwich",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between BLT and ClubSandwich in the ontology. It establishes that BLT is a subclass of ClubSandwich, which is a fundamental relationship in the ontology hierarchy.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_022",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define the class hierarchy for the ontology domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_022",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_022_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Cheese",
+            "Filling"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "Cheese",
+          "property_name": null,
+          "target": "Filling",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between the classes 'Cheese' and 'Filling' in the ontology. The axiom states that 'Cheese' is a subclass of 'Filling', indicating a hierarchical relationship between these two classes in the ontology domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_023",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define a class hierarchy for the sandwich domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_023",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_023_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "ClubSandwich",
+            "Sandwich"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "ClubSandwich",
+          "property_name": null,
+          "target": "Sandwich",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between ClubSandwich and Sandwich, establishing that ClubSandwich is a specific type of Sandwich. The axiom represents a class hierarchy in the ontology, indicating that ClubSandwich is a subclass of the more general Sandwich class.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_024",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subclass relationship between DoubleDeckerSandwich and Sandwich in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_024",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_024_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "DoubleDeckerSandwich",
+            "Sandwich"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "DoubleDeckerSandwich",
+          "property_name": null,
+          "target": "Sandwich",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between DoubleDeckerSandwich and Sandwich in the ontology. It establishes that DoubleDeckerSandwich is a subclass of Sandwich, which is a fundamental relationship in the ontology hierarchy.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_025",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define the class hierarchy for the sandwich domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_025",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_025_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Egg",
+            "Filling"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "Egg",
+          "property_name": null,
+          "target": "Filling",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between the classes 'Egg' and 'Filling' in the sandwich ontology. The axiom states that 'Egg' is a subclass of 'Filling', which establishes a hierarchical relationship between these two classes within the ontology domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_026",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define the class hierarchy for the sandwich domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_026",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_026_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Meat",
+            "Filling"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "Meat",
+          "property_name": null,
+          "target": "Filling",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between the classes 'Meat' and 'Filling' in the sandwich ontology. The axiom states that 'Meat' is a subclass of 'Filling', indicating a hierarchical relationship between these two classes in the ontology domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_027",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define the class hierarchy for the sandwich domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_027",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_027_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "OpenSandwich",
+            "Sandwich"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "OpenSandwich",
+          "property_name": null,
+          "target": "Sandwich",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between OpenSandwich and Sandwich, establishing that OpenSandwich is a specific type of Sandwich. The axiom represents a class hierarchy in the ontology, indicating that OpenSandwich is a subclass of the more general Sandwich class. This is a fundamental aspect of ontology modelling, where subclass relationships are used to express hierarchical relationships between classes.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_028",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define a subclass relationship between Panini and Sandwich in the ontology",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_028",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_028_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Panini",
+            "Sandwich"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "Panini",
+          "property_name": null,
+          "target": "Sandwich",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between Panini and Sandwich in the ontology. The axiom states that Panini is a subclass of Sandwich, which establishes a hierarchical relationship between these two classes in the ontology domain.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_029",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a class hierarchy and property restrictions for the sandwich domain.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_029",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 10
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "property_modelling",
+        "description": "This unit models a property restriction in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_029",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 10
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Sandwich",
+            "hasBread",
+            "Bread"
+          ],
+          "axiom_type": "object_min_cardinality",
+          "subject": "Sandwich",
+          "property_name": "hasBread",
+          "target": null,
+          "filler": "Bread",
+          "cardinality": 2,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a class hierarchy and property restrictions for the sandwich domain. It specifies that the class 'Sandwich' has an object minimum cardinality of 2 for the property 'hasBread', with the filler class 'Bread'. This represents a class restriction in the ontology where a sandwich must have at least two instances of bread.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_030",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "Define the class hierarchy for the sandwich domain",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_030",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_030_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 3
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "ToastedSandwich",
+            "Sandwich"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "ToastedSandwich",
+          "property_name": null,
+          "target": "Sandwich",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between the classes 'ToastedSandwich' and 'Sandwich' in the sandwich domain ontology. The relationship indicates that 'ToastedSandwich' is a subclass of 'Sandwich', establishing a hierarchical relationship between these two classes in the ontology.",
+      "confidence": 0.95
+    },
+    {
+      "unit_id": "artifact_001_unit_031",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subclass relationship between Vegetable and Filling in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_031",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "Vegetable",
+            "Filling"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "Vegetable",
+          "property_name": null,
+          "target": "Filling",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between Vegetable and Filling in the ontology. The unit is a subclass_of axiom that establishes that Vegetable is a subclass of Filling. This relationship is a direct ontological assertion that Vegetable is a type of Filling.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_032",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subclass relationship between WhiteBread and Bread in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_032",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "class_hierarchy_design",
+        "description": "This unit defines a subclass relationship between WhiteBread and Bread, which is a fundamental aspect of class hierarchy design in ontologies.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_032",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "WhiteBread",
+            "Bread"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "WhiteBread",
+          "property_name": null,
+          "target": "Bread",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between WhiteBread and Bread in the ontology. It represents a fundamental aspect of class hierarchy design in ontologies, where WhiteBread is classified as a subclass of Bread. This relationship is a direct representation of the subclass_of axiom in the ontology, which is used to model the hierarchical structure of the ontology.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_033",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subclass relationship between WholeGrainBread and Bread in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_033",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_033_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "WholeGrainBread",
+            "Bread"
+          ],
+          "axiom_type": "subclass_of",
+          "subject": "WholeGrainBread",
+          "property_name": null,
+          "target": "Bread",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subclass relationship between WholeGrainBread and Bread in the ontology. It establishes that WholeGrainBread is a subclass of Bread, which is a fundamental relationship in the ontology hierarchy.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_034",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subproperty relationship between 'hasBread' and 'hasIngredient' in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_034",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_034_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "subproperty_design",
+        "description": "This unit defines a subproperty relationship between 'hasBread' and 'hasIngredient' in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_034",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_034_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "hasBread",
+            "hasIngredient"
+          ],
+          "axiom_type": "sub_object_property_of",
+          "subject": null,
+          "property_name": null,
+          "target": "hasIngredient",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subproperty relationship between 'hasBread' and 'hasIngredient' in the ontology. The subproperty relationship indicates that 'hasBread' is a subproperty of 'hasIngredient', which is a common pattern in ontology modelling to represent hierarchical or specialized relationships between properties.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_001_unit_035",
+      "region_ids": [],
+      "semantic_role": "supporting_definition",
+      "student_intent": {
+        "intent_type": "model_domain",
+        "description": "This unit defines a subproperty relationship between two object properties in the ontology.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_001_unit_035",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_001_unit_035_content",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "ontology",
+          "entity_type": null,
+          "entity_names": [
+            "hasFilling",
+            "hasIngredient"
+          ],
+          "axiom_type": "sub_object_property_of",
+          "subject": null,
+          "property_name": null,
+          "target": "hasIngredient",
+          "filler": null,
+          "cardinality": null,
+          "modelling_concepts": []
+        }
+      ],
+      "summary": "This unit defines a subproperty relationship between the object properties 'hasFilling' and 'hasIngredient'. The subproperty relationship indicates that 'hasFilling' is a subproperty of 'hasIngredient', which means that 'hasFilling' is a more specific or narrower property within the 'hasIngredient' property hierarchy.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_001",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise the mutual exclusivity constraint between bread and filling using modal logic",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_001",
+            "source_range": {
+              "start_line": 71,
+              "end_line": 71
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_001_formula",
+            "source_range": {
+              "start_line": 71,
+              "end_line": 71
+            },
+            "excerpt": "and(implies(bread, not(filling)), implies(filling, not(bread)))"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express the mutual exclusivity constraint using modal logic",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_001",
+            "source_range": {
+              "start_line": 71,
+              "end_line": 71
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_001_formula",
+            "source_range": {
+              "start_line": 71,
+              "end_line": 71
+            },
+            "excerpt": "and(implies(bread, not(filling)), implies(filling, not(bread)))"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer1",
+          "formula_summary": "and(implies(bread, not(filling)), implies(filling, not(bread)))",
+          "operators": [
+            "and",
+            "not",
+            "implies"
+          ],
+          "modal_relations": [],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The submitted answer expresses a mutual exclusivity constraint between bread and filling using modal logic. The formula ensures that bread and filling cannot co-occur in the same grid state by requiring that if bread is present, filling is not, and vice versa.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_002",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for the Prolog answer",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_002",
+            "source_range": {
+              "start_line": 74,
+              "end_line": 74
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_002_formula",
+            "source_range": {
+              "start_line": 74,
+              "end_line": 74
+            },
+            "excerpt": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))"
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer2",
+          "formula_summary": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))",
+          "operators": [
+            "and",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "oneabove",
+            "onebelow"
+          ],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The answer2 predicate defines a modal logic constraint that ensures whenever filling is present, bread must be in a state that is both immediately above and immediately below the filling state. This is expressed using the dia operator with the oneabove and onebelow relations.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_003",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for the sandwich domain",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_003",
+            "source_range": {
+              "start_line": 77,
+              "end_line": 77
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_003_formula",
+            "source_range": {
+              "start_line": 77,
+              "end_line": 77
+            },
+            "excerpt": "implies(filling, box(below, box(below, not(bread))))"
+          }
+        ]
+      },
+      "strategy": null,
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer3",
+          "formula_summary": "implies(filling, box(below, box(below, not(bread))))",
+          "operators": [
+            "not",
+            "implies",
+            "box"
+          ],
+          "modal_relations": [
+            "below"
+          ],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The submitted answer3/1 predicate defines a modal logic constraint that states: If filling is present, then in every state reachable by the 'below' relation, it is not the case that bread is present. This represents a vertical distance constraint where bread must not occur more than one row below a state containing filling.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_004",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for the task",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_004",
+            "source_range": {
+              "start_line": 80,
+              "end_line": 80
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_004_formula",
+            "source_range": {
+              "start_line": 80,
+              "end_line": 80
+            },
+            "excerpt": "implies(filling, box(above, not(filling)))"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express the constraint using modal logic operators",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_004",
+            "source_range": {
+              "start_line": 80,
+              "end_line": 80
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_004_formula",
+            "source_range": {
+              "start_line": 80,
+              "end_line": 80
+            },
+            "excerpt": "implies(filling, box(above, not(filling)))"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer4",
+          "formula_summary": "implies(filling, box(above, not(filling)))",
+          "operators": [
+            "not",
+            "implies",
+            "box"
+          ],
+          "modal_relations": [
+            "above"
+          ],
+          "constraint_type": "prolog_answer"
+        }
+      ],
+      "summary": "The unit provides a modal logic formula that expresses the constraint: If filling is present, then in all states reachable by the 'above' relation, filling is not present. This formula uses the 'implies' operator to enforce a global vertical constraint that no state above a filling state may contain filling.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_005",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a modal logic constraint for Task 5",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_005",
+            "source_range": {
+              "start_line": 87,
+              "end_line": 87
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_005_formula",
+            "source_range": {
+              "start_line": 87,
+              "end_line": 87
+            },
+            "excerpt": "box(above, box(above, not(bread)))"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Express a modal logic constraint using the box operator to enforce spatial relationships",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_005",
+            "source_range": {
+              "start_line": 87,
+              "end_line": 87
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_005_formula",
+            "source_range": {
+              "start_line": 87,
+              "end_line": 87
+            },
+            "excerpt": "box(above, box(above, not(bread)))"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 85,
+            "end_line": 86
+          },
+          "role": "student_explanation",
+          "content": "A sandwich that is extremely tall—e.g., filling with 6 layers of bread—may satisfy all logical constraints but is unreasonable in practice.\nPrevent sandwiches taller than 3 layers by ensuring that if a cell has bread, no bread can be more than 2 rows above or below.",
+          "related_unit_ids": [
+            "artifact_002_unit_005"
+          ],
+          "confidence": 0.98
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer51",
+          "formula_summary": "box(above, box(above, not(bread)))",
+          "operators": [
+            "not",
+            "box"
+          ],
+          "modal_relations": [
+            "above"
+          ],
+          "constraint_type": "prolog_task_5_answer"
+        }
+      ],
+      "summary": "This unit provides a modal logic constraint for Task 5 that uses the box operator to enforce spatial relationships between bread and filling. The constraint prevents bread from being more than 2 rows above or below a cell containing filling, which is implemented as a modal logic formula using the box(above, box(above, not(bread))) expression.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_006",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a constraint using modal logic to prevent certain sandwich configurations.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_006_clause",
+            "source_range": {
+              "start_line": 92,
+              "end_line": 92
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_006_formula",
+            "source_range": {
+              "start_line": 92,
+              "end_line": 92
+            },
+            "excerpt": "implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling)))"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Use modal logic to express spatial constraints between filling and bread in a sandwich.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_006_clause",
+            "source_range": {
+              "start_line": 92,
+              "end_line": 92
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_006_formula",
+            "source_range": {
+              "start_line": 92,
+              "end_line": 92
+            },
+            "excerpt": "implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling)))"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 90,
+            "end_line": 91
+          },
+          "role": "student_explanation",
+          "content": "A sandwich where the filling is only one cell wide with long bread strips may pass logic but lacks practical balance. Prevent too-narrow fillings by requiring that filling regions have adjacent fillings horizontally.",
+          "related_unit_ids": [
+            "artifact_002_unit_006"
+          ],
+          "confidence": 0.98
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer52",
+          "formula_summary": "implies(filling, or(dia(isLeftOf, filling), dia(isRightOf, filling)))",
+          "operators": [
+            "or",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "isLeftOf",
+            "isRightOf"
+          ],
+          "constraint_type": "prolog_task_5_answer"
+        }
+      ],
+      "summary": "The unit provides a modal logic formula that ensures filling is only present in positions that are either directly to the left or right of itself, which prevents certain sandwich configurations that may not be practically valid.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_002_unit_007",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "formalise_constraint",
+        "description": "Formalise a constraint using modal logic to prevent certain sandwich configurations.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_007_clause",
+            "source_range": {
+              "start_line": 97,
+              "end_line": 97
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_007_formula",
+            "source_range": {
+              "start_line": 97,
+              "end_line": 97
+            },
+            "excerpt": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))"
+          }
+        ]
+      },
+      "strategy": {
+        "category": "modelling_method",
+        "name": "modal_formulation",
+        "description": "Use modal logic to express a constraint that prevents certain sandwich configurations.",
+        "confidence": 0.98,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_002_unit_007_clause",
+            "source_range": {
+              "start_line": 97,
+              "end_line": 97
+            },
+            "excerpt": null
+          },
+          {
+            "reference_type": "content_block",
+            "reference_id": "artifact_002_unit_007_formula",
+            "source_range": {
+              "start_line": 97,
+              "end_line": 97
+            },
+            "excerpt": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))"
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 95,
+            "end_line": 96
+          },
+          "role": "student_explanation",
+          "content": "A sandwich where the filling is at the bottom and bread is on top—i.e., upside-down—violates the expected order. Require filling to be vertically between two breads, not at grid top/bottom.",
+          "related_unit_ids": [
+            "artifact_002_unit_007"
+          ],
+          "confidence": 0.98
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "prolog",
+          "predicate_name": "answer53",
+          "formula_summary": "implies(filling, and(dia(oneabove, bread), dia(onebelow, bread)))",
+          "operators": [
+            "and",
+            "implies",
+            "dia"
+          ],
+          "modal_relations": [
+            "oneabove",
+            "onebelow"
+          ],
+          "constraint_type": "prolog_task_5_answer"
+        }
+      ],
+      "summary": "The unit provides a Prolog answer to Task 5 that formalises a constraint using modal logic to prevent certain sandwich configurations. The constraint ensures that filling is vertically between two breads, not at the grid top or bottom.",
+      "confidence": 0.98
+    },
+    {
+      "unit_id": "artifact_003_unit_001",
+      "region_ids": [],
+      "semantic_role": "main_answer",
+      "student_intent": {
+        "intent_type": "justify_modelling_choice",
+        "description": "The unit provides a justification for the ontology design and implementation.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "strategy": {
+        "category": "presentation_method",
+        "name": "design_justification",
+        "description": "The unit provides a justification for the ontology design and implementation.",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "reference_type": "unit",
+            "reference_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": null
+          }
+        ]
+      },
+      "relevant_context": [],
+      "comment_annotations": [
+        {
+          "source_range": {
+            "start_line": 1,
+            "end_line": 1252
+          },
+          "role": "heading",
+          "content": "Ontology Report",
+          "related_unit_ids": [
+            "artifact_003_unit_001"
+          ],
+          "confidence": 0.95
+        },
+        {
+          "source_range": {
+            "start_line": 2,
+            "end_line": 1252
+          },
+          "role": "student_explanation",
+          "content": "The ontology is designed to model fundamental aspects of sandwiches, drawing upon the description provided in the Simple English Wikipedia article. The primary focus is to represent the structural and compositional elements that define different types of sandwiches. The ontology formalizes relationships between sandwich types, the ingredients they contain, and their structural configuration. It captures general categories such as open sandwiches, club sandwiches, and double-decker sandwiches, while also representing the core components like bread and fillings. Special attention is given to structural requirements, such as the number of bread layers, and to organizing ingredients into logical subtypes. Logical roles are employed to express stacking and type relationships within a sandwich. The ontology comprises fifteen classes. These include Sandwich as the overarching concept, and eleven subclasses that represent specific sandwich types and components: Bread, Filling, OpenSandwich, DoubleDeckerSandwich, ClubSandwich, BLT, Panini, and ToastedSandwich. These classes collectively capture a range of sandwich variations. In addition to the core classes, the ontology includes five object properties that define relationships between sandwich elements. These are hasIngredient, hasBread, hasFilling, isLayeredWith, and isTypeOf. The hasIngredient property serves as a general link between a sandwich and any of its components. The properties hasBread and hasFilling are introduced as sub-properties of hasIngredient. This structure allows the ontology to express both general and detailed statements about sandwich composition while maintaining logical consistency. The class Bread is further divided into WhiteBread and WholeGrainBread, providing a means of distinguishing sandwiches based on the type of bread used. Similarly, the class Filling is subdivided into four categories: Cheese, Meat, Egg, and Vegetable. These subclasses reflect common types of sandwich fillings as mentioned in the source material. This hierarchical organization supports reasoning about sandwich content and enables detailed categorization or filtering based on dietary or ingredient-based queries. The class Sandwich serves as the parent for all sandwich variants. OpenSandwich, DoubleDeckerSandwich, and ClubSandwich are all defined as subclasses of Sandwich, enabling structured inheritance of sandwich properties. The BLT is further modeled as a subclass of ClubSandwich. This structure reflects the real-world hierarchy of sandwich types and supports inference mechanisms within the ontology. The organization of object properties also contributes to this logical framework. hasBread and hasFilling are defined as sub-properties of hasIngredient, which allows for general rules to apply across all ingredients when needed, while maintaining the capacity for more specific assertions. The property isLayeredWith is marked as transitive to represent the concept of stacking within a sandwich. This allows the ontology to model the idea that if one ingredient is layered with another, and that second ingredient is in turn layered with a third, then the first is indirectly layered with the third. This is particularly useful for modeling the internal arrangement of double or triple-decker sandwiches. The property isTypeOf is declared functional to ensure that an individual sandwich instance corresponds to exactly one sandwich type. For example, a BLT can be defined as a specific individual that isTypeOf ClubSandwich. A central axiom implemented in the ontology is the constraint that every sandwich must have at least two slices of bread. This is expressed in description logic as: Sandwich is a subclass of things that have at least two hasBread relationships with Bread, or more formally, Sandwich ⊑ ≥2 hasBread.Bread. In natural language, this means that every sandwich must have two or more slices of bread. This axiom directly corresponds to a statement in the source text: \"A sandwich is a food prepared by placing different kinds of foods between two pieces of bread.\" By enforcing this requirement, the ontology formalizes the structural minimum needed to qualify as a sandwich. There are several advantages to building a sandwich ontology using this structure. It enables logical formalization of sandwich types and components, allowing for automated classification and structured queries. The hierarchical organization allows for straightforward extension to include cultural or dietary variations. Defining subclasses for ingredients and sandwich types increases semantic clarity and precision. The use of logical axioms ensures that only structurally valid sandwiches are represented. However, this ontology also has limitations. It reflects a largely Western conception of sandwiches and may not easily accommodate regional or non-standard forms such as wraps or ice cream sandwiches. These edge cases might violate structural axioms and require exceptions or redefinition of certain rules. Modeling every possible filling as a separate subclass could lead to unnecessary complexity. Lastly, expressing certain real-world knowledge, such as a club sandwich requiring bacon, chicken, and salad, would require more detailed axioms or the use of data properties, which are outside the current scope.",
+          "related_unit_ids": [
+            "artifact_003_unit_001"
+          ],
+          "confidence": 0.95
+        }
+      ],
+      "relationships": [],
+      "domain_annotations": [
+        {
+          "annotation_type": "report",
+          "section_type": "Ontology Report",
+          "discussed_entities": [],
+          "claims": [],
+          "justification_targets": []
+        }
+      ],
+      "summary": "The unit provides a detailed description of the ontology report, including the design and implementation of the ontology. It explains the structure of the ontology, the classes and properties included, and the logical constraints implemented. The unit also discusses the advantages and limitations of the ontology design, including the need for exceptions or redefinition of certain rules for non-standard sandwich forms.",
+      "confidence": 0.95
+    }
+  ],
+  "unresolved_observations": [],
+  "warnings": [],
+  "raw_model_response": null
+}

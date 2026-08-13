@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R4",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The requirement is met as the student has provided evidence of correctly modelling property domains, ranges, hierarchies, and characteristics. The ontology includes object properties like hasBread, hasFilling, hasIngredient, isLayeredWith, and isTypeOf, which are correctly declared as ObjectProperties. The subproperty axioms (hasBread and hasFilling as subproperties of hasIngredient) demonstrate hierarchical relationships between properties, which is appropriate for modelling the sandwich domain.",
+    "student_feedback": "The student has correctly modelled the property domains, ranges, hierarchies, and characteristics for the sandwich ontology. The properties and their subproperty relationships are appropriately defined.",
+    "suggestion": "No further action is needed as the requirement is fully met.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_016",
+        "description": "Declaration of hasBread as an ObjectProperty."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_017",
+        "description": "Declaration of hasFilling as an ObjectProperty."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_018",
+        "description": "Declaration of hasIngredient as an ObjectProperty."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_019",
+        "description": "Declaration of isLayeredWith as an ObjectProperty."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_020",
+        "description": "Declaration of isTypeOf as an ObjectProperty."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_034",
+        "description": "Subproperty axiom: hasBread is a subproperty of hasIngredient."
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_035",
+        "description": "Subproperty axiom: hasFilling is a subproperty of hasIngredient."
+      }
+    ]
+  }
+}

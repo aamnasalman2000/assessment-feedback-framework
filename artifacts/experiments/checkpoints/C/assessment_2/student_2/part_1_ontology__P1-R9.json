@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R9",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The student's submission includes multiple subclass and subproperty axioms in the ontology, but there is no evidence in the report that justifies the chosen class and property hierarchies. The requirement is about the report justifying the hierarchies, but the report is not present in the submission evidence.",
+    "student_feedback": "The report that is required to justify the ontology's class and property hierarchies is missing from the submission. Please ensure the report is included and that it clearly explains the rationale behind the ontology design.",
+    "suggestion": "Include a report that explains the rationale for the class and property hierarchies in the ontology.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1_ontology",
+        "requirement_id": "P1-R9",
+        "description": "The report is missing from the submission."
+      }
+    ]
+  }
+}

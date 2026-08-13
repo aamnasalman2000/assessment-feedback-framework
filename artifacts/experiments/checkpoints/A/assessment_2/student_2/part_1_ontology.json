@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "feedback_mode": "baseline_component",
+  "component_id": "part_1_ontology",
+  "requirement_ids": [
+    "P1-R1",
+    "P1-R2",
+    "P1-R3",
+    "P1-R4",
+    "P1-R5",
+    "P1-R6",
+    "P1-R7",
+    "P1-R8",
+    "P1-R9",
+    "P1-R10",
+    "P1-R11",
+    "P1-R12"
+  ],
+  "model_name": "Qwen/Qwen3-4B",
+  "component_output": {
+    "criterion_assessments": [
+      {
+        "requirement_id": "P1-R1",
+        "status": "met",
+        "internal_finding": "The ontology contains at least ten relevant and appropriately varied classes.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "BLT",
+            "description": "Class BLT is included in the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R2",
+        "status": "met",
+        "internal_finding": "Subclass relationships are logically justified and appropriately modelled.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_021",
+            "block_id": "artifact_001_unit_021",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "BLT subclass of ClubSandwich",
+            "description": "Subclass relationship between BLT and ClubSandwich is included."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R3",
+        "status": "met",
+        "internal_finding": "The ontology contains at least five meaningful object and/or data properties.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_016",
+            "block_id": "artifact_001_unit_016",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "hasBread",
+            "description": "Object property hasBread is included in the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R4",
+        "status": "met",
+        "internal_finding": "Property domains, ranges, hierarchies, and characteristics are correctly modelled where appropriate.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_029",
+            "block_id": "artifact_001_unit_029",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "Sandwich: object_min_cardinality on hasBread",
+            "description": "Property hasBread has a cardinality constraint on Sandwich."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R5",
+        "status": "met",
+        "internal_finding": "The ontology contains one logically correct Description Logic axiom using a number restriction.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_029",
+            "block_id": "artifact_001_unit_029",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "Sandwich: object_min_cardinality on hasBread",
+            "description": "Axiom with number restriction on hasBread is included."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R6",
+        "status": "not_met",
+        "internal_finding": "The ontology is logically coherent and internally consistent.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "P1-R7",
+        "status": "met",
+        "internal_finding": "The report accurately describes the submitted ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": "Ontology Report",
+            "description": "Report section describes the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R8",
+        "status": "met",
+        "internal_finding": "The report clearly explains the purpose and scope of the ontology.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": "Overview  of  the  Ontology",
+            "description": "Report section explains the purpose and scope of the ontology."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R9",
+        "status": "met",
+        "internal_finding": "The report justifies the chosen class and property hierarchies.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": "The ontology is designed to model fundamental aspects of sandwiches",
+            "description": "Report section justifies the class and property hierarchies."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R10",
+        "status": "met",
+        "internal_finding": "The report correctly explains the Description Logic axiom and relates it to the source text.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": "The ontology is designed to model fundamental aspects of sandwiches",
+            "description": "Report section explains the Description Logic axiom and relates it to the source text."
+          }
+        ]
+      },
+      {
+        "requirement_id": "P1-R11",
+        "status": "not_met",
+        "internal_finding": "The report critically discusses the strengths and limitations of the ontology.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      },
+      {
+        "requirement_id": "P1-R12",
+        "status": "met",
+        "internal_finding": "The report does not exceed the specified word limit of 750 words.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_003",
+            "unit_id": "artifact_003_unit_001",
+            "block_id": "artifact_003_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1252
+            },
+            "excerpt": "The ontology is designed to model fundamental aspects of sandwiches",
+            "description": "Report section is within the word limit."
+          }
+        ]
+      }
+    ],
+    "observations": [
+      {
+        "feedback_type": "strength",
+        "requirement_ids": [
+          "P1-R1",
+          "P1-R2",
+          "P1-R3",
+          "P1-R4",
+          "P1-R5",
+          "P1-R7",
+          "P1-R8",
+          "P1-R9",
+          "P1-R10",
+          "P1-R12"
+        ],
+        "internal_finding": "The ontology and report meet most requirements, with clear class definitions and a well-structured report.",
+        "student_feedback": "The ontology includes ten classes and five properties, with a logically correct axiom. The report accurately describes the ontology and is within the word limit.",
+        "verification_status": "supported_by_submission",
+        "confidence": 0.95,
+        "evidence": [
+          {
+            "evidence_type": "submission_reference",
+            "artifact_id": "artifact_001",
+            "unit_id": "artifact_001_unit_001",
+            "block_id": "artifact_001_unit_001",
+            "source_range": {
+              "start_line": 1,
+              "end_line": 1
+            },
+            "excerpt": "BLT",
+            "description": "Class BLT is included in the ontology."
+          }
+        ]
+      },
+      {
+        "feedback_type": "error",
+        "requirement_ids": [
+          "P1-R6",
+          "P1-R11"
+        ],
+        "internal_finding": "The ontology may lack logical consistency, and the report does not critically discuss its limitations.",
+        "student_feedback": "The ontology may have logical inconsistencies, and the report should include a critical discussion of its limitations.",
+        "verification_status": "not_verified",
+        "confidence": 0.8,
+        "evidence": []
+      }
+    ],
+    "component_summary": "The component includes a well-structured ontology with ten classes and five properties, and a report that accurately describes the ontology. The report is within the word limit, but the ontology may lack logical consistency, and the report does not critically discuss its limitations."
+  }
+}

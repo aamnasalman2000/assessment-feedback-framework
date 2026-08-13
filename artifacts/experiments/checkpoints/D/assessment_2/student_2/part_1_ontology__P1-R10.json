@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R10",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The submission_reference evidence provided does not include the report_axiom explanation required by the requirement. The evidence only shows an OWL ontology axiom, not the report explaining the Description Logic axiom and its relation to the source text.",
+    "student_feedback": "The report explaining the Description Logic axiom and its relation to the source text is missing from the submission. Please ensure the report is included and clearly explains the axiom and its connection to the source text.",
+    "suggestion": "Include a report that explains the Description Logic axiom and how it relates to the source text in the submission.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_1_ontology",
+        "requirement_id": "P1-R10",
+        "description": "The report_axiom explanation is missing from the submission."
+      }
+    ]
+  }
+}

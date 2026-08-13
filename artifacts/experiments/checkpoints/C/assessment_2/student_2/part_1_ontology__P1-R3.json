@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_1_ontology",
+  "requirement_id": "P1-R3",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "met",
+    "internal_finding": "The submission contains five object properties: hasBread, hasFilling, hasIngredient, isLayeredWith, and isTypeOf. These properties are explicitly declared as ObjectProperties in the ontology, satisfying the requirement of at least five meaningful object and/or data properties.",
+    "student_feedback": "Your ontology includes five object properties, which meets the requirement. These properties are well-defined and relevant to the sandwich domain.",
+    "suggestion": "Consider adding more properties to further enrich the ontology if additional requirements are present.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.95,
+    "evidence": [
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_016",
+        "description": "Declaration of hasBread as an ObjectProperty"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_017",
+        "description": "Declaration of hasFilling as an ObjectProperty"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_018",
+        "description": "Declaration of hasIngredient as an ObjectProperty"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_019",
+        "description": "Declaration of isLayeredWith as an ObjectProperty"
+      },
+      {
+        "evidence_type": "submission_reference",
+        "artifact_id": "artifact_001",
+        "unit_id": "artifact_001_unit_020",
+        "description": "Declaration of isTypeOf as an ObjectProperty"
+      }
+    ]
+  }
+}

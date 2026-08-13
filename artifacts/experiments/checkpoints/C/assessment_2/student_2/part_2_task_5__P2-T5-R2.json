@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "component_id": "part_2_task_5",
+  "requirement_id": "P2-T5-R2",
+  "model_name": "Qwen/Qwen3-4B",
+  "feedback": {
+    "status": "not_met",
+    "internal_finding": "The requirement 'Each example clearly describes a problematic sandwich configuration.' is not met because the student's evidence only provides the formulas for the three examples but lacks the natural-language descriptions of the problematic configurations. The structured_data contains formulas but no textual descriptions of the configurations.",
+    "student_feedback": "Your submission includes formulas for three examples, but it is missing the natural-language descriptions of the problematic sandwich configurations. Each example should include a description of the configuration and a corresponding formula that prevents it.",
+    "suggestion": "Please provide a natural-language description for each of the three examples along with the formula. This will ensure that each example clearly describes a problematic sandwich configuration.",
+    "verification_status": "supported_by_submission",
+    "confidence": 0.85,
+    "evidence": [
+      {
+        "evidence_type": "absence",
+        "part_id": "part_2_prolog_modal_logic",
+        "requirement_id": "P2-T5-R2",
+        "description": "The student's submission lacks natural-language descriptions of the problematic sandwich configurations, which are required by the requirement."
+      }
+    ]
+  }
+}
