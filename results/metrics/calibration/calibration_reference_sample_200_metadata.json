@@ -1,0 +1,34 @@
+{
+  "calibration_sample": "calibration_reference_sample_200.csv",
+  "source_pool": "calibration_full_candidate_pool.csv",
+  "assessment_id": [
+    "assessment_1",
+    "assessment_2"
+  ],
+  "source_candidate_pairs": 1257,
+  "sample_size": 200,
+  "sampling_strategy": "coverage-first stratified sampling",
+  "random_seed": 42,
+  "assessment_allocation": {
+    "assessment_1": 100,
+    "assessment_2": 100
+  },
+  "sampling_dimensions": [
+    "assessment",
+    "student",
+    "experiment",
+    "semantic_similarity_band",
+    "scope_alignment",
+    "requirement_alignment",
+    "feedback_type_compatibility"
+  ],
+  "similarity_bands": {
+    "very_low": "<0.20",
+    "low_medium": "0.20-<0.35",
+    "boundary_low": "0.35-<0.50",
+    "boundary_high": "0.50-<0.65",
+    "high": ">=0.65"
+  },
+  "purpose": "Manual reference set for calibrating observation matching thresholds and structural matching rules.",
+  "created_at": "2026-08-14T19:51:00.851493+00:00"
+}
