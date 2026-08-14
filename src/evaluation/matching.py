@@ -276,6 +276,45 @@ class ObservationMatcher:
                 if scope_alignment is None:
                     scope_alignment = "unknown"
 
+                human_requirement_ids = (
+                    self._requirement_ids(
+                        human
+                    )
+                )
+
+                generated_requirement_ids = (
+                    self._requirement_ids(
+                        generated
+                    )
+                )
+
+                requirement_alignment = (
+                    calculate_requirement_alignment(
+                        human_requirement_ids=(
+                            human_requirement_ids
+                        ),
+                        generated_requirement_ids=(
+                            generated_requirement_ids
+                        ),
+                    )
+                )
+
+                # Explicitly different requirements
+                # should block broad same-part matches.
+                #
+                # Exact task-level pairs remain
+                # eligible because neighbouring
+                # requirements can describe different
+                # aspects of the same substantive
+                # feedback point.
+                if (
+                    requirement_alignment.status
+                    == "no_overlap"
+                    and scope_alignment
+                    != "exact"
+                ):
+                    continue
+
                 raw_similarity = float(
                     similarity_matrix[
                         human_index,
@@ -359,6 +398,22 @@ class ObservationMatcher:
                         ),
                     )
                 )
+
+                # Reject broad-scope correspondences when
+                # both observations have explicit but
+                # non-overlapping rubric mappings.
+                #
+                # Exact task-level pairs remain eligible
+                # because neighbouring requirements may
+                # describe different aspects of the same
+                # substantive feedback point.
+                if (
+                    requirement_alignment.status
+                    == "no_overlap"
+                    and scope_alignment
+                    != "exact"
+                ):
+                    continue
 
                 match_id = (
                     f"match_"
@@ -499,11 +554,11 @@ class ObservationMatcher:
         "partial_match",
     ] | None:
         """
-        A contradictory feedback polarity cannot
-        become a full semantic match purely because
-        the texts have high embedding similarity.
+        Reject observations with contradictory
+        feedback polarity.
 
-        For example:
+        Semantically similar statements can express
+        opposite judgements, for example:
 
             "The proof is correct."
 
@@ -511,20 +566,18 @@ class ObservationMatcher:
 
             "The proof is incorrect."
 
-        can have high cosine similarity.
-
-        A contradictory pair is therefore capped at
-        partial_match.
+        Such pairs must not be accepted as matches.
         """
         if (
             compatibility
             == "contradictory"
         ):
-            return "partial_match"
+            return None
 
         return decision
 
     def _build_human_results(
+
         self,
         *,
         human_observations: list[
