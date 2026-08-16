@@ -1,0 +1,912 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any
+
+from .matching import (
+    GeneratedObservationMatchState,
+)
+from .models import (
+    GeneratedObservationResult,
+    GroundingConfiguration,
+    GroundingEvaluation,
+)
+
+
+@dataclass(frozen=True)
+class GroundingResult:
+    generated_observation_results: tuple[
+        GeneratedObservationResult,
+        ...
+    ]
+
+
+class ObservationGrounder:
+    """
+    Deterministically classify generated feedback
+    observations after human-feedback matching.
+
+    Human-aligned observations do not require
+    grounding.
+
+    Generated observations with no human mapping are
+    checked against:
+
+        1. submission evidence references;
+        2. generation verification status;
+        3. linked criterion-assessment status;
+        4. feedback-type / rubric consistency.
+
+    No LLM judge is used.
+    """
+
+    def __init__(
+        self,
+        *,
+        configuration: GroundingConfiguration,
+    ) -> None:
+        self.configuration = configuration
+
+    def ground(
+        self,
+        *,
+        generated_feedback: dict[str, Any],
+        processed_submission: dict[str, Any],
+        generated_match_states: tuple[
+            GeneratedObservationMatchState,
+            ...
+        ],
+    ) -> GroundingResult:
+
+        observations = generated_feedback.get(
+            "observations",
+            [],
+        )
+
+        if not isinstance(observations, list):
+            raise ValueError(
+                "generated_feedback.observations "
+                "must be a list."
+            )
+
+        observation_lookup = {
+            self._required_string(
+                observation,
+                "observation_id",
+            ): observation
+            for observation in observations
+        }
+
+        criterion_lookup = self._build_criterion_lookup(
+            generated_feedback
+        )
+
+        artifact_units = (
+            self._build_submission_unit_index(
+                processed_submission
+            )
+        )
+
+        results = []
+
+        for state in generated_match_states:
+
+            observation_id = (
+                state.generated_observation_id
+            )
+
+            observation = observation_lookup.get(
+                observation_id
+            )
+
+            if observation is None:
+                raise ValueError(
+                    "Generated match state references "
+                    f"unknown observation "
+                    f"{observation_id!r}."
+                )
+
+            feedback_type = self._required_string(
+                observation,
+                "feedback_type",
+            )
+
+            # --------------------------------------
+            # Human-aligned feedback
+            # --------------------------------------
+
+            if state.mapping_status in {
+                "matched",
+                "partially_matched",
+            }:
+                results.append(
+                    GeneratedObservationResult(
+                        generated_observation_id=(
+                            observation_id
+                        ),
+                        feedback_type=feedback_type,
+                        mapping_status=(
+                            state.mapping_status
+                        ),
+                        match_ids=list(
+                            state.match_ids
+                        ),
+                        classification=(
+                            "human_aligned"
+                        ),
+                        grounding_evaluation=None,
+                    )
+                )
+
+                continue
+
+            # --------------------------------------
+            # Ground unmatched feedback
+            # --------------------------------------
+
+            if (
+                not self.configuration.enabled
+                or not self.configuration
+                .ground_unmatched_generated_observations
+            ):
+                evaluation = (
+                    GroundingEvaluation(
+                        status="not_assessable",
+                        evidence_coverage=(
+                            "not_applicable"
+                        ),
+                        rubric_alignment=(
+                            "not_applicable"
+                        ),
+                        requirement_ids=(
+                            self._string_list(
+                                observation,
+                                "requirement_ids",
+                            )
+                        ),
+                        artifact_ids=[],
+                        unit_ids=[],
+                        basis_codes=[
+                            "grounding_disabled"
+                        ],
+                        rationale=(
+                            "Grounding was disabled "
+                            "for unmatched generated "
+                            "observations."
+                        ),
+                    )
+                )
+
+                results.append(
+                    self._build_unmatched_result(
+                        observation=observation,
+                        state=state,
+                        evaluation=evaluation,
+                    )
+                )
+
+                continue
+
+            evaluation = self._ground_observation(
+                observation=observation,
+                criterion_lookup=(
+                    criterion_lookup
+                ),
+                artifact_units=artifact_units,
+            )
+
+            results.append(
+                self._build_unmatched_result(
+                    observation=observation,
+                    state=state,
+                    evaluation=evaluation,
+                )
+            )
+
+        return GroundingResult(
+            generated_observation_results=tuple(
+                results
+            )
+        )
+
+    def _ground_observation(
+        self,
+        *,
+        observation: dict[str, Any],
+        criterion_lookup: dict[
+            str,
+            dict[str, Any],
+        ],
+        artifact_units: dict[
+            str,
+            set[str],
+        ],
+    ) -> GroundingEvaluation:
+
+        verification_status = (
+            observation.get(
+                "verification_status"
+            )
+        )
+
+        evidence = observation.get(
+            "evidence",
+            [],
+        )
+
+        if not isinstance(evidence, list):
+            evidence = []
+
+        requirement_ids = self._string_list(
+            observation,
+            "requirement_ids",
+        )
+
+        artifact_ids = []
+        unit_ids = []
+
+        concrete_total = 0
+        concrete_resolved = 0
+
+        has_absence_evidence = False
+
+        basis_codes = []
+
+        for item in evidence:
+
+            if not isinstance(item, dict):
+                continue
+
+            evidence_type = item.get(
+                "evidence_type"
+            )
+
+            if evidence_type == "absence":
+                has_absence_evidence = True
+                continue
+
+            if (
+                evidence_type
+                != "submission_reference"
+            ):
+                continue
+
+            concrete_total += 1
+
+            artifact_id = item.get(
+                "artifact_id"
+            )
+
+            unit_id = item.get(
+                "unit_id"
+            )
+
+            if isinstance(
+                artifact_id,
+                str,
+            ) and artifact_id.strip():
+                artifact_id = (
+                    artifact_id.strip()
+                )
+                artifact_ids.append(
+                    artifact_id
+                )
+            else:
+                artifact_id = None
+
+            if isinstance(
+                unit_id,
+                str,
+            ) and unit_id.strip():
+                unit_id = unit_id.strip()
+                unit_ids.append(
+                    unit_id
+                )
+            else:
+                unit_id = None
+
+            if (
+                artifact_id
+                and unit_id
+                and artifact_id
+                in artifact_units
+                and unit_id
+                in artifact_units[
+                    artifact_id
+                ]
+            ):
+                concrete_resolved += 1
+
+        artifact_ids = sorted(
+            set(artifact_ids)
+        )
+
+        unit_ids = sorted(
+            set(unit_ids)
+        )
+
+        # ------------------------------------------
+        # Rubric consistency
+        # ------------------------------------------
+
+        rubric_alignment = (
+            self._determine_rubric_alignment(
+                observation=observation,
+                criterion_lookup=(
+                    criterion_lookup
+                ),
+            )
+        )
+
+        if rubric_alignment == "not_aligned":
+            return GroundingEvaluation(
+                status="contradicted",
+                evidence_coverage=(
+                    self._evidence_coverage(
+                        concrete_total=(
+                            concrete_total
+                        ),
+                        concrete_resolved=(
+                            concrete_resolved
+                        ),
+                        has_absence_evidence=(
+                            has_absence_evidence
+                        ),
+                    )
+                ),
+                rubric_alignment=(
+                    "not_aligned"
+                ),
+                requirement_ids=(
+                    requirement_ids
+                ),
+                artifact_ids=artifact_ids,
+                unit_ids=unit_ids,
+                basis_codes=[
+                    "rubric_status_contradiction"
+                ],
+                rationale=(
+                    "The generated observation's "
+                    "feedback type conflicts with "
+                    "the status of its linked "
+                    "criterion assessment."
+                ),
+            )
+
+        # ------------------------------------------
+        # Tool verification
+        # ------------------------------------------
+
+        if (
+            verification_status
+            == "verified_by_tool"
+        ):
+            basis_codes.append(
+                "verified_by_tool"
+            )
+
+            return GroundingEvaluation(
+                status="supported",
+                evidence_coverage=(
+                    "sufficient"
+                ),
+                rubric_alignment=(
+                    rubric_alignment
+                ),
+                requirement_ids=(
+                    requirement_ids
+                ),
+                artifact_ids=artifact_ids,
+                unit_ids=unit_ids,
+                basis_codes=basis_codes,
+                rationale=(
+                    "The observation was verified "
+                    "by an external tool and is "
+                    "rubric-consistent."
+                ),
+            )
+
+        # ------------------------------------------
+        # Concrete submission evidence
+        # ------------------------------------------
+
+        if (
+            verification_status
+            == "supported_by_submission"
+        ):
+
+            if (
+                concrete_total > 0
+                and concrete_resolved
+                == concrete_total
+            ):
+                return GroundingEvaluation(
+                    status="supported",
+                    evidence_coverage=(
+                        "sufficient"
+                    ),
+                    rubric_alignment=(
+                        rubric_alignment
+                    ),
+                    requirement_ids=(
+                        requirement_ids
+                    ),
+                    artifact_ids=artifact_ids,
+                    unit_ids=unit_ids,
+                    basis_codes=[
+                        "all_submission_references_resolved"
+                    ],
+                    rationale=(
+                        "All cited submission "
+                        "artifact and unit references "
+                        "resolve successfully and "
+                        "the observation is rubric-"
+                        "consistent."
+                    ),
+                )
+
+            if concrete_resolved > 0:
+                return GroundingEvaluation(
+                    status=(
+                        "partially_supported"
+                    ),
+                    evidence_coverage="partial",
+                    rubric_alignment=(
+                        rubric_alignment
+                    ),
+                    requirement_ids=(
+                        requirement_ids
+                    ),
+                    artifact_ids=artifact_ids,
+                    unit_ids=unit_ids,
+                    basis_codes=[
+                        "partial_submission_reference_resolution"
+                    ],
+                    rationale=(
+                        "Some cited submission "
+                        "references resolve, but "
+                        "others do not."
+                    ),
+                )
+
+            return GroundingEvaluation(
+                status="unresolved",
+                evidence_coverage=(
+                    "insufficient"
+                ),
+                rubric_alignment=(
+                    rubric_alignment
+                ),
+                requirement_ids=(
+                    requirement_ids
+                ),
+                artifact_ids=artifact_ids,
+                unit_ids=unit_ids,
+                basis_codes=[
+                    "no_resolved_submission_references"
+                ],
+                rationale=(
+                    "The observation claims "
+                    "submission support, but no "
+                    "usable cited submission "
+                    "references could be resolved."
+                ),
+            )
+
+        # ------------------------------------------
+        # Inferred absence-based evidence
+        # ------------------------------------------
+
+        if verification_status == "inferred":
+
+            if has_absence_evidence:
+                return GroundingEvaluation(
+                    status=(
+                        "partially_supported"
+                    ),
+                    evidence_coverage="partial",
+                    rubric_alignment=(
+                        rubric_alignment
+                    ),
+                    requirement_ids=(
+                        requirement_ids
+                    ),
+                    artifact_ids=artifact_ids,
+                    unit_ids=unit_ids,
+                    basis_codes=[
+                        "absence_inference"
+                    ],
+                    rationale=(
+                        "The observation is based "
+                        "on an inferred absence "
+                        "rather than directly cited "
+                        "submission evidence."
+                    ),
+                )
+
+            if concrete_resolved > 0:
+                return GroundingEvaluation(
+                    status=(
+                        "partially_supported"
+                    ),
+                    evidence_coverage="partial",
+                    rubric_alignment=(
+                        rubric_alignment
+                    ),
+                    requirement_ids=(
+                        requirement_ids
+                    ),
+                    artifact_ids=artifact_ids,
+                    unit_ids=unit_ids,
+                    basis_codes=[
+                        "inferred_with_submission_reference"
+                    ],
+                    rationale=(
+                        "The observation is marked "
+                        "as inferred but includes "
+                        "resolvable submission "
+                        "evidence."
+                    ),
+                )
+
+            return GroundingEvaluation(
+                status="unresolved",
+                evidence_coverage=(
+                    "insufficient"
+                ),
+                rubric_alignment=(
+                    rubric_alignment
+                ),
+                requirement_ids=(
+                    requirement_ids
+                ),
+                artifact_ids=artifact_ids,
+                unit_ids=unit_ids,
+                basis_codes=[
+                    "inference_without_grounding_evidence"
+                ],
+                rationale=(
+                    "The observation is marked as "
+                    "inferred but has no usable "
+                    "grounding evidence."
+                ),
+            )
+
+        # ------------------------------------------
+        # Not verified
+        # ------------------------------------------
+
+        if verification_status == "not_verified":
+
+            return GroundingEvaluation(
+                status="not_assessable",
+                evidence_coverage="none",
+                rubric_alignment=(
+                    rubric_alignment
+                ),
+                requirement_ids=(
+                    requirement_ids
+                ),
+                artifact_ids=artifact_ids,
+                unit_ids=unit_ids,
+                basis_codes=[
+                    "not_verified"
+                ],
+                rationale=(
+                    "The observation was not "
+                    "verified by the generation "
+                    "pipeline and there is "
+                    "insufficient independent "
+                    "grounding evidence to classify "
+                    "it as supported or unsupported."
+                ),
+            )
+
+        return GroundingEvaluation(
+            status="unresolved",
+            evidence_coverage="unresolved",
+            rubric_alignment=(
+                rubric_alignment
+            ),
+            requirement_ids=(
+                requirement_ids
+            ),
+            artifact_ids=artifact_ids,
+            unit_ids=unit_ids,
+            basis_codes=[
+                "unknown_verification_status"
+            ],
+            rationale=(
+                "The observation uses an unknown "
+                "verification status and could not "
+                "be deterministically grounded."
+            ),
+        )
+
+    def _determine_rubric_alignment(
+        self,
+        *,
+        observation: dict[str, Any],
+        criterion_lookup: dict[
+            str,
+            dict[str, Any],
+        ],
+    ) -> str:
+
+        criterion_ids = self._string_list(
+            observation,
+            "criterion_assessment_ids",
+        )
+
+        if not criterion_ids:
+            return "not_applicable"
+
+        statuses = []
+
+        for criterion_id in criterion_ids:
+
+            criterion = criterion_lookup.get(
+                criterion_id
+            )
+
+            if criterion is None:
+                continue
+
+            status = criterion.get(
+                "status"
+            )
+
+            if isinstance(status, str):
+                statuses.append(status)
+
+        if not statuses:
+            return "not_applicable"
+
+        feedback_type = self._required_string(
+            observation,
+            "feedback_type",
+        )
+
+        aligned_statuses = {
+            "strength": {
+                "met",
+            },
+            "error": {
+                "not_met",
+                "missing",
+                "partially_met",
+            },
+            "omission": {
+                "missing",
+            },
+            "suggestion": {
+                "met",
+                "not_met",
+                "partially_met",
+                "not_assessable",
+            },
+        }
+
+        expected = aligned_statuses[
+            feedback_type
+        ]
+
+        aligned_count = sum(
+            1
+            for status in statuses
+            if status in expected
+        )
+
+        if aligned_count == len(statuses):
+            return "aligned"
+
+        if aligned_count > 0:
+            return "partially_aligned"
+
+        return "not_aligned"
+
+    @staticmethod
+    def _evidence_coverage(
+        *,
+        concrete_total: int,
+        concrete_resolved: int,
+        has_absence_evidence: bool,
+    ) -> str:
+
+        if concrete_total > 0:
+            if concrete_resolved == concrete_total:
+                return "sufficient"
+
+            if concrete_resolved > 0:
+                return "partial"
+
+            return "insufficient"
+
+        if has_absence_evidence:
+            return "partial"
+
+        return "none"
+
+    @staticmethod
+    def _build_criterion_lookup(
+        generated_feedback: dict[
+            str,
+            Any,
+        ],
+    ) -> dict[str, dict[str, Any]]:
+
+        result = {}
+
+        for criterion in generated_feedback.get(
+            "criterion_assessments",
+            [],
+        ):
+
+            if not isinstance(
+                criterion,
+                dict,
+            ):
+                continue
+
+            criterion_id = criterion.get(
+                "criterion_assessment_id"
+            )
+
+            if (
+                isinstance(
+                    criterion_id,
+                    str,
+                )
+                and criterion_id.strip()
+            ):
+                result[
+                    criterion_id.strip()
+                ] = criterion
+
+        return result
+
+    @staticmethod
+    def _build_submission_unit_index(
+        processed_submission: dict[
+            str,
+            Any,
+        ],
+    ) -> dict[str, set[str]]:
+
+        result = {}
+
+        for artifact in processed_submission.get(
+            "artifacts",
+            [],
+        ):
+
+            if not isinstance(
+                artifact,
+                dict,
+            ):
+                continue
+
+            artifact_id = artifact.get(
+                "artifact_id"
+            )
+
+            if (
+                not isinstance(
+                    artifact_id,
+                    str,
+                )
+                or not artifact_id.strip()
+            ):
+                continue
+
+            artifact_id = artifact_id.strip()
+
+            result[
+                artifact_id
+            ] = {
+                unit_id
+                for unit in artifact.get(
+                    "units",
+                    [],
+                )
+                if isinstance(unit, dict)
+                for unit_id in [
+                    unit.get("unit_id")
+                ]
+                if (
+                    isinstance(
+                        unit_id,
+                        str,
+                    )
+                    and unit_id.strip()
+                )
+            }
+
+        return result
+
+    def _build_unmatched_result(
+        self,
+        *,
+        observation: dict[str, Any],
+        state: (
+            GeneratedObservationMatchState
+        ),
+        evaluation: GroundingEvaluation,
+    ) -> GeneratedObservationResult:
+
+        classification = {
+            "supported": "additional_valid",
+            "partially_supported": (
+                "additional_valid"
+            ),
+            "unsupported": "unsupported",
+            "contradicted": "contradicted",
+            "not_assessable": (
+                "not_assessable"
+            ),
+            "unresolved": "unresolved",
+        }[
+            evaluation.status
+        ]
+
+        return GeneratedObservationResult(
+            generated_observation_id=(
+                state
+                .generated_observation_id
+            ),
+            feedback_type=(
+                self._required_string(
+                    observation,
+                    "feedback_type",
+                )
+            ),
+            mapping_status="no_mapping",
+            match_ids=[],
+            classification=classification,
+            grounding_evaluation=evaluation,
+        )
+
+    @staticmethod
+    def _required_string(
+        payload: dict[str, Any],
+        field: str,
+    ) -> str:
+
+        value = payload.get(field)
+
+        if (
+            not isinstance(value, str)
+            or not value.strip()
+        ):
+            raise ValueError(
+                f"{field} must be a "
+                "non-empty string."
+            )
+
+        return value.strip()
+
+    @staticmethod
+    def _string_list(
+        payload: dict[str, Any],
+        field: str,
+    ) -> list[str]:
+
+        value = payload.get(
+            field,
+            [],
+        )
+
+        if value is None:
+            return []
+
+        if not isinstance(value, list):
+            return []
+
+        return [
+            item.strip()
+            for item in value
+            if (
+                isinstance(item, str)
+                and item.strip()
+            )
+        ]

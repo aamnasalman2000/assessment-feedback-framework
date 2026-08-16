@@ -1,0 +1,2252 @@
+{
+  "schema_version": "1.0",
+  "evaluation_id": "evaluation_assessment_2_student_1_B",
+  "generated_feedback_id": "assessment_2_student_1_generated_feedback",
+  "human_feedback_id": "assessment_2_student_1_human_feedback",
+  "processed_submission_id": "processed_assessment_2_student_1",
+  "assessment_id": "assessment_2",
+  "student_id": "student_1",
+  "evaluator": {
+    "evaluation_method": "deterministic_semantic_structural_evidence_based",
+    "pipeline_version": "1.0.0",
+    "embedding": {
+      "provider": "sentence-transformers",
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "model_revision": null,
+      "similarity_metric": "cosine"
+    },
+    "matching_configuration": {
+      "scope_filtering_enabled": true,
+      "requirement_overlap_mode": "supporting_only",
+      "feedback_type_mode": "compatibility_safeguard",
+      "full_match_threshold": 0.65,
+      "partial_match_threshold": 0.28,
+      "partial_match_weight": 0.5,
+      "exclude_generic_overall_observations": true,
+      "excluded_human_observation_ids": []
+    },
+    "grounding_configuration": {
+      "enabled": true,
+      "ground_unmatched_generated_observations": true,
+      "distinguish_contradicted_from_unsupported": true,
+      "allow_not_assessable": true
+    }
+  },
+  "observation_matches": [
+    {
+      "match_id": "match_0001",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_001",
+      "decision": "matched",
+      "semantic_similarity": 0.6888232231140137,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R1"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0002",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_002",
+      "decision": "partial_match",
+      "semantic_similarity": 0.4836643934249878,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R2"
+        ],
+        "shared_requirement_ids": [
+          "P1-R2"
+        ],
+        "jaccard_similarity": 0.25
+      }
+    },
+    {
+      "match_id": "match_0003",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_003",
+      "decision": "matched",
+      "semantic_similarity": 0.6542434692382812,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R3"
+        ],
+        "shared_requirement_ids": [
+          "P1-R3"
+        ],
+        "jaccard_similarity": 0.25
+      }
+    },
+    {
+      "match_id": "match_0004",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_004",
+      "decision": "partial_match",
+      "semantic_similarity": 0.320875346660614,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R4"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0005",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_005",
+      "decision": "matched",
+      "semantic_similarity": 0.8352488279342651,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R5"
+        ],
+        "shared_requirement_ids": [
+          "P1-R5"
+        ],
+        "jaccard_similarity": 0.25
+      }
+    },
+    {
+      "match_id": "match_0006",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_006",
+      "decision": "partial_match",
+      "semantic_similarity": 0.6044833064079285,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R6"
+        ],
+        "shared_requirement_ids": [
+          "P1-R6"
+        ],
+        "jaccard_similarity": 0.25
+      }
+    },
+    {
+      "match_id": "match_0007",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_007",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5359044075012207,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R7"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0008",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_008",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5907933115959167,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R8"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0009",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_009",
+      "decision": "partial_match",
+      "semantic_similarity": 0.34947746992111206,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R9"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0010",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_010",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5811259746551514,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R10"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0011",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_011",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5954990386962891,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P1-R2",
+          "P1-R3",
+          "P1-R5",
+          "P1-R6"
+        ],
+        "generated_requirement_ids": [
+          "P1-R11"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0012",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_015",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5878170728683472,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T1-R3"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0013",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_022",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5878170728683472,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T2-R6"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0014",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_029",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5878170728683472,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T3-R6"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0015",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_032",
+      "decision": "partial_match",
+      "semantic_similarity": 0.28989672660827637,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T4-R2"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0016",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_034",
+      "decision": "partial_match",
+      "semantic_similarity": 0.3286931812763214,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T4-R4"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0017",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_035",
+      "decision": "partial_match",
+      "semantic_similarity": 0.6417820453643799,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T4-R5"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0018",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_040",
+      "decision": "partial_match",
+      "semantic_similarity": 0.30351370573043823,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T5-R4"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0019",
+      "human_observation_id": "obs_005",
+      "generated_observation_id": "b_obs_043",
+      "decision": "partial_match",
+      "semantic_similarity": 0.6303842067718506,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T5-R7"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0020",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_015",
+      "decision": "partial_match",
+      "semantic_similarity": 0.37852925062179565,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T1-R3"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0021",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_022",
+      "decision": "partial_match",
+      "semantic_similarity": 0.37852925062179565,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T2-R6"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0022",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_028",
+      "decision": "partial_match",
+      "semantic_similarity": 0.31129857897758484,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T3-R5"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0023",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_029",
+      "decision": "partial_match",
+      "semantic_similarity": 0.37852925062179565,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T3-R6"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0024",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_035",
+      "decision": "partial_match",
+      "semantic_similarity": 0.42652925848960876,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T4-R5"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0025",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_040",
+      "decision": "partial_match",
+      "semantic_similarity": 0.31841111183166504,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T5-R4"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0026",
+      "human_observation_id": "obs_006",
+      "generated_observation_id": "b_obs_043",
+      "decision": "partial_match",
+      "semantic_similarity": 0.4047412574291229,
+      "scope_alignment": "human_broader",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "P2-T5-R7"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0027",
+      "human_observation_id": "obs_007",
+      "generated_observation_id": "b_obs_042",
+      "decision": "partial_match",
+      "semantic_similarity": 0.351027250289917,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "P2-T5-R2",
+          "P2-T5-R5"
+        ],
+        "generated_requirement_ids": [
+          "P2-T5-R6"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    }
+  ],
+  "human_observation_results": [
+    {
+      "human_observation_id": "obs_001",
+      "feedback_type": "strength",
+      "included_in_primary_matching": true,
+      "status": "matched",
+      "match_ids": [
+        "match_0001",
+        "match_0002",
+        "match_0003",
+        "match_0004",
+        "match_0005",
+        "match_0006",
+        "match_0007",
+        "match_0008",
+        "match_0009",
+        "match_0010",
+        "match_0011"
+      ],
+      "coverage_score": 1.0,
+      "best_candidate_generated_observation_id": "b_obs_005",
+      "best_candidate_similarity": 0.8352488279342651,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_002",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "not_matched",
+      "match_ids": [],
+      "coverage_score": 0.0,
+      "best_candidate_generated_observation_id": "b_obs_012",
+      "best_candidate_similarity": 0.4944676160812378,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_003",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "not_matched",
+      "match_ids": [],
+      "coverage_score": 0.0,
+      "best_candidate_generated_observation_id": "b_obs_010",
+      "best_candidate_similarity": 0.7552781105041504,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_004",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "not_matched",
+      "match_ids": [],
+      "coverage_score": 0.0,
+      "best_candidate_generated_observation_id": "b_obs_011",
+      "best_candidate_similarity": 0.780605673789978,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_005",
+      "feedback_type": "strength",
+      "included_in_primary_matching": true,
+      "status": "partially_matched",
+      "match_ids": [
+        "match_0012",
+        "match_0013",
+        "match_0014",
+        "match_0015",
+        "match_0016",
+        "match_0017",
+        "match_0018",
+        "match_0019"
+      ],
+      "coverage_score": 0.5,
+      "best_candidate_generated_observation_id": "b_obs_035",
+      "best_candidate_similarity": 0.6417820453643799,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_006",
+      "feedback_type": "suggestion",
+      "included_in_primary_matching": true,
+      "status": "partially_matched",
+      "match_ids": [
+        "match_0020",
+        "match_0021",
+        "match_0022",
+        "match_0023",
+        "match_0024",
+        "match_0025",
+        "match_0026"
+      ],
+      "coverage_score": 0.5,
+      "best_candidate_generated_observation_id": "b_obs_035",
+      "best_candidate_similarity": 0.42652925848960876,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_007",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "partially_matched",
+      "match_ids": [
+        "match_0027"
+      ],
+      "coverage_score": 0.5,
+      "best_candidate_generated_observation_id": "b_obs_039",
+      "best_candidate_similarity": 0.6212271451950073,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_008",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "not_matched",
+      "match_ids": [],
+      "coverage_score": 0.0,
+      "best_candidate_generated_observation_id": "b_obs_034",
+      "best_candidate_similarity": 0.464846134185791,
+      "exclusion_reason": null
+    }
+  ],
+  "generated_observation_results": [
+    {
+      "generated_observation_id": "b_obs_001",
+      "feedback_type": "strength",
+      "mapping_status": "matched",
+      "match_ids": [
+        "match_0001"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_002",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0002"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_003",
+      "feedback_type": "strength",
+      "mapping_status": "matched",
+      "match_ids": [
+        "match_0003"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_004",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0004"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_005",
+      "feedback_type": "strength",
+      "mapping_status": "matched",
+      "match_ids": [
+        "match_0005"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_006",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0006"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_007",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0007"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_008",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0008"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_009",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0009"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_010",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0010"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_011",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0011"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_012",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P1-R12"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "inference_without_grounding_evidence"
+        ],
+        "rationale": "The observation is marked as inferred but contains no structured absence evidence or resolvable submission reference."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_013",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T1-R1"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_014",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T1-R2"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_015",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0012",
+        "match_0020"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_016",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T1-R4"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_017",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T2-R1"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_018",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T2-R2"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_019",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T2-R3"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_020",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T2-R4"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_021",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T2-R5"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "inference_without_grounding_evidence"
+        ],
+        "rationale": "The observation is marked as inferred but contains no structured absence evidence or resolvable submission reference."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_022",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0013",
+        "match_0021"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_023",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T2-R7"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_024",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T3-R1"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_025",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "partial",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T3-R2"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "structured_absence_evidence"
+        ],
+        "rationale": "The observation is grounded in a structured absence assertion. This provides traceable evidence for an inferred omission or missing element, but does not independently prove the semantic claim."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_026",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T3-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_003"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_027",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T3-R4"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_028",
+      "feedback_type": "error",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0022"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_029",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0014",
+        "match_0023"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_030",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T3-R7"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_031",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T4-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_004"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_032",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0015"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_033",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T4-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_004"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_034",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0016"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_035",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0017",
+        "match_0024"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_036",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T4-R6"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "uncorroborated_verified_by_tool"
+        ],
+        "rationale": "The generator labels this observation as verified_by_tool, but it does not provide an explicit tool-check reference that can be corroborated against the processed submission."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_037",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T5-R1"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_038",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T5-R2"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_039",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T5-R3"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_040",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0018",
+        "match_0025"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_041",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T5-R5"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_042",
+      "feedback_type": "error",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0027"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_043",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0019",
+        "match_0026"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_044",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "P2-T5-R8"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "claimed_submission_support_without_evidence"
+        ],
+        "rationale": "The generator claims that the observation is supported by the submission, but no independently inspectable evidence is supplied."
+      }
+    }
+  ],
+  "rubric_evaluation": {
+    "applicable_requirement_ids": [
+      "P1-R1",
+      "P1-R10",
+      "P1-R11",
+      "P1-R12",
+      "P1-R2",
+      "P1-R3",
+      "P1-R4",
+      "P1-R5",
+      "P1-R6",
+      "P1-R7",
+      "P1-R8",
+      "P1-R9",
+      "P2-T1-R1",
+      "P2-T1-R2",
+      "P2-T1-R3",
+      "P2-T1-R4",
+      "P2-T2-R1",
+      "P2-T2-R2",
+      "P2-T2-R3",
+      "P2-T2-R4",
+      "P2-T2-R5",
+      "P2-T2-R6",
+      "P2-T2-R7",
+      "P2-T3-R1",
+      "P2-T3-R2",
+      "P2-T3-R3",
+      "P2-T3-R4",
+      "P2-T3-R5",
+      "P2-T3-R6",
+      "P2-T3-R7",
+      "P2-T4-R1",
+      "P2-T4-R2",
+      "P2-T4-R3",
+      "P2-T4-R4",
+      "P2-T4-R5",
+      "P2-T4-R6",
+      "P2-T5-R1",
+      "P2-T5-R2",
+      "P2-T5-R3",
+      "P2-T5-R4",
+      "P2-T5-R5",
+      "P2-T5-R6",
+      "P2-T5-R7",
+      "P2-T5-R8"
+    ],
+    "human_targeted_requirement_ids": [
+      "P1-R10",
+      "P1-R11",
+      "P1-R2",
+      "P1-R3",
+      "P1-R5",
+      "P1-R6",
+      "P2-T4-R4",
+      "P2-T5-R2",
+      "P2-T5-R5"
+    ],
+    "human_targeted_corrective_requirement_ids": [
+      "P1-R10",
+      "P1-R11",
+      "P2-T4-R4",
+      "P2-T5-R2",
+      "P2-T5-R5"
+    ],
+    "human_targeted_strength_requirement_ids": [
+      "P1-R2",
+      "P1-R3",
+      "P1-R5",
+      "P1-R6"
+    ],
+    "generated_covered_requirement_ids": [
+      "P1-R1",
+      "P1-R10",
+      "P1-R11",
+      "P1-R2",
+      "P1-R3",
+      "P1-R4",
+      "P1-R5",
+      "P1-R6",
+      "P1-R7",
+      "P1-R8",
+      "P1-R9",
+      "P2-T1-R3",
+      "P2-T2-R6",
+      "P2-T3-R5",
+      "P2-T3-R6",
+      "P2-T4-R2",
+      "P2-T4-R4",
+      "P2-T4-R5",
+      "P2-T5-R4",
+      "P2-T5-R6",
+      "P2-T5-R7"
+    ],
+    "human_targeted_component_ids": [
+      "part_1_ontology",
+      "part_2_prolog_modal_logic"
+    ],
+    "generated_covered_component_ids": [
+      "part_1_ontology",
+      "part_2_prolog_modal_logic"
+    ],
+    "requirement_results": [
+      {
+        "requirement_id": "P1-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_001"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R10",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_003"
+        ],
+        "generated_observation_ids": [
+          "b_obs_010"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R11",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_004"
+        ],
+        "generated_observation_ids": [
+          "b_obs_011"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R12",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P1-R2",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "strength"
+        ],
+        "human_observation_ids": [
+          "obs_001"
+        ],
+        "generated_observation_ids": [
+          "b_obs_002"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R3",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "strength"
+        ],
+        "human_observation_ids": [
+          "obs_001"
+        ],
+        "generated_observation_ids": [
+          "b_obs_003"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_004"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R5",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "strength"
+        ],
+        "human_observation_ids": [
+          "obs_001"
+        ],
+        "generated_observation_ids": [
+          "b_obs_005"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R6",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "strength"
+        ],
+        "human_observation_ids": [
+          "obs_001"
+        ],
+        "generated_observation_ids": [
+          "b_obs_006"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_007"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R8",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_008"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P1-R9",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_009"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T1-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T1-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T1-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_015"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T1-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T2-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T2-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T2-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T2-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T2-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T2-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_022"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T2-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T3-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T3-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T3-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T3-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T3-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_028"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T3-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_029"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T3-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T4-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T4-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_032"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T4-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T4-R4",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_008"
+        ],
+        "generated_observation_ids": [
+          "b_obs_034"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T4-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_035"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T4-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T5-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T5-R2",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_007"
+        ],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T5-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T5-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_040"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T5-R5",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_007"
+        ],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "P2-T5-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_042"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T5-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_043"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "P2-T5-R8",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      }
+    ],
+    "component_results": [
+      {
+        "component_id": "part_1_ontology",
+        "human_targeted": true,
+        "human_observation_ids": [
+          "obs_001",
+          "obs_002",
+          "obs_003",
+          "obs_004"
+        ],
+        "generated_observation_ids": [
+          "b_obs_001",
+          "b_obs_002",
+          "b_obs_003",
+          "b_obs_004",
+          "b_obs_005",
+          "b_obs_006",
+          "b_obs_007",
+          "b_obs_008",
+          "b_obs_009",
+          "b_obs_010",
+          "b_obs_011"
+        ],
+        "covered": true
+      },
+      {
+        "component_id": "part_2_prolog_modal_logic",
+        "human_targeted": true,
+        "human_observation_ids": [
+          "obs_005",
+          "obs_006",
+          "obs_007",
+          "obs_008"
+        ],
+        "generated_observation_ids": [
+          "b_obs_015",
+          "b_obs_022",
+          "b_obs_028",
+          "b_obs_029",
+          "b_obs_032",
+          "b_obs_034",
+          "b_obs_035",
+          "b_obs_040",
+          "b_obs_042",
+          "b_obs_043"
+        ],
+        "covered": true
+      }
+    ]
+  },
+  "summary_comparisons": [
+    {
+      "comparison_type": "overall_summary",
+      "status": "compared",
+      "semantic_similarity": 0.45599138736724854
+    },
+    {
+      "comparison_type": "strengths_summary",
+      "status": "compared",
+      "semantic_similarity": 0.6979042887687683
+    },
+    {
+      "comparison_type": "improvement_summary",
+      "status": "compared",
+      "semantic_similarity": 0.15265199542045593
+    }
+  ],
+  "aggregate_metrics": {
+    "human_alignment": {
+      "human_observation_recall": {
+        "numerator": 4,
+        "denominator": 8,
+        "rate": 0.5,
+        "applicable": true
+      },
+      "weighted_human_feedback_coverage": {
+        "score": 0.3125,
+        "applicable": true
+      },
+      "human_agreement_precision": {
+        "numerator": 21,
+        "denominator": 44,
+        "rate": 0.4772727272727273,
+        "applicable": true
+      },
+      "human_agreement_f1": {
+        "score": 0.48837209302325585,
+        "applicable": true
+      },
+      "corrective_observation_recall": {
+        "numerator": 2,
+        "denominator": 6,
+        "rate": 0.3333333333333333,
+        "applicable": true
+      },
+      "strength_observation_recall": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0,
+        "applicable": true
+      }
+    },
+    "grounding": {
+      "grounded_feedback_rate": {
+        "numerator": 4,
+        "denominator": 23,
+        "rate": 0.17391304347826086,
+        "applicable": true
+      },
+      "additional_valid_observation_rate": {
+        "numerator": 0,
+        "denominator": 23,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "novel_grounded_feedback_rate": {
+        "numerator": 0,
+        "denominator": 44,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "unsupported_observation_rate": {
+        "numerator": 0,
+        "denominator": 23,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "contradicted_observation_rate": {
+        "numerator": 0,
+        "denominator": 23,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "not_assessable_observation_rate": {
+        "numerator": 5,
+        "denominator": 23,
+        "rate": 0.21739130434782608,
+        "applicable": true
+      }
+    },
+    "rubric_coverage": {
+      "human_targeted_requirement_recall": {
+        "numerator": 7,
+        "denominator": 9,
+        "rate": 0.7777777777777778,
+        "applicable": true
+      },
+      "corrective_requirement_recall": {
+        "numerator": 3,
+        "denominator": 5,
+        "rate": 0.6,
+        "applicable": true
+      },
+      "strength_requirement_recall": {
+        "numerator": 4,
+        "denominator": 4,
+        "rate": 1.0,
+        "applicable": true
+      },
+      "human_targeted_component_recall": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0,
+        "applicable": true
+      },
+      "full_rubric_coverage": {
+        "numerator": 21,
+        "denominator": 44,
+        "rate": 0.4772727272727273,
+        "applicable": true
+      }
+    },
+    "summary_similarity": {
+      "average_summary_similarity": {
+        "score": 0.4355158905188243,
+        "applicable": true
+      }
+    },
+    "counts": {
+      "human_observations_total": 8,
+      "human_observations_eligible": 8,
+      "human_observations_excluded": 0,
+      "human_observations_matched": 1,
+      "human_observations_partially_matched": 3,
+      "human_observations_not_matched": 4,
+      "generated_observations_total": 44,
+      "generated_observations_fully_human_matched": 3,
+      "generated_observations_partially_human_matched": 18,
+      "generated_observations_additional_valid": 0,
+      "generated_observations_unsupported": 0,
+      "generated_observations_contradicted": 0,
+      "generated_observations_not_assessable": 5,
+      "generated_observations_unresolved": 18,
+      "applicable_requirements": 44,
+      "human_targeted_requirements": 9,
+      "generated_covered_requirements": 21,
+      "human_targeted_components": 2,
+      "generated_covered_components": 2
+    }
+  },
+  "diagnostics": []
+}

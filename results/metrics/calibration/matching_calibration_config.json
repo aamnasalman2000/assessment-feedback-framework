@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "calibration_reference": "calibration_reference_sample_200_labelled.csv",
+  "reference_pairs": 200,
+  "partial_match_threshold": 0.28,
+  "full_match_threshold": 0.65,
+  "requirement_rescue": {
+    "enabled": true,
+    "minimum_similarity": 0.22,
+    "accepted_alignment": [
+      "exact",
+      "overlap"
+    ],
+    "rescued_decision": "partial_match"
+  },
+  "contradictory_feedback": {
+    "decision": "not_matched",
+    "basis": "Deterministic polarity safeguard; not directly represented in the calibration candidate sample."
+  },
+  "scope_caps": {
+    "human_broader": false,
+    "unknown": false
+  },
+  "calibration_results": {
+    "similarity_only_oof": {
+      "accuracy": 0.625,
+      "macro_f1": 0.573
+    },
+    "interpretable_policy_oof": {
+      "accuracy": 0.645,
+      "macro_f1": 0.588622
+    },
+    "structural_logistic_regression_oof": {
+      "accuracy": 0.61,
+      "macro_f1": 0.588
+    }
+  },
+  "notes": "The 0.22 requirement-rescue threshold was selected over 0.18 because both achieved identical calibration performance and 0.22 is the more conservative rule."
+}

@@ -1,0 +1,2282 @@
+{
+  "schema_version": "1.0",
+  "evaluation_id": "evaluation_assessment_1_student_7_B",
+  "generated_feedback_id": "assessment_1_student_7_generated_feedback",
+  "human_feedback_id": "assessment_1_student_7_human_feedback",
+  "processed_submission_id": "processed_assessment_1_student_7",
+  "assessment_id": "assessment_1",
+  "student_id": "student_7",
+  "evaluator": {
+    "evaluation_method": "deterministic_semantic_structural_evidence_based",
+    "pipeline_version": "1.0.0",
+    "embedding": {
+      "provider": "sentence-transformers",
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "model_revision": null,
+      "similarity_metric": "cosine"
+    },
+    "matching_configuration": {
+      "scope_filtering_enabled": true,
+      "requirement_overlap_mode": "supporting_only",
+      "feedback_type_mode": "compatibility_safeguard",
+      "full_match_threshold": 0.65,
+      "partial_match_threshold": 0.28,
+      "partial_match_weight": 0.5,
+      "exclude_generic_overall_observations": true,
+      "excluded_human_observation_ids": []
+    },
+    "grounding_configuration": {
+      "enabled": true,
+      "ground_unmatched_generated_observations": true,
+      "distinguish_contradicted_from_unsupported": true,
+      "allow_not_assessable": true
+    }
+  },
+  "observation_matches": [
+    {
+      "match_id": "match_0001",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_003",
+      "decision": "partial_match",
+      "semantic_similarity": 0.32141536474227905,
+      "scope_alignment": "unknown",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "S1-R3"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0002",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_004",
+      "decision": "partial_match",
+      "semantic_similarity": 0.29945430159568787,
+      "scope_alignment": "unknown",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "S1-R4"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0003",
+      "human_observation_id": "obs_001",
+      "generated_observation_id": "b_obs_014",
+      "decision": "partial_match",
+      "semantic_similarity": 0.29784485697746277,
+      "scope_alignment": "unknown",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "not_assessable",
+        "human_requirement_ids": [],
+        "generated_requirement_ids": [
+          "S2-R7"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": null
+      }
+    },
+    {
+      "match_id": "match_0004",
+      "human_observation_id": "obs_002",
+      "generated_observation_id": "b_obs_006",
+      "decision": "partial_match",
+      "semantic_similarity": 0.645200252532959,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "S1-R3"
+        ],
+        "generated_requirement_ids": [
+          "S1-R6"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0005",
+      "human_observation_id": "obs_003",
+      "generated_observation_id": "b_obs_032",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5469304323196411,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "overlap",
+        "human_requirement_ids": [
+          "T1-R1",
+          "T1-R2"
+        ],
+        "generated_requirement_ids": [
+          "T1-R2"
+        ],
+        "shared_requirement_ids": [
+          "T1-R2"
+        ],
+        "jaccard_similarity": 0.5
+      }
+    },
+    {
+      "match_id": "match_0006",
+      "human_observation_id": "obs_003",
+      "generated_observation_id": "b_obs_034",
+      "decision": "partial_match",
+      "semantic_similarity": 0.5254961848258972,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "T1-R1",
+          "T1-R2"
+        ],
+        "generated_requirement_ids": [
+          "T1-R4"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    },
+    {
+      "match_id": "match_0007",
+      "human_observation_id": "obs_003",
+      "generated_observation_id": "b_obs_035",
+      "decision": "partial_match",
+      "semantic_similarity": 0.42157435417175293,
+      "scope_alignment": "exact",
+      "feedback_type_compatibility": "potentially_compatible",
+      "requirement_alignment": {
+        "status": "no_overlap",
+        "human_requirement_ids": [
+          "T1-R1",
+          "T1-R2"
+        ],
+        "generated_requirement_ids": [
+          "T1-R5"
+        ],
+        "shared_requirement_ids": [],
+        "jaccard_similarity": 0.0
+      }
+    }
+  ],
+  "human_observation_results": [
+    {
+      "human_observation_id": "obs_001",
+      "feedback_type": "strength",
+      "included_in_primary_matching": true,
+      "status": "partially_matched",
+      "match_ids": [
+        "match_0001",
+        "match_0002",
+        "match_0003"
+      ],
+      "coverage_score": 0.5,
+      "best_candidate_generated_observation_id": "b_obs_013",
+      "best_candidate_similarity": 0.37210357189178467,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_002",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "partially_matched",
+      "match_ids": [
+        "match_0004"
+      ],
+      "coverage_score": 0.5,
+      "best_candidate_generated_observation_id": "b_obs_004",
+      "best_candidate_similarity": 0.6559919118881226,
+      "exclusion_reason": null
+    },
+    {
+      "human_observation_id": "obs_003",
+      "feedback_type": "error",
+      "included_in_primary_matching": true,
+      "status": "partially_matched",
+      "match_ids": [
+        "match_0005",
+        "match_0006",
+        "match_0007"
+      ],
+      "coverage_score": 0.5,
+      "best_candidate_generated_observation_id": "b_obs_031",
+      "best_candidate_similarity": 0.5707392692565918,
+      "exclusion_reason": null
+    }
+  ],
+  "generated_observation_results": [
+    {
+      "generated_observation_id": "b_obs_001",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S1-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_002",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S1-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_003",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0001"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_004",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0002"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_005",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "partial",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S1-R5"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "structured_absence_evidence"
+        ],
+        "rationale": "The observation is grounded in a structured absence assertion. This provides traceable evidence for an inferred omission or missing element, but does not independently prove the semantic claim."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_006",
+      "feedback_type": "error",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0004"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_007",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S1-R7"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "not_verified"
+        ],
+        "rationale": "The observation is explicitly marked as not verified and no independent grounding evidence is available."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_008",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S2-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_009",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S2-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_003"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_010",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S2-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_003"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_011",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S2-R4"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_003"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_012",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S2-R5"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_003"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_013",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "partial",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S2-R6"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "structured_absence_evidence"
+        ],
+        "rationale": "The observation is grounded in a structured absence assertion. This provides traceable evidence for an inferred omission or missing element, but does not independently prove the semantic claim."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_014",
+      "feedback_type": "strength",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0003"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_015",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_016",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_001",
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_017",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_018",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R4"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_004"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_019",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R5"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_020",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R6"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005",
+          "artifact_001_unit_012",
+          "artifact_001_unit_013",
+          "artifact_001_unit_014",
+          "artifact_001_unit_015"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_021",
+      "feedback_type": "suggestion",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R7"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_002",
+          "artifact_001_unit_003",
+          "artifact_001_unit_004",
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_022",
+      "feedback_type": "omission",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S3-R8"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "not_verified"
+        ],
+        "rationale": "The observation is explicitly marked as not verified and no independent grounding evidence is available."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_023",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_024",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_025",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_026",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R4"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_027",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R5"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_028",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R6"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_029",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R7"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_005"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_030",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "S4-R8"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "not_verified"
+        ],
+        "rationale": "The observation is explicitly marked as not verified and no independent grounding evidence is available."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_031",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T1-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_012"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_032",
+      "feedback_type": "error",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0005"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_033",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T1-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_009",
+          "artifact_001_unit_010",
+          "artifact_001_unit_011"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_034",
+      "feedback_type": "error",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0006"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_035",
+      "feedback_type": "omission",
+      "mapping_status": "partially_matched",
+      "match_ids": [
+        "match_0007"
+      ],
+      "classification": "human_aligned",
+      "grounding_evaluation": null
+    },
+    {
+      "generated_observation_id": "b_obs_036",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T2-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_012"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_037",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T2-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_013"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_038",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T2-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_013"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_039",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T2-R4"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "inference_without_grounding_evidence"
+        ],
+        "rationale": "The observation is marked as inferred but contains no structured absence evidence or resolvable submission reference."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_040",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T2-R5"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "uncorroborated_verified_by_tool"
+        ],
+        "rationale": "The generator labels this observation as verified_by_tool, but it does not provide an explicit tool-check reference that can be corroborated against the processed submission."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_041",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T3-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_014"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_042",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T3-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_014"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_043",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T3-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_014"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_044",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T3-R4"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_014"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_045",
+      "feedback_type": "error",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T3-R5"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "inference_without_grounding_evidence"
+        ],
+        "rationale": "The observation is marked as inferred but contains no structured absence evidence or resolvable submission reference."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_046",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T3-R6"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "uncorroborated_verified_by_tool"
+        ],
+        "rationale": "The generator labels this observation as verified_by_tool, but it does not provide an explicit tool-check reference that can be corroborated against the processed submission."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_047",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T4-R1"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_015"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_048",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T4-R2"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_015"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_049",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T4-R3"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_015"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_050",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "partially_supported",
+        "evidence_coverage": "sufficient",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T4-R4"
+        ],
+        "artifact_ids": [
+          "artifact_001"
+        ],
+        "unit_ids": [
+          "artifact_001_unit_015"
+        ],
+        "basis_codes": [
+          "resolved_block_reference",
+          "resolved_unit_reference",
+          "all_submission_references_resolved"
+        ],
+        "rationale": "The observation is traceable to real submission evidence through resolvable artifact/unit or artifact/block references. Reference resolution does not, however, independently verify the semantic claim made by the generated feedback."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_051",
+      "feedback_type": "suggestion",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "unresolved",
+      "grounding_evaluation": {
+        "status": "unresolved",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T4-R5"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "inference_without_grounding_evidence"
+        ],
+        "rationale": "The observation is marked as inferred but contains no structured absence evidence or resolvable submission reference."
+      }
+    },
+    {
+      "generated_observation_id": "b_obs_052",
+      "feedback_type": "strength",
+      "mapping_status": "no_mapping",
+      "match_ids": [],
+      "classification": "not_assessable",
+      "grounding_evaluation": {
+        "status": "not_assessable",
+        "evidence_coverage": "none",
+        "rubric_alignment": "aligned",
+        "requirement_ids": [
+          "T4-R6"
+        ],
+        "artifact_ids": [],
+        "unit_ids": [],
+        "basis_codes": [
+          "not_verified"
+        ],
+        "rationale": "The observation is explicitly marked as not verified and no independent grounding evidence is available."
+      }
+    }
+  ],
+  "rubric_evaluation": {
+    "applicable_requirement_ids": [
+      "S1-R1",
+      "S1-R2",
+      "S1-R3",
+      "S1-R4",
+      "S1-R5",
+      "S1-R6",
+      "S1-R7",
+      "S2-R1",
+      "S2-R2",
+      "S2-R3",
+      "S2-R4",
+      "S2-R5",
+      "S2-R6",
+      "S2-R7",
+      "S3-R1",
+      "S3-R2",
+      "S3-R3",
+      "S3-R4",
+      "S3-R5",
+      "S3-R6",
+      "S3-R7",
+      "S3-R8",
+      "S4-R1",
+      "S4-R2",
+      "S4-R3",
+      "S4-R4",
+      "S4-R5",
+      "S4-R6",
+      "S4-R7",
+      "S4-R8",
+      "T1-R1",
+      "T1-R2",
+      "T1-R3",
+      "T1-R4",
+      "T1-R5",
+      "T2-R1",
+      "T2-R2",
+      "T2-R3",
+      "T2-R4",
+      "T2-R5",
+      "T3-R1",
+      "T3-R2",
+      "T3-R3",
+      "T3-R4",
+      "T3-R5",
+      "T3-R6",
+      "T4-R1",
+      "T4-R2",
+      "T4-R3",
+      "T4-R4",
+      "T4-R5",
+      "T4-R6"
+    ],
+    "human_targeted_requirement_ids": [
+      "S1-R3",
+      "T1-R1",
+      "T1-R2"
+    ],
+    "human_targeted_corrective_requirement_ids": [
+      "S1-R3",
+      "T1-R1",
+      "T1-R2"
+    ],
+    "human_targeted_strength_requirement_ids": [],
+    "generated_covered_requirement_ids": [
+      "S1-R3",
+      "S1-R4",
+      "S1-R6",
+      "S2-R7",
+      "T1-R2",
+      "T1-R4",
+      "T1-R5"
+    ],
+    "human_targeted_component_ids": [
+      "part_1",
+      "part_2"
+    ],
+    "generated_covered_component_ids": [
+      "part_1",
+      "part_2"
+    ],
+    "requirement_results": [
+      {
+        "requirement_id": "S1-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S1-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S1-R3",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_002"
+        ],
+        "generated_observation_ids": [
+          "b_obs_003"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "S1-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_004"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "S1-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S1-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_006"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "S1-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S2-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_014"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "S3-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S3-R8",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R7",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "S4-R8",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T1-R1",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_003"
+        ],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T1-R2",
+        "applicable": true,
+        "human_targeted": true,
+        "human_feedback_types": [
+          "error"
+        ],
+        "human_observation_ids": [
+          "obs_003"
+        ],
+        "generated_observation_ids": [
+          "b_obs_032"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "T1-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T1-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_034"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "T1-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [
+          "b_obs_035"
+        ],
+        "covered": true,
+        "coverage_basis": "explicit_generated_mapping"
+      },
+      {
+        "requirement_id": "T2-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T2-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T2-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T2-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T2-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T3-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T3-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T3-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T3-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T3-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T3-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T4-R1",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T4-R2",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T4-R3",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T4-R4",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T4-R5",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      },
+      {
+        "requirement_id": "T4-R6",
+        "applicable": true,
+        "human_targeted": false,
+        "human_feedback_types": [],
+        "human_observation_ids": [],
+        "generated_observation_ids": [],
+        "covered": false,
+        "coverage_basis": "not_covered"
+      }
+    ],
+    "component_results": [
+      {
+        "component_id": "part_1",
+        "human_targeted": true,
+        "human_observation_ids": [
+          "obs_002"
+        ],
+        "generated_observation_ids": [
+          "b_obs_003",
+          "b_obs_004",
+          "b_obs_006",
+          "b_obs_014"
+        ],
+        "covered": true
+      },
+      {
+        "component_id": "part_2",
+        "human_targeted": true,
+        "human_observation_ids": [
+          "obs_003"
+        ],
+        "generated_observation_ids": [
+          "b_obs_032",
+          "b_obs_034",
+          "b_obs_035"
+        ],
+        "covered": true
+      }
+    ]
+  },
+  "summary_comparisons": [
+    {
+      "comparison_type": "overall_summary",
+      "status": "compared",
+      "semantic_similarity": 0.6527289152145386
+    },
+    {
+      "comparison_type": "strengths_summary",
+      "status": "compared",
+      "semantic_similarity": 0.2333742380142212
+    },
+    {
+      "comparison_type": "improvement_summary",
+      "status": "compared",
+      "semantic_similarity": 0.5167844891548157
+    }
+  ],
+  "aggregate_metrics": {
+    "human_alignment": {
+      "human_observation_recall": {
+        "numerator": 3,
+        "denominator": 3,
+        "rate": 1.0,
+        "applicable": true
+      },
+      "weighted_human_feedback_coverage": {
+        "score": 0.5,
+        "applicable": true
+      },
+      "human_agreement_precision": {
+        "numerator": 7,
+        "denominator": 52,
+        "rate": 0.1346153846153846,
+        "applicable": true
+      },
+      "human_agreement_f1": {
+        "score": 0.23728813559322035,
+        "applicable": true
+      },
+      "corrective_observation_recall": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0,
+        "applicable": true
+      },
+      "strength_observation_recall": {
+        "numerator": 1,
+        "denominator": 1,
+        "rate": 1.0,
+        "applicable": true
+      }
+    },
+    "grounding": {
+      "grounded_feedback_rate": {
+        "numerator": 36,
+        "denominator": 45,
+        "rate": 0.8,
+        "applicable": true
+      },
+      "additional_valid_observation_rate": {
+        "numerator": 0,
+        "denominator": 45,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "novel_grounded_feedback_rate": {
+        "numerator": 0,
+        "denominator": 52,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "unsupported_observation_rate": {
+        "numerator": 0,
+        "denominator": 45,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "contradicted_observation_rate": {
+        "numerator": 0,
+        "denominator": 45,
+        "rate": 0.0,
+        "applicable": true
+      },
+      "not_assessable_observation_rate": {
+        "numerator": 42,
+        "denominator": 45,
+        "rate": 0.9333333333333333,
+        "applicable": true
+      }
+    },
+    "rubric_coverage": {
+      "human_targeted_requirement_recall": {
+        "numerator": 2,
+        "denominator": 3,
+        "rate": 0.6666666666666666,
+        "applicable": true
+      },
+      "corrective_requirement_recall": {
+        "numerator": 2,
+        "denominator": 3,
+        "rate": 0.6666666666666666,
+        "applicable": true
+      },
+      "strength_requirement_recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "rate": null,
+        "applicable": false
+      },
+      "human_targeted_component_recall": {
+        "numerator": 2,
+        "denominator": 2,
+        "rate": 1.0,
+        "applicable": true
+      },
+      "full_rubric_coverage": {
+        "numerator": 7,
+        "denominator": 52,
+        "rate": 0.1346153846153846,
+        "applicable": true
+      }
+    },
+    "summary_similarity": {
+      "average_summary_similarity": {
+        "score": 0.46762921412785846,
+        "applicable": true
+      }
+    },
+    "counts": {
+      "human_observations_total": 3,
+      "human_observations_eligible": 3,
+      "human_observations_excluded": 0,
+      "human_observations_matched": 0,
+      "human_observations_partially_matched": 3,
+      "human_observations_not_matched": 0,
+      "generated_observations_total": 52,
+      "generated_observations_fully_human_matched": 0,
+      "generated_observations_partially_human_matched": 7,
+      "generated_observations_additional_valid": 0,
+      "generated_observations_unsupported": 0,
+      "generated_observations_contradicted": 0,
+      "generated_observations_not_assessable": 42,
+      "generated_observations_unresolved": 3,
+      "applicable_requirements": 52,
+      "human_targeted_requirements": 3,
+      "generated_covered_requirements": 7,
+      "human_targeted_components": 2,
+      "generated_covered_components": 2
+    }
+  },
+  "diagnostics": []
+}

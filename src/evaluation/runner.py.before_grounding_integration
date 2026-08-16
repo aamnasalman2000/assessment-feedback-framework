@@ -1,0 +1,123 @@
+from __future__ import annotations
+
+from dataclasses import dataclass
+from typing import Any
+
+from .embedding_service import (
+    EmbeddingService,
+)
+from .matching import (
+    MatchingResult,
+    ObservationMatcher,
+)
+from .models import (
+    MatchingConfiguration,
+)
+
+
+@dataclass(frozen=True)
+class EvaluationRuntime:
+    """
+    Runtime objects used by the deterministic
+    evaluation pipeline.
+    """
+
+    embedding_service: EmbeddingService
+    matching_configuration: (
+        MatchingConfiguration
+    )
+    matcher: ObservationMatcher
+
+
+def build_evaluation_runtime(
+    *,
+    embedding_service: (
+        EmbeddingService | None
+    ) = None,
+) -> EvaluationRuntime:
+    """
+    Build the calibrated deterministic evaluation
+    runtime.
+
+    Matching thresholds were calibrated against
+    the frozen 200-pair manually adjudicated
+    reference set spanning Assessments 1 and 2.
+
+    Calibrated policy:
+
+        full match:
+            similarity >= 0.65
+
+        partial match:
+            similarity >= 0.28
+
+        requirement rescue:
+            similarity >= 0.22 and requirement
+            alignment is exact or overlap
+            -> partial match
+
+    The requirement-rescue rule is implemented in
+    ObservationMatcher._calibrated_decision().
+    """
+
+    if embedding_service is None:
+        embedding_service = (
+            EmbeddingService()
+        )
+
+    matching_configuration = (
+        MatchingConfiguration(
+            full_match_threshold=0.65,
+            partial_match_threshold=0.28,
+        )
+    )
+
+    matcher = ObservationMatcher(
+        embedding_service=(
+            embedding_service
+        ),
+        configuration=(
+            matching_configuration
+        ),
+    )
+
+    return EvaluationRuntime(
+        embedding_service=(
+            embedding_service
+        ),
+        matching_configuration=(
+            matching_configuration
+        ),
+        matcher=matcher,
+    )
+
+
+def evaluate_observation_matching(
+    *,
+    human_feedback: dict[str, Any],
+    generated_feedback: dict[str, Any],
+    runtime: (
+        EvaluationRuntime | None
+    ) = None,
+) -> MatchingResult:
+    """
+    Run calibrated observation matching between
+    normalised human feedback and generated
+    feedback.
+
+    A runtime may be supplied when evaluating many
+    submissions so that the embedding model is
+    loaded only once.
+    """
+
+    if runtime is None:
+        runtime = (
+            build_evaluation_runtime()
+        )
+
+    return runtime.matcher.match(
+        human_feedback=human_feedback,
+        generated_feedback=(
+            generated_feedback
+        ),
+    )

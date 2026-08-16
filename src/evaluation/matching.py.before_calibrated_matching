@@ -299,11 +299,21 @@ class ObservationMatcher:
                     )
                 )
 
-                # Requirement alignment is retained as
-                # structural evidence for the calibrated
-                # matching decision. Non-overlapping
-                # requirement mappings are not an
-                # automatic rejection condition.
+                # Explicitly different requirements
+                # should block broad same-part matches.
+                #
+                # Exact task-level pairs remain
+                # eligible because neighbouring
+                # requirements can describe different
+                # aspects of the same substantive
+                # feedback point.
+                if (
+                    requirement_alignment.status
+                    == "no_overlap"
+                    and scope_alignment
+                    != "exact"
+                ):
+                    continue
 
                 raw_similarity = float(
                     similarity_matrix[
@@ -343,11 +353,8 @@ class ObservationMatcher:
                     )
 
                 decision = (
-                    self._calibrated_decision(
-                        similarity=similarity,
-                        requirement_alignment=(
-                            requirement_alignment
-                        ),
+                    self._semantic_decision(
+                        similarity
                     )
                 )
 
@@ -377,10 +384,36 @@ class ObservationMatcher:
                 if decision is None:
                     continue
 
-                # requirement_alignment was calculated
-                # before the semantic decision and is
-                # reused here for the persisted match
-                # diagnostics.
+                requirement_alignment = (
+                    calculate_requirement_alignment(
+                        human_requirement_ids=(
+                            self._requirement_ids(
+                                human
+                            )
+                        ),
+                        generated_requirement_ids=(
+                            self._requirement_ids(
+                                generated
+                            )
+                        ),
+                    )
+                )
+
+                # Reject broad-scope correspondences when
+                # both observations have explicit but
+                # non-overlapping rubric mappings.
+                #
+                # Exact task-level pairs remain eligible
+                # because neighbouring requirements may
+                # describe different aspects of the same
+                # substantive feedback point.
+                if (
+                    requirement_alignment.status
+                    == "no_overlap"
+                    and scope_alignment
+                    != "exact"
+                ):
+                    continue
 
                 match_id = (
                     f"match_"
@@ -483,42 +516,13 @@ class ObservationMatcher:
             ),
         )
 
-    def _calibrated_decision(
+    def _semantic_decision(
         self,
-        *,
         similarity: float,
-        requirement_alignment: (
-            RequirementAlignment
-        ),
     ) -> Literal[
         "matched",
         "partial_match",
     ] | None:
-        """
-        Apply the calibrated deterministic matching
-        policy.
-
-        Semantic similarity is the primary matching
-        signal. Exact or overlapping rubric mappings
-        may conservatively rescue a lower-similarity
-        pair to partial correspondence.
-
-        Calibration on the manually adjudicated
-        reference set selected:
-
-            partial-match threshold: 0.28
-            full-match threshold:    0.65
-            requirement rescue:      0.22
-
-        The first two values are supplied through the
-        MatchingConfiguration. The rescue threshold is
-        fixed here because it is part of the calibrated
-        structural policy.
-
-        A rescued observation can only become a
-        partial match; rubric overlap alone is never
-        sufficient for a full match.
-        """
         if (
             similarity
             >= self.configuration
@@ -530,16 +534,6 @@ class ObservationMatcher:
             similarity
             >= self.configuration
             .partial_match_threshold
-        ):
-            return "partial_match"
-
-        if (
-            similarity >= 0.22
-            and requirement_alignment.status
-            in {
-                "exact",
-                "overlap",
-            }
         ):
             return "partial_match"
 

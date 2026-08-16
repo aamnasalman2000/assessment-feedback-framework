@@ -51,16 +51,20 @@ class CalibrationExporter:
     Build manually labelable observation pairs for
     calibration of semantic matching thresholds.
 
-    The exporter applies the same deterministic
-    candidate filtering used by the matcher:
+    The exporter applies deterministic candidate
+    filtering consistent with the matcher:
 
         - structural scope compatibility;
         - rejection of contradictory feedback
-          polarity;
-        - rejection of broad-scope pairs with
-          explicit requirement non-overlap.
+          polarity.
 
-    It does NOT apply semantic similarity thresholds.
+    Requirement alignment is retained as structural
+    metadata and is not used as a hard candidate
+    rejection rule.
+
+    The exporter does NOT apply semantic similarity
+    thresholds or the calibrated requirement-rescue
+    decision.
     """
 
     def __init__(
